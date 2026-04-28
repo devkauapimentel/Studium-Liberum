@@ -19,6 +19,40 @@
 
 ---
 
+## 📚 Leitura Obrigatória (nesta ordem)
+
+Antes de qualquer ação, leia estes documentos:
+
+| # | Documento | O que contém | Quando consultar |
+|---|-----------|-------------|-----------------|
+| 1 | **AGENTES.md** (este) | Regras, contexto, decisões, checklist | Sempre — é o ponto de entrada |
+| 2 | [CHANGELOG.md](./CHANGELOG.md) | Estado atual, versão, o que já foi feito | Para saber em que fase estamos |
+| 3 | [CONTRIBUTING.md](./CONTRIBUTING.md) | Git workflow, branches, commit convention, SemVer | Antes de qualquer commit |
+| 4 | [README.md](./README.md) | Visão pública do projeto, features, setup | Para entender o que o software faz |
+| 5 | [LICENSE](./LICENSE) | MIT | Referência |
+| 6 | `data/config.json` | Tracks pessoais do Kauã (.gitignored) | Para entender a configuração ativa |
+| 7 | `docs/*.md` | Guias de uso (setup, search, AI, offline) | Quando implementar features específicas |
+
+### Workflow do Agente
+```
+NOVO AGENTE CHEGA → 
+  1. Lê AGENTES.md (contexto + regras)
+  2. Lê CHANGELOG.md (onde estamos?)
+  3. Roda `git log -5` (últimos commits)
+  4. Roda `npm run dev` (funciona?)
+  5. Lê CONTRIBUTING.md (como commitar?)
+  6. COMEÇA A TRABALHAR
+  
+AGENTE TERMINA →
+  1. Atualiza CHANGELOG.md (o que fez)
+  2. Atualiza AGENTES.md → "Histórico de Decisões" (decisões tomadas)
+  3. Commita com Conventional Commits
+  4. `bash scripts/push-all.sh` (push ambos remotes)
+  5. ENTREGA
+```
+
+---
+
 ## Regras Para Agentes
 
 ### 1. NUNCA faça isso
