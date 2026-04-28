@@ -1,0 +1,48 @@
+# === Dependencies ===
+node_modules/
+.pnp/
+.pnp.js
+
+# === Build ===
+.next/
+out/
+dist/
+build/
+
+# === Environment ===
+.env
+.env.local
+.env.*.local
+
+# === Debug ===
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === IDE ===
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Study Content (local only — user downloads their own) ===
+library/**/*.mp4
+library/**/*.pdf
+library/**/*.epub
+library/**/*.zip
+library/**/*.iso
+library/kiwix/*.zim
+
+# === Database (generated locally) ===
+data/studium.db
+data/studium.db-journal
+data/studium.db-wal
+
+# === Misc ===
+*.tsbuildinfo
+next-env.d.ts
