@@ -26,7 +26,6 @@ export default async function TrackPage({ params }: PageProps) {
       files={files}
       counts={counts}
       allTracks={config.tracks}
-      features={config.features}
     />
   );
 }

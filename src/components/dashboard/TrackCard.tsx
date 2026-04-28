@@ -1,15 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import { Video, FileText, BookOpen, Code, AlertCircle, CheckCircle2 } from "lucide-react";
 import type { Track } from "@/lib/types";
 
 interface TrackCardProps {
   track: Track;
   fileCount: { videos: number; pdfs: number; docs: number; total: number };
-  onClick: () => void;
+  href: string;
 }
 
-export default function TrackCard({ track, fileCount, onClick }: TrackCardProps) {
+export default function TrackCard({ track, fileCount, href }: TrackCardProps) {
   const activeSubjects = track.subjects?.filter((s) => s.status === "active").length ?? 0;
   const debtSubjects = track.subjects?.filter((s) => s.status === "debt").length ?? 0;
   const completedSubjects = track.subjects?.filter((s) => s.status === "completed").length ?? 0;
@@ -17,9 +18,9 @@ export default function TrackCard({ track, fileCount, onClick }: TrackCardProps)
   const progress = totalSubjects > 0 ? (completedSubjects / totalSubjects) * 100 : 0;
 
   return (
-    <button
-      onClick={onClick}
-      className="glass-card p-5 text-left w-full group"
+    <Link
+      href={href}
+      className="glass-card p-5 text-left w-full group block"
       style={{
         borderTop: `3px solid ${track.color}`,
       }}
@@ -95,7 +96,7 @@ export default function TrackCard({ track, fileCount, onClick }: TrackCardProps)
           </div>
         </div>
       )}
-    </button>
+    </Link>
   );
 }
 
