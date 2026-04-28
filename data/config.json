@@ -1,0 +1,85 @@
+{
+  "version": "0.1.0",
+  "tracks": [
+    {
+      "id": "uninter",
+      "name": "Uninter — Engenharia de Software",
+      "icon": "🎓",
+      "color": "#3b82f6",
+      "subjects": [
+        { "id": "analise-e-modelagem", "name": "Análise e Modelagem de Sistemas", "status": "active" },
+        { "id": "logica-programacao", "name": "Lógica de Programação e Algoritmos", "status": "debt" },
+        { "id": "fund-computacao", "name": "Fundamentos da Computação", "status": "debt" },
+        { "id": "infraestrutura-ti", "name": "Infraestrutura de TI", "status": "debt" },
+        { "id": "matematica-elementar", "name": "Matemática Elementar", "status": "debt" },
+        { "id": "fund-dev-software", "name": "Fund. Desenvolvimento de Software", "status": "debt" },
+        { "id": "banco-dados", "name": "Banco de Dados Relacional", "status": "debt" },
+        { "id": "sistemas-informacao", "name": "Sistemas de Informação", "status": "debt" },
+        { "id": "design-sistemas", "name": "Design de Sistemas", "status": "debt" },
+        { "id": "ihc", "name": "Interação Humano-Computador", "status": "debt" },
+        { "id": "pre-calculo", "name": "Pré-Cálculo", "status": "debt" },
+        { "id": "formacao-ead", "name": "Formação Inicial em EaD", "status": "debt" },
+        { "id": "portugues", "name": "Português Elementar", "status": "debt" },
+        { "id": "comunicacao-empresarial", "name": "Comunicação Empresarial", "status": "debt" }
+      ]
+    },
+    {
+      "id": "rocketseat",
+      "name": "Rocketseat Fullstack",
+      "icon": "🚀",
+      "color": "#8b5cf6",
+      "phases": [
+        { "name": "HTML & CSS", "modules": 11 },
+        { "name": "JavaScript", "modules": 4 },
+        { "name": "Backend", "modules": 11 },
+        { "name": "React & Deploy", "modules": 10 }
+      ]
+    },
+    {
+      "id": "42-prep",
+      "name": "42 Rio — Piscina",
+      "icon": "🏊",
+      "color": "#10b981",
+      "subjects": [
+        { "id": "shell", "name": "Shell (00-01)", "status": "upcoming" },
+        { "id": "c-exercises", "name": "C Exercises (C00-C06)", "status": "upcoming" },
+        { "id": "exams", "name": "Gatekeeper Exams", "status": "upcoming" }
+      ]
+    },
+    {
+      "id": "dev-refs",
+      "name": "Referências Dev",
+      "icon": "📖",
+      "color": "#f59e0b",
+      "subjects": [
+        { "id": "books", "name": "Livros", "status": "active" },
+        { "id": "anki", "name": "Anki Reviews", "status": "active" },
+        { "id": "docs", "name": "Documentação", "status": "active" }
+      ]
+    }
+  ],
+  "features": {
+    "ollama": {
+      "enabled": true,
+      "defaultModel": "qwen2.5-coder:14b"
+    },
+    "kiwix": {
+      "enabled": true,
+      "port": 8080
+    },
+    "zeal": {
+      "enabled": true
+    },
+    "countdown": {
+      "enabled": true,
+      "label": "Piscina 42 Rio",
+      "date": "2026-07-13"
+    }
+  },
+  "settings": {
+    "theme": "dark",
+    "language": "pt-BR",
+    "autoIndex": true,
+    "indexIntervalMs": 2000
+  }
+}
