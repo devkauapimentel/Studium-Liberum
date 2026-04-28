@@ -150,6 +150,48 @@ AGENTE TERMINA →
 
 ---
 
+## Documentação e Auto-Ajuda
+
+### Para o Usuário (Kauã e outros)
+
+Três camadas de ajuda integradas no software:
+
+| Camada | O que é | Como funciona |
+|--------|---------|---------------|
+| **🔘 Tooltips** | Hover em qualquer botão/ícone | Tooltip aparece explicando a função |
+| **❓ /help** | Página interativa de ajuda | Guias passo-a-passo com screenshots para cada feature |
+| **🤖 IA contextual** | Chat Ollama que conhece o software | Ollama recebe `docs/*.md` como contexto + a pergunta do usuário |
+
+### Ollama Conhece o Software
+
+Quando o usuário pergunta algo sobre o próprio Studium Liberum (ex: "como adicionar um novo track?"), o sistema faz RAG nos arquivos `docs/`:
+
+```
+USUÁRIO: "Como eu adiciono uma nova matéria?"
+
+SISTEMA:
+  1. Detecta que a pergunta é sobre o software (não sobre estudo)
+  2. Busca em docs/library-guide.md → encontra seção "Adding Subjects"
+  3. Alimenta o Ollama com esse trecho como contexto
+  4. Ollama responde: "Para adicionar uma matéria, vá em Settings → ..."
+```
+
+### Docs que serão criados em `docs/`
+
+| Arquivo | Conteúdo |
+|---------|----------|
+| `setup.md` | Instalação, primeiro boot, configuração inicial |
+| `library-guide.md` | Como organizar materiais, adicionar tracks/subjects, convenção de nomes |
+| `search-guide.md` | Como usar a busca unificada, filtros, atalhos |
+| `ai-guide.md` | Como usar o chat IA, RAG, selecionar modelos |
+| `offline-setup.md` | Instalar Kiwix, Zeal, baixar ZIM files |
+| `troubleshooting.md` | Problemas comuns (Ollama não inicia, PDF não indexa, etc.) |
+| `architecture.md` | Como o sistema funciona internamente (para devs/contribuidores) |
+
+> Estes arquivos servem dupla função: são legíveis por humanos no browser E são usados como contexto pelo Ollama para responder perguntas sobre o software.
+
+---
+
 ## Estrutura do Projeto
 
 ```
