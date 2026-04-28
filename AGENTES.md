@@ -192,6 +192,78 @@ SISTEMA:
 
 ---
 
+## 🧠 Fluxo Anti-TDAH (Como Estudar)
+
+O sistema é projetado para eliminar decisões e fricção. O fluxo é linear e guiado:
+
+### Como assistir aulas
+```
+1. Abre localhost:3000
+2. Dashboard mostra "CONTINUAR DE ONDE PAROU" no topo
+   └── Um botão grande, impossível de ignorar
+3. Clica → abre direto no vídeo, no segundo exato onde parou
+4. Terminou o vídeo → marca como "Assistido" (um clique)
+5. Sistema sugere o próximo vídeo automaticamente
+   └── "Próximo: Aula 6 - Seção pricing parte 02"
+6. Não precisa pensar, só seguir
+```
+
+### Regras anti-autosabotagem embutidas no software
+| Regra | Implementação |
+|-------|--------------|
+| **Sem escolha** | Dashboard mostra UMA ação principal: "Continue de onde parou" |
+| **Sem multitarefa** | Modo foco esconde sidebar + chat quando reproduzindo vídeo |
+| **Sem rabbit hole** | Busca mostra max 5 resultados. Quer mais? Clique explícito |
+| **Progresso visível** | Barra de progresso circular SEMPRE visível. Você vê que está avançando |
+| **Micro-vitórias** | Cada aula concluída = animação de confete + contador sobe |
+| **Sem decisão** | O sistema decide a próxima aula. Você só executa |
+
+### Se tiver dúvida durante o estudo
+```
+1. Pausa o vídeo
+2. Ctrl+K → abre busca inline (não sai da tela)
+3. Digita a dúvida → resultados dos seus PDFs + IA
+4. Fecha → volta pro vídeo no mesmo segundo
+```
+
+---
+
+## Integração 42 Apps
+
+### Decisão: 42.rioPreparation → Embutido como Rota
+
+O app `42.rioPreparation` é um Next.js com:
+- 5 fases (Shell → C Foundations → Pointers → Strings → Memory)
+- Sistema de desbloqueio sequencial (Gatekeeper Exams)
+- Progresso em localStorage
+- Estética terminal/brutalist
+- 16 arquivos de curriculum em `data/`
+
+**Faz sentido integrar como rota `/track/42-prep` dentro do Studium Liberum**, porque:
+1. Já é Next.js + Tailwind (mesma stack)
+2. Já é offline-first
+3. Centraliza tudo num único lugar
+4. O progresso passa a ser salvo no SQLite (mais durável que localStorage)
+
+**Como:** Os componentes do 42.rioPreparation são migrados para `src/components/42-prep/` e acessíveis via `/track/42-prep`. Os 16 markdown files vão para `library/42-prep/curriculum/`.
+
+### 42-dashboard (perdido)
+O 42-dashboard era um Node.js+HTML com:
+- Vista linear e radial (star map) do curriculum
+- state.json para progresso
+
+**Foi absorvido.** O Studium Liberum faz tudo que ele fazia + mais. Não precisa recriar.
+
+### Status de duplicatas
+| Item | Status |
+|------|--------|
+| 42.rioPreparation | ✅ Existe em `01 - Projects/42.rioPreparation/` (restaurado do GitHub) |
+| 42-School/42-dashboard | ❌ Deletado — substituído pelo Studium Liberum |
+| library/42-prep/ | ✅ Pastas vazias esperando conteúdo (sem duplicata) |
+| `00 - Study/00 - 42.rio/Testes/` | ⚠️ Pasta antiga com testes — mover para library/ quando construir |
+
+---
+
 ## Estrutura do Projeto
 
 ```
