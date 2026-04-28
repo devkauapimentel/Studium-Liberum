@@ -12,11 +12,11 @@
 
 ## The Problem
 
-You have classes to watch, PDFs to read, exercises to solve, documentation to search — and your internet drops without warning. When it goes down, you lose access to everything: Stack Overflow, MDN, Wikipedia, your course platform, even Google.
+You have classes to watch, PDFs to read, exercises to solve, documentation to search — and your internet is unreliable. When it goes down, you lose access to everything: Stack Overflow, MDN, Wikipedia, your course platform, even Google.
 
 ## The Solution
 
-**Studium Liberum** is a local-first web application that centralizes all your study materials into a single, searchable, offline-capable interface. It combines a unified search engine, video/PDF viewer, offline documentation (via Kiwix + Zeal), and a local AI assistant (via Ollama) — all running on `localhost`.
+**Studium Liberum** is a local-first web application that turns your computer into a personal offline university. Define your own study tracks, populate them with your materials, and access everything through a single, beautiful, searchable interface — with a local AI assistant that understands your content.
 
 **Pull the ethernet cable. Everything still works.**
 
@@ -24,15 +24,16 @@ You have classes to watch, PDFs to read, exercises to solve, documentation to se
 
 ## Features
 
-- 🔍 **Unified Search** — Search across all your PDFs, notes, exercises, Stack Overflow, and Wikipedia simultaneously. Powered by SQLite FTS5.
-- 🤖 **AI Assistant** — Local Ollama integration as your offline "Google". Ask questions, get code explanations, understand concepts — no internet required.
-- 📺 **Video Player** — Watch downloaded classes with progress tracking. Resume where you left off.
-- 📄 **PDF Viewer** — Read course materials with embedded viewer. Searchable content.
-- 📂 **File Browser** — Navigate all study tracks from a single sidebar.
-- 🔄 **Auto-Detection** — Drop a new file into `library/` and it's automatically indexed and available.
-- 📚 **Offline Docs** — C, JavaScript, Node.js, Bash, Git, and more via Zeal docsets.
-- 🌐 **Offline Stack Overflow** — Full Stack Overflow archive via Kiwix ZIM files.
+- 🔍 **Unified Search** — Search across all your PDFs, notes, and exercises simultaneously. Powered by SQLite FTS5.
+- 🤖 **Context-Aware AI** — Local Ollama integration with RAG. The AI reads your materials and answers based on YOUR content.
+- 📺 **Video Player** — Watch downloaded classes with progress tracking and resume.
+- 📄 **PDF Viewer** — Read course materials with embedded viewer and in-document search.
+- 📂 **Custom Study Tracks** — Define your own areas of study (university, bootcamp, certifications, languages — anything).
+- 🔄 **Auto-Detection** — Drop a file into any track folder → automatically indexed and searchable.
+- 📚 **Offline Docs** — Technical documentation via Zeal docsets (C, Python, JavaScript, React, etc.).
+- 🌐 **Offline Stack Overflow** — Full Stack Overflow archive via Kiwix.
 - 📱 **LAN Access** — Open from any device on your local network.
+- ❓ **Built-in Help** — `/help` page with interactive guides for every feature.
 
 ---
 
@@ -43,9 +44,9 @@ You have classes to watch, PDFs to read, exercises to solve, documentation to se
 | Framework | Next.js 16.2 |
 | Styling | Tailwind CSS 4.2 |
 | Language | TypeScript |
-| Database | SQLite + FTS5 (better-sqlite3) |
+| Database | SQLite + FTS5 |
 | Search | SQLite FTS5 + Kiwix API |
-| AI | Ollama (local LLM) |
+| AI | Ollama (local LLM with RAG) |
 | Offline Docs | Zeal + Kiwix |
 | File Watch | chokidar |
 
@@ -61,12 +62,120 @@ cd studium-liberum
 # Install
 npm install
 
-# Start everything (app + Ollama + Kiwix)
+# First run — creates your personal config
+npm run setup
+
+# Start everything
 bash scripts/start.sh
 
-# Open
-# → http://localhost:3000
+# Open → http://localhost:3000
 ```
+
+### First Run Setup
+
+On first run, the app guides you through creating your study tracks:
+
+```
+Welcome to Studium Liberum! Let's set up your library.
+
+? Add a study track:
+  Name: Computer Science Degree
+  Type: university
+  → Created: library/computer-science-degree/
+
+? Add another track:
+  Name: Web Development Bootcamp
+  Type: bootcamp
+  → Created: library/web-development-bootcamp/
+
+? Add subjects to "Computer Science Degree":
+  → Data Structures
+  → Operating Systems
+  → Software Engineering
+
+Done! Start adding your materials to the library/ folder.
+```
+
+---
+
+## How It Works
+
+### 1. Define Your Tracks
+
+Create any study area you want via the config or the UI:
+
+```json
+// data/config.json (auto-generated, .gitignored)
+{
+  "tracks": [
+    {
+      "id": "cs-degree",
+      "name": "Computer Science Degree",
+      "icon": "🎓",
+      "color": "#3b82f6",
+      "subjects": [
+        { "name": "Data Structures", "status": "active" },
+        { "name": "Operating Systems", "status": "completed" },
+        { "name": "Software Engineering", "status": "upcoming" }
+      ]
+    },
+    {
+      "id": "web-bootcamp",
+      "name": "Web Development Bootcamp",
+      "icon": "🚀",
+      "color": "#8b5cf6",
+      "modules": [
+        { "name": "HTML & CSS", "lessons": 50 },
+        { "name": "JavaScript", "lessons": 80 }
+      ]
+    }
+  ]
+}
+```
+
+### 2. Add Your Materials
+
+Drop files into the corresponding track folder:
+
+```
+library/
+├── cs-degree/
+│   ├── data-structures/
+│   │   ├── lecture-01.mp4        ← Video
+│   │   ├── slides-chapter-3.pdf  ← PDF
+│   │   └── notes.md              ← Your notes
+│   └── operating-systems/
+│       └── ...
+└── web-bootcamp/
+    ├── html-css/
+    │   ├── lesson-01.mp4
+    │   └── lesson-02.mp4
+    └── javascript/
+        └── ...
+```
+
+Files are **auto-detected and indexed** — no manual configuration needed.
+
+### 3. Search Everything
+
+Type any query → results from ALL your tracks, Stack Overflow, Wikipedia, and AI:
+
+```
+🔍 "binary search tree"
+
+📄 Data Structures - Lecture 3, Page 14
+   "A binary search tree is a data structure where..."
+
+🌐 Stack Overflow (offline)
+   "How to implement BST in C?" — 342 votes
+
+🤖 AI Answer (from your materials)
+   "Based on your lecture notes from Data Structures..."
+```
+
+### 4. AI That Knows Your Content
+
+The AI assistant uses **RAG (Retrieval-Augmented Generation)** — it searches your indexed materials first, then generates answers grounded in YOUR content. Not hallucinations.
 
 ---
 
@@ -75,63 +184,29 @@ bash scripts/start.sh
 ```
 studium-liberum/
 │
-├── library/                 ← Your study content (local, .gitignored)
-│   ├── uninter/             ← University courses (PDFs, videos)
-│   ├── rocketseat/          ← Fullstack formation (36 modules)
-│   ├── 42-prep/             ← 42 Rio Piscina preparation
-│   ├── dev-refs/            ← Books, Anki, documentation
-│   └── kiwix/               ← ZIM files (Wikipedia, Stack Overflow)
+├── library/              ← Your study content (local, .gitignored)
+│   └── (your tracks)/    ← Auto-created from config
 │
-├── src/                     ← Next.js application
-│   ├── app/                 ← Pages and routes
-│   ├── components/          ← React components
-│   └── lib/                 ← Core logic (search, indexer, AI)
+├── src/                  ← Next.js application
+│   ├── app/              ← Pages and routes
+│   ├── components/       ← React components
+│   └── lib/              ← Core logic (search, indexer, AI, RAG)
 │
-├── scripts/                 ← Automation (start, stop, index)
-├── docs/                    ← Documentation
-├── data/                    ← SQLite database (auto-generated)
-└── public/                  ← Static assets (fonts, icons)
+├── scripts/              ← Automation (start, stop, index, setup)
+├── docs/                 ← User documentation
+├── data/                 ← Config + SQLite database (.gitignored)
+└── public/               ← Static assets (fonts, icons)
 ```
 
 ---
 
-## Adding Study Content
+## Requirements
 
-The `library/` folder is your personal content directory. It is **not tracked by git** — you populate it with your own materials.
-
-### Uninter
-```bash
-# Download from AVA → place in the correct subject folder
-library/uninter/_ativo/analise-e-modelagem/     # Active subject
-library/uninter/_divida-tecnica/06-banco-dados/  # Technical debt
-```
-
-### Rocketseat
-```bash
-# Download from Telegram → place in the module folder
-library/rocketseat/fase-1-html-css/08-formularios/  # Current module
-```
-
-### 42 Rio
-```bash
-# Write exercises directly
-library/42-prep/c-exercises/C00/ex00/ft_putchar.c
-```
-
-Files are **auto-detected and indexed** within seconds of being placed.
-
----
-
-## Offline Reference Setup
-
-```bash
-# Install offline tools (requires internet once)
-bash scripts/setup-offline.sh
-
-# This installs:
-# → Zeal (C, JS, Node, Bash, Git docs)
-# → Kiwix (Stack Overflow PT/EN, Wikipedia PT)
-```
+- **Node.js** 18+ 
+- **Ollama** (optional, for AI assistant)
+- **Kiwix** (optional, for offline Stack Overflow / Wikipedia)
+- **Zeal** (optional, for offline API documentation)
+- **pdftotext** (for PDF indexing)
 
 ---
 
