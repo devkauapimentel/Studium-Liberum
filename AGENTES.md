@@ -392,3 +392,7 @@ Quando um novo agente assume o trabalho:
 | 2026-04-29 | Dynamic Track Progress | O Card da Trilha recalcula a barra de progresso baseado nos vídeos assistidos se não houver 'subjects' |
 | 2026-04-29 | Motor RAG Integrado (Fase 5) | API Chat injeta contexto do FTS5 local via SQLite dinamicamente para o Ollama |
 | 2026-04-29 | Auto-Versionamento de Agentes | Padronizado que a citação de @AGENTES.md forçará a IA a atualizar CHANGELOG e executar o push-all.sh automaticamente |
+| 2026-04-29 | Tailwind Typography v4 Fix | Plugin `@tailwindcss/typography` carregado explicitamente no CSS para estilar o `.prose` do RAG/Markdown. Sem ele, a UI quebra em um monobloco invisível. |
+| 2026-04-29 | SearchModal (Ctrl+K) Shield | Interceptação global do atalho `Ctrl+K` na raiz (`layout.tsx`) usando `e.preventDefault()`, substituindo a barra nativa do Chrome. |
+| 2026-04-29 | Semantic Stopwords FTS5 | O SQLite Search parou de apagar palavras com `< 3` caracteres (quebrando buscas em 'C'). Adicionado um Array de `Stop Words` PT-BR exato. |
+| 2026-04-29 | Strict LLM Aesthetics | RAG System Prompt reescrito para obrigar esteticismo `Grok/ChatGPT` usando `\n\n` obrigatório para parágrafos + Emojis de tópicos. |

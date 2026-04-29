@@ -10,7 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - **Ollama RAG Engine (Fase 5)**: Integração com LLMs locais (ex: `qwen2.5-coder`). O backend `/api/ai/chat` intercepta mensagens e busca no FTS5 (`studium.db`) arquivos relevantes antes de responder, injetando os snippets direto no System Prompt.
 - **Chat UI (NDJSON Streaming)**: Criada a interface completa em `/ai` com suporte a streaming de texto em tempo real (máquina de escrever) parseando as respostas NDJSON do Ollama sem quebrar a UI.
-- **Renderização Markdown Dinâmica**: O Chat utiliza `react-markdown` e `remark-gfm` para estruturar códigos, listas e tabelas respondidos pela IA de forma visual e com highlighting.
+- **Renderização Markdown Dinâmica**: O Chat utiliza `react-markdown` e `remark-gfm` + `remark-breaks` para estruturar códigos, listas e tabelas. Adicionada forte diretriz estética Grok/ChatGPT ao System Prompt.
+- **Modal de Busca Híbrido (Fase 5.1)**: Criada a fundação do `<SearchModal>` ativado via `Ctrl+K` em qualquer lugar do app, prevenindo comportamento nativo do Chrome.
+- **Seletor de Modelos Dinâmico**: O Chat agora exibe um dropdown em tempo real buscando na API do Ollama (`/api/tags`) os modelos disponíveis na máquina para switch instantâneo.
 - **Toggle de RAG**: Botão dinâmico adicionado à UI do Chat para permitir que o usuário ligue/desligue a injeção de contexto de documentos no Ollama.
 - **Semantic File Engine v2.0**: Automatic classification of files (video, pdf, document, code, resource)
 - **Syllabus Parser**: Reads `sumario_rocketseat.txt` for chronological ordering of modules
@@ -25,6 +27,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **File Descriptor Leaks**: `cancel()` handler ensures file handles are always closed
 - **Hydration Mismatch**: Progress bar uses `suppressHydrationWarning` for dynamic state
 - **Firefox/Zen Browser Codec Crash**: Diagnosed `mGMP not initialized`. Confirmed as a Linux-level missing codec (`ffmpeg`) constraint. API optimized to `200 OK` continuous buffer or exact-byte streaming to mitigate, but hardware/OS decoders dictate the ultimate behavior.
+- **Monobloco Markdown (Tailwind Typography)**: Adicionado `@plugin "@tailwindcss/typography"` ausente no Tailwind v4. Isso ativou a renderização visual perfeita de fontes, quebras, listas e margens (`.prose`).
+- **FTS5 Stopwords Search**: Motor de busca refatorado. Substituído o corte bruto por tamanho de caractere (`> 2`) por uma lista cirúrgica de *Stop Words*, permitindo busca exata por módulos pequenos ("C", "Go", "UI").
+- **ESM pdf-parse Crash**: Corrigido crash fatal do servidor de dev Next.js convertendo o import da biblioteca `pdf-parse` para `require()` CJS nativo.
 
 ### Changed
 - **Video Player → Cinema Mode**: Fullscreen immersive player with glassmorphism floating controls
