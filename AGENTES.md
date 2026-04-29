@@ -356,3 +356,8 @@ Quando um novo agente assume o trabalho:
 | 2026-04-28 | Dual-remote (public + private) | Open-source + backup pessoal |
 | 2026-04-28 | RAG para AI context | IA responde baseado nos materiais do usuário |
 | 2026-04-28 | Habitica NÃO integrado | É online, vai contra o propósito offline |
+| 2026-04-29 | ReadableStream 256KB para vídeo | Buffer síncrono de 5MB travava o Node.js quando browser cancelava seek |
+| 2026-04-29 | Cinema Mode (player imersivo) | Controles flutuantes com auto-hide = zero distração durante estudo |
+| 2026-04-29 | Swallow AbortError global | Next.js 16 dev overlay captura erros inofensivos de vídeo e trava a UI |
+| 2026-04-29 | Semantic file grouping | PDFs agrupados como anexos de vídeos, .url parseados, .fig como download |
+| 2026-04-29 | Syllabus parser para Rocketseat | sumario_rocketseat.txt define ordem cronológica das aulas |
