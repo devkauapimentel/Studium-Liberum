@@ -16,6 +16,11 @@ import {
   CheckCircle2,
   Clock,
   Search,
+  ExternalLink,
+  Paperclip,
+  Palette,
+  LinkIcon,
+  Package,
 } from "lucide-react";
 import Sidebar from "@/components/layout/Sidebar";
 import type { Track, FileEntry } from "@/lib/types";
@@ -23,8 +28,9 @@ import type { Track, FileEntry } from "@/lib/types";
 interface TrackDetailClientProps {
   track: Track;
   files: FileEntry[];
-  counts: { videos: number; pdfs: number; docs: number; total: number };
+  counts: { videos: number; pdfs: number; docs: number; resources?: number; total: number };
   allTracks: Track[];
+  hasSyllabus?: boolean;
 }
 
 const STATUS_MAP = {
@@ -34,7 +40,7 @@ const STATUS_MAP = {
   upcoming: { label: "Pendente", icon: Clock, color: "var(--color-accent-amber)" },
 };
 
-export default function TrackDetailClient({ track, files, counts, allTracks }: TrackDetailClientProps) {
+export default function TrackDetailClient({ track, files, counts, allTracks, hasSyllabus }: TrackDetailClientProps) {
   const [expandedDirs, setExpandedDirs] = useState<Set<string>>(new Set());
 
   function toggleDir(path: string) {
@@ -58,6 +64,12 @@ export default function TrackDetailClient({ track, files, counts, allTracks }: T
           </Link>
           <span className="text-2xl">{track.icon}</span>
           <h2 className="text-lg font-semibold flex-1">{track.name}</h2>
+          {hasSyllabus && (
+            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider"
+              style={{ background: `${track.color}15`, color: track.color }}>
+              <Package size={12} /> Ordem Cronológica
+            </span>
+          )}
           <Link href="/search" className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
             style={{ background: "var(--color-bg-tertiary)" }}>
             <Search size={16} /><span>Buscar...</span>
@@ -146,18 +158,31 @@ function FileRow({ entry, depth, expandedDirs, onToggle }: {
 }) {
   const isExpanded = expandedDirs.has(entry.path);
   const isDir = entry.type === "directory";
-  const isPlayable = [".mp4", ".mkv", ".webm"].includes(entry.extension || "");
+  const isPlayable = [".mp4", ".mkv", ".webm", ".avi"].includes(entry.extension || "");
   const isPdf = entry.extension === ".pdf";
+  const isUrl = entry.extension === ".url";
+  const isFigma = entry.extension === ".fig" || entry.extension === ".figma";
+  const isResource = isUrl || isFigma;
+  const hasAttachments = entry.attachments && entry.attachments.length > 0;
 
   function getIcon() {
     if (isDir) return <FolderOpen size={16} className="text-[var(--color-accent-amber)]" />;
+    if (isFigma) return <Palette size={16} className="text-[var(--color-accent-purple)]" />;
+    if (isUrl) return <LinkIcon size={16} className="text-[var(--color-accent-cyan)]" />;
     switch (entry.extension) {
-      case ".mp4": case ".mkv": case ".webm": return <Video size={16} className="text-[var(--color-accent-purple)]" />;
+      case ".mp4": case ".mkv": case ".webm": case ".avi": return <Video size={16} className="text-[var(--color-accent-purple)]" />;
       case ".pdf": return <FileText size={16} className="text-[var(--color-accent-red)]" />;
       case ".md": case ".txt": return <BookOpen size={16} className="text-[var(--color-accent-blue)]" />;
       case ".c": case ".h": case ".js": case ".ts": case ".py": return <Code size={16} className="text-[var(--color-accent-green)]" />;
       default: return <File size={16} className="text-[var(--color-text-muted)]" />;
     }
+  }
+
+  // Clean display name: remove extension for .url files to show just the title
+  function getDisplayName() {
+    if (isUrl) return entry.name.replace(/\.url$/, "");
+    if (isFigma) return entry.name.replace(/\.(fig|figma)$/, "") + " (Figma)";
+    return entry.name;
   }
 
   function formatSize(bytes?: number) {
@@ -174,8 +199,10 @@ function FileRow({ entry, depth, expandedDirs, onToggle }: {
         onClick={() => isDir && onToggle(entry.path)}>
         {isDir ? <ChevronRight size={14} className={`transition-transform text-[var(--color-text-muted)] ${isExpanded ? "rotate-90" : ""}`} /> : <span className="w-3.5" />}
         {getIcon()}
-        <span className="flex-1 text-sm truncate">{entry.name}</span>
-        {entry.size ? <span className="text-xs text-[var(--color-text-muted)]">{formatSize(entry.size)}</span> : null}
+        <span className={`flex-1 text-sm truncate ${isResource ? "text-[var(--color-text-secondary)]" : ""}`}>{getDisplayName()}</span>
+        {entry.size && !isResource ? <span className="text-xs text-[var(--color-text-muted)]">{formatSize(entry.size)}</span> : null}
+
+        {/* Video: Play button */}
         {isPlayable && (
           <Link href={`/viewer/video?file=${encodeURIComponent(entry.path)}`}
             className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium hover:bg-[var(--color-accent-purple)] hover:text-white transition-colors"
@@ -184,6 +211,8 @@ function FileRow({ entry, depth, expandedDirs, onToggle }: {
             <Play size={12} /> Assistir
           </Link>
         )}
+
+        {/* PDF: Open button */}
         {isPdf && (
           <Link href={`/viewer/pdf?file=${encodeURIComponent(entry.path)}`}
             className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium hover:bg-[var(--color-accent-red)] hover:text-white transition-colors"
@@ -192,12 +221,69 @@ function FileRow({ entry, depth, expandedDirs, onToggle }: {
             <FileText size={12} /> Abrir
           </Link>
         )}
+
+        {/* .url: External link button */}
+        {isUrl && entry.url && (
+          <a href={entry.url} target="_blank" rel="noopener noreferrer"
+            className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium hover:bg-[var(--color-accent-cyan)] hover:text-white transition-colors"
+            style={{ color: "var(--color-accent-cyan)", background: "rgba(6,182,212,0.1)" }}
+            onClick={(e) => e.stopPropagation()}>
+            <ExternalLink size={12} /> Abrir Link
+          </a>
+        )}
+
+        {/* .fig: Download/Open button */}
+        {isFigma && (
+          <a href={`/api/serve?file=${encodeURIComponent(entry.path)}`} download={entry.name}
+            className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium hover:bg-[var(--color-accent-purple)] hover:text-white transition-colors"
+            style={{ color: "var(--color-accent-purple)", background: "rgba(139,92,246,0.1)" }}
+            onClick={(e) => e.stopPropagation()}>
+            <Palette size={12} /> Baixar Figma
+          </a>
+        )}
+
+        {/* Attachment indicator */}
+        {hasAttachments && (
+          <span className="flex items-center gap-1 text-[10px] text-[var(--color-accent-amber)]">
+            <Paperclip size={10} /> {entry.attachments!.length} anexo{entry.attachments!.length > 1 ? "s" : ""}
+          </span>
+        )}
       </div>
+
+      {/* Render PDF attachments inline below the video */}
+      {hasAttachments && (
+        <div style={{ paddingLeft: `${40 + depth * 24}px` }}
+          className="py-2 space-y-1">
+          <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-text-muted)] mb-1">
+            📎 Material de Apoio
+          </p>
+          {entry.attachments!.map((att) => (
+            <Link key={att.path} href={`/viewer/pdf?file=${encodeURIComponent(att.path)}`}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-md text-xs hover:bg-[var(--color-bg-hover)] transition-colors group"
+              style={{ background: "rgba(239,68,68,0.05)" }}>
+              <FileText size={12} className="text-[var(--color-accent-red)]" />
+              <span className="flex-1 text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] truncate">
+                {att.name}
+              </span>
+              <span className="text-[10px] text-[var(--color-text-muted)]">{formatSize(att.size)}</span>
+            </Link>
+          ))}
+        </div>
+      )}
+
+      {/* Directory children */}
       {isDir && isExpanded && entry.children?.map((child) => (
         <FileRow key={child.path} entry={child} depth={depth + 1} expandedDirs={expandedDirs} onToggle={onToggle} />
       ))}
     </>
   );
+}
+
+function formatSize(bytes?: number) {
+  if (!bytes) return "";
+  if (bytes < 1048576) return `${(bytes / 1024).toFixed(0)} KB`;
+  if (bytes < 1073741824) return `${(bytes / 1048576).toFixed(1)} MB`;
+  return `${(bytes / 1073741824).toFixed(1)} GB`;
 }
 
 function MiniStat({ icon, value, label, color }: { icon: React.ReactNode; value: number; label: string; color: string }) {

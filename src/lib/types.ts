@@ -51,6 +51,8 @@ export interface AppConfig {
   };
 }
 
+export type FileCategory = "video" | "pdf" | "document" | "code" | "resource" | "other";
+
 export interface FileEntry {
   name: string;
   path: string;
@@ -58,6 +60,18 @@ export interface FileEntry {
   extension?: string;
   size?: number;
   children?: FileEntry[];
+  /** Semantic classification of the file */
+  fileCategory?: FileCategory;
+  /** Parsed URL from .url shortcut files (Windows INI format) */
+  url?: string;
+  /** Related files grouped semantically (e.g., PDFs attached to a video) */
+  attachments?: FileEntry[];
+}
+
+export interface SyllabusEntry {
+  order: number;
+  title: string;
+  ids: string[];
 }
 
 export interface SearchResult {
