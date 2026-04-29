@@ -83,22 +83,9 @@ export default function SearchPage() {
         </button>
       </header>
 
-      <main className="flex-1 flex overflow-hidden">
-        {/* Left Side: Kiwix Offline Wikipedia */}
-        <div className="w-1/2 h-full border-r border-[var(--color-border)] flex flex-col">
-          <div className="p-4 border-b border-[var(--color-border)] bg-[var(--color-bg-secondary)] flex items-center gap-2">
-            <Server size={16} className="text-[var(--color-accent-amber)]" />
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">Kiwix Local Server</h3>
-          </div>
-          <iframe 
-            src="http://localhost:8080" 
-            className="w-full flex-1 bg-white" 
-            title="Kiwix Offline Wikipedia"
-          />
-        </div>
-
-        {/* Right Side: Local Files Search */}
-        <div className="w-1/2 h-full flex flex-col relative">
+      <main className="flex-1 flex overflow-hidden justify-center bg-[var(--color-bg-primary)]">
+        {/* Local Files Search */}
+        <div className="w-full max-w-4xl h-full flex flex-col relative border-x border-[var(--color-border)] shadow-2xl">
           <div className="p-8 pb-4 shrink-0 border-b border-[var(--color-border)] bg-[var(--color-bg-primary)] z-10">
             <div className="relative">
               <SearchIcon size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--color-text-muted)]" />
