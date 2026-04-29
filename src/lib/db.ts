@@ -41,10 +41,14 @@ export interface SearchResult {
 export function searchFiles(query: string): SearchResult[] {
   if (!query || query.trim().length === 0) return [];
   
-  // Use FTS5 match syntax. Replace spaces with AND for stricter matching, or just basic prefix match.
-  const safeQuery = query.replace(/"/g, '""');
-  // Simple FTS query: match every word as a prefix
-  const ftsQuery = safeQuery.split(/\s+/).map(word => `"${word}"*`).join(" AND ");
+  // Clean punctuation and make lowercase
+  const cleanQuery = query.replace(/[^\w\s\u00C0-\u00FF]/g, ' ').trim();
+  const words = cleanQuery.split(/\s+/).filter(w => w.length > 2); // Ignore very short words like 'o', 'a', 'da'
+  
+  if (words.length === 0) return [];
+
+  // Use FTS5 OR match so natural language questions can match documents with just some of the keywords
+  const ftsQuery = words.map(word => `"${word}"*`).join(" OR ");
 
   const stmt = db.prepare(`
     SELECT title, path, extension, trackId, snippet(search_index, 1, '<b>', '</b>', '...', 64) AS snippet

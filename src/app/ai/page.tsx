@@ -13,13 +13,25 @@ export default function AIPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [ollamaAvailable, setOllamaAvailable] = useState<boolean | null>(null);
+  const [availableModels, setAvailableModels] = useState<string[]>([]);
+  const [selectedModel, setSelectedModel] = useState<string>("qwen2.5-coder:7b");
   const [useRag, setUseRag] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Check Ollama on mount
+  // Check Ollama on mount and load models
   useEffect(() => {
     fetch("http://localhost:11434/api/tags")
-      .then(() => setOllamaAvailable(true))
+      .then((res) => res.json())
+      .then((data) => {
+        setOllamaAvailable(true);
+        if (data.models && data.models.length > 0) {
+          const models = data.models.map((m: any) => m.name);
+          setAvailableModels(models);
+          if (!models.includes("qwen2.5-coder:7b")) {
+            setSelectedModel(models[0]);
+          }
+        }
+      })
       .catch(() => setOllamaAvailable(false));
   }, []);
 
@@ -42,6 +54,7 @@ export default function AIPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           messages: [...messages, userMsg],
+          model: selectedModel,
           useRag,
         }),
       });
@@ -109,6 +122,16 @@ export default function AIPage() {
         </div>
         
         <div className="flex items-center gap-4">
+          {ollamaAvailable && availableModels.length > 0 && (
+            <select
+              value={selectedModel}
+              onChange={(e) => setSelectedModel(e.target.value)}
+              className="bg-[var(--color-bg-primary)] border border-[var(--color-border)] text-xs font-mono rounded-md px-2 py-1 text-[var(--color-text-secondary)] focus:outline-none cursor-pointer"
+            >
+              {availableModels.map(m => <option key={m} value={m}>{m}</option>)}
+            </select>
+          )}
+
           <button 
             onClick={() => setUseRag(!useRag)}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors border ${useRag ? 'bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)] border-[var(--color-accent-blue)]/30' : 'bg-transparent text-[var(--color-text-muted)] border-[var(--color-border)]'}`}
