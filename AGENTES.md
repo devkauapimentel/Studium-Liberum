@@ -85,6 +85,27 @@ AGENTE TERMINA →
 8. git tag vX.Y.Z && git push --tags origin && git push --tags private
 ```
 
+### 4. Princípios de Arquitetura e Código (Clean Code & Architecture)
+
+**Clean Code:**
+- **Nomes Descritivos:** Variáveis e funções devem revelar intenção (ex: `indexOfflineFiles()` e não `doIndex()`).
+- **Funções Pequenas:** Uma função faz apenas UMA coisa. Se tem "E" no nome, deve ser dividida.
+- **Sem Magic Numbers/Strings:** Use constantes documentadas em caixas altas (ex: `const MAX_CHUNK_SIZE = 5 * 1024 * 1024`).
+- **Comentários do Porquê:** O código explica o "como". Comentários existem para explicar o "porquê" (decisões de negócio/trade-offs).
+
+**Clean Architecture & Design Patterns:**
+- **Separação de Preocupações (SoC):** Componentes React (UI) não devem ter regras de negócio densas. A lógica pesada e queries de banco de dados (`better-sqlite3`) pertencem à camada de lib/serviço (`src/lib` e `src/app/api`).
+- **Dependency Inversion:** Dependa de abstrações/interfaces TypeScript (`SearchEngine`), e não da implementação direta, facilitando a troca de motores no futuro.
+- **Padrões Adotados:**
+  - *Singleton:* Para conexão com o SQLite (`src/lib/db.ts`), garantindo que não haja esgotamento de conexões.
+  - *Adapter:* Para formatar respostas de APIs externas (ex: Ollama) para a interface unificada do Studium.
+  - *Observer/Event Listener:* Usado no streaming de mídia para gerenciar o `AbortSignal` e evitar memory leaks.
+
+**Trade-offs do Studium Liberum:**
+- **Performance vs Abstração:** O foco é alta performance para atingir máxima velocidade e fluidez (zero stuttering), aproveitando todo o poder da máquina local (que é potente). Portanto, sacrificar "pureza arquitetural" (usando queries SQL diretas e Streams granulares) é o padrão adotado para garantir carregamento instantâneo.
+- **Offline-First vs Sincronização:** Toda feature deve funcionar 100% desconectada da internet. Arquivos locais e PDFs são "Fonte da Verdade", preterindo APIs externas sempre que possível.
+- **Minimalismo vs Over-engineering:** Mantenha o ecossistema brutalista e fácil de ler, evitando criar dezenas de pastas de abstração se não houver necessidade real.
+
 ---
 
 ## Contexto Completo do Owner (Kauã)
@@ -361,3 +382,5 @@ Quando um novo agente assume o trabalho:
 | 2026-04-29 | Swallow AbortError global | Next.js 16 dev overlay captura erros inofensivos de vídeo e trava a UI |
 | 2026-04-29 | Semantic file grouping | PDFs agrupados como anexos de vídeos, .url parseados, .fig como download |
 | 2026-04-29 | Syllabus parser para Rocketseat | sumario_rocketseat.txt define ordem cronológica das aulas |
+| 2026-04-29 | SQLite Single Source of Truth | Migração completa do localStorage para better-sqlite3 para persistência resiliente do progresso |
+| 2026-04-29 | Dynamic Track Progress | O Card da Trilha recalcula a barra de progresso baseado nos vídeos assistidos se não houver 'subjects' |

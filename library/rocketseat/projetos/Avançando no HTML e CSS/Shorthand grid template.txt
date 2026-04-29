@@ -1,0 +1,2 @@
+Nessa aula vamos ver como usar o grid-template que é um shorthand para
+grid-template-columns, grid-template-rows e grid-template-areas.

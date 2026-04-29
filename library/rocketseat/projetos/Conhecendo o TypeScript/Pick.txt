@@ -1,0 +1,15 @@
+Código da aula
+
+interface Book {
+    title: string
+    pages: number
+    author: string
+    description: string
+}
+
+interface BookPreview {
+    title: string
+}
+
+const book1: BookPreview = { title: "TypeScript"}
+const book2: Pick<Book, "title" | "pages"> = { title: "TypeScript", pages: 150}

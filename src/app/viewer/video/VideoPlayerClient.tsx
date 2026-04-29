@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
+import { useProgress } from "@/hooks/useProgress";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -14,14 +15,24 @@ import {
   Maximize,
   Gauge,
   CheckCircle2,
+  ChevronRight,
+  ChevronLeft,
 } from "lucide-react";
 
 const SPEEDS = [1, 1.25, 1.5, 1.75, 2];
+const VIDEO_EXTENSIONS = [".mp4", ".mkv", ".webm", ".avi"];
 
 export default function VideoPlayerPage() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const filePath = searchParams.get("file") || "";
   const fileName = filePath.split("/").pop() || "Video";
+  const siblingVideos = searchParams.get("siblings");
+  
+  const { progress, saveProgress: saveDBProgress } = useProgress(filePath);
+  
+  // Parse siblings list if provided, otherwise will be empty
+  const [videoList, setVideoList] = useState<string[]>([]);
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -33,10 +44,27 @@ export default function VideoPlayerPage() {
   const [completed, setCompleted] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [isIdle, setIsIdle] = useState(false);
+  const [showEndScreen, setShowEndScreen] = useState(false);
+  const [autoAdvanceCountdown, setAutoAdvanceCountdown] = useState(5);
+  const isDraggingRef = useRef(false);
   const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
   const savedTimeRef = useRef<number | null>(null);
+  const autoAdvanceRef = useRef<NodeJS.Timeout | null>(null);
 
   const [isMounted, setIsMounted] = useState(false);
+
+  // Reset state when navigating to a new video (React doesn't remount the component if only search params change)
+  useEffect(() => {
+    setCompleted(false);
+    setShowEndScreen(false);
+    setIsPlaying(false);
+    setDuration(0);
+    setCurrentTime(0);
+    savedTimeRef.current = null;
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+    }
+  }, [filePath]);
 
   useEffect(() => {
     setIsMounted(true);
@@ -51,19 +79,39 @@ export default function VideoPlayerPage() {
     return () => window.removeEventListener("unhandledrejection", handleUnhandledRejection);
   }, []);
 
-  // Load saved progress (DISABLED: User wants it to start from the beginning)
+  // Find sibling videos in same folder by scanning filenames
   useEffect(() => {
-    /*
-    const saved = localStorage.getItem(`progress:${filePath}`);
-    if (saved) {
+    if (siblingVideos) {
       try {
-        const data = JSON.parse(saved);
-        if (data.currentTime) savedTimeRef.current = data.currentTime;
-        if (data.completed) setCompleted(true);
-      } catch { }
+        setVideoList(JSON.parse(decodeURIComponent(siblingVideos)));
+      } catch { /* ignore */ }
     }
-    */
-  }, [filePath]);
+  }, [siblingVideos]);
+
+  const currentIndex = videoList.indexOf(filePath);
+  const nextVideoPath = currentIndex >= 0 && currentIndex < videoList.length - 1 ? videoList[currentIndex + 1] : null;
+  const prevVideoPath = currentIndex > 0 ? videoList[currentIndex - 1] : null;
+
+  function navigateToVideo(path: string) {
+    const params = new URLSearchParams();
+    params.set("file", path);
+    if (videoList.length > 0) params.set("siblings", encodeURIComponent(JSON.stringify(videoList)));
+    router.push(`/viewer/video?${params.toString()}`);
+  }
+
+  // Sync initial loaded state from DB
+  useEffect(() => {
+    if (progress) {
+      if (progress.status === "completed") {
+        setCompleted(true);
+      } else {
+        setCompleted(false);
+      }
+      if (progress.current_time && savedTimeRef.current === null) {
+        savedTimeRef.current = progress.current_time;
+      }
+    }
+  }, [progress]);
 
   // Apply saved progress after metadata loads
   const handleMetadataLoaded = useCallback(() => {
@@ -72,12 +120,6 @@ export default function VideoPlayerPage() {
     const dur = video.duration;
     if (dur && isFinite(dur) && dur > 0) {
       setDuration(dur);
-      /*
-      if (savedTimeRef.current !== null) {
-        video.currentTime = Math.min(savedTimeRef.current, dur - 1);
-        savedTimeRef.current = null;
-      }
-      */
     }
   }, []);
 
@@ -100,22 +142,23 @@ export default function VideoPlayerPage() {
   }, [duration]);
 
   // Save progress every 5 seconds
-  const saveProgress = useCallback(() => {
+  const handleSaveProgress = useCallback(() => {
     if (!videoRef.current) return;
     const dur = videoRef.current.duration;
     if (!dur || !isFinite(dur)) return;
-    localStorage.setItem(`progress:${filePath}`, JSON.stringify({
-      currentTime: videoRef.current.currentTime,
+    
+    saveDBProgress({
+      current_time: videoRef.current.currentTime,
       duration: dur,
-      completed,
-      lastWatched: new Date().toISOString(),
-    }));
-  }, [filePath, completed]);
+      status: completed ? "completed" : "in_progress",
+      timestamp: Date.now()
+    });
+  }, [completed, saveDBProgress]);
 
   useEffect(() => {
-    const interval = setInterval(saveProgress, 5000);
+    const interval = setInterval(handleSaveProgress, 5000);
     return () => clearInterval(interval);
-  }, [saveProgress]);
+  }, [handleSaveProgress]);
 
   // Idle Timer logic to hide controls
   const resetIdleTimer = useCallback(() => {
@@ -185,10 +228,41 @@ export default function VideoPlayerPage() {
   }
 
   function markComplete() {
-    setCompleted(true);
-    setShowConfetti(true);
-    saveProgress();
-    setTimeout(() => setShowConfetti(false), 2000);
+    const isNowComplete = !completed;
+    setCompleted(isNowComplete);
+    if (isNowComplete) {
+      setShowConfetti(true);
+      setTimeout(() => setShowConfetti(false), 2000);
+      
+      // Auto-advance if manually checked
+      if (nextVideoPath) {
+        setShowEndScreen(true);
+        setAutoAdvanceCountdown(5);
+        let count = 5;
+        autoAdvanceRef.current = setInterval(() => {
+          count--;
+          setAutoAdvanceCountdown(count);
+          if (count <= 0) {
+            if (autoAdvanceRef.current) clearInterval(autoAdvanceRef.current);
+            navigateToVideo(nextVideoPath);
+          }
+        }, 1000);
+      }
+    } else {
+      // If user unchecked, stop any auto-advance
+      if (autoAdvanceRef.current) clearInterval(autoAdvanceRef.current);
+      setShowEndScreen(false);
+    }
+    
+    if (videoRef.current) {
+      const dur = videoRef.current.duration;
+      saveDBProgress({
+        current_time: videoRef.current.currentTime,
+        duration: dur,
+        status: isNowComplete ? "completed" : "in_progress",
+        timestamp: Date.now()
+      });
+    }
   }
 
   function formatTime(s: number) {
@@ -260,13 +334,30 @@ export default function VideoPlayerPage() {
           const dur = videoRef.current?.duration;
           if (dur && isFinite(dur) && dur > 0) setDuration(dur);
         }}
-        onTimeUpdate={() => setCurrentTime(videoRef.current?.currentTime || 0)}
+        onTimeUpdate={() => {
+          if (!isDraggingRef.current) {
+            setCurrentTime(videoRef.current?.currentTime || 0);
+          }
+        }}
         onPlay={() => setIsPlaying(true)}
         onPause={() => { setIsPlaying(false); setIsIdle(false); }}
         onEnded={() => {
           setIsPlaying(false);
           setIsIdle(false);
           if (!completed) markComplete();
+          if (nextVideoPath) {
+            setShowEndScreen(true);
+            setAutoAdvanceCountdown(5);
+            let count = 5;
+            autoAdvanceRef.current = setInterval(() => {
+              count--;
+              setAutoAdvanceCountdown(count);
+              if (count <= 0) {
+                if (autoAdvanceRef.current) clearInterval(autoAdvanceRef.current);
+                navigateToVideo(nextVideoPath);
+              }
+            }, 1000);
+          }
         }}
         onClick={togglePlay}
       />
@@ -276,13 +367,36 @@ export default function VideoPlayerPage() {
         className={`absolute top-0 left-0 right-0 p-6 pt-8 flex items-start justify-between z-10 bg-gradient-to-b from-black/80 to-transparent transition-opacity duration-500 ${isIdle && isPlaying ? 'opacity-0' : 'opacity-100'}`}
       >
         <div className="flex items-center gap-4">
-          <Link href="/" className="p-3 rounded-full bg-black/40 hover:bg-black/80 backdrop-blur-md text-white transition-all hover:scale-105 active:scale-95">
+          <button onClick={() => {
+            const match = filePath.match(/\/library\/([^/]+)\//);
+            if (match && match[1]) {
+              const trackId = match[1];
+              const folderPath = filePath.substring(0, filePath.lastIndexOf("/"));
+              router.push(`/track/${trackId}?expand=${encodeURIComponent(folderPath)}`);
+            } else {
+              router.push("/");
+            }
+          }} className="p-3 rounded-full bg-black/40 hover:bg-black/80 backdrop-blur-md text-white transition-all hover:scale-105 active:scale-95" title="Voltar para a Trilha">
             <ArrowLeft size={20} />
-          </Link>
+          </button>
+          {prevVideoPath && (
+            <button onClick={() => navigateToVideo(prevVideoPath)}
+              className="p-2.5 rounded-full bg-black/40 hover:bg-black/80 backdrop-blur-md text-white transition-all hover:scale-105 active:scale-95" title="Vídeo anterior">
+              <ChevronLeft size={18} />
+            </button>
+          )}
           <div className="min-w-0 drop-shadow-md">
-            <h2 className="text-lg font-bold text-white truncate leading-tight">{fileName}</h2>
+            <h2 className="text-lg font-bold text-white truncate leading-tight">
+              {currentIndex >= 0 ? `${currentIndex + 1}/${videoList.length} · ` : ""}{fileName.replace(/\.[^/.]+$/, "").replace(/_/g, " ")}
+            </h2>
             <p className="text-sm text-gray-300/80 truncate font-medium">{filePath.split('/').slice(-3, -1).join(' / ')}</p>
           </div>
+          {nextVideoPath && (
+            <button onClick={() => navigateToVideo(nextVideoPath)}
+              className="p-2.5 rounded-full bg-black/40 hover:bg-black/80 backdrop-blur-md text-white transition-all hover:scale-105 active:scale-95" title="Próximo vídeo">
+              <ChevronRight size={18} />
+            </button>
+          )}
         </div>
         {!completed ? (
           <button onClick={markComplete}
@@ -291,11 +405,43 @@ export default function VideoPlayerPage() {
             <CheckCircle2 size={18} /> Marcar como Assistido
           </button>
         ) : (
-          <span className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-black/40 backdrop-blur-md text-[var(--color-accent-green)] border border-[var(--color-accent-green)] shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+          <button onClick={markComplete}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-black/40 backdrop-blur-md text-[var(--color-accent-green)] border border-[var(--color-accent-green)] shadow-[0_0_15px_rgba(16,185,129,0.2)] hover:bg-white/10 transition-colors">
             <CheckCircle2 size={18} /> Concluído
-          </span>
+          </button>
         )}
       </header>
+
+      {/* Next Video End Screen */}
+      {showEndScreen && nextVideoPath && (
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fade-in">
+          <div className="glass-card p-8 max-w-md text-center bg-black/60 backdrop-blur-xl border-white/10 shadow-2xl">
+            <CheckCircle2 size={48} className="mx-auto mb-4 text-[var(--color-accent-green)]" />
+            <h3 className="text-xl font-bold text-white mb-2">Vídeo concluído! 🎉</h3>
+            <p className="text-gray-300 mb-1">Próximo:</p>
+            <p className="text-lg font-semibold text-white mb-4 truncate">
+              {nextVideoPath.split("/").pop()?.replace(/\.[^/.]+$/, "").replace(/_/g, " ")}
+            </p>
+            <div className="flex items-center justify-center gap-4">
+              <button onClick={() => {
+                if (autoAdvanceRef.current) clearInterval(autoAdvanceRef.current);
+                setShowEndScreen(false);
+              }}
+                className="px-5 py-2.5 rounded-full text-sm font-medium bg-white/10 hover:bg-white/20 text-white transition-colors">
+                Ficar aqui
+              </button>
+              <button onClick={() => {
+                if (autoAdvanceRef.current) clearInterval(autoAdvanceRef.current);
+                navigateToVideo(nextVideoPath);
+              }}
+                className="px-5 py-2.5 rounded-full text-sm font-bold text-white transition-all hover:scale-105"
+                style={{ background: "var(--gradient-blue)" }}>
+                Próximo ({autoAdvanceCountdown}s) →
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Bottom Controls - Floating Glass Card */}
       <div 
@@ -304,25 +450,37 @@ export default function VideoPlayerPage() {
         <div className="glass-card p-4 flex flex-col gap-3 bg-black/40 backdrop-blur-xl border-white/10 shadow-2xl rounded-2xl">
           
           {/* Progress bar */}
-          <div className="relative group flex items-center h-4 cursor-pointer" onClick={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            const pos = (e.clientX - rect.left) / rect.width;
-            if (videoRef.current && duration) {
-              videoRef.current.currentTime = pos * duration;
-              setCurrentTime(pos * duration);
-            }
-          }}>
+          <div className="relative group flex items-center h-4 cursor-pointer">
+            <input
+              type="range"
+              min="0"
+              max={duration || 100}
+              step="0.1"
+              value={currentTime}
+              onMouseDown={() => { isDraggingRef.current = true; }}
+              onTouchStart={() => { isDraggingRef.current = true; }}
+              onChange={(e) => setCurrentTime(Number(e.target.value))}
+              onMouseUp={(e) => {
+                isDraggingRef.current = false;
+                if (videoRef.current) videoRef.current.currentTime = Number((e.target as HTMLInputElement).value);
+              }}
+              onTouchEnd={(e) => {
+                isDraggingRef.current = false;
+                if (videoRef.current) videoRef.current.currentTime = Number((e.target as HTMLInputElement).value);
+              }}
+              className="absolute inset-0 w-full opacity-0 cursor-pointer z-10"
+            />
             <div className="absolute left-0 right-0 h-1.5 bg-white/20 rounded-full overflow-hidden transition-all group-hover:h-2">
               <div 
                 suppressHydrationWarning
-                className="h-full bg-blue-500 relative transition-all duration-100"
+                className="h-full bg-blue-500 relative"
                 style={{ width: isMounted && duration > 0 ? `${(currentTime / duration) * 100}%` : '0%', background: "var(--gradient-blue)" }}
               />
             </div>
             {/* Playhead thumb (appears on hover) */}
             <div 
               suppressHydrationWarning
-              className="absolute w-3 h-3 bg-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-1/2"
+              className="absolute w-3 h-3 bg-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transform -translate-x-1/2"
               style={{ left: isMounted && duration > 0 ? `${(currentTime / duration) * 100}%` : '0%' }}
             />
           </div>

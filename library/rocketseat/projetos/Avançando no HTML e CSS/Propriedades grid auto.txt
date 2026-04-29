@@ -1,0 +1,2 @@
+Nessa aula vamos ver sobre as propriedades auto do grid que são:
+grid-auto-flow, grid-auto-rows e grid-auto-columns.

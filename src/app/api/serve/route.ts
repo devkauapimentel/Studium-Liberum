@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { statSync, existsSync } from "fs";
-import { open, readFile } from "fs/promises";
+import { statSync, existsSync, createReadStream } from "fs";
 import { extname, basename } from "path";
+import { Readable } from "stream";
 
 // ═══════════════════════════════════════
-// Studium Liberum — File Serve API v3.0
+// Studium Liberum — File Serve API v4.0
 // ═══════════════════════════════════════
 
 const MIME_MAP: Record<string, string> = {
@@ -28,16 +28,7 @@ const MIME_MAP: Record<string, string> = {
   ".url": "text/plain; charset=utf-8",
 };
 
-// Max chunk per range request: 5MB
-// Trade-off: larger = fewer HTTP requests = smoother playback
-//            smaller = faster initial load + more responsive seek
-const MAX_CHUNK_SIZE = 5 * 1024 * 1024;
-
-// Files under this size are read entirely into memory (Buffer)
-// Above this, use streaming (ReadableStream) to avoid RAM spikes
-const BUFFER_THRESHOLD = 50 * 1024 * 1024; // 50MB
-
-// GET /api/serve?file=/absolute/path — serve a file from library/
+// GET /api/serve?file=/absolute/path
 export async function GET(request: NextRequest) {
   const filePath = request.nextUrl.searchParams.get("file");
 
@@ -60,30 +51,19 @@ export async function GET(request: NextRequest) {
   const contentType = MIME_MAP[ext] || "application/octet-stream";
   const fileSize = stat.size;
 
+  // Desativando streaming de Range parcial para o Firefox/Zen Browser!
+  // Mas como você está no Chrome, o Chrome OBRIGA o Range Header para poder dar seek
+  // (avançar o vídeo sem voltar para o início).
   const range = request.headers.get("range");
-  const isMedia = contentType.startsWith("video/") || contentType.startsWith("audio/");
-
-  // Video/Audio WITH Range header → 206 Partial Content (seeking, progressive load)
-  if (isMedia && range) {
+  if (range && contentType.startsWith("video/")) {
     return serveRange(filePath, range, fileSize, contentType);
   }
 
-  // Video/Audio WITHOUT Range header → 200 with full Content-Length
-  // The browser needs this to know the total size and calculate duration
-  // Then it will send Range requests for actual byte fetching
-  if (isMedia && !range) {
-    return serveBuffer(filePath, fileSize, contentType);
-  }
-
-  // Everything else (PDFs, text, code)
-  return serveBuffer(filePath, fileSize, contentType);
+  return serveComplete(filePath, fileSize, contentType, request.signal);
 }
 
-/**
- * Serve a byte range using a ReadableStream.
- * We read in small chunks (256KB) so that if the browser aborts the request
- * (e.g. user seeks or changes speed), we can cancel immediately without hanging.
- */
+import { promises as fsPromises } from "fs";
+
 async function serveRange(
   filePath: string,
   range: string,
@@ -92,16 +72,16 @@ async function serveRange(
 ): Promise<Response> {
   const parts = range.replace(/bytes=/, "").split("-");
   const start = parseInt(parts[0], 10);
-
-  // Cap open-ended ranges to MAX_CHUNK_SIZE
-  const requestedEnd = parts[1] ? parseInt(parts[1], 10) : undefined;
-  const end = requestedEnd !== undefined
+  
+  // Limite seguro de 5MB por chunk na memória para evitar spike de RAM.
+  // Como retornamos um Buffer puro, o Next.js não usa Transfer-Encoding: chunked.
+  // Isso resolve perfeitamente o strict decoder do Firefox (Zen Browser).
+  const MAX_CHUNK = 5 * 1024 * 1024;
+  const requestedEnd = parts[1] ? parseInt(parts[1], 10) : NaN;
+  const end = !isNaN(requestedEnd)
     ? Math.min(requestedEnd, fileSize - 1)
-    : Math.min(start + MAX_CHUNK_SIZE - 1, fileSize - 1);
+    : Math.min(start + MAX_CHUNK - 1, fileSize - 1);
 
-  const chunkSize = end - start + 1;
-
-  // Validate
   if (start >= fileSize || start < 0 || end >= fileSize || start > end) {
     return new Response(null, {
       status: 416,
@@ -109,114 +89,59 @@ async function serveRange(
     });
   }
 
-  const fh = await open(filePath, "r");
-  const CHUNK = 256 * 1024; // 256KB streaming chunks for responsiveness
-  let position = start;
+  const chunkSize = end - start + 1;
+  const buffer = Buffer.alloc(chunkSize);
+  
+  let fh;
+  let bytesRead = 0;
+  try {
+    fh = await fsPromises.open(filePath, "r");
+    const result = await fh.read(buffer, 0, chunkSize, start);
+    bytesRead = result.bytesRead;
+  } finally {
+    if (fh) await fh.close();
+  }
 
-  const stream = new ReadableStream({
-    async pull(controller) {
-      try {
-        const remaining = (end + 1) - position;
-        const toRead = Math.min(CHUNK, remaining);
-        
-        if (toRead <= 0) {
-          controller.close();
-          await fh.close().catch(() => {});
-          return;
-        }
-        
-        const buffer = Buffer.alloc(toRead);
-        const result = await fh.read(buffer, 0, toRead, position);
-        
-        if (result.bytesRead === 0) {
-          controller.close();
-          await fh.close().catch(() => {});
-          return;
-        }
-        
-        controller.enqueue(new Uint8Array(buffer.buffer, buffer.byteOffset, result.bytesRead));
-        position += result.bytesRead;
-      } catch {
-        controller.error();
-        await fh.close().catch(() => {});
-      }
-    },
-    async cancel() {
-      // Browser aborted the request (e.g. user seeked)
-      await fh.close().catch(() => {});
-    },
-  });
+  // Se o disco leu menos bytes que o esperado, fatiamos o buffer 
+  // para NUNCA enviar Null Bytes (0x00) e corromper o MP4.
+  const finalBuffer = buffer.subarray(0, bytesRead);
+  const actualEnd = start + bytesRead - 1;
 
-  return new Response(stream, {
+  return new Response(finalBuffer, {
     status: 206,
     headers: {
-      "Content-Range": `bytes ${start}-${end}/${fileSize}`,
+      "Content-Range": `bytes ${start}-${actualEnd}/${fileSize}`,
       "Accept-Ranges": "bytes",
-      "Content-Length": String(chunkSize),
+      "Content-Length": String(bytesRead),
       "Content-Type": contentType,
-      "Cache-Control": "no-store", // Prevent aggressive browser caching from breaking range requests
+      "Cache-Control": "public, max-age=86400", 
+      "ETag": `W/"${fileSize}-${statSync(filePath).mtimeMs}"`
     },
   });
 }
 
-/**
- * Serve a complete file as a Buffer response.
- * For files under BUFFER_THRESHOLD, reads into memory.
- * For larger files, falls back to streaming.
- */
-async function serveBuffer(
+function serveComplete(
   filePath: string,
   fileSize: number,
   contentType: string,
-): Promise<Response> {
+  signal: AbortSignal,
+): Response {
   const headers: Record<string, string> = {
     "Content-Type": contentType,
     "Content-Length": String(fileSize),
-    "Accept-Ranges": "bytes",
   };
 
   if (contentType === "application/pdf") {
     headers["Content-Disposition"] = `inline; filename="${encodeURIComponent(basename(filePath))}"`;
   }
 
-  // Small files: read entirely into memory
-  if (fileSize <= BUFFER_THRESHOLD) {
-    const buffer = await readFile(filePath);
-    return new Response(buffer, { headers });
-  }
+  const nodeStream = createReadStream(filePath, { highWaterMark: 1024 * 1024 });
 
-  // Large files: stream to avoid RAM spike
-  const fh = await open(filePath, "r");
-  const CHUNK = 1024 * 1024; // 1MB streaming chunks
-  let position = 0;
-
-  const stream = new ReadableStream({
-    async pull(controller) {
-      try {
-        const toRead = Math.min(CHUNK, fileSize - position);
-        if (toRead <= 0) {
-          controller.close();
-          await fh.close();
-          return;
-        }
-        const buffer = Buffer.alloc(toRead);
-        const result = await fh.read(buffer, 0, toRead, position);
-        if (result.bytesRead === 0) {
-          controller.close();
-          await fh.close();
-          return;
-        }
-        controller.enqueue(new Uint8Array(buffer.buffer, buffer.byteOffset, result.bytesRead));
-        position += result.bytesRead;
-      } catch {
-        controller.close();
-        await fh.close().catch(() => {});
-      }
-    },
-    async cancel() {
-      await fh.close().catch(() => {});
-    },
+  signal.addEventListener("abort", () => {
+    if (!nodeStream.destroyed) nodeStream.destroy();
   });
 
-  return new Response(stream, { headers });
+  const webStream = Readable.toWeb(nodeStream) as ReadableStream;
+
+  return new Response(webStream, { headers });
 }

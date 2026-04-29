@@ -20,12 +20,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **AbortError Crash**: Browser seek/speed changes no longer trigger Next.js dev overlay
 - **File Descriptor Leaks**: `cancel()` handler ensures file handles are always closed
 - **Hydration Mismatch**: Progress bar uses `suppressHydrationWarning` for dynamic state
-- **Cache Corruption**: Added `Cache-Control: no-store` to prevent stale range request caching
+- **Firefox/Zen Browser Codec Crash**: Diagnosed `mGMP not initialized`. Confirmed as a Linux-level missing codec (`ffmpeg`) constraint. API optimized to `200 OK` continuous buffer or exact-byte streaming to mitigate, but hardware/OS decoders dictate the ultimate behavior.
 
 ### Changed
 - **Video Player → Cinema Mode**: Fullscreen immersive player with glassmorphism floating controls
 - **Auto-hide Controls**: Header and controls fade out after 3s of inactivity during playback
 - **Cursor Auto-hide**: Mouse cursor disappears during playback for distraction-free viewing
+- **Smart Back Button**: O botão de voltar no Video Player agora calcula a hierarquia do diretório atual e direciona o usuário para a página de trilha com a pasta e subpastas abertas (Auto-Expansão).
+
+### Database & State (Fase 3.5 & 4)
+- **SQLite Progress Migration**: Migração total do `localStorage` para `better-sqlite3`. A fonte única de verdade é `studium.db`.
+- **Global Track Progress**: Card das Trilhas no Dashboard recalculam porcentagem de conclusão usando base em Total de Vídeos / Assistidos caso não haja "Fases" mapeadas.
+- **Player State Leak Fix**: React agora reinicia corretamente estados como `Concluído` e `Tela de Fim` quando a prop `filePath` muda via Next.js router.
+- **Drag & Drop Progress Bar Fix**: Implementado Range Input invisível para evitar chamadas pesadas do React no evento de Arrastar (`onChange`). O tempo do vídeo só é setado no `onMouseUp` para performance nativa. CSS lag delay removido.
+- **Range Stream Fix**: Re-habilitado streaming de buffer por HTTP Range (`serveRange`) apenas caso solicitado no header, evitando reload do Chrome ao avançar o tempo (Seek).
 
 ## [0.1.0] - 2026-04-28
 

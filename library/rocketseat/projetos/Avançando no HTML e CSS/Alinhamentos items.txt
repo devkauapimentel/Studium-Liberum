@@ -1,0 +1,3 @@
+Nessa aula vamos ver como alinhar os itens dentro do grid usando as
+propriedades align-items e justify-items e também a propriedade
+place-items que é a junção de align-items e justify-items .

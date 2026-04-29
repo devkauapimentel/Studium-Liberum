@@ -1,0 +1,1 @@
+Nessa aula vamos ver sobre as propriedades: align-self , justify-self e place-self.

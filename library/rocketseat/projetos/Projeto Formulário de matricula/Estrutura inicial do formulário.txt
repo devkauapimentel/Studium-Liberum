@@ -1,0 +1,5 @@
+https://github.com/rocketseat-education/formulario-de-matricula/tree/daf160d6b1897fde3876b795b7010c8ee0252d30
+
+Nessa aula, vamos iniciar a criação de um formulário HTML. Vamos abordar
+elementos como form, fieldset, input, select, textarea entre outros. Veremos
+a importância dos atributos como id e name, além da relação entre o label e o input.

@@ -1,0 +1,4 @@
+Nessa aula vamos aprender sobre a propriedade para elementos filhos (items)
+grid-column, que é o shorthand para as propriedades grid-column-start e grid-
+column-end, e grid-row que é shorthand para as propriedades grid-row-start e
+grid-row-end.

@@ -44,7 +44,7 @@ export function readDirectory(dirPath: string, depth = 0, maxDepth = 4): FileEnt
 
   try {
     const entries = readdirSync(dirPath);
-    return entries
+    const validEntries = entries
       .filter((name) => !name.startsWith("."))
       .map((name) => {
         const fullPath = join(dirPath, name);
@@ -69,7 +69,6 @@ export function readDirectory(dirPath: string, depth = 0, maxDepth = 4): FileEnt
             fileCategory,
           };
 
-          // Auto-parse .url files to extract the link
           if (ext === ".url") {
             const url = parseUrlShortcut(fullPath);
             if (url) entry.url = url;
@@ -81,6 +80,10 @@ export function readDirectory(dirPath: string, depth = 0, maxDepth = 4): FileEnt
         }
       })
       .filter(Boolean) as FileEntry[];
+      
+    return validEntries.sort((a, b) => {
+      return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" });
+    });
   } catch {
     return [];
   }
@@ -140,11 +143,17 @@ export function groupSemanticFiles(entries: FileEntry[]): FileEntry[] {
 
   // Attach PDFs to videos if they share the same folder
   if (videos.length > 0 && pdfs.length > 0) {
-    // If there's exactly 1 video, attach all PDFs to it
-    if (videos.length === 1) {
+    // Uninter Architecture (Binder Global de PDF):
+    // Se existe apenas 1 PDF na pasta e múltiplas aulas, o Motor anexa o mesmo PDF a TODOS os cards de vídeo
+    // como material de base (Rota de Aprendizagem).
+    if (pdfs.length === 1) {
+      for (const video of videos) {
+        video.attachments = [pdfs[0]];
+      }
+    } else if (videos.length === 1) {
       videos[0] = { ...videos[0], attachments: pdfs };
     } else {
-      // Multiple videos: try name-matching, otherwise attach to first
+      // Multiple videos and multiple PDFs: try name-matching
       for (const video of videos) {
         const videoBase = basename(video.name, extname(video.name)).toLowerCase();
         const matched = pdfs.filter((pdf) => {
@@ -155,18 +164,23 @@ export function groupSemanticFiles(entries: FileEntry[]): FileEntry[] {
           video.attachments = matched;
         }
       }
-      // Unmatched PDFs remain standalone
     }
   }
+
+  // Identificação de [LIVRO] Base (Ancoragem Uninter)
+  const baseBooks = others.filter(o => o.name.includes("[LIVRO]") || o.name.includes("[BASE]"));
+  const remainingOthers = others.filter(o => !o.name.includes("[LIVRO]") && !o.name.includes("[BASE]"));
 
   // Return in order: directories → videos (with attachments) → resources → others
   // PDFs that were attached to videos are excluded from the flat list
   const attachedPaths = new Set(
     videos.flatMap((v) => (v.attachments || []).map((a) => a.path))
   );
-  const unattachedPdfs = pdfs.filter((p) => !attachedPaths.has(p.path));
+  const unattachedPdfs = pdfs.filter((p) => !attachedPaths.has(p.path) && !p.name.includes("[LIVRO]"));
 
-  return [...dirs, ...videos, ...unattachedPdfs, ...resources, ...others];
+  const livrosPdf = pdfs.filter(p => p.name.includes("[LIVRO]"));
+
+  return [...dirs, ...baseBooks, ...livrosPdf, ...videos, ...unattachedPdfs, ...resources, ...remainingOthers];
 }
 
 export function getRelativePath(fullPath: string, basePath: string): string {

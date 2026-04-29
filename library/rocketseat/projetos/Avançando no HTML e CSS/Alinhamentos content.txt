@@ -1,0 +1,4 @@
+Nessa aula vamos ver as propriedades align-content e justify-content que
+podem ser usadas para alinhar o conteúdo dentro do grid. Vamos ver também a
+propriedade place-content que é uma junção das propriedades
+align-content e justify-content.

@@ -1,0 +1,2 @@
+Nessa aula vamos ver sobre a propriedade grid-template-rows do CSS Grid que
+é usada em elementos container (pai).

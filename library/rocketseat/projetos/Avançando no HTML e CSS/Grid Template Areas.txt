@@ -1,0 +1,3 @@
+Nessa aula vamos ver sobre a propriedade grid-template-areas do CSS Grid que
+é usada em elementos container (pai) e a propriedade grid-area que é usada
+elementos filhos (items).

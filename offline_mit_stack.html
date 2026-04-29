@@ -1,0 +1,131 @@
+
+<style>
+  :root { --gap: 14px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--gap); padding: 1rem 0; }
+  .card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px; background: var(--color-background-secondary); }
+  .card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .card-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+  .item { font-size: 12px; color: var(--color-text-secondary); padding: 5px 0 5px 0; border-bottom: 0.5px solid var(--color-border-tertiary); line-height: 1.4; display: flex; justify-content: space-between; align-items: flex-start; gap: 6px; }
+  .item:last-child { border-bottom: none; }
+  .item-name { font-weight: 500; color: var(--color-text-primary); font-size: 11.5px; }
+  .item-desc { color: var(--color-text-tertiary); font-size: 10.5px; margin-top: 1px; }
+  .tag { font-size: 9.5px; padding: 1px 6px; border-radius: 20px; flex-shrink: 0; font-weight: 500; margin-top: 1px; }
+  .tag-free { background: #EAF3DE; color: #3B6D11; }
+  .tag-zeal { background: #E6F1FB; color: #185FA5; }
+  .tag-zim { background: #EEEDFE; color: #534AB7; }
+  .tag-dl { background: #FAEEDA; color: #854F0B; }
+  .tag-tool { background: #FAECE7; color: #993C1D; }
+  .tag-model { background: #FBEAF0; color: #993556; }
+  @media (prefers-color-scheme: dark) {
+    .tag-free { background: #27500A; color: #C0DD97; }
+    .tag-zeal { background: #0C447C; color: #B5D4F4; }
+    .tag-zim { background: #3C3489; color: #CECBF6; }
+    .tag-dl { background: #633806; color: #FAC775; }
+    .tag-tool { background: #4A1B0C; color: #F5C4B3; }
+    .tag-model { background: #4B1528; color: #F4C0D1; }
+  }
+  .section-label { font-size: 11px; font-weight: 500; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: .06em; margin: 14px 0 6px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; align-items: center; }
+  .legend span { font-size: 10.5px; color: var(--color-text-secondary); display: flex; align-items: center; gap: 4px; }
+  .size-bar { height: 3px; border-radius: 2px; margin-top: 4px; background: var(--color-border-secondary); }
+  .size-fill { height: 3px; border-radius: 2px; }
+</style>
+
+<div class="legend">
+  <span><span class="tag tag-free">free</span> download legal gratuito</span>
+  <span><span class="tag tag-zeal">zeal</span> docset Zeal</span>
+  <span><span class="tag tag-zim">zim</span> arquivo Kiwix</span>
+  <span><span class="tag tag-dl">baixar</span> requer busca</span>
+  <span><span class="tag tag-model">modelo</span> Ollama pull</span>
+</div>
+
+<div class="section-label">Pilar I — Livros Fundacionais (nível MIT)</div>
+<div class="grid">
+
+  <div class="card">
+    <div class="card-head"><div class="dot" style="background:#5DCAA5"></div><div class="card-title">Ciência da Computação</div></div>
+    <div class="item"><div><div class="item-name">SICP</div><div class="item-desc">Abelson & Sussman — o livro do MIT 6.001</div></div><span class="tag tag-free">free</span></div>
+    <div class="item"><div><div class="item-name">CSAPP</div><div class="item-desc">Computer Systems: A Programmer's Perspective</div></div><span class="tag tag-dl">baixar</span></div>
+    <div class="item"><div><div class="item-name">OSTEP</div><div class="item-desc">Operating Systems: Three Easy Pieces</div></div><span class="tag tag-free">free</span></div>
+    <div class="item"><div><div class="item-name">The Art of OSS Apps</div><div class="item-desc">Arquitetura de 25 sistemas reais</div></div><span class="tag tag-free">free</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="dot" style="background:#7F77DD"></div><div class="card-title">Arquitetura & Sistemas</div></div>
+    <div class="item"><div><div class="item-name">DDIA</div><div class="item-desc">Designing Data-Intensive Applications — Kleppmann</div></div><span class="tag tag-dl">baixar</span></div>
+    <div class="item"><div><div class="item-name">Clean Architecture</div><div class="item-desc">Robert C. Martin — SOLID, hexagonal</div></div><span class="tag tag-dl">baixar</span></div>
+    <div class="item"><div><div class="item-name">GoF Design Patterns</div><div class="item-desc">Gang of Four — os 23 padrões clássicos</div></div><span class="tag tag-dl">baixar</span></div>
+    <div class="item"><div><div class="item-name">Database Internals</div><div class="item-desc">Petrov — B-trees, LSM, consensus</div></div><span class="tag tag-dl">baixar</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="dot" style="background:#EF9F27"></div><div class="card-title">Papers Essenciais (PDF)</div></div>
+    <div class="item"><div><div class="item-name">Google MapReduce (2004)</div><div class="item-desc">Base de todo sistema distribuído</div></div><span class="tag tag-free">free</span></div>
+    <div class="item"><div><div class="item-name">Google Bigtable (2006)</div><div class="item-desc">NoSQL / wide-column genesis</div></div><span class="tag tag-free">free</span></div>
+    <div class="item"><div><div class="item-name">Dynamo (Amazon 2007)</div><div class="item-desc">CAP theorem na prática</div></div><span class="tag tag-free">free</span></div>
+    <div class="item"><div><div class="item-name">Raft Consensus (2014)</div><div class="item-desc">Alternativa legível ao Paxos</div></div><span class="tag tag-free">free</span></div>
+  </div>
+
+</div>
+
+<div class="section-label">Pilar II — Documentação (Zeal) + Fóruns (Kiwix)</div>
+<div class="grid">
+
+  <div class="card">
+    <div class="card-head"><div class="dot" style="background:#378ADD"></div><div class="card-title">Zeal — Docsets a adicionar</div></div>
+    <div class="item"><div><div class="item-name">PostgreSQL + Redis + SQLite</div><div class="item-desc">Banco de dados nível produção</div></div><span class="tag tag-zeal">zeal</span></div>
+    <div class="item"><div><div class="item-name">Docker + Kubernetes</div><div class="item-desc">Infra & orchestration</div></div><span class="tag tag-zeal">zeal</span></div>
+    <div class="item"><div><div class="item-name">Go + Rust</div><div class="item-desc">Linguagens de sistemas modernas</div></div><span class="tag tag-zeal">zeal</span></div>
+    <div class="item"><div><div class="item-name">Linux Man Pages</div><div class="item-desc">Referência POSIX completa</div></div><span class="tag tag-zeal">zeal</span></div>
+    <div class="item"><div><div class="item-name">Git + Node.js + Python 3</div><div class="item-desc">Stack de desenvolvimento diário</div></div><span class="tag tag-zeal">zeal</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="dot" style="background:#534AB7"></div><div class="card-title">Kiwix — ZIMs a baixar</div></div>
+    <div class="item"><div><div class="item-name">Stack Overflow (dump)</div><div class="item-desc">~90GB — fórum principal offline</div></div><span class="tag tag-zim">zim</span></div>
+    <div class="item"><div><div class="item-name">Wikipedia EN + PT</div><div class="item-desc">~22GB — referência enciclopédica</div></div><span class="tag tag-zim">zim</span></div>
+    <div class="item"><div><div class="item-name">ArchWiki</div><div class="item-desc">~1GB — Linux avançado</div></div><span class="tag tag-zim">zim</span></div>
+    <div class="item"><div><div class="item-name">Wikibooks (CS)</div><div class="item-desc">Algoritmos, estruturas de dados</div></div><span class="tag tag-zim">zim</span></div>
+    <div class="item"><div><div class="item-name">DevDocs</div><div class="item-desc">Docs unificadas de 100+ linguagens</div></div><span class="tag tag-zim">zim</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="dot" style="background:#D85A30"></div><div class="card-title">Código-fonte para estudar</div></div>
+    <div class="item"><div><div class="item-name">Redis (src/)</div><div class="item-desc">Event loop + estruturas de dados C</div></div><span class="tag tag-free">free</span></div>
+    <div class="item"><div><div class="item-name">SQLite (amalgamation)</div><div class="item-desc">B-tree + WAL em 1 arquivo C</div></div><span class="tag tag-free">free</span></div>
+    <div class="item"><div><div class="item-name">PostgreSQL (src/backend)</div><div class="item-desc">Planner, executor, storage</div></div><span class="tag tag-free">free</span></div>
+    <div class="item"><div><div class="item-name">Linux kernel (drivers/)</div><div class="item-desc">Arquitetura de SO real</div></div><span class="tag tag-free">free</span></div>
+  </div>
+
+</div>
+
+<div class="section-label">Pilar III — IA Local (Ollama) + Ferramentas</div>
+<div class="grid">
+
+  <div class="card">
+    <div class="card-head"><div class="dot" style="background:#D4537E"></div><div class="card-title">Ollama — modelos a puxar</div></div>
+    <div class="item"><div><div class="item-name">deepseek-coder-v2:16b</div><div class="item-desc">Melhor código offline — refactoring, review</div></div><span class="tag tag-model">modelo</span></div>
+    <div class="item"><div><div class="item-name">qwen2.5-coder:7b</div><div class="item-desc">Já tens — rápido, ótimo para snippets</div></div><span class="tag tag-model">modelo</span></div>
+    <div class="item"><div><div class="item-name">phi4:14b</div><div class="item-desc">Raciocínio lógico — arquitetura, trade-offs</div></div><span class="tag tag-model">modelo</span></div>
+    <div class="item"><div><div class="item-name">nomic-embed-text</div><div class="item-desc">Embeddings locais para RAG semântico</div></div><span class="tag tag-model">modelo</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="dot" style="background:#888780"></div><div class="card-title">Ferramentas de apoio</div></div>
+    <div class="item"><div><div class="item-name">Anki</div><div class="item-desc">Repetição espaçada — decks de CS/Algo</div></div><span class="tag tag-tool">tool</span></div>
+    <div class="item"><div><div class="item-name">Excalidraw (offline)</div><div class="item-desc">Diagramas de arquitetura à mão</div></div><span class="tag tag-tool">tool</span></div>
+    <div class="item"><div><div class="item-name">draw.io desktop</div><div class="item-desc">UML, C4 model, fluxogramas</div></div><span class="tag tag-tool">tool</span></div>
+    <div class="item"><div><div class="item-name">QEMU / VirtualBox</div><div class="item-desc">Labs de SO e rede isolados</div></div><span class="tag tag-tool">tool</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="dot" style="background:#639922"></div><div class="card-title">O que já tens (✓)</div></div>
+    <div class="item"><div><div class="item-name">Kiwix porta 8080</div><div class="item-desc">Base de fóruns offline</div></div></div>
+    <div class="item"><div><div class="item-name">Zeal (MDN, C/C++, React)</div><div class="item-desc">Docs básicas já cobertas</div></div></div>
+    <div class="item"><div><div class="item-name">SQLite FTS5</div><div class="item-desc">Motor de busca local pronto</div></div></div>
+    <div class="item"><div><div class="item-name">Ollama (Qwen, Llama3)</div><div class="item-desc">IA local funcional</div></div></div>
+    <div class="item"><div><div class="item-name">Obsidian + PDFs indexados</div><div class="item-desc">Base de conhecimento pessoal</div></div></div>
+  </div>
+
+</div>

@@ -1,0 +1,4 @@
+Nessa aula vamos aprender sobre a propriedade gap que adiciona espaço entre
+os elementos do grid.
+
+A propriedade gap é um shorthand para as propriedades row-gap e column-gap.

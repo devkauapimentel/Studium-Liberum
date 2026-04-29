@@ -7,22 +7,28 @@ import type { Track } from "@/lib/types";
 interface TrackCardProps {
   track: Track;
   fileCount: { videos: number; pdfs: number; docs: number; total: number };
+  watchedCount?: number;
   href: string;
 }
 
-export default function TrackCard({ track, fileCount, href }: TrackCardProps) {
+export default function TrackCard({ track, fileCount, watchedCount = 0, href }: TrackCardProps) {
   const activeSubjects = track.subjects?.filter((s) => s.status === "active").length ?? 0;
   const debtSubjects = track.subjects?.filter((s) => s.status === "debt").length ?? 0;
   const completedSubjects = track.subjects?.filter((s) => s.status === "completed").length ?? 0;
   const totalSubjects = track.subjects?.length ?? 0;
-  const progress = totalSubjects > 0 ? (completedSubjects / totalSubjects) * 100 : 0;
+  
+  // Calculate progress based on subjects (if any) or watched videos
+  const progress = totalSubjects > 0 
+    ? (completedSubjects / totalSubjects) * 100 
+    : fileCount.videos > 0 ? Math.min((watchedCount / fileCount.videos) * 100, 100) : 0;
 
   return (
     <Link
       href={href}
-      className="glass-card p-5 text-left w-full group block"
+      className="glass-card p-5 text-left w-full group block relative overflow-hidden"
       style={{
         borderTop: `3px solid ${track.color}`,
+        background: `linear-gradient(135deg, rgba(28,28,31,0.6) 0%, ${track.color}15 100%)`
       }}
     >
       {/* Header */}
@@ -83,16 +89,23 @@ export default function TrackCard({ track, fileCount, href }: TrackCardProps) {
       </div>
 
       {/* Progress bar */}
-      {totalSubjects > 0 && (
+      {(totalSubjects > 0 || fileCount.videos > 0) && (
         <div className="mt-4">
-          <div className="h-1.5 rounded-full bg-[var(--color-bg-tertiary)] overflow-hidden">
-            <div
-              className="h-full rounded-full transition-all duration-500"
-              style={{
-                width: `${progress}%`,
-                background: track.color,
-              }}
-            />
+          <div className="h-1.5 rounded-full bg-[var(--color-bg-tertiary)] overflow-hidden flex items-center justify-between">
+            <div className="flex-1 h-full bg-[var(--color-bg-tertiary)] rounded-full overflow-hidden relative">
+              <div
+                className="absolute left-0 top-0 h-full rounded-full transition-all duration-500"
+                style={{
+                  width: `${progress}%`,
+                  background: track.color,
+                }}
+              />
+            </div>
+            {totalSubjects === 0 && fileCount.videos > 0 && (
+              <span className="text-[10px] ml-3 font-mono text-[var(--color-text-muted)]">
+                {Math.round(progress)}%
+              </span>
+            )}
           </div>
         </div>
       )}

@@ -1,0 +1,7 @@
+Nessa aula vamos usar o 
+fronteditor.dev http://fronteditor.dev/
+para ver sobre algumas das propriedades fundamentais do CSS Grid.
+
+Fronteditor: https://www.fronteditor.dev/
+
+App usado para desenhos demonstrativos do grid: https://www.tldraw.com/

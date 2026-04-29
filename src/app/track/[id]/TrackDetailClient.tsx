@@ -21,6 +21,7 @@ import {
   Palette,
   LinkIcon,
   Package,
+  Terminal,
 } from "lucide-react";
 import Sidebar from "@/components/layout/Sidebar";
 import type { Track, FileEntry } from "@/lib/types";
@@ -41,7 +42,18 @@ const STATUS_MAP = {
 };
 
 export default function TrackDetailClient({ track, files, counts, allTracks, hasSyllabus }: TrackDetailClientProps) {
-  const [expandedDirs, setExpandedDirs] = useState<Set<string>>(new Set());
+  const searchParams = useSearchParams();
+  const [expandedDirs, setExpandedDirs] = useState<Set<string>>(() => {
+    const expandPath = searchParams.get("expand");
+    if (!expandPath) return new Set();
+    const set = new Set<string>();
+    let currentPath = expandPath;
+    while (currentPath.includes("/")) {
+      set.add(currentPath);
+      currentPath = currentPath.substring(0, currentPath.lastIndexOf("/"));
+    }
+    return set;
+  });
 
   function toggleDir(path: string) {
     setExpandedDirs((prev) => {
@@ -77,6 +89,36 @@ export default function TrackDetailClient({ track, files, counts, allTracks, has
           </Link>
         </header>
 
+        {track.id === "42-prep" ? (
+          <div className="p-8 space-y-8 animate-fade-in flex flex-col items-center justify-center" style={{ minHeight: "calc(100vh - var(--header-height))", background: "#0a0a0a" }}>
+            <div className="max-w-2xl w-full p-8 text-center border border-[#1a1a1a] bg-[#111] shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-[#00FF41]" />
+              
+              <div className="w-20 h-20 mx-auto rounded-none bg-black flex items-center justify-center mb-6 border border-[#333]">
+                <Terminal size={36} className="text-[#00FF41]" />
+              </div>
+              
+              <h2 className="text-3xl font-black uppercase tracking-tighter text-white mb-2">42 RIO PISCINA</h2>
+              <p className="font-mono text-xs text-[#666] tracking-[0.2em] mb-8 uppercase underline decoration-[#00FF41] underline-offset-4">
+                Offline Survival Tracker
+              </p>
+              
+              <p className="text-[#aaa] mb-8 max-w-lg mx-auto text-sm leading-relaxed">
+                O ambiente de treinamento da 42 roda de forma isolada para garantir a fidelidade da simulação brutalista. O app já foi restaurado e configurado para rodar na porta <code className="text-[#00FF41] bg-black px-1 py-0.5 font-mono">3001</code>.
+              </p>
+
+              <div className="bg-black p-4 font-mono text-[11px] text-left mb-8 border border-[#333] shadow-inner text-[#00FF41]">
+                <p className="mb-2"><span className="text-[#666]">$</span> status check</p>
+                <p className="text-[#888]">Verificando portal de acesso...</p>
+                <p className="text-white mt-1">✓ Link pronto: http://localhost:3001</p>
+              </div>
+
+              <div className="flex items-center justify-center gap-4 mt-8">
+                <LaunchButton />
+              </div>
+            </div>
+          </div>
+        ) : (
         <div className="p-8 space-y-8 animate-fade-in">
           {/* Stats */}
           <div className="grid grid-cols-4 gap-4">
@@ -141,20 +183,22 @@ export default function TrackDetailClient({ track, files, counts, allTracks, has
               </div>
             ) : (
               <div className="glass-card divide-y divide-[var(--color-border)]">
-                {files.map((entry) => (
-                  <FileRow key={entry.path} entry={entry} depth={0} expandedDirs={expandedDirs} onToggle={toggleDir} />
-                ))}
+                {files.map((entry) => {
+                  const siblings = entry.type === "directory" ? [] : files.filter(f => ["video"].includes(f.fileCategory || "")).map(f => f.path);
+                  return <FileRow key={entry.path} entry={entry} depth={0} expandedDirs={expandedDirs} onToggle={toggleDir} siblingVideos={siblings} />;
+                })}
               </div>
             )}
           </section>
         </div>
+        )}
       </main>
     </div>
   );
 }
 
-function FileRow({ entry, depth, expandedDirs, onToggle }: {
-  entry: FileEntry; depth: number; expandedDirs: Set<string>; onToggle: (p: string) => void;
+function FileRow({ entry, depth, expandedDirs, onToggle, siblingVideos }: {
+  entry: FileEntry; depth: number; expandedDirs: Set<string>; onToggle: (p: string) => void; siblingVideos?: string[];
 }) {
   const isExpanded = expandedDirs.has(entry.path);
   const isDir = entry.type === "directory";
@@ -204,7 +248,7 @@ function FileRow({ entry, depth, expandedDirs, onToggle }: {
 
         {/* Video: Play button */}
         {isPlayable && (
-          <Link href={`/viewer/video?file=${encodeURIComponent(entry.path)}`}
+          <Link href={`/viewer/video?file=${encodeURIComponent(entry.path)}${siblingVideos && siblingVideos.length > 0 ? `&siblings=${encodeURIComponent(JSON.stringify(siblingVideos))}` : ""}`}
             className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium hover:bg-[var(--color-accent-purple)] hover:text-white transition-colors"
             style={{ color: "var(--color-accent-purple)", background: "rgba(139,92,246,0.1)" }}
             onClick={(e) => e.stopPropagation()}>
@@ -230,6 +274,36 @@ function FileRow({ entry, depth, expandedDirs, onToggle }: {
             onClick={(e) => e.stopPropagation()}>
             <ExternalLink size={12} /> Abrir Link
           </a>
+        )}
+
+        {/* Markdown: Open button (Phase 4 preparation) */}
+        {(entry.extension === ".md" || entry.extension === ".txt") && (
+          <Link href={`/viewer/md?file=${encodeURIComponent(entry.path)}`}
+            className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium hover:bg-[var(--color-accent-blue)] hover:text-white transition-colors"
+            style={{ color: "var(--color-accent-blue)", background: "rgba(59,130,246,0.1)" }}
+            onClick={(e) => e.stopPropagation()}>
+            <BookOpen size={12} /> Ler
+          </Link>
+        )}
+
+        {/* Markdown: Open button (Phase 4 preparation) */}
+        {(entry.extension === ".md" || entry.extension === ".txt") && (
+          <Link href={`/viewer/md?file=${encodeURIComponent(entry.path)}`}
+            className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium hover:bg-[var(--color-accent-blue)] hover:text-white transition-colors"
+            style={{ color: "var(--color-accent-blue)", background: "rgba(59,130,246,0.1)" }}
+            onClick={(e) => e.stopPropagation()}>
+            <BookOpen size={12} /> Ler
+          </Link>
+        )}
+
+        {/* Markdown: Open button (Phase 4 preparation) */}
+        {(entry.extension === ".md" || entry.extension === ".txt") && (
+          <Link href={`/viewer/md?file=${encodeURIComponent(entry.path)}`}
+            className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium hover:bg-[var(--color-accent-blue)] hover:text-white transition-colors"
+            style={{ color: "var(--color-accent-blue)", background: "rgba(59,130,246,0.1)" }}
+            onClick={(e) => e.stopPropagation()}>
+            <BookOpen size={12} /> Ler
+          </Link>
         )}
 
         {/* .fig: Download/Open button */}
@@ -272,9 +346,12 @@ function FileRow({ entry, depth, expandedDirs, onToggle }: {
       )}
 
       {/* Directory children */}
-      {isDir && isExpanded && entry.children?.map((child) => (
-        <FileRow key={child.path} entry={child} depth={depth + 1} expandedDirs={expandedDirs} onToggle={onToggle} />
-      ))}
+      {isDir && isExpanded && entry.children && entry.children.length > 0 && (() => {
+        const childSiblings = entry.children.filter(c => ["video"].includes(c.fileCategory || "") || [".mp4", ".mkv", ".webm"].includes(c.extension || "")).map(c => c.path);
+        return entry.children.map((child) => (
+          <FileRow key={child.path} entry={child} depth={depth + 1} expandedDirs={expandedDirs} onToggle={onToggle} siblingVideos={childSiblings} />
+        ));
+      })()}
     </>
   );
 }
@@ -295,5 +372,37 @@ function MiniStat({ icon, value, label, color }: { icon: React.ReactNode; value:
         <p className="text-xs text-[var(--color-text-muted)]">{label}</p>
       </div>
     </div>
+  );
+}
+
+function LaunchButton() {
+  const [launching, setLaunching] = useState(false);
+
+  async function handleLaunch() {
+    setLaunching(true);
+    try {
+      await fetch("/api/launch", { method: "POST" });
+      window.open("http://localhost:3001", "_blank");
+    } catch (error) {
+      console.error(error);
+      alert("Falha ao iniciar o simulador.");
+    } finally {
+      setLaunching(false);
+    }
+  }
+
+  return (
+    <button 
+      onClick={handleLaunch}
+      disabled={launching}
+      className={`px-6 py-3 font-black uppercase tracking-wider transition-all flex items-center gap-2 ${
+        launching 
+          ? "bg-[#00FF41]/20 text-[#00FF41] cursor-wait" 
+          : "bg-[#00FF41] text-black hover:bg-white"
+      }`}
+    >
+      <Terminal size={18} className={launching ? "animate-pulse" : ""} /> 
+      {launching ? "BOOTING ENGINE..." : "INICIAR SIMULATOR"}
+    </button>
   );
 }

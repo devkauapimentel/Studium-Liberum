@@ -52,7 +52,7 @@ export default function Countdown({ label, targetDate }: CountdownProps) {
           {label}
         </span>
       </div>
-      <div className="flex gap-3">
+      <div className="flex gap-3" suppressHydrationWarning>
         <TimeUnit value={timeLeft.days} unit="dias" />
         <TimeUnit value={timeLeft.hours} unit="hrs" />
         <TimeUnit value={timeLeft.minutes} unit="min" />
@@ -68,6 +68,7 @@ function TimeUnit({ value, unit }: { value: number; unit: string }) {
       <span
         className="text-2xl font-bold font-mono tabular-nums"
         style={{ color: "var(--color-accent-green)" }}
+        suppressHydrationWarning
       >
         {String(value).padStart(2, "0")}
       </span>

@@ -1,0 +1,402 @@
+
+<style>
+*{box-sizing:border-box}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:1.5rem;border-bottom:0.5px solid var(--color-border-tertiary);padding-bottom:12px}
+.tab{padding:6px 14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);font-size:12px;font-weight:500;cursor:pointer;background:transparent;color:var(--color-text-secondary);transition:all .15s}
+.tab:hover{background:var(--color-background-secondary)}
+.tab.active{background:var(--color-background-info);color:var(--color-text-info);border-color:transparent}
+.panel{display:none}.panel.active{display:block}
+.item{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px 16px;margin-bottom:8px;cursor:pointer;transition:border-color .15s}
+.item:hover{border-color:var(--color-border-secondary)}
+.item.open{border-color:var(--color-border-primary)}
+.item-header{display:flex;align-items:center;gap:10px}
+.item-title{flex:1;font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.item-body{display:none;margin-top:12px;padding-top:12px;border-top:0.5px solid var(--color-border-tertiary)}
+.item.open .item-body{display:block}
+.item-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin:0 0 10px}
+.item-impl{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0 0 10px;border-left:2px solid var(--color-border-secondary)}
+.item-impl strong{color:var(--color-text-primary);font-weight:500}
+.badge{display:inline-flex;align-items:center;font-size:11px;font-weight:500;padding:2px 8px;border-radius:99px;flex-shrink:0}
+.b-high{background:var(--color-background-danger);color:var(--color-text-danger)}
+.b-med{background:var(--color-background-warning);color:var(--color-text-warning)}
+.b-low{background:var(--color-background-success);color:var(--color-text-success)}
+.b-info{background:var(--color-background-info);color:var(--color-text-info)}
+.b-gray{background:var(--color-background-secondary);color:var(--color-text-secondary)}
+.impact{display:flex;gap:6px;align-items:center;margin-bottom:8px}
+.impact-label{font-size:11px;color:var(--color-text-secondary)}
+.bar{height:4px;border-radius:2px;background:var(--color-border-tertiary);flex:1;position:relative;overflow:hidden}
+.bar-fill{height:100%;border-radius:2px;transition:width .3s}
+.bar-high{background:var(--color-text-danger)}
+.bar-med{background:var(--color-text-warning)}
+.bar-low{background:var(--color-text-success)}
+.chevron{font-size:10px;color:var(--color-text-secondary);transition:transform .2s;flex-shrink:0}
+.item.open .chevron{transform:rotate(90deg)}
+.ask-btn{font-size:12px;padding:5px 12px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:transparent;color:var(--color-text-secondary);cursor:pointer}
+.ask-btn:hover{background:var(--color-background-secondary)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:1.5rem}
+.stat{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;text-align:center}
+.stat-n{font-size:22px;font-weight:500;color:var(--color-text-primary)}
+.stat-l{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+</style>
+
+<h2 class="sr-only">Sugestões de melhorias e aprimoramentos para o Studium Liberum organizadas por categoria</h2>
+
+<div style="padding:1rem 0">
+
+<div class="stats-grid">
+  <div class="stat"><div class="stat-n" style="color:var(--color-text-danger)">7</div><div class="stat-l">Alto impacto</div></div>
+  <div class="stat"><div class="stat-n" style="color:var(--color-text-warning)">9</div><div class="stat-l">Médio impacto</div></div>
+  <div class="stat"><div class="stat-n" style="color:var(--color-text-success)">6</div><div class="stat-l">Polimento</div></div>
+  <div class="stat"><div class="stat-n" style="color:var(--color-text-info)">5</div><div class="stat-l">Categorias</div></div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('ux')">UX / Player</button>
+  <button class="tab" onclick="switchTab('arch')">Arquitetura</button>
+  <button class="tab" onclick="switchTab('ai')">IA & RAG</button>
+  <button class="tab" onclick="switchTab('tdah')">Anti-TDAH</button>
+  <button class="tab" onclick="switchTab('devx')">DX & Docs</button>
+</div>
+
+<div id="panel-ux" class="panel active">
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Thumbnail automática de vídeo no card da aula</span>
+      <span class="badge b-high">Alto</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Impacto visual</span><div class="bar"><div class="bar-fill bar-high" style="width:95%"></div></div></div>
+      <p class="item-desc">Cada card de aula deveria mostrar um frame do vídeo como preview. Hoje o card é texto puro — o aluno não consegue identificar visualmente o conteúdo antes de clicar. A diferença entre Coursera e um gerenciador de arquivos é exatamente essa.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Na indexação, rodar <code>ffmpeg -ss 5 -i video.mp4 -frames:v 1 -q:v 2 thumb.jpg</code> uma vez por arquivo. Salvar o path no SQLite. O card exibe <code>&lt;img src="/api/thumb?id=..."&gt;</code> com lazy loading. Geração em background, não bloqueia a UI.</div>
+      <button class="ask-btn" onclick="sendPrompt('Me mostra como gerar thumbnails automáticas de vídeo com ffmpeg no Node.js e servir via API no Next.js para o Studium Liberum')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Atalho de teclado global para retomar exatamente onde parou</span>
+      <span class="badge b-high">Alto</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Fricção eliminada</span><div class="bar"><div class="bar-fill bar-high" style="width:90%"></div></div></div>
+      <p class="item-desc">O usuário abre o browser, digita localhost:3000 e ainda precisa clicar no botão "Continuar". Esse clique é fricção. Uma URL permanente tipo <code>localhost:3000/now</code> que redireciona direto pro vídeo no segundo exato elimina qualquer decisão.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Rota <code>/now</code> que lê o registro mais recente do SQLite (última aula + timestamp). Redireciona para <code>/track/[id]/[aula]?t=SEGUNDOS</code>. O player inicia autoplay no segundo salvo. Adicionar esse link como atalho de browser ou script de inicialização.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como criar a rota /now no Next.js que redireciona automaticamente para a última aula no segundo exato onde parei, lendo do SQLite?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Picture-in-picture nativo + notas simultâneas</span>
+      <span class="badge b-high">Alto</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Produtividade</span><div class="bar"><div class="bar-fill bar-high" style="width:88%"></div></div></div>
+      <p class="item-desc">A API Picture-in-Picture do browser permite que o vídeo flutue sobre qualquer janela. O aluno poderia assistir a aula enquanto escreve código ou anotações no VS Code — sem sair do Studium e sem gerenciar duas janelas manualmente.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Botão PiP no player: <code>videoEl.requestPictureInPicture()</code>. Quando PiP ativa, mostrar na lateral direita um textarea de notas vinculado à aula atual (salva em SQLite com timestamp do vídeo). Ao fechar PiP, nota fica ancorada no segundo exato.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar Picture-in-Picture com API nativa do browser no player de vídeo do Next.js, com notas vinculadas ao timestamp?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Marcadores de tempo no vídeo (bookmarks)</span>
+      <span class="badge b-med">Médio</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Revisão de conteúdo</span><div class="bar"><div class="bar-fill bar-med" style="width:72%"></div></div></div>
+      <p class="item-desc">Durante a aula o aluno pressiona "M" e cria um marcador no segundo atual com uma nota rápida ("não entendi isso", "revisar amanhã"). A barra de progresso exibe os marcadores como pontos. Ao retornar, clicar no ponto salta direto para aquele momento.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Tabela SQLite: <code>bookmarks(lesson_id, timestamp_s, note, created_at)</code>. Atalho "M" no player abre um input inline de 2 segundos. Barra de progresso renderiza <code>&lt;div style="left: X%"&gt;</code> para cada marcador. Clique no marcador faz <code>video.currentTime = timestamp</code>.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar sistema de bookmarks/marcadores de tempo em vídeo no Cinema Mode do Studium Liberum com SQLite?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Velocidade de reprodução persistida por disciplina</span>
+      <span class="badge b-med">Médio</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Conforto de uso</span><div class="bar"><div class="bar-fill bar-med" style="width:65%"></div></div></div>
+      <p class="item-desc">Você assiste Rocketseat em 1.5x mas Uninter em 1.0x. Hoje toda vez que abre um vídeo precisa ajustar a velocidade. A preferência deveria ser salva por track — ao abrir qualquer aula da Rocketseat, já iniciar em 1.5x automaticamente.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Coluna <code>playback_speed</code> na tabela de tracks no SQLite. Ao mudar velocidade no player, salvar via <code>PATCH /api/tracks/[id]/preferences</code>. Player lê a preferência no mount e aplica <code>video.playbackRate</code>.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como persistir preferências de velocidade de vídeo por disciplina no SQLite e aplicar automaticamente ao abrir o player?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+</div>
+
+<div id="panel-arch" class="panel">
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Worker thread dedicado para indexação assíncrona</span>
+      <span class="badge b-high">Alto</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Performance</span><div class="bar"><div class="bar-fill bar-high" style="width:92%"></div></div></div>
+      <p class="item-desc">A indexação de PDFs e vídeos (thumbnails, FTS5) hoje bloqueia o thread principal do Node.js. Com 1134 aulas da Rocketseat, a primeira abertura do app vai congelar por minutos. Mover para um Worker Thread isola completamente o processamento pesado.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> <code>src/lib/indexer.worker.ts</code> usando a API <code>worker_threads</code> nativa do Node. O app principal dispara o worker no startup com <code>new Worker('./indexer.worker')</code>. Worker envia eventos de progresso via <code>parentPort.postMessage</code>. UI mostra barra de indexação discreta no header.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar um Worker Thread no Next.js 16 para indexação assíncrona de PDFs e vídeos sem bloquear o servidor?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Cache de metadados com invalidação inteligente</span>
+      <span class="badge b-high">Alto</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Velocidade de abertura</span><div class="bar"><div class="bar-fill bar-high" style="width:85%"></div></div></div>
+      <p class="item-desc">Toda vez que o aluno abre uma disciplina, o motor lê o sistema de arquivos novamente. Com 200+ arquivos por curso, isso cria latência visível. O SQLite já está disponível — usá-lo como cache de metadados com hash de mtime elimina re-scans desnecessários.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Ao escanear, salvar <code>file_path, mtime, size, metadata_json</code> no SQLite. Na próxima abertura, comparar o <code>mtime</code> atual com o cached. Se igual, usar cache. Se diferente, re-indexar apenas aquele arquivo. Tempo de abertura cai de ~800ms para ~20ms.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar cache de metadados de arquivos com invalidação por mtime no SQLite para o motor semântico do Studium Liberum?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Watcher de sistema de arquivos para hot-reload do conteúdo</span>
+      <span class="badge b-med">Médio</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Conforto de uso</span><div class="bar"><div class="bar-fill bar-med" style="width:70%"></div></div></div>
+      <p class="item-desc">Quando o Kauã baixa um novo vídeo ou PDF na pasta /library, precisa reiniciar o servidor para o app reconhecer. Com <code>fs.watch</code> ou chokidar, o backend detecta automaticamente arquivos novos e atualiza o índice em tempo real sem restart.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> <code>chokidar.watch('/library')</code> no startup do servidor. Eventos <code>add</code> e <code>unlink</code> disparam re-indexação incremental. O frontend recebe notificação via Server-Sent Events (<code>/api/sse</code>) e atualiza o feed sem reload de página.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como usar chokidar para monitorar a pasta /library em tempo real e notificar o frontend via SSE no Next.js 16?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Migrations versionadas para o SQLite</span>
+      <span class="badge b-med">Médio</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Durabilidade</span><div class="bar"><div class="bar-fill bar-med" style="width:68%"></div></div></div>
+      <p class="item-desc">Hoje o schema do SQLite é criado no startup sem versão. Quando uma feature nova adicionar uma coluna, o banco existente com progresso real do Kauã vai quebrar. Migrations versionadas garantem que o banco evolua sem perder dados.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Pasta <code>src/lib/migrations/</code> com arquivos <code>001_initial.sql</code>, <code>002_add_bookmarks.sql</code>, etc. No startup: <code>PRAGMA user_version</code> para saber a versão atual, rodar só as migrations pendentes. Sem dependência externa — pure better-sqlite3.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar um sistema de migrations versionadas para SQLite com better-sqlite3 no Next.js, sem bibliotecas externas?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Script de backup automático diário para repo privado</span>
+      <span class="badge b-low">Baixo</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Segurança dos dados</span><div class="bar"><div class="bar-fill bar-low" style="width:55%"></div></div></div>
+      <p class="item-desc">O progresso, bookmarks e notas ficam só no SQLite local. Se o HD morrer antes do backup manual, tudo se perde. Um cronjob que roda o backup-config.sh diariamente, incluindo o SQLite serializado, garante que o histórico de estudo nunca suma.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> <code>scripts/backup-daily.sh</code> usando <code>sqlite3 studium.db .dump &gt; backup_$(date).sql</code>. Cronjob via crontab: <code>0 2 * * * /path/backup-daily.sh</code>. Manter últimos 7 backups, deletar os mais antigos automaticamente. Push para o repo privado na branch <code>backups/</code>.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como criar um script de backup automático do SQLite com retenção de 7 dias e push automático para o repo privado do Studium Liberum?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+</div>
+
+<div id="panel-ai" class="panel">
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Geração automática de resumo da aula ao finalizar</span>
+      <span class="badge b-high">Alto</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Retenção de conhecimento</span><div class="bar"><div class="bar-fill bar-high" style="width:93%"></div></div></div>
+      <p class="item-desc">Quando o aluno marca uma aula como concluída, o sistema roda o PDF vinculado pelo nomic-embed + qwen para gerar automaticamente 3–5 bullet points de resumo. Eles aparecem na tela de vitória (confetti) como "o que você aprendeu hoje". Reforço de memória imediato.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Na API <code>POST /api/lessons/[id]/complete</code>, disparar em background: extrair texto do PDF, enviar para qwen2.5 com prompt de resumo em bullets. Salvar resultado em <code>lessons.summary_md</code>. Mostrar na tela de vitória e disponibilizar no Ghost Card após deleção do vídeo.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar geração automática de resumo de aula usando Ollama qwen2.5 ao concluir uma lição no Studium Liberum?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Perguntas socrátisas automáticas pré-aula (modo revisão)</span>
+      <span class="badge b-high">Alto</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Aprendizado ativo</span><div class="bar"><div class="bar-fill bar-high" style="width:88%"></div></div></div>
+      <p class="item-desc">Antes de abrir uma aula nova, o sistema mostra 2–3 perguntas sobre a aula anterior ("O que é hoisting em JavaScript?"). O aluno responde em texto livre, a IA avalia e só então libera a próxima aula. Isso ativa a memória antes de adicionar nova informação — técnica de retrieval practice comprovada.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Na aula N, ao concluir, gerar perguntas do resumo e salvar em SQLite. Na abertura da aula N+1, exibir o modal socrático antes do player. Resposta do aluno vai pro Ollama com o resumo como contexto. Score &gt; 60% libera. Score &lt; 60% sugere revisar, mas deixa prosseguir.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar perguntas socrátisas automáticas entre aulas usando Ollama e retrieval practice no Studium Liberum?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Busca semântica unificada (PDF + vídeo + notas)</span>
+      <span class="badge b-high">Alto</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Utilidade diária</span><div class="bar"><div class="bar-fill bar-high" style="width:85%"></div></div></div>
+      <p class="item-desc">Ctrl+K hoje busca só por nome de arquivo. Deveria buscar por conteúdo: "ponteiros em C" encontra o PDF da Uninter de SO, a aula 142 da Rocketseat e a nota que você criou semana passada. Uma busca única varre todo o conhecimento acumulado.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Pipeline: PDF → pdfplumber extrai texto → chunks de 512 tokens → nomic-embed-text gera embeddings → sqlite-vec ou FAISS salva vetores. Busca: query → embedding → cosine similarity top-5. Combinar com FTS5 (keyword) por rank fusion. Resultado mostra fonte, trecho e botão de abrir.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar busca semântica unificada com nomic-embed-text, sqlite-vec e FTS5 no Studium Liberum?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Detecção automática de dúvida por pausa no vídeo</span>
+      <span class="badge b-med">Médio</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Suporte contextual</span><div class="bar"><div class="bar-fill bar-med" style="width:72%"></div></div></div>
+      <p class="item-desc">Se o aluno pausar o vídeo mais de 3 vezes em menos de 2 minutos, o sistema detecta como "sinal de confusão". Aparece um toast discreto: "Está com dúvida nesse trecho? Ctrl+K para perguntar ao chat." Não é intrusivo, mas aparece exatamente quando precisaria.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Contador de pauses no estado do player. Se <code>pauseCount &gt;= 3 em 120s</code> E <code>timeRange &lt; 120s</code>, disparar toast. Toast desaparece sozinho em 8s. Ao clicar, abre Ctrl+K com contexto pré-preenchido: "Estou na aula X, minuto Y, com dúvida sobre...".</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar detecção de padrão de pausa no player de vídeo do Studium Liberum para sugerir ajuda contextual da IA?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+</div>
+
+<div id="panel-tdah" class="panel">
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Modo "Sprint 25min" com bloqueio de navegação</span>
+      <span class="badge b-high">Alto</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Foco real</span><div class="bar"><div class="bar-fill bar-high" style="width:95%"></div></div></div>
+      <p class="item-desc">Um botão "Iniciar Sprint" esconde o dashboard, desativa Ctrl+K e bloqueia qualquer navegação fora do player pelo tempo configurado (25min por padrão). O único botão visível é "Pausar Emergência" que exige confirmar 2 vezes. Quando o timer zera, aparece a tela de vitória com estatísticas do sprint.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Context global <code>SprintContext</code> com estado <code>isActive</code>. Durante sprint ativo, os componentes de navegação retornam null. O router intercepta mudanças de rota com <code>useRouter().beforePopState</code> e redireciona de volta. Timer no header com contagem regressiva visível.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar um modo Sprint com bloqueio de navegação no Next.js usando Context API e interceptação de rota para o Studium Liberum?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Streak visual diário com calendário de calor (heatmap)</span>
+      <span class="badge b-high">Alto</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Motivação contínua</span><div class="bar"><div class="bar-fill bar-high" style="width:90%"></div></div></div>
+      <p class="item-desc">Um GitHub-style heatmap no dashboard mostrando os dias que você estudou nos últimos 3 meses. Cada célula é colorida pela quantidade de minutos de estudo. Quebrar um streak de 7 dias causa mais dor que qualquer notificação — isso é dopamina real sustentada.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Tabela SQLite <code>study_sessions(date, minutes, lessons_completed)</code>. Atualizada ao completar aulas e ao pausar vídeos. Dashboard renderiza um grid 7×13 de divs coloridos por intensidade usando as CSS vars de sucesso/warning. Tooltip mostra o resumo do dia ao hover.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar um heatmap de estudo estilo GitHub no dashboard do Studium Liberum com SQLite e React?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Meta diária configurável com progresso em tempo real</span>
+      <span class="badge b-med">Médio</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Direção clara</span><div class="bar"><div class="bar-fill bar-med" style="width:75%"></div></div></div>
+      <p class="item-desc">No topo do dashboard: "Meta de hoje: 3 aulas | 1 concluída". A barra de progresso avança em tempo real conforme o aluno assiste. Quando bate a meta, uma animação de vitória menor (sem confetti excessivo) marca o checkpoint. Fornece ao cérebro TDAH uma linha de chegada clara e próxima.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Config por track em <code>data/config.json</code>: <code>"daily_goal": 3</code>. Componente <code>&lt;DailyGoal&gt;</code> lê o progresso do dia no SQLite e atualiza via SWR com revalidate a cada 30s. Ao atingir meta, escreve <code>goals_met(date, track_id)</code> e dispara a animação.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar sistema de metas diárias por track com progresso em tempo real no dashboard do Studium Liberum?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Check-in socrático pré-estudo (Protocolo MIT)</span>
+      <span class="badge b-med">Médio</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Ancoragem cognitiva</span><div class="bar"><div class="bar-fill bar-med" style="width:68%"></div></div></div>
+      <p class="item-desc">A Fase 8 do Master Plan descreve isso mas sem implementação. Ao abrir o app, antes de mostrar o dashboard, exibir 3 perguntas rápidas: "Humor atual (1–5)", "Distração principal hoje", "Uma coisa que vai focar". Dura 20 segundos. Serve como âncora cognitiva que desativa o modo piloto automático.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Modal de check-in no primeiro acesso do dia (comparar <code>last_checkin_date</code> no SQLite com today). 3 inputs simples. Respostas salvas em <code>daily_checkins</code>. Após 30 dias, o histórico alimenta o Ollama para detectar padrões ("você estuda pior às segundas após humor &lt; 3").</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar o check-in socrático diário do Protocolo MIT no Studium Liberum com análise de padrões via Ollama?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+</div>
+
+<div id="panel-devx" class="panel">
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Numeração unificada de fases entre todos os documentos</span>
+      <span class="badge b-high">Alto</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Clareza para agentes IA</span><div class="bar"><div class="bar-fill bar-high" style="width:88%"></div></div></div>
+      <p class="item-desc">AGENTES.md, Master Plan e Status Report usam numerações incompatíveis. Um agente novo lendo os três documentos não sabe em qual fase está o projeto. Isso desperdiça tokens e cria risco de regressão (re-implementar algo que já existe). A numeração deve ser idêntica em todos os documentos.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Definir fases 1–10 no AGENTES.md como fonte de verdade. Cada fase tem: número, nome, status (Concluído / Em progresso / Pendente / Bloqueado) e uma linha de descrição. Status Report e Master Plan referenciam os números, não redefinem. CHANGELOG usa os mesmos números nos commits.</div>
+      <button class="ask-btn" onclick="sendPrompt('Me ajuda a criar um mapa unificado de fases para o AGENTES.md do Studium Liberum que seja fonte de verdade para todos os documentos do projeto?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Health check endpoint para monitorar serviços locais</span>
+      <span class="badge b-med">Médio</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Diagnóstico rápido</span><div class="bar"><div class="bar-fill bar-med" style="width:70%"></div></div></div>
+      <p class="item-desc">Quando algo quebra, o aluno não sabe se é o Next.js, o Ollama, o SQLite ou o Kiwix. Um endpoint <code>/api/health</code> retorna o status de cada serviço em JSON. Um indicador no corner do dashboard mostra verde/amarelo/vermelho. Um clique revela qual serviço caiu e o erro exato.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> <code>GET /api/health</code> testa: SQLite (query simples), Ollama (<code>GET :11434/api/tags</code> com timeout 2s), Kiwix (<code>GET :8080</code> com timeout 2s), espaço em disco via <code>df</code>. Responde em &lt;500ms. Badge no layout global: verde se tudo ok, vermelho se qualquer serviço falhou.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como criar um endpoint /api/health no Next.js 16 que verifica SQLite, Ollama, Kiwix e espaço em disco com timeout de 2s cada?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Testes E2E para os fluxos críticos com Playwright</span>
+      <span class="badge b-med">Médio</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Regressão zero</span><div class="bar"><div class="bar-fill bar-med" style="width:65%"></div></div></div>
+      <p class="item-desc">O projeto não tem nenhum teste. Quando uma feature nova quebra o seek de vídeo ou o progresso, só se descobre manualmente. 3 testes E2E cobrem os fluxos críticos: abrir vídeo → seek → progresso salvo → continuar de onde parou. Custo baixo, prevenção de regressões alta.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> Playwright com um arquivo de fixtures que simula a pasta /library com 2 vídeos de teste (10s cada). Teste 1: play + seek + fechar + reabrir verifica timestamp. Teste 2: marcar aula concluída → próxima aparece. Teste 3: busca Ctrl+K retorna resultado. Rodar com <code>npm run test:e2e</code>.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como configurar Playwright para testes E2E dos fluxos críticos do Studium Liberum: seek de vídeo, progresso e busca?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggle(this)">
+    <div class="item-header">
+      <span class="chevron">▶</span>
+      <span class="item-title">Logs estruturados com níveis e rotação automática</span>
+      <span class="badge b-low">Baixo</span>
+    </div>
+    <div class="item-body">
+      <div class="impact"><span class="impact-label">Depuração eficiente</span><div class="bar"><div class="bar-fill bar-low" style="width:52%"></div></div></div>
+      <p class="item-desc">Hoje os erros aparecem só no terminal do Next.js e somem quando o servidor reinicia. Um logger estruturado (nível + timestamp + contexto) salvo em arquivo permite investigar bugs que ocorreram durante uma sessão de estudo sem reproduzir manualmente.</p>
+      <div class="item-impl"><strong>Como implementar:</strong> <code>pino</code> (zero-dependency, extremamente rápido). <code>src/lib/logger.ts</code> exporta uma instância singleton. Logs em <code>data/logs/app-YYYY-MM-DD.jsonl</code>. Rotação: manter últimos 7 dias. Nível configurável via env: <code>LOG_LEVEL=debug npm run dev</code>. Erros de vídeo com requestId para rastrear seeks específicos.</div>
+      <button class="ask-btn" onclick="sendPrompt('Como implementar logging estruturado com pino no Next.js 16 com rotação diária de logs para o Studium Liberum?')">Como implementar ↗</button>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<script>
+function switchTab(id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('panel-' + id).classList.add('active');
+}
+function toggle(el) {
+  el.classList.toggle('open');
+}
+</script>

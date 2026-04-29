@@ -1,0 +1,11 @@
+Código da aula
+
+interface User {
+    id: number,
+    name: string,
+    email: string
+}
+
+const newUser: User = { id: 1, name: "Rodrigo", email: "rodrigo@email.com"}
+
+const updatedUser: Partial<User> = { name: "Rodrigo Gonçalves" }
