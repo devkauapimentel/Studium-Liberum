@@ -42,8 +42,12 @@ export function searchFiles(query: string): SearchResult[] {
   if (!query || query.trim().length === 0) return [];
   
   // Clean punctuation and make lowercase
-  const cleanQuery = query.replace(/[^\w\s\u00C0-\u00FF]/g, ' ').trim();
-  const words = cleanQuery.split(/\s+/).filter(w => w.length > 2); // Ignore very short words like 'o', 'a', 'da'
+  const cleanQuery = query.replace(/[^\w\s\u00C0-\u00FF]/g, ' ').trim().toLowerCase();
+  
+  // Use a stop words list instead of length filter, so we don't accidentally filter out important short words like "C", "Go", "UI"
+  const stopwords = new Set(['o', 'a', 'os', 'as', 'de', 'da', 'do', 'das', 'dos', 'em', 'no', 'na', 'nos', 'nas', 'um', 'uma', 'uns', 'umas', 'por', 'para', 'com', 'que', 'como', 'qual', 'é', 'são']);
+  
+  const words = cleanQuery.split(/\s+/).filter(w => w.length > 0 && !stopwords.has(w));
   
   if (words.length === 0) return [];
 

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { readdirSync, statSync, readFileSync, existsSync } from "fs";
 import { join, extname } from "path";
 import { clearIndex, addFileToIndex } from "@/lib/db";
-import pdfParse from "pdf-parse";
+const pdfParse = require("pdf-parse");
 
 function chunkText(text: string, maxLen = 1000): string[] {
   const chunks = [];
