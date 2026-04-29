@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import Sidebar from "@/components/layout/Sidebar";
 import type { Track, FileEntry } from "@/lib/types";
+import { useSearchParams } from "next/navigation";
 
 interface TrackDetailClientProps {
   track: Track;
