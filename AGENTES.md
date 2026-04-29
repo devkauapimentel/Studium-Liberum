@@ -46,9 +46,15 @@ NOVO AGENTE CHEGA →
 AGENTE TERMINA →
   1. Atualiza CHANGELOG.md (o que fez)
   2. Atualiza AGENTES.md → "Histórico de Decisões" (decisões tomadas)
-  3. Commita com Conventional Commits
-  4. `bash scripts/push-all.sh` (push ambos remotes)
-  5. ENTREGA
+  3. Roda o comando: `git add -A && git commit -m "feat/fix: descrição" && bash scripts/push-all.sh`
+  4. ENTREGA
+
+### ⚠️ Gatilho de Automação (Trigger Word)
+Se o usuário citar `@AGENTES.md` ou pedir para "atualizar documentação/commit", você, como Inteligência Artificial, **DEVE EXECUTAR IMEDIATAMENTE e SEM PERGUNTAR** a rotina de encerramento acima:
+1. Escreva a alteração no `CHANGELOG.md`.
+2. Adicione ao "Histórico de Decisões" no `AGENTES.md` (se houve mudança de arquitetura).
+3. Use a tool de terminal para rodar `git add -A && git commit -m "..." && bash scripts/push-all.sh`.
+Isso garante que o contexto do projeto nunca seja perdido e o versionamento seja automatizado.
 ```
 
 ---
@@ -384,3 +390,5 @@ Quando um novo agente assume o trabalho:
 | 2026-04-29 | Syllabus parser para Rocketseat | sumario_rocketseat.txt define ordem cronológica das aulas |
 | 2026-04-29 | SQLite Single Source of Truth | Migração completa do localStorage para better-sqlite3 para persistência resiliente do progresso |
 | 2026-04-29 | Dynamic Track Progress | O Card da Trilha recalcula a barra de progresso baseado nos vídeos assistidos se não houver 'subjects' |
+| 2026-04-29 | Motor RAG Integrado (Fase 5) | API Chat injeta contexto do FTS5 local via SQLite dinamicamente para o Ollama |
+| 2026-04-29 | Auto-Versionamento de Agentes | Padronizado que a citação de @AGENTES.md forçará a IA a atualizar CHANGELOG e executar o push-all.sh automaticamente |

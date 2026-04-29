@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Ollama RAG Engine (Fase 5)**: Integração com LLMs locais (ex: `qwen2.5-coder`). O backend `/api/ai/chat` intercepta mensagens e busca no FTS5 (`studium.db`) arquivos relevantes antes de responder, injetando os snippets direto no System Prompt.
+- **Chat UI (NDJSON Streaming)**: Criada a interface completa em `/ai` com suporte a streaming de texto em tempo real (máquina de escrever) parseando as respostas NDJSON do Ollama sem quebrar a UI.
+- **Renderização Markdown Dinâmica**: O Chat utiliza `react-markdown` e `remark-gfm` para estruturar códigos, listas e tabelas respondidos pela IA de forma visual e com highlighting.
+- **Toggle de RAG**: Botão dinâmico adicionado à UI do Chat para permitir que o usuário ligue/desligue a injeção de contexto de documentos no Ollama.
 - **Semantic File Engine v2.0**: Automatic classification of files (video, pdf, document, code, resource)
 - **Syllabus Parser**: Reads `sumario_rocketseat.txt` for chronological ordering of modules
 - **.url Shortcut Support**: Parses Windows `.url` files and renders clickable external links

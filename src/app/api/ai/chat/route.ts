@@ -1,19 +1,47 @@
 import { NextRequest } from "next/server";
 import { getConfig } from "@/lib/config";
+import { searchFiles } from "@/lib/db";
 
 // POST /api/ai/chat — send a message to Ollama and stream the response
 export async function POST(request: NextRequest) {
   const config = getConfig();
-  const { message, model } = await request.json();
+  let body;
+  try {
+    body = await request.json();
+  } catch (e) {
+    return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400 });
+  }
 
-  if (!message) {
-    return new Response(JSON.stringify({ error: "Message is required" }), {
+  const { messages, model, useRag = true } = body;
+
+  if (!messages || !Array.isArray(messages) || messages.length === 0) {
+    return new Response(JSON.stringify({ error: "Messages array is required" }), {
       status: 400,
       headers: { "Content-Type": "application/json" },
     });
   }
 
   const ollamaModel = model || config.features.ollama.defaultModel || "qwen2.5-coder:7b";
+  const lastMessage = messages[messages.length - 1].content;
+
+  let systemPrompt = "Você é o assistente de IA do Studium Liberum (Universidade Offline). Você é direto, brutalista e focado em alta performance. Se a pergunta for técnica, forneça código e respostas cirúrgicas.";
+
+  if (useRag) {
+    try {
+      const results = searchFiles(lastMessage);
+      if (results && results.length > 0) {
+        const topResults = results.slice(0, 5); // Take top 5 snippets
+        let contextText = "CONTEXTO EXTRAÍDO DA BASE DE ESTUDOS LOCAL DO USUÁRIO:\n\n";
+        topResults.forEach((res, index) => {
+          const cleanSnippet = res.snippet ? res.snippet.replace(/<[^>]+>/g, "") : "";
+          contextText += `[Documento ${index + 1}: ${res.title} | Trilha: ${res.trackId}]\n${cleanSnippet}\n\n`;
+        });
+        systemPrompt += `\n\n${contextText}\n\nResponda o usuário com base nos documentos acima caso aplicável. Cite os documentos se os usar. Se o contexto não ajudar, use seu próprio conhecimento.`;
+      }
+    } catch (e) {
+      console.error("RAG Context Error:", e);
+    }
+  }
 
   try {
     // Stream response from Ollama
@@ -23,11 +51,8 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         model: ollamaModel,
         messages: [
-          {
-            role: "system",
-            content: "Você é o assistente do Studium Liberum, uma universidade offline. Responda de forma clara e concisa em português. Se a pergunta for sobre programação, dê exemplos de código.",
-          },
-          { role: "user", content: message },
+          { role: "system", content: systemPrompt },
+          ...messages,
         ],
         stream: true,
       }),
@@ -41,7 +66,6 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // Forward the stream to the client
     const reader = ollamaResponse.body?.getReader();
     if (!reader) {
       return new Response(JSON.stringify({ error: "No response stream" }), {
@@ -76,7 +100,7 @@ export async function POST(request: NextRequest) {
     });
   } catch {
     return new Response(
-      JSON.stringify({ error: "Ollama não está rodando. Execute: ollama serve" }),
+      JSON.stringify({ error: "Ollama não está rodando. Execute: ollama serve no terminal." }),
       { status: 502, headers: { "Content-Type": "application/json" } }
     );
   }
