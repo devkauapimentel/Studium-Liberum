@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SearchModal } from "@/components/SearchModal";
 
 export const metadata: Metadata = {
   title: "Studium Liberum — Your Offline University",
@@ -22,6 +23,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <SearchModal />
         {children}
       </body>
     </html>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, FileText, Download } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
 
 interface PageProps {
   searchParams: Promise<{ file: string }>;
@@ -63,7 +64,7 @@ export default async function MarkdownViewerPage({ searchParams }: PageProps) {
       {/* Content Area */}
       <main className="flex-1 overflow-y-auto p-8 flex justify-center custom-scrollbar">
         <article className="prose prose-invert prose-blue max-w-4xl w-full bg-[var(--color-bg-card)] p-8 md:p-12 rounded-xl border border-[var(--color-border)] shadow-2xl backdrop-blur-md">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
             {content}
           </ReactMarkdown>
         </article>
