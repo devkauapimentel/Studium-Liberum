@@ -16,6 +16,14 @@ export default function DocsSearchPage() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<DocResult[]>([]);
   const [loading, setLoading] = useState(false);
+  const [installed, setInstalled] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch("/api/docs/installed")
+      .then(res => res.json())
+      .then(data => setInstalled(data))
+      .catch(console.error);
+  }, []);
 
   useEffect(() => {
     if (query.trim().length === 0) {
@@ -73,14 +81,32 @@ export default function DocsSearchPage() {
 
           <div className="flex-1 overflow-y-auto p-8 custom-scrollbar">
             {query.length === 0 ? (
-              <div className="text-center py-20 animate-fade-in">
-                <BookOpen size={64} className="mx-auto mb-6 text-[var(--color-text-muted)] opacity-30" />
-                <h3 className="text-xl font-semibold text-[var(--color-text-secondary)] mb-2">
-                  Documentação Offline
-                </h3>
-                <p className="text-sm text-[var(--color-text-muted)] max-w-md mx-auto">
-                  Pesquise por qualquer método, classe ou função instalada. Os resultados abrirão em um visualizador nativo limpo e rápido, sem precisar do Zeal.
-                </p>
+              <div className="animate-fade-in">
+                <div className="flex items-center gap-3 mb-6">
+                  <BookOpen size={24} className="text-[var(--color-accent-amber)]" />
+                  <h3 className="text-xl font-semibold text-[var(--color-text-secondary)]">
+                    Bibliotecas Instaladas
+                  </h3>
+                </div>
+                
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {installed.map((doc, idx) => (
+                    <Link
+                      key={idx}
+                      href={`/viewer/docs?doc=${encodeURIComponent(doc.folder)}&path=${encodeURIComponent(doc.indexFilePath)}`}
+                      className="glass-card p-4 flex flex-col items-center justify-center text-center hover:border-[var(--color-accent-amber)] transition-colors group cursor-pointer"
+                    >
+                      <div className="w-12 h-12 rounded-xl mb-3 flex items-center justify-center bg-[var(--color-bg-tertiary)] group-hover:bg-[var(--color-accent-amber)]/20 text-[var(--color-text-muted)] group-hover:text-[var(--color-accent-amber)] transition-colors">
+                        <Layers size={24} />
+                      </div>
+                      <h4 className="font-bold text-[var(--color-text-primary)]">{doc.name}</h4>
+                      <p className="text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] mt-1">Manual Oficial</p>
+                    </Link>
+                  ))}
+                  {installed.length === 0 && (
+                    <p className="text-sm text-[var(--color-text-muted)] col-span-full text-center py-8">Nenhum docset encontrado. Instale pelo Zeal e mova para library/docsets.</p>
+                  )}
+                </div>
               </div>
             ) : results.length > 0 ? (
               <div className="space-y-2 animate-fade-in">
@@ -116,6 +142,7 @@ export default function DocsSearchPage() {
               )
             )}
           </div>
+        </div>
       </main>
     </div>
   );
