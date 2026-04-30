@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowLeft, Bot, Send, Cpu, User, Loader2, Database, Shield } from "lucide-react";
+import { ArrowLeft, Bot, Send, Cpu, User, Loader2, Database, Shield, Plus } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
@@ -187,19 +187,23 @@ export default function AIPage() {
           </div>
 
           <div className="p-6 bg-transparent pb-8">
-            <form onSubmit={sendMessage} className="max-w-3xl mx-auto relative group">
-              {/* Subtle background glow effect when focused */}
-              <div className="absolute -inset-[1px] rounded-[28px] bg-gradient-to-r from-transparent via-transparent to-transparent group-focus-within:from-[var(--color-accent-purple)]/50 group-focus-within:via-[var(--color-accent-blue)]/50 group-focus-within:to-[var(--color-accent-cyan)]/50 transition-all duration-700 opacity-0 blur-md group-focus-within:opacity-100 -z-10"></div>
-              
-              <div className="relative flex flex-col bg-[#111113]/90 backdrop-blur-2xl border border-[var(--color-border)]/50 rounded-[28px] p-2 shadow-[0_8px_30px_rgb(0,0,0,0.5)] transition-all duration-300 group-focus-within:border-[var(--color-border)] group-focus-within:bg-[#151518]/95">
+            <form onSubmit={sendMessage} className="max-w-4xl mx-auto relative group">
+              <div className="relative flex flex-row items-end bg-[#161618] border border-white/10 rounded-[32px] pl-4 pr-3 py-2.5 shadow-2xl transition-all duration-300 focus-within:border-white/30 focus-within:bg-[#1A1A1D]">
+                
+                {/* Plus Icon (Left) */}
+                <button type="button" className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-[var(--color-text-muted)] hover:text-white hover:bg-white/10 transition-colors mb-0.5" title="Anexar arquivo">
+                  <Plus size={22} strokeWidth={2} />
+                </button>
+
+                {/* Text Area (Center) */}
                 <textarea
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Mensagem para Studium Liberum..."
+                  placeholder="What do you want to know?"
                   disabled={isLoading}
                   rows={1}
-                  className="w-full px-5 pt-4 pb-2 bg-transparent text-[16px] focus:outline-none resize-none min-h-[56px] max-h-[250px] overflow-y-auto disabled:opacity-50 placeholder-[var(--color-text-muted)]/70"
-                  style={{ color: "var(--color-text-primary)", lineHeight: "1.5" }}
+                  className="flex-1 bg-transparent px-3 py-1.5 text-[16px] focus:outline-none resize-none min-h-[38px] max-h-[200px] overflow-y-auto disabled:opacity-50 placeholder-[var(--color-text-muted)]/80"
+                  style={{ color: "var(--color-text-primary)", lineHeight: "1.4" }}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
                       e.preventDefault();
@@ -208,61 +212,59 @@ export default function AIPage() {
                   }}
                 />
                 
-                <div className="flex items-center justify-between px-3 pb-2 mt-1">
-                  <div className="flex items-center gap-1.5">
-                    {/* Select Model Dropdown */}
-                    {ollamaAvailable && availableModels.length > 0 && (
-                      <div className="relative flex items-center">
-                        <select
-                          value={selectedModel}
-                          onChange={(e) => setSelectedModel(e.target.value)}
-                          className="appearance-none bg-transparent hover:bg-[var(--color-bg-tertiary)]/70 border border-transparent rounded-2xl px-4 py-2 text-[13px] font-semibold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] focus:outline-none cursor-pointer transition-all"
-                        >
-                          {availableModels.map(m => <option key={m} value={m} className="bg-[var(--color-bg-secondary)]">{m}</option>)}
-                        </select>
-                      </div>
-                    )}
+                {/* Tools (Right) */}
+                <div className="flex items-center gap-1 shrink-0 mb-0.5">
+                  {/* Select Model Dropdown */}
+                  {ollamaAvailable && availableModels.length > 0 && (
+                    <div className="relative">
+                      <select
+                        value={selectedModel}
+                        onChange={(e) => setSelectedModel(e.target.value)}
+                        className="appearance-none bg-[#2A2A2E] hover:bg-[#3A3A3E] rounded-[20px] px-4 py-1.5 text-[13px] font-semibold text-white focus:outline-none cursor-pointer transition-all mr-1"
+                        style={{ paddingRight: "1rem" }}
+                      >
+                        {availableModels.map(m => <option key={m} value={m} className="bg-[var(--color-bg-secondary)]">{m}</option>)}
+                      </select>
+                    </div>
+                  )}
 
-                    {/* RAG Toggle */}
-                    <button 
-                      type="button"
-                      onClick={() => setUseRag(!useRag)}
-                      className={`flex items-center gap-2 px-4 py-2 rounded-2xl text-[13px] font-semibold transition-all duration-300 ${useRag ? 'bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)]' : 'bg-transparent text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)]/70'}`}
-                      title="RAG: Conectar aos seus arquivos e Manuais"
-                    >
-                      <Database size={15} />
-                      {useRag ? 'RAG' : 'RAG'}
-                    </button>
-                    
-                    {/* Modo 42 */}
-                    <button 
-                      type="button"
-                      onClick={() => setSocraticMode(!socraticMode)}
-                      className={`flex items-center gap-2 px-4 py-2 rounded-2xl text-[13px] font-semibold transition-all duration-300 ${socraticMode ? 'bg-[var(--color-accent-amber)]/10 text-[var(--color-accent-amber)]' : 'bg-transparent text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)]/70'}`}
-                      title="Modo 42: Apenas método Socrático (sem dar o código pronto)"
-                    >
-                      <Shield size={15} />
-                      Modo 42
-                    </button>
-                  </div>
+                  {/* RAG Toggle (Icon only) */}
+                  <button 
+                    type="button"
+                    onClick={() => setUseRag(!useRag)}
+                    className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${useRag ? 'text-[var(--color-accent-blue)] bg-[var(--color-accent-blue)]/10' : 'text-[var(--color-text-muted)] hover:text-white hover:bg-white/10'}`}
+                    title="RAG: Conectar aos Arquivos Locais"
+                  >
+                    <Database size={18} />
+                  </button>
+                  
+                  {/* Modo 42 Toggle (Icon only) */}
+                  <button 
+                    type="button"
+                    onClick={() => setSocraticMode(!socraticMode)}
+                    className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${socraticMode ? 'text-[var(--color-accent-amber)] bg-[var(--color-accent-amber)]/10' : 'text-[var(--color-text-muted)] hover:text-white hover:bg-white/10'}`}
+                    title="Modo 42 (Socrático)"
+                  >
+                    <Shield size={18} />
+                  </button>
 
+                  {/* Send Button (White Circle) */}
                   <button 
                     type="submit" 
                     disabled={!message.trim() || isLoading}
-                    className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 disabled:opacity-30 disabled:hover:scale-100 hover:scale-[1.08] active:scale-95"
+                    className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:bg-[#2A2A2E] disabled:text-[var(--color-text-muted)] hover:scale-[1.05] active:scale-95 ml-1 shadow-sm"
                     style={{ 
-                      background: message.trim() ? "var(--color-text-primary)" : "var(--color-bg-tertiary)", 
-                      color: message.trim() ? "var(--color-bg-primary)" : "var(--color-text-muted)",
-                      boxShadow: message.trim() ? "0 4px 14px rgba(255,255,255,0.15)" : "none"
+                      background: message.trim() ? "#FFFFFF" : "#2A2A2E", 
+                      color: message.trim() ? "#000000" : "var(--color-text-muted)" 
                     }}
                   >
-                    {isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} className={message.trim() ? "translate-x-[-1px] translate-y-[1px]" : "translate-x-[-1px]"} />}
+                    {isLoading ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} className={message.trim() ? "translate-x-[1px]" : ""} />}
                   </button>
                 </div>
               </div>
             </form>
-            <p className="text-center text-[11px] text-[var(--color-text-muted)] mt-5 font-medium tracking-wide opacity-60">
-              Processamento offline seguro. Nenhum dado deixa sua máquina.
+            <p className="text-center text-[11px] text-[var(--color-text-muted)] mt-5 font-medium tracking-wide opacity-50 hover:opacity-100 transition-opacity">
+              By messaging Studium Liberum, you agree to process offline without leaving your machine.
             </p>
           </div>
         </>
