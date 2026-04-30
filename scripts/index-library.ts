@@ -3,7 +3,7 @@ import path from 'path';
 const pdfParse = require('pdf-parse');
 import Database from 'better-sqlite3';
 
-const dbPath = path.join(process.cwd(), ".studium.db");
+const dbPath = path.join(process.cwd(), "data", "studium.db");
 const db = new Database(dbPath);
 
 const libraryPath = path.join(process.cwd(), 'library');

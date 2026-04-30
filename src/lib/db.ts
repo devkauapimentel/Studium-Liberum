@@ -2,7 +2,7 @@ import Database from "better-sqlite3";
 import { join } from "path";
 
 // Initialize the SQLite database
-const dbPath = join(process.cwd(), ".studium.db");
+const dbPath = join(process.cwd(), "data", "studium.db");
 const db = new Database(dbPath, { verbose: process.env.NODE_ENV === "development" ? console.log : undefined });
 
 // Configure optimizations
