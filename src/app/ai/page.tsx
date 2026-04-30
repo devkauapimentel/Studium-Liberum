@@ -184,15 +184,16 @@ export default function AIPage() {
               )}
               <div ref={messagesEndRef} />
             </div>
-          </div>
-
-          <div className="p-6 bg-transparent pb-8">
-            <form onSubmit={sendMessage} className="max-w-4xl mx-auto relative group">
-              <div className="relative flex flex-row items-end bg-[#161618] border border-white/10 rounded-[32px] pl-4 pr-3 py-2.5 shadow-2xl transition-all duration-300 focus-within:border-white/30 focus-within:bg-[#1A1A1D]">
+              <div className="p-6 bg-transparent pb-8">
+            <form onSubmit={sendMessage} className="max-w-3xl mx-auto relative group">
+              {/* Outer Glow on Focus */}
+              <div className="absolute -inset-[2px] rounded-[34px] bg-white/5 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-700 pointer-events-none -z-10"></div>
+              
+              <div className="relative flex flex-row items-end bg-[#18181A] border border-[#27272A] rounded-[32px] pl-5 pr-3 py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.6)] transition-all duration-500 group-focus-within:border-[#3F3F46] group-focus-within:bg-[#1A1A1D] group-focus-within:shadow-[0_12px_40px_rgb(0,0,0,0.8)]">
                 
                 {/* Plus Icon (Left) */}
-                <button type="button" className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-[var(--color-text-muted)] hover:text-white hover:bg-white/10 transition-colors mb-0.5" title="Anexar arquivo">
-                  <Plus size={22} strokeWidth={2} />
+                <button type="button" className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[#71717A] hover:text-white hover:bg-white/10 transition-all duration-300 ease-out mb-0.5" title="Anexar arquivo">
+                  <Plus size={22} strokeWidth={2.5} />
                 </button>
 
                 {/* Text Area (Center) */}
@@ -202,8 +203,8 @@ export default function AIPage() {
                   placeholder="What do you want to know?"
                   disabled={isLoading}
                   rows={1}
-                  className="flex-1 bg-transparent px-3 py-1.5 text-[16px] focus:outline-none resize-none min-h-[38px] max-h-[200px] overflow-y-auto disabled:opacity-50 placeholder-[var(--color-text-muted)]/80"
-                  style={{ color: "var(--color-text-primary)", lineHeight: "1.4" }}
+                  className="flex-1 bg-transparent px-4 py-2 text-[16px] font-medium focus:outline-none resize-none min-h-[40px] max-h-[200px] overflow-y-auto disabled:opacity-50 placeholder-[#71717A]"
+                  style={{ color: "#F4F4F5", lineHeight: "1.5" }}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
                       e.preventDefault();
@@ -213,17 +214,17 @@ export default function AIPage() {
                 />
                 
                 {/* Tools (Right) */}
-                <div className="flex items-center gap-1 shrink-0 mb-0.5">
+                <div className="flex items-center gap-1.5 shrink-0 mb-0.5">
                   {/* Select Model Dropdown */}
                   {ollamaAvailable && availableModels.length > 0 && (
                     <div className="relative">
                       <select
                         value={selectedModel}
                         onChange={(e) => setSelectedModel(e.target.value)}
-                        className="appearance-none bg-[#2A2A2E] hover:bg-[#3A3A3E] rounded-[20px] px-4 py-1.5 text-[13px] font-semibold text-white focus:outline-none cursor-pointer transition-all mr-1"
+                        className="appearance-none bg-[#27272A] hover:bg-[#3F3F46] rounded-full px-4 py-2 text-[13px] font-bold text-[#E4E4E7] focus:outline-none cursor-pointer transition-all duration-300 ease-out mr-1"
                         style={{ paddingRight: "1rem" }}
                       >
-                        {availableModels.map(m => <option key={m} value={m} className="bg-[var(--color-bg-secondary)]">{m}</option>)}
+                        {availableModels.map(m => <option key={m} value={m} className="bg-[#18181A] text-white">{m}</option>)}
                       </select>
                     </div>
                   )}
@@ -232,41 +233,43 @@ export default function AIPage() {
                   <button 
                     type="button"
                     onClick={() => setUseRag(!useRag)}
-                    className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${useRag ? 'text-[var(--color-accent-blue)] bg-[var(--color-accent-blue)]/10' : 'text-[var(--color-text-muted)] hover:text-white hover:bg-white/10'}`}
+                    className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ease-out ${useRag ? 'text-[#38BDF8] bg-[#38BDF8]/15 shadow-[0_0_15px_rgba(56,189,248,0.2)]' : 'text-[#71717A] hover:text-[#E4E4E7] hover:bg-white/10'}`}
                     title="RAG: Conectar aos Arquivos Locais"
                   >
-                    <Database size={18} />
+                    <Database size={18} strokeWidth={useRag ? 2.5 : 2} />
                   </button>
                   
                   {/* Modo 42 Toggle (Icon only) */}
                   <button 
                     type="button"
                     onClick={() => setSocraticMode(!socraticMode)}
-                    className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${socraticMode ? 'text-[var(--color-accent-amber)] bg-[var(--color-accent-amber)]/10' : 'text-[var(--color-text-muted)] hover:text-white hover:bg-white/10'}`}
+                    className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ease-out ${socraticMode ? 'text-[#FBBF24] bg-[#FBBF24]/15 shadow-[0_0_15px_rgba(251,191,36,0.2)]' : 'text-[#71717A] hover:text-[#E4E4E7] hover:bg-white/10'}`}
                     title="Modo 42 (Socrático)"
                   >
-                    <Shield size={18} />
+                    <Shield size={18} strokeWidth={socraticMode ? 2.5 : 2} />
                   </button>
 
                   {/* Send Button (White Circle) */}
                   <button 
                     type="submit" 
                     disabled={!message.trim() || isLoading}
-                    className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:bg-[#2A2A2E] disabled:text-[var(--color-text-muted)] hover:scale-[1.05] active:scale-95 ml-1 shadow-sm"
+                    className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] disabled:opacity-50 disabled:bg-[#27272A] disabled:text-[#71717A] ml-1"
                     style={{ 
-                      background: message.trim() ? "#FFFFFF" : "#2A2A2E", 
-                      color: message.trim() ? "#000000" : "var(--color-text-muted)" 
+                      background: message.trim() ? "#FFFFFF" : "#27272A", 
+                      color: message.trim() ? "#09090B" : "#71717A",
+                      boxShadow: message.trim() ? "0 0 20px rgba(255,255,255,0.4)" : "none",
+                      transform: message.trim() && !isLoading ? "scale(1.05)" : "scale(1)"
                     }}
                   >
-                    {isLoading ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} className={message.trim() ? "translate-x-[1px]" : ""} />}
+                    {isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} strokeWidth={2.5} className={message.trim() ? "translate-x-[1px]" : ""} />}
                   </button>
                 </div>
               </div>
             </form>
-            <p className="text-center text-[11px] text-[var(--color-text-muted)] mt-5 font-medium tracking-wide opacity-50 hover:opacity-100 transition-opacity">
+            <p className="text-center text-[11px] text-[#71717A] mt-5 font-medium tracking-wide opacity-50 hover:opacity-100 transition-opacity duration-500 cursor-default">
               By messaging Studium Liberum, you agree to process offline without leaving your machine.
             </p>
-          </div>
+          </div>         </div>
         </>
       )}
     </div>
