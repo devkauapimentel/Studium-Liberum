@@ -36,6 +36,20 @@ export default function HelpPage() {
           title="Comandos úteis"
           steps={["bash scripts/start.sh → Inicia tudo", "bash scripts/stop.sh → Para tudo (libera RAM)", "bash scripts/push-all.sh → Push nos 2 repos", "bash scripts/setup.sh → Setup inicial"]} />
 
+        <div className="glass-card p-6 border border-[var(--color-accent-amber)]/30" style={{ borderLeft: '3px solid var(--color-accent-amber)' }}>
+          <div className="flex items-center gap-3 mb-2">
+            <BookOpen size={20} className="text-[var(--color-accent-amber)]" />
+            <h4 className="font-semibold text-lg">Protocolo RTFM</h4>
+          </div>
+          <p className="text-sm text-[var(--color-text-muted)] mb-4">
+            Aprenda a mentalidade da 42 Network para extrair conhecimento direto da fonte, sem depender de tutoriais do YouTube.
+          </p>
+          <Link href="/viewer/md?file=%2Fhome%2Fdev_kaua%2FDocuments%2F01%20-%20Projects%2F00.University%2Flibrary%2FPROTOCOLO_RTFM.md"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider bg-[var(--color-accent-amber)] text-[var(--color-bg-primary)] px-4 py-2 rounded hover:bg-[var(--color-accent-amber)]/90 transition-colors">
+            Ler Manifesto RTFM
+          </Link>
+        </div>
+
         <div className="glass-card p-6 text-center">
           <p className="text-sm text-[var(--color-text-muted)]">
             Dúvidas do software? A IA lê estes docs automaticamente.
