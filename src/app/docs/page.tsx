@@ -3,8 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Search as SearchIcon, BookOpen, ArrowLeft, RefreshCw, Layers } from "lucide-react";
-import Sidebar from "@/components/layout/Sidebar";
-import { getConfig } from "@/lib/config";
 
 interface DocResult {
   docset: string;
@@ -15,7 +13,6 @@ interface DocResult {
 }
 
 export default function DocsSearchPage() {
-  const config = getConfig();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<DocResult[]>([]);
   const [loading, setLoading] = useState(false);
@@ -41,20 +38,23 @@ export default function DocsSearchPage() {
   }, [query]);
 
   return (
-    <div className="flex min-h-screen bg-[var(--color-bg-primary)]">
-      <Sidebar tracks={config.tracks} />
-
-      <main className="flex-1 overflow-hidden flex flex-col" style={{ marginLeft: "var(--sidebar-width)", height: "100vh" }}>
-        <header className="shrink-0 flex items-center justify-between px-8 border-b border-[var(--color-border)]"
-          style={{ height: "var(--header-height)", background: "rgba(9, 9, 11, 0.8)", backdropFilter: "blur(12px)" }}>
+    <div className="flex flex-col h-screen" style={{ background: "var(--color-bg-primary)" }}>
+      <header className="shrink-0 flex items-center justify-between px-8 border-b border-[var(--color-border)]"
+        style={{ height: "var(--header-height)", background: "rgba(9, 9, 11, 0.8)", backdropFilter: "blur(12px)" }}>
+        <div className="flex items-center gap-4">
+          <Link href="/" className="p-2 rounded-lg hover:bg-[var(--color-bg-hover)] transition-colors">
+            <ArrowLeft size={18} />
+          </Link>
           <h2 className="text-lg font-semibold flex items-center gap-2">
             <Layers size={18} className="text-[var(--color-accent-amber)]" />
             Central Offline nativa (Docsets)
           </h2>
-        </header>
+        </div>
+      </header>
 
-        <div className="w-full max-w-4xl mx-auto h-full flex flex-col relative border-x border-[var(--color-border)] shadow-2xl bg-[var(--color-bg-primary)]">
-          <div className="p-8 pb-4 shrink-0 border-b border-[var(--color-border)] z-10">
+      <main className="flex-1 flex overflow-hidden justify-center bg-[var(--color-bg-primary)]">
+        <div className="w-full max-w-4xl h-full flex flex-col relative border-x border-[var(--color-border)] shadow-2xl">
+          <div className="p-8 pb-4 shrink-0 border-b border-[var(--color-border)] bg-[var(--color-bg-primary)] z-10">
             <div className="relative">
               <SearchIcon size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--color-text-muted)]" />
               <input
@@ -116,7 +116,6 @@ export default function DocsSearchPage() {
               )
             )}
           </div>
-        </div>
       </main>
     </div>
   );
