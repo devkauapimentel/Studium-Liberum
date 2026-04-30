@@ -1,0 +1,6 @@
+
+body { font-family: sans-serif; width: 90%; max-width: 960px; margin: 10px auto; }
+div { height: 100px; border: 1px solid black; }
+button { font-size: 18px; line-height: 1.5; width: 15%; }
+
+button.copy {display:none !important}

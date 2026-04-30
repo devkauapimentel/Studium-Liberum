@@ -1,0 +1,7 @@
+
+#log { height: 60px; overflow: scroll; padding: 0.5rem; border: 1px solid black; }
+body { font-family: sans-serif; }
+#target { border: 2px solid; padding: 1rem; height: 150px; }
+img { margin: 0.5rem; }
+
+button.copy {display:none !important}

@@ -1,0 +1,6 @@
+
+html, body { height: 100%; }
+body { margin: 0px; display: grid; place-items: center; font-family: system-ui; }
+p { --base-spacing: 10px; border-radius: var(--base-spacing); padding: --double(var(--base-spacing)); width: 50%; background-color: wheat; }
+
+button.copy {display:none !important}

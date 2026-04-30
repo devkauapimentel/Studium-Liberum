@@ -1,0 +1,7 @@
+
+p { margin: 0px; }
+:lang("nl", "de") { color: green; }
+:lang(EN, FR) { color: blue; }
+:lang("*-Latn") { color: red; }
+
+button.copy {display:none !important}

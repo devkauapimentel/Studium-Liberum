@@ -1,0 +1,4 @@
+
+input:invalid { border: 3px solid red; }
+
+button.copy {display:none !important}

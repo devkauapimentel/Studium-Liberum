@@ -1,0 +1,9 @@
+
+svg { border: 1px solid; height: calc(-20px + 100vh); margin-bottom: 10px; }
+path { stroke-width: 2px; marker: url("./en-US/docs/Web/CSS/Reference/Properties/fill/runner.html-_-uuid=ba5ba19a64b616ccd442491998139cfea05eaab5&state=dVLBcpswEP2VHfVizxQjsJvY1M0hpx6SyaGTSdvhgmUZqIXECNngyfjfu0JQsOucdvftvqcnrd5JZgpBIrKujik0hZDVtxgxU0a%25252BX9f1rJ7PlE79kFLq40hM4Jjz%25252BlE1.html-_-uuid=ba5ba19a64b616ccd442491998139cfea05eaab5&state=dVLBcpswEP2VHfVizxQjsJvY1M0hpx6SyaGTSdvhgmUZqIXECNngyfjfu0JQsOucdvftvqcnrd5JZgpBIrKujik0hZDVtxgxU0a%252BX9f1rJ7PlE79kFLq40hM4Jjz%252BlE1OEaBwpxSWNGYPMQSYF0mJoMttp4hoLBYzO4W8IQztnqC%252By6uhhZC96tZuHRTLv2Nh%252Fg39AbWshMKwj5ZDE0L9prLDzRtAr3wlxG3txr0XoOR2WDkNrhlt0j0nmsnnlt1lmsmeEwc5Npv%252BdZk2AvCS%252Fw7z9PMXDQ03%252F1E4G5U%252FxrXjvgqc2O3dqi4%252FlEmjL%252FI14p3K0FXzgSwxlGBnbpEY5xjrIxWe%252B7VnbHwH4TFRiRsj8AuFwLLVPPTcF%252FfGcBibT8HRvKZsKrC%252F2S%252F07sd2ii95TqCoGygUiLffrVo1l42ApYINsHVHjPwIKRlM23bqJvm0tsoY1SBXGwgfo5l%252ByFa3bHpCMJ2oH%252BRCA5aTGLyqX%252F%252F6cCOpMk8tfPMqeSTYDoWi%252FCBnT172wikkvwDYnhFxHfhckQV9no9eEtgfiWwEQd%252Bze8wpHcrvGAwJQ1vjOfqEfe%252Fxrndyx%252B7Fowm4wXHtD2CnP8C&code=74265727&%23circle"); }
+path:nth-of-type(1) { stroke: red; fill: none; }
+path:nth-of-type(2) { stroke: green; fill: lightgreen; }
+path:nth-of-type(3) { stroke: blue; fill: lightblue; }
+circle { }
+
+button.copy {display:none !important}

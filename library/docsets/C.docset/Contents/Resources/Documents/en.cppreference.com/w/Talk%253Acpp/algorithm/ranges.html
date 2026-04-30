@@ -1,0 +1,311 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/algorithm/ranges.html --><head><meta charset="utf-8"><title>Talk:cpp/algorithm/ranges</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_4010.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_algorithm_ranges skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Falgorithm%2Franges&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Falgorithm%2Franges" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/algorithm/ranges.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./ranges.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./ranges.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./ranges.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./ranges.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/algorithm/ranges</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../algorithm.html" title="Talk:cpp/algorithm">algorithm</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./ranges.html#Which_navbar_should_.5Bindirectcallable.indirectinvocable.5D_and_.5Balg.req.5D_be_under.3F"><span class="tocnumber">1</span> <span class="toctext">Which navbar should [indirectcallable.indirectinvocable] and [alg.req] be under?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./ranges.html#Niebloids_rationale"><span class="tocnumber">2</span> <span class="toctext">Niebloids rationale</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./ranges.html#Common_structured_return_types_.28.3F.29"><span class="tocnumber">3</span> <span class="toctext">Common structured return types (?)</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./ranges.html#predicats_.2B_projections"><span class="tocnumber">4</span> <span class="toctext">predicats + projections</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges&amp;action=edit&amp;section=1" title="Edit section: Which navbar should [indirectcallable.indirectinvocable] and [alg.req] be under?">edit</a>]</span> <span class="mw-headline" id="Which_navbar_should_.5Bindirectcallable.indirectinvocable.5D_and_.5Balg.req.5D_be_under.3F"> Which navbar should [indirectcallable.indirectinvocable] and [alg.req] be under? </span></h2>
+<p>I've noticed neither of them are listed under cpp/iterator, nor are they under cpp/algorithm/ranges. I'd prefer for them to be under cpp/iterator, since that's where they're included from, but I can see the benefits to putting them in both. (I'd caution against exclusively keeping them in cpp/algorithm/ranges, as that's not intuitive for folks who also consult the IS.)
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Cjdb&amp;action=edit&amp;redlink=1" class="new" title="User:Cjdb (страница не существует)">Cjdb</a> (<a href="../../User_talk%25253ACjdb.html" title="User talk:Cjdb">talk</a>) 09:33, 29 June 2020 (PDT)
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges&amp;action=edit&amp;section=2" title="Edit section: Niebloids rationale">edit</a>]</span> <span class="mw-headline" id="Niebloids_rationale"> Niebloids rationale </span></h2>
+<hr>
+<blockquote>The function-like entities described on this page are <a href="../../cpp/algorithm/ranges.html#Algorithm_function_objects" title="cpp/algorithm/ranges"><i>algorithm function objects</i></a> (informally known as <i>niebloids</i>), that is:
+<ul><li> Explicit template argument lists cannot be specified when calling any of them.
+</li><li> None of them are visible to <a href="../../cpp/language/adl.html" title="cpp/language/adl">argument-dependent lookup</a>.
+</li><li> When any of them are found by <a href="../../cpp/language/unqualified_lookup.html" title="cpp/language/unqualified lookup">normal unqualified lookup</a> as the name to the left of the function-call operator, <a href="../../cpp/language/adl.html" title="cpp/language/adl">argument-dependent lookup</a> is inhibited.</li></ul></blockquote>
+
+<hr>
+<p>This arbitrary seeming set of requirements had me scratching my head for a little while before finding this example in the standard:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw1">using</span> <span class="kw1">namespace</span> std<span class="sy4">::</span><span class="me2">ranges</span><span class="sy4">;</span>
+  <a href="../../cpp/container/vector.html"><span class="kw1277">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> vec<span class="br0">{</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span><span class="br0">}</span><span class="sy4">;</span>
+  find<span class="br0">(</span>begin<span class="br0">(</span>vec<span class="br0">)</span>, end<span class="br0">(</span>vec<span class="br0">)</span>, <span class="nu0">2</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Calls std::ranges::find</span>
+<span class="br0">}</span></pre></div></div>
+<p><span class="t-lc"><a href="../../cpp/algorithm/find.html" title="cpp/algorithm/find">std::find</a></span> would normally be a better match due to the iterator arguments having the same type, but because a niebloid is found via unqualified lookup, ADL is not performed to find <span class="t-lc"><a href="../../cpp/algorithm/find.html" title="cpp/algorithm/find">std::find</a></span>.
+The other two points are presumably just consequences of implementing niebloids as function objects in order to achieve the prioritised lookup for the above use case.
+</p><p>If the above is indeed true, then I think it's worth having it noted somewhere, such as the top of this page? --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 05:52, 28 July 2020 (PDT)
+</p>
+<dl><dd> -- Hmm, interesting. I agree, this should be mentioned. --<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 14:57, 28 July 2020 (PDT)
+</dd></dl>
+<dl><dd> "Niebloids are not guaranteed to be objects. They are specified as magical function templates with enough weasel wording to allow them to be implemented as objects, but no more.", <a rel="nofollow" class="external text" href="https://stackoverflow.com/questions/62928396/what-is-a-niebloid#comment111315172_62929027">said by T.C.</a>. It seems that <span class="t-c"><span class="mw-geshi cpp source-cpp">decltype<span class="br0">(</span>std<span class="sy4">::</span><a href="../../cpp/algorithm/ranges/find.html"><span class="kw3002">ranges::<span class="me2">find</span></span></a><span class="br0">)</span></span></span> is allowed to be ill-formed.<br>Perhaps we can say "During name lookup in function call expressions, they behave as if they are implemented as function objects."--<a href="../../User%25253AFruderica.html" title="User:Fruderica">Fruderica</a> (<a href="../../User_talk%25253AFruderica.html" title="User talk:Fruderica">talk</a>) 23:14, 28 July 2020 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> I'm happy with how the current cpp/ranges/niebloid template describes niebloid implementation. I just think it's a non-straightforward set of properties to have in the first place; is the entire purpose of those properties really just to inhibit ADL? --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 08:00, 30 July 2020 (PDT)
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> Plopping this article here for future reference <a rel="nofollow" class="external free" href="https://brevzin.github.io/c++/2020/12/19/cpo-niebloid/">https://brevzin.github.io/c++/2020/12/19/cpo-niebloid/</a> --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 12:16, 23 December 2023 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges&amp;action=edit&amp;section=3" title="Edit section: Common structured return types (?)">edit</a>]</span> <span class="mw-headline" id="Common_structured_return_types_.28.3F.29"> Common structured return types (?) </span></h2>
+<p>The common structured return types of some rangified algorithms and uninitialized-memory functions should be described somewhere else in addition to the <a href="../../cpp/header/algorithm.html#Synopsis" title="cpp/header/algorithm">&lt;algorithm&gt;</a>, since it is obviously inconvenient to seek them out in the synopsis itself.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">namespace</span> ranges <span class="br0">{</span>
+  <span class="co1">// algorithm result types (see definitions at the end)</span>
+  <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> I, <span class="kw1">class</span> F<span class="sy1">&gt;</span> <span class="kw1">struct</span> in_fun_result<span class="sy4">;</span>
+  <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> I1, <span class="kw1">class</span> I2<span class="sy1">&gt;</span> <span class="kw1">struct</span> in_in_result<span class="sy4">;</span>
+  <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> I, <span class="kw1">class</span> O<span class="sy1">&gt;</span> <span class="kw1">struct</span> in_out_result<span class="sy4">;</span>
+  <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> I1, <span class="kw1">class</span> I2, <span class="kw1">class</span> O<span class="sy1">&gt;</span> <span class="kw1">struct</span> in_in_out_result<span class="sy4">;</span>
+  <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> I, <span class="kw1">class</span> O1, <span class="kw1">class</span> O2<span class="sy1">&gt;</span> <span class="kw1">struct</span> in_out_out_result<span class="sy4">;</span>
+  <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> min_max_result<span class="sy4">;</span>
+  <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> I<span class="sy1">&gt;</span> <span class="kw1">struct</span> in_found_result<span class="sy4">;</span>
+  ...
+<span class="br0">}</span></pre></div></div>
+<p>Should we create 7 separate pages for them? 🤔 --<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 13:20, 25 December 2020 (PST)
+</p>
+<dl><dd> I think we should. --<a href="https://en.cppreference.com/mwiki/index.php?title=User:D41D8CD98F&amp;action=edit&amp;redlink=1" class="new" title="User:D41D8CD98F (страница не существует)">D41D8CD98F</a> (<a href="../../User_talk%25253AD41D8CD98F.html" title="User talk:D41D8CD98F">talk</a>) 19:34, 25 December 2020 (PST)
+<dl><dd> Ok, I'll do it. --<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 01:40, 26 December 2020 (PST)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges&amp;action=edit&amp;section=4" title="Edit section: predicats + projections">edit</a>]</span> <span class="mw-headline" id="predicats_.2B_projections"> predicats + projections </span></h2>
+<p>Isn't one predicate enough? Why do I need a projection of the elements?
+<a href="../../User%25253ADmi3.html" title="User:Dmi3">Dmi3</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Dmi3&amp;action=edit&amp;redlink=1" class="new" title="User talk:Dmi3 (страница не существует)">talk</a>) 11 Feb 2025
+</p>
+<dl><dd> you don't; every algorithm that accepts both a projection and a predicate can be invoked without a projection, but with a more complex predicate. It's just convenience, especially when you can use a library predicate to avoid writing code; consider <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><a href="../../cpp/algorithm/ranges/lower_bound.html"><span class="kw3022">ranges::<span class="me2">lower_bound</span></span></a><span class="br0">(</span>points, x, <span class="br0">{</span><span class="br0">}</span>, <span class="sy3">&amp;</span>Point<span class="sy4">::</span><span class="me2">x</span><span class="br0">)</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><a href="../../cpp/ranges-algorithm-placeholder/sort.html"><span class="kw2870">ranges::<span class="me2">sort</span></span></a><span class="br0">(</span>points, <span class="br0">{</span><span class="br0">}</span>, <span class="sy3">&amp;</span>Point<span class="sy4">::</span><span class="me2">x</span><span class="br0">)</span><span class="sy4">;</span></span></span>, and <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><a href="../../cpp/algorithm/ranges/upper_bound.html"><span class="kw3108">ranges::<span class="me2">upper_bound</span></span></a><span class="br0">(</span>points, x, <span class="br0">{</span><span class="br0">}</span>, <span class="sy3">&amp;</span>Point<span class="sy4">::</span><span class="me2">x</span><span class="br0">)</span></span></span> - without projectinos you will need to write  three different predicates without mistakes here (can you tell without looking up which parameter goes first in upper and which in lower?). --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 07:37, 11 February 2025 (PST)
+</dd><dd><span style="font-size:25px;color:green"><b>✔</b></span>&nbsp;<b>Done</b> <a href="../../User%25253ADmi3.html" title="User:Dmi3">Dmi3</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Dmi3&amp;action=edit&amp;redlink=1" class="new" title="User talk:Dmi3 (страница не существует)">talk</a>) 11 Feb 2025
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 178/1000000
+Preprocessor generated node count: 518/1000000
+Post‐expand include size: 1808/4194304 bytes
+Template argument size: 946/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:19677-0!*!0!!en!*!* and timestamp 20250211161052 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges&amp;oldid=180495">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges&amp;oldid=180495</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./ranges.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/algorithm/ranges" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/algorithm/ranges" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges&amp;oldid=180495" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 11 February 2025, at 08:10.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.148 secs. -->
+	
+
+
+</body></html>

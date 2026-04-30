@@ -1,0 +1,8 @@
+
+body { display: flex; gap: 20px; flex-flow: wrap; }
+div { height: 200px; width: 200px; box-sizing: border-box; background-color: rebeccapurple; border: 20px solid magenta; clip-path: polygon(50% 0px, 100% 100%, 0px 100%); }
+div:last-of-type { clip-path: polygon(50% 0px, 100% 100%, 0px 100%) content-box; }
+div { clip-path: path("M 100 0 L 200 200 L 0 200 Z"); }
+div:last-of-type { clip-path: shape(from 50% 0px, line to 100% 100%, line to 0px 100%, close); }
+
+button.copy {display:none !important}

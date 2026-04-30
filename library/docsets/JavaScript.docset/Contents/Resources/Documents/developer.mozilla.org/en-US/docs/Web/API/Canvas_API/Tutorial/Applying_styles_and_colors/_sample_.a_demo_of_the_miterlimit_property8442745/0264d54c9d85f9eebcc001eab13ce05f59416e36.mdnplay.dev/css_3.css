@@ -1,0 +1,4 @@
+
+body { display: flex; }
+
+button.copy {display:none !important}

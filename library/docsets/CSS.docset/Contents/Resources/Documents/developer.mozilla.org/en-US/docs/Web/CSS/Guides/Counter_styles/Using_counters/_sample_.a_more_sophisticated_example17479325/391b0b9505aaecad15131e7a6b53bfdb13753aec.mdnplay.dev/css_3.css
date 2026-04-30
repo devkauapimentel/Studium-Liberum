@@ -1,0 +1,6 @@
+
+:root { counter-reset: link 0; }
+a[href] { counter-increment: link 1; }
+a[href]:empty::after { content: "[" counter(link) "]"; }
+
+button.copy {display:none !important}

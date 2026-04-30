@@ -1,0 +1,5 @@
+
+div { width: 240px; height: 120px; }
+.radial-ellipse-size { background: radial-gradient(50% 50px, red, yellow 10%, dodgerblue 50%, beige); }
+
+button.copy {display:none !important}

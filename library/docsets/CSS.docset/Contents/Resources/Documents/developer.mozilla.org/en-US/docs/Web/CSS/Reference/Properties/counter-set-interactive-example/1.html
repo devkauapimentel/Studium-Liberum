@@ -1,0 +1,87 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CSS Demo: counter-set</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../../../../../../../interactive_examples/assets/css/codemirror.css" rel="stylesheet">
+    <link href="../../../../../../../../interactive_examples/assets/css/editor-css.css" rel="stylesheet">
+    <style>#default-example {
+  text-align: left;
+  counter-set: chapter-count;
+}
+
+#example-element {
+  background-color: #37077c;
+  color: white;
+}
+
+h2 {
+  counter-increment: chapter-count;
+  font-size: 1em;
+}
+
+h2::before {
+  content: "Chapter " counter(chapter-count) ": ";
+}
+
+
+ button.copy {display:none !important}</style>  </head>
+
+  <body>
+    <header class="output-header border-rounded-top">
+      <h4 class="output-heading">CSS Demo: counter-set</h4>
+      <button id="reset" class="reset" type="button">Reset</button>
+    </header>
+    <noscript>
+      <div id="warning-no-script" class="warning-container">
+        <div class="warning">
+          The interactive example cannot be shown because JavaScript is
+          disabled.
+        </div>
+      </div>
+    </noscript>
+    <div id="warning-mathml-not-supported" class="warning-container hidden">
+      <div class="warning">
+        The interactive example cannot be shown because MathML is not supported
+        by your browser.
+      </div>
+    </div>
+    <div id="editor-wrapper" class="editor-wrapper border-rounded-bottom hidden">
+      <section id="example-choice-list" class="example-choice-list">
+          <div class="example-choice">
+<pre><code class="language-css">counter-set: none;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">counter-set: chapter-count 0;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">counter-set: chapter-count;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">counter-set: chapter-count 5;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">counter-set: chapter-count -5;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+      </section>
+      <div id="output" class="output hidden">
+          <section class="default-example" id="default-example">
+  <div class="transition-all" id="chapters">
+    <h1>Alice's Adventures in Wonderland</h1>
+    <h2>Down the Rabbit-Hole</h2>
+    <h2 id="example-element">The Pool of Tears</h2>
+    <h2>A Caucus-Race and a Long Tale</h2>
+    <h2>The Rabbit Sends in a Little Bill</h2>
+  </div>
+</section>
+      </div>
+    </div>
+
+    <script src="../../../../../../../../interactive_examples/assets/js/codemirror.js"></script>
+    <script src="../../../../../../../../interactive_examples/assets/js/editor-css.js"></script>
+    <script></script></body></html>

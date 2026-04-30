@@ -1,0 +1,5 @@
+
+button { display: block; }
+div, button { margin: 0.5rem 0px; }
+
+button.copy {display:none !important}

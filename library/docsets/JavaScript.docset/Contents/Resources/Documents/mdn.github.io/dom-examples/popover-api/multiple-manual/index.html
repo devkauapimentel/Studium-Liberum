@@ -1,0 +1,43 @@
+<html><!-- Mirrored from mdn.github.io/dom-examples/popover-api/multiple-manual/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:55:11 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Multiple manual popovers example</title>
+    <style>
+      :popover-open {
+        position: absolute;
+        inset: unset;
+        top: 80px;
+      }
+
+      #mypopup-1 {
+        left: 8px;
+      }
+
+      #mypopup-2 {
+        left: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <button popovertarget="mypopup-1" popovertargetaction="show">
+      Show popover #1
+    </button>
+    <button popovertarget="mypopup-1" popovertargetaction="hide">
+      Hide popover #1
+    </button>
+    <hr>
+    <button popovertarget="mypopup-2" popovertargetaction="show">
+      Show popover #2
+    </button>
+    <button popovertarget="mypopup-2" popovertargetaction="hide">
+      Hide popover #2
+    </button>
+
+    <div id="mypopup-1" popover="manual">Popover content #1</div>
+    <div id="mypopup-2" popover="manual">Popover content #2</div>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/dom-examples/popover-api/multiple-manual/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:55:11 GMT --></html>

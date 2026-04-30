@@ -1,0 +1,3 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/learn_web_development/extensions/advanced_javascript_objects/object-oriented_programming/index.md
+

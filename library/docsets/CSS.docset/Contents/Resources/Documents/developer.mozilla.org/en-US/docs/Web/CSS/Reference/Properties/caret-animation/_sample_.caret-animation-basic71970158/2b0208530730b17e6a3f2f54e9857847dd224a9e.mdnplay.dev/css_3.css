@@ -1,0 +1,6 @@
+
+p { caret-color: red; }
+p:first-of-type { }
+p:last-of-type { }
+
+button.copy {display:none !important}

@@ -1,0 +1,14 @@
+
+@font-face { font-family: "Playfair Display"; font-weight: normal; font-style: normal; font-width: normal; src: url("../mdn.github.io/shared-assets/fonts/playfair-display/playfair-display-regular.woff") format("woff"), url("../mdn.github.io/shared-assets/fonts/playfair-display/playfair-display-regular.woff2") format("woff2"); }
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: normal; font-family: "Playfair Display", "Times New Roman", serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; margin: 1rem; }
+fieldset { margin-bottom: 1rem; }
+label { }
+.container > p { font-size: 4rem; margin: 1.5rem 0px; }
+.container1 .small-caps { font-variant-caps: small-caps; }
+.container1 .all-small-caps { font-variant-caps: all-small-caps; }
+.inactive.container1 * { font-variant-caps: normal; }
+.container2 .small-caps { font-feature-settings: "smcp"; }
+.container2 .all-small-caps { font-feature-settings: "c2sc", "smcp"; }
+.inactive.container2 * { font-feature-settings: "smcp" 0, "c2sc" 0; }
+
+button.copy {display:none !important}

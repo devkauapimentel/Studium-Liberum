@@ -1,0 +1,10 @@
+
+@font-face { font-family: "Jost VF"; src: url("../mdn.github.io/shared-assets/fonts/variable-fonts/jost-VF.woff2") format("woff2-variations"); font-weight: 300 900; font-width: 75% 150%; font-display: swap; }
+p { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; line-height: normal; font-family: "Jost VF", Helvetica, Arial, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; font-size: 4rem; margin: 1rem; display: inline-block; }
+.adjustable { border: 1px dashed; --text-axis: 1; }
+.p1 { font-style: italic; }
+.p1-no-synthesis { font-style: italic; font-synthesis-small-caps: none; font-synthesis-style: none; font-synthesis-weight: none; }
+.p2 { font-variation-settings: "ital" 1; font-synthesis-small-caps: none; font-synthesis-style: none; font-synthesis-weight: none; }
+.p3 { font-synthesis-small-caps: none; font-synthesis-style: none; font-synthesis-weight: none; font-variation-settings: "ital" var(--text-axis); }
+
+button.copy {display:none !important}

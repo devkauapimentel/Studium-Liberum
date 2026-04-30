@@ -1,0 +1,14 @@
+
+body { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+div { height: 50px; flex: 0 0 28%; border: 1px solid black; }
+[data-color="red-yellow"] { background-color: lab(50 125 125); }
+[data-color="red-zero"] { background-color: lab(50 125 0); }
+[data-color="red-blue"] { background-color: lab(50 125 -125); }
+[data-color="zero-yellow"] { background-color: lab(50 0 125); }
+[data-color="zero-zero"] { background-color: lab(50 0 0); }
+[data-color="zero-blue"] { background-color: lab(50 0 -125); }
+[data-color="green-yellow"] { background-color: lab(50 -125 125); }
+[data-color="green-zero"] { background-color: lab(50 -125 0); }
+[data-color="green-blue"] { background-color: lab(50 -125 -125); }
+
+button.copy {display:none !important}

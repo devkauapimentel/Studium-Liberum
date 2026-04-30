@@ -1,0 +1,7 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/performance_api/user_timing/index.md
+
+# Original Wiki contributors
+fscholz
+stephaniehobson
+AFBarstow

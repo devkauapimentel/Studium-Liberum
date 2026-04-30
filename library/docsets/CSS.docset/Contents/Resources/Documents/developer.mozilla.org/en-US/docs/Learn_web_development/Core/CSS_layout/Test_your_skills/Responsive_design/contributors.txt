@@ -1,0 +1,7 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/learn_web_development/core/css_layout/test_your_skills/responsive_design/index.md
+
+# Original Wiki contributors
+MelchiorIm3Tal
+chrisdavidmills
+rachelandrew

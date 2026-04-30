@@ -1,0 +1,5 @@
+
+span { text-transform: capitalize; }
+strong { float: right; }
+
+button.copy {display:none !important}

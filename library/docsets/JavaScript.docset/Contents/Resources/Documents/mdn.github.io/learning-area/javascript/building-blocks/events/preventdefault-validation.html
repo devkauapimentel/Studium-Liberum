@@ -1,0 +1,44 @@
+<html><!-- Mirrored from mdn.github.io/learning-area/javascript/building-blocks/events/preventdefault-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 22:12:14 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Prevent default example</title>
+    <style>
+      div {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="fname">First name: </label>
+        <input id="fname" type="text">
+      </div>
+      <div>
+        <label for="lname">Last name: </label>
+        <input id="lname" type="text">
+      </div>
+      <div>
+        <input id="submit" type="submit">
+      </div>
+    </form>
+    <p></p>
+    <script>
+      const form = document.querySelector('form');
+      const fname = document.getElementById('fname');
+      const lname = document.getElementById('lname');
+      const para = document.querySelector('p');
+
+      form.addEventListener('submit', e => {
+        if (fname.value === '' || lname.value === '') {
+          e.preventDefault();
+          para.textContent = 'You need to fill in both names!';
+        }
+      });
+    </script>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/learning-area/javascript/building-blocks/events/preventdefault-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 22:12:14 GMT --></html>

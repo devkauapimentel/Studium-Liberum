@@ -1,0 +1,7 @@
+
+.errormessage { visibility: hidden; }
+[aria-invalid="true"] { outline: 2px solid red; }
+[aria-invalid="true"] ~ .errormessage { visibility: visible; }
+#log { height: 70px; overflow: scroll; padding: 0.5rem; border: 1px solid black; }
+
+button.copy {display:none !important}

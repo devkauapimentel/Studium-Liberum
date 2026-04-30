@@ -1,0 +1,10 @@
+
+p { text-shadow: mediumblue 5px 5px 0px, magenta 10px 10px 5px, rebeccapurple 15px 15px 10px; }
+.opaque { color: black; }
+.semitransparent { color: rgba(0, 0, 0, 0.5); }
+.transparent { color: transparent; }
+.white { color: white; }
+.semi-white { color: rgba(255, 255, 255, 0.75); }
+p { border: 1px solid black; padding: 20px; font-family: sans-serif; font-size: 1.75rem; font-weight: bold; }
+
+button.copy {display:none !important}

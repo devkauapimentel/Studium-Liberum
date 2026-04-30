@@ -1,0 +1,89 @@
+<html>
+  <!-- Online page at https://4d7ef31ced0ac80346573931fe81732b1771cb84.mdnplay.dev/en-US/docs/Web/CSS/Reference/Values/basic-shape/rect/runner.html?uuid=4d7ef31ced0ac80346573931fe81732b1771cb84&state=rVJBTsMwEPyKZakSSKQkKb2kBfEGzrk4jpssdezIdkqrKlcewBN5CWunRC2qSpG42KvZ8czueve0do2kGV2WsCFcMmsfc8q1cgyUMDl9yhUhL4I7pqpOMkNa5mqSePTkSYAN8iIfRQm%2B%2FHz%2FWN4jByXG%2B08u6W8u6X%2B4zH5zmZ13oXeUW4ujm44WZO%2B1Wm3BgVYZakjmYCMWHi7BtpLtMgJKIjkqpObrkHmD0tUZSeO43QagFlDV7hgptCmFyUjSbonVEkpSSHZ43jBTAbol8wPZia2LmIQKQS6UEwbhPle5mobW9kemDz89R6BA%2FcroTpUR11Ib3065OG2QFVhM54YGmYKGDXijN4IksSW%2BUxw0qBUoCLyhjqNNGcrRq5UVA5SF2d%2FMsRDsyZ9hDiSEoSAEJrdntNKLWqxz%2Bmqp2bVSPhwFntditzKsEXYYQdCIJ8M9quEm4ApykWEqTK73RxJfIPrkN7UPu%2FfqVw9vV4tGYCj999H%2BCw%3D%3D&code=39728045& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;div class="container"&gt;
+  Rectangular path 1
+  &lt;div class="path rect-path-1"&gt;→&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="container"&gt;
+  Rectangular path 2
+  &lt;div class="path rect-path-2"&gt;→&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="container"&gt;
+  Rectangular path 3
+  &lt;div class="path rect-path-3"&gt;→&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>.container {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  margin: 15px;
+  text-align: center;
+}
+
+.path {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  position: absolute;
+  animation: move 10s linear infinite;
+}
+
+.rect-path-1 {
+  offset-path: rect(50px 150px 200px 50px round 20%);
+}
+
+.rect-path-2 {
+  offset-path: rect(50px auto 200px 50px round 20%);
+}
+
+.rect-path-3 {
+  offset-path: rect(50px auto 200px auto);
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code></code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=4d7ef31ced0ac80346573931fe81732b1771cb84&amp;state=rVJBTsMwEPyKZakSSKQkKb2kBfEGzrk4jpssdezIdkqrKlcewBN5CWunRC2qSpG42KvZ8czueve0do2kGV2WsCFcMmsfc8q1cgyUMDl9yhUhL4I7pqpOMkNa5mqSePTkSYAN8iIfRQm%2B%2FHz%2FWN4jByXG%2B08u6W8u6X%2B4zH5zmZ13oXeUW4ujm44WZO%2B1Wm3BgVYZakjmYCMWHi7BtpLtMgJKIjkqpObrkHmD0tUZSeO43QagFlDV7hgptCmFyUjSbonVEkpSSHZ43jBTAbol8wPZia2LmIQKQS6UEwbhPle5mobW9kemDz89R6BA%2FcroTpUR11Ib3065OG2QFVhM54YGmYKGDXijN4IksSW%2BUxw0qBUoCLyhjqNNGcrRq5UVA5SF2d%2FMsRDsyZ9hDiSEoSAEJrdntNKLWqxz%2Bmqp2bVSPhwFntditzKsEXYYQdCIJ8M9quEm4ApykWEqTK73RxJfIPrkN7UPu%2FfqVw9vV4tGYCj999H%2BCw%3D%3D&amp;code=39728045&amp;" class="leave">Open in Playground</a>
+          <a href="https://4d7ef31ced0ac80346573931fe81732b1771cb84.mdnplay.dev/en-US/docs/Web/CSS/Reference/Values/basic-shape/rect/runner.html?state=rVJBTsMwEPyKZakSSKQkKb2kBfEGzrk4jpssdezIdkqrKlcewBN5CWunRC2qSpG42KvZ8czueve0do2kGV2WsCFcMmsfc8q1cgyUMDl9yhUhL4I7pqpOMkNa5mqSePTkSYAN8iIfRQm%2B%2FHz%2FWN4jByXG%2B08u6W8u6X%2B4zH5zmZ13oXeUW4ujm44WZO%2B1Wm3BgVYZakjmYCMWHi7BtpLtMgJKIjkqpObrkHmD0tUZSeO43QagFlDV7hgptCmFyUjSbonVEkpSSHZ43jBTAbol8wPZia2LmIQKQS6UEwbhPle5mobW9kemDz89R6BA%2FcroTpUR11Ib3065OG2QFVhM54YGmYKGDXijN4IksSW%2BUxw0qBUoCLyhjqNNGcrRq5UVA5SF2d%2FMsRDsyZ9hDiSEoSAEJrdntNKLWqxz%2Bmqp2bVSPhwFntditzKsEXYYQdCIJ8M9quEm4ApykWEqTK73RxJfIPrkN7UPu%2FfqVw9vV4tGYCj999H%2BCw%3D%3D&amp;code=9a070760-2f77-40e7-9dac-e18f041de8d3" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

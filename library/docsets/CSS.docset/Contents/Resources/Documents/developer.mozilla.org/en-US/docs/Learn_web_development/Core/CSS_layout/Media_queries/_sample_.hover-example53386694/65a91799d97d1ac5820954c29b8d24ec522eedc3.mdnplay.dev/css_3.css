@@ -1,0 +1,6 @@
+
+@media screen and (hover: hover) {
+  body:hover { color: white; background: black; }
+}
+
+button.copy {display:none !important}

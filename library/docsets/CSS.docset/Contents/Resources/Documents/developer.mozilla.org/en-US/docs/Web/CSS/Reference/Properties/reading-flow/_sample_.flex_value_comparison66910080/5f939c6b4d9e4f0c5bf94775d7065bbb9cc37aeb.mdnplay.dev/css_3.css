@@ -1,0 +1,5 @@
+
+.wrapper { display: flex; flex-direction: row-reverse; gap: 1em; }
+a:first-child { order: 1; }
+
+button.copy {display:none !important}

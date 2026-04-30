@@ -1,0 +1,4 @@
+
+.heart { width: 200px; height: 200px; background: linear-gradient(rebeccapurple, magenta) blue; clip-path: path("M 20 70 A 40 40 0 0 1 100 70 A 40 40 0 0 1 180 70 Q 180 130 100 190 Q 20 130 20 70 Z"); }
+
+button.copy {display:none !important}

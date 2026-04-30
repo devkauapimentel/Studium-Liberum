@@ -1,0 +1,5 @@
+
+          const weekControl = document.querySelector('input[type="week"]');
+weekControl.value = "2017-W45";
+;
+        

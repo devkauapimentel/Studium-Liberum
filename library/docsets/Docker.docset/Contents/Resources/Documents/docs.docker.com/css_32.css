@@ -1,0 +1,36 @@
+
+@media all {
+@media (min-width: 768px) {
+  .release-main-section { border-left: var(--borderWidth-thick)solid var(--borderColor-default,var(--color-border-default)); }
+}
+.uploaded-files { border-top-left-radius: var(--borderRadius-medium); border-top-right-radius: var(--borderRadius-medium); }
+.uploaded-files.not-populated + .drop-target .drop-target-label { border-top: var(--borderWidth-thin)var(--borderColor-default,var(--color-border-default)); border-top-left-radius: var(--borderRadius-medium); border-top-right-radius: var(--borderRadius-medium); }
+.uploaded-files.is-populated { border-top-width: ; border-right-width: ; border-bottom-width: ; border-left-width: ; border-top-style: ; border-right-style: ; border-bottom-style: ; border-left-style: ; border-top-color: ; border-right-color: ; border-left-color: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-bottom-color: var(--borderColor-muted,var(--color-border-muted)); }
+.uploaded-files.is-populated.immutable-assets { border-bottom-left-radius: var(--borderRadius-medium); border-bottom-right-radius: var(--borderRadius-medium); }
+.uploaded-files.is-populated + .drop-target .drop-target-label { border-top: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; }
+.uploaded-files > li.delete { background: var(--bgColor-default,var(--color-canvas-default)); }
+.uploaded-files > li.delete:nth-child(2) { border-top-left-radius: var(--borderRadius-medium); border-top-right-radius: var(--borderRadius-medium); }
+.uploaded-files > li.delete .delete-pending { display: block !important; }
+.uploaded-files > li.delete .live { display: none !important; }
+.uploaded-files > li:nth-child(2) { border-top: 0px !important; }
+.uploaded-files .remove:hover { color: var(--fgColor-danger,var(--color-danger-fg)) !important; }
+.upload-progress { height: 3px; margin-top: var(--base-size-4); border-radius: 30px; }
+.upload-progress .upload-meter { background-image: linear-gradient(rgb(141, 210, 247), rgb(88, 184, 244)); border-radius: 30px; }
+.releases-file-attachment:focus-within .releases-file-attachment-label { outline: 2px solid var(--focus-outlineColor,var(--color-accent-fg)); outline-offset: -2px; box-shadow: none; }
+.release-row-gap-1 { gap: var(--base-size-4)0; }
+@media (max-width: 543px) {
+  .SelectMenu-modal-height-sm { min-height: 200px; }
+}
+}
+
+@media all {
+
+@media (min-width:768px){.release-main-section{border-left:var(--borderWidth-thick)solid var(--borderColor-default,var(--color-border-default))}}.uploaded-files{border-top-left-radius:var(--borderRadius-medium);border-top-right-radius:var(--borderRadius-medium)}.uploaded-files.not-populated+.drop-target .drop-target-label{border-top:var(--borderWidth-thin)var(--borderColor-default,var(--color-border-default));border-top-left-radius:var(--borderRadius-medium);border-top-right-radius:var(--borderRadius-medium)}.uploaded-files.is-populated{border:var(--borderWidth-thin)solid var(--borderColor-default,var(--color-border-default));border-bottom-color:var(--borderColor-muted,var(--color-border-muted))}.uploaded-files.is-populated.immutable-assets{border-bottom-left-radius:var(--borderRadius-medium);border-bottom-right-radius:var(--borderRadius-medium)}.uploaded-files.is-populated+.drop-target .drop-target-label{border-top:0;border-top-left-radius:0;border-top-right-radius:0}.uploaded-files>li.delete{background:var(--bgColor-default,var(--color-canvas-default))}.uploaded-files>li.delete:nth-child(2){border-top-left-radius:var(--borderRadius-medium);border-top-right-radius:var(--borderRadius-medium)}.uploaded-files>li.delete .delete-pending{display:block!important}.uploaded-files>li.delete .live{display:none!important}.uploaded-files>li:nth-child(2){border-top:0!important}.uploaded-files .remove:hover{color:var(--fgColor-danger,var(--color-danger-fg))!important}.upload-progress{height:3px;margin-top:var(--base-size-4);border-radius:30px}.upload-progress .upload-meter{background-image:linear-gradient(#8dd2f7,#58b8f4);border-radius:30px}.releases-file-attachment:focus-within .releases-file-attachment-label{outline:2px solid var(--focus-outlineColor,var(--color-accent-fg));outline-offset:-2px;box-shadow:none}.release-row-gap-1{gap:var(--base-size-4)0}@media (max-width:543px){.SelectMenu-modal-height-sm{min-height:200px}}
+/*# sourceMappingurl=releases-8d1cff8087c530cf-79a462745c2fd7d6.css.map*/
+}
+
+
+footer {
+    display: none !important;
+}
+.main-header, .large-3.columns, .left-off-canvas-menu, .get-started-cta, .main-footer, .left-off-canvas-toggle {display:none !important} .large-9 {width:100% !important} .toggle-mode {display:none !important} .main-header, .anchorLink, .left-off-canvas-menu, .left-off-canvas-toggle, .main_footer .container, .title_section, .docsidebarnav_section {display:none !important} .col-md-10 {width:100% !important} aside.sticky {display:none !important} #docs {margin-bottom:40px !important} header, footer, #pd_rating_holder_8453675, .col-nav, .col-toc {display:none !important} .content {padding:0px 26px 30px !important} section.section {max-width:none !important} @media only screen and (max-width: 1024px) { main.content {padding: 0px 13px 30px !important}} .tableofcontents_section, .docsidebarnav_section {display:none !important} .col-md-8 {width:100% !important} #_hj_feedback_container {display:none !important} .reading-time {display:none !important} .search-form {display:none !important} #onetrust-consent-sdk {display:none !important} .large-6 {width:100% !important} #DocumentationText {padding:0px !important} .advisory {padding:40px 20px 20px 20px !important} blockquote p::before {content:none !important} button.copy {display:none !important} #announcement-bar, #sidebar, body main.flex div.sticky {display:none !important} #docker-announcement-bar {display:none !important} ._hj-widget-container {display:none !important} body main.flex {display:block !important} body main.flex div.flex.lg\:w-full { width:auto !important} main, ._hj_feedback_container {border:none !important} h1 span.invisible, h2 span.invisible, h3 span.invisible, h4 span.invisible {display:none !important} [aria-role=tablist] {display:none !important} [aria-role=tab] {display:block !important} a.relative.-top-16 {top:0 !important} #TableOfContents, nav#sectiontree, #kapa-widget-container {display:none !important} .md-dropdown {display:none !important} #markdownDropdown {display:none !important} main.grid {display:block !important} main > div.sticky {display:none !important} nav.text-sm {display:none !important}

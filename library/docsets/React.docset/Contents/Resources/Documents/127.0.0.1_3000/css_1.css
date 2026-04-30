@@ -1,0 +1,19 @@
+
+body { display: none; }
+
+footer {
+    display: none !important;
+}
+body {
+    display:block;
+}
+
+.hide-next-dash + div {
+    display:none !important;
+}
+
+details button {
+    pointer-events:none;
+}
+
+.sticky, .mdx-heading .mdx-header-anchor svg {display:none !important} header {display:none !important} .h-\[40px\].hidden {display:none !important} .lg\:grid-cols-sidebar-content {display:block !important} main {padding-top:10px !important} .h-full {height: auto !important} .max-w-7xl, .max-w-4xl {max-width:none !important}

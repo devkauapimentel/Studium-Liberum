@@ -1,0 +1,11 @@
+
+body { display: flex; justify-content: center; gap: 50px; margin-top: 5px; }
+.scoped { padding: 20px; background: rgb(238, 238, 238); border: 2px solid rgb(221, 221, 221); border-radius: 10px; width: 100px; height: 100px; }
+.anchor { font-size: 1.8rem; color: white; text-shadow: black 1px 1px 1px; background-color: blue; width: fit-content; padding: 3px; }
+.positioned, .positioned2 { border: 1px solid black; border-radius: 3px; width: fit-content; padding: 3px 6px; box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 3px; }
+form { position: absolute; bottom: 5px; right: 5px; }
+.anchor { anchor-name: --my-anchor, --another-anchor; }
+.positioned { position: absolute; position-anchor: --my-anchor; position-area: right; }
+.positioned2 { position: absolute; bottom: 5px; position-anchor: --another-anchor; position-area: bottom; }
+
+button.copy {display:none !important}

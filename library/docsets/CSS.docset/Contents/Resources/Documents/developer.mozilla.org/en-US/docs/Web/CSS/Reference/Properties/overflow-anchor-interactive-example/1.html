@@ -1,0 +1,119 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CSS Demo: overflow-anchor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../../../../../../../interactive_examples/assets/css/codemirror.css" rel="stylesheet">
+    <link href="../../../../../../../../interactive_examples/assets/css/editor-css.css" rel="stylesheet">
+    <style>.whole-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+#example-element {
+  height: 100%;
+  border: 2px dashed dodgerblue;
+  padding: 0.75em;
+  text-align: left;
+  overflow: scroll;
+}
+
+#playback {
+  font-size: 1em;
+  width: 10em;
+  height: 4em;
+  font-weight: bold;
+  margin: 1em auto;
+  background-color: aliceblue;
+  border: solid 2px dodgerblue;
+  border-radius: 5px;
+}
+
+#playback:hover {
+  border-color: lightseagreen;
+}
+
+#playback:active {
+  filter: brightness(0.9);
+}
+
+
+ button.copy {display:none !important}</style>  </head>
+
+  <body>
+    <header class="output-header border-rounded-top">
+      <h4 class="output-heading">CSS Demo: overflow-anchor</h4>
+      <button id="reset" class="reset" type="button">Reset</button>
+    </header>
+    <noscript>
+      <div id="warning-no-script" class="warning-container">
+        <div class="warning">
+          The interactive example cannot be shown because JavaScript is
+          disabled.
+        </div>
+      </div>
+    </noscript>
+    <div id="warning-mathml-not-supported" class="warning-container hidden">
+      <div class="warning">
+        The interactive example cannot be shown because MathML is not supported
+        by your browser.
+      </div>
+    </div>
+    <div id="editor-wrapper" class="editor-wrapper border-rounded-bottom hidden">
+      <section id="example-choice-list" class="example-choice-list">
+          <div class="example-choice">
+<pre><code class="language-css">overflow-anchor: auto;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">overflow-anchor: none;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+      </section>
+      <div id="output" class="output hidden">
+          <section class="default-example" id="default-example">
+  <div class="whole-content-wrapper">
+    <button id="playback" type="button">Start lottery</button>
+    <p>Magic numbers for today are:</p>
+    <div id="example-element"></div>
+  </div>
+</section>
+      </div>
+    </div>
+
+    <script src="../../../../../../../../interactive_examples/assets/js/codemirror.js"></script>
+    <script src="../../../../../../../../interactive_examples/assets/js/editor-css.js"></script>
+    <script>const example = document.getElementById("example-element");
+const button = document.getElementById("playback");
+let intervalId;
+
+function setInitialState() {
+  example.innerHTML = "";
+  Array.from({ length: 10 }, (_, i) => i).forEach(addContent);
+  example.scrollTop = example.scrollHeight;
+}
+
+function addContent() {
+  console.log("adding content");
+  const magicNumber = Math.floor(Math.random() * 10000);
+  example.insertAdjacentHTML(
+    "afterbegin",
+    \`<div class="new-content-container">New Magic Number: $\{magicNumber}</div>\`,
+  );
+}
+
+button.addEventListener("click", () => {
+  if (example.classList.contains("running")) {
+    example.classList.remove("running");
+    button.textContent = "Start lottery";
+    clearInterval(intervalId);
+  } else {
+    example.classList.add("running");
+    button.textContent = "Stop lottery";
+    setInitialState();
+    intervalId = setInterval(addContent, 1000);
+  }
+});
+</script></body></html>

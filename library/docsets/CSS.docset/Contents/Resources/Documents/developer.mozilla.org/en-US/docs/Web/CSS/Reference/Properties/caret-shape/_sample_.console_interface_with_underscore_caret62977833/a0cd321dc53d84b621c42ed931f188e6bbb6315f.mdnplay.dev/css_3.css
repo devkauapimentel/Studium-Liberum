@@ -1,0 +1,11 @@
+
+label { background: rgb(42, 42, 44); color: white; display: block; padding: 10px 20px; font-weight: bold; font-family: monospace; }
+.console-demo { background: black; color: white; font-family: monospace; padding: 10px 20px; height: 60px; }
+.console-output { margin-bottom: 0.5rem; }
+.console-output p { margin: 0px 0.25rem; }
+.console-input { display: flex; align-items: center; }
+.prompt { margin-right: 0px; }
+.console { background: none; border: medium; color: white; padding-left: 1ch; font-family: inherit; outline: medium; flex: 1 1 0%; }
+.console { }
+
+button.copy {display:none !important}

@@ -1,0 +1,6 @@
+
+#log { border: 1px dotted black; padding: 0.5rem; }
+.blue { color: blue; }
+.red { color: red; }
+
+button.copy {display:none !important}

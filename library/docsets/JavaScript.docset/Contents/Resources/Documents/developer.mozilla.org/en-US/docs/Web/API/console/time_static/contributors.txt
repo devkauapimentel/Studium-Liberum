@@ -1,0 +1,24 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/console/time_static/index.md
+
+# Original Wiki contributors
+mfuji09
+irenesmith
+connorshea
+fscholz
+sideshowbarker
+LurN
+arronei
+valtlai
+Daniel Hug
+erikadoyle
+silverwind
+Sebastianz
+chrisdavidmills
+cvrebert
+teoli
+styfle
+kscarfone
+Khodaidad_Basharmand
+Sheppy
+myakura

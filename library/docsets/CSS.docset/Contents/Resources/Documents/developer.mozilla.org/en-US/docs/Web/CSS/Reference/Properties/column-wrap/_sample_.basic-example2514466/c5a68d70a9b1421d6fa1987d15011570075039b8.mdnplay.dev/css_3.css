@@ -1,0 +1,4 @@
+
+ol { column-width: 150px; gap: 2em; }
+
+button.copy {display:none !important}

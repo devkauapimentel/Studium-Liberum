@@ -1,0 +1,8 @@
+
+div { background: linear-gradient(red, blue) blue; mask-image: url("../mdn.github.io/shared-assets/images/examples/mdn.svg"); }
+.alpha { mask-mode: alpha; }
+.luminance { mask-mode: luminance; }
+.matchSource { mask-mode: match-source; }
+div { width: 227px; height: 200px; float: left; text-align: center; line-height: 65px; color: white; text-shadow: black 1px 1px 2px; font-family: sans-serif; }
+
+button.copy {display:none !important}

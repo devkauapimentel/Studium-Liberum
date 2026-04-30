@@ -1,0 +1,9 @@
+
+div { border: 1px solid black; width: 250px; height: 100px; margin-bottom: 120px; }
+#hidden { overflow-block: hidden; }
+#scroll { overflow-block: scroll; }
+#clip { overflow-block: clip; }
+#visible { overflow-block: visible; }
+#auto { overflow-block: auto; }
+
+button.copy {display:none !important}

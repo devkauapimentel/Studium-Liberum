@@ -1,0 +1,7 @@
+
+p { white-space: nowrap; }
+@media (overflow-inline: scroll) {
+  p { color: red; }
+}
+
+button.copy {display:none !important}

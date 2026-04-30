@@ -1,0 +1,67 @@
+<html>
+  <!-- Online page at https://7a5a37e48cad1b243e2d2227e9a7c62517c60ee2.mdnplay.dev/en-US/docs/Web/CSS/Reference/Selectors/::-webkit-meter-inner-element/runner.html?uuid=7a5a37e48cad1b243e2d2227e9a7c62517c60ee2&state=nVLLbtswEPyVrQIEiWFL8SUH2TEQ9NYWPdQFetFBFLmyWFOkyqX8aJB%2F71KSkyAoUKA6SCTFmZ2Z3aekCa1J8uSr860wOaxbDOih1fahSO6KBFpx4tUyLg%2FC9Mib%2ByLZbKXzCPfZ8m6dDZBNYdeVh4y%2F23A2qF64tGIMDWeR73%2BYk3kiiVhm5dQZngoLUDsbFrVotTnn0DrrqBMSV4V9LmxhUxK18BpGBQMgm8E3JAwQGgSFtehNANF1KLywEpnQw3ZEOWvOMMsm1IVLGkEEmkAohQoOWsAncRBb6XUXpuuLI1Z7HRavvDlYZ190XY055Pnl4iBwoa3lNxps0YZR7t%2BYtG3Q67CK%2Fyt3WpD%2Bre3u%2FblX6HNYdidQghpWeiWGZ9TAUf6MSWbZxa3HX732SFO%2FNjDpIAgOGnFAEBbKVx0luBrK6KocQpM9BddCdMZqCsvMPfEKyvc2ZyUQk8vgPM2h6sNb2jGoEiqPYk%2BsyrKPSOMsfGy8azEduL%2BzV%2BS6OIcjQsvFQTYo96DrobWVd0eKY0eTwUUlCFUa45fO8nVNk%2FOHGJgVB70TLCntGfa4Y%2BepttL0CummSB67zuAPrD7rkBXJLVxfR9CHf6BGwRGwinVZ2s2l6u3YX%2BVkH1NO40inw2x90RRSHi7GjyM3wsemsbUWuW9G75qQPP8B&code=85611835& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>Normal: &lt;meter min="0" max="10" value="6"&gt;Score 6/10&lt;/meter&gt;
+&lt;br /&gt;
+Styled: &lt;meter id="styled" min="0" max="10" value="6"&gt;Score 6/10&lt;/meter&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>body {
+  font-family: monospace;
+}
+
+.safari meter {
+  /* Reset the default appearance for Safari only */
+  /* .safari class is added via JavaScript */
+  -webkit-appearance: none;
+}
+
+#styled::-webkit-meter-inner-element {
+  -webkit-appearance: inherit;
+  box-sizing: inherit;
+  border: 1px dashed #aaaaaa;
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code>// Safari requires &lt;meter&gt; elements to have an `appearance` of `none` for custom styling
+// using `::-webkit-meter-*` selectors, but `appearance: none` breaks rendering on Chrome.
+// Therefore, we must check if the browser is Safari-based.
+
+const isSafari =
+  navigator.userAgent.includes("AppleWebKit/") &amp;&amp;
+  !navigator.userAgent.includes("Chrome/");
+
+if (isSafari) {
+  document.body.classList.add("safari");
+}</code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=7a5a37e48cad1b243e2d2227e9a7c62517c60ee2&amp;state=nVLLbtswEPyVrQIEiWFL8SUH2TEQ9NYWPdQFetFBFLmyWFOkyqX8aJB%2F71KSkyAoUKA6SCTFmZ2Z3aekCa1J8uSr860wOaxbDOih1fahSO6KBFpx4tUyLg%2FC9Mib%2ByLZbKXzCPfZ8m6dDZBNYdeVh4y%2F23A2qF64tGIMDWeR73%2BYk3kiiVhm5dQZngoLUDsbFrVotTnn0DrrqBMSV4V9LmxhUxK18BpGBQMgm8E3JAwQGgSFtehNANF1KLywEpnQw3ZEOWvOMMsm1IVLGkEEmkAohQoOWsAncRBb6XUXpuuLI1Z7HRavvDlYZ190XY055Pnl4iBwoa3lNxps0YZR7t%2BYtG3Q67CK%2Fyt3WpD%2Bre3u%2FblX6HNYdidQghpWeiWGZ9TAUf6MSWbZxa3HX732SFO%2FNjDpIAgOGnFAEBbKVx0luBrK6KocQpM9BddCdMZqCsvMPfEKyvc2ZyUQk8vgPM2h6sNb2jGoEiqPYk%2BsyrKPSOMsfGy8azEduL%2BzV%2BS6OIcjQsvFQTYo96DrobWVd0eKY0eTwUUlCFUa45fO8nVNk%2FOHGJgVB70TLCntGfa4Y%2BepttL0CummSB67zuAPrD7rkBXJLVxfR9CHf6BGwRGwinVZ2s2l6u3YX%2BVkH1NO40inw2x90RRSHi7GjyM3wsemsbUWuW9G75qQPP8B&amp;code=85611835&amp;" class="leave">Open in Playground</a>
+          <a href="https://7a5a37e48cad1b243e2d2227e9a7c62517c60ee2.mdnplay.dev/en-US/docs/Web/CSS/Reference/Selectors/::-webkit-meter-inner-element/runner.html?state=nVLLbtswEPyVrQIEiWFL8SUH2TEQ9NYWPdQFetFBFLmyWFOkyqX8aJB%2F71KSkyAoUKA6SCTFmZ2Z3aekCa1J8uSr860wOaxbDOih1fahSO6KBFpx4tUyLg%2FC9Mib%2ByLZbKXzCPfZ8m6dDZBNYdeVh4y%2F23A2qF64tGIMDWeR73%2BYk3kiiVhm5dQZngoLUDsbFrVotTnn0DrrqBMSV4V9LmxhUxK18BpGBQMgm8E3JAwQGgSFtehNANF1KLywEpnQw3ZEOWvOMMsm1IVLGkEEmkAohQoOWsAncRBb6XUXpuuLI1Z7HRavvDlYZ190XY055Pnl4iBwoa3lNxps0YZR7t%2BYtG3Q67CK%2Fyt3WpD%2Bre3u%2FblX6HNYdidQghpWeiWGZ9TAUf6MSWbZxa3HX732SFO%2FNjDpIAgOGnFAEBbKVx0luBrK6KocQpM9BddCdMZqCsvMPfEKyvc2ZyUQk8vgPM2h6sNb2jGoEiqPYk%2BsyrKPSOMsfGy8azEduL%2BzV%2BS6OIcjQsvFQTYo96DrobWVd0eKY0eTwUUlCFUa45fO8nVNk%2FOHGJgVB70TLCntGfa4Y%2BepttL0CummSB67zuAPrD7rkBXJLVxfR9CHf6BGwRGwinVZ2s2l6u3YX%2BVkH1NO40inw2x90RRSHi7GjyM3wsemsbUWuW9G75qQPP8B&amp;code=3fb1e253-1189-436d-86fa-68ca2c74dc0a" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

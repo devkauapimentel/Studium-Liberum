@@ -1,0 +1,5 @@
+
+.target { font-size: 2rem; background-color: palegoldenrod; transition: background-color 2s 500ms; }
+.target:hover { background-color: darkorange; }
+
+button.copy {display:none !important}

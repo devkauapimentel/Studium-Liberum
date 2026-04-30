@@ -1,0 +1,5 @@
+
+div { height: 121px; aspect-ratio: 0.5 / 1; background-color: pink; line-height: 100px; text-align: center; float: left; background-image: repeating-linear-gradient(to right, black 0px, black 1px, transparent 1px, transparent 20px), repeating-linear-gradient(black 0px, black 1px, transparent 1px, transparent 20px); background-size: 181px 5px, 5px 121px; background-repeat: no-repeat; }
+div + div { aspect-ratio: 1.5 / 1; background-color: lightgreen; margin-left: 10px; }
+
+button.copy {display:none !important}

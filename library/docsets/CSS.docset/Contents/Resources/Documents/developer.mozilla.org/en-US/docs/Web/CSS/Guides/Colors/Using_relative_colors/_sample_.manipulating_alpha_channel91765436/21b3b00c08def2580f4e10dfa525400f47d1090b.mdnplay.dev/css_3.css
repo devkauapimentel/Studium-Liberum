@@ -1,0 +1,10 @@
+
+.container { padding: 60px; }
+.item { height: 60px; }
+div { background-color: rgb(
+    from teal r g b / calc(alpha * var(--alpha-multiplier))
+  ); }
+.container { --alpha-multiplier: 0.3; }
+.item { --alpha-multiplier: 1; }
+
+button.copy {display:none !important}

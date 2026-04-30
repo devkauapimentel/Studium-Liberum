@@ -1,0 +1,7 @@
+
+#scroll-box { height: 100px; width: 100px; float: left; overflow: scroll; outline: 4px dotted; margin: 4px; }
+#scroll-box-title { position: fixed; top: 5px; left: 5px; transform: translateX(0px); }
+#large-element { height: 200px; width: 200px; }
+#output { text-align: center; }
+
+button.copy {display:none !important}

@@ -1,0 +1,5 @@
+
+button { display: block; }
+#log { height: 20px; padding: 0.5rem; border: 1px solid black; }
+
+button.copy {display:none !important}

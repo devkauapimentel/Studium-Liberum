@@ -1,0 +1,4 @@
+
+p { text-indent: 30%; padding: 30px; background-image: repeating-linear-gradient(to right, transparent 0px, transparent 9.5%, rgb(222, 222, 222) 9.5%, rgb(222, 222, 222) 10%); background-color: plum; }
+
+button.copy {display:none !important}

@@ -1,0 +1,7 @@
+
+@font-face { font-family: MonteCarlo; src: url("./shared-assets/fonts/monte-carlo/monte-carlo-regular.woff2"); }
+@font-feature-values MonteCarlo { @swash { fancy: 1; } }
+p { font-family: MonteCarlo, cursive; font-size: 3rem; margin: 0.7rem 3rem; }
+.variant { font-variant-alternates: swash(fancy); }
+
+button.copy {display:none !important}

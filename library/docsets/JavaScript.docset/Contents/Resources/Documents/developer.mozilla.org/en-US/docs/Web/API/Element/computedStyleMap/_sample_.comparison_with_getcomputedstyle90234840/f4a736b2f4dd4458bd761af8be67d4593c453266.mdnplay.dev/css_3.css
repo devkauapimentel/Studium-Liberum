@@ -1,0 +1,5 @@
+
+.container { width: 200px; height: 200px; }
+.item { width: 50%; height: 100px; background-color: tomato; }
+
+button.copy {display:none !important}

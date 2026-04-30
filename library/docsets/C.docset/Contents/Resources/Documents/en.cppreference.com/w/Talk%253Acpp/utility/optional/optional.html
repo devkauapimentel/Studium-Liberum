@@ -1,0 +1,316 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/utility/optional/optional.html --><head><meta charset="utf-8"><title>Talk:cpp/utility/optional/optional</title><link rel="stylesheet" href="../../../css_1.css" type="text/css"><link rel="stylesheet" href="../../../css_2.css" type="text/css"><link rel="stylesheet" href="../../../css_3.css" type="text/css"><link rel="stylesheet" href="../../../css_4.css" type="text/css"><link rel="stylesheet" href="../../../css_5.css" type="text/css"><script type="text/javascript" src="../../../js_1.js"></script><script type="text/javascript" src="../../../js_2.js"></script><script type="text/javascript" src="../../../js_7537.js"></script><script type="text/javascript" src="../../../js_4.js"></script><script type="text/javascript" src="../../../js_5.js"></script><script type="text/javascript" src="../../../js_6.js"></script><script type="text/javascript" src="../../../js_7.js"></script><script type="text/javascript" src="../../../js_8.js"></script><script type="text/javascript" src="../../../js_9.js"></script><script type="text/javascript" src="../../../js_10.js"></script><script type="text/javascript" src="../../../js_11.js"></script><script type="text/javascript" src="../../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_utility_optional_optional skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Futility%2Foptional%2Foptional&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Futility%2Foptional%2Foptional" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../../cpp/utility/optional/optional.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./optional.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./optional.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./optional.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/optional/optional&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/optional/optional&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/optional/optional&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./optional.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/utility/optional/optional</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../../utility.html" title="Talk:cpp/utility">utility</a>‎ | <a href="../optional.html" title="Talk:cpp/utility/optional">optional</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="t-dcl-begin"><tbody>
+<tr class="t-dcl t-since-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span> <span class="kw1">class</span> U <span class="sy1">=</span> T <span class="sy1">&gt;</span><br>
+<span class="coMULTI">/* EXPLICIT */</span> <span class="kw4">constexpr</span> optional<span class="br0">(</span> U<span class="sy3">&amp;&amp;</span> value <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (8) </td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>This doesn't make sense to me. Should it be <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span> <span class="kw1">class</span> T <span class="sy1">=</span> U <span class="sy1">&gt;</span></span></span>?
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User:Gubbins (page does not exist)">gubbins</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User talk:Gubbins (page does not exist)">talk</a>) 02:15, 25 January 2017 (PST)
+</p>
+<dl><dd><span class="t-c"><span class="mw-geshi cpp source-cpp">T</span></span> is the template parameter of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../cpp/utility/optional.html"><span class="kw1077">std::<span class="me2">optional</span></span></a></span></span>. --<a href="https://en.cppreference.com/mwiki/index.php?title=User:D41D8CD98F&amp;action=edit&amp;redlink=1" class="new" title="User:D41D8CD98F (page does not exist)">D41D8CD98F</a> (<a href="../../../User_talk%25253AD41D8CD98F.html" title="User talk:D41D8CD98F">talk</a>) 02:40, 25 January 2017 (PST)
+<dl><dd>We could replace <span class="t-c"><span class="mw-geshi cpp source-cpp">T</span></span> with <span class="t-c"><span class="mw-geshi cpp source-cpp">value_type</span></span> (or even with <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../cpp/utility/optional.html"><span class="kw1077">std::<span class="me2">optional</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value_type</span></span></span>), but I guess that wouldn't make it clearer. --<a href="https://en.cppreference.com/mwiki/index.php?title=User:D41D8CD98F&amp;action=edit&amp;redlink=1" class="new" title="User:D41D8CD98F (page does not exist)">D41D8CD98F</a> (<a href="../../../User_talk%25253AD41D8CD98F.html" title="User talk:D41D8CD98F">talk</a>) 02:42, 25 January 2017 (PST)
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd>Why not just say <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span> <span class="kw1">class</span> U <span class="sy1">&gt;</span></span></span>? I can't really see what the <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">=</span> T</span></span> part adds except for confusion. It would be better to describe the behaviour in the full constructor descriptions - like constructor 3 for <span class="t-lc"><a href="../../../cpp/utility/pair.html" title="cpp/utility/pair">std::pair</a></span>, for example. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User:Gubbins (page does not exist)">gubbins</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User talk:Gubbins (page does not exist)">talk</a>) 13:42, 25 January 2017 (PST)
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span> <span class="kw1">class</span> U <span class="sy1">&gt;</span></span></span> would be wrong because it would be a rather different constructor. <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> U <span class="sy1">=</span> T<span class="sy1">&gt;</span> EXPLICIT <span class="kw4">constexpr</span> optional<span class="br0">(</span>U<span class="sy3">&amp;&amp;</span> v<span class="br0">)</span><span class="sy4">;</span></span></span> was added to the standard by <a rel="nofollow" class="external text" href="http://cplusplus.github.io/LWG/lwg-defects.html#2756">LWG 2756</a> which describes its purpose. if you believe it is not useful.. <a rel="nofollow" class="external free" href="https://isocpp.org/std/submit-issue">https://isocpp.org/std/submit-issue</a>  --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 14:00, 25 January 2017 (PST)
+<dl><dd>A note may help, though. A more radical idea is a global stylistic change to say <code>std::optional&lt;T&gt;::optional</code> in the title instead (i.e., include the template parameters), so that it's clear what <code>T</code> is. <a href="../../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 19:16, 26 January 2017 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd>I agree with the remark above. The document you linked does not refer to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> U <span class="sy1">=</span> T<span class="sy1">&gt;</span></span></span> in isolation; it is within a declaration of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> optional</span></span>. So in that setting, the meaning of T is explicit. To readers of this page I do not think it is very clear that T is the template parameter of the optional template itself. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User:Gubbins (page does not exist)">gubbins</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User talk:Gubbins (page does not exist)">talk</a>) 18:51, 2 March 2017 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd>How about <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> U <span class="sy1">=</span> value_type<span class="sy1">&gt;</span></span></span> in this case? --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 19:44, 2 March 2017 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd>Yes I think <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> U <span class="sy1">=</span> value_type<span class="sy1">&gt;</span></span></span> would be better than the current version - probably a good change for now. However I quite like the idea of using <code>std::optional&lt;T&gt;::optional</code> as the title - what do you think about that? <a href="https://en.cppreference.com/mwiki/index.php?title=User:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User:Gubbins (page does not exist)">gubbins</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User talk:Gubbins (page does not exist)">talk</a>) 20:16, 2 March 2017 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> it may get harder elsewhere.. <code>std::unordered_map&lt;Key,T,Hash,KeyEqual,Allocator&gt;::unordered_map</code>.. actually that might still fit in a title, though we might want to abbreviate "Allocator" for that. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 05:29, 3 March 2017 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> Yeah true, although <code>std::unordered_map&lt;Key,T,...&gt;::unordered_map</code> might work too? <a href="https://en.cppreference.com/mwiki/index.php?title=User:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User:Gubbins (page does not exist)">gubbins</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User talk:Gubbins (page does not exist)">talk</a>) 20:28, 22 March 2017 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> I replaced T with value_type on the page - I think it's better... <a href="https://en.cppreference.com/mwiki/index.php?title=User:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User:Gubbins (page does not exist)">gubbins</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User talk:Gubbins (page does not exist)">talk</a>) 20:28, 22 March 2017 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/optional/optional&amp;action=edit&amp;section=1" title="Edit section: explicit constructors">edit</a>]</span> <span class="mw-headline" id="explicit_constructors"> explicit constructors </span></h2>
+<p>Why is explicit in a comment? It's not in a comment here: <a rel="nofollow" class="external free" href="../../../cpp/container/vector/vector.html">http://en.cppreference.com/w/cpp/container/vector/vector</a>
+<a href="https://en.cppreference.com/w/Special:Contributions/2620:0:1000:8000:ACAE:4A00:D7A8:BA35" title="Special:Contributions/2620:0:1000:8000:ACAE:4A00:D7A8:BA35">2620:0:1000:8000:ACAE:4A00:D7A8:BA35</a> 17:37, 12 February 2018 (PST)
+</p>
+<dl><dd> here it is conditionally-explicit, the description below the declaration explains when it is and when it isn't. Perhaps we should use a different presentation, like <span class="t-mark">(conditionally-explicit)</span>--<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 18:06, 12 February 2018 (PST)
+<dl><dd>I don't want to hide conditionally-explicit in the small print. But maybe we can make the meaning more obvious than the <code>/* EXPLICIT */</code> we have so far. <a href="../../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 13:00, 14 February 2018 (PST)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/optional/optional&amp;action=edit&amp;section=2" title="Edit section: The condition for the 7th ctor">edit</a>]</span> <span class="mw-headline" id="The_condition_for_the_7th_ctor"> The condition for the 7th ctor </span></h2>
+<p>I believe the condition for the 7th ctor should be <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../cpp/types/is_constructible.html"><span class="kw528">std::<span class="me2">is_constructible_v</span></span></a><span class="sy1">&lt;</span>T, <a href="../../../cpp/utility/initializer_list.html"><span class="kw962">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>U<span class="sy1">&gt;</span><span class="sy3">&amp;</span>, Args...<span class="sy1">&gt;</span></span></span> (no double ampersand after <span class="t-c"><span class="mw-geshi cpp source-cpp">Args</span></span>), though I'm not sure.
+</p><p><a href="https://en.cppreference.com/w/Special:Contributions/2A02:6B8:0:40C:99CD:2BDB:50CA:440" title="Special:Contributions/2A02:6B8:0:40C:99CD:2BDB:50CA:440">2A02:6B8:0:40C:99CD:2BDB:50CA:440</a> 08:41, 29 October 2018 (PDT)
+</p>
+<dl><dd>The two are equivalent in this case, and the standard has the &amp;&amp;. <a href="../../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 13:23, 29 October 2018 (PDT)
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 612/1000000
+Preprocessor generated node count: 1866/1000000
+Post‐expand include size: 3840/4194304 bytes
+Template argument size: 1214/4194304 bytes
+Highest expansion depth: 8/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:16144-0!*!0!!*!*!* and timestamp 20240518065728 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/optional/optional&amp;oldid=106706">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/optional/optional&amp;oldid=106706</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./optional.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/utility/optional/optional" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/utility/optional/optional" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/optional/optional&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/optional/optional&amp;oldid=106706" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/optional/optional&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 29 October 2018, at 13:23.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,261 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 1.339 secs. -->
+	
+
+
+</body></html>

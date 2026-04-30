@@ -1,0 +1,4 @@
+
+map { width: 200px; height: 100px; background-color: pink; padding: 5px; }
+
+button.copy {display:none !important}

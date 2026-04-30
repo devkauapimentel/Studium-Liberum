@@ -1,0 +1,25 @@
+
+* { }
+img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.scenery { width: 100%; height: 50%; position: absolute; bottom: 0px; left: 0px; }
+#foreground1, #foreground2 { z-index: 1; }
+#foreground2, #background2 { transform: translateX(100%); }
+#palm3 { top: 0px; left: 10%; }
+#w_rook_upright { top: 30%; left: 75%; }
+#r_pawn { top: 10%; left: 15%; }
+#w_rook { top: 10%; left: 80%; }
+#r_pawn_upright { top: 5%; left: 30%; }
+#r_knight { top: 0px; left: 70%; }
+#palm2 { top: -15%; left: 90%; }
+#palm1 { top: -15%; left: 40%; }
+#bush { top: 55%; left: 20%; }
+#red-queen-and-alice { position: absolute; top: 0px; left: 50%; transform: translate(-50%, -50%); overflow: hidden; width: 80%; max-width: 450px; z-index: 1; }
+#red-queen-and-alice::before { content: " "; display: block; padding-top: 87%; }
+#red-queen-and-alice img { position: absolute; top: 0px; left: 0px; width: 100%; }
+.sky, .earth { position: absolute; left: 0px; height: 50vh; width: 100%; }
+.earth { background: url("./shared-assets/images/examples/web-animations/bg_earth.jpg") 0px 0px / 100% auto repeat-x rgb(235, 18, 93); bottom: 0px; }
+.sky { background: url("./shared-assets/images/examples/web-animations/bg_sky.jpg") 100% 100% / auto 100% repeat-x rgb(36, 110, 137); top: 0px; }
+html, body { width: 100%; height: 100%; }
+.wrapper { width: 100%; height: 100%; overflow: hidden; position: relative; }
+
+button.copy {display:none !important}

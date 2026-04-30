@@ -1,0 +1,7 @@
+
+div { width: 200px; height: 400px; background: linear-gradient(red, blue) blue; mask-image: url("./shared-assets/images/examples/mdn.svg"); }
+.width { mask-size: 50%; }
+.height { mask-size: auto 50%; }
+body { display: flex; gap: 20px; }
+
+button.copy {display:none !important}

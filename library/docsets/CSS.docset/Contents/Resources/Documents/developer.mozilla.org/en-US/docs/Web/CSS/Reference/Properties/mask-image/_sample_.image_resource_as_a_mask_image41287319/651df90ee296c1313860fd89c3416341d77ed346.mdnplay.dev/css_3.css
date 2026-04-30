@@ -1,0 +1,4 @@
+
+img:first-of-type { mask-image: url("../mdn.github.io/shared-assets/images/examples/mask-star.svg"); }
+
+button.copy {display:none !important}

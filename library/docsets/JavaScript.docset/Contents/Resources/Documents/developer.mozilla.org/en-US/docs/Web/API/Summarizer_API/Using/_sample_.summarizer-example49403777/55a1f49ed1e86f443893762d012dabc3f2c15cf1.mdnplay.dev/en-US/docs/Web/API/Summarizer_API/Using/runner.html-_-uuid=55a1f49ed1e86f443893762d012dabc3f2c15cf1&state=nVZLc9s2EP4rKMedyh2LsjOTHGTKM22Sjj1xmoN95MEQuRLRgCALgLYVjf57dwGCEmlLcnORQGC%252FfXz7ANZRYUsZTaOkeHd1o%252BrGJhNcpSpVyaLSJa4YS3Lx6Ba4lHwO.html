@@ -1,0 +1,55 @@
+<html>
+  <!-- Online page at https://55a1f49ed1e86f443893762d012dabc3f2c15cf1.mdnplay.dev/en-US/docs/Web/API/Summarizer_API/Using/runner.html?uuid=55a1f49ed1e86f443893762d012dabc3f2c15cf1&state=nVZLc9s2EP4rKMedyh2LsjOTHGTKM22Sjj1xmoN95MEQuRLRgCALgLYVjf57dwGCEmlLcnORQGC%2FfXz7ANZRYUsZTaOkeHd1o%2BrGJhNcpSpVyaLSJa4YS3Lx6Ba4lHwOkuHRLI1MU5Zcr8YWnm0aXX1WFjSjD2Yr5g%2FFD5gmEwcKGkiAa%2BBM5C90MMVL2O7e%2B01dPRnc%2FIA2kkmAB3VVY9FrlkluSEhQDOOsahS55CJiWcE1z8g5tz9lycSjfHSTEN7ROFc1oNI7%2F8nocxicAQmZHYTmYMPQvC4PozBqKyrFHrlsSKoAnkuhSOS6XaLTTmYv5jusxnUllDWI%2BgIr5j%2BO4ixwAxox925xXF7mKM18qJBf0fcAlEz86f8kWIJa2mKHYr%2FxFpIDdEDzbdC4LxhTVNruRnNHG0c5KCEXTYl6v7rFUXlZqSVK3%2BLfG6maN9aiAioeF868FNYxQ4tk4o9RNJm0fUodHHjz5b1t5brrj8CXl3AdVRN40Eb%2Bs%2Bujb%2F60Bb9sqPOdjorOoswYHCm%2FszVFMq%2Bex0b8EGo5xbXOQY9x6zJVG3KNxo%2BXW1TKjhe8FHI1ZWl0DfIRrMh4Gp3h5x9acElLw5UZY5mKRVAxr%2FKVV1Hy5%2FGTyLFi2Ifz85qM0KZeCoU%2BMt7YKoCINIZke2AuTC052l1I8ChajHOhMTOYqykGKptSuaMlr6fsoq8eQ8J8lFP2zu87Gz6xZ6kKMwuXcT8B3nzN89zx834LflWwREsFiGWBnF%2B8Dy54VnGnfmamkiJnc8mz7%2B6spePi%2FPzXy16kc1k5EW8MtK60t4GRVqhMQ%2B5PMZ%2F%2FUDqzShnLHG8zlldZU4Ky8b8N6NWdC7TSozSi8zQ6RaiX76b9AUyQ2cX5gv%2FTqkNA3wQetgU62tqKPQCOh62wNe4ukY9U2gcV9O6aLdrrOw7v9xjhibwYa%2BHzIwJuhbGggERD95%2BxgqtcghsCxmBhEirQ9xrSuUjAps65hZsuMGeuUa66XxyOTn0pbHmIychH7FBwQT3suVhP1p0zbvLFfixvHrq2CybbOvy25SoY3aFvaPXYGDpZ97K%2FCx94ws1KZazzZkjrCFpnIK41EKefYMEbiU5e%2Bh4JvfCJW6ptBU%2Fsr%2FZzRPu%2BJJHCBRsFuXgJdjR43Jyy2WyG841Wa38j9GMQCjN5ff%2F1lghITM1VN6Rd0%2BJ0%2Frvyry6gBxjkvdfXL3i%2FIObq4dIr12Ab7efYhoE0cNzDljqW0BT5eS9vfiuZqnAi6BXOup6TOLVKsIXbLjgmmO7gQ57Tz34HiM2WfjQWHN4dD2hToyB%2F4sKyu24rzrByLYzW4Ro3WGGQuxJ6ttOwy%2Bg%2BYktqMS67asSACpA146zB64nlkIncsWsL8PkRhj1hYAWGwmneY18Gle4tyfakwT0VTzvZ9lG0Rzq8eIL8JlTikLF%2Bb%2BE8imMfkqU8tLK46bgk%2BP7GTKNjnTnutHSDPcYRwOcS63WGaWqgc7M3x7ssbRMXd8vDdfu2wNuz1rvXxtIhxxccW6jtpozbrGDd6PiJFjlZw6ZX9Rs3rF6O50t3LWNhlYA3s6QHQbT5Dw%3D%3D&code=49403777& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <h2>Input</h2>
+
+<form>
+  <div>
+    <label for="summary-text">Enter text to summarize:</label>
+    <textarea id="summary-text" name="summaryText" rows="6"></textarea>
+    <output class="input-count">Input character count: 0</output>
+  </div>
+  <div>
+    <label for="summary-type">Summary type:</label>
+    <select id="summary-type" name="summaryType">
+      <option value="headline">Headline</option>
+      <option value="key-points">Key points</option>
+      <option value="teaser">Teaser</option>
+      <option value="tldr" selected="">tldr</option>
+    </select>
+  </div>
+  <div>
+    <label for="summary-length">Summary length:</label>
+    <select id="summary-length" name="summaryLength">
+      <option value="short" selected="">Short</option>
+      <option value="medium">Medium</option>
+      <option value="long">Long</option>
+    </select>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<h2>Summary output</h2>
+
+<p class="summary-output"></p>
+<output class="output-count">Output summary character count: 0</output>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../js_3.js'></script>
+</body>
+</html>

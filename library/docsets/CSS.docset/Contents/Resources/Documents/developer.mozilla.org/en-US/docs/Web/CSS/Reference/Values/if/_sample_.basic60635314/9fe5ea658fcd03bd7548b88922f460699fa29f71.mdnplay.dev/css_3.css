@@ -1,0 +1,10 @@
+
+html { height: 100%; font-family: sans-serif; }
+body, section { height: inherit; }
+h2 { text-align: center; }
+article { background-color: cyan; border: 3px solid gray; flex: 1 1 0%; }
+section { display: flex; gap: 16px; }
+h2::before { }
+h2 { }
+
+button.copy {display:none !important}

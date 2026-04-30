@@ -1,0 +1,11 @@
+
+#wrapper, #controls { width: 100%; display: flex; }
+#wrapper { margin-bottom: 10px; }
+iframe { border: medium; }
+section { flex: 1 1 0%; padding: 10px; }
+#controls { display: flex; justify-content: space-around; }
+#section1 { background-color: hotpink; }
+#section2 { background-color: orange; }
+#mover { max-width: 100%; background-color: black; }
+
+button.copy {display:none !important}

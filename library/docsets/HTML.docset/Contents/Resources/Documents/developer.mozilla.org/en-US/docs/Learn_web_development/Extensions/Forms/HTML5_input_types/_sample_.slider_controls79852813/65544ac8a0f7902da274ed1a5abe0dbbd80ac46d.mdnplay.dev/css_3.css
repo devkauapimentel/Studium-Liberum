@@ -1,0 +1,5 @@
+
+body { text-align: center; }
+label, output { display: block; }
+
+button.copy {display:none !important}

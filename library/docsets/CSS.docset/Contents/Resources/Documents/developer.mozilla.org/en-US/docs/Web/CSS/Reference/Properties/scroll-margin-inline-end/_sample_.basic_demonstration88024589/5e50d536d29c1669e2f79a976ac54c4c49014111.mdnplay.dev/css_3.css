@@ -1,0 +1,8 @@
+
+.scroller { text-align: left; width: 250px; height: 250px; overflow-x: scroll; display: flex; box-sizing: border-box; border: 1px solid black; scroll-snap-type: x mandatory; }
+.scroller > div { flex: 0 0 250px; width: 250px; background-color: rebeccapurple; color: white; font-size: 30px; display: flex; align-items: center; justify-content: center; scroll-snap-align: end; }
+.scroller > div:nth-child(2n) { background-color: white; color: rebeccapurple; }
+.scroller > div:nth-child(2) { scroll-margin-inline-end: 1rem; }
+.scroller > div:nth-child(3) { scroll-margin-inline-end: 2rem; }
+
+button.copy {display:none !important}

@@ -1,0 +1,10 @@
+
+          const channel = new BroadcastChannel("example-channel");
+const messageControl = document.querySelector("#message");
+const broadcastMessageButton = document.querySelector("#broadcast-message");
+
+broadcastMessageButton.addEventListener("click", () => {
+  channel.postMessage(messageControl.value);
+});
+;
+        

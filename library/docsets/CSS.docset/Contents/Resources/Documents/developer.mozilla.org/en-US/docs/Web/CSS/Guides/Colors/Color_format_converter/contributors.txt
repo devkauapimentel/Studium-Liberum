@@ -1,0 +1,14 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/css/guides/colors/color_format_converter/index.md
+
+# Original Wiki contributors
+td2014
+mfluehr
+stephaniehobson
+Sheppy
+pqpace
+The-Quill
+jeng1111
+teoli
+730
+gabriel_ivanica

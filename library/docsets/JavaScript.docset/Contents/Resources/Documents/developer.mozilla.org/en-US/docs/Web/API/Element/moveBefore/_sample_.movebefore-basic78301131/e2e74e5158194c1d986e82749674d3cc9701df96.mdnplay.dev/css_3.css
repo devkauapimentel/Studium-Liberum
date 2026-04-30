@@ -1,0 +1,6 @@
+
+#section1, #section2, #mover { width: 200px; height: 80px; border: 5px solid rgba(0, 0, 0, 0.25); margin-bottom: 10px; display: flex; align-items: center; justify-content: center; }
+#section1, #section2 { background-color: hotpink; }
+#mover { background-color: orange; }
+
+button.copy {display:none !important}

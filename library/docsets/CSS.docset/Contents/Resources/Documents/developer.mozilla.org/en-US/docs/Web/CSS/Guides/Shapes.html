@@ -1,0 +1,1012 @@
+<html><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 12:14:03 GMT --><head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>CSS shapes</title>
+          
+          <script>try {
+  document.documentElement.dataset.theme =
+    localStorage.getItem("theme") || "light dark";
+} catch (error) {
+  console.warn("Unable to set theme", error);
+}
+
+try {
+  if (localStorage.getItem("nop") === "yes") {
+    document.documentElement.dataset["nop"] = "yes";
+  }
+} catch (error) {
+  console.warn("Unable to set nop", error);
+}
+</script>
+          <link rel="stylesheet" href="../../../../../static/client/styles-global.03146ed4c65bc5ea.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/270.66bae6059a1c23f9.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-layout.632d2f3884f10ca3.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-content-section.2ee991ba88f986cf.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-heading-anchor.0eec5185ab9425b7.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-toc.9b9bd019efd16b86.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-article-footer.81ae18c89fc527dc.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-left-sidebar.6f954e8939555f77.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-page-layout.5a4354f33e894319.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-a11y-menu.5796ee87cb69f93f.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-navigation.3a34ee593a554c40.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-logo.aea5ff6edf1b9cfb.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-menu.3376b3e11656fba0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs-bar.9a51a3c76a6231d0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs.d06ce8d09f42feb8.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-footer.a2850e459e2d290b.css" fetchpriority="high">
+          <link rel="preload" href="../../../../../static/client/jetbrains-mono-latin.119994ed445212c7.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low"><link rel="preload" href="../../../../../static/client/inter-latin.9a3b1bc220d426ef.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+          <script data-cfasync="false" data-report-only="on" data-prompt="0" src="../../../../../../transcend-cdn.com/cm/d556c3a1-e57c-4bdf-a490-390a1aebf6dd/airgap.js"></script>
+          <script src="../../../../../static/client/runtime.c294a6bdc7a42570.js" type="module"></script><script src="../../../../../static/client/1111.53dba753dc3eb961.js" type="module"></script><script src="../../../../../static/client/8903.f870aafb338b203a.js" type="module"></script><script src="../../../../../static/client/index.9a449352d879bbd5.js" type="module"></script>
+          
+    <link rel="icon" sizes="32x32" href="../../../../../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../../../../../favicon.svg">
+   <meta name="description" content="The CSS shapes module describes geometric shapes. It also defines CSS properties that can use the shapes to control the geometry of an element's float area; this area can then be applied to exclusions, or specify an element's content area."><meta name="og:url" content="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes"><meta name="og:title" content="CSS shapes - CSS | MDN"><meta name="og:locale" content="en_US"><meta name="og:description" content="The CSS shapes module describes geometric shapes. It also defines CSS properties that can use the shapes to control the geometry of an element's float area; this area can then be applied to exclusions, or specify an element's content area."><meta name="og:image" content="https://developer.mozilla.org/mdn-social-image.46ac2375.png"><meta name="og:image:type" content="image/png"><meta name="og:image:height" content="1024"><meta name="og:image:width" content="1024"><meta name="og:image:alt" content="The MDN logo"><meta name="og:site_name" content="MDN Web Docs"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="MozDevNet">
+          <link rel="canonical" href="Shapes.html">
+          <link rel="apple-touch-icon" href="../../../../../apple-touch-icon.png">
+          <link rel="manifest" href="../../../../../manifest.json">
+          <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/opensearch.xml" title="MDN Web Docs">
+          <link rel="alternate" type="application/rss+xml" title="MDN Blog RSS Feed" href="https://developer.mozilla.org/en-US/blog/rss.xml">
+        </head>
+        
+      <body class="page-layout">
+        <ul class="a11y-menu">
+      <li>
+        <a href="#content">Skip to main content</a>
+      </li>
+      <li>
+        <a href="#search">Skip to search</a>
+      </li>
+    </ul>
+        <div class="page-layout__banner" data-scheme="">
+          <mdn-placement-top></mdn-placement-top>
+        </div>
+        <header class="page-layout__header">
+          
+      <nav class="navigation" data-scheme="" data-open="false">
+        <div class="navigation__logo">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">
+        <svg class="logo__image" width="83" height="24" viewBox="0 0 83 24" role="img">
+          <title>MDN</title>
+          <path class="logo__letter" d="M9.4 0 2.81 21.17H.12L6.69 0H9.4Zm2.38 0v21.17H9.4V0h2.4Zm9.27 0-6.56 21.17H11.8L18.36 0h2.69Zm2.39 0v21.17h-2.4V0h2.4Z"></path>
+          <path class="logo__text" d="M45.55 16.83h-3.93v-1.27h.87v-3.63c0-.85-.16-1.45-.48-1.82a1.65 1.65 0 0 0-1.3-.52c-.74 0-1.3.25-1.66.78a2.98 2.98 0 0 0-.58 1.58v3.59h1.38v1.26h-3.93v-1.26h.87v-3.6c0-.88-.16-1.48-.48-1.83a1.7 1.7 0 0 0-1.29-.52 1.93 1.93 0 0 0-1.65.75 2.85 2.85 0 0 0-.58 1.6v3.62h1.59v1.27h-4.64v-1.27h1.37V9.75h-1.4V8.46h3.08v1.47c.28-.48.62-.87 1.08-1.2a3 3 0 0 1 1.68-.45c.67 0 1.22.16 1.73.48.5.32.85.8 1.03 1.47.25-.57.62-1.03 1.13-1.4.5-.37 1.1-.55 1.81-.55.8 0 1.5.25 2.05.75.55.51.85 1.3.85 2.35v4.18h1.4v1.27Zm9.77 0H52.3v-1.66c-.27.51-.66.95-1.13 1.29-.56.4-1.23.59-1.9.55-1.11 0-2-.37-2.67-1.12a4.41 4.41 0 0 1-1-3.06c0-1.15.3-2.2.93-3.15.6-.94 1.58-1.43 2.94-1.43 1.36 0 2.25.5 2.83 1.5V5.22h-2V3.93h3.63v11.63h1.38v1.27Zm-3.06-3.86v-1.02a2.28 2.28 0 0 0-.73-1.67 2.4 2.4 0 0 0-1.66-.65 2.18 2.18 0 0 0-1.88.9 3.63 3.63 0 0 0-.65 2.2c0 .95.23 1.68.7 2.19.45.5 1.03.76 1.7.76.73 0 1.33-.3 1.79-.88.48-.6.71-1.21.73-1.83Zm14.14 3.86h-4.43v-1.27h1.37v-3.63c0-.85-.16-1.45-.5-1.82a1.68 1.68 0 0 0-1.31-.52c-.71 0-1.29.23-1.7.69a2.52 2.52 0 0 0-.67 1.6v3.66h1.38v1.26H56.1v-1.26h1.38v-5.8h-1.42V8.47h3.12V9.9c.6-1.06 1.57-1.6 2.92-1.6.83 0 1.54.26 2.12.77.57.5.85 1.28.85 2.34v4.19h1.38v1.24h-.05Z"></path>
+          <path class="logo__cursor" d="M67.71 21.98H83V24H67.71v-2.02Z"></path>
+        </svg>
+      </a>
+    </div>
+        <div class="navigation__search" data-view="mobile">
+          <mdn-search-button></mdn-search-button>
+        </div>
+        <button class="navigation__button" type="button" aria-expanded="false" aria-controls="navigation__popup" aria-label="Toggle navigation"></button>
+        <div class="navigation__popup" id="navigation__popup">
+          <div class="navigation__menu">
+      <nav class="menu">
+        <div class="menu__tab" data-section="html">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">HTML</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" data-glean-id="menu_click_menu: html -&gt; /en-US/docs/Web/HTML">HTML: Markup language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>HTML reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Elements">Elements</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Global_attributes">Global attributes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Attributes">Attributes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference" aria-label="See all HTML references" title="See all HTML references" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>HTML guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Responsive_images">Responsive images</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Cheatsheet" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Cheatsheet">HTML cheatsheet</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Date_and_time_formats" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Date_and_time_formats">Date &amp; time formats</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides" aria-label="See all HTML guides" title="See all HTML guides" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Markup languages</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/SVG">SVG</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/MathML">MathML</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/XML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/XML">XML</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="css">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">CSS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="../../CSS.html" data-glean-id="menu_click_menu: css -&gt; /en-US/docs/Web/CSS">CSS: Styling language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>CSS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../Reference/Properties.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Properties">Properties</a>
+                              </li><li>
+                                <a href="../Reference/Selectors.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Selectors">Selectors</a>
+                              </li><li>
+                                <a href="../Reference/At-rules.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/At-rules">At-rules</a>
+                              </li><li>
+                                <a href="../Reference/Values.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Values">Values</a>
+                              </li><li>
+                                <a href="../Reference.html" aria-label="See all CSS references" title="See all CSS references" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>CSS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="Box_model/Introduction.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Box_model/Introduction">Box model</a>
+                              </li><li>
+                                <a href="Animations/Using.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Animations/Using">Animations</a>
+                              </li><li>
+                                <a href="Flexible_box_layout/Basic_concepts.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Flexbox</a>
+                              </li><li>
+                                <a href="Colors/Applying_color.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Colors/Applying_color">Colors</a>
+                              </li><li>
+                                <a href="../Guides.html" aria-label="See all CSS guides" title="See all CSS guides" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Layout cookbook</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../How_to/Layout_cookbook/Column_layouts.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts">Column layouts</a>
+                              </li><li>
+                                <a href="../How_to/Layout_cookbook/Center_an_element.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element">Centering an element</a>
+                              </li><li>
+                                <a href="../How_to/Layout_cookbook/Card.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Card">Card component</a>
+                              </li><li>
+                                <a href="../How_to/Layout_cookbook.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="javascript">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label" data-type="long">JavaScript</span><span class="menu__tab-label" data-type="short">JS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" data-glean-id="menu_click_menu: javascript -&gt; /en-US/docs/Web/JavaScript">JavaScript: Scripting language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>JS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Statements">Statements &amp; declarations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Functions">Functions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" aria-label="See all JavaScript references" title="See all JavaScript references" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>JS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow &amp; error handing</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops and iteration</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Working_with_objects">Working with objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Using_classes">Using classes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" aria-label="See all JavaScript guides" title="See all JavaScript guides" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="webapis">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Web APIs</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/API" data-glean-id="menu_click_menu: webapis -&gt; /en-US/docs/Web/API">Web APIs: Programming interfaces</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Web API reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/File_System_API">File system API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API">Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Geolocation_API">Geolocation API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/HTML_DOM_API">HTML DOM API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Push_API">Push API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Service_Worker_API">Service worker API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API" aria-label="See all Web API guides" title="See all Web API guides" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Web API guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API">Using the Web animation API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API/Using_Fetch">Using the Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/History_API/Working_with_the_History_API">Working with the History API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Using the Web speech API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using web workers</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="all">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">All</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web" data-glean-id="menu_click_menu: all -&gt; /en-US/docs/Web">All web technology</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Technologies</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Accessibility">Accessibility</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/HTTP">HTTP</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/URI" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/URI">URI</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Mozilla/Add-ons/WebExtensions">Web extensions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/WebAssembly">WebAssembly</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/WebDriver">WebDriver</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web" aria-label="See all web technology references" title="See all web technology references" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Topics</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Media" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Media">Media</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Performance">Performance</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Privacy" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Privacy">Privacy</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Security">Security</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Progressive_web_apps">Progressive web apps</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="learn">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Learn</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" data-glean-id="menu_click_menu: learn -&gt; /en-US/docs/Learn_web_development">Learn web development</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Frontend developer course</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Getting_started">Getting started modules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core">Core modules</a>
+                              </li><li>
+                                <a class="" href="https://developer.mozilla.org/en-US/curriculum/" data-glean-id="menu_click_submenu: learn -&gt; /en-US/curriculum/">MDN Curriculum</a>
+                              </li><li>
+                                <a class="external" href="https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar" data-glean-id="menu_click_submenu: learn -&gt; https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar">Check out the video course from Scrimba, our partner</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn HTML</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn CSS</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics module</a>
+                              </li><li>
+                                <a href="../../../Learn_web_development/Core/CSS_layout.html" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn JavaScript</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript module</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="tools">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Tools</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Discover our tools
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="circle-play" href="https://developer.mozilla.org/en-US/play" data-glean-id="menu_click_submenu: tools -&gt; /en-US/play">Playground</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="shield-check" href="https://developer.mozilla.org/en-US/observatory" data-glean-id="menu_click_submenu: tools -&gt; /en-US/observatory">HTTP Observatory</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a href="Backgrounds_and_borders/Border-image_generator.html" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator">Border-image generator</a>
+                              </li><li>
+                                <a href="Backgrounds_and_borders/Border-radius_generator.html" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator">Border-radius generator</a>
+                              </li><li>
+                                <a href="Backgrounds_and_borders/Box-shadow_generator.html" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator">Box-shadow generator</a>
+                              </li><li>
+                                <a href="Colors/Color_format_converter.html" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_format_converter">Color format converter</a>
+                              </li><li>
+                                <a href="Colors/Color_mixer.html" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_mixer">Color mixer</a>
+                              </li><li>
+                                <a href="Shapes/Shape_generator.html" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Shapes/Shape_generator">Shape generator</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="about">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">About</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Get to know MDN better
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="mdn-m" href="https://developer.mozilla.org/en-US/about" data-glean-id="menu_click_submenu: about -&gt; /en-US/about">About MDN</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="chart-no-axes-combined" href="https://developer.mozilla.org/en-US/advertising" data-glean-id="menu_click_submenu: about -&gt; /en-US/advertising">Advertise with us</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="users" href="https://developer.mozilla.org/en-US/community" data-glean-id="menu_click_submenu: about -&gt; /en-US/community">Community</a>
+                              </li><li>
+                                <a class="menu__panel-icon external" data-icon="github" href="https://github.com/mdn" data-glean-id="menu_click_submenu: about -&gt; https://github.com/mdn">MDN on GitHub</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="blog">
+            <a class="menu__tab-link" href="https://developer.mozilla.org/en-US/blog/" data-glean-id="menu_click_link: top-level -&gt; /en-US/blog/">Blog</a>
+          </div>
+      </nav>
+    </div>
+          <div class="navigation__search" data-view="desktop">
+            <mdn-search-button></mdn-search-button>
+          </div>
+          <mdn-user-menu></mdn-user-menu>
+        </div>
+      </nav>
+      <mdn-search-modal id="search"></mdn-search-modal>
+     
+      
+    
+        </header>
+        <div class="page-layout__main">
+      <div class="breadcrumbs-bar" data-scheme="">
+        <mdn-toggle-sidebar></mdn-toggle-sidebar> 
+      <ol class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+        
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web" property="item" typeof="WebPage"><span property="name">Web</span></a>
+              <meta property="position" content="1">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../../CSS.html" property="item" typeof="WebPage"><span property="name">CSS</span></a>
+              <meta property="position" content="2">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../Guides.html" property="item" typeof="WebPage"><span property="name">Guides</span></a>
+              <meta property="position" content="3">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="Shapes.html" property="item" typeof="WebPage"><span property="name">Shapes</span></a>
+              <meta property="position" content="4">
+            </li>
+          
+      </ol>
+    
+        <mdn-collection-save-button doc-url="/en-US/docs/Web/CSS/Guides/Shapes" doc-title="CSS shapes"></mdn-collection-save-button>
+        <mdn-color-theme></mdn-color-theme>
+        <mdn-language-switcher locale="en-US" native="English (US)" translations="[{&quot;locale&quot;:&quot;en-US&quot;,&quot;title&quot;:&quot;CSS shapes&quot;,&quot;native&quot;:&quot;English (US)&quot;},{&quot;locale&quot;:&quot;de&quot;,&quot;title&quot;:&quot;CSS shapes&quot;,&quot;native&quot;:&quot;Deutsch&quot;},{&quot;locale&quot;:&quot;fr&quot;,&quot;title&quot;:&quot;CSS Shapes&quot;,&quot;native&quot;:&quot;Français&quot;},{&quot;locale&quot;:&quot;ja&quot;,&quot;title&quot;:&quot;CSS シェイプ&quot;,&quot;native&quot;:&quot;日本語&quot;},{&quot;locale&quot;:&quot;ko&quot;,&quot;title&quot;:&quot;CSS Shapes&quot;,&quot;native&quot;:&quot;한국어&quot;},{&quot;locale&quot;:&quot;zh-CN&quot;,&quot;title&quot;:&quot;CSS 形状&quot;,&quot;native&quot;:&quot;中文 (简体)&quot;}]" url="Shapes.html"></mdn-language-switcher>
+      </div><div class="layout__2-sidebars-inline reference-layout">
+        <main id="content" class="layout__content">
+          <div class="layout__header reference-layout__header">
+            
+            
+            <mdn-survey></mdn-survey>
+            <h1>CSS shapes</h1>
+             <section class="content-section">
+    
+    <p>The <strong>CSS shapes</strong> module describes geometric shapes. It also defines CSS properties that can use the shapes to control the geometry of an element's float area; this area can then be applied to exclusions, or specify an element's content area.</p>
+<p>The specification defines several ways to create shapes. Content can be wrapped around or within a shape rather than following the default rectangle shape of the element's box.</p>
+<p>Shapes define geometries that can be used as CSS values. This module provides functions for creating ellipses, polygons, and arbitrary geometries. Other CSS modules can make use of shapes defined in this specification, including <a href="Motion_path.html">CSS motion path</a> and <a href="Masking.html">CSS masking</a>.</p>
+  </section>
+          </div>
+          <aside class="layout__right-sidebar reference-layout__toc">
+            <nav class="reference-toc">
+      <h2>In this article</h2>
+      <ul>
+        <li><a href="#css_shapes_in_action">CSS shapes in action</a></li><li><a href="#reference">Reference</a></li><li><a href="#guides">Guides</a></li><li><a href="#related_concepts">Related concepts</a></li><li><a href="#specifications">Specifications</a></li><li><a href="#see_also">See also</a></li>
+      </ul>
+    </nav>
+            <mdn-placement-sidebar></mdn-placement-sidebar>
+          </aside>
+          <div class="layout__body reference-layout__body">
+            <section class="content-section" aria-labelledby="css_shapes_in_action">
+    <!--lit-part 0DO8YvU6mX4=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/CSS%20shapes%20in%20action"></a><h2 id="css_shapes_in_action" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#css_shapes_in_action">CSS shapes in action</a></h2><!--/lit-part-->
+    <p>The example below shows an image that has been floated left, and the <code>shape-outside</code> property applied with a value of <code>circle(50%)</code>. This creates a circle shape, and the content wrapping the float now wraps around that shape. This changes the length of the wrapping text's line boxes. You can click "Play" to edit the code in the MDN Playground.</p>
+<div class="code-example"><pre class="language-html live-sample___circle hidden notranslate live-sample---circle"><code>&lt;div class="box"&gt;
+  &lt;img
+    alt="A hot air balloon"
+    src="https://mdn.github.io/shared-assets/images/examples/round-balloon.png" /&gt;
+  &lt;p&gt;
+    One November night in the year 1782, so the story runs, two brothers sat
+    over their winter fire in the little French town of Annonay, watching the
+    grey smoke-wreaths from the hearth curl up the wide chimney. Their names
+    were Stephen and Joseph Montgolfier, they were papermakers by trade, and
+    were noted as possessing thoughtful minds and a deep interest in all
+    scientific knowledge and new discovery. Before that night—a memorable night,
+    as it was to prove—hundreds of millions of people had watched the rising
+    smoke-wreaths of their fires without drawing any special inspiration from
+    the fact.
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre></div>
+<div class="code-example"><pre class="language-css live-sample___circle hidden notranslate live-sample---circle"><code>body {
+  font: 1.2em / 1.5 sans-serif;
+}
+img {
+  float: left;
+  shape-outside: circle(50%);
+}
+</code></pre></div>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="circle sample" id="frame_circle" height="300px" src="Shapes/_sample_.circle35877245/a84f37e04c0af59819c7b20ca696b7ba8f7a70dc.mdnplay.dev/en-US/docs/Web/CSS/Guides/Shapes/runner.html-_-uuid=a84f37e04c0af59819c7b20ca696b7ba8f7a70dc&amp;state=VVPBbhQxDP0VayQkkGZ3aKUKtC2VyoEDEnCA414yE88kNHGi2NvpqKrER%25252FCFfAnOzFaCUxLHfrbfs58aJzE0h%25252BbG%25252BgcYgmH%25252BcGz69Hhsbo8EcOPjVE8AE0R%25.html" data-live-path="/en-US/docs/Web/CSS/Guides/Shapes/" data-live-id="circle" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+  </section><section class="content-section" aria-labelledby="reference">
+    <!--lit-part lelxAP0jhHo=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Reference"></a><h2 id="reference" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#reference">Reference</a></h2><!--/lit-part-->
+    <!--?-->
+  </section><section class="content-section" aria-labelledby="properties">
+    <!--lit-part yU0CuStaH1A=--><!--lit-node 0--><h3 id="properties" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#properties">Properties</a></h3><!--/lit-part-->
+    <ul>
+<li><a href="../Reference/Properties/shape-image-threshold.html"><code>shape-image-threshold</code></a></li>
+<li><a href="../Reference/Properties/shape-margin.html"><code>shape-margin</code></a></li>
+<li><a href="../Reference/Properties/shape-outside.html"><code>shape-outside</code></a></li>
+</ul>
+<p>The CSS shapes module also introduces the <code>shape-inside</code> and <code>shape-padding</code> properties. Currently, no browsers support these features.</p>
+  </section><section class="content-section" aria-labelledby="data_types">
+    <!--lit-part LpVYqfaJOkA=--><!--lit-node 0--><h3 id="data_types" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#data_types">Data types</a></h3><!--/lit-part-->
+    <ul>
+<li><a href="../Reference/Values/basic-shape.html"><code>&lt;basic-shape&gt;</code></a></li>
+</ul>
+  </section><section class="content-section" aria-labelledby="functions">
+    <!--lit-part 2G1ZJ0pxb08=--><!--lit-node 0--><h3 id="functions" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#functions">Functions</a></h3><!--/lit-part-->
+    <ul>
+<li><a href="../Reference/Values/basic-shape/circle.html"><code>circle()</code></a></li>
+<li><a href="../Reference/Values/basic-shape/ellipse.html"><code>ellipse()</code></a></li>
+<li><a href="../Reference/Values/basic-shape/inset.html"><code>inset()</code></a></li>
+<li><a href="../Reference/Values/basic-shape/path.html"><code>path()</code></a></li>
+<li><a href="../Reference/Values/basic-shape/polygon.html"><code>polygon()</code></a></li>
+<li><a href="../Reference/Values/basic-shape/rect.html"><code>rect()</code></a></li>
+<li><a href="../Reference/Values/basic-shape/shape.html"><code>shape()</code></a></li>
+<li><a href="../Reference/Values/basic-shape/xywh.html"><code>xywh()</code></a></li>
+</ul>
+  </section><section class="content-section" aria-labelledby="terms">
+    <!--lit-part bQeUyRMoiqE=--><!--lit-node 0--><h3 id="terms" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#terms">Terms</a></h3><!--/lit-part-->
+    <ul>
+<li><a href="Shapes/Using_shape-outside.html#the_reference_box">Reference box</a></li>
+</ul>
+  </section><section class="content-section" aria-labelledby="guides">
+    <!--lit-part yGeNwEJNrYM=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Guides"></a><h2 id="guides" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#guides">Guides</a></h2><!--/lit-part-->
+    <dl>
+<dt id="overview_of_shapes"><a href="Shapes/Overview.html">Overview of shapes</a></dt>
+<dd>
+<p>Defining basic shapes with the <code>shape-margin</code> and <code>clip-path</code> properties, and debugging basic shapes with
+Developer Tools.</p>
+</dd>
+<dt id="shapes_from_box_values"><a href="Shapes/From_box_values.html">Shapes from box values</a></dt>
+<dd>
+<p>Using <code>border-radius</code> curvatures and CSS box model values to create shapes.</p>
+</dd>
+<dt id="basic_shapes_with_shape-outside"><a href="Shapes/Using_shape-outside.html">Basic shapes with <code>shape-outside</code></a></dt>
+<dd>
+<p>Creating rectangles, circles, ellipses, and polygons with CSS shapes, the reference box, and the <code>shape-outside</code> property.</p>
+</dd>
+<dt id="shapes_from_images"><a href="Shapes/From_images.html">Shapes from images</a></dt>
+<dd>
+<p>Creating shapes from semi-transparent image files and CSS Gradients.</p>
+</dd>
+</dl>
+  </section><section class="content-section" aria-labelledby="related_concepts">
+    <!--lit-part 8RKOBw4K00c=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Related%20concepts"></a><h2 id="related_concepts" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#related_concepts">Related concepts</a></h2><!--/lit-part-->
+    <p><a href="Motion_path.html">CSS motion path</a> module</p>
+<ul>
+<li><a href="../Reference/Properties/offset.html"><code>offset</code></a></li>
+<li><a href="../Reference/Properties/offset-anchor.html"><code>offset-anchor</code></a></li>
+<li><a href="../Reference/Properties/offset-distance.html"><code>offset-distance</code></a></li>
+<li><a href="../Reference/Properties/offset-path.html"><code>offset-path</code></a></li>
+<li><a href="../Reference/Properties/offset-position.html"><code>offset-position</code></a></li>
+<li><a href="../Reference/Properties/offset-rotate.html"><code>offset-rotate</code></a></li>
+<li><a href="../Reference/Values/ray.html"><code>ray()</code></a> function</li>
+</ul>
+<p><a href="Masking.html">CSS masking</a> module</p>
+<ul>
+<li><a href="../Reference/Properties/clip.html"><code>clip</code></a></li>
+<li><a href="../Reference/Properties/clip-path.html"><code>clip-path</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/clip-rule"><code>clip-rule</code></a></li>
+<li><a href="../Reference/Properties/mask.html"><code>mask</code></a></li>
+<li><a href="../Reference/Properties/mask-origin.html"><code>mask-origin</code></a></li>
+<li><a href="../Reference/Properties/mask-position.html"><code>mask-position</code></a></li>
+</ul>
+<p><a href="Backgrounds_and_borders.html">CSS backgrounds and borders</a> module</p>
+<ul>
+<li><a href="../Reference/Properties/border-radius.html"><code>border-radius</code></a> shorthand</li>
+</ul>
+<p><a href="Box_model.html">CSS box model</a> module</p>
+<ul>
+<li><a href="../Reference/Values/box-edge.html"><code>&lt;box-edge&gt;</code></a> data type</li>
+</ul>
+  </section><section class="content-section" aria-labelledby="specifications">
+    <!--lit-part s915xX5HiM4=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Specifications"></a><h2 id="specifications" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#specifications">Specifications</a></h2><!--/lit-part-->
+    <!--lit-part UIc6HQLuTB8=--><table>
+    <thead>
+      <tr>
+        <th scope="col">
+          <!--lit-part-->Specification<!--/lit-part-->
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--lit-part--><!--lit-part--><!--lit-part a/3Tq0vckuA=--><tr>
+              <td><!--lit-part 7GI82/RZJBE=--><!--lit-node 0--><a class="external" href="https://drafts.csswg.org/css-shapes-1/" rel="noopener" target="_blank"><!--lit-part--><!--lit-part BRUAAAUVAAA=--><!--lit-part-->CSS Shapes Module Level 1<!--/lit-part--><!--?--><!--/lit-part--><!--/lit-part--></a><!--/lit-part--></td>
+            </tr><!--/lit-part--><!--/lit-part--><!--lit-part--><!--lit-part a/3Tq0vckuA=--><tr>
+              <td><!--lit-part 7GI82/RZJBE=--><!--lit-node 0--><a class="external" href="https://drafts.csswg.org/css-shapes-2/" rel="noopener" target="_blank"><!--lit-part--><!--lit-part BRUAAAUVAAA=--><!--lit-part-->CSS Shapes Module Level 2<!--/lit-part--><!--?--><!--/lit-part--><!--/lit-part--></a><!--/lit-part--></td>
+            </tr><!--/lit-part--><!--/lit-part--><!--/lit-part-->
+    </tbody>
+  </table><!--/lit-part-->
+  </section><section class="content-section" aria-labelledby="see_also">
+    <!--lit-part p88DAUaBJzA=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/See%20also"></a><h2 id="see_also" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#see_also">See also</a></h2><!--/lit-part-->
+    <ul>
+<li><a href="Shapes/Shape_generator.html">Shape generator</a></li>
+<li><a href="https://codepen.io/KristopherVanSant/post/css-shapes-resources" class="external" target="_blank">CSS Shapes resources</a></li>
+<li><a href="https://alistapart.com/article/css-shapes-101/" class="external" target="_blank">CSS Shapes 101</a> via alistapart.com (2014)</li>
+<li><a href="https://www.sarasoueidan.com/blog/css-shapes/" class="external" target="_blank">Creating non-rectangular layouts with CSS Shapes</a> via sarasoueidan.com (2013)</li>
+<li><a href="https://webdesign.tutsplus.com/how-to-use-css-shapes-in-your-web-design--cms-27498t" class="external" target="_blank">How to use CSS Shapes in your web design</a> via tutsplus.com (2016)</li>
+<li><a href="https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/edit_css_shapes/index.html" class="external" target="_blank">Edit CSS shapes with the shape path editor</a> via mozilla.org (2018) (<a href="https://www.youtube.com/watch?v=u9bDe3Bw0sA" class="external" target="_blank">Video</a>)</li>
+</ul>
+  </section> 
+      <section class="content-section article-footer" aria-labelledby="feedback">
+        <div class="article-footer__inner">
+          <div class="article-footer__svg-container"><!--lit-part OWLzZqRMsCU=--><svg xmlns="http://www.w3.org/2000/svg" width="162" height="162" fill="none" viewBox="0 0 162 162"><mask id="b" fill="#fff"><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z"></path></mask><path stroke="url(#a)" stroke-dasharray="6, 6" stroke-width="2" d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z" mask="url(#b)" style="stroke:url(#a)" transform="translate(-63.992 -25.587)"></path><ellipse cx="8.066" cy="111.597" fill="currentColor" rx="53.677" ry="53.699" transform="matrix(.71707 -.697 .7243 .6895 0 0)"></ellipse><g clip-path="url(#c)" transform="translate(-63.992 -25.587)"><path fill="#9abff5" d="m144.256 137.379 32.906 12.434a4.41 4.41 0 0 1 2.559 5.667l-9.326 24.679a4.41 4.41 0 0 1-5.667 2.559l-8.226-3.108-2.332 6.17c-.466 1.233-.375 1.883-1.609 1.417l-2.253-.527c-.411-.155-.95-.594-1.206-1.161l-4.734-10.484-12.545-4.741a4.41 4.41 0 0 1-2.559-5.667l9.325-24.679a4.41 4.41 0 0 1 5.667-2.559m9.961 29.617 8.227 3.108 3.264-8.638-.498-6.768-4.113-1.555.548 7.258-4.319-1.632zm-12.339-4.663 8.226 3.108 3.264-8.637-.498-6.769-4.113-1.554.548 7.257-4.319-1.632z"></path></g><g clip-path="url(#d)" transform="translate(-63.992 -25.587)"><path fill="#81b0f3" d="M135.35 60.136 86.67 41.654c-3.346-1.27-7.124.428-8.394 3.775L64.414 81.938c-1.27 3.347.428 7.125 3.774 8.395l12.17 4.62-3.465 9.128c-.693 1.826-1.432 2.457.394 3.15l3.014 1.625c.609.231 1.637.274 2.477-.104l15.53-6.983 18.56 7.047c3.346 1.27 7.124-.428 8.395-3.775l13.862-36.51c1.27-3.346-.428-7.124-3.775-8.395M95.261 83.207l-12.17-4.62 4.852-12.779 7.19-7.017 6.085 2.31-7.725 7.51 6.389 2.426zm18.255 6.93-12.17-4.62 4.852-12.778 7.189-7.017 6.085 2.31-7.725 7.51 6.39 2.426z"></path></g><defs><clipPath id="c"><path fill="#fff" d="m198.638 146.586-65.056-24.583-24.583 65.057 65.056 24.582z"></path></clipPath><clipPath id="d"><path fill="#fff" d="m66.438 14.055 96.242 36.54-36.54 96.243-96.243-36.54z"></path></clipPath><linearGradient id="a" x1="97.203" x2="199.995" y1="47.04" y2="152.793" gradientUnits="userSpaceOnUse"><stop stop-color="#086dfc"></stop><stop offset=".246" stop-color="#2c81fa"></stop><stop offset=".516" stop-color="#5497f8"></stop><stop offset=".821" stop-color="#80b0f6"></stop><stop offset="1" stop-color="#9abff5"></stop></linearGradient></defs></svg><!--/lit-part--></div>
+          <h2 id="feedback">
+            Help improve MDN
+          </h2>
+          <mdn-content-feedback locale="en-US"></mdn-content-feedback>
+          <a class="article-footer__contribute" href="https://developer.mozilla.org/en-US/docs/MDN/Community/Getting_started">Learn how to contribute</a> <p class="article-footer__last-modified">
+    This page was last modified on <time datetime="2025-12-16T15:14:26.000Z">Dec 16, 2025</time> by <a href="Shapes/contributors.txt">MDN contributors</a>.
+  </p> <div class="article-footer__links">
+    <a class="external" href="https://github.com/mdn/content/blob/main/files/en-us/web/css/guides/shapes/index.md?plain=1" title="Folder: en-us/web/css/guides/shapes (Opens in a new tab)" target="_blank" rel="noopener">View this page on GitHub</a> • <a class="external" href="https://github.com/mdn/content/issues/new?template=page-report.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FCSS%2FGuides%2FShapes&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Fweb%2Fcss%2Fguides%2Fshapes%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FCSS%2FGuides%2FShapes%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Fweb%2Fcss%2Fguides%2Fshapes%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2F33094d735e90b4dcae5733331b79c51fee997410%0A*+Document+last+modified%3A+2025-12-16T15%3A14%3A26.000Z%0A%0A%3C%2Fdetails%3E" title="This will take you to GitHub to file a new issue." target="_blank" rel="noopener">Report a problem with this content</a>
+  </div>
+        </div>
+      </section>
+    
+          </div>
+        </main>
+        <aside class="layout__left-sidebar" id="main-sidebar">
+          <nav class="left-sidebar">
+      <div class="left-sidebar__header">
+        <mdn-sidebar-filter></mdn-sidebar-filter>
+      </div>
+      <div class="left-sidebar__content"><ol><li class="section"><a href="../../CSS.html">CSS</a></li><li class="section"><a href="../Guides.html">Guides</a></li><li><details open=""><summary><span>Modules</span></summary><ol><li><a href="Anchor_positioning.html">Anchor positioning</a></li><li><a href="Animations.html">Animations</a></li><li><a href="Backgrounds_and_borders.html">Backgrounds and borders</a></li><li><a href="Basic_user_interface.html">Basic user interface</a></li><li><a href="Borders_and_box_decorations.html">Borders and box decorations</a></li><li><a href="Box_alignment.html">Box alignment</a></li><li><a href="Box_model.html">Box model</a></li><li><a href="Box_sizing.html">Box sizing</a></li><li><a href="Cascade.html">Cascading and inheritance</a></li><li><a href="Color_adjustment.html">Color adjustment</a></li><li><a href="Colors.html">Colors</a></li><li><a href="Compositing_and_blending.html">Compositing and blending</a></li><li><a href="Conditional_rules.html">Conditional rules</a></li><li><a href="Containment.html">Containment</a></li><li><a href="Counter_styles.html">Counter styles</a></li><li><a href="CSSOM_view.html">CSSOM view</a></li><li><a href="Custom_functions_and_mixins.html">Custom functions and mixins</a></li><li><a href="Custom_highlight_API.html">Custom highlight API</a></li><li><a href="Cascading_variables.html">Custom properties for cascading variables</a></li><li><a href="Display.html">Display</a></li><li><a href="Easing_functions.html">Easing functions</a></li><li><a href="Environment_variables.html">Environment variables</a></li><li><a href="Filter_effects.html">Filter effects</a></li><li><a href="Flexible_box_layout.html">Flexible box layout</a></li><li><a href="Font_loading.html">Font loading</a></li><li><a href="Fonts.html">Fonts</a></li><li><a href="Fragmentation.html">Fragmentation</a></li><li><a href="Generated_content.html">Generated content</a></li><li><a href="Grid_layout.html">Grid layout</a></li><li><a href="Images.html">Images</a></li><li><a href="Inline_layout.html">Inline layout</a></li><li><a href="Lists.html">Lists and counters</a></li><li><a href="Logical_properties_and_values.html">Logical properties and values</a></li><li><a href="Masking.html">Masking</a></li><li><a href="Media_queries.html">Media queries</a></li><li><a href="Motion_path.html">Motion path</a></li><li><a href="Multicol_layout.html">Multi-column layout</a></li><li><a href="Namespaces.html">Namespaces</a></li><li><a href="Nesting.html">Nesting</a></li><li><a href="Overflow.html">Overflow</a></li><li><a href="Overscroll_behavior.html">Overscroll behavior</a></li><li><a href="Paged_media.html">Paged media</a></li><li><a href="Positioned_layout.html">Positioned layout</a></li><li><a href="Properties_and_values_API.html">Properties and values API</a></li><li><a href="Pseudo-elements.html">Pseudo-elements</a></li><li><a href="Round_display.html">Round display</a></li><li><a href="Ruby_layout.html">Ruby layout</a></li><li><a href="Scoping.html">Scoping</a></li><li><a href="Scroll_anchoring.html">Scroll anchoring</a></li><li><a href="Scroll_snap.html">Scroll snap</a></li><li><a href="Scroll-driven_animations.html">Scroll-driven animations</a></li><li><a href="Scrollbars_styling.html">Scrollbars styling</a></li><li><a href="Selectors.html">Selectors</a></li><li><a href="Shadow_parts.html">Shadow parts</a></li><li><em><a href="Shapes.html" aria-current="page">Shapes</a></em></li><li><a href="Syntax.html">Syntax</a></li><li><a href="Table.html">Table</a></li><li><a href="Text.html">Text</a></li><li><a href="Text_decoration.html">Text decoration</a></li><li><a href="Transforms.html">Transforms</a></li><li><a href="Transitions.html">Transitions</a></li><li><a href="Values_and_units.html">Values and units</a></li><li><a href="View_transitions.html">View transitions</a></li><li><a href="Viewport.html">Viewport</a></li><li><a href="Writing_modes.html">Writing modes</a></li></ol></details></li><li><details><summary><span>Anchor positioning</span></summary><ol><li><a href="Anchor_positioning/Using.html">Using anchor positioning</a></li><li><a href="Anchor_positioning/Try_options_hiding.html">Handling overflow</a></li><li><a href="Anchor_positioning/Anchored_container_queries.html">Anchored container queries</a></li></ol></details></li><li><details><summary><span>Animations</span></summary><ol><li><a href="Animations/Animatable_properties.html">Animatable properties</a></li><li><a href="Animations/Using.html">Using animations</a></li></ol></details></li><li><details><summary><span>Backgrounds and borders</span></summary><ol><li><a href="Backgrounds_and_borders/Using_multiple_backgrounds.html">Using multiple backgrounds</a></li><li><a href="Backgrounds_and_borders/Resizing_background_images.html">Resizing background images</a></li><li><a href="Backgrounds_and_borders/Scaling_SVG_backgrounds.html">Scaling SVG backgrounds</a></li></ol></details></li><li><details><summary><span>Box alignment</span></summary><ol><li><a href="Box_alignment/Overview.html">Overview</a></li><li><a href="Box_alignment/In_block_abspos_tables.html">In block layout</a></li><li><a href="Box_alignment/In_flexbox.html">In flexbox</a></li><li><a href="Box_alignment/In_grid_layout.html">In grid layout</a></li><li><a href="Box_alignment/In_multi-column_layout.html">In multi-column layout</a></li></ol></details></li><li><details><summary><span>Box model</span></summary><ol><li><a href="Box_model/Introduction.html">Introduction</a></li><li><a href="Box_model/Margin_collapsing.html">Margin collapsing</a></li></ol></details></li><li><details><summary><span>Box sizing</span></summary><ol><li><a href="Box_sizing/Aspect_ratios.html">Aspect ratios</a></li></ol></details></li><li><details><summary><span>Cascade</span></summary><ol><li><a href="Cascade/Introduction.html">Introduction</a></li><li><a href="Cascade/Inheritance.html">Inheritance</a></li><li><a href="Cascade/Specificity.html">Specificity</a></li><li><a href="Cascade/Property_value_processing.html">Property value processing</a></li><li><a href="Cascade/Shorthand_properties.html">Shorthand properties</a></li></ol></details></li><li><details><summary><span>Cascading variables</span></summary><ol><li><a href="Cascading_variables/Using_custom_properties.html">Using custom properties</a></li></ol></details></li><li><details><summary><span>Colors</span></summary><ol><li><a href="Colors/Applying_color.html">Applying color</a></li><li><a href="Colors/Color_values.html">Color values</a></li><li><a href="Colors/Using_relative_colors.html">Using relative colors</a></li><li><a href="Colors/Using_color_wisely.html">Using color wisely</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Colors_and_Luminance">Accessibility: Colors and luminance</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast">Accessibility: Color contrast</a></li></ol></details></li><li><details><summary><span>Columns</span></summary><ol><li><a href="Multicol_layout/Basic_concepts.html">Basic concepts</a></li><li><a href="Multicol_layout/Styling_columns.html">Styling columns</a></li><li><a href="Multicol_layout/Using.html">Using multi-column layouts</a></li><li><a href="Multicol_layout/Spanning_balancing_columns.html">Spanning and balancing columns</a></li><li><a href="Multicol_layout/Handling_overflow.html">Handling overflow</a></li><li><a href="Multicol_layout/Handling_content_breaks.html">Handling content breaks</a></li></ol></details></li><li><details><summary><span>Conditional rules</span></summary><ol><li><a href="Conditional_rules/Using_feature_queries.html">Using feature queries</a></li><li><a href="Conditional_rules/Container_scroll-state_queries.html">Using container scroll-state queries</a></li></ol></details></li><li><details><summary><span>Containment</span></summary><ol><li><a href="Containment/Container_queries.html">Container queries</a></li><li><a href="Containment/Using.html">Using containment</a></li><li><a href="Containment/Container_size_and_style_queries.html">Using container size and style queries</a></li></ol></details></li><li><details><summary><span>Counters</span></summary><ol><li><a href="Counter_styles/Using_counters.html">Using counters</a></li></ol></details></li><li><details><summary><span>CSSOM view</span></summary><ol><li><a href="../../API/CSSOM_view_API/Coordinate_systems.html">Coordinate systems (API)</a></li><li><a href="CSSOM_view/Viewport_concepts.html">Viewport concepts</a></li></ol></details></li><li><details><summary><span>Custom functions and mixins</span></summary><ol><li><a href="Custom_functions_and_mixins/Using_custom_functions.html">Using CSS custom functions</a></li></ol></details></li><li><details><summary><span>Display</span></summary><ol><li><a href="Display/Block_and_inline_layout.html">Block and inline layout</a></li><li><a href="Display/Flow_layout.html">Flow layout</a></li><li><a href="Display/Flow_layout_and_overflow.html">Flow layout and overflow</a></li><li><a href="Display/Flow_layout_and_writing_modes.html">Flow layout and writing modes</a></li><li><a href="Display/In_flow_and_out_of_flow.html">In flow and out of flow</a></li><li><a href="Display/Containing_block.html">Layout and the containing block</a></li><li><a href="Display/Formatting_contexts.html">Formatting contexts</a></li><li><a href="Display/Block_formatting_context.html">Block formatting context</a></li><li><a href="Inline_layout/Inline_formatting_context.html">Inline formatting context</a></li><li><a href="Display/Multi-keyword_syntax.html">Using multi-keyword syntax</a></li><li><a href="Display/Visual_formatting_model.html">Visual formatting model</a></li></ol></details></li><li><details><summary><span>Environment variables</span></summary><ol><li><a href="Environment_variables/Using.html">Using environment variables</a></li></ol></details></li><li><details><summary><span>Filter effects</span></summary><ol><li><a href="Filter_effects/Using.html">Using filter effects</a></li></ol></details></li><li><details><summary><span>Flexbox</span></summary><ol><li><a href="Flexible_box_layout/Basic_concepts.html">Basic concepts</a></li><li><a href="Flexible_box_layout/Relationship_with_other_layout_methods.html">Flexbox and other layouts</a></li><li><a href="Flexible_box_layout/Aligning_items.html">Aligning flex items</a></li><li><a href="Flexible_box_layout/Ordering_items.html">Ordering flex items</a></li><li><a href="Flexible_box_layout/Controlling_flex_item_ratios.html">Controlling flex item ratios</a></li><li><a href="Flexible_box_layout/Wrapping_items.html">Wrapping flex items</a></li><li><a href="Flexible_box_layout/Use_cases.html">Typical use cases</a></li></ol></details></li><li><details><summary><span>Fonts</span></summary><ol><li><a href="Fonts/OpenType_fonts.html">OpenType features</a></li><li><a href="Fonts/Variable_fonts.html">Variable fonts</a></li><li><a href="Fonts/WOFF.html">WOFF</a></li></ol></details></li><li><details><summary><span>Grid</span></summary><ol><li><a href="Grid_layout/Basic_concepts.html">Basic concepts</a></li><li><a href="Grid_layout/Relationship_with_other_layout_methods.html">Grid and other layouts</a></li><li><a href="Grid_layout/Line-based_placement.html">Using line-based placement</a></li><li><a href="Grid_layout/Grid_template_areas.html">Grid template areas</a></li><li><a href="Grid_layout/Named_grid_lines.html">Using named grid lines</a></li><li><a href="Grid_layout/Auto-placement.html">Using auto-placement</a></li><li><a href="Grid_layout/Box_alignment.html">Aligning items</a></li><li><a href="Grid_layout/Logical_values_and_writing_modes.html">Logical values and writing modes</a></li><li><a href="Grid_layout/Accessibility.html">Grid layout and accessibility</a></li><li><a href="Grid_layout/Common_grid_layouts.html">Common grid layouts</a></li><li><a href="Grid_layout/Subgrid.html">Subgrid</a></li><li><a href="Grid_layout/Masonry_layout.html">Masonry layout</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><details><summary><span>Images</span></summary><ol><li><a href="Images/Using_gradients.html">Using gradients</a></li><li><a href="Images/Using_object-view-box.html">Using object-view-box</a></li><li><a href="Images/Replaced_element_properties.html">Styling replaced elements</a></li><li><a href="Images/Implementing_image_sprites.html">Implementing image sprites</a></li></ol></details></li><li><details><summary><span>Lists</span></summary><ol><li><a href="Lists/Indenting.html">Indenting lists</a></li></ol></details></li><li><details><summary><span>Logical properties</span></summary><ol><li><a href="Logical_properties_and_values/Basic_concepts.html">Basic concepts</a></li><li><a href="Logical_properties_and_values/Floating_and_positioning.html">For floating and positioning</a></li><li><a href="Logical_properties_and_values/Margins_borders_padding.html">For margins, borders, and padding</a></li><li><a href="Logical_properties_and_values/Sizing.html">For sizing</a></li></ol></details></li><li><details><summary><span>Masking</span></summary><ol><li><a href="Masking/Introduction.html">Introduction</a></li><li><a href="Masking/Clipping.html">Clipping</a></li><li><a href="Masking/Multiple_masks.html">Multiple masks</a></li><li><a href="Masking/Mask_properties.html">Mask properties</a></li></ol></details></li><li><details><summary><span>Media queries</span></summary><ol><li><a href="Media_queries/Using.html">Using media queries</a></li><li><a href="Media_queries/Using_for_accessibility.html">For accessibility</a></li><li><a href="Media_queries/Testing.html">Testing</a></li><li><a href="Media_queries/Printing.html">Printing</a></li></ol></details></li><li><details><summary><span>Nesting</span></summary><ol><li><a href="Nesting/At-rules.html">Nesting at-rules</a></li><li><a href="Nesting/Nesting_and_specificity.html">Nesting and specificity</a></li><li><a href="Nesting/Using.html">Using nesting</a></li></ol></details></li><li><details><summary><span>Overflow</span></summary><ol><li><a href="Overflow/Carousels.html">Creating carousels</a></li></ol></details></li><li><details><summary><span>Positioning</span></summary><ol><li><a href="Positioned_layout/Stacking_context.html">Stacking context</a></li><li><a href="Positioned_layout/Stacking_floating_elements.html">Stacking floating elements</a></li><li><a href="Positioned_layout/Understanding_z-index.html">Understanding z-index</a></li><li><a href="Positioned_layout/Using_z-index.html">Using z-index</a></li><li><a href="Positioned_layout/Stacking_without_z-index.html">Stacking without z-index</a></li></ol></details></li><li><details><summary><span>Properties and Values API</span></summary><ol><li><a href="Properties_and_values_API/Houdini.html">CSS Houdini</a></li><li><a href="Properties_and_values_API/Registering_properties.html">Registering custom properties in CSS</a></li></ol></details></li><li><details><summary><span>Scroll anchoring</span></summary><ol><li><a href="Scroll_anchoring/Overview.html">Overview</a></li></ol></details></li><li><details><summary><span>Scroll-driven animations</span></summary><ol><li><a href="Scroll-driven_animations/Timelines.html">Scroll-driven animation timelines</a></li><li><a href="Scroll-driven_animations/Timeline_range_names.html">Understanding timeline range names</a></li></ol></details></li><li><details><summary><span>Scroll snap</span></summary><ol><li><a href="Scroll_snap/Basic_concepts.html">Basic concepts</a></li><li><a href="Scroll_snap/Using_scroll_snap_events.html">Using scroll snap events</a></li></ol></details></li><li><details><summary><span>Selectors</span></summary><ol><li><a href="Selectors/Selectors_and_combinators.html">Selectors and combinators</a></li><li><a href="Selectors/Selector_structure.html">Selector structure</a></li><li><a href="Selectors/Privacy_and__visited.html">Privacy and :visited</a></li><li><a href="Selectors/Using__target.html">Using :target</a></li></ol></details></li><li><details><summary><span>Shapes</span></summary><ol><li><a href="Shapes/Overview.html">Overview</a></li><li><a href="Shapes/From_box_values.html">Box-value shapes</a></li><li><a href="Shapes/From_images.html">Image-based shapes</a></li><li><a href="Shapes/Using_shape-outside.html">Using shape-outside</a></li><li><a href="Shapes/Shape_generator.html">Shape generator</a></li></ol></details></li><li><details><summary><span>Syntax</span></summary><ol><li><a href="Syntax/Introduction.html">Introduction</a></li><li><a href="Syntax/Comments.html">Comments</a></li><li><a href="Syntax/At-rules.html">At-rules</a></li><li><a href="Syntax/Error_handling.html">Error handling</a></li></ol></details></li><li><details><summary><span>Text</span></summary><ol><li><a href="Text/Wrapping_breaking_text.html">Wrapping and breaking text</a></li><li><a href="Text/Whitespace.html">Handling whitespace</a></li></ol></details></li><li><details><summary><span>Text decoration</span></summary><ol><li><a href="Text_decoration/Text_shadows.html">Text shadows</a></li></ol></details></li><li><details><summary><span>Transforms</span></summary><ol><li><a href="Transforms/Using.html">Using transforms</a></li></ol></details></li><li><details><summary><span>Transitions</span></summary><ol><li><a href="Transitions/Using.html">Using transitions</a></li></ol></details></li><li><details><summary><span>Values and units</span></summary><ol><li><a href="Values_and_units/Value_definition_syntax.html">Value definition syntax</a></li><li><a href="Values_and_units/Numeric_data_types.html">Numeric data types</a></li><li><a href="Values_and_units/Textual_data_types.html">Textual data types</a></li><li><a href="Values_and_units/Using_math_functions.html">Using math functions</a></li><li><a href="Values_and_units/Using_typed_arithmetic.html">Using typed arithmetic</a></li></ol></details></li><li><details><summary><span>Writing modes</span></summary><ol><li><a href="Writing_modes/Writing_mode_systems.html">Introduction</a></li><li><a href="Writing_modes/Vertical_controls.html">Vertical form controls</a></li></ol></details></li><li class="section"><a href="../How_to.html">How to</a></li><li><details><summary><a href="../How_to/Layout_cookbook.html">Layout cookbook</a></summary><ol><li><a href="../How_to/Layout_cookbook/Media_objects.html">Media objects</a></li><li><a href="../How_to/Layout_cookbook/Column_layouts.html">Column layouts</a></li><li><a href="../How_to/Layout_cookbook/Center_an_element.html">Center an element</a></li><li><a href="../How_to/Layout_cookbook/Sticky_footers.html">Sticky footers</a></li><li><a href="../How_to/Layout_cookbook/Split_navigation.html">Split navigation</a></li><li><a href="../How_to/Layout_cookbook/Breadcrumb_navigation.html">Breadcrumb navigation</a></li><li><a href="../How_to/Layout_cookbook/List_group_with_badges.html">List group with badges</a></li><li><a href="../How_to/Layout_cookbook/Pagination.html">Pagination</a></li><li><a href="../How_to/Layout_cookbook/Card.html">Card</a></li><li><a href="../How_to/Layout_cookbook/Grid_wrapper.html">Grid wrapper</a></li><li><details><summary><a href="../How_to/Layout_cookbook/Contribute_a_recipe.html">Contribute a recipe</a></summary><ol><li><a href="../How_to/Layout_cookbook/Contribute_a_recipe/Cookbook_template.html">Cookbook template</a></li></ol></details></li></ol></details></li><li class="section"><span>Tools</span></li><li><ol><li><a href="Backgrounds_and_borders/Border-image_generator.html">Border-image generator</a></li><li><a href="Backgrounds_and_borders/Border-radius_generator.html">Border-radius generator</a></li><li><a href="Backgrounds_and_borders/Box-shadow_generator.html">Box-shadow generator</a></li><li><a href="Colors/Color_format_converter.html">Color format converter</a></li><li><a href="Colors/Color_mixer.html">Color mixer</a></li><li><a href="Shapes/Shape_generator.html">Shape generator</a></li></ol></li><li class="section"><a href="../Reference.html">Reference</a></li><li><details><summary><a href="../Reference/Properties.html">Properties</a></summary><ol><li><details><summary><span>-moz-*</span></summary><ol><li><a href="../Reference/Properties/-moz-float-edge.html">-moz-float-edge</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/-moz-force-broken-image-icon.html">-moz-force-broken-image-icon</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/-moz-orient.html">-moz-orient</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Properties/-moz-user-focus.html">-moz-user-focus</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/-moz-user-input.html">-moz-user-input</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li></ol></details></li><li><details><summary><span>-webkit-*</span></summary><ol><li><a href="../Reference/Properties/-webkit-border-before.html">-webkit-border-before</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Properties/-webkit-box-reflect.html">-webkit-box-reflect</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Properties/-webkit-mask-box-image.html">-webkit-mask-box-image</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Properties/-webkit-mask-composite.html">-webkit-mask-composite</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Properties/-webkit-mask-position-x.html">-webkit-mask-position-x</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Properties/-webkit-mask-position-y.html">-webkit-mask-position-y</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Properties/-webkit-mask-repeat-x.html">-webkit-mask-repeat-x</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Properties/-webkit-mask-repeat-y.html">-webkit-mask-repeat-y</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Properties/-webkit-tap-highlight-color.html">-webkit-tap-highlight-color</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Properties/-webkit-text-fill-color.html">-webkit-text-fill-color</a></li><li><a href="../Reference/Properties/-webkit-text-security.html">-webkit-text-security</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Properties/-webkit-text-stroke.html">-webkit-text-stroke</a></li><li><a href="../Reference/Properties/-webkit-text-stroke-color.html">-webkit-text-stroke-color</a></li><li><a href="../Reference/Properties/-webkit-text-stroke-width.html">-webkit-text-stroke-width</a></li><li><a href="../Reference/Properties/-webkit-touch-callout.html">-webkit-touch-callout</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li></ol></details></li><li><a href="../Reference/Properties/--_.html">Custom properties (--*): CSS variables</a></li><li><a href="../Reference/Properties/accent-color.html">accent-color</a></li><li><details><summary><span>align-*</span></summary><ol><li><a href="../Reference/Properties/align-content.html">align-content</a></li><li><a href="../Reference/Properties/align-items.html">align-items</a></li><li><a href="../Reference/Properties/align-self.html">align-self</a></li></ol></details></li><li><a href="../Reference/Properties/alignment-baseline.html">alignment-baseline</a></li><li><a href="../Reference/Properties/all.html">all</a></li><li><a href="../Reference/Properties/anchor-name.html">anchor-name</a></li><li><a href="../Reference/Properties/anchor-scope.html">anchor-scope</a></li><li><details><summary><span>animation-*</span></summary><ol><li><a href="../Reference/Properties/animation.html">animation</a></li><li><a href="../Reference/Properties/animation-composition.html">animation-composition</a></li><li><a href="../Reference/Properties/animation-delay.html">animation-delay</a></li><li><a href="../Reference/Properties/animation-direction.html">animation-direction</a></li><li><a href="../Reference/Properties/animation-duration.html">animation-duration</a></li><li><a href="../Reference/Properties/animation-fill-mode.html">animation-fill-mode</a></li><li><a href="../Reference/Properties/animation-iteration-count.html">animation-iteration-count</a></li><li><a href="../Reference/Properties/animation-name.html">animation-name</a></li><li><a href="../Reference/Properties/animation-play-state.html">animation-play-state</a></li><li><a href="../Reference/Properties/animation-range.html">animation-range</a></li><li><a href="../Reference/Properties/animation-range-end.html">animation-range-end</a></li><li><a href="../Reference/Properties/animation-range-start.html">animation-range-start</a></li><li><a href="../Reference/Properties/animation-timeline.html">animation-timeline</a></li><li><a href="../Reference/Properties/animation-timing-function.html">animation-timing-function</a></li></ol></details></li><li><a href="../Reference/Properties/appearance.html">appearance</a></li><li><a href="../Reference/Properties/aspect-ratio.html">aspect-ratio</a></li><li><a href="../Reference/Properties/backdrop-filter.html">backdrop-filter</a></li><li><a href="../Reference/Properties/backface-visibility.html">backface-visibility</a></li><li><details><summary><span>background-*</span></summary><ol><li><a href="../Reference/Properties/background.html">background</a></li><li><a href="../Reference/Properties/background-attachment.html">background-attachment</a></li><li><a href="../Reference/Properties/background-blend-mode.html">background-blend-mode</a></li><li><a href="../Reference/Properties/background-clip.html">background-clip</a></li><li><a href="../Reference/Properties/background-color.html">background-color</a></li><li><a href="../Reference/Properties/background-image.html">background-image</a></li><li><a href="../Reference/Properties/background-origin.html">background-origin</a></li><li><a href="../Reference/Properties/background-position.html">background-position</a></li><li><a href="../Reference/Properties/background-position-x.html">background-position-x</a></li><li><a href="../Reference/Properties/background-position-y.html">background-position-y</a></li><li><a href="../Reference/Properties/background-repeat.html">background-repeat</a></li><li><a href="../Reference/Properties/background-repeat-x.html">background-repeat-x</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/background-repeat-y.html">background-repeat-y</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/background-size.html">background-size</a></li></ol></details></li><li><a href="../Reference/Properties/baseline-shift.html">baseline-shift</a></li><li><a href="../Reference/Properties/baseline-source.html">baseline-source</a></li><li><a href="../Reference/Properties/block-size.html">block-size</a></li><li><details><summary><span>border-*</span></summary><ol><li><a href="../Reference/Properties/border.html">border</a></li><li><a href="../Reference/Properties/border-block.html">border-block</a></li><li><a href="../Reference/Properties/border-block-color.html">border-block-color</a></li><li><a href="../Reference/Properties/border-block-end.html">border-block-end</a></li><li><a href="../Reference/Properties/border-block-end-color.html">border-block-end-color</a></li><li><a href="../Reference/Properties/border-block-end-style.html">border-block-end-style</a></li><li><a href="../Reference/Properties/border-block-end-width.html">border-block-end-width</a></li><li><a href="../Reference/Properties/border-block-start.html">border-block-start</a></li><li><a href="../Reference/Properties/border-block-start-color.html">border-block-start-color</a></li><li><a href="../Reference/Properties/border-block-start-style.html">border-block-start-style</a></li><li><a href="../Reference/Properties/border-block-start-width.html">border-block-start-width</a></li><li><a href="../Reference/Properties/border-block-style.html">border-block-style</a></li><li><a href="../Reference/Properties/border-block-width.html">border-block-width</a></li><li><a href="../Reference/Properties/border-bottom.html">border-bottom</a></li><li><a href="../Reference/Properties/border-bottom-color.html">border-bottom-color</a></li><li><a href="../Reference/Properties/border-bottom-left-radius.html">border-bottom-left-radius</a></li><li><a href="../Reference/Properties/border-bottom-right-radius.html">border-bottom-right-radius</a></li><li><a href="../Reference/Properties/border-bottom-style.html">border-bottom-style</a></li><li><a href="../Reference/Properties/border-bottom-width.html">border-bottom-width</a></li><li><a href="../Reference/Properties/border-collapse.html">border-collapse</a></li><li><a href="../Reference/Properties/border-color.html">border-color</a></li><li><a href="../Reference/Properties/border-end-end-radius.html">border-end-end-radius</a></li><li><a href="../Reference/Properties/border-end-start-radius.html">border-end-start-radius</a></li><li><a href="../Reference/Properties/border-image.html">border-image</a></li><li><a href="../Reference/Properties/border-image-outset.html">border-image-outset</a></li><li><a href="../Reference/Properties/border-image-repeat.html">border-image-repeat</a></li><li><a href="../Reference/Properties/border-image-slice.html">border-image-slice</a></li><li><a href="../Reference/Properties/border-image-source.html">border-image-source</a></li><li><a href="../Reference/Properties/border-image-width.html">border-image-width</a></li><li><a href="../Reference/Properties/border-inline.html">border-inline</a></li><li><a href="../Reference/Properties/border-inline-color.html">border-inline-color</a></li><li><a href="../Reference/Properties/border-inline-end.html">border-inline-end</a></li><li><a href="../Reference/Properties/border-inline-end-color.html">border-inline-end-color</a></li><li><a href="../Reference/Properties/border-inline-end-style.html">border-inline-end-style</a></li><li><a href="../Reference/Properties/border-inline-end-width.html">border-inline-end-width</a></li><li><a href="../Reference/Properties/border-inline-start.html">border-inline-start</a></li><li><a href="../Reference/Properties/border-inline-start-color.html">border-inline-start-color</a></li><li><a href="../Reference/Properties/border-inline-start-style.html">border-inline-start-style</a></li><li><a href="../Reference/Properties/border-inline-start-width.html">border-inline-start-width</a></li><li><a href="../Reference/Properties/border-inline-style.html">border-inline-style</a></li><li><a href="../Reference/Properties/border-inline-width.html">border-inline-width</a></li><li><a href="../Reference/Properties/border-left.html">border-left</a></li><li><a href="../Reference/Properties/border-left-color.html">border-left-color</a></li><li><a href="../Reference/Properties/border-left-style.html">border-left-style</a></li><li><a href="../Reference/Properties/border-left-width.html">border-left-width</a></li><li><a href="../Reference/Properties/border-radius.html">border-radius</a></li><li><a href="../Reference/Properties/border-right.html">border-right</a></li><li><a href="../Reference/Properties/border-right-color.html">border-right-color</a></li><li><a href="../Reference/Properties/border-right-style.html">border-right-style</a></li><li><a href="../Reference/Properties/border-right-width.html">border-right-width</a></li><li><a href="../Reference/Properties/border-spacing.html">border-spacing</a></li><li><a href="../Reference/Properties/border-start-end-radius.html">border-start-end-radius</a></li><li><a href="../Reference/Properties/border-start-start-radius.html">border-start-start-radius</a></li><li><a href="../Reference/Properties/border-style.html">border-style</a></li><li><a href="../Reference/Properties/border-top.html">border-top</a></li><li><a href="../Reference/Properties/border-top-color.html">border-top-color</a></li><li><a href="../Reference/Properties/border-top-left-radius.html">border-top-left-radius</a></li><li><a href="../Reference/Properties/border-top-right-radius.html">border-top-right-radius</a></li><li><a href="../Reference/Properties/border-top-style.html">border-top-style</a></li><li><a href="../Reference/Properties/border-top-width.html">border-top-width</a></li><li><a href="../Reference/Properties/border-width.html">border-width</a></li></ol></details></li><li><a href="../Reference/Properties/bottom.html">bottom</a></li><li><details><summary><span>box-*</span></summary><ol><li><a href="../Reference/Properties/box-align.html">box-align</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/box-decoration-break.html">box-decoration-break</a></li><li><a href="../Reference/Properties/box-direction.html">box-direction</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/box-flex.html">box-flex</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/box-flex-group.html">box-flex-group</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/box-lines.html">box-lines</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/box-ordinal-group.html">box-ordinal-group</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/box-orient.html">box-orient</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/box-pack.html">box-pack</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/box-shadow.html">box-shadow</a></li><li><a href="../Reference/Properties/box-sizing.html">box-sizing</a></li></ol></details></li><li><details><summary><span>break-*</span></summary><ol><li><a href="../Reference/Properties/break-after.html">break-after</a></li><li><a href="../Reference/Properties/break-before.html">break-before</a></li><li><a href="../Reference/Properties/break-inside.html">break-inside</a></li></ol></details></li><li><a href="../Reference/Properties/caption-side.html">caption-side</a></li><li><details><summary><span>caret-*</span></summary><ol><li><a href="../Reference/Properties/caret.html">caret</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/caret-animation.html">caret-animation</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/caret-color.html">caret-color</a></li><li><a href="../Reference/Properties/caret-shape.html">caret-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><a href="../Reference/Properties/clear.html">clear</a></li><li><details><summary><span>clip-*</span></summary><ol><li><a href="../Reference/Properties/clip.html">clip</a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/clip-path.html">clip-path</a></li><li><a href="../Reference/Properties/clip-rule.html">clip-rule</a></li></ol></details></li><li><details><summary><span>color-*</span></summary><ol><li><a href="../Reference/Properties/color.html">color</a></li><li><a href="../Reference/Properties/color-interpolation.html">color-interpolation</a></li><li><a href="../Reference/Properties/color-interpolation-filters.html">color-interpolation-filters</a></li><li><a href="../Reference/Properties/color-scheme.html">color-scheme</a></li></ol></details></li><li><details><summary><span>column-*</span></summary><ol><li><a href="../Reference/Properties/column-count.html">column-count</a></li><li><a href="../Reference/Properties/column-fill.html">column-fill</a></li><li><a href="../Reference/Properties/column-gap.html">column-gap</a></li><li><a href="../Reference/Properties/column-height.html">column-height</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/column-rule.html">column-rule</a></li><li><a href="../Reference/Properties/column-rule-color.html">column-rule-color</a></li><li><a href="../Reference/Properties/column-rule-style.html">column-rule-style</a></li><li><a href="../Reference/Properties/column-rule-width.html">column-rule-width</a></li><li><a href="../Reference/Properties/column-span.html">column-span</a></li><li><a href="../Reference/Properties/column-width.html">column-width</a></li><li><a href="../Reference/Properties/column-wrap.html">column-wrap</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><a href="../Reference/Properties/columns.html">columns</a></li><li><details><summary><span>contain-*</span></summary><ol><li><a href="../Reference/Properties/contain.html">contain</a></li><li><a href="../Reference/Properties/contain-intrinsic-block-size.html">contain-intrinsic-block-size</a></li><li><a href="../Reference/Properties/contain-intrinsic-height.html">contain-intrinsic-height</a></li><li><a href="../Reference/Properties/contain-intrinsic-inline-size.html">contain-intrinsic-inline-size</a></li><li><a href="../Reference/Properties/contain-intrinsic-size.html">contain-intrinsic-size</a></li><li><a href="../Reference/Properties/contain-intrinsic-width.html">contain-intrinsic-width</a></li></ol></details></li><li><details><summary><span>container-*</span></summary><ol><li><a href="../Reference/Properties/container.html">container</a></li><li><a href="../Reference/Properties/container-name.html">container-name</a></li><li><a href="../Reference/Properties/container-type.html">container-type</a></li></ol></details></li><li><a href="../Reference/Properties/content.html">content</a></li><li><a href="../Reference/Properties/content-visibility.html">content-visibility</a></li><li><details><summary><span>corner-*</span></summary><ol><li><a href="../Reference/Properties/corner-block-end-shape.html">corner-block-end-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-block-start-shape.html">corner-block-start-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-bottom-left-shape.html">corner-bottom-left-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-bottom-right-shape.html">corner-bottom-right-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-bottom-shape.html">corner-bottom-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-end-end-shape.html">corner-end-end-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-end-start-shape.html">corner-end-start-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-inline-end-shape.html">corner-inline-end-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-inline-start-shape.html">corner-inline-start-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-left-shape.html">corner-left-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-right-shape.html">corner-right-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-shape.html">corner-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-start-end-shape.html">corner-start-end-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-start-start-shape.html">corner-start-start-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-top-left-shape.html">corner-top-left-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-top-right-shape.html">corner-top-right-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/corner-top-shape.html">corner-top-shape</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><details><summary><span>counter-*</span></summary><ol><li><a href="../Reference/Properties/counter-increment.html">counter-increment</a></li><li><a href="../Reference/Properties/counter-reset.html">counter-reset</a></li><li><a href="../Reference/Properties/counter-set.html">counter-set</a></li></ol></details></li><li><a href="../Reference/Properties/cursor.html">cursor</a></li><li><a href="../Reference/Properties/cx.html">cx</a></li><li><a href="../Reference/Properties/cy.html">cy</a></li><li><a href="../Reference/Properties/d.html">d</a></li><li><a href="../Reference/Properties/direction.html">direction</a></li><li><a href="../Reference/Properties/display.html">display</a></li><li><a href="../Reference/Properties/dominant-baseline.html">dominant-baseline</a></li><li><a href="../Reference/Properties/dynamic-range-limit.html">dynamic-range-limit</a></li><li><a href="../Reference/Properties/empty-cells.html">empty-cells</a></li><li><a href="../Reference/Properties/field-sizing.html">field-sizing</a></li><li><details><summary><span>fill-*</span></summary><ol><li><a href="../Reference/Properties/fill.html">fill</a></li><li><a href="../Reference/Properties/fill-opacity.html">fill-opacity</a></li><li><a href="../Reference/Properties/fill-rule.html">fill-rule</a></li></ol></details></li><li><a href="../Reference/Properties/filter.html">filter</a></li><li><details><summary><span>flex-*</span></summary><ol><li><a href="../Reference/Properties/flex.html">flex</a></li><li><a href="../Reference/Properties/flex-basis.html">flex-basis</a></li><li><a href="../Reference/Properties/flex-direction.html">flex-direction</a></li><li><a href="../Reference/Properties/flex-flow.html">flex-flow</a></li><li><a href="../Reference/Properties/flex-grow.html">flex-grow</a></li><li><a href="../Reference/Properties/flex-shrink.html">flex-shrink</a></li><li><a href="../Reference/Properties/flex-wrap.html">flex-wrap</a></li></ol></details></li><li><a href="../Reference/Properties/float.html">float</a></li><li><a href="../Reference/Properties/flood-color.html">flood-color</a></li><li><a href="../Reference/Properties/flood-opacity.html">flood-opacity</a></li><li><details><summary><span>font-*</span></summary><ol><li><a href="../Reference/Properties/font.html">font</a></li><li><a href="../Reference/Properties/font-family.html">font-family</a></li><li><a href="../Reference/Properties/font-feature-settings.html">font-feature-settings</a></li><li><a href="../Reference/Properties/font-kerning.html">font-kerning</a></li><li><a href="../Reference/Properties/font-language-override.html">font-language-override</a></li><li><a href="../Reference/Properties/font-optical-sizing.html">font-optical-sizing</a></li><li><a href="../Reference/Properties/font-palette.html">font-palette</a></li><li><a href="../Reference/Properties/font-size.html">font-size</a></li><li><a href="../Reference/Properties/font-size-adjust.html">font-size-adjust</a></li><li><a href="../Reference/Properties/font-smooth.html">font-smooth</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Properties/font-stretch.html">font-stretch</a></li><li><a href="../Reference/Properties/font-style.html">font-style</a></li><li><a href="../Reference/Properties/font-synthesis.html">font-synthesis</a></li><li><a href="../Reference/Properties/font-synthesis-position.html">font-synthesis-position</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/font-synthesis-small-caps.html">font-synthesis-small-caps</a></li><li><a href="../Reference/Properties/font-synthesis-style.html">font-synthesis-style</a></li><li><a href="../Reference/Properties/font-synthesis-weight.html">font-synthesis-weight</a></li><li><a href="../Reference/Properties/font-variant.html">font-variant</a></li><li><a href="../Reference/Properties/font-variant-alternates.html">font-variant-alternates</a></li><li><a href="../Reference/Properties/font-variant-caps.html">font-variant-caps</a></li><li><a href="../Reference/Properties/font-variant-east-asian.html">font-variant-east-asian</a></li><li><a href="../Reference/Properties/font-variant-emoji.html">font-variant-emoji</a></li><li><a href="../Reference/Properties/font-variant-ligatures.html">font-variant-ligatures</a></li><li><a href="../Reference/Properties/font-variant-numeric.html">font-variant-numeric</a></li><li><a href="../Reference/Properties/font-variant-position.html">font-variant-position</a></li><li><a href="../Reference/Properties/font-variation-settings.html">font-variation-settings</a></li><li><a href="../Reference/Properties/font-weight.html">font-weight</a></li><li><a href="../Reference/Properties/font-width.html">font-width</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><a href="../Reference/Properties/forced-color-adjust.html">forced-color-adjust</a></li><li><a href="../Reference/Properties/gap.html">gap</a></li><li><details><summary><span>grid-*</span></summary><ol><li><a href="../Reference/Properties/grid.html">grid</a></li><li><a href="../Reference/Properties/grid-area.html">grid-area</a></li><li><a href="../Reference/Properties/grid-auto-columns.html">grid-auto-columns</a></li><li><a href="../Reference/Properties/grid-auto-flow.html">grid-auto-flow</a></li><li><a href="../Reference/Properties/grid-auto-rows.html">grid-auto-rows</a></li><li><a href="../Reference/Properties/grid-column.html">grid-column</a></li><li><a href="../Reference/Properties/grid-column-end.html">grid-column-end</a></li><li><a href="../Reference/Properties/grid-column-start.html">grid-column-start</a></li><li><a href="../Reference/Properties/grid-row.html">grid-row</a></li><li><a href="../Reference/Properties/grid-row-end.html">grid-row-end</a></li><li><a href="../Reference/Properties/grid-row-start.html">grid-row-start</a></li><li><a href="../Reference/Properties/grid-template.html">grid-template</a></li><li><a href="../Reference/Properties/grid-template-areas.html">grid-template-areas</a></li><li><a href="../Reference/Properties/grid-template-columns.html">grid-template-columns</a></li><li><a href="../Reference/Properties/grid-template-rows.html">grid-template-rows</a></li></ol></details></li><li><a href="../Reference/Properties/hanging-punctuation.html">hanging-punctuation</a></li><li><a href="../Reference/Properties/height.html">height</a></li><li><a href="../Reference/Properties/hyphenate-character.html">hyphenate-character</a></li><li><a href="../Reference/Properties/hyphenate-limit-chars.html">hyphenate-limit-chars</a></li><li><a href="../Reference/Properties/hyphens.html">hyphens</a></li><li><details><summary><span>image-*</span></summary><ol><li><a href="../Reference/Properties/image-orientation.html">image-orientation</a></li><li><a href="../Reference/Properties/image-rendering.html">image-rendering</a></li><li><a href="../Reference/Properties/image-resolution.html">image-resolution</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><a href="../Reference/Properties/initial-letter.html">initial-letter</a></li><li><a href="../Reference/Properties/inline-size.html">inline-size</a></li><li><details><summary><span>inset-*</span></summary><ol><li><a href="../Reference/Properties/inset.html">inset</a></li><li><a href="../Reference/Properties/inset-block.html">inset-block</a></li><li><a href="../Reference/Properties/inset-block-end.html">inset-block-end</a></li><li><a href="../Reference/Properties/inset-block-start.html">inset-block-start</a></li><li><a href="../Reference/Properties/inset-inline.html">inset-inline</a></li><li><a href="../Reference/Properties/inset-inline-end.html">inset-inline-end</a></li><li><a href="../Reference/Properties/inset-inline-start.html">inset-inline-start</a></li></ol></details></li><li><a href="../Reference/Properties/interactivity.html">interactivity</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><details><summary><span>interest-*</span></summary><ol><li><a href="../Reference/Properties/interest-delay.html">interest-delay</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/interest-delay-end.html">interest-delay-end</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/interest-delay-start.html">interest-delay-start</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><a href="../Reference/Properties/interpolate-size.html">interpolate-size</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/isolation.html">isolation</a></li><li><details><summary><span>justify-*</span></summary><ol><li><a href="../Reference/Properties/justify-content.html">justify-content</a></li><li><a href="../Reference/Properties/justify-items.html">justify-items</a></li><li><a href="../Reference/Properties/justify-self.html">justify-self</a></li></ol></details></li><li><a href="../Reference/Properties/left.html">left</a></li><li><a href="../Reference/Properties/letter-spacing.html">letter-spacing</a></li><li><a href="../Reference/Properties/lighting-color.html">lighting-color</a></li><li><details><summary><span>line-*</span></summary><ol><li><a href="../Reference/Properties/line-break.html">line-break</a></li><li><a href="../Reference/Properties/line-clamp.html">line-clamp</a></li><li><a href="../Reference/Properties/line-height.html">line-height</a></li><li><a href="../Reference/Properties/line-height-step.html">line-height-step</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><details><summary><span>list-*</span></summary><ol><li><a href="../Reference/Properties/list-style.html">list-style</a></li><li><a href="../Reference/Properties/list-style-image.html">list-style-image</a></li><li><a href="../Reference/Properties/list-style-position.html">list-style-position</a></li><li><a href="../Reference/Properties/list-style-type.html">list-style-type</a></li></ol></details></li><li><details><summary><span>margin-*</span></summary><ol><li><a href="../Reference/Properties/margin.html">margin</a></li><li><a href="../Reference/Properties/margin-block.html">margin-block</a></li><li><a href="../Reference/Properties/margin-block-end.html">margin-block-end</a></li><li><a href="../Reference/Properties/margin-block-start.html">margin-block-start</a></li><li><a href="../Reference/Properties/margin-bottom.html">margin-bottom</a></li><li><a href="../Reference/Properties/margin-inline.html">margin-inline</a></li><li><a href="../Reference/Properties/margin-inline-end.html">margin-inline-end</a></li><li><a href="../Reference/Properties/margin-inline-start.html">margin-inline-start</a></li><li><a href="../Reference/Properties/margin-left.html">margin-left</a></li><li><a href="../Reference/Properties/margin-right.html">margin-right</a></li><li><a href="../Reference/Properties/margin-top.html">margin-top</a></li><li><a href="../Reference/Properties/margin-trim.html">margin-trim</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><details><summary><span>marker-*</span></summary><ol><li><a href="../Reference/Properties/marker.html">marker</a></li><li><a href="../Reference/Properties/marker-end.html">marker-end</a></li><li><a href="../Reference/Properties/marker-mid.html">marker-mid</a></li><li><a href="../Reference/Properties/marker-start.html">marker-start</a></li></ol></details></li><li><details><summary><span>mask-*</span></summary><ol><li><a href="../Reference/Properties/mask.html">mask</a></li><li><a href="../Reference/Properties/mask-border.html">mask-border</a></li><li><a href="../Reference/Properties/mask-border-mode.html">mask-border-mode</a></li><li><a href="../Reference/Properties/mask-border-outset.html">mask-border-outset</a></li><li><a href="../Reference/Properties/mask-border-repeat.html">mask-border-repeat</a></li><li><a href="../Reference/Properties/mask-border-slice.html">mask-border-slice</a></li><li><a href="../Reference/Properties/mask-border-source.html">mask-border-source</a></li><li><a href="../Reference/Properties/mask-border-width.html">mask-border-width</a></li><li><a href="../Reference/Properties/mask-clip.html">mask-clip</a></li><li><a href="../Reference/Properties/mask-composite.html">mask-composite</a></li><li><a href="../Reference/Properties/mask-image.html">mask-image</a></li><li><a href="../Reference/Properties/mask-mode.html">mask-mode</a></li><li><a href="../Reference/Properties/mask-origin.html">mask-origin</a></li><li><a href="../Reference/Properties/mask-position.html">mask-position</a></li><li><a href="../Reference/Properties/mask-repeat.html">mask-repeat</a></li><li><a href="../Reference/Properties/mask-size.html">mask-size</a></li><li><a href="../Reference/Properties/mask-type.html">mask-type</a></li></ol></details></li><li><details><summary><span>math-*</span></summary><ol><li><a href="../Reference/Properties/math-depth.html">math-depth</a></li><li><a href="../Reference/Properties/math-shift.html">math-shift</a></li><li><a href="../Reference/Properties/math-style.html">math-style</a></li></ol></details></li><li><details><summary><span>max-*</span></summary><ol><li><a href="../Reference/Properties/max-block-size.html">max-block-size</a></li><li><a href="../Reference/Properties/max-height.html">max-height</a></li><li><a href="../Reference/Properties/max-inline-size.html">max-inline-size</a></li><li><a href="../Reference/Properties/max-width.html">max-width</a></li></ol></details></li><li><details><summary><span>min-*</span></summary><ol><li><a href="../Reference/Properties/min-block-size.html">min-block-size</a></li><li><a href="../Reference/Properties/min-height.html">min-height</a></li><li><a href="../Reference/Properties/min-inline-size.html">min-inline-size</a></li><li><a href="../Reference/Properties/min-width.html">min-width</a></li></ol></details></li><li><a href="../Reference/Properties/mix-blend-mode.html">mix-blend-mode</a></li><li><details><summary><span>object-*</span></summary><ol><li><a href="../Reference/Properties/object-fit.html">object-fit</a></li><li><a href="../Reference/Properties/object-position.html">object-position</a></li><li><a href="../Reference/Properties/object-view-box.html">object-view-box</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><details><summary><span>offset-*</span></summary><ol><li><a href="../Reference/Properties/offset.html">offset</a></li><li><a href="../Reference/Properties/offset-anchor.html">offset-anchor</a></li><li><a href="../Reference/Properties/offset-distance.html">offset-distance</a></li><li><a href="../Reference/Properties/offset-path.html">offset-path</a></li><li><a href="../Reference/Properties/offset-position.html">offset-position</a></li><li><a href="../Reference/Properties/offset-rotate.html">offset-rotate</a></li></ol></details></li><li><a href="../Reference/Properties/opacity.html">opacity</a></li><li><a href="../Reference/Properties/order.html">order</a></li><li><a href="../Reference/Properties/orphans.html">orphans</a></li><li><details><summary><span>outline-*</span></summary><ol><li><a href="../Reference/Properties/outline.html">outline</a></li><li><a href="../Reference/Properties/outline-color.html">outline-color</a></li><li><a href="../Reference/Properties/outline-offset.html">outline-offset</a></li><li><a href="../Reference/Properties/outline-style.html">outline-style</a></li><li><a href="../Reference/Properties/outline-width.html">outline-width</a></li></ol></details></li><li><details><summary><span>overflow-*</span></summary><ol><li><a href="../Reference/Properties/overflow.html">overflow</a></li><li><a href="../Reference/Properties/overflow-anchor.html">overflow-anchor</a></li><li><a href="../Reference/Properties/overflow-block.html">overflow-block</a></li><li><a href="../Reference/Properties/overflow-clip-margin.html">overflow-clip-margin</a></li><li><a href="../Reference/Properties/overflow-inline.html">overflow-inline</a></li><li><a href="../Reference/Properties/overflow-wrap.html">overflow-wrap</a></li><li><a href="../Reference/Properties/overflow-x.html">overflow-x</a></li><li><a href="../Reference/Properties/overflow-y.html">overflow-y</a></li></ol></details></li><li><a href="../Reference/Properties/overlay.html">overlay</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><details><summary><span>overscroll-*</span></summary><ol><li><a href="../Reference/Properties/overscroll-behavior.html">overscroll-behavior</a></li><li><a href="../Reference/Properties/overscroll-behavior-block.html">overscroll-behavior-block</a></li><li><a href="../Reference/Properties/overscroll-behavior-inline.html">overscroll-behavior-inline</a></li><li><a href="../Reference/Properties/overscroll-behavior-x.html">overscroll-behavior-x</a></li><li><a href="../Reference/Properties/overscroll-behavior-y.html">overscroll-behavior-y</a></li></ol></details></li><li><details><summary><span>padding-*</span></summary><ol><li><a href="../Reference/Properties/padding.html">padding</a></li><li><a href="../Reference/Properties/padding-block.html">padding-block</a></li><li><a href="../Reference/Properties/padding-block-end.html">padding-block-end</a></li><li><a href="../Reference/Properties/padding-block-start.html">padding-block-start</a></li><li><a href="../Reference/Properties/padding-bottom.html">padding-bottom</a></li><li><a href="../Reference/Properties/padding-inline.html">padding-inline</a></li><li><a href="../Reference/Properties/padding-inline-end.html">padding-inline-end</a></li><li><a href="../Reference/Properties/padding-inline-start.html">padding-inline-start</a></li><li><a href="../Reference/Properties/padding-left.html">padding-left</a></li><li><a href="../Reference/Properties/padding-right.html">padding-right</a></li><li><a href="../Reference/Properties/padding-top.html">padding-top</a></li></ol></details></li><li><details><summary><span>page-*</span></summary><ol><li><a href="../Reference/Properties/page.html">page</a></li><li><a href="../Reference/Properties/page-break-after.html">page-break-after</a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/page-break-before.html">page-break-before</a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/page-break-inside.html">page-break-inside</a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li></ol></details></li><li><a href="../Reference/Properties/paint-order.html">paint-order</a></li><li><a href="../Reference/Properties/perspective.html">perspective</a></li><li><a href="../Reference/Properties/perspective-origin.html">perspective-origin</a></li><li><details><summary><span>place-*</span></summary><ol><li><a href="../Reference/Properties/place-content.html">place-content</a></li><li><a href="../Reference/Properties/place-items.html">place-items</a></li><li><a href="../Reference/Properties/place-self.html">place-self</a></li></ol></details></li><li><a href="../Reference/Properties/pointer-events.html">pointer-events</a></li><li><details><summary><span>position-*</span></summary><ol><li><a href="../Reference/Properties/position.html">position</a></li><li><a href="../Reference/Properties/position-anchor.html">position-anchor</a></li><li><a href="../Reference/Properties/position-area.html">position-area</a></li><li><a href="../Reference/Properties/position-try.html">position-try</a></li><li><a href="../Reference/Properties/position-try-fallbacks.html">position-try-fallbacks</a></li><li><a href="../Reference/Properties/position-try-order.html">position-try-order</a></li><li><a href="../Reference/Properties/position-visibility.html">position-visibility</a></li></ol></details></li><li><a href="../Reference/Properties/print-color-adjust.html">print-color-adjust</a></li><li><a href="../Reference/Properties/quotes.html">quotes</a></li><li><a href="../Reference/Properties/r.html">r</a></li><li><a href="../Reference/Properties/reading-flow.html">reading-flow</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/reading-order.html">reading-order</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/resize.html">resize</a></li><li><a href="../Reference/Properties/right.html">right</a></li><li><a href="../Reference/Properties/rotate.html">rotate</a></li><li><a href="../Reference/Properties/row-gap.html">row-gap</a></li><li><details><summary><span>ruby-*</span></summary><ol><li><a href="../Reference/Properties/ruby-align.html">ruby-align</a></li><li><a href="../Reference/Properties/ruby-overhang.html">ruby-overhang</a></li><li><a href="../Reference/Properties/ruby-position.html">ruby-position</a></li></ol></details></li><li><a href="../Reference/Properties/rx.html">rx</a></li><li><a href="../Reference/Properties/ry.html">ry</a></li><li><a href="../Reference/Properties/scale.html">scale</a></li><li><details><summary><span>scroll-*</span></summary><ol><li><a href="../Reference/Properties/scroll-behavior.html">scroll-behavior</a></li><li><a href="../Reference/Properties/scroll-initial-target.html">scroll-initial-target</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/scroll-margin.html">scroll-margin</a></li><li><a href="../Reference/Properties/scroll-margin-block.html">scroll-margin-block</a></li><li><a href="../Reference/Properties/scroll-margin-block-end.html">scroll-margin-block-end</a></li><li><a href="../Reference/Properties/scroll-margin-block-start.html">scroll-margin-block-start</a></li><li><a href="../Reference/Properties/scroll-margin-bottom.html">scroll-margin-bottom</a></li><li><a href="../Reference/Properties/scroll-margin-inline.html">scroll-margin-inline</a></li><li><a href="../Reference/Properties/scroll-margin-inline-end.html">scroll-margin-inline-end</a></li><li><a href="../Reference/Properties/scroll-margin-inline-start.html">scroll-margin-inline-start</a></li><li><a href="../Reference/Properties/scroll-margin-left.html">scroll-margin-left</a></li><li><a href="../Reference/Properties/scroll-margin-right.html">scroll-margin-right</a></li><li><a href="../Reference/Properties/scroll-margin-top.html">scroll-margin-top</a></li><li><a href="../Reference/Properties/scroll-marker-group.html">scroll-marker-group</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/scroll-padding.html">scroll-padding</a></li><li><a href="../Reference/Properties/scroll-padding-block.html">scroll-padding-block</a></li><li><a href="../Reference/Properties/scroll-padding-block-end.html">scroll-padding-block-end</a></li><li><a href="../Reference/Properties/scroll-padding-block-start.html">scroll-padding-block-start</a></li><li><a href="../Reference/Properties/scroll-padding-bottom.html">scroll-padding-bottom</a></li><li><a href="../Reference/Properties/scroll-padding-inline.html">scroll-padding-inline</a></li><li><a href="../Reference/Properties/scroll-padding-inline-end.html">scroll-padding-inline-end</a></li><li><a href="../Reference/Properties/scroll-padding-inline-start.html">scroll-padding-inline-start</a></li><li><a href="../Reference/Properties/scroll-padding-left.html">scroll-padding-left</a></li><li><a href="../Reference/Properties/scroll-padding-right.html">scroll-padding-right</a></li><li><a href="../Reference/Properties/scroll-padding-top.html">scroll-padding-top</a></li><li><a href="../Reference/Properties/scroll-snap-align.html">scroll-snap-align</a></li><li><a href="../Reference/Properties/scroll-snap-stop.html">scroll-snap-stop</a></li><li><a href="../Reference/Properties/scroll-snap-type.html">scroll-snap-type</a></li><li><a href="../Reference/Properties/scroll-target-group.html">scroll-target-group</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/scroll-timeline.html">scroll-timeline</a></li><li><a href="../Reference/Properties/scroll-timeline-axis.html">scroll-timeline-axis</a></li><li><a href="../Reference/Properties/scroll-timeline-name.html">scroll-timeline-name</a></li></ol></details></li><li><details><summary><span>scrollbar-*</span></summary><ol><li><a href="../Reference/Properties/scrollbar-color.html">scrollbar-color</a></li><li><a href="../Reference/Properties/scrollbar-gutter.html">scrollbar-gutter</a></li><li><a href="../Reference/Properties/scrollbar-width.html">scrollbar-width</a></li></ol></details></li><li><details><summary><span>shape-*</span></summary><ol><li><a href="../Reference/Properties/shape-image-threshold.html">shape-image-threshold</a></li><li><a href="../Reference/Properties/shape-margin.html">shape-margin</a></li><li><a href="../Reference/Properties/shape-outside.html">shape-outside</a></li><li><a href="../Reference/Properties/shape-rendering.html">shape-rendering</a></li></ol></details></li><li><a href="../Reference/Properties/speak-as.html">speak-as</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/stop-color.html">stop-color</a></li><li><a href="../Reference/Properties/stop-opacity.html">stop-opacity</a></li><li><details><summary><span>stroke-*</span></summary><ol><li><a href="../Reference/Properties/stroke.html">stroke</a></li><li><a href="../Reference/Properties/stroke-dasharray.html">stroke-dasharray</a></li><li><a href="../Reference/Properties/stroke-dashoffset.html">stroke-dashoffset</a></li><li><a href="../Reference/Properties/stroke-linecap.html">stroke-linecap</a></li><li><a href="../Reference/Properties/stroke-linejoin.html">stroke-linejoin</a></li><li><a href="../Reference/Properties/stroke-miterlimit.html">stroke-miterlimit</a></li><li><a href="../Reference/Properties/stroke-opacity.html">stroke-opacity</a></li><li><a href="../Reference/Properties/stroke-width.html">stroke-width</a></li></ol></details></li><li><a href="../Reference/Properties/tab-size.html">tab-size</a></li><li><a href="../Reference/Properties/table-layout.html">table-layout</a></li><li><details><summary><span>text-*</span></summary><ol><li><a href="../Reference/Properties/text-align.html">text-align</a></li><li><a href="../Reference/Properties/text-align-last.html">text-align-last</a></li><li><a href="../Reference/Properties/text-anchor.html">text-anchor</a></li><li><a href="../Reference/Properties/text-autospace.html">text-autospace</a></li><li><a href="../Reference/Properties/text-box.html">text-box</a></li><li><a href="../Reference/Properties/text-box-edge.html">text-box-edge</a></li><li><a href="../Reference/Properties/text-box-trim.html">text-box-trim</a></li><li><a href="../Reference/Properties/text-combine-upright.html">text-combine-upright</a></li><li><a href="../Reference/Properties/text-decoration.html">text-decoration</a></li><li><a href="../Reference/Properties/text-decoration-color.html">text-decoration-color</a></li><li><a href="../Reference/Properties/text-decoration-inset.html">text-decoration-inset</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/text-decoration-line.html">text-decoration-line</a></li><li><a href="../Reference/Properties/text-decoration-skip.html">text-decoration-skip</a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/text-decoration-skip-ink.html">text-decoration-skip-ink</a></li><li><a href="../Reference/Properties/text-decoration-style.html">text-decoration-style</a></li><li><a href="../Reference/Properties/text-decoration-thickness.html">text-decoration-thickness</a></li><li><a href="../Reference/Properties/text-emphasis.html">text-emphasis</a></li><li><a href="../Reference/Properties/text-emphasis-color.html">text-emphasis-color</a></li><li><a href="../Reference/Properties/text-emphasis-position.html">text-emphasis-position</a></li><li><a href="../Reference/Properties/text-emphasis-style.html">text-emphasis-style</a></li><li><a href="../Reference/Properties/text-indent.html">text-indent</a></li><li><a href="../Reference/Properties/text-justify.html">text-justify</a></li><li><a href="../Reference/Properties/text-orientation.html">text-orientation</a></li><li><a href="../Reference/Properties/text-overflow.html">text-overflow</a></li><li><a href="../Reference/Properties/text-rendering.html">text-rendering</a></li><li><a href="../Reference/Properties/text-shadow.html">text-shadow</a></li><li><a href="../Reference/Properties/text-size-adjust.html">text-size-adjust</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/text-spacing-trim.html">text-spacing-trim</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Properties/text-transform.html">text-transform</a></li><li><a href="../Reference/Properties/text-underline-offset.html">text-underline-offset</a></li><li><a href="../Reference/Properties/text-underline-position.html">text-underline-position</a></li><li><a href="../Reference/Properties/text-wrap.html">text-wrap</a></li><li><a href="../Reference/Properties/text-wrap-mode.html">text-wrap-mode</a></li><li><a href="../Reference/Properties/text-wrap-style.html">text-wrap-style</a></li></ol></details></li><li><a href="../Reference/Properties/timeline-scope.html">timeline-scope</a></li><li><a href="../Reference/Properties/top.html">top</a></li><li><a href="../Reference/Properties/touch-action.html">touch-action</a></li><li><details><summary><span>transform-*</span></summary><ol><li><a href="../Reference/Properties/transform.html">transform</a></li><li><a href="../Reference/Properties/transform-box.html">transform-box</a></li><li><a href="../Reference/Properties/transform-origin.html">transform-origin</a></li><li><a href="../Reference/Properties/transform-style.html">transform-style</a></li></ol></details></li><li><details><summary><span>transition-*</span></summary><ol><li><a href="../Reference/Properties/transition.html">transition</a></li><li><a href="../Reference/Properties/transition-behavior.html">transition-behavior</a></li><li><a href="../Reference/Properties/transition-delay.html">transition-delay</a></li><li><a href="../Reference/Properties/transition-duration.html">transition-duration</a></li><li><a href="../Reference/Properties/transition-property.html">transition-property</a></li><li><a href="../Reference/Properties/transition-timing-function.html">transition-timing-function</a></li></ol></details></li><li><a href="../Reference/Properties/translate.html">translate</a></li><li><a href="../Reference/Properties/unicode-bidi.html">unicode-bidi</a></li><li><a href="../Reference/Properties/user-modify.html">user-modify</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Properties/user-select.html">user-select</a></li><li><a href="../Reference/Properties/vector-effect.html">vector-effect</a></li><li><a href="../Reference/Properties/vertical-align.html">vertical-align</a></li><li><details><summary><span>view-*</span></summary><ol><li><a href="../Reference/Properties/view-timeline.html">view-timeline</a></li><li><a href="../Reference/Properties/view-timeline-axis.html">view-timeline-axis</a></li><li><a href="../Reference/Properties/view-timeline-inset.html">view-timeline-inset</a></li><li><a href="../Reference/Properties/view-timeline-name.html">view-timeline-name</a></li><li><a href="../Reference/Properties/view-transition-class.html">view-transition-class</a></li><li><a href="../Reference/Properties/view-transition-name.html">view-transition-name</a></li></ol></details></li><li><a href="../Reference/Properties/visibility.html">visibility</a></li><li><a href="../Reference/Properties/white-space.html">white-space</a></li><li><a href="../Reference/Properties/white-space-collapse.html">white-space-collapse</a></li><li><a href="../Reference/Properties/widows.html">widows</a></li><li><a href="../Reference/Properties/width.html">width</a></li><li><a href="../Reference/Properties/will-change.html">will-change</a></li><li><a href="../Reference/Properties/word-break.html">word-break</a></li><li><a href="../Reference/Properties/word-spacing.html">word-spacing</a></li><li><a href="../Reference/Properties/writing-mode.html">writing-mode</a></li><li><a href="../Reference/Properties/x.html">x</a></li><li><a href="../Reference/Properties/y.html">y</a></li><li><a href="../Reference/Properties/z-index.html">z-index</a></li><li><a href="../Reference/Properties/zoom.html">zoom</a></li></ol></details></li><li><details><summary><a href="../Reference/Selectors.html">Selectors</a></summary><ol><li><a href="../Reference/Selectors/Nesting_selector.html">&amp; nesting selector</a></li><li><a href="../Reference/Selectors/Attribute_selectors.html">Attribute selectors</a></li><li><a href="../Reference/Selectors/Class_selectors.html">Class selectors</a></li><li><a href="../Reference/Selectors/ID_selectors.html">ID selectors</a></li><li><a href="../Reference/Selectors/Keyframe_selectors.html">Keyframe selectors</a></li><li><a href="../Reference/Selectors/Namespace_separator.html">Namespace separator</a></li><li><a href="../Reference/Selectors/Selector_list.html">Selector list</a></li><li><a href="../Reference/Selectors/Type_selectors.html">Type selectors</a></li><li><a href="../Reference/Selectors/Universal_selectors.html">Universal selectors</a></li></ol></details></li><li><details><summary><a href="../Reference/Selectors/Combinators.html">Combinators</a></summary><ol><li><a href="../Reference/Selectors/Child_combinator.html">Child combinator</a></li><li><a href="../Reference/Selectors/Column_combinator.html">Column combinator</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/Descendant_combinator.html">Descendant combinator</a></li><li><a href="../Reference/Selectors/Next-sibling_combinator.html">Next-sibling combinator</a></li><li><a href="../Reference/Selectors/Subsequent-sibling_combinator.html">Subsequent-sibling combinator</a></li></ol></details></li><li><details><summary><a href="../Reference/Selectors/Pseudo-classes.html">Pseudo-classes</a></summary><ol><li><details><summary><span>:-moz-*</span></summary><ol><li><a href="../Reference/Selectors/_-moz-broken.html">:-moz-broken</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-drag-over.html">:-moz-drag-over</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-first-node.html">:-moz-first-node</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-handler-blocked.html">:-moz-handler-blocked</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-handler-crashed.html">:-moz-handler-crashed</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-handler-disabled.html">:-moz-handler-disabled</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-last-node.html">:-moz-last-node</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-loading.html">:-moz-loading</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-locale-dir_ltr.html">:-moz-locale-dir(ltr)</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-locale-dir_rtl.html">:-moz-locale-dir(rtl)</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-only-whitespace.html">:-moz-only-whitespace</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-submit-invalid.html">:-moz-submit-invalid</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-suppressed.html">:-moz-suppressed</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-user-disabled.html">:-moz-user-disabled</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/_-moz-window-inactive.html">:-moz-window-inactive</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li></ol></details></li><li><details><summary><span>:active-*</span></summary><ol><li><a href="../Reference/Selectors/_active.html">:active</a></li><li><a href="../Reference/Selectors/_active-view-transition.html">:active-view-transition</a></li><li><a href="../Reference/Selectors/_active-view-transition-type.html">:active-view-transition-type()</a></li></ol></details></li><li><a href="../Reference/Selectors/_any-link.html">:any-link</a></li><li><a href="../Reference/Selectors/_autofill.html">:autofill</a></li><li><a href="../Reference/Selectors/_blank.html">:blank</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/_buffering.html">:buffering</a></li><li><a href="../Reference/Selectors/_checked.html">:checked</a></li><li><a href="../Reference/Selectors/_current.html">:current</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/_default.html">:default</a></li><li><a href="../Reference/Selectors/_defined.html">:defined</a></li><li><a href="../Reference/Selectors/_dir.html">:dir()</a></li><li><a href="../Reference/Selectors/_disabled.html">:disabled</a></li><li><a href="../Reference/Selectors/_empty.html">:empty</a></li><li><a href="../Reference/Selectors/_enabled.html">:enabled</a></li><li><details><summary><span>:first-*</span></summary><ol><li><a href="../Reference/Selectors/_first.html">:first</a></li><li><a href="../Reference/Selectors/_first-child.html">:first-child</a></li><li><a href="../Reference/Selectors/_first-of-type.html">:first-of-type</a></li></ol></details></li><li><details><summary><span>:focus-*</span></summary><ol><li><a href="../Reference/Selectors/_focus.html">:focus</a></li><li><a href="../Reference/Selectors/_focus-visible.html">:focus-visible</a></li><li><a href="../Reference/Selectors/_focus-within.html">:focus-within</a></li></ol></details></li><li><a href="../Reference/Selectors/_fullscreen.html">:fullscreen</a></li><li><a href="../Reference/Selectors/_future.html">:future</a></li><li><a href="../Reference/Selectors/_has-slotted.html">:has-slotted</a></li><li><a href="../Reference/Selectors/_has.html">:has()</a></li><li><a href="../Reference/Selectors/_heading.html">:heading</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/_heading_function.html">:heading()</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/_host.html">:host</a></li><li><a href="../Reference/Selectors/_host-context.html">:host-context()</a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Selectors/_host_function.html">:host()</a></li><li><a href="../Reference/Selectors/_hover.html">:hover</a></li><li><a href="../Reference/Selectors/_in-range.html">:in-range</a></li><li><a href="../Reference/Selectors/_indeterminate.html">:indeterminate</a></li><li><a href="../Reference/Selectors/_interest-source.html">:interest-source</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/_interest-target.html">:interest-target</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/_invalid.html">:invalid</a></li><li><a href="../Reference/Selectors/_is.html">:is()</a></li><li><a href="../Reference/Selectors/_lang.html">:lang()</a></li><li><a href="../Reference/Selectors/_last-child.html">:last-child</a></li><li><a href="../Reference/Selectors/_last-of-type.html">:last-of-type</a></li><li><a href="../Reference/Selectors/_left.html">:left</a></li><li><a href="../Reference/Selectors/_link.html">:link</a></li><li><a href="../Reference/Selectors/_local-link.html">:local-link</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/_modal.html">:modal</a></li><li><a href="../Reference/Selectors/_muted.html">:muted</a></li><li><a href="../Reference/Selectors/_not.html">:not()</a></li><li><details><summary><span>:nth-*</span></summary><ol><li><a href="../Reference/Selectors/_nth-child.html">:nth-child()</a></li><li><a href="../Reference/Selectors/_nth-last-child.html">:nth-last-child()</a></li><li><a href="../Reference/Selectors/_nth-last-of-type.html">:nth-last-of-type()</a></li><li><a href="../Reference/Selectors/_nth-of-type.html">:nth-of-type()</a></li></ol></details></li><li><a href="../Reference/Selectors/_only-child.html">:only-child</a></li><li><a href="../Reference/Selectors/_only-of-type.html">:only-of-type</a></li><li><a href="../Reference/Selectors/_open.html">:open</a></li><li><a href="../Reference/Selectors/_optional.html">:optional</a></li><li><a href="../Reference/Selectors/_out-of-range.html">:out-of-range</a></li><li><a href="../Reference/Selectors/_past.html">:past</a></li><li><a href="../Reference/Selectors/_paused.html">:paused</a></li><li><a href="../Reference/Selectors/_picture-in-picture.html">:picture-in-picture</a></li><li><a href="../Reference/Selectors/_placeholder-shown.html">:placeholder-shown</a></li><li><a href="../Reference/Selectors/_playing.html">:playing</a></li><li><a href="../Reference/Selectors/_popover-open.html">:popover-open</a></li><li><a href="../Reference/Selectors/_read-only.html">:read-only</a></li><li><a href="../Reference/Selectors/_read-write.html">:read-write</a></li><li><a href="../Reference/Selectors/_required.html">:required</a></li><li><a href="../Reference/Selectors/_right.html">:right</a></li><li><a href="../Reference/Selectors/_root.html">:root</a></li><li><a href="../Reference/Selectors/_scope.html">:scope</a></li><li><a href="../Reference/Selectors/_seeking.html">:seeking</a></li><li><a href="../Reference/Selectors/_stalled.html">:stalled</a></li><li><a href="../Reference/Selectors/_state.html">:state()</a></li><li><details><summary><span>:target-*</span></summary><ol><li><a href="../Reference/Selectors/_target.html">:target</a></li><li><a href="../Reference/Selectors/_target-after.html">:target-after</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/_target-before.html">:target-before</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/_target-current.html">:target-current</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><a href="../Reference/Selectors/_user-invalid.html">:user-invalid</a></li><li><a href="../Reference/Selectors/_user-valid.html">:user-valid</a></li><li><a href="../Reference/Selectors/_valid.html">:valid</a></li><li><a href="../Reference/Selectors/_visited.html">:visited</a></li><li><a href="../Reference/Selectors/_volume-locked.html">:volume-locked</a></li><li><a href="../Reference/Selectors/_where.html">:where()</a></li><li><a href="../Reference/Selectors/_xr-overlay.html">:xr-overlay</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><details><summary><a href="../Reference/Selectors/Pseudo-elements.html">Pseudo-elements</a></summary><ol><li><details><summary><span>::-moz-*</span></summary><ol><li><a href="../Reference/Selectors/__-moz-color-swatch.html">::-moz-color-swatch</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-moz-focus-inner.html">::-moz-focus-inner</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Selectors/__-moz-list-bullet.html">::-moz-list-bullet</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-moz-list-number.html">::-moz-list-number</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-moz-meter-bar.html">::-moz-meter-bar</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-moz-progress-bar.html">::-moz-progress-bar</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-moz-range-progress.html">::-moz-range-progress</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-moz-range-thumb.html">::-moz-range-thumb</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-moz-range-track.html">::-moz-range-track</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li></ol></details></li><li><details><summary><span>::-webkit-*</span></summary><ol><li><a href="../Reference/Selectors/__-webkit-inner-spin-button.html">::-webkit-inner-spin-button</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-meter-bar.html">::-webkit-meter-bar</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-meter-even-less-good-value.html">::-webkit-meter-even-less-good-value</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-meter-inner-element.html">::-webkit-meter-inner-element</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-meter-optimum-value.html">::-webkit-meter-optimum-value</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-meter-suboptimum-value.html">::-webkit-meter-suboptimum-value</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-progress-bar.html">::-webkit-progress-bar</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-progress-inner-element.html">::-webkit-progress-inner-element</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-progress-value.html">::-webkit-progress-value</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-scrollbar.html">::-webkit-scrollbar</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-search-cancel-button.html">::-webkit-search-cancel-button</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-search-results-button.html">::-webkit-search-results-button</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-slider-runnable-track.html">::-webkit-slider-runnable-track</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Selectors/__-webkit-slider-thumb.html">::-webkit-slider-thumb</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li></ol></details></li><li><a href="../Reference/Selectors/__after.html">::after</a></li><li><a href="../Reference/Selectors/__backdrop.html">::backdrop</a></li><li><a href="../Reference/Selectors/__before.html">::before</a></li><li><a href="../Reference/Selectors/__checkmark.html">::checkmark</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/__column.html">::column</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/__cue.html">::cue</a></li><li><a href="../Reference/Selectors/__details-content.html">::details-content</a></li><li><a href="../Reference/Selectors/__file-selector-button.html">::file-selector-button</a></li><li><a href="../Reference/Selectors/__first-letter.html">::first-letter</a></li><li><a href="../Reference/Selectors/__first-line.html">::first-line</a></li><li><a href="../Reference/Selectors/__grammar-error.html">::grammar-error</a></li><li><a href="../Reference/Selectors/__highlight.html">::highlight()</a></li><li><a href="../Reference/Selectors/__marker.html">::marker</a></li><li><a href="../Reference/Selectors/__part.html">::part()</a></li><li><a href="../Reference/Selectors/__picker-icon.html">::picker-icon</a></li><li><a href="../Reference/Selectors/__picker.html">::picker()</a></li><li><a href="../Reference/Selectors/__placeholder.html">::placeholder</a></li><li><details><summary><span>::scroll-*</span></summary><ol><li><a href="../Reference/Selectors/__scroll-button.html">::scroll-button()</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/__scroll-marker.html">::scroll-marker</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/__scroll-marker-group.html">::scroll-marker-group</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><a href="../Reference/Selectors/__search-text.html">::search-text</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Selectors/__selection.html">::selection</a></li><li><a href="../Reference/Selectors/__slotted.html">::slotted()</a></li><li><a href="../Reference/Selectors/__spelling-error.html">::spelling-error</a></li><li><a href="../Reference/Selectors/__target-text.html">::target-text</a></li><li><details><summary><span>::view-*</span></summary><ol><li><a href="../Reference/Selectors/__view-transition.html">::view-transition</a></li><li><a href="../Reference/Selectors/__view-transition-group.html">::view-transition-group()</a></li><li><a href="../Reference/Selectors/__view-transition-image-pair.html">::view-transition-image-pair()</a></li><li><a href="../Reference/Selectors/__view-transition-new.html">::view-transition-new()</a></li><li><a href="../Reference/Selectors/__view-transition-old.html">::view-transition-old()</a></li></ol></details></li></ol></details></li><li><details><summary><a href="../Reference/At-rules.html">At-rules</a></summary><ol><li><a href="../Reference/At-rules/%40charset.html">@charset</a></li><li><a href="../Reference/At-rules/%40color-profile.html">@color-profile</a></li><li><a href="../Reference/At-rules/%40container.html">@container</a></li><li><a href="../Reference/At-rules/%40counter-style.html">@counter-style</a></li><li><a href="../Reference/At-rules/%40custom-media.html">@custom-media</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/At-rules/%40document.html">@document</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/At-rules/%40font-face.html">@font-face</a></li><li><a href="../Reference/At-rules/%40font-feature-values.html">@font-feature-values</a></li><li><a href="../Reference/At-rules/%40font-palette-values.html">@font-palette-values</a></li><li><a href="../Reference/At-rules/%40function.html">@function</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/At-rules/%40import.html">@import</a></li><li><a href="../Reference/At-rules/%40keyframes.html">@keyframes</a></li><li><a href="../Reference/At-rules/%40layer.html">@layer</a></li><li><a href="../Reference/At-rules/%40media.html">@media</a></li><li><a href="../Reference/At-rules/%40namespace.html">@namespace</a></li><li><a href="../Reference/At-rules/%40page.html">@page</a></li><li><a href="../Reference/At-rules/%40position-try.html">@position-try</a></li><li><a href="../Reference/At-rules/%40property.html">@property</a></li><li><a href="../Reference/At-rules/%40scope.html">@scope</a></li><li><a href="../Reference/At-rules/%40starting-style.html">@starting-style</a></li><li><a href="../Reference/At-rules/%40supports.html">@supports</a></li><li><a href="../Reference/At-rules/%40view-transition.html">@view-transition</a></li></ol></details></li><li><details><summary><a href="../Reference/Values.html">Values</a></summary><ol><li><a href="../Reference/Values/important.html">!important</a></li><li><a href="../Reference/Values/fit-content.html">fit-content</a></li><li><a href="../Reference/Values/inherit.html">inherit</a></li><li><a href="../Reference/Values/initial.html">initial</a></li><li><a href="../Reference/Values/max-content.html">max-content</a></li><li><a href="../Reference/Values/min-content.html">min-content</a></li><li><a href="../Reference/Values/revert.html">revert</a></li><li><a href="../Reference/Values/revert-layer.html">revert-layer</a></li><li><a href="../Reference/Values/unset.html">unset</a></li></ol></details></li><li><details><summary><a href="../Reference/Values/Data_types.html">Types</a></summary><ol><li><a href="../Reference/Values/absolute-size.html">&lt;absolute-size&gt;</a></li><li><a href="../Reference/Values/alpha-value.html">&lt;alpha-value&gt;</a></li><li><a href="../Reference/Values/angle-percentage.html">&lt;angle-percentage&gt;</a></li><li><a href="../Reference/Values/angle.html">&lt;angle&gt;</a></li><li><a href="../Reference/Values/axis.html">&lt;axis&gt;</a></li><li><a href="../Reference/Values/baseline-position.html">&lt;baseline-position&gt;</a></li><li><a href="../Reference/Values/basic-shape.html">&lt;basic-shape&gt;</a></li><li><a href="../Reference/Values/blend-mode.html">&lt;blend-mode&gt;</a></li><li><a href="../Reference/Values/box-edge.html">&lt;box-edge&gt;</a></li><li><a href="../Reference/Values/calc-keyword.html">&lt;calc-keyword&gt;</a></li><li><a href="../Reference/Values/calc-sum.html">&lt;calc-sum&gt;</a></li><li><a href="../Reference/Values/color-interpolation-method.html">&lt;color-interpolation-method&gt;</a></li><li><a href="../Reference/Values/color_value.html">&lt;color&gt;</a></li><li><a href="../Reference/Values/content-distribution.html">&lt;content-distribution&gt;</a></li><li><a href="../Reference/Values/content-position.html">&lt;content-position&gt;</a></li><li><a href="../Reference/Values/corner-shape-value.html">&lt;corner-shape-value&gt;</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Values/custom-ident.html">&lt;custom-ident&gt;</a></li><li><a href="../Reference/Values/dashed-function.html">&lt;dashed-function&gt;</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Values/dashed-ident.html">&lt;dashed-ident&gt;</a></li><li><a href="../Reference/Values/dimension.html">&lt;dimension&gt;</a></li><li><a href="../Reference/Values/display-box.html">&lt;display-box&gt;</a></li><li><a href="../Reference/Values/display-inside.html">&lt;display-inside&gt;</a></li><li><a href="../Reference/Values/display-internal.html">&lt;display-internal&gt;</a></li><li><a href="../Reference/Values/display-legacy.html">&lt;display-legacy&gt;</a></li><li><a href="../Reference/Values/display-listitem.html">&lt;display-listitem&gt;</a></li><li><a href="../Reference/Values/display-outside.html">&lt;display-outside&gt;</a></li><li><a href="../Reference/Values/easing-function.html">&lt;easing-function&gt;</a></li><li><a href="../Reference/Values/filter-function.html">&lt;filter-function&gt;</a></li><li><a href="../Reference/Values/flex_value.html">&lt;flex&gt;</a></li><li><a href="../Reference/Values/frequency-percentage.html">&lt;frequency-percentage&gt;</a></li><li><a href="../Reference/Values/frequency.html">&lt;frequency&gt;</a></li><li><a href="../Reference/Values/generic-family.html">&lt;generic-family&gt;</a></li><li><a href="../Reference/Values/gradient.html">&lt;gradient&gt;</a></li><li><a href="../Reference/Values/hex-color.html">&lt;hex-color&gt;</a></li><li><a href="../Reference/Values/hue-interpolation-method.html">&lt;hue-interpolation-method&gt;</a></li><li><a href="../Reference/Values/hue.html">&lt;hue&gt;</a></li><li><a href="../Reference/Values/ident.html">&lt;ident&gt;</a></li><li><a href="../Reference/Values/image.html">&lt;image&gt;</a></li><li><a href="../Reference/Values/integer.html">&lt;integer&gt;</a></li><li><a href="../Reference/Values/length-percentage.html">&lt;length-percentage&gt;</a></li><li><a href="../Reference/Values/length.html">&lt;length&gt;</a></li><li><a href="../Reference/Values/line-style.html">&lt;line-style&gt;</a></li><li><a href="../Reference/Values/named-color.html">&lt;named-color&gt;</a></li><li><a href="../Reference/Values/number.html">&lt;number&gt;</a></li><li><a href="../Reference/Values/overflow-position.html">&lt;overflow-position&gt;</a></li><li><a href="../Reference/Values/overflow_value.html">&lt;overflow&gt;</a></li><li><a href="../Reference/Values/percentage.html">&lt;percentage&gt;</a></li><li><a href="../Reference/Values/position-area_value.html">&lt;position-area&gt;</a></li><li><a href="../Reference/Values/position_value.html">&lt;position&gt;</a></li><li><a href="../Reference/Values/ratio.html">&lt;ratio&gt;</a></li><li><a href="../Reference/Values/relative-size.html">&lt;relative-size&gt;</a></li><li><a href="../Reference/Values/resolution.html">&lt;resolution&gt;</a></li><li><a href="../Reference/Values/self-position.html">&lt;self-position&gt;</a></li><li><a href="../Reference/Values/shape.html">&lt;shape&gt;</a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Values/string.html">&lt;string&gt;</a></li><li><a href="../Reference/Values/system-color.html">&lt;system-color&gt;</a></li><li><a href="../Reference/Values/text-edge.html">&lt;text-edge&gt;</a></li><li><a href="../Reference/Values/time-percentage.html">&lt;time-percentage&gt;</a></li><li><a href="../Reference/Values/time.html">&lt;time&gt;</a></li><li><a href="../Reference/Values/timeline-range-name.html">&lt;timeline-range-name&gt;</a></li><li><a href="../Reference/Values/transform-function.html">&lt;transform-function&gt;</a></li><li><a href="../Reference/Values/url_value.html">&lt;url&gt;</a></li><li><a href="../Reference/Values/rule-list.html">rule-list</a></li></ol></details></li><li><details><summary><a href="../Reference/Values/Functions.html">Functions</a></summary><ol><li><a href="../Reference/Values/-moz-image-rect.html">-moz-image-rect</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Values/abs.html">abs()</a></li><li><a href="../Reference/Values/acos.html">acos()</a></li><li><a href="../Reference/Values/anchor-size.html">anchor-size()</a></li><li><a href="../Reference/Values/anchor.html">anchor()</a></li><li><a href="../Reference/Values/asin.html">asin()</a></li><li><a href="../Reference/Values/atan.html">atan()</a></li><li><a href="../Reference/Values/atan2.html">atan2()</a></li><li><a href="../Reference/Values/attr.html">attr()</a></li><li><a href="../Reference/Values/filter-function/blur.html">blur()</a></li><li><a href="../Reference/Values/filter-function/brightness.html">brightness()</a></li><li><a href="../Reference/Values/calc-size.html">calc-size()</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Values/calc.html">calc()</a></li><li><a href="../Reference/Values/basic-shape/circle.html">circle()</a></li><li><a href="../Reference/Values/clamp.html">clamp()</a></li><li><a href="../Reference/Values/color_value/color-mix.html">color-mix()</a></li><li><a href="../Reference/Values/color_value/color.html">color()</a></li><li><a href="../Reference/Values/gradient/conic-gradient.html">conic-gradient()</a></li><li><a href="../Reference/Values/color_value/contrast-color.html">contrast-color()</a></li><li><a href="../Reference/Values/filter-function/contrast.html">contrast()</a></li><li><a href="../Reference/Values/cos.html">cos()</a></li><li><a href="../Reference/Values/counter.html">counter()</a></li><li><a href="../Reference/Values/counters.html">counters()</a></li><li><a href="../Reference/Values/cross-fade.html">cross-fade()</a></li><li><a href="../Reference/Values/easing-function/cubic-bezier.html">cubic-bezier()</a></li><li><a href="../Reference/Values/color_value/device-cmyk.html">device-cmyk()</a></li><li><a href="../Reference/Values/filter-function/drop-shadow.html">drop-shadow()</a></li><li><a href="../Reference/Values/dynamic-range-limit-mix.html">dynamic-range-limit-mix()</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Values/element.html">element()</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Values/basic-shape/ellipse.html">ellipse()</a></li><li><a href="../Reference/Values/env.html">env()</a></li><li><a href="../Reference/Values/exp.html">exp()</a></li><li><a href="../Reference/Values/fit-content_function.html">fit-content()</a></li><li><a href="../Reference/Values/filter-function/grayscale.html">grayscale()</a></li><li><a href="../Reference/Values/color_value/hsl.html">hsl()</a></li><li><a href="../Reference/Values/filter-function/hue-rotate.html">hue-rotate()</a></li><li><a href="../Reference/Values/color_value/hwb.html">hwb()</a></li><li><a href="../Reference/Values/hypot.html">hypot()</a></li><li><a href="../Reference/Values/if.html">if()</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Values/image/image-set.html">image-set()</a></li><li><a href="../Reference/Values/image/image.html">image()</a></li><li><a href="../Reference/Values/basic-shape/inset.html">inset()</a></li><li><a href="../Reference/Values/filter-function/invert.html">invert()</a></li><li><a href="../Reference/Values/color_value/lab.html">lab()</a></li><li><a href="../Reference/Values/color_value/lch.html">lch()</a></li><li><a href="../Reference/Values/color_value/light-dark.html">light-dark()</a></li><li><a href="../Reference/Values/gradient/linear-gradient.html">linear-gradient()</a></li><li><a href="../Reference/Values/easing-function/linear.html">linear()</a></li><li><a href="../Reference/Values/log.html">log()</a></li><li><a href="../Reference/Values/transform-function/matrix.html">matrix()</a></li><li><a href="../Reference/Values/transform-function/matrix3d.html">matrix3d()</a></li><li><a href="../Reference/Values/max.html">max()</a></li><li><a href="../Reference/Values/min.html">min()</a></li><li><a href="../Reference/Values/minmax.html">minmax()</a></li><li><a href="../Reference/Values/mod.html">mod()</a></li><li><a href="../Reference/Values/color_value/oklab.html">oklab()</a></li><li><a href="../Reference/Values/color_value/oklch.html">oklch()</a></li><li><a href="../Reference/Values/filter-function/opacity.html">opacity()</a></li><li><a href="../Reference/Values/image/paint.html">paint()</a></li><li><a href="../Reference/Values/basic-shape/path.html">path()</a></li><li><a href="../Reference/Values/transform-function/perspective.html">perspective()</a></li><li><a href="../Reference/Values/basic-shape/polygon.html">polygon()</a></li><li><a href="../Reference/Values/pow.html">pow()</a></li><li><a href="../Reference/Values/progress.html">progress()</a></li><li><a href="../Reference/Values/gradient/radial-gradient.html">radial-gradient()</a></li><li><a href="../Reference/Values/random.html">random()</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Values/ray.html">ray()</a></li><li><a href="../Reference/Values/basic-shape/rect.html">rect()</a></li><li><a href="../Reference/Values/rem.html">rem()</a></li><li><a href="../Reference/Values/repeat.html">repeat()</a></li><li><a href="../Reference/Values/gradient/repeating-conic-gradient.html">repeating-conic-gradient()</a></li><li><a href="../Reference/Values/gradient/repeating-linear-gradient.html">repeating-linear-gradient()</a></li><li><a href="../Reference/Values/gradient/repeating-radial-gradient.html">repeating-radial-gradient()</a></li><li><a href="../Reference/Values/color_value/rgb.html">rgb()</a></li><li><a href="../Reference/Values/transform-function/rotate.html">rotate()</a></li><li><a href="../Reference/Values/transform-function/rotate3d.html">rotate3d()</a></li><li><a href="../Reference/Values/transform-function/rotateX.html">rotateX()</a></li><li><a href="../Reference/Values/transform-function/rotateY.html">rotateY()</a></li><li><a href="../Reference/Values/transform-function/rotateZ.html">rotateZ()</a></li><li><a href="../Reference/Values/round.html">round()</a></li><li><a href="../Reference/Values/filter-function/saturate.html">saturate()</a></li><li><a href="../Reference/Values/transform-function/scale.html">scale()</a></li><li><a href="../Reference/Values/transform-function/scale3d.html">scale3d()</a></li><li><a href="../Reference/Values/transform-function/scaleX.html">scaleX()</a></li><li><a href="../Reference/Values/transform-function/scaleY.html">scaleY()</a></li><li><a href="../Reference/Values/transform-function/scaleZ.html">scaleZ()</a></li><li><a href="../Reference/Values/filter-function/sepia.html">sepia()</a></li><li><a href="../Reference/Values/basic-shape/shape.html">shape()</a></li><li><a href="../Reference/Values/sibling-count.html">sibling-count()</a></li><li><a href="../Reference/Values/sibling-index.html">sibling-index()</a></li><li><a href="../Reference/Values/sign.html">sign()</a></li><li><a href="../Reference/Values/sin.html">sin()</a></li><li><a href="../Reference/Values/transform-function/skew.html">skew()</a></li><li><a href="../Reference/Values/transform-function/skewX.html">skewX()</a></li><li><a href="../Reference/Values/transform-function/skewY.html">skewY()</a></li><li><a href="../Reference/Values/sqrt.html">sqrt()</a></li><li><a href="../Reference/Values/easing-function/steps.html">steps()</a></li><li><a href="../Reference/Values/superellipse.html">superellipse()</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Values/symbols.html">symbols()</a></li><li><a href="../Reference/Values/tan.html">tan()</a></li><li><a href="../Reference/Values/transform-function/translate.html">translate()</a></li><li><a href="../Reference/Values/transform-function/translate3d.html">translate3d()</a></li><li><a href="../Reference/Values/transform-function/translateX.html">translateX()</a></li><li><a href="../Reference/Values/transform-function/translateY.html">translateY()</a></li><li><a href="../Reference/Values/transform-function/translateZ.html">translateZ()</a></li><li><a href="../Reference/Values/type.html">type()</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../Reference/Values/url_function.html">url()</a></li><li><a href="../Reference/Values/var.html">var()</a></li><li><a href="../Reference/Values/basic-shape/xywh.html">xywh()</a></li></ol></details></li></ol></div>
+    </nav>
+        </aside>
+      </div>
+    </div>
+        
+      
+    
+      
+
+
+    <div class="page-layout__footer footer"><div><a href="http://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes">CSS shapes</a> by <a href="http://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes$history">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC-BY-SA 2.5</a>.</div></div></body><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 12:14:03 GMT --></html>

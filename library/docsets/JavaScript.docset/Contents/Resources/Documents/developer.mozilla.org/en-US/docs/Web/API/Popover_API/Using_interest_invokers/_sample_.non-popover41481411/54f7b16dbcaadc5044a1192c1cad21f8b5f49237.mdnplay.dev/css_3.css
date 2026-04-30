@@ -1,0 +1,18 @@
+
+.no-interest-invokers body::before { content: "Your browser doesn't support interest invokers."; background-color: wheat; display: block; padding: 10px 0px; width: 100%; text-align: center; }
+html { font-family: sans-serif; }
+* { box-sizing: border-box; }
+body { width: 640px; margin: 0px auto; }
+body > div { display: flex; gap: 5px; margin-top: 20px; }
+button { flex: 1 1 0%; padding: 5px; border-radius: 3px; cursor: pointer; }
+#style-panel { padding: 20px; border-radius: 30px; margin-top: 20px; border-width: 10px; }
+h2 { margin-top: 0px; text-align: center; letter-spacing: 5px; }
+p { margin-bottom: 0px; text-align: center; font-weight: bold; letter-spacing: 3px; }
+.black-white { color: black; background-color: white; border: 2px solid black; }
+.bubblegum { color: rgb(255, 248, 240); background-color: rgb(239, 71, 111); border: 2px solid rgb(255, 248, 240); box-shadow: rgb(239, 71, 111) 0px 0px 2px; }
+.purple-haze { color: rgb(138, 28, 124); background-color: rgb(240, 188, 212); border: 2px solid rgb(138, 28, 124); }
+.blaze { color: rgb(242, 233, 78); background-color: rgb(126, 107, 143); border: 2px solid rgb(242, 233, 78); }
+.mint-brown { color: rgb(65, 70, 61); background-color: rgb(28, 254, 186); border: 2px solid rgb(65, 70, 61); }
+#style-panel { transition: 0.7s; }
+
+button.copy {display:none !important}

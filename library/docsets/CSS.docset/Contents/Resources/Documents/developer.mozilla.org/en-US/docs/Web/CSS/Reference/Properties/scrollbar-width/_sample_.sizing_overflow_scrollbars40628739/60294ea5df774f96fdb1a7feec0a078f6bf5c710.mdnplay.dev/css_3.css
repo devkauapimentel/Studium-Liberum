@@ -1,0 +1,4 @@
+
+.scroller { width: 300px; height: 100px; overflow-y: scroll; scrollbar-width: thin; }
+
+button.copy {display:none !important}

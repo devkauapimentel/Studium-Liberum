@@ -1,0 +1,11 @@
+
+html { font-family: Arial, sans-serif; }
+.x-small { font-size: 0.8em; }
+.small { font-size: 1.3em; }
+.medium { font-size: 2em; }
+.large { font-size: 3em; }
+.x-large { font-size: 3.5em; }
+p { word-spacing: 10px; }
+p:has(~ form > input:checked) { word-spacing: 15%; }
+
+button.copy {display:none !important}

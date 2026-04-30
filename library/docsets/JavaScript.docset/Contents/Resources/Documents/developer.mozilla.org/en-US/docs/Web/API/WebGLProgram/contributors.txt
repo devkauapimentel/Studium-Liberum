@@ -1,0 +1,10 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/webglprogram/index.md
+
+# Original Wiki contributors
+Sheppy
+fscholz
+nmve
+teoli
+firefligher
+gregtatum

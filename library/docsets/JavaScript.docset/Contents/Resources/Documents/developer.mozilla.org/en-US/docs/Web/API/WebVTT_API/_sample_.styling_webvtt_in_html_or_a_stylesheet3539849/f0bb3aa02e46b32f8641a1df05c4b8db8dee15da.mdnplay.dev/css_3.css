@@ -1,0 +1,7 @@
+
+video { width: 420px; height: 300px; }
+video::cue { font-size: 1.5rem; background-image: linear-gradient(yellow, lightyellow); color: red; }
+video::cue(u) { color: green; }
+video::cue(b) { color: purple; }
+
+button.copy {display:none !important}

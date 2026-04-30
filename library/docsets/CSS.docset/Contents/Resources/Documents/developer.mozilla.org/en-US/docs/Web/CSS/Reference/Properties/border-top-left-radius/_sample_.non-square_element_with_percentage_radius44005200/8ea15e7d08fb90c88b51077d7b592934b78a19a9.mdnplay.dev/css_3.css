@@ -1,0 +1,4 @@
+
+div { border-top-left-radius: 40%; background-color: lightgreen; border: 1px solid black; width: 200px; height: 100px; }
+
+button.copy {display:none !important}

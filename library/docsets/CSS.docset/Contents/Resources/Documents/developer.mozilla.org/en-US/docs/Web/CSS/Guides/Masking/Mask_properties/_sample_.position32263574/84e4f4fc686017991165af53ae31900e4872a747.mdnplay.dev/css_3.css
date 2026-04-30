@@ -1,0 +1,13 @@
+
+body { display: flex; gap: 20px; padding: 15px; background-image: conic-gradient(transparent 90deg, rgba(0, 0, 0, 0.05) 90deg, rgba(0, 0, 0, 0.05) 180deg, transparent 180deg, transparent 270deg, rgba(0, 0, 0, 0.05) 270deg); background-size: 30px 30px; }
+div, svg, img { width: 220px; aspect-ratio: 1 / 1; }
+div { border: 1px solid black; }
+div, img { width: calc(-20px + 30vw); }
+img { mask-image: url("../mdn.github.io/shared-assets/images/examples/mask-star.svg"); }
+.keywords img { -webkit-mask-position-x: right; -webkit-mask-position-y: bottom; }
+.twoValue img { -webkit-mask-position-x: -20px; -webkit-mask-position-y: -10px; }
+.fourValue img { -webkit-mask-position-x: right -20px; -webkit-mask-position-y: bottom -10px; }
+div::before { content: "class=\"" attr(class) "\""; display: block; text-align: center; font-family: monospace; }
+body { flex-flow: wrap; }
+
+button.copy {display:none !important}

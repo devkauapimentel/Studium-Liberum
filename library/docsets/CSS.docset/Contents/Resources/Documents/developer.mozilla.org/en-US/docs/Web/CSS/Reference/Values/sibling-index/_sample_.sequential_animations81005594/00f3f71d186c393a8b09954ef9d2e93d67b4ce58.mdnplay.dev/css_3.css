@@ -1,0 +1,9 @@
+
+ul { list-style-type: none; padding: 0px; margin: 0px; }
+li { animation-name: fade-in; animation-duration: 1s; animation-iteration-count: 1; animation-timing-function: linear; animation-fill-mode: backwards; animation-delay: calc(1s * sibling-index()); }
+@keyframes fade-in { 
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+button.copy {display:none !important}

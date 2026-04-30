@@ -1,0 +1,7 @@
+
+.contrast { margin: 5px; width: 100px; height: 100px; outline: 2px dashed black; }
+@media (prefers-contrast: more) {
+  .contrast { outline: 2px solid black; }
+}
+
+button.copy {display:none !important}

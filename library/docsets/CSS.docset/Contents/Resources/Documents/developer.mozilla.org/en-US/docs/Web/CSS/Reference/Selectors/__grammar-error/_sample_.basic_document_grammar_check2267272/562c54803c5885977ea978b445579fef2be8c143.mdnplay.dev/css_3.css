@@ -1,0 +1,4 @@
+
+::grammar-error { text-decoration: underline red; color: red; }
+
+button.copy {display:none !important}

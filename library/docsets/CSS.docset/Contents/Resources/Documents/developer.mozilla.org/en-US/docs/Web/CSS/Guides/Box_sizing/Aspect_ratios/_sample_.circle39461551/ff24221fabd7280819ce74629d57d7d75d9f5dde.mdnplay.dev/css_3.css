@@ -1,0 +1,6 @@
+
+div, p { border-radius: 50%; }
+div { width: 200px; padding: 5px; border: 1px solid black; background-color: rgb(102, 204, 255); }
+p { aspect-ratio: 1 / 1; text-align: center; border: 10px solid white; background-color: rgb(244, 170, 185); }
+
+button.copy {display:none !important}

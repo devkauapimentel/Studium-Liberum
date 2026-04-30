@@ -1,0 +1,6 @@
+
+:root { --my-color: red !important; }
+p { color: var(--my-color); }
+blockquote { color: purple; }
+
+button.copy {display:none !important}

@@ -1,0 +1,7 @@
+
+body { font-family: sans-serif; }
+.wrapper { display: flex; flex: 1 1 200px; gap: 1em; }
+.card { border: 2px solid rgb(96, 139, 168); border-radius: 5px; background-color: rgba(96, 139, 168, 0.2); padding: 1em; display: flex; flex-direction: column; }
+.date { order: -1; text-align: right; }
+
+button.copy {display:none !important}

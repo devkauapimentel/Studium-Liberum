@@ -1,0 +1,8 @@
+
+#host { color: red; font-weight: bold; }
+#log { height: 30px; padding: 0.5rem; border: 1px solid black; }
+#message { color: red; font-weight: bold; }
+#message.fallback { color: darkorange; }
+#message.supported { color: green; }
+
+button.copy {display:none !important}

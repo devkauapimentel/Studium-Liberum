@@ -1,0 +1,8 @@
+
+.content-box { }
+body { width: 60%; margin: 0px auto; }
+@supports not (columns: 3 auto / 5em) {
+  body::before { content: "Your browser does not support the 'column-height' property."; background-color: wheat; position: fixed; inset: 40% 0px; height: fit-content; text-align: center; padding: 1rem 0px; }
+}
+
+button.copy {display:none !important}

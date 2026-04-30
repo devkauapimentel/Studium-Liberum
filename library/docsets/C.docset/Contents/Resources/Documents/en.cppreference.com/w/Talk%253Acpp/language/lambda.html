@@ -1,0 +1,304 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/language/lambda.html --><head><meta charset="utf-8"><title>Talk:cpp/language/lambda</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_4776.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_language_lambda skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Flambda&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Flambda" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/language/lambda.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./lambda.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./lambda.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./lambda.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./lambda.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/language/lambda</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../language.html" title="Talk:cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>"mutable: allows body to modify the parameters captured by copy, and to call their non-const member functions" wrong, Object, i.e. captures, not parameters?! <small><span class="autosigned">—&nbsp;Preceding unsigned comment added by <a href="https://en.cppreference.com/mwiki/index.php?title=User:91.223.176.5&amp;action=edit&amp;redlink=1" class="new" title="User:91.223.176.5 (page does not exist)">91.223.176.5</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:91.223.176.5&amp;action=edit&amp;redlink=1" class="new" title="User talk:91.223.176.5 (page does not exist)">talk</a> • <a href="https://en.cppreference.com/w/Special:Contributions/91.223.176.5" title="Special:Contributions/91.223.176.5">contribs</a>) 05:35, 21 February 2020‎</span></small>
+</p>
+<dl><dd> Fixed. Thanks for the catch, and sorry for the delay. --<a href="https://en.cppreference.com/mwiki/index.php?title=User:D41D8CD98F&amp;action=edit&amp;redlink=1" class="new" title="User:D41D8CD98F (page does not exist)">D41D8CD98F</a> (<a href="../../User_talk%25253AD41D8CD98F.html" title="User talk:D41D8CD98F">talk</a>) 23:41, 9 March 2020 (PDT)
+</dd></dl>
+<p>I have some changes I'd like to make (or seen made) but I want to open it up for feedback first rather than possibly having the changes rolled back.
+</p><p>First, I'd like to start the description with something simpler, along the lines of "A <i>Lambda Function</i> is an anonymous (inline and unnamed) function called via function pointer or <i>functor</i>.
+</p><p>Next, I think the first part of the example might be too complicated, obscuring the role of the lambda part.  I suggest that there is first a more basic loop with a traditional functor, then a similar task done via a lambda function.
+</p><p>The last part of the example, as it is, seems like it will be confusing to some as std::function is newer, and not obvious, the example might seem like a just a complicated way to code: int func(int i) {return i+4;}
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Arbalest&amp;action=edit&amp;redlink=1" class="new" title="User:Arbalest (page does not exist)">Arbalest</a> 09:11, 1 November 2012 (PDT)
+</p>
+<dl><dd> I feel that such description could be misleading: it would be introducing the general programming concept 'lambda function', not the C++ 'lambda expression' or the C++ 'closure object'. It could be done (and probably should be done, eventually, seeing as the title of this page is 'lambda functions', which are never mentioned in the C++ standard or in the body of the page), but it would have to explain the difference first. The example currently is as basic as it gets: lambdas were made specifically to make algorithms easier to use (a loop would be neither simple nor typical), and std::function is the most common way to manipulate a closure. If anything, it could use a couple more algorithms, especially ones that make use of lambda captures. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 10:43, 1 November 2012 (PDT)
+<dl><dd> I also don't see a lot of benefit to the description change, but I do think that we could start off with an even simpler example -- specifically, one that doesn't use the erase-remove idiom. How about we start with using std::count_if to count the number of numbers in the vector that match some predicate, and then continue with the rest of the current example? -<a href="../../User%25253ANate.html" title="User:Nate">Nate</a> 11:42, 1 November 2012 (PDT)
+</dd></dl>
+</dd><dd>By <i>loop</i> I mean <i>for_each(begin, end, functor)</i> followed by <i>for_each(begin, end, lambda-exp)</i>.  <a href="https://en.cppreference.com/mwiki/index.php?title=User:Arbalest&amp;action=edit&amp;redlink=1" class="new" title="User:Arbalest (page does not exist)">Arbalest</a> 15:29, 1 November 2012 (PDT)
+<dl><dd> I think a std::for_each example would also work fine.  If we use both a functor and a lambda-exp, it would be good to make sure that it's clear that the functor is just there for juxtaposition and isn't required to make the lambda work. -<a href="../../User%25253ANate.html" title="User:Nate">Nate</a> 12:37, 2 November 2012 (PDT)
+</dd></dl>
+</dd></dl>
+<p>There needs to be some documentation on the use of the +[] syntax for converting lambdas to function pointers in some circumstances.  <a href="https://en.cppreference.com/w/Special:Contributions/216.239.45.95" title="Special:Contributions/216.239.45.95">216.239.45.95</a> 14:17, 2 May 2014 (PDT)Mark
+</p>
+<dl><dd> Do you mean when assigning to <code>auto*</code> or using other forms of <a href="../../cpp/language/template_argument_deduction.html" title="cpp/language/template argument deduction">template argument deduction</a>? You could also use the <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span><span class="br0">[</span><span class="br0">]</span></span></span> syntax, operator+ isn't all that special. But sure, it's a nice bit of trivia to mention (along with all the other work this page needs) --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 15:15, 2 May 2014 (PDT)
+</dd></dl>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./lambda.html#Formatting_Issue"><span class="tocnumber">1</span> <span class="toctext">Formatting Issue</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./lambda.html#Static_Variable_Initialized_To_Lambda"><span class="tocnumber">2</span> <span class="toctext">Static Variable Initialized To Lambda</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./lambda.html#Attributes"><span class="tocnumber">3</span> <span class="toctext">Attributes</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./lambda.html#Error_in_viewing_on_my_smartphone"><span class="tocnumber">4</span> <span class="toctext">Error in viewing on my smartphone</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="./lambda.html#Default_arguments_for_params."><span class="tocnumber">5</span> <span class="toctext">Default arguments for <i>params</i>.</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;action=edit&amp;section=1" title="Edit section: Formatting Issue">edit</a>]</span> <span class="mw-headline" id="Formatting_Issue"> Formatting Issue </span></h2>
+<p>There is a small formatting issue in the box with the header ClosureType::operator ret(*)(params)()
+</p><p>There are several nested boxes inside, and at the deepest nesting level on the right, only the text "(s" is visible which should probably read "(since C++14)"
+</p><p><a href="../../User%25253AMwe.html" title="User:Mwe">Mwe</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Mwe&amp;action=edit&amp;redlink=1" class="new" title="User talk:Mwe (page does not exist)">talk</a>) 23:52, 30 June 2015 (PDT)
+</p>
+<dl><dd> I put an MCVE on my user page to demo this issue. Hoping a CSS guru can see what's up. <a href="../../User%25253AOktal.html" title="User:Oktal">Oktal</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Oktal&amp;action=edit&amp;redlink=1" class="new" title="User talk:Oktal (page does not exist)">talk</a>) 10:33, 30 July 2016 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> This seems to have been fixed now. <a href="../../User%25253AOktal.html" title="User:Oktal">Oktal</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Oktal&amp;action=edit&amp;redlink=1" class="new" title="User talk:Oktal (page does not exist)">talk</a>) 11:16, 25 November 2018 (PST)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;action=edit&amp;section=2" title="Edit section: Static Variable Initialized To Lambda">edit</a>]</span> <span class="mw-headline" id="Static_Variable_Initialized_To_Lambda"> Static Variable Initialized To Lambda </span></h2>
+<p>I believe it would be wise to mention the danger of using a static auto variable initialized to a lambda with auto duration captures on this page.  The bugs it produces can be very subtle and possibly compromise system integrity and security.  The issue has been discussed at Stack Overflow <a rel="nofollow" class="external text" href="https://stackoverflow.com/questions/19376193/what-does-it-mean-for-a-lambda-to-be-static">here</a> and <a rel="nofollow" class="external text" href="https://stackoverflow.com/questions/30999807/const-static-auto-lambda-used-with-capture-by-reference/31000145">here</a>.  It is not made terribly obvious that the lambda expression will only capture in it's evaluated context, as opposed to a general contract in the scope of reference.
+</p><p><a href="https://en.cppreference.com/w/Special:Contributions/2607:FEA8:BD1F:FFAD:A82E:F6B:ECEF:D5C1" title="Special:Contributions/2607:FEA8:BD1F:FFAD:A82E:F6B:ECEF:D5C1">2607:FEA8:BD1F:FFAD:A82E:F6B:ECEF:D5C1</a> 22:16, 9 June 2018 (PDT)
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;action=edit&amp;section=3" title="Edit section: Attributes">edit</a>]</span> <span class="mw-headline" id="Attributes"> Attributes </span></h2>
+<p>It would be nice to give an examples of correct attribute usage on lambdas, see
+<a rel="nofollow" class="external free" href="https://stackoverflow.com/questions/26888805/how-to-declare-a-lambdas-operator-as-noreturn">https://stackoverflow.com/questions/26888805/how-to-declare-a-lambdas-operator-as-noreturn</a>
+</p><p>You can have attirbutes, but not the ones you expect (notably not [[<a href="https://en.cppreference.com/mwiki/index.php?title=noreturn&amp;action=edit&amp;redlink=1" class="new" title="noreturn (page does not exist)">noreturn</a>]] and not [[<a href="https://en.cppreference.com/mwiki/index.php?title=gnu::always_inline&amp;action=edit&amp;redlink=1" class="new" title="gnu::always inline (page does not exist)">gnu::always_inline</a>]], at least as per clang).
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;action=edit&amp;section=4" title="Edit section: Error in viewing on my smartphone">edit</a>]</span> <span class="mw-headline" id="Error_in_viewing_on_my_smartphone"> Error in viewing on my smartphone  </span></h2>
+<p>Please search for
+no specialization can be constexpr because of static s
+When improved, please delete this comment. Thanks a lot, K. Karamazen
+</p>
+<dl><dd> Could you recheck now? If there are still rendering problems I'd better undo my recent formatting updates on the page.--<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 10:55, 14 March 2021 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;action=edit&amp;section=5" title="Edit section: Default arguments for params.">edit</a>]</span> <span class="mw-headline" id="Default_arguments_for_params."> Default arguments for <i>params</i>. </span></h2>
+<p>It's mentioned in the example that the lambda's parameter list is allowed to contain default arguments, as of C++14.
+</p><p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="co1">// since C++14, lambda could own default arguments</span></span></span>
+</p><p>Unfortunately, this and an easily-missed defect report appear to be the <i>only</i> mentions of lambdas allowing default arguments on the entire page.  This aren't mentioned in any section detailing <span class="t-spar">params</span>, all other uses of the term "default arguments" refer to functions taking lambdas as default arguments (not to lambda parameters taking default arguments), and the alternative term "default parameters" is nowhere to be found.  Perhaps it might be worth mentioning somewhere in the page's body, if only to clarify that they weren't allowed in C++11?
+</p><p>--<a href="https://en.cppreference.com/w/Special:Contributions/24.222.178.189" title="Special:Contributions/24.222.178.189">24.222.178.189</a> 10:23, 25 September 2023 (PDT)
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 104/1000000
+Preprocessor generated node count: 342/1000000
+Post‐expand include size: 664/4194304 bytes
+Template argument size: 197/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9571-0!*!0!!en!*!* and timestamp 20240518054828 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;oldid=159606">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;oldid=159606</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./lambda.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/language/lambda" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/language/lambda" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;oldid=159606" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/lambda&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 25 September 2023, at 10:23.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 10,919 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.263 secs. -->
+	
+
+
+</body></html>

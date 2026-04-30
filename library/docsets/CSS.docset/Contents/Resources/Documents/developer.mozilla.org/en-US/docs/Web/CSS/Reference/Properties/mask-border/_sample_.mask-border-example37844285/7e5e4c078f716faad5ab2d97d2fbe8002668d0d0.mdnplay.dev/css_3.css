@@ -1,0 +1,4 @@
+
+.masked { width: 200px; background-color: lavender; border: 18px solid salmon; padding: 10px; mask-border: url("../mdn.github.io/shared-assets/images/examples/mask-border-diamonds.png") 30 fill / 20px / 1px round; }
+
+button.copy {display:none !important}

@@ -1,0 +1,10 @@
+
+div { width: 200px; height: 200px; background-image: repeating-linear-gradient(45deg, red 0px, red 15px, pink 15px, pink 30px), repeating-linear-gradient(-45deg, blue 0px, blue 15px, lightblue 15px, lightblue 30px); background-size: 150px 150px; background-repeat: no-repeat; background-position: left top, right bottom; background-color: palegoldenrod; text-align: center; padding-top: 150px; font-family: sans-serif; box-sizing: border-box; border: 5px solid black; }
+div:nth-of-type(3n+1) { background-blend-mode: normal; }
+div:nth-of-type(3n+2) { background-blend-mode: multiply; }
+div:nth-of-type(3n+3) { background-blend-mode: overlay; }
+div:nth-of-type(n+4) { mix-blend-mode: difference; }
+section { padding: 0.75em; background: radial-gradient(circle, transparent 0px, transparent 20px, rgb(255, 200, 200) 20px) center center / 60px 60px; display: inline-grid; grid-template-columns: 1fr 1fr 1fr; gap: 1em; }
+span { background-color: rgba(255, 255, 255, 0.6); }
+
+button.copy {display:none !important}

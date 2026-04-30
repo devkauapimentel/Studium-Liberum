@@ -1,0 +1,8 @@
+
+.box > * { border: 2px solid rgb(96, 139, 168); border-radius: 5px; background-color: rgba(96, 139, 168, 0.2); width: 200px; }
+.box { display: flex; width: 500px; border: 2px dotted rgb(96, 139, 168); }
+.one { flex: 1 1 auto; }
+.two { flex: 1 0 auto; }
+.three { flex: 2 4 auto; }
+
+button.copy {display:none !important}

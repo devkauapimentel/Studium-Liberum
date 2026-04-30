@@ -1,0 +1,8 @@
+
+#motion-demo { offset-path: path("M 20 70 A 40 40 0 0 1 100 70 A 40 40 0 0 1 180 70 Q 180 130 100 190 Q 20 130 20 70 Z"); animation: 3000ms linear infinite move; width: 10px; height: 10px; background: red; }
+#heart { width: 200px; height: 200px; background-color: lightpink; clip-path: path("M 20 70 A 40 40 0 0 1 100 70 A 40 40 0 0 1 180 70 Q 180 130 100 190 Q 20 130 20 70 Z"); }
+@keyframes move { 
+  100% { offset-distance: 100%; }
+}
+
+button.copy {display:none !important}

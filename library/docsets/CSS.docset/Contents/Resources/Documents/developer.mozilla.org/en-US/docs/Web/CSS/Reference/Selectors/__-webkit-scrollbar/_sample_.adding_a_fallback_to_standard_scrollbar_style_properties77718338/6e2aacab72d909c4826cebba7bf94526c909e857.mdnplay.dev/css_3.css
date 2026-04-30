@@ -1,0 +1,11 @@
+
+.scroll-box { overflow: auto; width: 20rem; height: 5rem; border: 2px solid cornflowerblue; margin: 2rem auto; font-family: monospace; }
+@supports (scrollbar-color: auto) {
+  .scroll-box { scrollbar-color: aquamarine cornflowerblue; }
+}
+@supports selector(::-webkit-scrollbar) {
+  .scroll-box::-webkit-scrollbar { background: aquamarine; }
+  .scroll-box::-webkit-scrollbar-thumb { background: cornflowerblue; }
+}
+
+button.copy {display:none !important}

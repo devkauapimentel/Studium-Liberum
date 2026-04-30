@@ -1,0 +1,22 @@
+
+@layer no-support {
+  @supports not (animation-timeline: --square-timeline) {
+  body::before { content: "Your browser doesn't support named animation timelines."; background-color: wheat; display: block; text-align: center; padding: 1em; }
+}
+}
+@keyframes animation-effect { 
+  0% { opacity: 0; scale: 0; }
+  100% { opacity: 1; scale: 1; }
+}
+.animated-element { animation: 1ms linear animation-effect; }
+.self { view-timeline-name: --self-scroller-element; animation-timeline: --self-scroller-element; }
+.container { view-timeline-name: --parent-scroller-element; }
+.parent { animation-timeline: --parent-scroller-element; }
+@layer setup {
+  section { display: flex; gap: 10px; }
+  main { width: 400px; padding: 1em; height: 300px; overflow: scroll; border: 1px solid; background-color: beige; font-family: sans-serif; }
+  li { margin-bottom: 0.75lh; }
+  .animated-element { height: 200px; width: calc(100% - 2em); margin: auto; background-color: forestgreen; background-image: repeating-linear-gradient(37deg, transparent 0px, transparent 52px, beige 52px, beige 57px), repeating-linear-gradient(94deg, transparent 0px, transparent 52px, beige 52px, beige 57px); border: 1px solid; font-size: 3em; place-content: center; }
+}
+
+button.copy {display:none !important}

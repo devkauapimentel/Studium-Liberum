@@ -1,0 +1,5 @@
+
+div { width: 200px; height: 100px; }
+.diagonal-gradient { background: linear-gradient(to right bottom, blue, pink); }
+
+button.copy {display:none !important}

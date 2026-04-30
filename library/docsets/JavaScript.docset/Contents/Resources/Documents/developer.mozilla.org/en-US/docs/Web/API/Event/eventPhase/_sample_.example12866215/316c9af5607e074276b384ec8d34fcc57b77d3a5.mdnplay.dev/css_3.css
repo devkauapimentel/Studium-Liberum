@@ -1,0 +1,5 @@
+
+div { margin: 20px; padding: 4px; border: thin solid black; }
+#divInfo { margin: 18px; padding: 8px; background-color: white; font-size: 80%; }
+
+button.copy {display:none !important}

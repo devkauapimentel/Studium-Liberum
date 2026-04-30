@@ -1,0 +1,8 @@
+
+input:focus:invalid { outline: 2px solid red; }
+input:focus:valid { outline: 2px solid green; }
+input + span { padding: 0px 0.3rem; }
+input:invalid + span::after { content: "✖" / "Content is not valid"; color: red; }
+input:valid + span::after { content: "✓" / "Content is valid"; color: green; }
+
+button.copy {display:none !important}

@@ -1,0 +1,14 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/learn_web_development/extensions/testing/html_and_css/index.md
+
+# Original Wiki contributors
+chrisdavidmills
+ckashby
+kruschk
+Sheppy
+rahul73690
+enejko
+stephaniehobson
+EdwardB
+abenkovskii
+qdirks

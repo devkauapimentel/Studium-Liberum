@@ -1,0 +1,4 @@
+
+img { mask-image: radial-gradient(black 50%, transparent 60%); }
+
+button.copy {display:none !important}

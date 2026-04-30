@@ -1,0 +1,5 @@
+
+#parent { background: lightblue; width: 300px; }
+#child { background: gold; width: 100%; max-width: 150px; }
+
+button.copy {display:none !important}

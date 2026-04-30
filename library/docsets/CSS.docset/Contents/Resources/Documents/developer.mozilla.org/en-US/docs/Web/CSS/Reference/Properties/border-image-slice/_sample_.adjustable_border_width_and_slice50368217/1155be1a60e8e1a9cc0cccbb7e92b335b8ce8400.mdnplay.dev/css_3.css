@@ -1,0 +1,5 @@
+
+div > div { width: 300px; height: 200px; border-width: 30px; border-style: solid; border-image: url("./shared-assets/images/examples/border-diamonds.png") 30 round; }
+li { display: flex; place-content: center; }
+
+button.copy {display:none !important}

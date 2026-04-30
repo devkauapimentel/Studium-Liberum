@@ -1,0 +1,8 @@
+
+@font-face { font-family: "Amstelvar VF"; src: url("../mdn.github.io/shared-assets/fonts/variable-fonts/AmstelvarAlpha-VF.woff2") format("woff2-variations"); font-weight: 300 900; font-width: 75% 150%; font-style: normal; font-display: swap; }
+p { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; line-height: normal; font-family: "Amstelvar VF", Georgia, serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; font-size: 64px; margin: 1rem; display: inline-block; }
+.adjustable { border: 1px dashed; --text-axis: 88; }
+.p1 { font-size: 64px; font-variation-settings: "GRAD" 88; }
+.p2 { font-size: 64px; font-variation-settings: "GRAD" var(--text-axis); }
+
+button.copy {display:none !important}

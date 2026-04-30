@@ -1,0 +1,6 @@
+
+main { color: blue; }
+h2 { color: green; font-family: monospace; }
+section h2 { color: inherit; }
+
+button.copy {display:none !important}

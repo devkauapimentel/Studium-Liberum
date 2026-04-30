@@ -1,0 +1,5 @@
+
+@font-face { font-family: "Source Sans Pro"; src: url("../mdn.github.io/shared-assets/fonts/SourceSansPro-Regular.otf") format("opentype"); font-weight: normal; font-style: normal; }
+.ordinal { font-family: "Source Sans Pro", sans-serif; font-size: 2rem; font-variant-numeric: ordinal; }
+
+button.copy {display:none !important}

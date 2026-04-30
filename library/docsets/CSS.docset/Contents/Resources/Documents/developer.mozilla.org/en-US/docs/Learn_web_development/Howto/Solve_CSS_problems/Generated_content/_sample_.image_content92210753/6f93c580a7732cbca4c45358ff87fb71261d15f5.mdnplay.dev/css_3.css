@@ -1,0 +1,4 @@
+
+a.glossary::after { content: " " url("./en-US/docs/Learn_web_development/Howto/Solve_CSS_problems/Generated_content/glossary-icon.gif"); }
+
+button.copy {display:none !important}

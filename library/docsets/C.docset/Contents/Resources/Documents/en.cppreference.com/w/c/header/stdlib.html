@@ -1,0 +1,465 @@
+<html><!-- Online page at https://en.cppreference.com/w/c/header/stdlib.html --><head><meta charset="utf-8"><title>Standard library header &lt;stdlib.h&gt;</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_6.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_968.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-c_header_stdlib skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=c%2Fheader%2Fstdlib&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=c%2Fheader%2Fstdlib" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="./stdlib.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/header/stdlib&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./stdlib.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./stdlib.html">View</a></span></li>
+					<li id="ca-edit"><span><a href="https://en.cppreference.com/mwiki/index.php?title=c/header/stdlib&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=c/header/stdlib&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./stdlib.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">Standard library header</span> &lt;stdlib.h&gt;</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../c.html" title="c">c</a>‎ | <a href="../header.html" title="c/header">header</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../../c.html" title="c"> C</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../compiler_support.html" title="c/compiler support">Compiler support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../language.html" title="c/language">Language</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../header.html" title="c/header">Headers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../types.html" title="c/types">Type support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../program.html" title="c/program">Program utilities</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../variadic.html" title="c/variadic">Variadic function support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../error.html" title="c/error">Error handling</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../memory.html" title="c/memory">Dynamic memory management</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../string.html" title="c/string">Strings library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../algorithm.html" title="c/algorithm">Algorithms</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../numeric.html" title="c/numeric">Numerics</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../chrono.html" title="c/chrono">Date and time utilities</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../io.html" title="c/io">Input/output support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../locale.html" title="c/locale">Localization support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../thread.html" title="c/thread">Concurrency support</a> <span class="t-mark-rev t-since-c11">(C11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../experimental.html" title="c/experimental">Technical Specifications</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../index.html" title="c/symbol index">Symbol index</a></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:c/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../header.html" title="c/header"> Standard Library headers </a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./assert.html" title="c/header/assert"><tt>&lt;assert.h&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./complex.html" title="c/header/complex"><tt>&lt;complex.h&gt;</tt></a> <span class="t-mark-rev t-since-c99">(C99)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./ctype.html" title="c/header/ctype"><tt>&lt;ctype.h&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./errno.html" title="c/header/errno"><tt>&lt;errno.h&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./fenv.html" title="c/header/fenv"><tt>&lt;fenv.h&gt;</tt></a> <span class="t-mark-rev t-since-c99">(C99)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./float.html" title="c/header/float"><tt>&lt;float.h&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./inttypes.html" title="c/header/inttypes"><tt>&lt;inttypes.h&gt;</tt></a> <span class="t-mark-rev t-since-c99">(C99)</span><code>&nbsp;&nbsp;&nbsp;&nbsp;</code></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./iso646.html" title="c/header/iso646"><tt>&lt;iso646.h&gt;</tt></a> <span class="t-mark-rev t-since-c95">(C95)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./limits.html" title="c/header/limits"><tt>&lt;limits.h&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./locale.html" title="c/header/locale"><tt>&lt;locale.h&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./math.html" title="c/header/math"><tt>&lt;math.h&gt;</tt></a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./setjmp.html" title="c/header/setjmp"><tt>&lt;setjmp.h&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./signal.html" title="c/header/signal"><tt>&lt;signal.h&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./stdalign.html" title="c/header/stdalign"><tt>&lt;stdalign.h&gt;</tt></a> <span class="t-mark">(<span title="deprecated in C23">C11*</span>)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./stdarg.html" title="c/header/stdarg"><tt>&lt;stdarg.h&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./stdatomic.html" title="c/header/stdatomic"><tt>&lt;stdatomic.h&gt;</tt></a> <span class="t-mark-rev t-since-c11">(C11)</span><code>&nbsp;&nbsp;&nbsp;&nbsp;</code></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./stdbit.html" title="c/header/stdbit"><tt>&lt;stdbit.h&gt;</tt></a> <span class="t-mark-rev t-since-c23">(C23)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./stdbool.html" title="c/header/stdbool"><tt>&lt;stdbool.h&gt;</tt></a> <span class="t-mark">(<span title="deprecated in C23">C99*</span>)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./stdckdint.html" title="c/header/stdckdint"><tt>&lt;stdckdint.h&gt;</tt></a> <span class="t-mark-rev t-since-c23">(C23)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./stddef.html" title="c/header/stddef"><tt>&lt;stddef.h&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./stdint.html" title="c/header/stdint"><tt>&lt;stdint.h&gt;</tt></a> <span class="t-mark-rev t-since-c99">(C99)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./stdio.html" title="c/header/stdio"><tt>&lt;stdio.h&gt;</tt></a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><strong class="selflink"><tt>&lt;stdlib.h&gt;</tt></strong></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./stdmchar.html" title="c/header/stdmchar"><tt>&lt;stdmchar.h&gt;</tt></a> <span class="t-mark">(C29)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./stdnoreturn.html" title="c/header/stdnoreturn"><tt>&lt;stdnoreturn.h&gt;</tt></a> <span class="t-mark">(<span title="deprecated in C23">C11*</span>)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./string.html" title="c/header/string"><tt>&lt;string.h&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./tgmath.html" title="c/header/tgmath"><tt>&lt;tgmath.h&gt;</tt></a> <span class="t-mark-rev t-since-c99">(C99)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./threads.html" title="c/header/threads"><tt>&lt;threads.h&gt;</tt></a> <span class="t-mark-rev t-since-c11">(C11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./time.html" title="c/header/time"><tt>&lt;time.h&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./uchar.html" title="c/header/uchar"><tt>&lt;uchar.h&gt;</tt></a> <span class="t-mark-rev t-since-c11">(C11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./wchar.html" title="c/header/wchar"><tt>&lt;wchar.h&gt;</tt></a> <span class="t-mark-rev t-since-c95">(C95)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./wctype.html" title="c/header/wctype"><tt>&lt;wctype.h&gt;</tt></a> <span class="t-mark-rev t-since-c95">(C95)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:c/header/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div></div>
+<p>This header is a part of <a href="../program.html" title="c/program">program support utilities</a> library, in particular, it provides functions for program termination, <a href="../memory.html" title="c/memory">memory management</a>, <a href="../string.html" title="c/string">string conversions</a>, <a href="../numeric/random.html" title="c/numeric/random">random numbers</a> generation. The header also provides some <a href="../algorithm.html" title="c/algorithm">algorithms</a>.
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Functions">Functions</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../program/abort.html" title="c/program/abort"> <span class="t-lines"><span>abort</span></span></a></div></div>
+</td>
+<td>   causes abnormal program termination (without cleaning up) <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:c/program/dsc_abort&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../program/exit.html" title="c/program/exit"> <span class="t-lines"><span>exit</span></span></a></div></div>
+</td>
+<td>   causes normal program termination with cleaning up <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:c/program/dsc_exit&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../program/quick_exit.html" title="c/program/quick exit"> <span class="t-lines"><span>quick_exit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c11">(C11)</span></span></span></div></div>
+</td>
+<td>   causes normal program termination without completely cleaning up  <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:c/program/dsc_quick_exit&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../program/_Exit.html" title="c/program/ Exit"> <span class="t-lines"><span>_Exit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c99">(C99)</span></span></span></div></div>
+</td>
+<td>   causes normal program termination without cleaning up  <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:c/program/dsc_Exit&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../program/atexit.html" title="c/program/atexit"> <span class="t-lines"><span>atexit</span></span></a></div></div>
+</td>
+<td>   registers a function to be called on <span class="t-lc"><a href="../program/exit.html" title="c/program/exit">exit()</a></span> invocation <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:c/program/dsc_atexit&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../program/at_quick_exit.html" title="c/program/at quick exit"> <span class="t-lines"><span>at_quick_exit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c11">(C11)</span></span></span></div></div>
+</td>
+<td>   registers a function to be called on <a href="../program/quick_exit.html" title="c/program/quick exit"><tt>quick_exit</tt></a> invocation  <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:c/program/dsc_at_quick_exit&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../program/EXIT_status.html" title="c/program/EXIT status"> <span class="t-lines"><span>EXIT_SUCCESS</span><span>EXIT_FAILURE</span></span></a></div></div>
+</td>
+<td>   indicates program execution execution status <br> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:c/program/dsc_EXIT_status&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br>Reason: Add more from 7.24 General utilities &lt;stdlib.h&gt; </td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=c/header/stdlib&amp;action=edit&amp;section=1" title="Edit section: Synopsis">edit</a>]</span> <span class="mw-headline" id="Synopsis">Synopsis</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br>Reason: Add more from B.23 General utilities &lt;stdlib.h&gt; </td></tr></tbody></table>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#define __STDC_VERSION_STDLIB_H__ 202311L</span>
+&nbsp;
+<span class="co1">// TODO: types and macros</span>
+&nbsp;
+<span class="kw4">void</span> <a href="../thread/call_once.html"><span class="kw1024">call_once</span></a><span class="br0">(</span><a href="../thread.html"><span class="kw1022">once_flag</span></a><span class="sy2">*</span> flag, <span class="kw4">void</span> <span class="br0">(</span><span class="sy2">*</span>func<span class="br0">)</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">double</span> <a href="../string/byte/atof.html"><span class="kw540">atof</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> nptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> <a href="../string/byte/atoi.html"><span class="kw541">atoi</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> nptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">int</span> <a href="../string/byte/atoi.html"><span class="kw542">atol</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> nptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">long</span> <span class="kw4">int</span> <a href="../string/byte/atoi.html"><span class="kw543">atoll</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> nptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> strfromd<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format, <span class="kw4">double</span> fp<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> strfromf<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format, <span class="kw4">float</span> fp<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> strfroml<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format, <span class="kw4">long</span> <span class="kw4">double</span> fp<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">double</span> <a href="../string/byte/strtof.html"><span class="kw549">strtod</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">float</span> <a href="../string/byte/strtof.html"><span class="kw548">strtof</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">double</span> <a href="../string/byte/strtof.html"><span class="kw550">strtold</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">int</span> <a href="../string/byte/strtol.html"><span class="kw544">strtol</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr, <span class="kw4">int</span> base<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">long</span> <span class="kw4">int</span> <a href="../string/byte/strtol.html"><span class="kw545">strtoll</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr, <span class="kw4">int</span> base<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">int</span> <a href="../string/byte/strtoul.html"><span class="kw546">strtoul</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr, <span class="kw4">int</span> base<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span> <span class="kw4">int</span> <a href="../string/byte/strtoul.html"><span class="kw547">strtoull</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr,
+                                <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr, <span class="kw4">int</span> base<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> <a href="../numeric/random/rand.html"><span class="kw741">rand</span></a><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> <a href="../numeric/random/srand.html"><span class="kw740">srand</span></a><span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">int</span> seed<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span><span class="sy2">*</span> aligned_alloc<span class="br0">(</span><a href="../types/size_t.html"><span class="kw100">size_t</span></a> alignment, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> size<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span><span class="sy2">*</span> <a href="../memory/calloc.html"><span class="kw404">calloc</span></a><span class="br0">(</span><a href="../types/size_t.html"><span class="kw100">size_t</span></a> nmemb, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> size<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> <a href="../memory/free.html"><span class="kw406">free</span></a><span class="br0">(</span><span class="kw4">void</span><span class="sy2">*</span> ptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> free_sized<span class="br0">(</span><span class="kw4">void</span><span class="sy2">*</span> ptr, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> size<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> free_aligned_sized<span class="br0">(</span><span class="kw4">void</span><span class="sy2">*</span> ptr, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> alignment, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> size<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span><span class="sy2">*</span> <a href="../memory/malloc.html"><span class="kw403">malloc</span></a><span class="br0">(</span><a href="../types/size_t.html"><span class="kw100">size_t</span></a> size<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span><span class="sy2">*</span> <a href="../memory/realloc.html"><span class="kw405">realloc</span></a><span class="br0">(</span><span class="kw4">void</span><span class="sy2">*</span> ptr, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> size<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">[</span><span class="br0">[</span>noreturn<span class="br0">]</span><span class="br0">]</span> <span class="kw4">void</span> <a href="../program/abort.html"><span class="kw487">abort</span></a><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> <a href="../program/atexit.html"><span class="kw491">atexit</span></a><span class="br0">(</span><span class="kw4">void</span> <span class="br0">(</span><span class="sy2">*</span>func<span class="br0">)</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> <a href="../program/at_quick_exit.html"><span class="kw492">at_quick_exit</span></a><span class="br0">(</span><span class="kw4">void</span> <span class="br0">(</span><span class="sy2">*</span>func<span class="br0">)</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">[</span><span class="br0">[</span>noreturn<span class="br0">]</span><span class="br0">]</span> <span class="kw4">void</span> <a href="../program/exit.html"><span class="kw488">exit</span></a><span class="br0">(</span><span class="kw4">int</span> status<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">[</span><span class="br0">[</span>noreturn<span class="br0">]</span><span class="br0">]</span> <span class="kw4">void</span> <a href="../program/_Exit.html"><span class="kw490">_Exit</span></a><span class="br0">(</span><span class="kw4">int</span> status<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">char</span><span class="sy2">*</span> <a href="../program/getenv.html"><span class="kw496">getenv</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> name<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">[</span><span class="br0">[</span>noreturn<span class="br0">]</span><span class="br0">]</span> <span class="kw4">void</span> <a href="../program/quick_exit.html"><span class="kw489">quick_exit</span></a><span class="br0">(</span><span class="kw4">int</span> status<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> <a href="../program/system.html"><span class="kw495">system</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> string<span class="br0">)</span><span class="sy4">;</span>
+QVoid<span class="sy2">*</span> <a href="../algorithm/bsearch.html"><span class="kw818">bsearch</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span> key, QVoid<span class="sy2">*</span> base, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> nmemb, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> size,
+               <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>compar<span class="br0">)</span><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span> , <span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span> <span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> <a href="../algorithm/qsort.html"><span class="kw817">qsort</span></a><span class="br0">(</span><span class="kw4">void</span><span class="sy2">*</span> base, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> nmemb, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> size,
+           <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>compar<span class="br0">)</span><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span> , <span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span> <span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> <a href="../numeric/math/abs.html"><span class="kw641">abs</span></a><span class="br0">(</span><span class="kw4">int</span> j<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">int</span> <a href="../numeric/math/abs.html"><span class="kw642">labs</span></a><span class="br0">(</span><span class="kw4">long</span> <span class="kw4">int</span> j<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">long</span> <span class="kw4">int</span> <a href="../numeric/math/abs.html"><span class="kw643">llabs</span></a><span class="br0">(</span><span class="kw4">long</span> <span class="kw4">long</span> <span class="kw4">int</span> j<span class="br0">)</span><span class="sy4">;</span>
+div_t <a href="../numeric/math/div.html"><span class="kw645">div</span></a><span class="br0">(</span><span class="kw4">int</span> numer, <span class="kw4">int</span> denom<span class="br0">)</span><span class="sy4">;</span>
+ldiv_t <a href="../numeric/math/div.html"><span class="kw646">ldiv</span></a><span class="br0">(</span><span class="kw4">long</span> <span class="kw4">int</span> numer, <span class="kw4">long</span> <span class="kw4">int</span> denom<span class="br0">)</span><span class="sy4">;</span>
+lldiv_t lldiv<span class="br0">(</span><span class="kw4">long</span> <span class="kw4">long</span> <span class="kw4">int</span> numer, <span class="kw4">long</span> <span class="kw4">long</span> <span class="kw4">int</span> denom<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> <a href="../string/multibyte/mblen.html"><span class="kw575">mblen</span></a><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> <a href="../string/multibyte/mbtowc.html"><span class="kw576">mbtowc</span></a><span class="br0">(</span><span class="kw4">wchar_t</span><span class="sy2">*</span> <span class="kw4">restrict</span> pwc, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> <a href="../string/multibyte/wctomb.html"><span class="kw577">wctomb</span></a><span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> s, <span class="kw4">wchar_t</span> wc<span class="br0">)</span><span class="sy4">;</span>
+<a href="../types/size_t.html"><span class="kw100">size_t</span></a> <a href="../string/multibyte/mbstowcs.html"><span class="kw578">mbstowcs</span></a><span class="br0">(</span><span class="kw4">wchar_t</span><span class="sy2">*</span> <span class="kw4">restrict</span> pwcs, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n<span class="br0">)</span><span class="sy4">;</span>
+<a href="../types/size_t.html"><span class="kw100">size_t</span></a> <a href="../string/multibyte/wcstombs.html"><span class="kw579">wcstombs</span></a><span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span> <span class="kw4">restrict</span> pwcs, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n<span class="br0">)</span><span class="sy4">;</span>
+<a href="../types/size_t.html"><span class="kw100">size_t</span></a> memalignment<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span> p<span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>Only if the implementation defines <span class="t-c"><span class="mw-geshi c source-c">__STDC_IEC_60559_DFP__</span></span>:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw4">int</span> strfromd32<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format, _Decimal32 fp<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> strfromd64<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format, _Decimal64 fp<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> strfromd128<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format, _Decimal128 fp<span class="br0">)</span><span class="sy4">;</span>
+_Decimal32 strtod32<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span>
+_Decimal64 strtod64<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span>
+_Decimal128 strtod128<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>Only if the implementation defines <span class="t-c"><span class="mw-geshi c source-c">__STDC_IEC_60559_TYPES__</span></span> and additionally the user code
+defines <span class="t-c"><span class="mw-geshi c source-c">__STDC_WANT_IEC_60559_TYPES_EXT__</span></span> before any inclusion of <code>&lt;stdlib.h&gt;</code>:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#ifdef __STDC_WANT_IEC_60559_TYPES_EXT__</span>
+<span class="kw4">int</span> strfromfN<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format, _FloatN fp<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> strfromfNx<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format, _FloatNx fp<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> strfromdN<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format, _DecimalN fp<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> strfromdNx<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format, _DecimalNx fp<span class="br0">)</span><span class="sy4">;</span>
+_FloatN strtofN<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span>
+_FloatNx strtofNx<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span>
+_DecimalN strtodN<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span>
+_DecimalNx strtodNx<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> strfromencfN<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format,
+                 <span class="kw4">const</span> <span class="kw4">unsigned</span> <span class="kw4">char</span> encptr<span class="br0">[</span><span class="kw4">restrict</span> <span class="kw4">static</span> N<span class="sy2">/</span><span class="nu0">8</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> strfromencdecdN<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format,
+                    <span class="kw4">const</span> <span class="kw4">unsigned</span> <span class="kw4">char</span> encptr<span class="br0">[</span><span class="kw4">restrict</span> <span class="kw4">static</span> N<span class="sy2">/</span><span class="nu0">8</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> strfromencbindN<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, <a href="../types/size_t.html"><span class="kw100">size_t</span></a> n, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> format,
+                    <span class="kw4">const</span> <span class="kw4">unsigned</span> <span class="kw4">char</span> encptr<span class="br0">[</span><span class="kw4">restrict</span> <span class="kw4">static</span> N<span class="sy2">/</span><span class="nu0">8</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> strtoencfN<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">char</span> encptr<span class="br0">[</span><span class="kw4">restrict</span> <span class="kw4">static</span> N<span class="sy2">/</span><span class="nu0">8</span><span class="br0">]</span>,
+                <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> strtoencdecdN<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">char</span> encptr<span class="br0">[</span><span class="kw4">restrict</span> <span class="kw4">static</span> N<span class="sy2">/</span><span class="nu0">8</span><span class="br0">]</span>,
+                   <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> strtoencbindN<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">char</span> encptr<span class="br0">[</span><span class="kw4">restrict</span> <span class="kw4">static</span> N<span class="sy2">/</span><span class="nu0">8</span><span class="br0">]</span>,
+                   <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> <span class="kw4">restrict</span> endptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="co2">#endif</span></pre></div></div>
+<p>Only if the implementation defines <span class="t-c"><span class="mw-geshi c source-c">__STDC_LIB_EXT1__</span></span> and additionally the user
+code defines <span class="t-c"><span class="mw-geshi c source-c">__STDC_WANT_LIB_EXT1__</span></span> before any inclusion of <code>stdio.h</code>:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#if defined(__STDC_WANT_LIB_EXT1__)</span>
+constraint_handler_t set_constraint_handler_s<span class="br0">(</span>constraint_handler_t handler<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> abort_handler_s<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> msg, <span class="kw4">void</span><span class="sy2">*</span> <span class="kw4">restrict</span> ptr, errno_t error<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> ignore_handler_s<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> msg, <span class="kw4">void</span><span class="sy2">*</span> <span class="kw4">restrict</span> ptr, errno_t error<span class="br0">)</span><span class="sy4">;</span>
+errno_t getenv_s<span class="br0">(</span><a href="../types/size_t.html"><span class="kw100">size_t</span></a><span class="sy2">*</span> <span class="kw4">restrict</span> len, <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> value, rsize_t maxsize,
+                 <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> name<span class="br0">)</span><span class="sy4">;</span>
+QVoid<span class="sy2">*</span> bsearch_s<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span> key, QVoid<span class="sy2">*</span> base, rsize_t nmemb, rsize_t size,
+                 <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>compar<span class="br0">)</span><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span> k, <span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span> y, <span class="kw4">void</span><span class="sy2">*</span> context<span class="br0">)</span>,
+                               <span class="kw4">void</span><span class="sy2">*</span> context<span class="br0">)</span><span class="sy4">;</span>
+errno_t qsort_s<span class="br0">(</span><span class="kw4">void</span><span class="sy2">*</span> base, rsize_t nmemb, rsize_t size,
+                <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>compar<span class="br0">)</span><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span> x, <span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span> y, <span class="kw4">void</span><span class="sy2">*</span> context<span class="br0">)</span>,
+                              <span class="kw4">void</span><span class="sy2">*</span> context<span class="br0">)</span><span class="sy4">;</span>
+errno_t wctomb_s<span class="br0">(</span><span class="kw4">int</span><span class="sy2">*</span> <span class="kw4">restrict</span> status, <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> s, rsize_t smax,
+                 <span class="kw4">wchar_t</span> wc<span class="br0">)</span><span class="sy4">;</span>
+errno_t mbstowcs_s<span class="br0">(</span><a href="../types/size_t.html"><span class="kw100">size_t</span></a><span class="sy2">*</span> <span class="kw4">restrict</span> retval, <span class="kw4">wchar_t</span><span class="sy2">*</span> <span class="kw4">restrict</span> dst, rsize_t dstmax,
+                   <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> src, rsize_t len<span class="br0">)</span><span class="sy4">;</span>
+errno_t wcstombs_s<span class="br0">(</span><a href="../types/size_t.html"><span class="kw100">size_t</span></a><span class="sy2">*</span> <span class="kw4">restrict</span> retval, <span class="kw4">char</span><span class="sy2">*</span> <span class="kw4">restrict</span> dst, rsize_t dstmax,
+                   <span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span> <span class="kw4">restrict</span> src, rsize_t len<span class="br0">)</span><span class="sy4">;</span>
+<span class="co2">#endif</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 3980/1000000
+Preprocessor generated node count: 7963/1000000
+Post‐expand include size: 84396/4194304 bytes
+Template argument size: 20215/4194304 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:23241-0!*!0!!*!*!* and timestamp 20250215220845 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=c/header/stdlib&amp;oldid=180220">https://en.cppreference.com/mwiki/index.php?title=c/header/stdlib&amp;oldid=180220</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.cppreference.com/w/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../Category%25253ATodo_with_reason.html" title="Category:Todo with reason">Todo with reason</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./stdlib.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/c/header/stdlib" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/c/header/stdlib" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=c/header/stdlib&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=c/header/stdlib&amp;oldid=180220" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=c/header/stdlib&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div id="cpp-languagess" hidden="">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/c/header/stdlib" title="c/header/stdlib" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/header/stdlib" title="c/header/stdlib" lang="es" hreflang="es">Español</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/header/stdlib" title="c/header/stdlib" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/header/stdlib" title="c/header/stdlib" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/header/stdlib" title="c/header/stdlib" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 7 February 2025, at 00:02.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.571 secs. -->
+	
+
+
+</body></html>

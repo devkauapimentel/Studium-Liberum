@@ -1,0 +1,40 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/document_object_model/building_and_updating_the_dom_tree/index.md
+
+# Original Wiki contributors
+mfuji09
+irenesmith
+Zearin_Galaurum
+ExE-Boss
+dijonkitchen
+epan5
+jwhitlock
+vinay97
+teoli
+marcio
+rogerhc
+kscarfone
+Ichimonji10
+jvns
+trevorh
+Sheppy
+ethertank
+TelaSocial
+Nickolay
+Jmtroncos
+Huttarl
+Koder
+Mgjbot
+Carrie zhxj
+Waldo
+Ranga.tech
+Planche
+Sebuls
+Dria
+Sandesh
+NickolayBot
+Burnt1ce85
+Pslim
+Jakul
+Rvveelen
+Ruby

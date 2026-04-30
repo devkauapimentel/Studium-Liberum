@@ -1,0 +1,6 @@
+
+th, td { padding: 5px; }
+.filter { filter: blur(3.5px); }
+.svgFilter { filter: url("./en-US/docs/Web/CSS/Guides/Filter_effects/Using/runner.html-_-uuid=517d758858b9ca9832fd91314b89888e82d19db7&state=1VTBTuQwDP2VKFxAYprDiku3ywEQnFYgjbSnXtKJJ%25252FWQplGSokGIf8dpskORBm6stKfYfvbzs2XlhfdxMLzmTZSdgcvWMtbEHqSazeT4Ys3A5fV6zWAvB2egEeQvsfWfu0%252.html-_-uuid=517d758858b9ca9832fd91314b89888e82d19db7&state=1VTBTuQwDP2VKFxAYprDiku3ywEQnFYgjbSnXtKJJ%252FWQplGSokGIf8dpskORBm6stKfYfvbzs2XlhfdxMLzmTZSdgcvWMtbEHqSazeT4Ys3A5fV6zWAvB2egEeQvsfWfu0%252Bxe48arTQMB6mXMJm5Q4r97dvEblTPRyWog00eDvrdY2xjZAi%252FWr5FE8G3fIkFvyGkj9GFWohB2Upj7KeuwlGEXnpQKyqGGMSsMIgySRDOj9pDCCvnUcFqa6Sudk5%252FpJcmEv1DymApo%252BVMvKsWC9lfj%252FDPZR7bX3jSt2WF%252F8kUx2Uub6scFFnl0BuakvnRAFEl%252BZxJj3JlZAeGQrczb67O98RQUbwzky%252FxhMCdnEJAaa8ozkJUN%252FCEMuJoKfdHdUG0oDT8HlXqoyZncCMjHBQ3IpNnZ95Gpt4btI9172H7PZvMbYl78ub0JE11VkQ1gjZDLz%252FnmxDob4j9eWujYi%252Bp0kml0OqaXbj9z9a%252BtrYq65nhbNcsEZ7S%252FG5%252FVrIOR%252FUxMbVv%252BUlea8mlzrvUmF76EwYg06DuI399Aw%253D%253D&code=14974262&%23blur"); }
+
+button.copy {display:none !important}

@@ -1,0 +1,13 @@
+<html><head>    <meta charset="utf-8">    <meta http-equiv="x-ua-compatible" content="ie=edge">    <title>JavaScript Demo: BigInt.asUintN()</title>    <meta name="viewport" content="width=device-width, initial-scale=1">    <link href="../../../../../../../../../interactive_examples/assets/css/codemirror.css" rel="stylesheet">    <link href="../../../../../../../../../interactive_examples/assets/css/editor-js.css" rel="stylesheet">  </head>  <body>        <section id="static"><pre><code id="static-js" data-height="">const U64_CEIL = 2n ** 64n;
+
+console.log(BigInt.asUintN(64, U64_CEIL - 1n));
+// 18446744073709551615n (2n ** 64n - 1n, the maximum non-wrapping value)
+console.log(BigInt.asUintN(64, U64_CEIL));
+// 0n (wraps to zero)
+console.log(BigInt.asUintN(64, U64_CEIL + 1n));
+// 1n
+console.log(BigInt.asUintN(64, U64_CEIL * 2n));
+// 0n (wraps on multiples)
+console.log(BigInt.asUintN(64, U64_CEIL * -42n));
+// 0n (also wraps on negative multiples)
+    </code></pre></section>        <section id="live" class="live hidden">          <header class="output-header border-rounded-top-no-bottom">            <h4 class="output-heading">JavaScript Demo: BigInt.asUintN()</h4>          </header>          <div id="editor" class="editor"></div>          <div class="output-container">            <div class="buttons-container">              <button id="execute" class="button run" type="button">                Run ›              </button>              <button id="reset" type="button" class="button">Reset</button>            </div>            <div id="console" class="output"><code></code></div>          </div>        </section>    <script src="../../../../../../../../../interactive_examples/assets/js/codemirror.js"></script>    <script src="../../../../../../../../../interactive_examples/assets/js/editor-js.js"></script></body></html>

@@ -1,0 +1,7 @@
+
+p { font-size: 40px; display: block; margin: 0.5rem; }
+rt { font-size: 28px; outline: 1px solid red; }
+.auto { ruby-overhang: auto; }
+.none { ruby-overhang: none; }
+
+button.copy {display:none !important}

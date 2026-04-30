@@ -1,0 +1,14 @@
+
+html { height: 100%; }
+body { font-family: Helvetica, Arial, sans-serif; height: inherit; margin: 0px; display: flex; justify-content: center; align-items: center; }
+div { width: 240px; height: 180px; }
+@supports not (corner-shape: scoop notch) {
+  body { all: unset !important; }
+  body::before { content: "Your browser does not support the 'corner-shape' property."; color: black; background-color: rgb(255, 205, 51); display: block; width: 100%; text-align: center; padding: 1rem 0px; }
+  body > * { display: none; }
+}
+body { background: url("../mdn.github.io/shared-assets/images/examples/leopard.jpg") 0% 0% / cover no-repeat; }
+div { border-radius: 40px; background-color: rgba(255, 255, 255, 0.2); border-width: 3px 12px 9px 6px; border-style: solid double solid dashed; border-color: blue green yellow red; backdrop-filter: invert(100%); }
+div:hover { background-color: white; }
+
+button.copy {display:none !important}

@@ -1,0 +1,4 @@
+
+input { -webkit-text-security: square; }
+
+button.copy {display:none !important}

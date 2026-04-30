@@ -1,0 +1,14 @@
+
+@font-face { font-family: "Fira Sans"; font-weight: 1 1000; src: url("../mdn.github.io/shared-assets/fonts/FiraSans-Regular.woff2"); }
+@font-face { font-family: "Fira Sans"; font-weight: 1 300; src: url("../mdn.github.io/shared-assets/fonts/FiraSans-Light.woff2"); }
+@font-face { font-family: "Fira Sans"; font-weight: 500 700; src: url("../mdn.github.io/shared-assets/fonts/FiraSans-Bold.woff2"); }
+@font-face { font-family: "Fira Sans"; font-weight: 700 1000; src: url("../mdn.github.io/shared-assets/fonts/FiraSans-ExtraBold.woff2"); }
+body { font-family: "Fira Sans", serif; font-size: 2rem; }
+p.one { font-weight: 100; }
+p.three { font-weight: 300; }
+p.four { font-weight: 400; }
+p.five { font-weight: 500; }
+p.seven { font-weight: 700; }
+p.nine { font-weight: 900; }
+
+button.copy {display:none !important}

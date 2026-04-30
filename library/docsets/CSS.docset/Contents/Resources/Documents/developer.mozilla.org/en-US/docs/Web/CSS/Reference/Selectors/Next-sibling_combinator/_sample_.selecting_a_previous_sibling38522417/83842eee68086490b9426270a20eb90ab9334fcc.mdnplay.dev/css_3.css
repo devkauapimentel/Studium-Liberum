@@ -1,0 +1,4 @@
+
+li:has(+ li:last-of-type) { color: red; font-weight: bold; }
+
+button.copy {display:none !important}

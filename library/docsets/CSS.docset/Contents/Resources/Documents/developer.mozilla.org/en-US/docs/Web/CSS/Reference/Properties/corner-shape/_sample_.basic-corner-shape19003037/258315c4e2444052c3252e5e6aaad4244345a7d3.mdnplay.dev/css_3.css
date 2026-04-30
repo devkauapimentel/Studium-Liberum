@@ -1,0 +1,11 @@
+
+body { font-family: Helvetica, Arial, sans-serif; width: 240px; margin: 20px auto; }
+div { display: flex; justify-content: center; align-items: center; background-color: cyan; background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5)); }
+@supports not (corner-shape: scoop) {
+  body { all: unset !important; }
+  body::before { content: "Your browser does not support the 'corner-shape' property."; color: black; background-color: rgb(255, 205, 51); display: block; width: 100%; text-align: center; padding: 1rem 0px; }
+  body > * { display: none; }
+}
+div { height: 180px; box-shadow: gray 1px 1px 3px; border-radius: 30px; }
+
+button.copy {display:none !important}

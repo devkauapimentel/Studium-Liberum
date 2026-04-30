@@ -1,0 +1,1525 @@
+<html><!-- Online page at https://en.cppreference.com/w/cpp/ranges.html --><head><meta charset="utf-8"><title>Ranges library (since C++20)</title><link rel="stylesheet" href="../css_1.css" type="text/css"><link rel="stylesheet" href="../css_2.css" type="text/css"><link rel="stylesheet" href="../css_3.css" type="text/css"><link rel="stylesheet" href="../css_4.css" type="text/css"><link rel="stylesheet" href="../css_7.css" type="text/css"><link rel="stylesheet" href="../css_5.css" type="text/css"><script type="text/javascript" src="../js_1.js"></script><script type="text/javascript" src="../js_2.js"></script><script type="text/javascript" src="../js_31.js"></script><script type="text/javascript" src="../js_4.js"></script><script type="text/javascript" src="../js_5.js"></script><script type="text/javascript" src="../js_6.js"></script><script type="text/javascript" src="../js_7.js"></script><script type="text/javascript" src="../js_8.js"></script><script type="text/javascript" src="../js_9.js"></script><script type="text/javascript" src="../js_10.js"></script><script type="text/javascript" src="../js_11.js"></script><script type="text/javascript" src="../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_ranges skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Franges&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Franges" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="./ranges.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/ranges&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./ranges.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./ranges.html">View</a></span></li>
+					<li id="ca-edit"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./ranges.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Ranges library <span class="t-mark-rev t-since-cxx20">(since C++20)</span></h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../cpp.html" title="cpp">C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./compiler_support.html" title="cpp/compiler support">Compiler support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./freestanding.html" title="cpp/freestanding">Freestanding and hosted</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./language.html" title="cpp/language">Language</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./standard_library.html" title="cpp/standard library">Standard library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./headers.html" title="cpp/header">Standard library headers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./iterator/concepts.html" title="cpp/named req">Named requirements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./experimental/feature_test.html" title="cpp/feature test">Feature test macros</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./utility.html#Language_support" title="cpp/utility">Language support library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./concepts.html" title="cpp/concepts">Concepts library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./error.html" title="cpp/error">Diagnostics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./memory.html" title="cpp/memory">Memory management library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./meta.html" title="cpp/meta">Metaprogramming library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./utility.html" title="cpp/utility">General utilities library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./container.html" title="cpp/container">Containers library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./iterator.html" title="cpp/iterator">Iterators library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><strong class="selflink">Ranges library</strong> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./algorithm.html" title="cpp/algorithm">Algorithms library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./string.html" title="cpp/string">Strings library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./text.html" title="cpp/text">Text processing library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./numeric.html" title="cpp/numeric">Numerics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./chrono.html" title="cpp/chrono">Date and time library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./io.html" title="cpp/io">Input/output library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./filesystem.html" title="cpp/filesystem">Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./atomic.html" title="cpp/thread">Concurrency support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./experimental/execution.html" title="cpp/execution">Execution control library</a> <span class="t-mark-rev t-since-cxx26">(C++26)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./experimental.html" title="cpp/experimental">Technical specifications</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./symbol_index.html" title="cpp/symbol index">Symbols index</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./links/libs.html" title="cpp/links/libs">External libraries</a></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><strong class="selflink">Ranges library</strong><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./ranges.html#Range_access" title="cpp/ranges">Range access</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/begin.html" title="cpp/ranges/begin"><span class="t-lines"><span>begin</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/cbegin.html" title="cpp/ranges/cbegin"><span class="t-lines"><span>cbegin</span></span></a></div><div><span class="t-lines"><span><code>&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/end.html" title="cpp/ranges/end"><span class="t-lines"><span>end</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/cend.html" title="cpp/ranges/cend"><span class="t-lines"><span>cend</span></span></a></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/rbegin.html" title="cpp/ranges/rbegin"><span class="t-lines"><span>rbegin</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/crbegin.html" title="cpp/ranges/crbegin"><span class="t-lines"><span>crbegin</span></span></a></div><div><span class="t-lines"><span><code>&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/rend.html" title="cpp/ranges/rend"><span class="t-lines"><span>rend</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/crend.html" title="cpp/ranges/crend"><span class="t-lines"><span>crend</span></span></a></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/size.html" title="cpp/ranges/size"><span class="t-lines"><span>size</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/ssize.html" title="cpp/ranges/ssize"><span class="t-lines"><span>ssize</span></span></a></div><div><span class="t-lines"><span><code>&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/data.html" title="cpp/ranges/data"><span class="t-lines"><span>data</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/cdata.html" title="cpp/ranges/cdata"><span class="t-lines"><span>cdata</span></span></a></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/reserve_hint.html" title="cpp/ranges/reserve hint"><span class="t-lines"><span>reserve_hint</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/empty.html" title="cpp/ranges/empty"><span class="t-lines"><span>empty</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./ranges.html#Range_conversions" title="cpp/ranges">Range conversions</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/from_range.html" title="cpp/ranges/from range"><span class="t-lines"><span>std::from_range_t<br>std::from_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&nbsp;&nbsp;&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/to.html" title="cpp/ranges/to"><span class="t-lines"><span>to</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./ranges.html#Dangling_iterator_handling" title="cpp/ranges">Dangling iterator handling</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/dangling.html" title="cpp/ranges/dangling"><span class="t-lines"><span>dangling</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/borrowed_iterator_t.html" title="cpp/ranges/borrowed iterator t"><span class="t-lines"><span>borrowed_iterator_t</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/borrowed_iterator_t.html" title="cpp/ranges/borrowed iterator t"><span class="t-lines"><span>borrowed_subrange_t</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./ranges.html#Range_primitives" title="cpp/ranges">Range primitives</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/range_size_t.html" title="cpp/ranges/range size t"><span class="t-lines"><span>range_size_t</span><span>range_difference_t</span><span>range_value_t</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/elements_of.html" title="cpp/ranges/elements of"><span class="t-lines"><span>elements_of</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&nbsp;&nbsp;&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/iterator_t.html" title="cpp/ranges/iterator t"><span class="t-lines"><span>iterator_t</span><span>const_iterator_t</span><span>sentinel_t</span><span>const_sentinel_t</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/range_reference_t.html" title="cpp/ranges/range reference t"><span class="t-lines"><span>range_reference_t</span><span>range_const_reference_t</span><span>range_rvalue_reference_t</span><span>range_common_reference_t</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./ranges.html#Range_concepts" title="cpp/ranges">Range concepts</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/range.html" title="cpp/ranges/range"><span class="t-lines"><span>range</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/borrowed_range.html" title="cpp/ranges/borrowed range"><span class="t-lines"><span>borrowed_range</span></span></a></div><div><span class="t-lines"><span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/common_range.html" title="cpp/ranges/common range"><span class="t-lines"><span>common_range</span></span></a></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/sized_range.html" title="cpp/ranges/sized range"><span class="t-lines"><span>sized_range</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/viewable_range.html" title="cpp/ranges/viewable range"><span class="t-lines"><span>viewable_range</span></span></a></div><div><span class="t-lines"><span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/view.html" title="cpp/ranges/view"><span class="t-lines"><span>view</span></span></a></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/input_range.html" title="cpp/ranges/input range"><span class="t-lines"><span>input_range</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/output_range.html" title="cpp/ranges/output range"><span class="t-lines"><span>output_range</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/forward_range.html" title="cpp/ranges/forward range"><span class="t-lines"><span>forward_range</span></span></a></div><div><span class="t-lines"><span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/bidirectional_range.html" title="cpp/ranges/bidirectional range"><span class="t-lines"><span>bidirectional_range</span></span></a></div><div><span class="t-lines"><span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/random_access_range.html" title="cpp/ranges/random access range"><span class="t-lines"><span>random_access_range</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/contiguous_range.html" title="cpp/ranges/contiguous range"><span class="t-lines"><span>contiguous_range</span></span></a></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/approximately_sized_range.html" title="cpp/ranges/approximately sized range"><span class="t-lines"><span>approximately_sized_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/constant_range.html" title="cpp/ranges/constant range"><span class="t-lines"><span>constant_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./ranges.html#Views" title="cpp/ranges">Views</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/view_interface.html" title="cpp/ranges/view interface"><span class="t-lines"><span>view_interface</span></span></a></div><div><span class="t-lines"><span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/subrange.html" title="cpp/ranges/subrange"><span class="t-lines"><span>subrange</span></span></a></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./ranges.html#Range_factories" title="cpp/ranges">Range factories</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/empty_view.html" title="cpp/ranges/empty view"><span class="t-lines"><span>empty_view</span><span>views::empty</span></span></a></div><div><span class="t-lines"><span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/single_view.html" title="cpp/ranges/single view"><span class="t-lines"><span>single_view</span><span>views::single</span></span></a></div><div><span class="t-lines"><span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/basic_istream_view.html" title="cpp/ranges/basic istream view"><span class="t-lines"><span>basic_istream_view</span><span>views::istream</span></span></a></div><div><span class="t-lines"><span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/iota_view.html" title="cpp/ranges/iota view"><span class="t-lines"><span>iota_view</span><span>views::iota</span></span></a></div><div><span class="t-lines"><span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/repeat_view.html" title="cpp/ranges/repeat view"><span class="t-lines"><span>repeat_view</span><span>views::repeat</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./ranges.html#Range_adaptors" title="cpp/ranges">Range adaptors</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/all_view.html" title="cpp/ranges/all view"><span class="t-lines"><span>views::all_t</span><span>views::all</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/as_rvalue_view.html" title="cpp/ranges/as rvalue view"><span class="t-lines"><span>as_rvalue_view</span><span>views::as_rvalue</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/filter_view.html" title="cpp/ranges/filter view"><span class="t-lines"><span>filter_view</span><span>views::filter</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/transform_view.html" title="cpp/ranges/transform view"><span class="t-lines"><span>transform_view</span><span>views::transform</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/take_view.html" title="cpp/ranges/take view"><span class="t-lines"><span>take_view</span><span>views::take</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/take_while_view.html" title="cpp/ranges/take while view"><span class="t-lines"><span>take_while_view</span><span>views::take_while</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/common_view.html" title="cpp/ranges/common view"><span class="t-lines"><span>common_view</span><span>views::common</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/counted_view.html" title="cpp/ranges/view counted"><span class="t-lines"><span>views::counted</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/to_input_view.html" title="cpp/ranges/to input view"><span class="t-lines"><span>to_input_view</span><span>views::to_input</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/ref_view.html" title="cpp/ranges/ref view"><span class="t-lines"><span>ref_view</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/drop_view.html" title="cpp/ranges/drop view"><span class="t-lines"><span>drop_view</span><span>views::drop</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/drop_while_view.html" title="cpp/ranges/drop while view"><span class="t-lines"><span>drop_while_view</span><span>views::drop_while</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/lazy_split_view.html" title="cpp/ranges/lazy split view"><span class="t-lines"><span>lazy_split_view</span><span>views::lazy_split</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/split_view.html" title="cpp/ranges/split view"><span class="t-lines"><span>split_view</span><span>views::split</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/join_view.html" title="cpp/ranges/join view"><span class="t-lines"><span>join_view</span><span>views::join</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/join_with_view.html" title="cpp/ranges/join with view"><span class="t-lines"><span>join_with_view</span><span>views::join_with</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/concat_view.html" title="cpp/ranges/concat view"><span class="t-lines"><span>concat_view</span><span>views::concat</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/cache_latest_view.html" title="cpp/ranges/cache latest view"><span class="t-lines"><span>cache_latest_view</span><span>views::cache_latest</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span><span><span class="t-mark-rev t-since-cxx26">(C++26)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/owning_view.html" title="cpp/ranges/owning view"><span class="t-lines"><span>owning_view</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/reverse_view.html" title="cpp/ranges/reverse view"><span class="t-lines"><span>reverse_view</span><span>views::reverse</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/as_const_view.html" title="cpp/ranges/as const view"><span class="t-lines"><span>as_const_view</span><span>views::as_const</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/elements_view.html" title="cpp/ranges/elements view"><span class="t-lines"><span>elements_view</span><span>views::elements</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/keys_view.html" title="cpp/ranges/keys view"><span class="t-lines"><span>keys_view</span><span>views::keys</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/values_view.html" title="cpp/ranges/values view"><span class="t-lines"><span>values_view</span><span>views::values</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/enumerate_view.html" title="cpp/ranges/enumerate view"><span class="t-lines"><span>enumerate_view</span><span>views::enumerate</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/zip_view.html" title="cpp/ranges/zip view"><span class="t-lines"><span>zip_view</span><span>views::zip</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/zip_transform_view.html" title="cpp/ranges/zip transform view"><span class="t-lines"><span>zip_transform_view</span><span>views::zip_transform</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/adjacent_view.html" title="cpp/ranges/adjacent view"><span class="t-lines"><span>adjacent_view</span><span>views::adjacent</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/adjacent_view.html" title="cpp/ranges/adjacent view"><span class="t-lines"><span>views::pairwise</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/adjacent_transform_view.html" title="cpp/ranges/adjacent transform view"><span class="t-lines"><span>adjacent_transform_view</span><span>views::adjacent_transform</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/adjacent_transform_view.html" title="cpp/ranges/adjacent transform view"><span class="t-lines"><span>views::pairwise_transform</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/chunk_view.html" title="cpp/ranges/chunk view"><span class="t-lines"><span>chunk_view</span><span>views::chunk</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/slide_view.html" title="cpp/ranges/slide view"><span class="t-lines"><span>slide_view</span><span>views::slide</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/chunk_by_view.html" title="cpp/ranges/chunk by view"><span class="t-lines"><span>chunk_by_view</span><span>views::chunk_by</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/stride_view.html" title="cpp/ranges/stride view"><span class="t-lines"><span>stride_view</span><span>views::stride</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/cartesian_product_view.html" title="cpp/ranges/cartesian product view"><span class="t-lines"><span>cartesian_product_view</span><span>views::cartesian_product</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./ranges.html#Range_generators" title="cpp/ranges">Range generators</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./coroutine/generator.html" title="cpp/coroutine/generator"><span class="t-lines"><span>std::generator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&nbsp;&nbsp;&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./ranges.html#Range_adaptor_closure_objects" title="cpp/ranges">Range adaptor closure objects</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/range_adaptor_closure.html" title="cpp/ranges/range adaptor closure"><span class="t-lines"><span>range_adaptor_closure</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&nbsp;&nbsp;&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./ranges.html#Range_adaptor_objects" title="cpp/ranges">Range adaptor objects</a></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./ranges.html#Helper_items" title="cpp/ranges">Helper items</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/copyable_wrapper.html" title="cpp/ranges/copyable wrapper"><span class="t-lines"><span><i>copyable-box</i><br><i>movable-box</i></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx23">(until C++23)</span><code>&nbsp;&nbsp;</code></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges.html#Helper_concepts" title="cpp/ranges"><span class="t-lines"><span><i>simple-view</i></span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges/non-propagating-cache.html" title="cpp/ranges/non-propagating-cache"><span class="t-lines"><span><i>non-propagating-cache</i></span></span></a></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div></div>
+<p>The ranges library is an extension and generalization of the algorithms and iterator libraries that makes them more powerful by making them composable and less error-prone.
+</p><p>The library creates and manipulates range <i>views</i>, lightweight objects that indirectly represent iterable sequences (<i>ranges</i>). Ranges are an abstraction on top of
+</p>
+<ul><li> <span style="display: inline-block;"><code>[</code>begin<code>,&nbsp;</code>end<code>)</code></span> – iterator pairs, e.g. ranges made by implicit conversion from containers. All algorithms that take iterator pairs now have overloads that accept ranges (e.g. <a href="./algorithm/ranges/sort.html" title="cpp/algorithm/ranges/sort"><tt>ranges::sort</tt></a>)
+</li><li> begin<code>&nbsp;+&nbsp;</code><span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span><code>,&nbsp;</code>size<code>)</code></span> – counted sequences, e.g. range returned by <a href="./ranges/counted_view.html" title="cpp/ranges/view counted"><tt>views::counted</tt></a>
+</li><li> <span style="display: inline-block;"><code>[</code>begin<code>,&nbsp;</code><i>predicate</i><code>)</code></span> – conditionally-terminated sequences, e.g. range returned by <a href="./ranges/take_while_view.html" title="cpp/ranges/take while view"><tt>views::take_while</tt></a>
+</li><li> <span style="display: inline-block;"><code>[</code>begin<code>,&nbsp;</code>..<code>)</code></span> – unbounded sequences, e.g. range returned by <a href="./ranges/iota_view.html" title="cpp/ranges/iota view"><tt>views::iota</tt></a>
+</li></ul>
+<p>The ranges library includes <a href="./algorithm/ranges.html" title="cpp/algorithm/ranges">range algorithms</a>, which are applied to ranges eagerly, and <a href="./ranges.html#Range_adaptors">range adaptors</a>, which are applied to views lazily. Adaptors can be composed into pipelines, so that their actions take place as the view is iterated.
+</p>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="./header/ranges.html" title="cpp/header/ranges">&lt;ranges&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">namespace</span> std <span class="br0">{</span><br>
+<p>&nbsp; &nbsp; <span class="kw1">namespace</span> views <span class="sy1">=</span> ranges<span class="sy4">::</span><span class="me2">views</span><span class="sy4">;</span><br>
+</p>
+<span class="br0">}</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx20">(since C++20)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>The namespace alias <code>std::views</code> is provided as a shorthand for <code>std::ranges::views</code>.
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::ranges</code> </div>
+</td></tr>
+
+<tr>
+<td colspan="2"> <table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="./ranges.html#Range_access"><span class="tocnumber">1</span> <span class="toctext">Range access</span></a></li>
+<li class="toclevel-1"><a href="./ranges.html#Range_primitives"><span class="tocnumber">2</span> <span class="toctext">Range primitives</span></a></li>
+<li class="toclevel-1"><a href="./ranges.html#Dangling_iterator_handling"><span class="tocnumber">3</span> <span class="toctext">Dangling iterator handling</span></a></li>
+<li class="toclevel-1"><a href="./ranges.html#Other_utilities"><span class="tocnumber">4</span> <span class="toctext">Other utilities</span></a></li>
+<li class="toclevel-1"><a href="./ranges.html#Range_concepts"><span class="tocnumber">5</span> <span class="toctext">Range concepts</span></a></li>
+<li class="toclevel-1"><a href="./ranges.html#Range_conversions"><span class="tocnumber">6</span> <span class="toctext">Range conversions</span></a></li>
+<li class="toclevel-1"><a href="./ranges.html#Views"><span class="tocnumber">7</span> <span class="toctext">Views</span></a></li>
+<li class="toclevel-1 tocsection-1"><a href="./ranges.html#Range_factories"><span class="tocnumber">8</span> <span class="toctext">Range factories</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./ranges.html#Range_adaptors"><span class="tocnumber">9</span> <span class="toctext">Range adaptors</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./ranges.html#Range_generators_.28since_C.2B.2B23.29"><span class="tocnumber">10</span> <span class="toctext">Range generators <span>(since C++23)</span></span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./ranges.html#Helper_items"><span class="tocnumber">11</span> <span class="toctext">Helper items</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="./ranges.html#Range_adaptor_objects"><span class="tocnumber">11.1</span> <span class="toctext">Range adaptor objects</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="./ranges.html#Range_adaptor_closure_objects"><span class="tocnumber">11.2</span> <span class="toctext">Range adaptor closure objects</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="./ranges.html#Customization_point_objects"><span class="tocnumber">11.3</span> <span class="toctext">Customization point objects</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="./ranges.html#Assignable_wrapper"><span class="tocnumber">11.4</span> <span class="toctext">Assignable wrapper</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="./ranges.html#Non-propagating_cache"><span class="tocnumber">11.5</span> <span class="toctext">Non-propagating cache</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="./ranges.html#Conditionally-const_type"><span class="tocnumber">11.6</span> <span class="toctext">Conditionally-const type</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="./ranges.html#Integer-like_type_helper_templates"><span class="tocnumber">11.7</span> <span class="toctext">Integer-like type helper templates</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="./ranges.html#Customization_point_object_helpers"><span class="tocnumber">11.8</span> <span class="toctext">Customization point object helpers</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="./ranges.html#Range_adaptor_helpers"><span class="tocnumber">11.9</span> <span class="toctext">Range adaptor helpers</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="./ranges.html#Helper_concepts"><span class="tocnumber">11.10</span> <span class="toctext">Helper concepts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="./ranges.html#Notes"><span class="tocnumber">12</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="./ranges.html#Example"><span class="tocnumber">13</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="./ranges.html#Defect_reports"><span class="tocnumber">14</span> <span class="toctext">Defect reports</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="./ranges.html#See_also"><span class="tocnumber">15</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h5> <span class="mw-headline" id="Range_access"> Range access </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/ranges.html" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/iterator.html" title="cpp/header/iterator">&lt;iterator&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/begin.html" title="cpp/ranges/begin"> <span class="t-lines"><span>ranges::begin</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> returns an iterator to the beginning of a range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_begin&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/end.html" title="cpp/ranges/end"> <span class="t-lines"><span>ranges::end</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> returns a sentinel indicating the end of a range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_end&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/cbegin.html" title="cpp/ranges/cbegin"> <span class="t-lines"><span>ranges::cbegin</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> returns an iterator to the beginning of a read-only range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_cbegin&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/cend.html" title="cpp/ranges/cend"> <span class="t-lines"><span>ranges::cend</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> returns a sentinel indicating the end of a read-only range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_cend&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/rbegin.html" title="cpp/ranges/rbegin"> <span class="t-lines"><span>ranges::rbegin</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> returns a reverse iterator to a range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_rbegin&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/rend.html" title="cpp/ranges/rend"> <span class="t-lines"><span>ranges::rend</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> returns a reverse end iterator to a range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_rend&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/crbegin.html" title="cpp/ranges/crbegin"> <span class="t-lines"><span>ranges::crbegin</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> returns a reverse iterator to a read-only range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_crbegin&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/crend.html" title="cpp/ranges/crend"> <span class="t-lines"><span>ranges::crend</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> returns a reverse end iterator to a read-only range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_crend&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/reserve_hint.html" title="cpp/ranges/reserve hint"> <span class="t-lines"><span>ranges::reserve_hint</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td> returns an integer equal to the reserve hint given by a range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_reserve_hint&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/size.html" title="cpp/ranges/size"> <span class="t-lines"><span>ranges::size</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> returns an integer equal to the size of a range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_size&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/ssize.html" title="cpp/ranges/ssize"> <span class="t-lines"><span>ranges::ssize</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> returns a signed integer equal to the size of a range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_ssize&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/empty.html" title="cpp/ranges/empty"> <span class="t-lines"><span>ranges::empty</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> checks whether a range is empty<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_empty&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/data.html" title="cpp/ranges/data"> <span class="t-lines"><span>ranges::data</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> obtains a pointer to the beginning of a contiguous range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_data&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/cdata.html" title="cpp/ranges/cdata"> <span class="t-lines"><span>ranges::cdata</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> obtains a pointer to the beginning of a read-only contiguous range<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_cdata&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Range_primitives"> Range primitives </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/ranges.html" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/iterator_t.html" title="cpp/ranges/iterator t"> <span class="t-lines"><span>ranges::iterator_t</span><span>ranges::const_iterator_t</span><span>ranges::sentinel_t</span><span>ranges::const_sentinel_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> obtains iterator and sentinel types of a range<br><span class="t-mark">(alias template)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_iterator_t&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/range_size_t.html" title="cpp/ranges/range size t"> <span class="t-lines"><span>ranges::range_difference_t</span><span>ranges::range_size_t</span><span>ranges::range_value_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> obtains size, difference, and value types of a range<br><span class="t-mark">(alias template)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_range_size_t&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/range_reference_t.html" title="cpp/ranges/range reference t"> <span class="t-lines"><span>ranges::range_reference_t</span><span>ranges::range_const_reference_t</span><span>ranges::range_rvalue_reference_t</span><span>ranges::range_common_reference_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> obtains reference types of a range<br><span class="t-mark">(alias template)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_range_reference_t&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Dangling_iterator_handling"> Dangling iterator handling </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/ranges.html" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/dangling.html" title="cpp/ranges/dangling"> <span class="t-lines"><span>ranges::dangling</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  a placeholder type indicating that an iterator or a <code>subrange</code> should not be returned since it would be dangling <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_dangling&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/borrowed_iterator_t.html" title="cpp/ranges/borrowed iterator t"> <span class="t-lines"><span>ranges::borrowed_iterator_t</span><span>ranges::borrowed_subrange_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> obtains iterator type or <code>subrange</code> type of a <a href="./ranges/borrowed_range.html" title="cpp/ranges/borrowed range"><code>borrowed_range</code></a><br><span class="t-mark">(alias template)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_borrowed_iterator_t&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Other_utilities"> Other utilities </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/ranges.html" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/elements_of.html" title="cpp/ranges/elements of"> <span class="t-lines"><span>ranges::elements_of</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td>  tags a range to be treated as a sequence rather than a single value <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_elements_of&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Range_concepts"> Range concepts </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/ranges.html" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/range.html" title="cpp/ranges/range"> <span class="t-lines"><span>ranges::range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies that a type is a range, that is, it provides a <code>begin</code> iterator and an <code>end</code> sentinel <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/borrowed_range.html" title="cpp/ranges/borrowed range"> <span class="t-lines"><span>ranges::borrowed_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies that a type is a <a href="./ranges/range.html" title="cpp/ranges/range"><code>range</code></a> and iterators obtained from an expression of it can be safely returned without danger of dangling <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_borrowed_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/approximately_sized_range.html" title="cpp/ranges/approximately sized range"> <span class="t-lines"><span>ranges::approximately_sized_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  specifies that a range can estimate its size in constant time <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_approximately_sized_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/sized_range.html" title="cpp/ranges/sized range"> <span class="t-lines"><span>ranges::sized_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies that a range knows its size in constant time <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_sized_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/view.html" title="cpp/ranges/view"> <span class="t-lines"><span>ranges::view</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies that a range is a view, that is, it has constant time copy/move/assignment <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/input_range.html" title="cpp/ranges/input range"> <span class="t-lines"><span>ranges::input_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies a range whose iterator type satisfies <a href="./iterator/input_iterator.html" title="cpp/iterator/input iterator"><code>input_iterator</code></a> <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_input_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/output_range.html" title="cpp/ranges/output range"> <span class="t-lines"><span>ranges::output_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies a range whose iterator type satisfies <a href="./iterator/output_iterator.html" title="cpp/iterator/output iterator"><code>output_iterator</code></a> <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_output_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/forward_range.html" title="cpp/ranges/forward range"> <span class="t-lines"><span>ranges::forward_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies a range whose iterator type satisfies <a href="./iterator/forward_iterator.html" title="cpp/iterator/forward iterator"><code>forward_iterator</code></a> <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_forward_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/bidirectional_range.html" title="cpp/ranges/bidirectional range"> <span class="t-lines"><span>ranges::bidirectional_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies a range whose iterator type satisfies <a href="./iterator/bidirectional_iterator.html" title="cpp/iterator/bidirectional iterator"><code>bidirectional_iterator</code></a> <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_bidirectional_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/random_access_range.html" title="cpp/ranges/random access range"> <span class="t-lines"><span>ranges::random_access_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies a range whose iterator type satisfies <a href="./iterator/random_access_iterator.html" title="cpp/iterator/random access iterator"><code>random_access_iterator</code></a> <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_random_access_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/contiguous_range.html" title="cpp/ranges/contiguous range"> <span class="t-lines"><span>ranges::contiguous_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies a range whose iterator type satisfies <a href="./iterator/contiguous_iterator.html" title="cpp/iterator/contiguous iterator"><code>contiguous_iterator</code></a> <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_contiguous_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/common_range.html" title="cpp/ranges/common range"> <span class="t-lines"><span>ranges::common_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies that a range has identical iterator and sentinel types <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_common_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/viewable_range.html" title="cpp/ranges/viewable range"> <span class="t-lines"><span>ranges::viewable_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies the requirements for a <a href="./ranges/range.html" title="cpp/ranges/range"><code>range</code></a> to be safely convertible to a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_viewable_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/constant_range.html" title="cpp/ranges/constant range"> <span class="t-lines"><span>ranges::constant_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td>  specifies that a range has read-only elements <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_constant_range&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Range_conversions"> Range conversions </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/ranges.html" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/to.html" title="cpp/ranges/to"> <span class="t-lines"><span>ranges::to</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td>  constructs a new non-view object from an input range <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_to&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Views"> Views </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/ranges.html" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/view_interface.html" title="cpp/ranges/view interface"> <span class="t-lines"><span>ranges::view_interface</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  helper class template for defining a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a>, using the <a href="./language/crtp.html" title="cpp/language/crtp">curiously recurring template pattern</a> <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_view_interface&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/subrange.html" title="cpp/ranges/subrange"> <span class="t-lines"><span>ranges::subrange</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  combines an iterator-sentinel pair into a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_subrange&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=1" title="Edit section: Range factories">edit</a>]</span> <span class="mw-headline" id="Range_factories">Range factories</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/ranges.html" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/empty_view.html" title="cpp/ranges/empty view"> <span class="t-lines"><span>ranges::empty_view</span><span>views::empty</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> an empty <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> with no elements<br><span class="t-mark">(class template)</span> <span class="t-mark">(variable template)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_empty_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/single_view.html" title="cpp/ranges/single view"> <span class="t-lines"><span>ranges::single_view</span><span>views::single</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> that contains a single element of a specified value<br><span class="t-mark">(class template)</span> <span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_single_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/iota_view.html" title="cpp/ranges/iota view"> <span class="t-lines"><span>ranges::iota_view</span><span>views::iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of a sequence generated by repeatedly incrementing an initial value<br><span class="t-mark">(class template)</span> <span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_iota_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/repeat_view.html" title="cpp/ranges/repeat view"> <span class="t-lines"><span>ranges::repeat_view</span><span>views::repeat</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of a generated sequence by repeatedly producing the same value<br><span class="t-mark">(class template)</span> <span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_repeat_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/basic_istream_view.html" title="cpp/ranges/basic istream view"> <span class="t-lines"><span>ranges::basic_istream_view</span><span>views::istream</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of the elements obtained by successive application of <code>operator&gt;&gt;</code> on the associated input stream<br><span class="t-mark">(class template)</span> <span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_basic_istream_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=2" title="Edit section: Range adaptors">edit</a>]</span> <span class="mw-headline" id="Range_adaptors">Range adaptors</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/ranges.html" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/range_adaptor_closure.html" title="cpp/ranges/range adaptor closure"> <span class="t-lines"><span>ranges::range_adaptor_closure</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td>  helper base class template for defining a range adaptor closure object <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_range_adaptor_closure&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/all_view.html" title="cpp/ranges/all view"> <span class="t-lines"><span>views::all_t</span><span>views::all</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> that includes all elements of a <a href="./ranges/range.html" title="cpp/ranges/range"><code>range</code></a><br><span class="t-mark">(alias template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_all_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/ref_view.html" title="cpp/ranges/ref view"> <span class="t-lines"><span>ranges::ref_view</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> of the elements of some other <a href="./ranges/range.html" title="cpp/ranges/range"><code>range</code></a> <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_ref_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./ranges/owning_view.html" title="cpp/ranges/owning view"> <span class="t-lines"><span>ranges::owning_view</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> with unique ownership of some <a href="./ranges/range.html" title="cpp/ranges/range"><code>range</code></a> <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_owning_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/as_rvalue_view.html" title="cpp/ranges/as rvalue view"> <span class="t-lines"><span>ranges::as_rvalue_view</span><span>views::as_rvalue</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> of a sequence that casts each element to an rvalue<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_as_rvalue_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/filter_view.html" title="cpp/ranges/filter view"> <span class="t-lines"><span>ranges::filter_view</span><span>views::filter</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> that consists of the elements of a <a href="./ranges/range.html" title="cpp/ranges/range"><code>range</code></a> that satisfies a predicate<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_filter_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/transform_view.html" title="cpp/ranges/transform view"> <span class="t-lines"><span>ranges::transform_view</span><span>views::transform</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> of a sequence that applies a transformation function to each element<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_transform_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/take_view.html" title="cpp/ranges/take view"> <span class="t-lines"><span>ranges::take_view</span><span>views::take</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of the first N elements of another <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a><br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_take_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/take_while_view.html" title="cpp/ranges/take while view"> <span class="t-lines"><span>ranges::take_while_view</span><span>views::take_while</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of the initial elements of another <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a>, until the first element on which a predicate returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span><br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_take_while_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/drop_view.html" title="cpp/ranges/drop view"> <span class="t-lines"><span>ranges::drop_view</span><span>views::drop</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of elements of another <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a>, skipping the first N elements<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_drop_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/drop_while_view.html" title="cpp/ranges/drop while view"> <span class="t-lines"><span>ranges::drop_while_view</span><span>views::drop_while</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of the elements of another <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a>, skipping the initial subsequence of elements until the first element where the predicate returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span><br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_drop_while_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/join_view.html" title="cpp/ranges/join view"> <span class="t-lines"><span>ranges::join_view</span><span>views::join</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of the sequence obtained from flattening a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> of <a href="./ranges/range.html" title="cpp/ranges/range"><code>range</code>s</a><br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_join_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/join_with_view.html" title="cpp/ranges/join with view"> <span class="t-lines"><span>ranges::join_with_view</span><span>views::join_with</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of the sequence obtained from flattening a view of ranges, with the delimiter in between elements<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_join_with_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/lazy_split_view.html" title="cpp/ranges/lazy split view"> <span class="t-lines"><span>ranges::lazy_split_view</span><span>views::lazy_split</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> over the subranges obtained from splitting another <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> using a delimiter<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_lazy_split_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/split_view.html" title="cpp/ranges/split view"> <span class="t-lines"><span>ranges::split_view</span><span>views::split</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> over the subranges obtained from splitting another <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> using a delimiter<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_split_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/concat_view.html" title="cpp/ranges/concat view"> <span class="t-lines"><span>ranges::concat_view</span><span>views::concat</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of concatenation of the adapted views<br><span class="t-mark">(class template)</span> <span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_concat_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/counted_view.html" title="cpp/ranges/view counted"> <span class="t-lines"><span>views::counted</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> creates a subrange from an iterator and a count<br><span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_view_counted&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/common_view.html" title="cpp/ranges/common view"> <span class="t-lines"><span>ranges::common_view</span><span>views::common</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> converts a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> into a <a href="./ranges/common_range.html" title="cpp/ranges/common range"><code>common_range</code></a><br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_common_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/reverse_view.html" title="cpp/ranges/reverse view"> <span class="t-lines"><span>ranges::reverse_view</span><span>views::reverse</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> that iterates over the elements of another bidirectional view in reverse order<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_reverse_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/as_const_view.html" title="cpp/ranges/as const view"> <span class="t-lines"><span>ranges::as_const_view</span><span>views::as_const</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> converts a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> into a <a href="./ranges/constant_range.html" title="cpp/ranges/constant range"><code>constant_range</code></a><br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_as_const_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/elements_view.html" title="cpp/ranges/elements view"> <span class="t-lines"><span>ranges::elements_view</span><span>views::elements</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> takes a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of <a href="./utility/tuple/tuple-like.html" title="cpp/utility/tuple/tuple-like"><tt><i>tuple-like</i></tt></a> values and a number N and produces a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> of N<sup>th</sup> element of each tuple<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_elements_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/keys_view.html" title="cpp/ranges/keys view"> <span class="t-lines"><span>ranges::keys_view</span><span>views::keys</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> takes a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of pair-like values and produces a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> of the first elements of each pair<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_keys_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/values_view.html" title="cpp/ranges/values view"> <span class="t-lines"><span>ranges::values_view</span><span>views::values</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> takes a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of pair-like values and produces a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> of the second elements of each pair<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_values_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/enumerate_view.html" title="cpp/ranges/enumerate view"> <span class="t-lines"><span>ranges::enumerate_view</span><span>views::enumerate</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> that maps each element of adapted sequence to a tuple of both the element's position and its value<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_enumerate_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/zip_view.html" title="cpp/ranges/zip view"> <span class="t-lines"><span>ranges::zip_view</span><span>views::zip</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of tuples of references to corresponding elements of the adapted views<br><span class="t-mark">(class template)</span> <span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_zip_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/zip_transform_view.html" title="cpp/ranges/zip transform view"> <span class="t-lines"><span>ranges::zip_transform_view</span><span>views::zip_transform</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of results of application of a transformation function to corresponding elements of the adapted views<br><span class="t-mark">(class template)</span> <span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_zip_transform_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/adjacent_view.html" title="cpp/ranges/adjacent view"> <span class="t-lines"><span>ranges::adjacent_view</span><span>views::adjacent</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of tuples of references to adjacent elements of the adapted view<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_adjacent_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/adjacent_transform_view.html" title="cpp/ranges/adjacent transform view"> <span class="t-lines"><span>ranges::adjacent_transform_view</span><span>views::adjacent_transform</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of results of application of a transformation function to adjacent elements of the adapted view<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_adjacent_transform_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/chunk_view.html" title="cpp/ranges/chunk view"> <span class="t-lines"><span>ranges::chunk_view</span><span>views::chunk</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a range of <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code>s</a> that are <code>N</code>-sized non-overlapping successive chunks of the elements of another <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a><br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_chunk_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/slide_view.html" title="cpp/ranges/slide view"> <span class="t-lines"><span>ranges::slide_view</span><span>views::slide</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> whose M<sup>th</sup> element is a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> over the M<sup>th</sup> through (M + N - 1)<sup>th</sup> elements of another <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a><br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_slide_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/chunk_by_view.html" title="cpp/ranges/chunk by view"> <span class="t-lines"><span>ranges::chunk_by_view</span><span>views::chunk_by</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> splits the <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> into subranges between each pair of adjacent elements for which the given predicate returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span><br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_chunk_by_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/stride_view.html" title="cpp/ranges/stride view"> <span class="t-lines"><span>ranges::stride_view</span><span>views::stride</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of elements of another <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a>, advancing over N elements at a time<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_stride_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/cartesian_product_view.html" title="cpp/ranges/cartesian product view"> <span class="t-lines"><span>ranges::cartesian_product_view</span><span>views::cartesian_product</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> consisting of tuples of results calculated by the n-ary cartesian product of the adapted views<br><span class="t-mark">(class template)</span> <span class="t-mark">(customization point object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_cartesian_product_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/cache_latest_view.html" title="cpp/ranges/cache latest view"> <span class="t-lines"><span>ranges::cache_latest_view</span><span>views::cache_latest</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td> a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> that caches the last-accessed element of its underlying sequence<br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_cache_latest_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./ranges/to_input_view.html" title="cpp/ranges/to input view"> <span class="t-lines"><span>ranges::to_input_view</span><span>views::to_input</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td> converts a <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> into a range that is <a href="./ranges/input_range.html" title="cpp/ranges/input range"><code>input_range</code></a>-only and non-<a href="./ranges/common_range.html" title="cpp/ranges/common range"><code>common_range</code></a><br><span class="t-mark">(class template)</span> <span class="t-mark">(range adaptor object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_to_input_view&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<p><span id="Range_generators"></span>
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=3" title="Edit section: Range generators (since C++23)">edit</a>]</span> <span class="mw-headline" id="Range_generators_.28since_C.2B.2B23.29">Range generators <span class="t-mark-rev t-since-cxx23">(since C++23)</span></span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/generator.html" title="cpp/header/generator">&lt;generator&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./coroutine/generator.html" title="cpp/coroutine/generator"> <span class="t-lines"><span>generator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td>  A <a href="./ranges/view.html" title="cpp/ranges/view"><code>view</code></a> that represents synchronous <a href="./language/coroutines.html" title="cpp/language/coroutines">coroutine</a> generator <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_generator&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=4" title="Edit section: Helper items">edit</a>]</span> <span class="mw-headline" id="Helper_items">Helper items</span></h3>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=5" title="Edit section: Range adaptor objects">edit</a>]</span> <span class="mw-headline" id="Range_adaptor_objects">Range adaptor objects</span></h4>
+<p>See <a href="./named_req/RangeAdaptorObject.html" title="cpp/named req/RangeAdaptorObject"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">RangeAdaptorObject</span></a> (RAO).
+</p>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=6" title="Edit section: Range adaptor closure objects">edit</a>]</span> <span class="mw-headline" id="Range_adaptor_closure_objects">Range adaptor closure objects</span></h4>
+<p>See <a href="./named_req/RangeAdaptorClosureObject.html" title="cpp/named req/RangeAdaptorClosureObject"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">RangeAdaptorClosureObject</span></a> (RACO).
+</p>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=7" title="Edit section: Customization point objects">edit</a>]</span> <span class="mw-headline" id="Customization_point_objects">Customization point objects</span></h4>
+<p>See <a href="./ranges/cpo.html" title="cpp/ranges/cpo" class="mw-redirect">Customization point object</a> (CPO).
+</p>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=8" title="Edit section: Assignable wrapper">edit</a>]</span> <span class="mw-headline" id="Assignable_wrapper">Assignable wrapper</span></h4>
+<p>Some range adaptors wrap their elements or function objects with the <span class="t-rev-inl t-until-cxx23"><span><a href="./ranges/copyable_wrapper.html" title="cpp/ranges/copyable wrapper"><code><i>copyable-box</i></code></a></span><span><span class="t-mark-rev t-until-cxx23">(until C++23)</span></span></span><span class="t-rev-inl t-since-cxx23"><span><a href="./ranges/copyable_wrapper.html" title="cpp/ranges/copyable wrapper"><code><i>movable-box</i></code></a></span><span><span class="t-mark-rev t-since-cxx23">(since C++23)</span></span></span>. The wrapper augments the wrapped object with assignability when needed.
+</p>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=9" title="Edit section: Non-propagating cache">edit</a>]</span> <span class="mw-headline" id="Non-propagating_cache">Non-propagating cache</span></h4>
+<p>Some range adaptors are specified in terms of an exposition-only class template <a href="./ranges/non-propagating-cache.html" title="cpp/ranges/non-propagating-cache"><code><i>non-propagating-cache</i></code></a>, which behaves almost like <span class="mw-geshi cpp source-cpp"><a href="./utility/optional.html"><span class="kw1083">std::<span class="me2">optional</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span> (see description for differences).
+</p>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=10" title="Edit section: Conditionally-const type">edit</a>]</span> <span class="mw-headline" id="Conditionally-const_type">Conditionally-<code>const</code> type</span></h4>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td><div><span id="maybe-const"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw4">bool</span> Const, <span class="kw1">class</span> T <span class="sy1">&gt;</span><br>
+<span class="kw1">using</span> <span class="coMULTI">/*maybe-const*/</span> <span class="sy1">=</span> <a href="./types/conditional.html"><span class="kw640">std::<span class="me2">conditional_t</span></span></a><span class="sy1">&lt;</span>Const, <span class="kw4">const</span> T, T<span class="sy1">&gt;</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad"> </td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>The alias template <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*maybe-const*/</span></span> is a shorthand used to conditionally apply a <span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span> qualifier to the type <code>T</code>.
+</p>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=11" title="Edit section: Integer-like type helper templates">edit</a>]</span> <span class="mw-headline" id="Integer-like_type_helper_templates">Integer-like type helper templates</span></h4>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td><div><span id="make-signed-like-t"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="coMULTI">/*is-integer-like*/</span> T <span class="sy1">&gt;</span><br>
+<span class="kw1">using</span> <span class="coMULTI">/*make-signed-like-t*/</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> <span class="sy1">=</span> <span class="coMULTI">/* see description */</span><span class="sy4">;</span></span></div></td>
+<td> (1)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="make-unsigned-like-t"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="coMULTI">/*is-integer-like*/</span> T <span class="sy1">&gt;</span><br>
+<span class="kw1">using</span> <span class="coMULTI">/*make-unsigned-like-t*/</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> <span class="sy1">=</span> <span class="coMULTI">/* see description */</span><span class="sy4">;</span></span></div></td>
+<td> (2)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="to-unsigned-like"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="coMULTI">/*is-integer-like*/</span> T <span class="sy1">&gt;</span><br>
+<p><span class="coMULTI">/*make-unsigned-like-t*/</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> <span class="coMULTI">/*to-unsigned-like*/</span><span class="br0">(</span> T t <span class="br0">)</span><br>
+<span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">return</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="coMULTI">/*make-unsigned-like-t*/</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;&gt;</span><span class="br0">(</span>t<span class="br0">)</span><span class="sy4">;</span><br>
+</p>
+<span class="br0">}</span></span></div></td>
+<td> (3)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<div class="t-li1"><span class="t-li">1)</span> For an <a href="./iterator/is-integer-like.html" title="cpp/iterator/is-integer-like">integer-like type</a> <code>T</code>:
+<ul><li> If <code>T</code> is an integer type, <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*make-signed-like-t*/</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span> is <span class="mw-geshi cpp source-cpp"><a href="./types/make_signed.html"><span class="kw623">std::<span class="me2">make_signed_t</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span>.
+</li><li> Otherwise, <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*make-signed-like-t*/</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span> is a corresponding unspecified signed-integer-like type of the same width as <code>T</code>.</li></ul></div>
+
+<div class="t-li1"><span class="t-li">2)</span> For an integer-like type <code>T</code>:
+<ul><li> If <code>T</code> is an integer type, <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*make-unsigned-like-t*/</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span> is <span class="mw-geshi cpp source-cpp"><a href="./types/make_unsigned.html"><span class="kw625">std::<span class="me2">make_unsigned_t</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span>.
+</li><li> Otherwise, <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*make-signed-like-t*/</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span> is a corresponding unspecified unsigned-integer-like type of the same width as <code>T</code>.</li></ul></div>
+
+<div class="t-li1"><span class="t-li">3)</span> Explicitly converts <span class="t-c"><span class="mw-geshi cpp source-cpp">t</span></span> to <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*make-unsigned-like-t*/</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span>.</div>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=12" title="Edit section: Customization point object helpers">edit</a>]</span> <span class="mw-headline" id="Customization_point_object_helpers">Customization point object helpers</span></h4>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td><div><span id="possibly-const-range"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="./ranges/input_range.html"><span class="kw2921">ranges::<span class="me2">input_range</span></span></a> R <span class="sy1">&gt;</span><br>
+<p><span class="kw4">constexpr</span> <span class="kw4">auto</span><span class="sy3">&amp;</span> <span class="coMULTI">/*possibly-const-range*/</span><span class="br0">(</span>R<span class="sy3">&amp;</span> r<span class="br0">)</span> <span class="kw1">noexcept</span><br>
+<span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">if</span> <span class="kw4">constexpr</span> <span class="br0">(</span><a href="./ranges/input_range.html"><span class="kw2921">ranges::<span class="me2">input_range</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> R<span class="sy1">&gt;</span><span class="br0">)</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <span class="kw1">const_cast</span><span class="sy1">&lt;</span><span class="kw4">const</span> R<span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="br0">(</span>r<span class="br0">)</span><span class="sy4">;</span><br>
+&nbsp; &nbsp; <span class="kw1">else</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> r<span class="sy4">;</span><br>
+</p>
+<span class="br0">}</span></span></div></td>
+<td> (1)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="as-const-pointer"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T <span class="sy1">&gt;</span><br>
+<p><span class="kw4">constexpr</span> <span class="kw4">auto</span> <span class="coMULTI">/*as-const-pointer*/</span><span class="br0">(</span> <span class="kw4">const</span> T<span class="sy2">*</span> p <span class="br0">)</span> <span class="kw1">noexcept</span><br>
+<span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">return</span> p<span class="sy4">;</span><br>
+</p>
+<span class="br0">}</span></span></div></td>
+<td> (2)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Some range access customization point objects are specified in terms of these exposition-only function templates.
+</p>
+<div class="t-li1"><span class="t-li">1)</span> <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*possibly-const-range*/</span></span> returns the const-qualified version of <span class="t-c"><span class="mw-geshi cpp source-cpp">r</span></span> if <span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> R</span> models <a href="./ranges/input_range.html" title="cpp/ranges/input range"><code>input_range</code></a>; otherwise, returns <span class="t-c"><span class="mw-geshi cpp source-cpp">r</span></span> without any casting.</div>
+<div class="t-li1"><span class="t-li">2)</span> <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*as-const-pointer*/</span></span> returns a pointer to object of constant type.</div>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=13" title="Edit section: Range adaptor helpers">edit</a>]</span> <span class="mw-headline" id="Range_adaptor_helpers">Range adaptor helpers</span></h4>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td><div><span id="tuple-transform"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> F, <span class="kw1">class</span> Tuple <span class="sy1">&gt;</span><br>
+<p><span class="kw4">constexpr</span> <span class="kw4">auto</span> <span class="coMULTI">/*tuple-transform*/</span><span class="br0">(</span> F<span class="sy3">&amp;&amp;</span> f, Tuple<span class="sy3">&amp;&amp;</span> tuple <span class="br0">)</span><br>
+<span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">return</span> <a href="./utility/apply.html"><span class="kw1112">std::<span class="me2">apply</span></span></a><span class="br0">(</span><span class="br0">[</span><span class="sy3">&amp;</span><span class="br0">]</span><span class="sy1">&lt;</span><span class="kw1">class</span>... <span class="me1">Ts</span><span class="sy1">&gt;</span><span class="br0">(</span>Ts<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span><span class="br0">)</span><br>
+&nbsp; &nbsp; <span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <a href="./utility/tuple.html"><span class="kw1107">std::<span class="me2">tuple</span></span></a><span class="sy1">&lt;</span><a href="./types/result_of.html"><span class="kw3241">std::<span class="me2">invoke_result_t</span></span></a><span class="sy1">&lt;</span>F<span class="sy3">&amp;</span>, Ts<span class="sy1">&gt;</span>...<span class="sy1">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">(</span><a href="./utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>f, <a href="./utility/forward.html"><span class="kw1126">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Ts<span class="sy1">&gt;</span><span class="br0">(</span>args<span class="br0">)</span><span class="br0">)</span>...<span class="br0">)</span><span class="sy4">;</span><br>
+&nbsp; &nbsp; <span class="br0">}</span>, <a href="./utility/forward.html"><span class="kw1126">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Tuple<span class="sy1">&gt;</span><span class="br0">(</span>tuple<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span><br>
+</p>
+<span class="br0">}</span></span></div></td>
+<td> (1)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="tuple-for-each"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> F, <span class="kw1">class</span> Tuple <span class="sy1">&gt;</span><br>
+<p><span class="kw4">constexpr</span> <span class="kw4">void</span> <span class="coMULTI">/*tuple-for-each*/</span><span class="br0">(</span> F<span class="sy3">&amp;&amp;</span> f, Tuple<span class="sy3">&amp;&amp;</span> tuple <span class="br0">)</span><br>
+<span class="br0">{</span><br>
+&nbsp; &nbsp; <a href="./utility/apply.html"><span class="kw1112">std::<span class="me2">apply</span></span></a><span class="br0">(</span><span class="br0">[</span><span class="sy3">&amp;</span><span class="br0">]</span><span class="sy1">&lt;</span><span class="kw1">class</span>... <span class="me1">Ts</span><span class="sy1">&gt;</span><span class="br0">(</span>Ts<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span><span class="br0">)</span><br>
+&nbsp; &nbsp; <span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">void</span><span class="sy1">&gt;</span><span class="br0">(</span><a href="./utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>f, <a href="./utility/forward.html"><span class="kw1126">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Ts<span class="sy1">&gt;</span><span class="br0">(</span>args<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>, ...<span class="br0">)</span><span class="sy4">;</span><br>
+&nbsp; &nbsp; <span class="br0">}</span>, <a href="./utility/forward.html"><span class="kw1126">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Tuple<span class="sy1">&gt;</span><span class="br0">(</span>tuple<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span><br>
+</p>
+<span class="br0">}</span></span></div></td>
+<td> (2)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="as-lvalue"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T <span class="sy1">&gt;</span><br>
+<p><span class="kw4">constexpr</span> T<span class="sy3">&amp;</span> <span class="coMULTI">/*as-lvalue*/</span><span class="br0">(</span> T<span class="sy3">&amp;&amp;</span> t <span class="br0">)</span><br>
+<span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">return</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span>T<span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="br0">(</span>t<span class="br0">)</span><span class="sy4">;</span><br>
+</p>
+<span class="br0">}</span></span></div></td>
+<td> (3)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Some range adaptors are specified in terms of these exposition-only function templates.
+</p>
+<div class="t-li1"><span class="t-li">1)</span> <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*tuple-transform*/</span></span> returns a new tuple constructed by applying <span class="t-c"><span class="mw-geshi cpp source-cpp">f</span></span> to each element of <span class="t-c"><span class="mw-geshi cpp source-cpp">tuple</span></span>.</div>
+<div class="t-li1"><span class="t-li">2)</span> <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*tuple-for-each*/</span></span> applies <span class="t-c"><span class="mw-geshi cpp source-cpp">f</span></span> to each element of <span class="t-c"><span class="mw-geshi cpp source-cpp">tuple</span></span> and returns nothing.</div>
+<div class="t-li1"><span class="t-li">3)</span> <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*as-lvalue*/</span></span> forwards rvalue <span class="t-c"><span class="mw-geshi cpp source-cpp">t</span></span> as lvalue.</div>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=14" title="Edit section: Helper concepts">edit</a>]</span> <span class="mw-headline" id="Helper_concepts">Helper concepts</span></h4>
+<p>Following exposition-only concepts are used for several types, but they are not parts of the interface of standard library.
+</p>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td><div><span id="simple-view"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> R <span class="sy1">&gt;</span><br>
+<p>concept <span class="coMULTI">/*simple-view*/</span> <span class="sy1">=</span><br>
+&nbsp; &nbsp; <a href="./ranges/view.html"><span class="kw2920">ranges::<span class="me2">view</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span> <span class="sy3">&amp;&amp;</span> <a href="./ranges/range.html"><span class="kw2917">ranges::<span class="me2">range</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> R<span class="sy1">&gt;</span> <span class="sy3">&amp;&amp;</span><br>
+&nbsp; &nbsp; <a href="./concepts/same_as.html"><span class="kw2952">std::<span class="me2">same_as</span></span></a><span class="sy1">&lt;</span><a href="./ranges/iterator_t.html"><span class="kw2909">ranges::<span class="me2">iterator_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span>, <a href="./ranges/iterator_t.html"><span class="kw2909">ranges::<span class="me2">iterator_t</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> R<span class="sy1">&gt;&gt;</span> <span class="sy3">&amp;&amp;</span><br>
+</p>
+&nbsp; &nbsp; <a href="./concepts/same_as.html"><span class="kw2952">std::<span class="me2">same_as</span></span></a><span class="sy1">&lt;</span><a href="./ranges/iterator_t.html"><span class="kw2910">ranges::<span class="me2">sentinel_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span>, <a href="./ranges/iterator_t.html"><span class="kw2910">ranges::<span class="me2">sentinel_t</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> R<span class="sy1">&gt;&gt;</span><span class="sy4">;</span></span></div></td>
+<td> (1)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="has-arrow"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> I <span class="sy1">&gt;</span><br>
+<p>concept <span class="coMULTI">/*has-arrow*/</span> <span class="sy1">=</span><br>
+&nbsp; &nbsp; ranges<span class="sy4">::</span><span class="me2">input_iterator</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> <span class="sy3">&amp;&amp;</span><br>
+</p>
+&nbsp; &nbsp; <span class="br0">(</span><a href="./types/is_pointer.html"><span class="kw471">std::<span class="me2">is_pointer_v</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> <span class="sy3">||</span> requires<span class="br0">(</span><span class="kw4">const</span> I i<span class="br0">)</span> <span class="br0">{</span> i.<span class="me1">operator</span><span class="sy2">-</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (2)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="different-from"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T, <span class="kw1">class</span> U <span class="sy1">&gt;</span><br>
+<p>concept <span class="coMULTI">/*different-from*/</span> <span class="sy1">=</span><br>
+</p>
+&nbsp; &nbsp; <span class="sy3">!</span><a href="./concepts/same_as.html"><span class="kw2952">std::<span class="me2">same_as</span></span></a><span class="sy1">&lt;</span><a href="./types/remove_cvref.html"><span class="kw2662">std::<span class="me2">remove_cvref_t</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span>, <a href="./types/remove_cvref.html"><span class="kw2662">std::<span class="me2">remove_cvref_t</span></span></a><span class="sy1">&lt;</span>U<span class="sy1">&gt;&gt;</span><span class="sy4">;</span></span></div></td>
+<td> (3)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="range-with-movable-references"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> R <span class="sy1">&gt;</span><br>
+<p>concept <span class="coMULTI">/*range-with-movable-references*/</span> <span class="sy1">=</span><br>
+&nbsp; &nbsp; <a href="./ranges/input_range.html"><span class="kw2921">ranges::<span class="me2">input_range</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span> <span class="sy3">&amp;&amp;</span><br>
+&nbsp; &nbsp; <a href="./concepts/move_constructible.html"><span class="kw2967">std::<span class="me2">move_constructible</span></span></a><span class="sy1">&lt;</span><a href="./ranges/range_reference_t.html"><span class="kw2914">ranges::<span class="me2">range_reference_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;&gt;</span> <span class="sy3">&amp;&amp;</span><br>
+</p>
+&nbsp; &nbsp; <a href="./concepts/move_constructible.html"><span class="kw2967">std::<span class="me2">move_constructible</span></span></a><span class="sy1">&lt;</span><a href="./ranges/range_reference_t.html"><span class="kw2915">ranges::<span class="me2">range_rvalue_reference_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;&gt;</span><span class="sy4">;</span></span></div></td>
+<td> (4)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="all-random-access"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw4">bool</span> C, <span class="kw1">class</span>... <span class="me1">Views</span> <span class="sy1">&gt;</span><br>
+<p>concept <span class="coMULTI">/*all-random-access*/</span> <span class="sy1">=</span><br>
+&nbsp; &nbsp; <span class="br0">(</span><a href="./ranges/random_access_range.html"><span class="kw2925">ranges::<span class="me2">random_access_range</span></span></a><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="sy1">&lt;</span><a href="./types/conditional.html"><span class="kw640">std::<span class="me2">conditional_t</span></span></a><span class="sy1">&lt;</span>C, <span class="kw4">const</span> Views, Views<span class="sy1">&gt;&gt;</span> <span class="sy3">&amp;&amp;</span> ...<span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (5)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="all-bidirectional"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw4">bool</span> C, <span class="kw1">class</span>... <span class="me1">Views</span> <span class="sy1">&gt;</span><br>
+<p>concept <span class="coMULTI">/*all-bidirectional*/</span> <span class="sy1">=</span><br>
+&nbsp; &nbsp; <span class="br0">(</span><a href="./ranges/bidirectional_range.html"><span class="kw2924">ranges::<span class="me2">bidirectional_range</span></span></a><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="sy1">&lt;</span><a href="./types/conditional.html"><span class="kw640">std::<span class="me2">conditional_t</span></span></a><span class="sy1">&lt;</span>C, <span class="kw4">const</span> Views, Views<span class="sy1">&gt;&gt;</span> <span class="sy3">&amp;&amp;</span> ...<span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (6)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="all-forward"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw4">bool</span> C, <span class="kw1">class</span>... <span class="me1">Views</span> <span class="sy1">&gt;</span><br>
+<p>concept <span class="coMULTI">/*all-forward*/</span> <span class="sy1">=</span><br>
+&nbsp; &nbsp; <span class="br0">(</span><a href="./ranges/forward_range.html"><span class="kw2923">ranges::<span class="me2">forward_range</span></span></a><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="sy1">&lt;</span><a href="./types/conditional.html"><span class="kw640">std::<span class="me2">conditional_t</span></span></a><span class="sy1">&lt;</span>C, <span class="kw4">const</span> Views, Views<span class="sy1">&gt;&gt;</span> <span class="sy3">&amp;&amp;</span> ...<span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (7)</td>
+<td class="t-dcl-nopad"><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=15" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<table class="wikitable sortable ftm-begin">
+
+<tbody><tr>
+<th><a href="./utility/feature_test.html" title="cpp/utility/feature test">Feature-test</a> macro
+</th>
+<th><abbr title="The year/month in which the feature was adopted. The hyperlink under each value opens a compiler support page with entry for given feature.">Value</abbr>
+</th>
+<th><abbr title="Standard in which the feature is introduced; DR means defect report against that revision">Std</abbr>
+</th>
+<th>Feature
+</th></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_generator" title="cpp/feature test"><code>__cpp_lib_generator</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_generator_202207L" title="cpp/compiler support/23"><code>202207L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./coroutine/generator.html"><span class="kw3383">std::<span class="me2">generator</span></span></a></span> – synchronous coroutine generator for ranges
+</td></tr>
+<tr>
+<td rowspan="8"><a href="./experimental/feature_test.html#cpp_lib_ranges" title="cpp/feature test"><code>__cpp_lib_ranges</code></a></td>
+<td><a href="./compiler_support/20.html#cpp_lib_ranges_201911L" title="cpp/compiler support/20"><code>201911L</code></a></td>
+<td><span class="t-mark">(C++20)</span></td>
+<td>Ranges library and <a href="./algorithm/ranges.html" title="cpp/algorithm/ranges">constrained algorithms</a>
+</td></tr>
+<tr>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_202106L" title="cpp/compiler support/23"><code>202106L</code></a></td>
+<td><span class="t-mark">(C++23)</span><br><span class="t-mark">(DR20)</span></td>
+<td>Non-<a href="./concepts/default_initializable.html" title="cpp/concepts/default initializable">default-initializable</a> <a href="./ranges/view.html" title="cpp/ranges/view">views</a>
+</td></tr>
+<tr>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_202110L" title="cpp/compiler support/23"><code>202110L</code></a></td>
+<td><span class="t-mark">(C++23)</span><br><span class="t-mark">(DR20)</span></td>
+<td><a href="./ranges/view.html" title="cpp/ranges/view">Views</a> with <a href="./ranges/owning_view.html" title="cpp/ranges/owning view">ownership</a>
+</td></tr>
+<tr>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_202202L" title="cpp/compiler support/23"><code>202202L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./ranges/range_adaptor_closure.html"><span class="kw3703">ranges::<span class="me2">range_adaptor_closure</span></span></a></span>
+</td></tr>
+<tr>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_202207L" title="cpp/compiler support/23"><code>202207L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td>Relaxing <a href="./ranges.html#Range_adaptors">range adaptors</a> to allow for move-only types
+</td></tr>
+<tr>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_202211L" title="cpp/compiler support/23"><code>202211L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td>Removing "poison pills" <a rel="nofollow" class="external text" href="https://wg21.link/p2602">(P2602)</a> overloads in <span class="mw-geshi cpp source-cpp"><a href="./ranges/begin.html"><span class="kw2901">ranges::<span class="me2">begin</span></span></a></span> etc
+</td></tr>
+<tr>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_202302L" title="cpp/compiler support/23"><code>202302L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td>Relaxing ranges to allow certain projections
+</td></tr>
+<tr>
+<td><a href="./compiler_support/26.html#cpp_lib_ranges_202406L" title="cpp/compiler support/26"><code>202406L</code></a></td>
+<td><span class="t-mark">(C++26)</span><br><span class="t-mark">(DR20)</span></td>
+<td>Removing the common reference requirement from the indirectly invocable concepts
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_as_const" title="cpp/feature test"><code>__cpp_lib_ranges_as_const</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_as_const_202207L" title="cpp/compiler support/23"><code>202207L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./iterator/const_iterator.html"><span class="kw3407">std::<span class="me2">const_iterator</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="./ranges/as_const_view.html"><span class="kw3681">ranges::<span class="me2">as_const_view</span></span></a></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_as_rvalue" title="cpp/feature test"><code>__cpp_lib_ranges_as_rvalue</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_as_rvalue_202207L" title="cpp/compiler support/23"><code>202207L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./ranges/as_rvalue_view.html"><span class="kw3683">ranges::<span class="me2">as_rvalue_view</span></span></a></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_cache_latest" title="cpp/feature test"><code>__cpp_lib_ranges_cache_latest</code></a></td>
+<td><a href="./compiler_support/26.html#cpp_lib_ranges_cache_latest_202411L" title="cpp/compiler support/26"><code>202411L</code></a></td>
+<td><span class="t-mark">(C++26)</span></td>
+<td><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">cache_latest_view</span></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_cartesian_product" title="cpp/feature test"><code>__cpp_lib_ranges_cartesian_product</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_cartesian_product_202207L" title="cpp/compiler support/23"><code>202207L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./ranges/cartesian_product_view.html"><span class="kw3687">ranges::<span class="me2">cartesian_product_view</span></span></a></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_chunk" title="cpp/feature test"><code>__cpp_lib_ranges_chunk</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_chunk_202202L" title="cpp/compiler support/23"><code>202202L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./ranges/chunk_view.html"><span class="kw3691">ranges::<span class="me2">chunk_view</span></span></a></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_chunk_by" title="cpp/feature test"><code>__cpp_lib_ranges_chunk_by</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_chunk_by_202202L" title="cpp/compiler support/23"><code>202202L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./ranges/chunk_by_view.html"><span class="kw3689">ranges::<span class="me2">chunk_by_view</span></span></a></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_concat" title="cpp/feature test"><code>__cpp_lib_ranges_concat</code></a></td>
+<td><a href="./compiler_support/26.html#cpp_lib_ranges_concat_202403L" title="cpp/compiler support/26"><code>202403L</code></a></td>
+<td><span class="t-mark">(C++26)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./ranges/concat_view.html"><span class="kw3717">ranges::<span class="me2">concat_view</span></span></a></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_enumerate" title="cpp/feature test"><code>__cpp_lib_ranges_enumerate</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_enumerate_202302L" title="cpp/compiler support/23"><code>202302L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">enumerate_view</span></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_join_with" title="cpp/feature test"><code>__cpp_lib_ranges_join_with</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_join_with_202202L" title="cpp/compiler support/23"><code>202202L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./ranges/join_with_view.html"><span class="kw3698">ranges::<span class="me2">join_with_view</span></span></a></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_repeat" title="cpp/feature test"><code>__cpp_lib_ranges_repeat</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_repeat_202207L" title="cpp/compiler support/23"><code>202207L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./ranges/repeat_view.html"><span class="kw3704">ranges::<span class="me2">repeat_view</span></span></a></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_reserve_hint" title="cpp/feature test"><code>__cpp_lib_ranges_reserve_hint</code></a></td>
+<td><a href="./compiler_support/26.html#cpp_lib_ranges_reserve_hint_202502L" title="cpp/compiler support/26"><code>202502L</code></a></td>
+<td><span class="t-mark">(C++26)</span></td>
+<td><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">reserve_hint</span></span> and <span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">approximately_sized_range</span></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_slide" title="cpp/feature test"><code>__cpp_lib_ranges_slide</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_slide_202202L" title="cpp/compiler support/23"><code>202202L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./ranges/slide_view.html"><span class="kw3706">ranges::<span class="me2">slide_view</span></span></a></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_stride" title="cpp/feature test"><code>__cpp_lib_ranges_stride</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_stride_202207L" title="cpp/compiler support/23"><code>202207L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./ranges/stride_view.html"><span class="kw3708">ranges::<span class="me2">stride_view</span></span></a></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_to_container" title="cpp/feature test"><code>__cpp_lib_ranges_to_container</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_to_container_202202L" title="cpp/compiler support/23"><code>202202L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./ranges/to.html"><span class="kw3712">ranges::<span class="me2">to</span></span></a></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_to_input" title="cpp/feature test"><code>__cpp_lib_ranges_to_input</code></a></td>
+<td><a href="./compiler_support/26.html#cpp_lib_ranges_to_input_202502L" title="cpp/compiler support/26"><code>202502L</code></a></td>
+<td><span class="t-mark">(C++26)</span></td>
+<td><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">to_input_view</span></span>
+</td></tr>
+<tr>
+<td><a href="./experimental/feature_test.html#cpp_lib_ranges_zip" title="cpp/feature test"><code>__cpp_lib_ranges_zip</code></a></td>
+<td><a href="./compiler_support/23.html#cpp_lib_ranges_zip_202110L" title="cpp/compiler support/23"><code>202110L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><a href="./ranges/zip_view.html"><span class="kw3715">ranges::<span class="me2">zip_view</span></span></a></span>,<br><span class="mw-geshi cpp source-cpp"><a href="./ranges/zip_transform_view.html"><span class="kw3713">ranges::<span class="me2">zip_transform_view</span></span></a></span>,<br><span class="mw-geshi cpp source-cpp"><a href="./ranges/adjacent_view.html"><span class="kw3678">ranges::<span class="me2">adjacent_view</span></span></a></span>,<br><span class="mw-geshi cpp source-cpp"><a href="./ranges/adjacent_transform_view.html"><span class="kw3675">ranges::<span class="me2">adjacent_transform_view</span></span></a></span>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=16" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;ranges&gt;</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">auto</span> <span class="kw4">const</span> ints <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="nu0">4</span>, <span class="nu0">5</span><span class="br0">}</span><span class="sy4">;</span>
+    <span class="kw4">auto</span> even <span class="sy1">=</span> <span class="br0">[</span><span class="br0">]</span><span class="br0">(</span><span class="kw4">int</span> i<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="nu0">0</span> <span class="sy1">==</span> i <span class="sy2">%</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+    <span class="kw4">auto</span> square <span class="sy1">=</span> <span class="br0">[</span><span class="br0">]</span><span class="br0">(</span><span class="kw4">int</span> i<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> i <span class="sy2">*</span> i<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// the "pipe" syntax of composing the views:</span>
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> i <span class="sy4">:</span> ints <span class="sy3">|</span> std<span class="sy4">::</span><a href="./ranges/filter_view.html"><span class="kw2939">views::<span class="me2">filter</span></span></a><span class="br0">(</span>even<span class="br0">)</span> <span class="sy3">|</span> std<span class="sy4">::</span><a href="./ranges/transform_view.html"><span class="kw2941">views::<span class="me2">transform</span></span></a><span class="br0">(</span>square<span class="br0">)</span><span class="br0">)</span>
+        <a href="./io/cout.html"><span class="kw1776">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
+&nbsp;
+    <a href="./io/cout.html"><span class="kw1776">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// a traditional "functional" composing syntax:</span>
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> i <span class="sy4">:</span> std<span class="sy4">::</span><a href="./ranges/transform_view.html"><span class="kw2941">views::<span class="me2">transform</span></span></a><span class="br0">(</span>std<span class="sy4">::</span><a href="./ranges/filter_view.html"><span class="kw2939">views::<span class="me2">filter</span></span></a><span class="br0">(</span>ints, even<span class="br0">)</span>, square<span class="br0">)</span><span class="br0">)</span>
+        <a href="./io/cout.html"><span class="kw1776">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">0 4 16
+0 4 16</pre></div></div> 
+</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=17" title="Edit section: Defect reports">edit</a>]</span> <span class="mw-headline" id="Defect_reports">Defect reports</span></h3>
+<p>The following behavior-changing defect reports were applied retroactively to previously published C++ standards.
+</p>
+<table class="dsctable" style="font-size:0.8em">
+<tbody><tr>
+<th>DR
+</th>
+<th>Applied to
+</th>
+<th>Behavior as published
+</th>
+<th>Correct behavior
+</th></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://cplusplus.github.io/LWG/issue3509">LWG 3509</a><br>(<a rel="nofollow" class="external text" href="https://wg21.link/P2281R1">P2281R1</a>)
+</td>
+<td>C++20
+</td>
+<td>it was unclear how range adaptor objects bound trailing arguments
+</td>
+<td>they are bound<br>by value
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://cplusplus.github.io/LWG/issue3948">LWG 3948</a>
+</td>
+<td>C++23
+</td>
+<td><code><i>possibly-const-range</i></code> and <code><i>as-const-pointer</i></code><br>were not declared <span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span></span>
+</td>
+<td>declared <span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span></span>
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://cplusplus.github.io/LWG/issue4027">LWG 4027</a>
+</td>
+<td>C++23
+</td>
+<td><code><i>possibly-const-range</i></code> would not add const-qualification<br>for ranges that has already modeled <a href="./ranges/constant_range.html" title="cpp/ranges/constant range"><code>constant_range</code></a>
+</td>
+<td>adds const-qualification<br>for such ranges
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://cplusplus.github.io/LWG/issue4112">LWG 4112</a>
+</td>
+<td>C++20
+</td>
+<td><code><i>has-arrow</i></code> did not require <span class="t-c"><span class="mw-geshi cpp source-cpp">i</span></span> to be const-qualified
+</td>
+<td>requires
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=edit&amp;section=18" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<ul><li> <a href="./iterator.html" title="cpp/iterator">Iterator library</a>
+</li><li> <a href="./algorithm/ranges.html" title="cpp/algorithm/ranges">Constrained algorithms</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 34725/1000000
+Preprocessor generated node count: 25546/1000000
+Post‐expand include size: 783488/4194304 bytes
+Template argument size: 168341/4194304 bytes
+Highest expansion depth: 23/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:17956-0!*!0!!en!*!* and timestamp 20250418073318 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;oldid=180956">https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;oldid=180956</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./ranges.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/ranges" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/ranges" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;oldid=180956" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div id="cpp-languagess" hidden="">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/ranges" title="cpp/ranges" lang="es" hreflang="es">Español</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/ranges" title="cpp/ranges" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/ranges" title="cpp/ranges" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/ranges" title="cpp/ranges" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 20 February 2025, at 03:41.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 18.042 secs. -->
+	
+
+
+</body></html>

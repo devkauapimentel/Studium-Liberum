@@ -1,0 +1,12 @@
+
+div { padding: 10px; }
+@scope (.light-scheme) {
+  :scope { background-color: plum; }
+  a { color: indigo; }
+}
+@scope (.dark-scheme) {
+  :scope { background-color: indigo; color: antiquewhite; }
+  a { color: plum; }
+}
+
+button.copy {display:none !important}

@@ -1,0 +1,79 @@
+<html>
+  <!-- Online page at https://9c6316ec7840bd32b5114057df60b163ea2ca1b1.mdnplay.dev/en-US/docs/Web/API/Media_Capabilities_API/Using_the_Media_Capabilities_API/runner.html?uuid=9c6316ec7840bd32b5114057df60b163ea2ca1b1&state=rVZbb%2BJGFP4rR9Y%2BgEqNIYRliUPVRnmItGofNupLqRRjj%2FG0Y49lj4EU%2Bb%2F3zMUXbtOtlDyQ4dzPdw7fzNFJRMqcpePHvEhX6wzAz9U%2FgG%2BEkVDAO68K2NGIcAh5FtNtVQSC8gyCLIKY4gevBNAYREJL2BR8X5ICyirPeSFKlBIdLuQRCUfKa58QFBeAAh7RbAt7yhhsCJQp5yJRNjnfowWJYxpSkomlKm2sa%2FMrZmr0GTUneQ42hAE28rh2VLa1szJNBDq9P1Y2nUup1TTquTRKVPNcdrpS3Y%2F3ZJM%2B6Djl4y5f%2BGOj%2Fk6HL%2F%2FpkOaz1j7YhZP%2F7eDOpp53N7P40WwXMBpdWPhjDUWD67gF9ibEJf2H9BGW360AG4fLoj7PF95hdjf1LIXfLWbeYTqZ22ym93PvMJnNbDaTL1O08RZWmynW89lWDui%2BSLRaeN5h7tmizbHwmTUfdn6Y2qoGHFpFEEI4ACKY8Yx8xATjIkgJ%2FppPxtgKrbPsu15p2dbtvRUK63wtm91NZHL%2FEdhsqDhHxoisuHRul%2BXPPOueTO%2Bt6sUV7a2%2B%2FLFhyJbMfZrlSNPiPZdrtKmE4BmuU7NXr6QUmsB%2FV0z%2F1Gd6tFO9ieL9Ryrw29gkkcH9sbk58FgxbViQsmKiRBBMIc7ICcsSrxlG4Sh906DY0mwJE5I%2BrLNaWfylDIiANIRHbaZY7qSWJRzrkUwGgOW8iMFQW2LI0A0Lgtif2A%2BGD61aYJPSQ0maKFd9mph44SEukrewooiHVYpXkbsl4pkRefzl%2FSUaNMQ2dBWabpkzKlB6QFGX%2FLKVpkn5J%2BeyxJ92TBlGGjVi5bTszFRFAhO%2FKvvbFZm7zJQ06vz3NBLJUrX0h%2FdnT5EQuk2E0Uz6GrPStnTt1l8mbInC5t9jk%2FMItTnVJ1NrRtlAI9fGQIOwrp21Y5DPgh3dBoIXbkoiGjwFebChOB9KyiaD2zxDXrKYD66Oatja4rslGwz0gg%2FhcXU2G9wWXPHeruj1Mt1ip4xiiz145G7s0OFqWi16uJg%2B2r%2F9DJ%2BO6OqqgdYH%2FUUPsR4ZXW9ZaggESs8Sux3wraKO81K9wHQMM9oaNijWz8DTMBoL1zz4SAQ%2FIf7w8k1%2BypXG06%2B%2FvcqZdCmgtR69XWnvB%2Bzv07EJrN%2BEZ1EBqUqHrc2rUT0tb0e7UrJ6Yj43L8yLDNcKP3uVumf5cPzIgTaqaKlx2PNkFLnpIJ7a6ZrSeyYVc4M8J1n0lFAWDRjt%2FOtuO8NAhMlgQIqCFx%2BznR%2FSztuTpCO1UDe3%2FHRZRVKQPQ4UVCtLdFWH%2Bu17IWnZQvLGOrvdQXOpDd0gip53qPhKSyyEFJJGGQ3%2FRj5Wt4e8bmRcvKqQBVKirjP8uTn1vw%3D%3D&code=56988829& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <form>
+  <p>
+    Select your video configuration and find out if this browser supports the
+    codec, and whether decoding will be smooth and power efficient:
+  </p>
+  <ul>
+    <li>
+      <label for="codec">Select a codec</label>
+      <select id="codec">
+        <option>video/webm; codecs=vp8</option>
+        <option>video/webm; codecs=vp9</option>
+        <option>video/mp4; codecs=avc1</option>
+        <option>video/mp4; codecs=avc1.420034</option>
+        <option>invalid</option>
+      </select>
+    </li>
+    <li>
+      <label for="size">Select a size</label>
+      <select id="size">
+        <option>7680x4320</option>
+        <option>3840x2160</option>
+        <option>2560x1440</option>
+        <option>1920x1080</option>
+        <option>1280x720</option>
+        <option selected="">800x600</option>
+        <option>640x480</option>
+        <option>320x240</option>
+        <option value=" x ">none</option>
+      </select>
+    </li>
+    <li>
+      <label for="framerate">Select a framerate</label>
+      <select id="framerate">
+        <option>60</option>
+        <option>50</option>
+        <option>30</option>
+        <option>24</option>
+        <option selected="">15</option>
+      </select>
+    </li>
+    <li>
+      <label for="bitrate">Select a bitrate</label>
+      <select id="bitrate">
+        <option>4000</option>
+        <option>2500</option>
+        <option>800</option>
+      </select>
+    </li>
+  </ul>
+  <p>
+    <input type="button" value="Test this Video Configuration" id="try-it">
+  </p>
+</form>
+
+<ul id="results"></ul>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../js_3.js'></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+
+          let span = document.querySelector("span");
+let classes = span.classList;
+span.classList.add("x");
+span.textContent = `span classList is "${classes}"`;
+;
+        

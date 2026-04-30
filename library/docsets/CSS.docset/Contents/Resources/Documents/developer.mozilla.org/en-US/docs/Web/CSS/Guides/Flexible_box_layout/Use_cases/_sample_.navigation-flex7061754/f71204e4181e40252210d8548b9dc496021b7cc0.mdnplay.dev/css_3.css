@@ -1,0 +1,7 @@
+
+nav { border: 2px solid rgb(238, 238, 238); }
+nav ul { list-style: none; margin: 0px; padding: 0px; display: flex; }
+nav a { text-decoration: none; color: black; border: 2px solid rgb(96, 139, 168); border-radius: 5px; background-color: rgba(96, 139, 168, 0.2); padding: 10px; display: block; }
+nav li { flex: 1 1 auto; }
+
+button.copy {display:none !important}

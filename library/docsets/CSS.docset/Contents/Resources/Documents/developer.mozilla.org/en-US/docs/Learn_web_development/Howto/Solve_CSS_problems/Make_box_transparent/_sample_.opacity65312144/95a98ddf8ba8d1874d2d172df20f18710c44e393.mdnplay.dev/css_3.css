@@ -1,0 +1,8 @@
+
+body { font-family: sans-serif; }
+.wrapper { height: 200px; display: flex; gap: 20px; background-image: url("../mdn.github.io/shared-assets/images/examples/balloon.jpg"); background-repeat: no-repeat; background-size: cover; padding: 20px; }
+.box { flex: 1 1 0%; border: 5px solid black; border-radius: 0.5em; font-size: 140%; padding: 20px; }
+.box1 { background-color: black; color: white; opacity: 0.5; }
+.box2 { background-color: rgba(0, 0, 0, 0.5); color: white; }
+
+button.copy {display:none !important}

@@ -1,0 +1,6 @@
+
+.quote { quotes: "\"" "\"" "'" "'"; }
+.quote::before { content: open-quote; }
+.quote::after { content: close-quote; }
+
+button.copy {display:none !important}

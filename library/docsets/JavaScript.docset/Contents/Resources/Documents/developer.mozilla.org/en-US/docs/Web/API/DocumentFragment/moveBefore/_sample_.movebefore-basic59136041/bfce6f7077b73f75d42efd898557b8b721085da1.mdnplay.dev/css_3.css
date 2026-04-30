@@ -1,0 +1,6 @@
+
+#section1, #section2, #mover { display: inline-block; width: 200px; height: 30px; border: 5px solid rgba(0, 0, 0, 0.25); margin-top: 10px; }
+#section1, #section2 { background-color: hotpink; }
+#mover { background-color: orange; }
+
+button.copy {display:none !important}

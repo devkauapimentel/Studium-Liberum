@@ -1,0 +1,6 @@
+
+img { width: 49%; }
+img { filter: drop-shadow(magenta 2px 2px 0px) drop-shadow(royalblue -2px -2px 0px) drop-shadow(lime 2px 2px 0px) drop-shadow(darkorange -2px -2px 0px); }
+img + img { filter: none; }
+
+button.copy {display:none !important}

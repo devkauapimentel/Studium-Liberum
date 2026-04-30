@@ -1,0 +1,7 @@
+
+body { font-family: "Benton Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 2em; }
+video::backdrop { background-color: rgb(68, 68, 136); }
+button { display: block; }
+kbd { border: 2px solid rgb(205, 205, 205); border-radius: 3px; box-shadow: rgb(205, 205, 205) 0px -1px 0px 0px inset; font-size: 0.825rem; padding: 0.25rem; }
+
+button.copy {display:none !important}

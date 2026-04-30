@@ -1,0 +1,64 @@
+<html>
+  <!-- Online page at https://9781e1dd81b0355e515adb99feb98f948aa66802.mdnplay.dev/en-US/docs/Web/CSS/Reference/Values/filter-function/invert/runner.html?uuid=9781e1dd81b0355e515adb99feb98f948aa66802&state=zVVLa9wwEP4rQqEkC1krpJSA4%2B6hhYSeWtqSky9aS2splWVXkjcbQv57R%2FJjZbcb2ECgF2tG881TM%2BMnLFylcIozuy2R4LIU7mOOL3K8yjVC2UYqxw2SDC6l3nLjeomX8c911dSaa%2FfTUG033PSiILxpdfEduceGg66ja8VzjMJ5R1XLrXeTvEfgCpG53u0r9T4dp5eRQzmAJGQOTEagNP4MtjqpE5yywYiL0nZilRU146uuWGeLjAQWdeYyAoAY%2FOPuthch%2FruVW6ogkr9QX40spaYKyYqWPBIDOcS7Dylz65o9%2FjM6NtLAyarccwgVilpfJMj2JkSU41hsTQFC4VxjU0IqppNSOtGuE1kTK6jhbAn63FkSgrSE72jVKCAaU5eGW7tsjGR8uVG0TO6bcmqeKt933zwCecT0dUkU%2BSwL37ehPYEApbGFLy%2F9Sz9I5sTI1fAmG1U%2FwMVWWhlaZBVHMel3MPhl2vJ72AutH4FeNQIz%2FaNHYaZ%2F5EiM2gdHI0IMIxJdhsefmhKGb96ydRDaKal%2FpW%2Fvp0sYfLRGnZ2ejA1yuphVcNgZA3e4fWdD%2BJ9MWbxX%2BmUCVL%2F%2F8DkurIV%2FRtJPy5NHdnSK%2BsV3dfFucZ3r51znOhlXyhTqq5jjk%2BG%2F0uOdOIcP66ANZUzqMkUfml0nBu%2F33jmcsPIqDqTyI4%2Bf%2FwA%3D&code=56635914& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <svg height="0">
+  <filter id="invert">
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.3 0"></feFuncR>
+      <feFuncG type="table" tableValues="0.3 0"></feFuncG>
+      <feFuncB type="table" tableValues="0.3 0"></feFuncB>
+    </feComponentTransfer>
+  </filter>
+</svg>
+<table>
+  <thead>
+    <tr>
+      <th><code>invert()</code> filter</th>
+      <th>SVG filter equivalent</th>
+      <th>Original image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img alt="Pride flag" src="../../../../../../../../../mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg" class="svgFilter"></img>
+      </td>
+      <td>
+        <svg id="svg" height="220" width="220" overflow="visible">
+          <filter id="svgInvert">
+            <feComponentTransfer>
+              <feFuncR type="table" tableValues="0.3 0"></feFuncR>
+              <feFuncG type="table" tableValues="0.3 0"></feFuncG>
+              <feFuncB type="table" tableValues="0.3 0"></feFuncB>
+            </feComponentTransfer>
+          </filter>
+          <image href="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg" xlink:href="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg" filter="url('#svgInvert')"></image>
+        </svg>
+      </td>
+      <td>
+        <img alt="Pride flag" src="../../../../../../../../../mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"></img>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../../../js_3.js'></script>
+</body>
+</html>

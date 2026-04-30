@@ -1,0 +1,5 @@
+
+form { display: none; }
+output { display: block; white-space: pre-wrap; }
+
+button.copy {display:none !important}

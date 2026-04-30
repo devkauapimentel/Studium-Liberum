@@ -1,0 +1,4 @@
+
+div { width: 120px; height: 120px; margin: 10px; border: 10px solid blue; background-color: rgb(140, 255, 160); padding: 10px; mask-image: url("../mdn.github.io/shared-assets/images/examples/mask-star.svg"), url("../mdn.github.io/shared-assets/images/examples/mask-star.svg"), url("../mdn.github.io/shared-assets/images/examples/mask-star.svg"); -webkit-mask-position-x: left, right, center; -webkit-mask-position-y: top, top, bottom; mask-repeat: no-repeat; mask-origin: content-box, border-box; }
+
+button.copy {display:none !important}

@@ -1,0 +1,7 @@
+
+.container { width: 720px; height: 760px; display: grid; grid: auto-flow 190px / repeat(4, 180px); border-top: 1px solid rgb(216, 216, 216); border-left: 1px solid rgb(216, 216, 216); }
+.container > div { border-right: 1px solid rgb(216, 216, 216); border-bottom: 1px solid rgb(216, 216, 216); }
+.container div div { margin-left: 15px; width: 150px; height: 150px; background: url("./en-US/docs/Web/CSS/Reference/Values/blend-mode/br.png"), url("./en-US/docs/Web/CSS/Reference/Values/blend-mode/tr.png"); }
+.container div p { line-height: 30px; margin: 0px; color: rgb(163, 51, 51); text-align: center; }
+
+button.copy {display:none !important}

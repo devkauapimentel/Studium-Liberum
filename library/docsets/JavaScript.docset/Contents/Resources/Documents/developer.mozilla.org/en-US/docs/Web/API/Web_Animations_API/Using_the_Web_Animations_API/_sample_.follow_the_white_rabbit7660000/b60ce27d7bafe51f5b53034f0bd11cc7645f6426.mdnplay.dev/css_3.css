@@ -1,0 +1,9 @@
+
+#rabbit { background: url("./shared-assets/images/examples/web-animations/park5_rabbit.png") 0px 0px / 100% 100%; cursor: pointer; position: absolute; top: 15%; left: 60%; width: 14.64844%; padding-top: 31.00586%; }
+body { background: black; }
+.wrapper { max-width: 133.33vh; margin: 0px auto; }
+.page { background: rgb(67, 18, 54); height: 0px; overflow: hidden; padding-top: 75%; position: relative; text-indent: 100%; white-space: nowrap; }
+.foreground { height: 100%; background: url("./shared-assets/images/examples/web-animations/bg_park5_2.png") 100% 100% / 100% auto no-repeat; position: absolute; bottom: 0px; left: 0px; width: 100%; pointer-events: none; }
+.background { background: url("./shared-assets/images/examples/web-animations/bg_park5_1.png") 0px 0px / 100% auto no-repeat; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; pointer-events: none; }
+
+button.copy {display:none !important}

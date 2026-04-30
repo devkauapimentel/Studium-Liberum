@@ -1,0 +1,10 @@
+
+          function selectText() {
+  const input = document.getElementById("text-box");
+  input.focus();
+  input.setRangeText("ALREADY", 14, 17, "select");
+}
+
+document.querySelector("button").addEventListener("click", selectText);
+;
+        

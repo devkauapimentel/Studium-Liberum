@@ -1,0 +1,5 @@
+
+#container { margin: 3rem; background-color: rgb(255, 255, 204); border: 4px dashed black; }
+#contained { margin: 1rem; border-left: 24px solid black; padding: 0px 28px; overflow: auto; background-color: white; }
+
+button.copy {display:none !important}

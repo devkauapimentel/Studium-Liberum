@@ -1,0 +1,5 @@
+
+.transition { width: 100px; height: 100px; background: red; transition-property: transform, background; transition-duration: 2s; transition-delay: 1s; }
+.transition:hover { transform: rotate(90deg); background: none; }
+
+button.copy {display:none !important}

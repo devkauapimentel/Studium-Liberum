@@ -1,0 +1,283 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/algorithm/copy.html --><head><meta charset="utf-8"><title>Talk:cpp/algorithm/copy</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_6245.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_algorithm_copy skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Falgorithm%2Fcopy&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Falgorithm%2Fcopy" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/algorithm/copy.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./copy.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./copy.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./copy.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/copy&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/copy&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/copy&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./copy.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/algorithm/copy</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../algorithm.html" title="Talk:cpp/algorithm">algorithm</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Does std::copy/std::copy_if take into account if the output range is empty or smaller than the input range? The two sample implementations certainly do not.
+<a href="https://en.cppreference.com/mwiki/index.php?title=User:Azrael&amp;action=edit&amp;redlink=1" class="new" title="User:Azrael (page does not exist)">Azrael</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Azrael&amp;action=edit&amp;redlink=1" class="new" title="User talk:Azrael (page does not exist)">talk</a>) 22:49, 18 November 2015 (PST)
+</p>
+<dl><dd>No. It's the caller's responsibility. The output doesn't even have to be a range - e.g., an output-only iterator like <span class="t-lc"><a href="../../cpp/iterator/ostream_iterator.html" title="cpp/iterator/ostream iterator">std::ostream_iterator</a></span>. <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 23:40, 18 November 2015 (PST)
+</dd></dl>
+<dl><dd><dl><dd>Thanks for clarifying this. Very useful information. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Azrael&amp;action=edit&amp;redlink=1" class="new" title="User:Azrael (page does not exist)">Azrael</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Azrael&amp;action=edit&amp;redlink=1" class="new" title="User talk:Azrael (page does not exist)">talk</a>) 02:01, 19 November 2015 (PST)
+</dd></dl>
+</dd></dl>
+<p>The note mentions that for <a href="../../cpp/named_req/TriviallyCopyable.html" title="cpp/named req/TriviallyCopyable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">TriviallyCopyable</span></a> value types, <code>std::copy</code> uses bulk copy functions like <span class="t-lc"><a href="../../cpp/string/byte/memmove.html" title="cpp/string/byte/memmove">std::memmove</a></span>. My problem here is that <code>std::copy</code> does not check for overlapping ranges whereas <span class="t-lc"><a href="../../cpp/string/byte/memmove.html" title="cpp/string/byte/memmove">std::memmove</a></span> does. Shouldn't this have been <span class="t-lc"><a href="../../cpp/string/byte/memcpy.html" title="cpp/string/byte/memcpy">std::memcpy</a></span> instead? <small><span class="autosigned">—&nbsp;Preceding unsigned comment added by <a href="https://en.cppreference.com/mwiki/index.php?title=User:Hgsilverman&amp;action=edit&amp;redlink=1" class="new" title="User:Hgsilverman (page does not exist)">Hgsilverman</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Hgsilverman&amp;action=edit&amp;redlink=1" class="new" title="User talk:Hgsilverman (page does not exist)">talk</a> • <a href="https://en.cppreference.com/w/Special:Contributions/Hgsilverman" title="Special:Contributions/Hgsilverman">contribs</a>) </span></small>
+</p>
+<dl><dd>No. memcpy requires no overlap whatsoever. The non-ExecutionPolicy std::copy permits overlap in one direction (but not the other). <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 23:18, 9 December 2017 (PST)
+<dl><dd>Thanks, for the answer, after reviewing the <span class="t-lc"><a href="../../cpp/string/byte/memcpy.html" title="cpp/string/byte/memcpy">std::memcpy</a></span> found out that the behavior of <span class="t-lc"><a href="../../cpp/string/byte/memcpy.html" title="cpp/string/byte/memcpy">std::memcpy</a></span> on overlapping objects is undefined, so <span class="t-lc"><a href="../../cpp/string/byte/memcpy.html" title="cpp/string/byte/memcpy">std::memcpy</a></span> is not appropriate for this use. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Hgsilverman&amp;action=edit&amp;redlink=1" class="new" title="User:Hgsilverman (page does not exist)">Hgsilverman</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Hgsilverman&amp;action=edit&amp;redlink=1" class="new" title="User talk:Hgsilverman (page does not exist)">talk</a>) 23:49, 9 December 2017 (PST)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/copy&amp;action=edit&amp;section=1" title="Edit section: Possible implementation">edit</a>]</span> <span class="mw-headline" id="Possible_implementation"> Possible implementation </span></h2>
+<p>Regarding the last couple edits. I see no reason to not prefer the simpler version that used post increment, the purpose of this website is to explain and provide clarity, not micro-optimised implementations that are inevitably not going to be any good compared to real stdlib implementations anyway. W.r.t. correctness, output iterators satisfy <code>*r++ = o;</code> &lt;-&gt; <code>*r = o; ++r;</code>, and input iterators satisfy <code>*r++</code> &lt;-&gt; <code>value_type x = *r; ++r; x;</code>, so the equivalence transformation from post-increment to pre-increment is the same as the edit just done by the revert, hence the correctness isn't an issue. --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 03:06, 1 April 2023 (PDT)
+</p>
+<dl><dd>In general, I do agree. But still there are a few points to consider:
+</dd></dl>
+<ol><li> A UDT iterator can be implemented in cpp file, especially if it is not a class template, and be unavailable in source code. In such case even LTO can be helpless. Imagine a "heavy" temporary object with non-trivial ctor that is created inside a binary.
+</li><li> Theoretically, an imaginary user's iterator (UDT) can provide only a pre-increment. This is non-conforming (UB) in case of "STL" algos, but nonetheless, this accepts a bigger set of UDT (this is more useful for third-part libraries though).
+</li><li> Expressiveness/teachability of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>it<span class="sy2">++</span></span></span> vs <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>it<span class="sy4">;</span> <span class="sy2">++</span>it</span></span> is a bit questionable.)
+</li><li> Semantics of pre- and post- increments are obviously different. In short, we'd better to use <i>post</i> only when we really need it.
+</li><li> "Debugability" of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>it<span class="sy4">;</span> <span class="sy2">++</span>it</span></span> is slightly better.
+</li></ol>
+<dl><dd>These all are non-critical, but are the usual reasons why some people prefer pre-increments.) --<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 06:18, 1 April 2023 (PDT). 1 April.
+</dd></dl>
+<dl><dd><dl><dd> Point (3) there I think is a respectable counterpoint (again, for the purposes of cppreference), and we have been consistent in the approach of using pre-increment almost exclusively. Point (4) is weird; you never really need post-increment, and if we should never use it, then it would have no reason to exist. The iterator requirements I pointed out would argue that the semantics of pre- and post- increment are the same w.r.t. the specific way they're being used here, that's why those requirements exist after all. The other points I agree with, but I don't think are relevant to cppreference. So for me it comes down to the aesthetic readability of the post-increment version vs the expressive/teachable readability of pre-increment. Seeing as both sides are subjective, I suppose it would be reasonable to defer to the consistency we have of using pre-increment as house style.
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd> I'd be interested to hear if anyone else wanted to weigh in on this --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 09:33, 1 April 2023 (PDT)
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd>As to the #4 - maybe the word "semantics" is not quite precise here, but canonically, a <i>post</i>-operation is a factory which creates a copy of current iterator in old state, while promoting the state of original iterator. When you do not need the object in the previous state, then why to use the post-operation? The main reason is obviously a shorthand-ness/expressiveness that roots in the venerable <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>ptr<span class="sy2">++</span></span></span>-idiom, which is always optimal in pure C, but obviously may have overhead in C++, and thus is not a good default style in the latter.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd>Others people opinion would be interesting.) --<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 12:33, 1 April 2023 (PDT). 1 April.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 262/1000000
+Preprocessor generated node count: 767/1000000
+Post‐expand include size: 2031/4194304 bytes
+Template argument size: 335/4194304 bytes
+Highest expansion depth: 10/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:14533-0!*!0!*!*!*!* and timestamp 20241022012051 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/copy&amp;oldid=149933">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/copy&amp;oldid=149933</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./copy.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/algorithm/copy" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/algorithm/copy" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/copy&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/copy&amp;oldid=149933" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/copy&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 1 April 2023, at 12:33.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.336 secs. -->
+	
+
+
+</body></html>

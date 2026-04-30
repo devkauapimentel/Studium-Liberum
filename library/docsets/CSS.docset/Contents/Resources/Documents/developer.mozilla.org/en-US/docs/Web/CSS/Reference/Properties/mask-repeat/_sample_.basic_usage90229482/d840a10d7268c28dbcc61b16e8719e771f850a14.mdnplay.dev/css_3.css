@@ -1,0 +1,4 @@
+
+div { width: 250px; height: 250px; background-image: linear-gradient(red, blue); mask-image: url("./shared-assets/images/examples/mask-star.svg"); mask-size: 100px 100px; mask-repeat: round space; }
+
+button.copy {display:none !important}

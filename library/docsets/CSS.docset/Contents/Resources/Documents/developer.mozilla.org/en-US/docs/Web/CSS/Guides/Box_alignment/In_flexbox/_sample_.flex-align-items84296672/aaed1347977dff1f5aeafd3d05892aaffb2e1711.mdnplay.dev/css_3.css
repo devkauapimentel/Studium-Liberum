@@ -1,0 +1,7 @@
+
+body { font-family: sans-serif; }
+.box > * { padding: 20px; border: 2px solid rgb(96, 139, 168); border-radius: 5px; background-color: rgba(96, 139, 168, 0.2); }
+.box { display: flex; align-items: flex-start; justify-content: space-between; border: 2px dotted rgb(96, 139, 168); }
+.box :first-child { align-self: center; }
+
+button.copy {display:none !important}

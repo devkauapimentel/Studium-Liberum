@@ -1,0 +1,15 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/storage_api/storage_quotas_and_eviction_criteria/index.md
+
+# Original Wiki contributors
+holmberd
+Sheppy
+jamesdhurd
+chrisdavidmills
+johannh
+shawn_huang
+Brettz9
+fscholz
+agektmr
+Sole
+jryans

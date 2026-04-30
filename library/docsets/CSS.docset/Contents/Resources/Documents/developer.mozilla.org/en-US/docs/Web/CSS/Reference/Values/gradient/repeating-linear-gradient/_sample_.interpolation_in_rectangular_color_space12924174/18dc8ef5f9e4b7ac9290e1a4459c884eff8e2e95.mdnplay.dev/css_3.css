@@ -1,0 +1,5 @@
+
+body { width: 100vw; height: 100vh; }
+body { background: repeating-linear-gradient(90deg in oklab, blue, red 100px); }
+
+button.copy {display:none !important}

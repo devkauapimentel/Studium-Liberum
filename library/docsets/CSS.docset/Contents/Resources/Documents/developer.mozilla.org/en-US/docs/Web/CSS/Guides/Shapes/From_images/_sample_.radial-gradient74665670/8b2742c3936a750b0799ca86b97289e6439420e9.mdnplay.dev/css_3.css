@@ -1,0 +1,5 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: 1.5; font-family: sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+.box::before { content: ""; float: left; height: 250px; width: 400px; background-image: radial-gradient(closest-side, rebeccapurple, blue 50%, transparent); shape-outside: radial-gradient(closest-side, rebeccapurple, blue 50%, transparent); shape-image-threshold: 0.3; }
+
+button.copy {display:none !important}

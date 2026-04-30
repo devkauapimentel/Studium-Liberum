@@ -1,0 +1,97 @@
+<html>
+  <!-- Online page at https://fda717c53fa1d7007f05035665ed8493a0b3ee33.mdnplay.dev/en-US/docs/Web/CSS/Reference/At-rules/@starting-style/runner.html?uuid=fda717c53fa1d7007f05035665ed8493a0b3ee33&state=rVRRb9MwEP4rhyVYOzVtN2lCSssEDyD6gpDGAxLZgxtfWjPHNrbTrUz975ydrOu6lQ0J5SG%2By31333138S1bhlqxnE3nTQhGgzXWrNAF7hYY3hWsXneegp1fLM01hCXeBU1HLei80FMhV3duQvEmmIKBFHsZZkc1cPja2q9gBn5pGiWAa1nzgMPpiPJQOjZgpfdEK7KD20IDVEaHrOK1VOscCvYZ1QqDLHnBBmR%2BcJKrePRc%2B8yjk9Wk0JtCF%2FpHV%2F4y7w6ZsajbpMbyUgZKeDKJZnCEroyrc%2FAlV%2Fi9d9J%2FlGaHjpe%2FkbDDU4d1SmC5EFIvyDe2N5MIAxgdwyepuQIfqEUwVZIQb2To2pYk%2B%2FHoAZ3xATrjfpc0fZIRmkdzC4Xx8K0ftK4tfNcZW1C8jQOulLnOhPSlw4BdBJn2QMSk6%2Bfjr0auiJAOQHN%2BSCdCnsSmHpOUlGGmS9UIBF4FdEmQA2NyjcKEfE%2FyuUDiZj6syZem8LfZPpLzoKAAm3tm37at0Izd7rofeZjz8ko4YxOj%2B%2BL51p8qR2vhTKNFVhplXN4WttyRYpM9vZ4V%2FcWD2y%2BbQv%2FTyJ4W%2BvnG3WLeG0N8RnB69nr7NxGjL%2BjjOKH3pg%2FSgzYBfGOtcQFFkt56bITJUGFNtH2hvQFvsZTVmi4RWgctuDIaYW8z5sqUV8N%2FXZr9Xl4yxnZt6LL6Ge8qetO21EhHJRfLwDZ%2FAA%3D%3D&code=38567840& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;button popovertarget="mypopover"&gt;Show the popover&lt;/button&gt;
+&lt;div popover="auto" id="mypopover"&gt;I'm a Popover! I should animate.&lt;/div&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>html {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+[popover]:popover-open {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+[popover] {
+  font-size: 1.2rem;
+  padding: 10px;
+
+  /* Final state of the exit animation */
+  opacity: 0;
+  transform: scaleX(0);
+
+  transition:
+    opacity 0.7s,
+    transform 0.7s,
+    overlay 0.7s allow-discrete,
+    display 0.7s allow-discrete;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+
+/* Include after the [popover]:popover-open rule */
+@starting-style {
+  [popover]:popover-open {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+/* Transition for the popover's backdrop */
+[popover]::backdrop {
+  background-color: transparent;
+  transition:
+    display 0.7s allow-discrete,
+    overlay 0.7s allow-discrete,
+    background-color 0.7s;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+
+[popover]:popover-open::backdrop {
+  background-color: rgb(0 0 0 / 25%);
+}
+
+/* Nesting (&amp;) is not supported for pseudo-elements
+so specify a standalone starting-style block. */
+@starting-style {
+  [popover]:popover-open::backdrop {
+    background-color: transparent;
+  }
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code></code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=fda717c53fa1d7007f05035665ed8493a0b3ee33&amp;state=rVRRb9MwEP4rhyVYOzVtN2lCSssEDyD6gpDGAxLZgxtfWjPHNrbTrUz975ydrOu6lQ0J5SG%2By31333138S1bhlqxnE3nTQhGgzXWrNAF7hYY3hWsXneegp1fLM01hCXeBU1HLei80FMhV3duQvEmmIKBFHsZZkc1cPja2q9gBn5pGiWAa1nzgMPpiPJQOjZgpfdEK7KD20IDVEaHrOK1VOscCvYZ1QqDLHnBBmR%2BcJKrePRc%2B8yjk9Wk0JtCF%2FpHV%2F4y7w6ZsajbpMbyUgZKeDKJZnCEroyrc%2FAlV%2Fi9d9J%2FlGaHjpe%2FkbDDU4d1SmC5EFIvyDe2N5MIAxgdwyepuQIfqEUwVZIQb2To2pYk%2B%2FHoAZ3xATrjfpc0fZIRmkdzC4Xx8K0ftK4tfNcZW1C8jQOulLnOhPSlw4BdBJn2QMSk6%2Bfjr0auiJAOQHN%2BSCdCnsSmHpOUlGGmS9UIBF4FdEmQA2NyjcKEfE%2FyuUDiZj6syZem8LfZPpLzoKAAm3tm37at0Izd7rofeZjz8ko4YxOj%2B%2BL51p8qR2vhTKNFVhplXN4WttyRYpM9vZ4V%2FcWD2y%2BbQv%2FTyJ4W%2BvnG3WLeG0N8RnB69nr7NxGjL%2BjjOKH3pg%2FSgzYBfGOtcQFFkt56bITJUGFNtH2hvQFvsZTVmi4RWgctuDIaYW8z5sqUV8N%2FXZr9Xl4yxnZt6LL6Ge8qetO21EhHJRfLwDZ%2FAA%3D%3D&amp;code=38567840&amp;" class="leave">Open in Playground</a>
+          <a href="https://fda717c53fa1d7007f05035665ed8493a0b3ee33.mdnplay.dev/en-US/docs/Web/CSS/Reference/At-rules/@starting-style/runner.html?state=rVRRb9MwEP4rhyVYOzVtN2lCSssEDyD6gpDGAxLZgxtfWjPHNrbTrUz975ydrOu6lQ0J5SG%2By31333138S1bhlqxnE3nTQhGgzXWrNAF7hYY3hWsXneegp1fLM01hCXeBU1HLei80FMhV3duQvEmmIKBFHsZZkc1cPja2q9gBn5pGiWAa1nzgMPpiPJQOjZgpfdEK7KD20IDVEaHrOK1VOscCvYZ1QqDLHnBBmR%2BcJKrePRc%2B8yjk9Wk0JtCF%2FpHV%2F4y7w6ZsajbpMbyUgZKeDKJZnCEroyrc%2FAlV%2Fi9d9J%2FlGaHjpe%2FkbDDU4d1SmC5EFIvyDe2N5MIAxgdwyepuQIfqEUwVZIQb2To2pYk%2B%2FHoAZ3xATrjfpc0fZIRmkdzC4Xx8K0ftK4tfNcZW1C8jQOulLnOhPSlw4BdBJn2QMSk6%2Bfjr0auiJAOQHN%2BSCdCnsSmHpOUlGGmS9UIBF4FdEmQA2NyjcKEfE%2FyuUDiZj6syZem8LfZPpLzoKAAm3tm37at0Izd7rofeZjz8ko4YxOj%2B%2BL51p8qR2vhTKNFVhplXN4WttyRYpM9vZ4V%2FcWD2y%2BbQv%2FTyJ4W%2BvnG3WLeG0N8RnB69nr7NxGjL%2BjjOKH3pg%2FSgzYBfGOtcQFFkt56bITJUGFNtH2hvQFvsZTVmi4RWgctuDIaYW8z5sqUV8N%2FXZr9Xl4yxnZt6LL6Ge8qetO21EhHJRfLwDZ%2FAA%3D%3D&amp;code=cad0ebc5-5892-4d1b-a2b8-44a605c37fbf" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

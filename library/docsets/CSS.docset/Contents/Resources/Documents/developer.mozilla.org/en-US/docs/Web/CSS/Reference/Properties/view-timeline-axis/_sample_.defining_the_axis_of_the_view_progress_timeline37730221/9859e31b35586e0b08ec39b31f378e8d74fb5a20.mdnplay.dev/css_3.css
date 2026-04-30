@@ -1,0 +1,21 @@
+
+.subject { width: 300px; height: 200px; margin: 0px auto; background-color: deeppink; }
+.content { width: 50%; height: 400px; margin-top: 30px; display: flex; flex-flow: column wrap; gap: 10px; }
+p { font-family: Helvetica, Arial, sans-serif; }
+p { font-size: 1.3rem; line-height: 1.4; }
+.animation { view-timeline-name: --subject-reveal; view-timeline-axis: x; animation-duration: 1ms; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: appear; animation-range: initial; animation-timeline: --subject-reveal; }
+@keyframes appear { 
+  0% { opacity: 0; transform: scaleX(0); }
+  100% { opacity: 1; transform: scaleX(1); }
+}
+@layer no-support {
+  body::before { display: block; text-align: center; padding: 1em; }
+  @supports not (view-timeline-axis: inherit) {
+  body::before { content: "Your browser doesn't support the `view-timeline-axis` property."; background-color: wheat; }
+}
+  @supports (view-timeline-axis: horizontal) {
+  body::before { content: "Your browser supports legacy values for the `view-timeline-axis` property."; background-color: yellow; }
+}
+}
+
+button.copy {display:none !important}

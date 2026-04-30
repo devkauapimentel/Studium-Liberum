@@ -1,0 +1,6 @@
+
+body { counter-reset: list-items 0; }
+li::before { counter-increment: list-items 1; content: counter(list-items) ": "; }
+.container { contain: style; }
+
+button.copy {display:none !important}

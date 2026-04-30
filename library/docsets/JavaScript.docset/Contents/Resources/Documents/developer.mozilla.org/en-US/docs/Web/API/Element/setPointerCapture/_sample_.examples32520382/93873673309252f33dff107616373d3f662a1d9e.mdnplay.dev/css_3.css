@@ -1,0 +1,4 @@
+
+div { width: 140px; height: 50px; display: flex; align-items: center; justify-content: center; background: rgb(255, 187, 238); touch-action: none; }
+
+button.copy {display:none !important}

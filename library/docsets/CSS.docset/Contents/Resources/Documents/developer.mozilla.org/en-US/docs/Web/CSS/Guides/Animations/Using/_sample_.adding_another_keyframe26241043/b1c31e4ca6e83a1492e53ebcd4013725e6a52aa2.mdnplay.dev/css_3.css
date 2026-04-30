@@ -1,0 +1,17 @@
+
+@keyframes grow-shrink { 
+  25%,75% { scale: 1; }
+  50% { scale: 2; color: magenta; }
+}
+p { animation-duration: 3s; animation-name: slide-in; }
+p span { display: inline-block; animation-duration: 3s; animation-name: grow-shrink; }
+@keyframes slide-in { 
+  0% { translate: 150vw; scale: 2 1; }
+  100% { translate: 0px; scale: 1; }
+}
+@keyframes grow-shrink { 
+  25%,75% { scale: 1; }
+  50% { scale: 2; color: magenta; }
+}
+
+button.copy {display:none !important}

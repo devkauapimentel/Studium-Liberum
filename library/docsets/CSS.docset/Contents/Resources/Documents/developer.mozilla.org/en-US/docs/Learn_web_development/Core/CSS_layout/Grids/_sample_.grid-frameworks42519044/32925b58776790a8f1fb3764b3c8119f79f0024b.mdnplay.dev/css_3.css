@@ -1,0 +1,11 @@
+
+.container { font-family: sans-serif; }
+header, footer { border-radius: 5px; padding: 10px; background-color: rebeccapurple; color: whitesmoke; text-align: center; }
+aside { border-right: 1px solid rebeccapurple; }
+.container { font-family: sans-serif; display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
+header { grid-column-start: 1; grid-column-end: 13; grid-row-start: 1; grid-row-end: auto; }
+main { grid-column-start: 4; grid-column-end: 13; grid-row-start: 2; grid-row-end: auto; }
+aside { grid-column-start: 1; grid-column-end: 4; grid-row-start: 2; grid-row-end: auto; }
+footer { grid-column-start: 1; grid-column-end: 13; grid-row-start: 3; grid-row-end: auto; }
+
+button.copy {display:none !important}

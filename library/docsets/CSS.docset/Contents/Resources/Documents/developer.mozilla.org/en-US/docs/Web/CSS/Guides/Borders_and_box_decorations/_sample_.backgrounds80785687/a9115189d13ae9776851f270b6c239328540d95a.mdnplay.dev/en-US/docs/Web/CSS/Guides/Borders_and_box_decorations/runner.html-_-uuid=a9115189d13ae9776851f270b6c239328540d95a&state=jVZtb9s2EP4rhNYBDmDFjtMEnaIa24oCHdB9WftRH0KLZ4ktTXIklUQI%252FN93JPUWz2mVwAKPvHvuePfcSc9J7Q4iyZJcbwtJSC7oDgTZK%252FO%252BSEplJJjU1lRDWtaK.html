@@ -1,0 +1,65 @@
+<html>
+  <!-- Online page at https://a9115189d13ae9776851f270b6c239328540d95a.mdnplay.dev/en-US/docs/Web/CSS/Guides/Borders_and_box_decorations/runner.html?uuid=a9115189d13ae9776851f270b6c239328540d95a&state=jVZtb9s2EP4rhNYBDmDFjtMEnaIa24oCHdB9WftRH0KLZ4ktTXIklUQI%2FN93JPUWz2mVwAKPvHvuePfcSc9J7Q4iyZJcbwtJSC7oDgTZK%2FO%2BSEplJJjU1lRDWtaKl1AkXouQ7YdaKQuEkrxUDLa20WBACK4tLC7yVdgkD1Q0kOWrAOoNow8LAkpHOHvNxzY6yZV2XMmX4FzuueSuRSfd8Q%2BUb2ZpXc%2FS2szSurqc5%2FNqltZ6Jtp6llb6OhyJNQF2YjEvzHTurdN5SUznVSSd6fQ8ZfJVvDMK%2Bcqz%2F1wLGMp4Y5GRJ3zfKcOQtvH4LN0jFpe6cTE212oIiLIa2sg60Lh308sHLlFcDyJ9QvFqPWwED7h1PeyEJuqjjFuCW4ebDiRukVUMhFFH%2FUE0iGcnFOjBEZuEK8T19hXG9Oqbqf5mrZ9%2BbvJ2avJ2lsnt1OR2lsm7qcm7WSYh1YMNSv83yld9KgfijNQJ5e4rXdZQft8pROhGnZfHiryYtPFo%2B1VVlQDiaiBo6KciU48joTqeMv6AMflnIZNlUlqLAxxF8uyBHzlzdUYw%2BF%2FvvFwDr2qXkY2%2FTdjZ0fJ7ZVQjWVoqoUxGtGgOp0f8QCvIYp4MaKCOyyoVXAI1aeUpB9ItHPLZampwTdbk6jf9tCS%2FrMPfZhNk4jlxsfwpkCIC9m5J5iJivEef%2B%2BHiY8Yyco1a%2FneDP1PtFmvi%2F1fET8B40WkDo37MDQLuFGuzmtpFqGUWKgPsgpx1I5WEPo7fBW3BEI1ZSy24Rkd1%2F36NK4LFli7d0wMXbUaK5BOIB3C8pEWyRPEPw6nwS4sJQAjD9yHUY%2FTK2h4Gx0LaVfl2KGoYHv32njssrcQ2d%2F0hNRWXWUgdoY1TI%2FRwM7%2B0Gq%2BBAAJ62G%2BNdXzf9ngZKfEJpjvFTqhkyh0c7MlJ9Jg6paPX0WH3%2Fu98asoYEiLr6zXq%2Ban6InWPHZV3SrDOzzFkH7vgm28CjBFHnEF0nLLYSO8JU2VzwLAu%2F23AtF%2BCZ2UWhe%2BXIvFciDZdTD8wiBpTmzDKpyYVuI8C%2FPLP9i%2B2GAeztynkvpFl97J1H8J3zxf%2F2bO4iJccwr60rsVnOaqgk%2Bj%2BMkyqu3PqkdH%2FBI%2Bof%2F%2FmOcQXLY766f7EiktE%2F%2FT1789eOdcGtgMRph9lGXnzPPV9PNc%2Bp758T%2BCwQsz7vj06DCz2xwdM0GccoIBOFn74xVfi8iQvPmkR9oxRfLGetTnN7l3gB87UAyBFhKdQcvwP&code=80785687& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <p>
+  <label for="corner-shape-choice">Choose a <code>superellipse()</code> value:</label>
+  <select id="corner-shape-choice">
+    <option>superellipse(infinity)</option>
+    <option>superellipse(5)</option>
+    <option>superellipse(3)</option>
+    <option>superellipse(2)</option>
+    <option>superellipse(1.5)</option>
+    <option>superellipse(1)</option>
+    <option>superellipse(0.5)</option>
+    <option>superellipse(0)</option>
+    <option>superellipse(-0.5)</option>
+    <option selected="">superellipse(-1)</option>
+    <option>superellipse(-1.5)</option>
+    <option>superellipse(-2)</option>
+    <option>superellipse(-3)</option>
+    <option>superellipse(-5)</option>
+    <option>superellipse(-infinity)</option>
+  </select>
+</p>
+<p>
+  <label for="radius">Choose a <code>border-radius</code> value:</label>
+  <input type="range" step="5" min="0" max="100" value="30" id="radius" list="tens">
+  <datalist id="tens">
+    <option value="0" label="0"></option>
+    <option value="20" label="20px"></option>
+    <option value="40" label="40px"></option>
+    <option value="60" label="60px"></option>
+    <option value="80" label="80px"></option>
+    <option value="100" label="100px"></option>
+  </datalist>
+</p>
+
+<p>
+  <input type="checkbox" id="check">
+  <label for="check">Toggle the box-shadow</label>
+</p>
+<div style="border-radius: 30px;"><pre>div {
+  corner-shape: superellipse(-1);
+  border-radius: 30px;
+}</pre></div>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../js_3.js'></script>
+</body>
+</html>

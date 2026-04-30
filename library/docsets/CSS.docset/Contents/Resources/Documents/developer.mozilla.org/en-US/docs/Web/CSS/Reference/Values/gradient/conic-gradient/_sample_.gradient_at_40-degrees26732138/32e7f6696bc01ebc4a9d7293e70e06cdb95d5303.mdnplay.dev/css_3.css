@@ -1,0 +1,5 @@
+
+div { width: 100px; height: 100px; }
+div { background-image: conic-gradient(from 40deg, white, black); }
+
+button.copy {display:none !important}

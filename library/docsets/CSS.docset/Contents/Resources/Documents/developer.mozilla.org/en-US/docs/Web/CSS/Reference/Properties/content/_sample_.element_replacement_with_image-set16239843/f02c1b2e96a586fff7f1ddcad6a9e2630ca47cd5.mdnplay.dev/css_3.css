@@ -1,0 +1,5 @@
+
+div { width: 100px; border: 1px solid lightgrey; }
+#replaced { content: image-set(url("./en-US/docs/Web/CSS/Reference/Properties/content/1x.png") 1x, url("./en-US/docs/Web/CSS/Reference/Properties/content/2x.png") 2x) / "DPI"; }
+
+button.copy {display:none !important}

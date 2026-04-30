@@ -1,0 +1,9 @@
+
+input { width: 350px; }
+@supports not (object-view-box: none) {
+  body::before { content: "Your browser does not support the 'object-view-box' property."; color: black; background-color: rgb(255, 205, 51); display: block; width: 100%; text-align: center; }
+}
+output { text-align: center; background-color: rgb(222, 222, 222); font-family: monospace; padding: 5px; display: block; }
+img { width: 350px; height: 350px; --x-position: 0; }
+
+button.copy {display:none !important}

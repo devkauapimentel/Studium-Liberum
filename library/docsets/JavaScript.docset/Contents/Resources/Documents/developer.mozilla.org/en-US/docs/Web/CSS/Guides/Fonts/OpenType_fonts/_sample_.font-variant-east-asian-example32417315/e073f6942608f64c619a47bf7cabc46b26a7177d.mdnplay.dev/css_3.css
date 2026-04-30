@@ -1,0 +1,12 @@
+
+@font-face { font-family: Kokoro; font-weight: normal; font-style: normal; font-width: normal; src: url("../mdn.github.io/shared-assets/fonts/kokoro/Kokoro.woff2") format("woff2"); }
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: normal; font-family: Kokoro, "Times New Roman", serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; margin: 20px; padding: 0px; }
+fieldset { margin-bottom: 1rem; }
+label { }
+.container > p { font-size: 4rem; margin: 1.5rem 0px; }
+.container1 * { font-variant-east-asian: normal; }
+.inactive.container1 * { font-variant-east-asian: jis78; }
+.container2 * { font-feature-settings: "jp78" 0; }
+.inactive.container2 * { font-feature-settings: "jp78"; }
+
+button.copy {display:none !important}

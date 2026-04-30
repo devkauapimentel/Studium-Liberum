@@ -1,0 +1,37 @@
+
+#picker-dialog[open] { position: fixed; top: 30%; z-index: 100; padding: 1rem; width: 70vw; background: rgb(221, 221, 221); display: flex; flex-flow: column; align-items: center; }
+#picker-dialog #color-opacity { width: 200px; }
+#picker-dialog > div:first-child { font-weight: bold; margin-bottom: 1rem; }
+#picker-dialog > div { width: max-content; margin: 0.4rem auto; white-space: nowrap; }
+#picker-dialog #color-text { width: 200px; }
+#picker-dialog label { margin: 1rem 0px; }
+#picker-dialog button { width: 100px; margin-top: 1rem; }
+dialog#picker-dialog table { width: fit-content; }
+#color-mixer { margin: 0.5rem; font-family: sans-serif; display: grid; grid-template-columns: 150px 1fr 1fr 150px; grid-template-areas: "color-one-label mix-label mix-label color-two-label" "color-background color-background color-background color-background" "percent-one percent-one percent-two percent-two" "color-space-label color-space interpolation-label interpolation" "mix-output-text mix-output-text mix-output-text mix-output-text"; }
+#color-mixer > * { padding: 0px; margin: 0px auto; }
+#color-mixer > :nth-child(1) { grid-row-start: color-one-label; grid-column-start: color-one-label; grid-row-end: color-one-label; grid-column-end: color-one-label; }
+#color-mixer > :nth-child(2) { grid-row-start: mix-label; grid-column-start: mix-label; grid-row-end: mix-label; grid-column-end: mix-label; }
+#color-mixer > :nth-child(3) { grid-row-start: color-two-label; grid-column-start: color-two-label; grid-row-end: color-two-label; grid-column-end: color-two-label; }
+#color-mixer > :nth-child(4) { grid-row-start: color-background; grid-column-start: color-background; grid-row-end: color-background; grid-column-end: color-background; background: linear-gradient(0deg, transparent 0px, transparent 38%, 47%, rgba(0, 0, 0, 0.7) 50%, white 50%, white 100%) 0% 0% / 100% 100%, conic-gradient(black 0deg, black 90deg, transparent 90deg, transparent 180deg, black 180deg, black 270deg, transparent 270deg, transparent 360deg) 0% 0% / 20px 20px; display: flex; align-items: center; margin: 0px; padding: 0px; border-radius: 10%; }
+#color-one { height: 100px; flex: 1 1 100%; border-radius: 20% 0px 0px 20%; cursor: pointer; border: medium; z-index: 1; box-shadow: grey -5px 5px 5px; background-color: coral; }
+#mixed-color { flex: 2 0.7 100%; height: 100px; }
+#color-two { height: 100px; flex: 1 1 100%; border-radius: 0px 20% 20% 0px; cursor: pointer; border: medium; z-index: 1; box-shadow: grey 5px 5px 5px; background-color: cyan; }
+#color-mixer > :nth-child(5) { grid-row-start: percent-one; grid-column-start: percent-one; grid-row-end: percent-one; grid-column-end: percent-one; width: 100%; display: flex; }
+#percentage-one-label, #percentage-two-label { width: 2rem; text-align: end; }
+#color-mixer > :nth-child(6) { grid-row-start: percent-two; grid-column-start: percent-two; grid-row-end: percent-two; grid-column-end: percent-two; width: 100%; display: flex; }
+#color-mixer > :nth-child(7) { grid-row-start: color-space-label; grid-column-start: color-space-label; grid-row-end: color-space-label; grid-column-end: color-space-label; margin: 0.5rem 0px 0px auto; }
+#color-mixer > :nth-child(8) { grid-row-start: color-space; grid-column-start: color-space; grid-row-end: color-space; grid-column-end: color-space; margin: 0.5rem auto 0px 1rem; }
+#color-mixer > :nth-child(9) { grid-row-start: interpolation-label; grid-column-start: interpolation-label; grid-row-end: interpolation-label; grid-column-end: interpolation-label; margin: 0.5rem 0px 0px auto; }
+#color-mixer > :nth-child(10) { grid-row-start: interpolation; grid-column-start: interpolation; grid-row-end: interpolation; grid-column-end: interpolation; margin: 0.5rem auto 0px 1rem; }
+#color-mixer > :nth-child(11) { grid-row-start: mix-output-text; grid-column-start: mix-output-text; grid-row-end: mix-output-text; grid-column-end: mix-output-text; margin: 1rem 0px; padding: 1rem 0px; text-align: center; background-color: rgb(223, 223, 222); font-family: monospace; }
+input[type="range"] { width: 80%; }
+label { margin: 1rem; }
+:focus { outline: 2px dashed purple; outline-offset: 1px; }
+table { width: 100%; }
+caption { font-family: sans-serif; }
+th { padding: 5px 15px; background-color: rgb(237, 237, 237); }
+td { background-color: rgb(222, 222, 222); font-family: monospace; padding: 5px; }
+#output-colors th { padding-right: 0px; width: 20%; }
+#output-colors td button { margin-right: 0.4rem; }
+
+button.copy {display:none !important}

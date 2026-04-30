@@ -1,0 +1,5 @@
+
+dd { width: 90px; border: 1px solid black; hyphens: auto; }
+dd#string { hyphenate-character: "="; }
+
+button.copy {display:none !important}

@@ -1,0 +1,387 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/io/basic_streambuf/overflow.html --><head><meta charset="utf-8"><title>Talk:cpp/io/basic streambuf/overflow</title><link rel="stylesheet" href="../../../css_1.css" type="text/css"><link rel="stylesheet" href="../../../css_2.css" type="text/css"><link rel="stylesheet" href="../../../css_3.css" type="text/css"><link rel="stylesheet" href="../../../css_4.css" type="text/css"><link rel="stylesheet" href="../../../css_7.css" type="text/css"><link rel="stylesheet" href="../../../css_5.css" type="text/css"><script type="text/javascript" src="../../../js_1.js"></script><script type="text/javascript" src="../../../js_2.js"></script><script type="text/javascript" src="../../../js_7819.js"></script><script type="text/javascript" src="../../../js_4.js"></script><script type="text/javascript" src="../../../js_5.js"></script><script type="text/javascript" src="../../../js_6.js"></script><script type="text/javascript" src="../../../js_7.js"></script><script type="text/javascript" src="../../../js_8.js"></script><script type="text/javascript" src="../../../js_9.js"></script><script type="text/javascript" src="../../../js_10.js"></script><script type="text/javascript" src="../../../js_11.js"></script><script type="text/javascript" src="../../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_io_basic_streambuf_overflow skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fio%2Fbasic+streambuf%2Foverflow&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fio%2Fbasic+streambuf%2Foverflow" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../../cpp/io/basic_streambuf/overflow.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./overflow.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./overflow.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./overflow.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/basic_streambuf/overflow&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/basic_streambuf/overflow&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/basic_streambuf/overflow&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./overflow.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/io/basic streambuf/overflow</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../../io.html" title="Talk:cpp/io">io</a>‎ | <a href="../basic_streambuf.html" title="Talk:cpp/io/basic streambuf">basic streambuf</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Maybe it would be useful to put links what is:
+</p><p>put area
+</p><p>output sequence
+</p><p>output area
+</p><p>Thank you
+</p><p>vlakov--<a href="https://en.cppreference.com/w/Special:Contributions/193.58.194.195" title="Special:Contributions/193.58.194.195">193.58.194.195</a> 21:20, 23 July 2014 (PDT)
+</p>
+<dl><dd> as in, additional links back to <a href="../../../cpp/io/basic_streambuf.html" title="cpp/io/basic streambuf">basic_streambuf</a>? --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 03:26, 24 July 2014 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> I am very sorry. I just googled: "output area" "output sequence" "put area" and it resulted to this page (overflow).&nbsp;:-). In future I will try to search a little more. So as I understand it all the 3 terms are designating the one "put area". I wanted to look a little closer to the overflow as in the new Stroustrup's book the overflow is mentioned only/touched. Thank you. vlakov--<a href="https://en.cppreference.com/w/Special:Contributions/88.212.37.48" title="Special:Contributions/88.212.37.48">88.212.37.48</a> 05:16, 24 July 2014 (PDT)
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> No, there are 2 different things: put area (in-memory buffer), and output sequence (file, stdout, socket, etc). overflow() moves data from the put area into the output sequence. (updated the page because 'output area' was redundant) As for books, as this is a library component, Josuttis may be more appropriate --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:35, 24 July 2014 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd> You are very helpful, thank you. I admit I was confused because on the page <a href="../../../cpp/io/basic_streambuf.html" title="cpp/io/basic streambuf">basic_streambuf</a> is literally this text:
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd> output sequence (also called put area)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd> input sequence (also called get area)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd> vlakov--<a href="https://en.cppreference.com/w/Special:Contributions/193.58.194.195" title="Special:Contributions/193.58.194.195">193.58.194.195</a> 07:39, 24 July 2014 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> indeed, this needs to be further reviewed for consistency. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 08:49, 24 July 2014 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/basic_streambuf/overflow&amp;action=edit&amp;section=1" title="Edit section: Improve example">edit</a>]</span> <span class="mw-headline" id="Improve_example">Improve example</span></h3>
+<p>Hi,
+</p><p>I would like to recommend extending the example to showcase <span class="t-c"><span class="mw-geshi cpp source-cpp">pbase</span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">pptr</span></span>.
+</p><p>Only 2 additional functions: <span class="t-c"><span class="mw-geshi cpp source-cpp">write_out</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy1">&lt;&lt;</span></span></span>
+</p><p>(Would also be a nice example for here: <a rel="nofollow" class="external free" href="../../../cpp/io/basic_streambuf/pptr.html#Example">https://en.cppreference.com/w/cpp/io/basic_streambuf/pptr#Example</a> )
+</p>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;array&gt;</span>
+&nbsp;
+<span class="co1">// Buffer for std::ostream implemented by std::array</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><a href="../../../cpp/types/size_t.html"><span class="kw107">std::<span class="me2">size_t</span></span></a> SIZE, <span class="kw1">class</span> CharT <span class="sy1">=</span> <span class="kw4">char</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> ArrayedStreamBuffer <span class="sy4">:</span> <span class="kw1">public</span> <a href="../../../cpp/io/basic_streambuf.html"><span class="kw1670">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+&nbsp;
+    <span class="kw1">using</span> Base <span class="sy1">=</span> <a href="../../../cpp/io/basic_streambuf.html"><span class="kw1670">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">using</span> char_type <span class="sy1">=</span> <span class="kw1">typename</span> Base<span class="sy4">::</span><span class="me2">char_type</span><span class="sy4">;</span>
+    <span class="kw1">using</span> int_type <span class="sy1">=</span> <span class="kw1">typename</span> Base<span class="sy4">::</span><span class="me2">int_type</span><span class="sy4">;</span>
+&nbsp;
+    ArrayedStreamBuffer<span class="br0">(</span><span class="br0">)</span> <span class="sy4">:</span> buffer_<span class="br0">{</span><span class="br0">}</span> <span class="co1">// value-initialize buffer_ to all zeroes</span>
+    <span class="br0">{</span>
+        Base<span class="sy4">::</span><span class="me2">setp</span><span class="br0">(</span>buffer_.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, buffer_.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// set std::basic_streambuf</span>
+            <span class="co1">// put area pointers to work with 'buffer_'</span>
+    <span class="br0">}</span>
+&nbsp;
+    int_type overflow<span class="br0">(</span>int_type ch<span class="br0">)</span> 
+    <span class="br0">{</span>
+        <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"overflow<span class="es1">\n</span>"</span><span class="sy4">;</span>
+        <span class="kw1">return</span> Base<span class="sy4">::</span><span class="me2">overflow</span><span class="br0">(</span>ch<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+&nbsp;
+    <span class="kw4">void</span> print_buffer<span class="br0">(</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">const</span> <span class="kw4">auto</span><span class="sy3">&amp;</span> i<span class="sy4">:</span> buffer_<span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">if</span> <span class="br0">(</span>i <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+                <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"NULL"</span><span class="sy4">;</span>
+            <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+                <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i<span class="sy4">;</span>
+            <span class="br0">}</span>
+            <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">" "</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+        <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+&nbsp;
+    <a href="../../../cpp/io/basic_ostream.html"><span class="kw1733">std::<span class="me2">ostream</span></span></a> <span class="sy3">&amp;</span>write_out<span class="br0">(</span><a href="../../../cpp/io/basic_ostream.html"><span class="kw1733">std::<span class="me2">ostream</span></span></a> <span class="sy3">&amp;</span>os<span class="br0">)</span> <span class="kw4">const</span>
+    <span class="br0">{</span>
+        os.<span class="me1">write</span><span class="br0">(</span>Base<span class="sy4">::</span><span class="me2">pbase</span><span class="br0">(</span><span class="br0">)</span>, Base<span class="sy4">::</span><span class="me2">pptr</span><span class="br0">(</span><span class="br0">)</span> <span class="sy2">-</span> Base<span class="sy4">::</span><span class="me2">pbase</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">return</span> os<span class="sy4">;</span>
+    <span class="br0">}</span>
+&nbsp;
+<span class="kw1">private</span><span class="sy4">:</span>
+    <a href="../../../cpp/container/array.html"><span class="kw1271">std::<span class="me2">array</span></span></a><span class="sy1">&lt;</span>char_type, SIZE<span class="sy1">&gt;</span> buffer_<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<span class="kw1">template</span><span class="sy1">&lt;</span><a href="../../../cpp/types/size_t.html"><span class="kw107">std::<span class="me2">size_t</span></span></a> SIZE, <span class="kw1">class</span> CharT <span class="sy1">=</span> <span class="kw4">char</span><span class="sy1">&gt;</span>
+<span class="kw1">inline</span> <a href="../../../cpp/io/basic_ostream.html"><span class="kw1733">std::<span class="me2">ostream</span></span></a> <span class="sy3">&amp;</span>operator<span class="sy1">&lt;&lt;</span><span class="br0">(</span><a href="../../../cpp/io/basic_ostream.html"><span class="kw1733">std::<span class="me2">ostream</span></span></a> <span class="sy3">&amp;</span>os, <span class="kw4">const</span> ArrayedStreamBuffer<span class="sy1">&lt;</span>SIZE, CharT<span class="sy1">&gt;</span> <span class="sy3">&amp;</span>stream<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">return</span> stream.<span class="me1">write_out</span><span class="br0">(</span>os<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    ArrayedStreamBuffer<span class="sy1">&lt;</span><span class="nu0">10</span><span class="sy1">&gt;</span> streambuf<span class="sy4">;</span>
+    <a href="../../../cpp/io/basic_ostream.html"><span class="kw1733">std::<span class="me2">ostream</span></span></a> stream<span class="br0">(</span><span class="sy3">&amp;</span>streambuf<span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+    stream <span class="sy1">&lt;&lt;</span> <span class="st0">"hello"</span><span class="sy4">;</span>
+    streambuf.<span class="me1">print_buffer</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> streambuf <span class="sy1">&lt;&lt;</span> <a href="../../../cpp/io/manip/endl.html"><span class="kw1795">std::<span class="me2">endl</span></span></a><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>stream.<span class="me1">good</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"stream is good<span class="es1">\n</span><span class="es1">\n</span>"</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+&nbsp;
+    stream <span class="sy1">&lt;&lt;</span> <span class="st0">"world"</span><span class="sy4">;</span>
+    streambuf.<span class="me1">print_buffer</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> streambuf <span class="sy1">&lt;&lt;</span> <a href="../../../cpp/io/manip/endl.html"><span class="kw1795">std::<span class="me2">endl</span></span></a><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>stream.<span class="me1">good</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"stream is good<span class="es1">\n</span><span class="es1">\n</span>"</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+&nbsp;
+    stream <span class="sy1">&lt;&lt;</span> <span class="st0">"!"</span><span class="sy4">;</span>
+    streambuf.<span class="me1">print_buffer</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> streambuf <span class="sy1">&lt;&lt;</span> <a href="../../../cpp/io/manip/endl.html"><span class="kw1795">std::<span class="me2">endl</span></span></a><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span><span class="sy3">!</span>stream.<span class="me1">good</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"stream is not good<span class="es1">\n</span><span class="es1">\n</span>"</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">h e l l o NULL NULL NULL NULL NULL 
+hello
+stream is good
+&nbsp;
+h e l l o w o r l d 
+helloworld
+stream is good
+&nbsp;
+overflow
+h e l l o w o r l d 
+helloworld
+stream is not good</pre></div></div> 
+</div>
+<p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Zella&amp;action=edit&amp;redlink=1" class="new" title="User:Zella (page does not exist)">Zella</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Zella&amp;action=edit&amp;redlink=1" class="new" title="User talk:Zella (page does not exist)">talk</a>)
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 154/1000000
+Preprocessor generated node count: 531/1000000
+Post‐expand include size: 1242/4194304 bytes
+Template argument size: 6464/4194304 bytes
+Highest expansion depth: 7/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13719-0!*!0!*!*!*!* and timestamp 20240518090751 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/basic_streambuf/overflow&amp;oldid=112927">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/basic_streambuf/overflow&amp;oldid=112927</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./overflow.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/io/basic_streambuf/overflow" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/io/basic_streambuf/overflow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/basic_streambuf/overflow&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/basic_streambuf/overflow&amp;oldid=112927" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/basic_streambuf/overflow&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 25 September 2019, at 01:03.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,207 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.563 secs. -->
+	
+
+
+</body></html>

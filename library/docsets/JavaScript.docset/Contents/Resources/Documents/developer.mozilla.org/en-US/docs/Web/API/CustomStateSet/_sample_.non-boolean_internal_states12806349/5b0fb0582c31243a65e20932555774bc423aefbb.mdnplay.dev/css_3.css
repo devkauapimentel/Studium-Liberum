@@ -1,0 +1,6 @@
+
+many-state-element:state(loading) { border: dotted grey; }
+many-state-element:state(interactive) { border: dashed blue; }
+many-state-element:state(complete) { border: solid green; }
+
+button.copy {display:none !important}

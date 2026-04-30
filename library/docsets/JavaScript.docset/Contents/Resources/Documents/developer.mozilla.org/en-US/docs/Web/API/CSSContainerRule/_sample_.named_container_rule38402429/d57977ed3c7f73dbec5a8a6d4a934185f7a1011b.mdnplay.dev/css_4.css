@@ -1,0 +1,8 @@
+
+.post { container-type: inline-size; container-name: sidebar; }
+.card h2 { font-size: 1em; }
+@container sidebar (width >= 700px) {
+  .card { font-size: 2em; }
+}
+
+button.copy {display:none !important}

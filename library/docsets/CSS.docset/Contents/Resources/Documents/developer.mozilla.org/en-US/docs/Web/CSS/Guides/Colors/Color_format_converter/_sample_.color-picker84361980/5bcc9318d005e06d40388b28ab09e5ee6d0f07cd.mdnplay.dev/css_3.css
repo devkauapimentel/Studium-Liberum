@@ -1,0 +1,16 @@
+
+dialog { border: 1px solid; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 10px; background-color: white; font-family: Segue, Helvetica, Arial, sans-serif; margin-top: 5vh; width: 550px; }
+table { width: 100%; }
+td, th { padding: 3px 0px; }
+th { background-color: rgb(237, 237, 237); }
+td { background-color: rgb(222, 222, 222); font-family: monospace; }
+body { background: linear-gradient(-90deg, transparent 0px, transparent 38%, 47%, rgba(0, 0, 0, 0.7) 50%, white 50%, white 100%) 0% 0% / 100% 100%, conic-gradient(black 0deg, black 90deg, transparent 90deg, transparent 180deg, black 180deg, black 270deg, transparent 270deg, transparent 360deg) 0% 0% / 20px 20px; padding: 0px; margin: 0px; }
+.container { width: 100vw; height: 100vh; }
+.color-inputs { display: inline-flex; margin-top: 0.6rem; margin-bottom: 1.5rem; }
+button { margin-right: 0.5rem; }
+input[type="text"] { width: 300px; margin-right: 0.5rem; }
+input[type="range"] { width: 350px; }
+label { }
+p { display: flex; flex-flow: column; align-items: center; margin: 0px; }
+
+button.copy {display:none !important}

@@ -1,0 +1,5 @@
+
+#container, #log { height: 150px; overflow: scroll; }
+#container li { background-color: paleturquoise; margin: 0.5rem; }
+
+button.copy {display:none !important}

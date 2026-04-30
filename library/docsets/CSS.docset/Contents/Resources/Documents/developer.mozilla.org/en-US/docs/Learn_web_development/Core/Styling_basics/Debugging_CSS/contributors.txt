@@ -1,0 +1,9 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/learn_web_development/core/styling_basics/debugging_css/index.md
+
+# Original Wiki contributors
+bershanskiy
+chrisdavidmills
+xp44mm
+mbrasseau
+rachelandrew

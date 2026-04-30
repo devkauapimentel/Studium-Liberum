@@ -1,0 +1,5 @@
+
+:root { --main-color: hsl(198 43% 42%); --black: hsl(0 0% 16%); --white: hsl(0 0% 97%); --unit: 1.2rem; }
+button { --main-color: hsl(198 100% 66%); display: inline-block; padding: var(--unit) calc(var(--unit) * 2); width: calc(30% + 20px); background: no-repeat 5% center url("./en-US/docs/Web/API/CSS_Typed_OM_API/Guide/magic-wand.png") var(--main-color); border: 4px solid var(--main-color); border-radius: 2px; font-size: calc(var(--unit) * 2); color: var(--white); cursor: pointer; transform: scale(0.95); }
+
+button.copy {display:none !important}

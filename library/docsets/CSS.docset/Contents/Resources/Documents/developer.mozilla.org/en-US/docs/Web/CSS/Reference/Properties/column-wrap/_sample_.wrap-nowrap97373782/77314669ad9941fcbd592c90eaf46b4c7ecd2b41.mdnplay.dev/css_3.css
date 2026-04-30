@@ -1,0 +1,13 @@
+
+body { column-count: 3; gap: 3em 2em; padding: 0px 2em; }
+h1 { column-span: all; }
+p:first-of-type { margin-top: 0px; }
+* { box-sizing: border-box; }
+html { font-family: Arial, sans-serif; }
+p { line-height: 1.5; }
+@supports not (column-wrap: wrap) {
+  body::before { content: "Your browser does not support the 'column-wrap' property."; background-color: wheat; position: fixed; inset: 40% 0px; height: fit-content; text-align: center; padding: 1rem 0px; }
+}
+form { position: fixed; top: 0px; right: 0px; background-color: white; padding: 5px; border: 1px solid black; }
+
+button.copy {display:none !important}

@@ -1,0 +1,72 @@
+<html>
+  <!-- Online page at https://bbdc2b797eb2a8cc45c27b86c288aee1da10c713.mdnplay.dev/en-US/docs/Web/API/WebGL_API/By_example/Basic_scissoring/runner.html?uuid=bbdc2b797eb2a8cc45c27b86c288aee1da10c713&state=fVJha9swEP0rhz%2Bl0LppN8ZIsn6oaWmho1BnjIFhyNLF0SrrPElumpX%2B955kJwvbGMSx9Hzv7t29e8nWoTXZLFt0Fw%2FoexOAVuCl9p6ctk2%2BOO0uKruQwj4Jf%2FGNege1o41HB4rQg6UAHrGFQOD7riMX4Gb5%2BQ4GBvNHamWz40x6z7VqUlt4qSxAwOdwIoxu7Awk2oBuXtnXyg6cIUZp3xmxnUFtSD7OI7TRKqxncP5x2j0nYI26WQdGznZIK1yjOavoAyWgE0pxQzOYpmtNTqGbsX6LAyDkY%2BOot%2BpEkiEX64lU7zVJ%2FxGVS7I%2BcConGie6NXziIci%2BZeX5zx7dtkSDMpCbVFlXZUdMHhhjP%2F8JHyIGTmVPT2G5RliRMbRh1RA2BEZbHrjHAIG%2Fef0LYaItFGUJnX5G44%2FYu8SN35UTiVn3qxWbxfbUCFpxbS2Fifd9Fnacz4k5Ck0Osrgo9RgYUMjetCxAQb2NJfOdSXkyg1sbr9JoJn2N4HwfM%2FjzZ9BNQlPDw5ga8zukwVCQjQvC09lg3ZhhOI3JnzRu4qJNpsfAP0bGZi9Tr6n23%2FBQbT%2FfKytqgwerDtShE0GTBWEVd7zidtOQOvJ6hyfuwdQOEwiHIk8KMSWf8Kksbsvy%2FuH78qpcjvJHxuQ9az%2Fn5wM%2FZ%2B%2Bme2WFQeH%2B5aEnoxVsMS7FUEfG0CKu6%2BQsj2ni33Q8jeVSTJRS3N%2BxkMsv19dX%2FLpNcnixuVCLvNsmjid7fQM%3D&code=40414747& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;p&gt;Result of scissoring.&lt;/p&gt;
+&lt;canvas&gt;Your browser does not seem to support HTML canvas.&lt;/canvas&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>body {
+  text-align: center;
+}
+canvas {
+  display: block;
+  width: 280px;
+  height: 210px;
+  margin: auto;
+  padding: 0;
+  border: none;
+  background-color: black;
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code>const paragraph = document.querySelector("p");
+const canvas = document.querySelector("canvas");
+
+// The following two lines set the size (in CSS pixels) of
+// the drawing buffer to be identical to the size of the
+// canvas HTML element, as determined by CSS.
+canvas.width = canvas.clientWidth;
+canvas.height = canvas.clientHeight;
+
+const gl = canvas.getContext("webgl");
+gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+
+// Enable scissoring operation and define the position and
+// size of the scissoring area.
+gl.enable(gl.SCISSOR_TEST);
+gl.scissor(40, 20, 60, 130);
+
+// Clear the drawing buffer solid yellow.
+gl.clearColor(1.0, 1.0, 0.0, 1.0);
+gl.clear(gl.COLOR_BUFFER_BIT);</code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=bbdc2b797eb2a8cc45c27b86c288aee1da10c713&amp;state=fVJha9swEP0rhz%2Bl0LppN8ZIsn6oaWmho1BnjIFhyNLF0SrrPElumpX%2B955kJwvbGMSx9Hzv7t29e8nWoTXZLFt0Fw%2FoexOAVuCl9p6ctk2%2BOO0uKruQwj4Jf%2FGNege1o41HB4rQg6UAHrGFQOD7riMX4Gb5%2BQ4GBvNHamWz40x6z7VqUlt4qSxAwOdwIoxu7Awk2oBuXtnXyg6cIUZp3xmxnUFtSD7OI7TRKqxncP5x2j0nYI26WQdGznZIK1yjOavoAyWgE0pxQzOYpmtNTqGbsX6LAyDkY%2BOot%2BpEkiEX64lU7zVJ%2FxGVS7I%2BcConGie6NXziIci%2BZeX5zx7dtkSDMpCbVFlXZUdMHhhjP%2F8JHyIGTmVPT2G5RliRMbRh1RA2BEZbHrjHAIG%2Fef0LYaItFGUJnX5G44%2FYu8SN35UTiVn3qxWbxfbUCFpxbS2Fifd9Fnacz4k5Ck0Osrgo9RgYUMjetCxAQb2NJfOdSXkyg1sbr9JoJn2N4HwfM%2FjzZ9BNQlPDw5ga8zukwVCQjQvC09lg3ZhhOI3JnzRu4qJNpsfAP0bGZi9Tr6n23%2FBQbT%2FfKytqgwerDtShE0GTBWEVd7zidtOQOvJ6hyfuwdQOEwiHIk8KMSWf8Kksbsvy%2FuH78qpcjvJHxuQ9az%2Fn5wM%2FZ%2B%2Bme2WFQeH%2B5aEnoxVsMS7FUEfG0CKu6%2BQsj2ni33Q8jeVSTJRS3N%2BxkMsv19dX%2FLpNcnixuVCLvNsmjid7fQM%3D&amp;code=40414747&amp;" class="leave">Open in Playground</a>
+          <a href="https://bbdc2b797eb2a8cc45c27b86c288aee1da10c713.mdnplay.dev/en-US/docs/Web/API/WebGL_API/By_example/Basic_scissoring/runner.html?state=fVJha9swEP0rhz%2Bl0LppN8ZIsn6oaWmho1BnjIFhyNLF0SrrPElumpX%2B955kJwvbGMSx9Hzv7t29e8nWoTXZLFt0Fw%2FoexOAVuCl9p6ctk2%2BOO0uKruQwj4Jf%2FGNege1o41HB4rQg6UAHrGFQOD7riMX4Gb5%2BQ4GBvNHamWz40x6z7VqUlt4qSxAwOdwIoxu7Awk2oBuXtnXyg6cIUZp3xmxnUFtSD7OI7TRKqxncP5x2j0nYI26WQdGznZIK1yjOavoAyWgE0pxQzOYpmtNTqGbsX6LAyDkY%2BOot%2BpEkiEX64lU7zVJ%2FxGVS7I%2BcConGie6NXziIci%2BZeX5zx7dtkSDMpCbVFlXZUdMHhhjP%2F8JHyIGTmVPT2G5RliRMbRh1RA2BEZbHrjHAIG%2Fef0LYaItFGUJnX5G44%2FYu8SN35UTiVn3qxWbxfbUCFpxbS2Fifd9Fnacz4k5Ck0Osrgo9RgYUMjetCxAQb2NJfOdSXkyg1sbr9JoJn2N4HwfM%2FjzZ9BNQlPDw5ga8zukwVCQjQvC09lg3ZhhOI3JnzRu4qJNpsfAP0bGZi9Tr6n23%2FBQbT%2FfKytqgwerDtShE0GTBWEVd7zidtOQOvJ6hyfuwdQOEwiHIk8KMSWf8Kksbsvy%2FuH78qpcjvJHxuQ9az%2Fn5wM%2FZ%2B%2Bme2WFQeH%2B5aEnoxVsMS7FUEfG0CKu6%2BQsj2ni33Q8jeVSTJRS3N%2BxkMsv19dX%2FLpNcnixuVCLvNsmjid7fQM%3D&amp;code=11cf429b-4b4f-4849-a783-70dfaf2bb8d3" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

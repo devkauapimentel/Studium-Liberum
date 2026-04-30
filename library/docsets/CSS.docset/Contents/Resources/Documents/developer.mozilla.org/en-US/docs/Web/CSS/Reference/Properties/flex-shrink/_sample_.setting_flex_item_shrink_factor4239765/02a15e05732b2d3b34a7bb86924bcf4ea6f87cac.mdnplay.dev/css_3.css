@@ -1,0 +1,15 @@
+
+#content { display: flex; width: 500px; }
+#content div { width: 200px; }
+.box1, .box2, .box3 { flex-shrink: 1; }
+.box4 { flex-shrink: 1.5; }
+.box5 { flex-shrink: 2; }
+#content { margin: 5px; }
+div { font-family: monospace; outline: 1px solid; line-height: 4em; text-align: center; }
+.box1 { background-color: red; }
+.box2 { background-color: lightblue; }
+.box3 { background-color: yellow; }
+.box4 { background-color: lightsalmon; }
+.box5 { background-color: lightgreen; }
+
+button.copy {display:none !important}

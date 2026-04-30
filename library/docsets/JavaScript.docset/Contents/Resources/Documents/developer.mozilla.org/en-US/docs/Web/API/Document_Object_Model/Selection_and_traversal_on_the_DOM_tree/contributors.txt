@@ -1,0 +1,17 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/document_object_model/selection_and_traversal_on_the_dom_tree/index.md
+
+# Original Wiki contributors
+jordan-git
+mfuji09
+maibroadcast
+Sheppy
+n.lopin
+alattalatta
+vjanssens
+teoli
+Jeremie
+ethertank
+Philip Chee
+mcsi
+asadotzler

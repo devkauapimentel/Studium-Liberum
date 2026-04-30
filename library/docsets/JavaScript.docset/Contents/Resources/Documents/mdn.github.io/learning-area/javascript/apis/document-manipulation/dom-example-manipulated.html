@@ -1,0 +1,48 @@
+<html><!-- Mirrored from mdn.github.io/learning-area/javascript/apis/document-manipulation/dom-example-manipulated.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:47:31 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple DOM example</title>
+    <style>
+      .highlight {
+        color: white;
+        background-color: black;
+        padding: 10px;
+        width: 250px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img src="dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+      
+    <p class="highlight">We hope you enjoyed the ride.</p></section>
+
+    <script>
+      const link = document.querySelector('a');
+      link.textContent = 'Mozilla Developer Network';
+      link.href = 'https://developer.mozilla.org/';
+
+      const sect = document.querySelector('section');
+      const para = document.createElement('p');
+      para.textContent = 'We hope you enjoyed the ride.';
+      sect.appendChild(para);
+
+      const text = document.createTextNode(' — the premier source for web development knowledge.');
+      const linkPara = document.querySelector('p');
+      linkPara.appendChild(text);
+
+      // You could clone link para by doing something like this and inserting the new para instead
+      // var newPara = linkPara.cloneNode(true);
+
+      sect.appendChild(linkPara);
+      linkPara.parentNode.removeChild(linkPara);
+
+      para.setAttribute('class', 'highlight');
+    </script>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/learning-area/javascript/apis/document-manipulation/dom-example-manipulated.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:47:31 GMT --></html>

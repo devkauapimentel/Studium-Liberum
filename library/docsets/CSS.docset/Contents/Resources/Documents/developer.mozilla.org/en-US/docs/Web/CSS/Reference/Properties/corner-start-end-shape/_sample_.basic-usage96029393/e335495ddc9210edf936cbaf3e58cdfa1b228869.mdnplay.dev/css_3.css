@@ -1,0 +1,6 @@
+
+body { font-family: Helvetica, Arial, sans-serif; width: 240px; margin: 20px auto; }
+div { width: 100%; height: 180px; display: flex; justify-content: center; align-items: center; background-color: cyan; background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5)); }
+div { box-shadow: gray 1px 1px 3px; border-radius: 20px 40px 60px 80px; }
+
+button.copy {display:none !important}

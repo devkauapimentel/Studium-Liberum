@@ -1,0 +1,7 @@
+
+input:invalid { outline: 3px solid red; }
+input:valid { outline: 3px solid palegreen; }
+body { margin: 0.5rem; }
+pre { padding: 1rem; height: 2rem; background-color: lightgrey; outline: 1px solid grey; }
+
+button.copy {display:none !important}

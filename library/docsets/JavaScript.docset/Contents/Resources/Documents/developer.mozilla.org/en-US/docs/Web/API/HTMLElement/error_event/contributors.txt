@@ -1,0 +1,15 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/htmlelement/error_event/index.md
+
+# Original Wiki contributors
+mfuji09
+chrisdavidmills
+wbamberg
+Sheppy
+mfluehr
+ExE-Boss
+fscholz
+Nickolay
+teoli
+ethertank
+louisremi

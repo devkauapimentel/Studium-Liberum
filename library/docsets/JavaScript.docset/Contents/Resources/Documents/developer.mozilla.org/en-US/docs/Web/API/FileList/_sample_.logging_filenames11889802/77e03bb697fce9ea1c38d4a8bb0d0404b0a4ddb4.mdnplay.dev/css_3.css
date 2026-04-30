@@ -1,0 +1,4 @@
+
+.output { overflow: scroll; margin: 1rem 0px; height: 200px; }
+
+button.copy {display:none !important}

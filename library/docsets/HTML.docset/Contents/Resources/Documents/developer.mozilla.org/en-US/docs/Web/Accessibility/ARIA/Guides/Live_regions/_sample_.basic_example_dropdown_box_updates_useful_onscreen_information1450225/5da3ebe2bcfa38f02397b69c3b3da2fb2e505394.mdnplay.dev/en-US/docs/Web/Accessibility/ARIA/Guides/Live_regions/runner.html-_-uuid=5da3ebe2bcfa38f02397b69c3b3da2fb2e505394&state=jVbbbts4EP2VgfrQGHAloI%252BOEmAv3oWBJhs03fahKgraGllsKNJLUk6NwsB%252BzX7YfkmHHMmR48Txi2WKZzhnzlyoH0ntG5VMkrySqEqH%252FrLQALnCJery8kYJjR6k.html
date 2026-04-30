@@ -1,0 +1,48 @@
+<html>
+  <!-- Online page at https://5da3ebe2bcfa38f02397b69c3b3da2fb2e505394.mdnplay.dev/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions/runner.html?uuid=5da3ebe2bcfa38f02397b69c3b3da2fb2e505394&state=jVbbbts4EP2VgfrQGHAloI%2BOEmAv3oWBJhs03fahKgraGllsKNJLUk6NwsB%2BzX7YfkmHHMmR48Txi2WKZzhnzlyoH0ntG5VMkrySqEqH%2FrLQALnCJery8kYJjR6kroxthJdG51m3xTAxRwW0eVEkq4h1t6hw4Yuks52QQQAx3sVNkOUhHoSV4s3CaG%2BNcrv9Gbmmw4I12ZtV4ABroVokCG2wOQhg%2BP%2F%2F%2FpdnjHrGpkG7aO2GTK%2F43wv4NerWEfpjeL6ARWF9TdhpeL7EQ9hw7BU99pB5xiLxYt56T0ZRMEuyo73ZyfJr3KMz%2FjR5xkAyyrNBJmlZyjWQohgPWMpgMNSf9WXxlVwH2Moo6bETPa%2FfDuEfpFdh69p0ggOzxTLP6rdssRoa%2FI5uYWUM7zBb4A2sJd6D9A7KB2SerWIkxJ2DWHXl0wilOj1nDzUJlTVNp7KA2mJF7mvvV26SZajTe3knV1hKkRq7zMIquzVK2K%2B3G%2BexIV6fekSeiT4LnS%2FmkoyThXPUJ%2FTnW3hSoToPN%2B9%2BuZ5%2BuP06u%2F7jL7iAH8G0K7AJrwB8kGwCRXLVV96YNwYBT%2FgNPKBAOvA1QqSB5ErokvpQo20MrVZ9Y0ZQjAY4mhRmPhhr0WAJovJoI%2Ba9aYQmn9JvoPMxjhsNOod6GWAmvlia0qUdy%2B046A8Qu%2BAwpI%2FcHEcDiphdOEjClT39kDcOoNXHeRMnOt2BqUCZNUY15ihav3nMNPbgIdMpt%2BZRphHTM%2FW1tE8Sjb7Df6PVBsz8W5xonIi%2FNbWQdQh32tzrIGgt7NxYULLCx0zDBHiiSuJcOMLzdUD0LCvTBs7HaLLkb3aF9HzpdKp31UEJ0TDVSyVdPYbodCGsleiof0OWQjL2MhRe3As75loNyfKogdoRraWckhqCWRfJe1rzJCuS9PVOlu15kKZq9SL29eOJd8bcRywat%2BBgLlEHlmbRNqh9%2Bk%2BLdsPjxtizInm1N79G548PGMypE47Zm2qjc86nrODsQdzhaBj1WR6QSD1%2B97%2FRdUduyOMQ%2FplhX9JYFOdD04HjUw4Y1E88ZguoqDpfZFMkhwO%2BSE5kUiQnjvnuxC3lPSjI6Xj6ljuSEx1a99VzlyMVFefnaUAqynJKw82%2Fk9QBNF0pxwslF3dkCWcYdkZwcXlYcN13ywm1svvCGRZdLyrzgYuhsp1Byh8F7vP%2B295yRuF8%2F5LGz4muAA%2FaZd9L8L8NP3SHURc2SNeYksvaJ9uf&code=1450225& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <fieldset>
+  <legend>Planet information</legend>
+  <label for="planetsSelect">Planet:</label>
+  <select id="planetsSelect" aria-controls="planetInfo">
+    <option value="">Select a planet…</option>
+    <option value="mercury">Mercury</option>
+    <option value="venus">Venus</option>
+    <option value="earth">Earth</option>
+    <option value="mars">Mars</option>
+  </select>
+  <button id="renderPlanetInfoButton">Go</button>
+</fieldset>
+
+<div role="region" id="planetInfo" aria-live="polite">
+  <h2 id="planetTitle">No planet selected</h2>
+  <p id="planetDescription">Select a planet to view its description</p>
+</div>
+
+<p>
+  <small>
+    Information from
+    <a href="https://en.wikipedia.org/wiki/Solar_System">Wikipedia</a>
+  </small>
+</p>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../../js_3.js'></script>
+</body>
+</html>

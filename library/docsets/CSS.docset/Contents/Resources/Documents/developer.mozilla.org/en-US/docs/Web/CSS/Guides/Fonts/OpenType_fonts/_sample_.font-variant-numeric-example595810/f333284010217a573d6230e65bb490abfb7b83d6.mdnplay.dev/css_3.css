@@ -1,0 +1,14 @@
+
+@font-face { font-family: "Source Serif"; font-weight: normal; font-style: normal; font-width: normal; src: url("../mdn.github.io/shared-assets/fonts/source-serif/SourceSerifPro-Regular.ttf.woff") format("woff"), url("../mdn.github.io/shared-assets/fonts/source-serif/SourceSerifPro-Regular.ttf.woff2") format("woff2"); }
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: normal; font-family: "Source Serif", "Times New Roman", serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; margin: 20px; padding: 0px; }
+fieldset { margin-bottom: 1rem; }
+label { }
+.container > p { font-size: 4rem; margin: 1.5rem 0px; }
+.container1 .lining { font-variant-numeric: lining-nums; }
+.container1 .oldstyle { font-variant-numeric: oldstyle-nums; }
+.inactive.container1 * { font-variant-numeric: normal; }
+.container2 .lining { font-feature-settings: "lnum"; }
+.container2 .oldstyle { font-feature-settings: "onum"; }
+.inactive.container2 * { font-feature-settings: "lnum" 0, "onum" 0; }
+
+button.copy {display:none !important}

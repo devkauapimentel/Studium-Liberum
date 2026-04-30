@@ -1,0 +1,7 @@
+
+* { box-sizing: border-box; }
+html, body, .button-bar { height: 100%; }
+.button-bar { display: flex; align-items: center; justify-content: space-around; }
+button { padding: 5px 10px; }
+
+button.copy {display:none !important}

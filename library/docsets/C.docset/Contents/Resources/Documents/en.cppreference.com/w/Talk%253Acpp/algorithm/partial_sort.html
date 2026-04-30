@@ -1,0 +1,355 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/algorithm/partial_sort.html --><head><meta charset="utf-8"><title>Talk:cpp/algorithm/partial sort</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_6259.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_algorithm_partial_sort skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Falgorithm%2Fpartial+sort&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Falgorithm%2Fpartial+sort" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/algorithm/partial_sort.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./partial_sort.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./partial_sort.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./partial_sort.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/partial_sort&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/partial_sort&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/partial_sort&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./partial_sort.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/algorithm/partial sort</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../algorithm.html" title="Talk:cpp/algorithm">algorithm</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Is the complexity right?
+Why does it not depend on middle element?
+Which algorithm has a log^2 complexity? How can it depend on available memory?
+</p><p>I was almost sure the right answer in N*log (M), where M = std::distance(first, middle)
+</p>
+<dl><dd> Looks like a copy-paste error (from <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/algorithm/stable_sort.html"><span class="kw1633">std::<span class="me2">stable_sort</span></span></a></span></span>). Thank you for reporting! --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 05:51, 17 June 2013 (PDT)
+</dd></dl>
+<p><br>
+</p><p>Why does std::partial_sort not use quickselsort? The expected time complexity of quickselsort should be O(MlogM+N), better than the currentlt used heap version. Are there any concerns?
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/partial_sort&amp;action=edit&amp;section=1" title="Edit section: possible implementation">edit</a>]</span> <span class="mw-headline" id="possible_implementation"> possible implementation </span></h2>
+<p>I added possible implementation assuming it is in the <span class="t-c"><span class="mw-geshi cpp source-cpp">std</span></span> namespace.
+If it is not, then <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/algorithm/iter_swap.html"><span class="kw1613">std::<span class="me2">iter_swap</span></span></a></span></span> should not be called using qualified name because it defeats the purpose of it being a customization point. Instead there should be <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">using</span></span></span> declaration and it should be called via <i>unqualified</i> id, fully analogous to <span class="t-c"><span class="mw-geshi cpp source-cpp">swap</span></span>, e.g.:
+</p>
+<table class="eq-fun-cpp-table">
+
+
+<tbody><tr>
+<td>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> RandomIt, <span class="kw1">typename</span> Compare <span class="sy1">=</span> <a href="../../cpp/utility/functional/less.html"><span class="kw1046">std::<span class="me2">less</span></span></a><span class="sy1">&lt;</span><span class="kw1">typename</span> <a href="../../cpp/iterator/iterator_traits.html"><span class="kw656">std::<span class="me2">iterator_traits</span></span></a><span class="sy1">&lt;</span>RandomIt<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value_type</span><span class="sy1">&gt;&gt;</span>
+<span class="kw4">void</span> heap_select<span class="br0">(</span>RandomIt begin, RandomIt middle, RandomIt end, <span class="kw4">const</span> Compare <span class="sy3">&amp;</span>comp <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw1">using</span> <a href="../../cpp/algorithm/iter_swap.html"><span class="kw1613">std::<span class="me2">iter_swap</span></span></a><span class="sy4">;</span> <span class="co1">// pull name into scope</span>
+  <a href="../../cpp/algorithm/make_heap.html"><span class="kw1648">std::<span class="me2">make_heap</span></span></a><span class="br0">(</span>begin, middle, comp<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">auto</span> i <span class="sy1">=</span> middle<span class="sy4">;</span> i <span class="sy3">!</span><span class="sy1">=</span> end<span class="sy4">;</span> <span class="sy2">++</span>i<span class="br0">)</span>
+    <span class="kw1">if</span> <span class="br0">(</span><span class="sy2">*</span>i <span class="sy1">&lt;</span> <span class="sy2">*</span>begin<span class="br0">)</span> <span class="br0">{</span>
+      iter_swap<span class="br0">(</span>begin, i<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// allow to find instance through ADL or whatever</span>
+      sift_down<span class="br0">(</span>begin, middle, comp<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+</td></tr></tbody></table>
+<p>-- Pavel
+</p>
+<dl><dd> The algorithm here requires the iterator to be <a href="../../cpp/named_req/ValueSwappable.html" title="cpp/named req/ValueSwappable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">ValueSwappable</span></a>, which is specified in terms of <code>swap</code> on the dereferenced object, implementations cannot call other functions like <code>iter_swap</code>. Only the ranges versions of the algorithms may consider functions like <code>iter_swap</code> to be customisation points via <span class="t-lc"><a href="../../cpp/iterator/ranges/iter_swap.html" title="cpp/iterator/ranges/iter swap">ranges::iter_swap</a></span> due to the <span class="t-lc"><a href="../../cpp/iterator/indirectly_swappable.html" title="cpp/iterator/indirectly swappable">std::indirectly_swappable</a></span> concept. --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 11:02, 22 June 2021 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> If you use qualified name <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/algorithm/iter_swap.html"><span class="kw1613">std::<span class="me2">iter_swap</span></span></a></span></span>, overloads found only by ADL will not be called, e.g. 
+</dd></dl>
+</dd></dl>
+<table class="eq-fun-cpp-table">
+
+
+<tbody><tr>
+<td>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../../cpp/container/vector.html"><span class="kw1277">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> v <span class="sy1">=</span> <span class="br0">{</span> <span class="nu0">1</span>,<span class="nu0">2</span> <span class="br0">}</span><span class="sy4">;</span>
+<a href="../../cpp/algorithm/iter_swap.html"><span class="kw1613">std::<span class="me2">iter_swap</span></span></a><span class="br0">(</span>v.<span class="me1">rbegin</span><span class="br0">(</span><span class="br0">)</span>, v.<span class="me1">rbegin</span><span class="br0">(</span><span class="br0">)</span> <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+</td></tr></tbody></table>
+<dl><dd><dl><dd> calls <span class="t-lc"><a href="../../cpp/algorithm/iter_swap.html" title="cpp/algorithm/iter swap">std::iter_swap</a></span>.
+</dd><dd> If you write this with <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">using</span></span></span> declaration like this: 
+</dd></dl>
+</dd></dl>
+<table class="eq-fun-cpp-table">
+
+
+<tbody><tr>
+<td>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../../cpp/container/vector.html"><span class="kw1277">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> v <span class="sy1">=</span> <span class="br0">{</span> <span class="nu0">1</span>,<span class="nu0">2</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">using</span> <a href="../../cpp/algorithm/iter_swap.html"><span class="kw1613">std::<span class="me2">iter_swap</span></span></a><span class="sy4">;</span>
+iter_swap<span class="br0">(</span>v.<span class="me1">rbegin</span><span class="br0">(</span><span class="br0">)</span>, v.<span class="me1">rbegin</span><span class="br0">(</span><span class="br0">)</span> <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+</td></tr></tbody></table>
+<dl><dd><dl><dd> <a href="../../cpp/iterator/reverse_iterator/iter_swap.html" title="cpp/iterator/reverse iterator/iter swap"><tt>std::iter_swap(std::reverse_iterator)</tt></a> is called which is found using ADL. I think this is the desired behavior.
+</dd><dd> If the code was inside <span class="t-c"><span class="mw-geshi cpp source-cpp">std</span></span>, neither qualification, nor <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">using</span></span></span> declaration would be needed.
+</dd><dd> But whatever, I'm not up for an edit war.
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd> -- Pavel
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> That was exactly my point, ADL should not be performed --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 01:58, 23 June 2021 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd> Well, you seem to be right. Then <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/algorithm/iter_swap.html"><span class="kw1613">std::<span class="me2">iter_swap</span></span></a></span></span> should probably be replaced with <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">using</span> <a href="../../cpp/algorithm/swap.html"><span class="kw1611">std::<span class="me2">swap</span></span></a><span class="sy4">;</span> swap<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></span></span> to be more illustrative and to remove potential confusion.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd> -- Pavel
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<p><br>
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/partial_sort&amp;action=edit&amp;section=2" title="Edit section: push/pop version">edit</a>]</span> <span class="mw-headline" id="push.2Fpop_version"> push/pop version </span></h3>
+<p>No one ever will and no one ever should implement partial sort via <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/algorithm/push_heap.html"><span class="kw1649">std::<span class="me2">push_heap</span></span></a></span></span>/<span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/algorithm/pop_heap.html"><span class="kw1650">std::<span class="me2">pop_heap</span></span></a></span></span> because it is <i><b>significantly</b></i> slower than the sift down version.
+</p><p>-- Pavel
+</p>
+<dl><dd> Useful note for anyone thinking about reimplementing a stdlib function by looking at the cppreference possible implementation instead of one of many actual stdlib implementations --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 01:58, 23 June 2021 (PDT)
+</dd></dl>
+<dl><dd> @Pavel.
+</dd><dd> The "possible implementation" sections on this site is not necessarily for the best/fastest implementations, AFAIK.
+</dd><dd> Sometimes, a sketch of the solution would be enough, IMO. Real-world implementations tend to be bulky. And the code from cppreference impl. sections is not going to be used in production anyway.
+</dd><dd> Thank you for the participation. There are a lot of places here to apply one's best efforts.--<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 02:14, 23 June 2021 (PDT)
+<dl><dd> My understanding is that examples should be <i>good examples</i>, not some random nonsence that may potentially exist just "because it can be done", so people who don't know how it works (including beginners) and can't tell good from bad at this point have good influence on them, instead of exposing them to horrendous code. If an <b>anti</b>-example is presented, it should be presented as such with clearly visible warning saying "don't do this", ideally with an explanation why you shouldn't do this.
+</dd><dd> I copy-pasted code from possible implementation section on cppreference more than once, so I would assume (or at least I want to assume) that the implementation is at least good enough if not absolutely optimal. I wouldn't expect (and I don't want to expect) that an example is absolute dog shit. But thanks for pointing it out, I will watch out for that on cppreference from now on.
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd> -- Pavel
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> It's unspecified whether the implementations provided here are supposed to be good w.r.t. demonstrative value, speed, space, or any other metric. But, I'm quite confident in saying they're not supposed to be polyfills for projects that don't have the standard library available. Some algorithms and other pages are simple enough that there's basically no wrong way to implement them, and so we can more-or-less meet all the above goals; but I don't believe <span class="t-lc"><a href="../../cpp/algorithm/partial_sort.html" title="cpp/algorithm/partial sort">std::partial_sort</a></span> is one of them. I personally believe that cppreference (the C++ documentation website) should prioritise demonstrative value wherever a trade-off needs to be made. The "first version" implementation you've given us is <i>OK</i>, it's one of many options to implement a decent partial heap sort, but Space Mission's "second version" implementation has so much more intuitive value and can be understood at a glance, I think it's better for the site. If I'm completely honest though, I don't like this particular algorithm having a possible implementation whatsoever, because of it being such an open-ended problem, and I think the English is clearer than the code in both cases. --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 04:07, 24 June 2021 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd> Fair. The whole point of this excercise was to show which algorithm is typically used, and what one should expect from it, i.e. that, to be somewhat optimal, it should only be used for small constant numbers of selected elements. If implementation example is confusing (as it seems to be now), it should probably be removed.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd> -- Pavel
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 561/1000000
+Preprocessor generated node count: 1417/1000000
+Post‐expand include size: 4004/4194304 bytes
+Template argument size: 2609/4194304 bytes
+Highest expansion depth: 10/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12783-0!*!0!!*!*!* and timestamp 20241022173953 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/partial_sort&amp;oldid=130696">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/partial_sort&amp;oldid=130696</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./partial_sort.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/algorithm/partial_sort" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/algorithm/partial_sort" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/partial_sort&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/partial_sort&amp;oldid=130696" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/partial_sort&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 24 June 2021, at 04:41.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 1.330 secs. -->
+	
+
+
+</body></html>

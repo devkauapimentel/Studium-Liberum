@@ -1,0 +1,126 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CSS Demo: position</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../../../../../../../interactive_examples/assets/css/codemirror.css" rel="stylesheet">
+    <link href="../../../../../../../../interactive_examples/assets/css/editor-css.css" rel="stylesheet">
+    <style>section {
+  align-items: flex-start;
+  overflow: auto;
+}
+
+.box {
+  background-color: rgb(0 0 255 / 0.2);
+  border: 3px solid blue;
+  float: left;
+  width: 65px;
+  height: 65px;
+}
+
+.box + .box {
+  margin-left: 10px;
+}
+
+.clear {
+  clear: both;
+  padding-top: 1em;
+}
+
+#example-element-container {
+  position: relative;
+  text-align: left;
+}
+
+#example-element {
+  background-color: yellow;
+  border: 3px solid red;
+  z-index: 1;
+}
+
+
+ button.copy {display:none !important}</style>  </head>
+
+  <body>
+    <header class="output-header border-rounded-top">
+      <h4 class="output-heading">CSS Demo: position</h4>
+      <button id="reset" class="reset" type="button">Reset</button>
+    </header>
+    <noscript>
+      <div id="warning-no-script" class="warning-container">
+        <div class="warning">
+          The interactive example cannot be shown because JavaScript is
+          disabled.
+        </div>
+      </div>
+    </noscript>
+    <div id="warning-mathml-not-supported" class="warning-container hidden">
+      <div class="warning">
+        The interactive example cannot be shown because MathML is not supported
+        by your browser.
+      </div>
+    </div>
+    <div id="editor-wrapper" class="editor-wrapper border-rounded-bottom hidden">
+      <section id="example-choice-list" class="example-choice-list">
+          <div class="example-choice">
+<pre><code class="language-css">position: static;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">position: relative;
+top: 40px;
+left: 40px;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">position: absolute;
+inset-inline-start: 40px;
+inset-block-start: 40px;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">position: sticky;
+top: 20px;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+      </section>
+      <div id="output" class="output hidden">
+          <section class="default-example" id="default-example">
+  <div id="example-element-container">
+    <p>
+      In this demo you can control the <code>position</code> property for the
+      yellow box.
+    </p>
+    <div class="box"></div>
+    <div class="box" id="example-element"></div>
+    <div class="box"></div>
+    <p class="clear">
+      To see the effect of <code>sticky</code> positioning, select the
+      <code>position: sticky</code> option and scroll this container.
+    </p>
+    <p>
+      The element will scroll along with its container, until it is at the top
+      of the container (or reaches the offset specified in <code>top</code>),
+      and will then stop scrolling, so it stays visible.
+    </p>
+    <p>
+      The rest of this text is only supplied to make sure the container
+      overflows, so as to enable you to scroll it and see the effect.
+    </p>
+    <hr />
+    <p>
+      Far out in the uncharted backwaters of the unfashionable end of the
+      western spiral arm of the Galaxy lies a small unregarded yellow sun.
+      Orbiting this at a distance of roughly ninety-two million miles is an
+      utterly insignificant little blue green planet whose ape-descended life
+      forms are so amazingly primitive that they still think digital watches are
+      a pretty neat idea.
+    </p>
+  </div>
+</section>
+      </div>
+    </div>
+
+    <script src="../../../../../../../../interactive_examples/assets/js/codemirror.js"></script>
+    <script src="../../../../../../../../interactive_examples/assets/js/editor-css.js"></script>
+    <script></script></body></html>

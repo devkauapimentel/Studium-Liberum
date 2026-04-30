@@ -1,0 +1,6 @@
+
+@media (orientation: landscape) {
+  body { color: rebeccapurple; }
+}
+
+button.copy {display:none !important}

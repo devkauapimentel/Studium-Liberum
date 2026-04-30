@@ -1,0 +1,3 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/css/reference/selectors/_doublecolon_view-transition-group/index.md
+

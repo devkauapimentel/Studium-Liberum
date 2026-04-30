@@ -1,0 +1,3 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/learn_web_development/core/css_layout/mobile-first_challenge/index.md
+

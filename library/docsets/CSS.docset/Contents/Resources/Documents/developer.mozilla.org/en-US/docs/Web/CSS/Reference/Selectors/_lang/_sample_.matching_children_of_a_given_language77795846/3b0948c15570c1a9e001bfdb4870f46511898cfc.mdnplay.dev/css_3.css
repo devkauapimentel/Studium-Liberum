@@ -1,0 +1,6 @@
+
+:lang(en) > q { quotes: "“" "”" "‘" "’"; }
+:lang(fr) > q { quotes: "« " " »"; }
+:lang(de) > q { quotes: "»" "«" "‹" "›"; }
+
+button.copy {display:none !important}

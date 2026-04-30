@@ -1,0 +1,6 @@
+
+label { display: block; margin: 0.5em 0px; }
+[type="checkbox"] { width: 1em; height: 1em; display: inline-block; background: red; }
+input:checked, .none { appearance: none; }
+
+button.copy {display:none !important}

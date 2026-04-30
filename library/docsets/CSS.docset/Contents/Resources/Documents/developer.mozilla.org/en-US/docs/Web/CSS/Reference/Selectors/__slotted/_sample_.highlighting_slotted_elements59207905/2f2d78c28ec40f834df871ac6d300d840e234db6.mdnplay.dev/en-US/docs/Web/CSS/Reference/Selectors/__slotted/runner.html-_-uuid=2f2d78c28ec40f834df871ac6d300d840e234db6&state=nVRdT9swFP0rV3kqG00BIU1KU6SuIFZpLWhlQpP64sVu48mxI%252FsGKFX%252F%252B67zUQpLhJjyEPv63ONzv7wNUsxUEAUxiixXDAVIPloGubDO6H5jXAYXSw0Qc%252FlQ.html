@@ -1,0 +1,51 @@
+<html>
+  <!-- Online page at https://2f2d78c28ec40f834df871ac6d300d840e234db6.mdnplay.dev/en-US/docs/Web/CSS/Reference/Selectors/::slotted/runner.html?uuid=2f2d78c28ec40f834df871ac6d300d840e234db6&state=nVRdT9swFP0rV3kqG00BIU1KU6SuIFZpLWhlQpP64sVu48mxI%2FsGKFX%2F%2B67zUQpLhJjyEPv63ONzv7wNUsxUEAUxiixXDAVIPloGubDO6H5jXAYXSw0Qc%2FlQLmiZnl3cliCmYHoJE2Z5PCBjfeyUQdAsEy9kfkdE8%2FHsCmbTxWI6v44HHtf4FKpe0VrJizYOtvYU4%2Bu3DPGAHN5zNklS5Ayl0cRxM5n8vB3fTW%2Fm3VTxoJYUD6rI40GTEb%2BpablAJpWrgDl4kn%2BCvjeaCwv3JmNEkldYlzP9Bl7FN80yY5EpUkSQTvCreBYFWVNhzd6J7nkr8GOiZ0zRB79M4djqmcn3hZ9%2B%2BYjkcYLyQTr8D8WdCs7PuxRog33W95smvjuZCUDLHoQS9tCtIx%2BXNoT71FRpaNEaHAeJczRMtPjj%2F0nh0GRXSmRCowu5WEktev6KPXXtvQyOvTlRzDkQTyg0d%2FDtbva9doZt1ZGJ0Q5tkaCxvaPGCOB88XtHw2ZfwmA%2F0iPgJik8T7gWWFN%2B3Ux5r2XSPctrHpcybh5%2FGBqoEWAqXcgQWZIuSntvC5nhIqKYTC6orrBrocCNeqUjsYJuq6WQjBJQXV6H5A0hUi4mRqNPwag58umjeYQt5IxzqdcRnJ7kT0P4bSxNGe3yJ3BGSQ5ryzZDeJQc0wjOTkpUxuxa6sZnR4I%2FHzKnZ0TcYE7o68AV6hDXAsgPzj1HKyiKfKuh4L1PVE%2FKljIUQCV7RYH3VyyTahOBY9r1nbByRSzQTeO7mJh84qi5EmPLaYug8A%2BQov4beu%2BDAr1UN2Q5FZBPUqmIx%2Bf%2FoBztqH09ZZbTkzWnRug1rRQmVeGOacYKcdRw7fxvR%2B3uDTQpmFIP0LAouU4x2P0F&code=59207905& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <template id="person-template">
+  <div>
+    <h2>Personal ID Card</h2>
+    <slot name="person-name">NAME MISSING</slot>
+    <ul>
+      <li><slot name="person-age">AGE MISSING</slot></li>
+      <li><slot name="person-occupation">OCCUPATION MISSING</slot></li>
+    </ul>
+  </div>
+</template>
+<person-details>
+  <p slot="person-name">Wonder Woman</p>
+  <span slot="person-age">Immortal</span>
+  <span slot="person-occupation">Superhero</span>
+</person-details>
+
+<person-details>
+  <p slot="person-name">Malala Yousafzai</p>
+  <span slot="person-age">17</span>
+  <span slot="person-occupation">Activist</span>
+</person-details>
+
+<person-details>
+  <span slot="person-age">44</span>
+  <span slot="not-a-slot-name">Time traveler</span>
+  <p slot="person-name">Dr. Who</p>
+</person-details>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../../js_3.js'></script>
+</body>
+</html>

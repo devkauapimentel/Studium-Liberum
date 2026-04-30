@@ -1,0 +1,8 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: 1.5; font-family: sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; padding: 0px; margin: 1em; }
+.list-group { list-style: none; margin: 0px; padding: 0px; border: 1px solid rgb(204, 204, 204); border-radius: 0.5em; width: 20em; }
+.list-group li { border-top: 1px solid rgb(204, 204, 204); padding: 0.5em; display: flex; justify-content: space-between; align-items: center; }
+.list-group li:first-child { border-top: 0px; }
+.list-group .badge { background-color: rebeccapurple; color: white; font-weight: bold; font-size: 80%; border-radius: 10em; min-width: 1.5em; padding: 0.25em; text-align: center; }
+
+button.copy {display:none !important}

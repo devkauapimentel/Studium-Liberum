@@ -1,0 +1,10 @@
+
+body { font-size: 1.3em; line-height: 1.5; column-count: 3; }
+html { font-family: sans-serif; }
+body { width: 70%; margin: 0px auto; }
+p:first-of-type { margin-top: 0px; }
+@supports not (column-height: 5em) {
+  body::before { content: "Your browser does not support the 'column-height' property."; background-color: wheat; position: fixed; inset: 40% 0px; height: fit-content; text-align: center; padding: 1rem 0px; }
+}
+
+button.copy {display:none !important}

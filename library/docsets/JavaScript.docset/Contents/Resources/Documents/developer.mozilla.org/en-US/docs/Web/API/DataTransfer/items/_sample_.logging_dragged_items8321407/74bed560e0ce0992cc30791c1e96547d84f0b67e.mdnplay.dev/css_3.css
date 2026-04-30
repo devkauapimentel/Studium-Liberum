@@ -1,0 +1,5 @@
+
+div { margin: 0em; padding: 2em; }
+#target { border: 1px solid black; }
+
+button.copy {display:none !important}

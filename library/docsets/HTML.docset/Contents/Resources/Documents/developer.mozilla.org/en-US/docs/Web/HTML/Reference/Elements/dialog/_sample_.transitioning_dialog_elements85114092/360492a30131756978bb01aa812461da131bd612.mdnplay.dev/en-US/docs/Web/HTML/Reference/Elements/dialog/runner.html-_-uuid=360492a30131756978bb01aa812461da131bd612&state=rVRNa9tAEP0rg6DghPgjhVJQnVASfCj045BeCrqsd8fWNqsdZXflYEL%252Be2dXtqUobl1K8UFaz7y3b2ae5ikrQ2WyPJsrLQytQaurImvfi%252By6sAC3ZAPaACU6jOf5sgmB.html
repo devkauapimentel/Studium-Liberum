@@ -1,0 +1,107 @@
+<html>
+  <!-- Online page at https://360492a30131756978bb01aa812461da131bd612.mdnplay.dev/en-US/docs/Web/HTML/Reference/Elements/dialog/runner.html?uuid=360492a30131756978bb01aa812461da131bd612&state=rVRNa9tAEP0rg6DghPgjhVJQnVASfCj045BeCrqsd8fWNqsdZXflYEL%2Be2dXtqUobl1K8UFaz7y3b2ae5ikrQ2WyPJsrLQytQaurImvfi%2By6sAC3ZAPaACU6jOf5sgmBLEgjvOdkacgj56bnfNpGGTmftjT8yocByJf0yJg7fsAXUsL0gNlFJr1nTdNz%2BFajBR9EQKAVhBJhpxPOp4Vt33OKSU9RG9VC6rDN4fJDPAYnrF%2BRq3LwUhj8Mbo848BzVMTkt1GxOk7f4x9Qz35DPTvrAjposnk8HoAwm7z3gMLjmJpw0cYOLEejtEFnxAAJwhh6HCvtpcOAu1Q%2B1qdSkzwue%2FHQ6A1L5pkGGkiOkJZkgE392DfuBlkzt6wbTgpz5Cui8kwLSwSxCuhSU2uHG02Nh%2F7AXGMwZgZxj4CrFcp93cInlK9R6pVOzdO7v0SF6aqPfK0L2q7HPmyZJ43olR1eTe0Pc3vuyvt%2B6Ee6NF8Kea8c1fBYou27pIrOjdpqRxUF9lKsp4xl1cDj4PJ7Nu14krh4WjtqrBpLMuTyVlstHE%2FmuJVeTPmoD15Y5mjG8NqU%2Bp%2Bs0RvA6WrdejmaQfxN4e27N%2F0P83vJPR1MONlFCmspRHNZ9LHfmtUpTD0XSy4ePBo2ErnCLlGKxrexmM1Uh%2BieyCFb08dya4%2BNojHHKz76SSrqtM%2BGZf7NWFun8Zb7GZecJOvDjnLBt8MVKJJNVDFZY1i0gm62n9SoW8yxWS0wLtKbYPuohwbd9m5XKYMm7bLtMGlTnwLt1npEFXZ3y0Qotdhw%2BmfN3bcYE6XR8r7ILmB0BlfX%2FQZF6enutOBHacAt3V7AP%2FAlaMfFXeT5VsiNNHpdhuz5Fw%3D%3D&code=85114092& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;dialog id="dialog"&gt;
+  Content here
+  &lt;button class="close"&gt;close&lt;/button&gt;
+&lt;/dialog&gt;
+
+&lt;button class="show"&gt;Show Modal&lt;/button&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>/* Open state of the dialog  */
+dialog:open {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* Closed state of the dialog   */
+dialog {
+  opacity: 0;
+  transform: scaleY(0);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out,
+    overlay 0.7s ease-out allow-discrete,
+    display 0.7s ease-out allow-discrete;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+
+/* Before open state  */
+/* Needs to be after the previous dialog:open rule to take effect,
+    as the specificity is the same */
+@starting-style {
+  dialog:open {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+/* Transition the :backdrop when the dialog modal is promoted to the top layer */
+dialog::backdrop {
+  background-color: transparent;
+  transition:
+    display 0.7s allow-discrete,
+    overlay 0.7s allow-discrete,
+    background-color 0.7s;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+
+dialog:open::backdrop {
+  background-color: rgb(0 0 0 / 25%);
+}
+
+/* This starting-style rule cannot be nested inside the above selector
+because the nesting selector cannot represent pseudo-elements. */
+
+@starting-style {
+  dialog:open::backdrop {
+    background-color: transparent;
+  }
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code>const dialogElem = document.getElementById("dialog");
+const showBtn = document.querySelector(".show");
+const closeBtn = document.querySelector(".close");
+
+showBtn.addEventListener("click", () =&gt; {
+  dialogElem.showModal();
+});
+
+closeBtn.addEventListener("click", () =&gt; {
+  dialogElem.close();
+});</code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=360492a30131756978bb01aa812461da131bd612&amp;state=rVRNa9tAEP0rg6DghPgjhVJQnVASfCj045BeCrqsd8fWNqsdZXflYEL%2Be2dXtqUobl1K8UFaz7y3b2ae5ikrQ2WyPJsrLQytQaurImvfi%2By6sAC3ZAPaACU6jOf5sgmBLEgjvOdkacgj56bnfNpGGTmftjT8yocByJf0yJg7fsAXUsL0gNlFJr1nTdNz%2BFajBR9EQKAVhBJhpxPOp4Vt33OKSU9RG9VC6rDN4fJDPAYnrF%2BRq3LwUhj8Mbo848BzVMTkt1GxOk7f4x9Qz35DPTvrAjposnk8HoAwm7z3gMLjmJpw0cYOLEejtEFnxAAJwhh6HCvtpcOAu1Q%2B1qdSkzwue%2FHQ6A1L5pkGGkiOkJZkgE392DfuBlkzt6wbTgpz5Cui8kwLSwSxCuhSU2uHG02Nh%2F7AXGMwZgZxj4CrFcp93cInlK9R6pVOzdO7v0SF6aqPfK0L2q7HPmyZJ43olR1eTe0Pc3vuyvt%2B6Ee6NF8Kea8c1fBYou27pIrOjdpqRxUF9lKsp4xl1cDj4PJ7Nu14krh4WjtqrBpLMuTyVlstHE%2FmuJVeTPmoD15Y5mjG8NqU%2Bp%2Bs0RvA6WrdejmaQfxN4e27N%2F0P83vJPR1MONlFCmspRHNZ9LHfmtUpTD0XSy4ePBo2ErnCLlGKxrexmM1Uh%2BieyCFb08dya4%2BNojHHKz76SSrqtM%2BGZf7NWFun8Zb7GZecJOvDjnLBt8MVKJJNVDFZY1i0gm62n9SoW8yxWS0wLtKbYPuohwbd9m5XKYMm7bLtMGlTnwLt1npEFXZ3y0Qotdhw%2BmfN3bcYE6XR8r7ILmB0BlfX%2FQZF6enutOBHacAt3V7AP%2FAlaMfFXeT5VsiNNHpdhuz5Fw%3D%3D&amp;code=85114092&amp;" class="leave">Open in Playground</a>
+          <a href="https://360492a30131756978bb01aa812461da131bd612.mdnplay.dev/en-US/docs/Web/HTML/Reference/Elements/dialog/runner.html?state=rVRNa9tAEP0rg6DghPgjhVJQnVASfCj045BeCrqsd8fWNqsdZXflYEL%2Be2dXtqUobl1K8UFaz7y3b2ae5ikrQ2WyPJsrLQytQaurImvfi%2By6sAC3ZAPaACU6jOf5sgmBLEgjvOdkacgj56bnfNpGGTmftjT8yocByJf0yJg7fsAXUsL0gNlFJr1nTdNz%2BFajBR9EQKAVhBJhpxPOp4Vt33OKSU9RG9VC6rDN4fJDPAYnrF%2BRq3LwUhj8Mbo848BzVMTkt1GxOk7f4x9Qz35DPTvrAjposnk8HoAwm7z3gMLjmJpw0cYOLEejtEFnxAAJwhh6HCvtpcOAu1Q%2B1qdSkzwue%2FHQ6A1L5pkGGkiOkJZkgE392DfuBlkzt6wbTgpz5Cui8kwLSwSxCuhSU2uHG02Nh%2F7AXGMwZgZxj4CrFcp93cInlK9R6pVOzdO7v0SF6aqPfK0L2q7HPmyZJ43olR1eTe0Pc3vuyvt%2B6Ee6NF8Kea8c1fBYou27pIrOjdpqRxUF9lKsp4xl1cDj4PJ7Nu14krh4WjtqrBpLMuTyVlstHE%2FmuJVeTPmoD15Y5mjG8NqU%2Bp%2Bs0RvA6WrdejmaQfxN4e27N%2F0P83vJPR1MONlFCmspRHNZ9LHfmtUpTD0XSy4ePBo2ErnCLlGKxrexmM1Uh%2BieyCFb08dya4%2BNojHHKz76SSrqtM%2BGZf7NWFun8Zb7GZecJOvDjnLBt8MVKJJNVDFZY1i0gm62n9SoW8yxWS0wLtKbYPuohwbd9m5XKYMm7bLtMGlTnwLt1npEFXZ3y0Qotdhw%2BmfN3bcYE6XR8r7ILmB0BlfX%2FQZF6enutOBHacAt3V7AP%2FAlaMfFXeT5VsiNNHpdhuz5Fw%3D%3D&amp;code=c0085851-87c8-401c-90a4-879324aa3d57" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

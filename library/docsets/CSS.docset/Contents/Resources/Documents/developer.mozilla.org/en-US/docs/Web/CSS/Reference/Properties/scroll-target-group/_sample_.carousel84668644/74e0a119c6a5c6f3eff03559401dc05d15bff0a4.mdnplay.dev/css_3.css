@@ -1,0 +1,12 @@
+
+* { box-sizing: border-box; }
+body { margin: 0px; font-family: Helvetica, Arial, sans-serif; }
+h1 { text-align: center; }
+button { background-color: white; }
+ul { width: 100%; height: 400px; padding: 20px; gap: 4%; display: grid; grid-auto-flow: column; grid-auto-columns: 100%; overflow-x: scroll; scroll-snap-type: x mandatory; }
+ul li { list-style-type: none; background-color: rgb(238, 238, 238); border: 1px solid rgb(221, 221, 221); padding: 20px; scroll-snap-align: center; }
+ul { anchor-name: --my-carousel; }
+ol { position: absolute; position-anchor: --my-carousel; top: calc(-90px + anchor(bottom)); justify-self: anchor-center; display: flex; justify-content: center; gap: 20px; list-style-type: none; padding: 0px; }
+ol a { width: 28px; height: 28px; display: inline-block; text-align: center; text-decoration: none; padding-top: 4px; color: black; background-color: transparent; border: 2px solid black; border-radius: 50%; }
+
+button.copy {display:none !important}

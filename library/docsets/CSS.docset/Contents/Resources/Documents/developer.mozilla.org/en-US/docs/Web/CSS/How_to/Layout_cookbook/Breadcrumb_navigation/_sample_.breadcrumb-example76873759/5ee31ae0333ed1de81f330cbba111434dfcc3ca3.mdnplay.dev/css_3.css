@@ -1,0 +1,7 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: normal; font-family: sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+.breadcrumb { padding: 0px 0.5rem; }
+.breadcrumb ol { display: flex; flex-wrap: wrap; list-style: none; margin: 0px; padding: 0px; align-items: end; }
+.breadcrumb li:not(:last-child)::after { display: inline-block; margin: 0px 0.25rem; content: "→"; }
+
+button.copy {display:none !important}

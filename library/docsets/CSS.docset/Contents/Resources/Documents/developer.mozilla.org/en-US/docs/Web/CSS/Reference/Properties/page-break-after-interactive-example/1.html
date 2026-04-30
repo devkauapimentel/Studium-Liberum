@@ -1,0 +1,77 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CSS Demo: page-break-after</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../../../../../../../interactive_examples/assets/css/codemirror.css" rel="stylesheet">
+    <link href="../../../../../../../../interactive_examples/assets/css/editor-css.css" rel="stylesheet">
+    <style>.box {
+  border: solid #5b6dcd 5px;
+  background-color: #5b6dcd;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+#example-element {
+  border: solid 5px #ffc129;
+  background-color: #ffc129;
+  color: black;
+}
+
+
+ button.copy {display:none !important}</style>  </head>
+
+  <body>
+    <header class="output-header border-rounded-top">
+      <h4 class="output-heading">CSS Demo: page-break-after</h4>
+      <button id="reset" class="reset" type="button">Reset</button>
+    </header>
+    <noscript>
+      <div id="warning-no-script" class="warning-container">
+        <div class="warning">
+          The interactive example cannot be shown because JavaScript is
+          disabled.
+        </div>
+      </div>
+    </noscript>
+    <div id="warning-mathml-not-supported" class="warning-container hidden">
+      <div class="warning">
+        The interactive example cannot be shown because MathML is not supported
+        by your browser.
+      </div>
+    </div>
+    <div id="editor-wrapper" class="editor-wrapper border-rounded-bottom hidden">
+      <section id="example-choice-list" class="example-choice-list">
+          <div class="example-choice">
+<pre><code class="language-css">page-break-after: auto;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">page-break-after: always;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+      </section>
+      <div id="output" class="output hidden">
+          <div>
+  <p>
+    The effect of this property can be noticed when the document is being
+    printed or a preview of a print is displayed.
+  </p>
+  <button id="print-btn">Show Print Preview</button>
+  <div class="box-container">
+    <div class="box">Content before the property</div>
+    <div class="box" id="example-element">Content with 'page-break-after'</div>
+    <div class="box">Content after the property</div>
+  </div>
+</div>
+      </div>
+    </div>
+
+    <script src="../../../../../../../../interactive_examples/assets/js/codemirror.js"></script>
+    <script src="../../../../../../../../interactive_examples/assets/js/editor-css.js"></script>
+    <script>const btn = document.getElementById("print-btn");
+
+btn.addEventListener("click", () => {
+  window.print();
+});
+</script></body></html>

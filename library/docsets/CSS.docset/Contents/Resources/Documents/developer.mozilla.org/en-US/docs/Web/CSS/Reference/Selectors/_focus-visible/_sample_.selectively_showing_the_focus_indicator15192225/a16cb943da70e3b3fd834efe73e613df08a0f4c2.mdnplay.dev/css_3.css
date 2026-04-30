@@ -1,0 +1,8 @@
+
+.button { margin: 10px; border: 2px solid darkgray; border-radius: 4px; }
+.button:focus-visible { outline: 3px solid deepskyblue; outline-offset: 3px; }
+@supports not selector(:focus-visible) {
+  .button.with-fallback:focus { outline: 3px solid deepskyblue; outline-offset: 3px; }
+}
+
+button.copy {display:none !important}

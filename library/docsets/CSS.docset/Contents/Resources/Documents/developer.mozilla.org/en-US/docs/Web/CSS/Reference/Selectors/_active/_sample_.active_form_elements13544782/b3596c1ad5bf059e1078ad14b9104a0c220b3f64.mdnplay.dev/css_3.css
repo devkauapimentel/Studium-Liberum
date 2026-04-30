@@ -1,0 +1,5 @@
+
+form :active { color: red; }
+form button { background: white; }
+
+button.copy {display:none !important}

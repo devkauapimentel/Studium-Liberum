@@ -1,0 +1,10 @@
+
+table, th, td { border: 1px solid black; }
+table { overflow: auto; width: 100%; max-width: 400px; height: 240px; display: block; margin: 0px auto; border-spacing: 0px; }
+tbody { white-space: nowrap; }
+th, td { padding: 5px 10px; border-top-width: 0px; border-left-width: 0px; }
+th { position: sticky; top: 0px; background: white; vertical-align: bottom; }
+th:last-child, td:last-child { border-right-width: 0px; }
+tr:last-child td { border-bottom-width: 0px; }
+
+button.copy {display:none !important}

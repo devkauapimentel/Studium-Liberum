@@ -1,0 +1,7 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: 1.5; font-family: sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+article { border: 1px solid red; padding: 10px; }
+.container { column-width: 250px; }
+h2 { background-color: rgb(77, 78, 83); color: white; column-span: all; }
+
+button.copy {display:none !important}

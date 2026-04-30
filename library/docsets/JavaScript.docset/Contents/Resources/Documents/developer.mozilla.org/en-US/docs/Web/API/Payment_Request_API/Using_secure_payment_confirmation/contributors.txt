@@ -1,0 +1,3 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/payment_request_api/using_secure_payment_confirmation/index.md
+

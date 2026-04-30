@@ -1,0 +1,13 @@
+
+div { width: 100%; height: 200px; background-color: plum; background-image: repeating-linear-gradient(transparent 0px, transparent 19px, rgba(0, 0, 0, 0.133) 19px, rgba(0, 0, 0, 0.133) 20px), repeating-linear-gradient(to left, transparent 0px, transparent 19px, rgba(0, 0, 0, 0.133) 19px, rgba(0, 0, 0, 0.133) 20px); }
+div { box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 5px; border-radius: 30px; }
+body:has(input:checked) div { box-shadow: none; }
+@layer page-setup {
+  html { font-family: Helvetica, Arial, sans-serif; }
+  body { max-width: 600px; min-width: fit-content; margin: 20px auto; }
+  div { display: flex; justify-content: center; align-items: center; margin-top: 20px; }
+  select { padding: 3px 5px; }
+  code { font-weight: bolder; }
+}
+
+button.copy {display:none !important}

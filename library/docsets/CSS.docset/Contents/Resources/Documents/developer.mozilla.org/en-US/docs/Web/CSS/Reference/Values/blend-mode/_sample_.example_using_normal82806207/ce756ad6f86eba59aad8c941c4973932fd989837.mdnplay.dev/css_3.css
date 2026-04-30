@@ -1,0 +1,4 @@
+
+#div { width: 150px; height: 150px; background: url("./en-US/docs/Web/CSS/Reference/Values/blend-mode/br.png"), url("./en-US/docs/Web/CSS/Reference/Values/blend-mode/tr.png"); background-blend-mode: normal; }
+
+button.copy {display:none !important}

@@ -1,0 +1,38 @@
+<html>
+  <!-- Online page at https://35bb680de5cb0c8ce5d9d4b1aed89287a75f52a5.mdnplay.dev/en-US/docs/Web/API/Element/currentCSSZoom/runner.html?uuid=35bb680de5cb0c8ce5d9d4b1aed89287a75f52a5&state=lVRLc5swEP4rO9QHmEmcBqaHECeXTmd66qHOqcPBNshGiSxRSSR2Gf57VwiZh53QnpB293sI7arycr1nXuwtMvoKNHtIvGItCdeJ95hwgHaDq6ZA6SMjWPNHiH0MYeJZSJpTlt22EAC7Bb%2BtCmz0AkE0IAhPBC1F6CiiwMU7m01FdI32MiJJhthRZHGDtY8DoFPPqCrY%2BhgDF5wMPETXXOg%2BqcO3lkZ5R96T6tZudfoWklgpJnZIvbjBAMa9Ky9VCu%2FgE8ahMtCc0F2uY7j7UhzuTUC8Erll4i0GlUrBWBPcr%2BWO8hhuP7dVGyHRFwaKAyjBaAYbtk5fMFc3Ms9GJRVcaUCpb4zs8XLhATKRlmY5%2F10SeVwSRlItpJ80jhIvQIJtyVNNBTdAX5ODDqzTjmdOOSfyCVPIuJpVlzL1rDLYOkn46n4Etwd7EgXCz8Lfmx9iD0K3gNbSUprW%2FLpc%2FsIeMZfIwWEKKbTQx4K0Ju2RbS9%2FeFzX%2B4Ez569alF9y04skC%2BYwlI5hVtmi%2BTBRryyNVW%2BH4iN1N0Y99fEoXRK3NdPi4bR4eC4e%2FoN4OC0e%2FWxnZtpEf6g7N3a6VqOKiXsZSp%2B5vDKk51Z%2FCP0%2FbocvxnuO%2B1Xg4w7cLuic9pTfN1sDYYqcxg%2BduL4fQsCIqLIohNSoifOhc6pgI8WbItI6te%2BCzhGPTwMzQ%2BbVfwE%3D&code=45695719& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <div id="parent">
+  parent
+  <div style="zoom: 2" id="child1">
+    child1 (zoom: 2)
+    <div style="zoom: 3" id="child2">
+      child2 (zoom: 3)
+      <div id="child3-rendered">child3-rendered</div>
+      <div style="display: none" id="child3-not-rendered">
+        child3-not-rendered
+      </div>
+    </div>
+  </div>
+</div>
+<pre id="log">parent (unzoomed). currentCSSZoom: 1<br>child1 (zoom: 2). currentCSSZoom: 2<br>child2 (zoom: 2). currentCSSZoom: 6<br>child3-rendered (unzoomed). currentCSSZoom: 6<br>child3-not-rendered (not rendered): 1<br></pre>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../js_3.js'></script>
+</body>
+</html>

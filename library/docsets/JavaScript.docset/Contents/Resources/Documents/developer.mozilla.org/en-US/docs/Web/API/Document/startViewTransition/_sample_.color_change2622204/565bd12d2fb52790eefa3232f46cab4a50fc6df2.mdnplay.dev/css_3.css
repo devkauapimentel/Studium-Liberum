@@ -1,0 +1,7 @@
+
+html { --bg: indigo; }
+main { display: flex; flex-direction: column; gap: 5px; }
+section { background-color: var(--bg); height: 60px; border-radius: 5px; }
+::view-transition-group(root) { animation-duration: 2s; }
+
+button.copy {display:none !important}

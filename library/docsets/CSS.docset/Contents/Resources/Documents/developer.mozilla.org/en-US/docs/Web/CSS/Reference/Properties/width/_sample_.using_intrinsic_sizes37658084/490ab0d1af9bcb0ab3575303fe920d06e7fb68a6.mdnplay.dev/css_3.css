@@ -1,0 +1,9 @@
+
+p.max-green { width: max-content; background-color: lightgreen; border-style: dotted; }
+p.min-blue { width: min-content; background-color: lightblue; border-style: dashed; }
+p.min-pink { background-color: pink; border-style: solid; }
+@supports not (width: calc-size(min-content, size * 2)) {
+  body::after { content: "Your browser doesn't support the calc-size() function yet."; background-color: wheat; display: block; text-align: center; padding: 1em; }
+}
+
+button.copy {display:none !important}

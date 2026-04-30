@@ -1,0 +1,7 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/attributes/disabled/index.md
+
+# Original Wiki contributors
+Menno_vdH
+dominicegginton
+estelle

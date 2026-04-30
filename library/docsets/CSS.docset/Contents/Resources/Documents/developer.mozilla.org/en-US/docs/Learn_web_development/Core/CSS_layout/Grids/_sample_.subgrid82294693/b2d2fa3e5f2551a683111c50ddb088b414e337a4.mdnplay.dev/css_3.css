@@ -1,0 +1,7 @@
+
+.container { font-family: sans-serif; }
+.container div { border-radius: 5px; padding: 10px; background-color: rebeccapurple; border: 1px solid white; color: white; }
+.container { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(1, 1fr); gap: 10px; }
+.subgrid { grid-column-start: 1; grid-column-end: 4; grid-row-start: 2; grid-row-end: 4; display: grid; gap: inherit; grid-template-columns: subgrid; grid-template-rows: 2fr 1fr; }
+
+button.copy {display:none !important}

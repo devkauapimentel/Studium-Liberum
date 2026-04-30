@@ -1,0 +1,5 @@
+
+div { width: 120px; height: 120px; }
+.striped { background: linear-gradient(to left bottom, cyan 50%, palegoldenrod 50%); }
+
+button.copy {display:none !important}

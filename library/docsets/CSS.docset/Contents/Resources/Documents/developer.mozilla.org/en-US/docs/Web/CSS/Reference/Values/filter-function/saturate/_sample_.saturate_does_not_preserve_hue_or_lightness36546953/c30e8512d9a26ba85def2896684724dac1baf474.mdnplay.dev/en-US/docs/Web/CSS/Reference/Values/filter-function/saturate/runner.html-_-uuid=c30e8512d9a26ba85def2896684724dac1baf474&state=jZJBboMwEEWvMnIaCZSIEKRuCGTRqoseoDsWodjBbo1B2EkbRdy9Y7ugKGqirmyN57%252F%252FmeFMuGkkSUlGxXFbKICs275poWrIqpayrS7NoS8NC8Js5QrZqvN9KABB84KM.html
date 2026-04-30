@@ -1,0 +1,70 @@
+<html>
+  <!-- Online page at https://c30e8512d9a26ba85def2896684724dac1baf474.mdnplay.dev/en-US/docs/Web/CSS/Reference/Values/filter-function/saturate/runner.html?uuid=c30e8512d9a26ba85def2896684724dac1baf474&state=jZJBboMwEEWvMnIaCZSIEKRuCGTRqoseoDsWodjBbo1B2EkbRdy9Y7ugKGqirmyN57%2F%2FmeFMuGkkSUlGxXFbKICs275poWrIqpayrS7NoS8NC8Js5QrZqvN9KABB84KMLQXBR4%2BZzhtUruUdIL7%2BwSJLUmmNUWej4bJQM%2ByFs5VToTtZnlLYS%2Fa9sZWm7GuhUlizBmKsDIVCwShGwXEEWGcH%2BRLU8BSSzhM4EzU3SIhjVxlcig8bomqVNjDBcqBtdWiYMlHNzItk9vp0eqXB5XxCZHihdb2ncSOw7YXatz0EkhkQqIg3eGQ5JLG9LRahz%2B2h%2BBnrS2rVM7T9BSMU3z0UXGukzUmy6L2sPuu%2BPSj63Er0ymFn1xPDw1nACpJhDo%2FxPNz5iWgZlV3HsJkLSQPL8TEvQiT%2FD5HcDOFmgCnQ2%2FkX5FqzF9Iwl3f6STHyMEYdi9d5k3DapOGYCpcp7ZrJ8AM%3D&code=36546953& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;div&gt;
+  &lt;p&gt;Using &lt;code&gt;saturate()&lt;/code&gt;&lt;/p&gt;
+  &lt;div id="saturate"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;Using &lt;code&gt;hsl()&lt;/code&gt;&lt;/p&gt;
+  &lt;div id="hsl"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>#saturate,
+#hsl {
+  display: flex;
+  margin: 1em 0;
+}
+
+#saturate div,
+#hsl div {
+  width: 2px;
+  height: 100px;
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code>const saturate = document.getElementById("saturate");
+const hsl = document.getElementById("hsl");
+
+for (let i = 0; i &lt;= 200; i++) {
+  const div1 = document.createElement("div");
+  div1.style.backgroundColor = `hsl(0 ${i / 2}% 50%)`;
+  hsl.appendChild(div1);
+
+  const div2 = document.createElement("div");
+  div2.style.backgroundColor = "hsl(0 50% 50%)";
+  div2.style.filter = `saturate(${i}%)`;
+  saturate.appendChild(div2);
+}</code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=c30e8512d9a26ba85def2896684724dac1baf474&amp;state=jZJBboMwEEWvMnIaCZSIEKRuCGTRqoseoDsWodjBbo1B2EkbRdy9Y7ugKGqirmyN57%2F%2FmeFMuGkkSUlGxXFbKICs275poWrIqpayrS7NoS8NC8Js5QrZqvN9KABB84KMLQXBR4%2BZzhtUruUdIL7%2BwSJLUmmNUWej4bJQM%2ByFs5VToTtZnlLYS%2Fa9sZWm7GuhUlizBmKsDIVCwShGwXEEWGcH%2BRLU8BSSzhM4EzU3SIhjVxlcig8bomqVNjDBcqBtdWiYMlHNzItk9vp0eqXB5XxCZHihdb2ncSOw7YXatz0EkhkQqIg3eGQ5JLG9LRahz%2B2h%2BBnrS2rVM7T9BSMU3z0UXGukzUmy6L2sPuu%2BPSj63Er0ymFn1xPDw1nACpJhDo%2FxPNz5iWgZlV3HsJkLSQPL8TEvQiT%2FD5HcDOFmgCnQ2%2FkX5FqzF9Iwl3f6STHyMEYdi9d5k3DapOGYCpcp7ZrJ8AM%3D&amp;code=36546953&amp;" class="leave">Open in Playground</a>
+          <a href="https://c30e8512d9a26ba85def2896684724dac1baf474.mdnplay.dev/en-US/docs/Web/CSS/Reference/Values/filter-function/saturate/runner.html?state=jZJBboMwEEWvMnIaCZSIEKRuCGTRqoseoDsWodjBbo1B2EkbRdy9Y7ugKGqirmyN57%2F%2FmeFMuGkkSUlGxXFbKICs275poWrIqpayrS7NoS8NC8Js5QrZqvN9KABB84KMLQXBR4%2BZzhtUruUdIL7%2BwSJLUmmNUWej4bJQM%2ByFs5VToTtZnlLYS%2Fa9sZWm7GuhUlizBmKsDIVCwShGwXEEWGcH%2BRLU8BSSzhM4EzU3SIhjVxlcig8bomqVNjDBcqBtdWiYMlHNzItk9vp0eqXB5XxCZHihdb2ncSOw7YXatz0EkhkQqIg3eGQ5JLG9LRahz%2B2h%2BBnrS2rVM7T9BSMU3z0UXGukzUmy6L2sPuu%2BPSj63Er0ymFn1xPDw1nACpJhDo%2FxPNz5iWgZlV3HsJkLSQPL8TEvQiT%2FD5HcDOFmgCnQ2%2FkX5FqzF9Iwl3f6STHyMEYdi9d5k3DapOGYCpcp7ZrJ8AM%3D&amp;code=978a21d1-a677-4e49-96bd-29c7de918833" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

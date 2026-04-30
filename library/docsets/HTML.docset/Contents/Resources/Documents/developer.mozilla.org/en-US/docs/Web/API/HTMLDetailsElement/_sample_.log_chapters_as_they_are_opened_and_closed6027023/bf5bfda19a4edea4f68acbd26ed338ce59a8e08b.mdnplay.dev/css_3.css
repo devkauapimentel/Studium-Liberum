@@ -1,0 +1,6 @@
+
+body { display: flex; }
+#log { flex-shrink: 0; padding-left: 3em; }
+#summaries { flex-grow: 1; }
+
+button.copy {display:none !important}

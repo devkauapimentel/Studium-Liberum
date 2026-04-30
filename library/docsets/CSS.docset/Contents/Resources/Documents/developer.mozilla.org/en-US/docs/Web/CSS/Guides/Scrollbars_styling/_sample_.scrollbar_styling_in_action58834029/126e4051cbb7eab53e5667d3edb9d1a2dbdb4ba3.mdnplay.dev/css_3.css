@@ -1,0 +1,5 @@
+
+.poem { width: 300px; height: 100px; border: 1px solid; }
+.poem { overflow: scroll; scrollbar-color: red orange; scrollbar-width: thin; }
+
+button.copy {display:none !important}

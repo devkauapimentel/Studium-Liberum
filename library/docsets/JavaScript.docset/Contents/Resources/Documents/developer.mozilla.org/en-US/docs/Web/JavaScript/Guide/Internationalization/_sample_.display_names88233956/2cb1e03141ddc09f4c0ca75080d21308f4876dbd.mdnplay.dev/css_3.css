@@ -1,0 +1,6 @@
+
+output { display: block; margin: 1em; font-size: x-large; }
+rt { font-weight: bold; }
+ruby { border-bottom: 1px dotted; ruby-position: under; ruby-align: center; }
+
+button.copy {display:none !important}

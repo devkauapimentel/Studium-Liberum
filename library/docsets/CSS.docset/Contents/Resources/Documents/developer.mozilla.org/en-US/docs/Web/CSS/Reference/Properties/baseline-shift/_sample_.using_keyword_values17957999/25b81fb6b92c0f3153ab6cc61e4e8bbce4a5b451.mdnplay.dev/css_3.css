@@ -1,0 +1,12 @@
+
+text { font-family: cursive; font-size: 2rem; }
+[baseline-shift="sub"] { fill: deeppink; }
+[baseline-shift="super"] { fill: rebeccapurple; }
+svg:nth-of-type(2) tspan { baseline-shift: sub; }
+svg:nth-of-type(3) tspan { baseline-shift: super; }
+svg { border: 1px solid; width: 15em; margin-bottom: 10px; }
+@supports not (baseline-shift: sub) {
+  body::before { content: "Your browser doesn't support the `baseline-shift` property."; background-color: wheat; display: block; width: 100%; text-align: center; padding: 0.5em; }
+}
+
+button.copy {display:none !important}

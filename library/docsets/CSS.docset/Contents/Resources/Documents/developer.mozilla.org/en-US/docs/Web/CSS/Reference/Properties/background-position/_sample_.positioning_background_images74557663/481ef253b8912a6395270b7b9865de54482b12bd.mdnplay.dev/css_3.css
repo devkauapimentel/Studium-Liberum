@@ -1,0 +1,7 @@
+
+div { background-color: rgb(255, 238, 153); background-repeat: no-repeat; width: 300px; height: 80px; margin-bottom: 12px; }
+.example-one { background: url("./en-US/docs/Web/CSS/Reference/Properties/background-position/star-transparent.gif") 2.5cm bottom no-repeat rgb(255, 238, 153); }
+.example-two { background: url("./en-US/docs/Web/CSS/Reference/Properties/background-position/star-transparent.gif") left 4em bottom 1em no-repeat rgb(255, 238, 153); }
+.example-three { background-image: url("./en-US/docs/Web/CSS/Reference/Properties/background-position/star-transparent.gif"), url("./en-US/docs/Web/CSS/Reference/Properties/background-position/cat-front.png"); background-position: 0px 0px, right 3em bottom 2em; }
+
+button.copy {display:none !important}

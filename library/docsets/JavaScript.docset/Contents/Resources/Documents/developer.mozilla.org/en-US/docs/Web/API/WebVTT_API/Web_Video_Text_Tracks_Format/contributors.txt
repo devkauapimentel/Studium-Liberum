@@ -1,0 +1,3 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/webvtt_api/web_video_text_tracks_format/index.md
+

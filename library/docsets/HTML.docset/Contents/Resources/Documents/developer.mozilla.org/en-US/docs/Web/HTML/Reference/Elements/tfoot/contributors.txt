@@ -1,0 +1,27 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/elements/tfoot/index.md
+
+# Original Wiki contributors
+mfuji09
+RainSlide
+neoncitylights
+JamesCatt
+gordongrace
+wbamberg
+thhuang
+SphinxKnight
+teoli
+Bzbarsky
+arronei
+sideshowbarker
+libbymc
+Sebastianz
+Jeremie
+shvelo
+Abzoozy
+briandrum
+kscarfone
+Sheppy
+medicdude
+fscholz
+McGurk

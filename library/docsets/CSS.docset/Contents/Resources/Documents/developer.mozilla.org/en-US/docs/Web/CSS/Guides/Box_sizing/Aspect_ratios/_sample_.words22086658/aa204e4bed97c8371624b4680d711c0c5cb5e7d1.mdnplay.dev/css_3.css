@@ -1,0 +1,5 @@
+
+blockquote { inline-size: max-content; aspect-ratio: 1 / 1; }
+blockquote { border: 1px solid rgb(204, 204, 204); padding: 1px; margin: 20px 0px; background-color: rgb(237, 237, 237); }
+
+button.copy {display:none !important}

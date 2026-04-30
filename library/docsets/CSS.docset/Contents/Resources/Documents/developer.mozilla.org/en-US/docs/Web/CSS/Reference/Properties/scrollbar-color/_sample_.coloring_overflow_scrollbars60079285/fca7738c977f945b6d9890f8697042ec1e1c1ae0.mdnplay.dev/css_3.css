@@ -1,0 +1,4 @@
+
+.scroller { width: 300px; height: 100px; overflow-y: scroll; scrollbar-color: rgb(0, 0, 119) rgb(186, 218, 85); }
+
+button.copy {display:none !important}

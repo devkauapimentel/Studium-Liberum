@@ -1,0 +1,325 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/algorithm/remove.html --><head><meta charset="utf-8"><title>Talk:cpp/algorithm/remove</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_6252.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_algorithm_remove skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Falgorithm%2Fremove&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Falgorithm%2Fremove" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/algorithm/remove.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./remove.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./remove.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./remove.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/remove&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/remove&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/remove&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./remove.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/algorithm/remove</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../algorithm.html" title="Talk:cpp/algorithm">algorithm</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Where in the standard is a requirement stating that the predicate for remove_if should not modify the objects passed to it? <a href="https://en.cppreference.com/mwiki/index.php?title=User:Blindley&amp;action=edit&amp;redlink=1" class="new" title="User:Blindley (page does not exist)">Benjamin Lindley</a> 22:50, 27 April 2012 (PDT)
+</p>
+<dl><dd> It looks like there are some footnotes in 25.1 that describe general constraints on algorithms -- perhaps these are the source of that claim?
+</dd></dl>
+<dl><dd> "4.  For purposes of determining the existence of data races, algorithms shall not modify objects referenced through an iterator argument unless the specification requires such modification."
+</dd></dl>
+<dl><dd> "8.  ... The function object pred shall not apply any non-constant function through the dereferenced iterator."
+</dd></dl>
+<dl><dd> --<a href="../../User%25253ANate.html" title="User:Nate">Nate</a> 05:11, 28 April 2012 (PDT)
+<dl><dd>Yes, §25.1[algorithms.general]/8 (/7 in C++03) is almost certainly what the predicate template refers to. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 07:36, 28 April 2012 (PDT)
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd>I see. That upsets me. I wonder why they considered such a requirement necessary. --<a href="https://en.cppreference.com/mwiki/index.php?title=User:Blindley&amp;action=edit&amp;redlink=1" class="new" title="User:Blindley (page does not exist)">Benjamin Lindley</a> 09:19, 30 April 2012 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd> Maybe the standards committee is secretly trying to <a rel="nofollow" class="external text" href="http://www.altdevblogaday.com/2012/04/26/functional-programming-in-c/">make C++ a functional programming langauge.</a>  But seriously, it doesn't seem to unreasonable to require that something called a 'predicate' not have side effects. --<a href="../../User%25253ANate.html" title="User:Nate">Nate</a> 15:40, 30 April 2012 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./remove.html#Mentioning_file_deletion_overload.3F"><span class="tocnumber">1</span> <span class="toctext">Mentioning file deletion overload?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./remove.html#No_invalidation_of_iterators"><span class="tocnumber">2</span> <span class="toctext">No invalidation of iterators</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./remove.html#Linear_complexity_or_quadratic.3F"><span class="tocnumber">3</span> <span class="toctext">Linear complexity or quadratic?</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./remove.html#Possible_Implementation_seems_to_be_.22not_possible.22"><span class="tocnumber">4</span> <span class="toctext">Possible Implementation seems to be "not possible"</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/remove&amp;action=edit&amp;section=1" title="Edit section: Mentioning file deletion overload?">edit</a>]</span> <span class="mw-headline" id="Mentioning_file_deletion_overload.3F"> Mentioning file deletion overload? </span></h2>
+<p>Should this page mention that std::remove also has a unrelated (const char *) overload that deletes disk files? -- <a href="https://en.cppreference.com/mwiki/index.php?title=User:Myria&amp;action=edit&amp;redlink=1" class="new" title="User:Myria (page does not exist)">Myria</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Myria&amp;action=edit&amp;redlink=1" class="new" title="User talk:Myria (page does not exist)">talk</a>) 16:08, 2 June 2016 (PDT)
+</p>
+<dl><dd> good point! --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 20:10, 2 June 2016 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/remove&amp;action=edit&amp;section=2" title="Edit section: No invalidation of iterators">edit</a>]</span> <span class="mw-headline" id="No_invalidation_of_iterators"> No invalidation of iterators </span></h2>
+<p>We should mention that std::remove and std::remove_if do not invalidate iterators.
+</p><p>The erase-remove idiom relies on this:
+</p>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;vector&gt;</span>
+<span class="co2">#include &lt;algorithm&gt;</span>
+<span class="co2">#include &lt;cassert&gt;</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="br0">{</span>
+    <a href="../../cpp/container/vector.html"><span class="kw1272">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> vec<span class="br0">{</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">1</span>, <span class="nu0">3</span>, <span class="nu0">1</span>, <span class="nu0">4</span>, <span class="nu0">1</span>, <span class="nu0">5</span>, <span class="nu0">1</span><span class="br0">}</span><span class="sy4">;</span>
+    <span class="kw4">auto</span> e <span class="sy1">=</span> vec.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">auto</span> rem <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">remove</span><span class="br0">(</span>vec.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, vec.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../cpp/error/assert.html"><span class="kw776">assert</span></a><span class="br0">(</span>e <span class="sy1">==</span> vec.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+    vec.<span class="me1">erase</span><span class="br0">(</span>rem, vec.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">//assert(e&nbsp;!= vec.end()); // this will usually be hold</span>
+  <span class="br0">}</span>
+  <span class="br0">{</span>
+    <a href="../../cpp/container/vector.html"><span class="kw1272">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> vec<span class="br0">{</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">1</span>, <span class="nu0">3</span>, <span class="nu0">1</span>, <span class="nu0">4</span>, <span class="nu0">1</span>, <span class="nu0">5</span>, <span class="nu0">1</span><span class="br0">}</span><span class="sy4">;</span>
+    vec.<span class="me1">erase</span><span class="br0">(</span>std<span class="sy4">::</span><span class="me2">remove</span><span class="br0">(</span>vec.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, vec.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, <span class="nu0">1</span><span class="br0">)</span>, vec.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// it is not specified which argument is evaluated first!!!!!!!</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+</div>
+<p>The last line of code only works if vec.end() is not changed (invalidated) before and after executing std::remove.
+This is important, because we do not know which argument is evaluated first.
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/remove&amp;action=edit&amp;section=3" title="Edit section: Linear complexity or quadratic?">edit</a>]</span> <span class="mw-headline" id="Linear_complexity_or_quadratic.3F"> Linear complexity or quadratic? </span></h2>
+<p>remove() and remove_if() move the content of the container, which might be expensive in a vector.
+So in a vector containing {1,0,2,0,3,0,4,0,5,0,...} a remove(v.begin(), v.end(), 0) would move the whole remaining parts of the vector on every second element. --<a href="../../User%25253ARoker.html" title="User:Roker">Roker</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Roker&amp;action=edit&amp;redlink=1" class="new" title="User talk:Roker (page does not exist)">talk</a>) 08:25, 27 April 2021 (PDT)
+</p>
+<dl><dd> It is linear complexity as specified on the page, check out the possible implementation to see how it achieves this. --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 08:49, 27 April 2021 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/remove&amp;action=edit&amp;section=4" title="Edit section: Possible Implementation seems to be &quot;not possible&quot;">edit</a>]</span> <span class="mw-headline" id="Possible_Implementation_seems_to_be_.22not_possible.22"> Possible Implementation seems to be "not possible" </span></h2>
+<p>If you try to remove the last element in the container, std::move will never be called and no element will be removed.
+</p>
+<dl><dd> that's correct behavior for std::remove  --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:23, 30 September 2022 (PDT)
+<dl><dd> Do note that <code>last</code> doesn't refer to the last element in the container, but rather the position beyond the last element, i.e. <code>last</code> is a poor name for the end iterator. If you were to call <span class="t-lc">std::remove(it, it, *it)</span> (so that <span class="t-lc">first == last</span>), it would correctly do nothing --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 06:26, 30 September 2022 (PDT)
+<dl><dd> I think OP is talking about e.g. removing 3 from vector{1,2,3}, in which case std::move is not called because there is nothing to shift. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:28, 30 September 2022 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<p>Since <code>i</code> is initialised to <code>first</code> but then incremented in the test, when is the first element checked in the possible implementation? (BTW, has the above comment on removing the last element been fixed in the possible implementation? Doesn't seem to)
+</p>
+<dl><dd> The first element is checked by <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/algorithm/find.html"><span class="kw1578">std::<span class="me2">find</span></span></a></span></span>. Regarding the last element, there's no fix to be made --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 06:12, 1 November 2022 (PDT)
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 118/1000000
+Preprocessor generated node count: 638/1000000
+Post‐expand include size: 803/4194304 bytes
+Template argument size: 1644/4194304 bytes
+Highest expansion depth: 9/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6600-0!*!0!!en!*!* and timestamp 20240518071605 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/remove&amp;oldid=144730">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/remove&amp;oldid=144730</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./remove.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/algorithm/remove" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/algorithm/remove" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/remove&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/remove&amp;oldid=144730" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/remove&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 1 November 2022, at 06:12.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 5,475 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.348 secs. -->
+	
+
+
+</body></html>

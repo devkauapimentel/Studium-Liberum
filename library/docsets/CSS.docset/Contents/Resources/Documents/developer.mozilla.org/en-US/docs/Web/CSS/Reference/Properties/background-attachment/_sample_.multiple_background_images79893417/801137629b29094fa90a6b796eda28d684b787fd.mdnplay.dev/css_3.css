@@ -1,0 +1,5 @@
+
+div { width: 300px; height: 200px; overflow: scroll; }
+ul { background-image: url("./en-US/docs/Web/CSS/Reference/Properties/background-attachment/star-solid.gif"), url("./en-US/docs/Web/CSS/Reference/Properties/background-attachment/star-transparent.gif"); background-attachment: fixed, scroll; background-repeat: repeat-y; background-position: 0px 0px, 100px 0px; }
+
+button.copy {display:none !important}

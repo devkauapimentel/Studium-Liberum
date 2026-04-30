@@ -1,0 +1,5 @@
+
+body { font-size: small; background-color: rgb(240, 240, 240); color: blue; }
+blockquote { all: unset; }
+
+button.copy {display:none !important}

@@ -1,0 +1,7 @@
+
+label { display: block; margin: 1px; padding: 1px; }
+.field { margin: 1px; padding: 1px; }
+input:required { border-color: maroon; border-width: 3px; }
+input:required:invalid { border-color: rgb(192, 0, 0); }
+
+button.copy {display:none !important}

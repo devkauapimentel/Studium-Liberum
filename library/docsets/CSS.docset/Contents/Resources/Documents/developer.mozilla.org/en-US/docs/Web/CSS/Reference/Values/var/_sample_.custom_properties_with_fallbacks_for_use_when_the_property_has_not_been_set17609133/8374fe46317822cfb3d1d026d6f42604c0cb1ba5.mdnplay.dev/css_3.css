@@ -1,0 +1,6 @@
+
+.component .header { color: var(--header-color, blue); }
+.component .text { color: var(--text-color, black); }
+.component { --text-color: #008800; }
+
+button.copy {display:none !important}

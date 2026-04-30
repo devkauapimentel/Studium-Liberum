@@ -1,0 +1,5 @@
+
+body { text-align: center; }
+canvas { display: inline-block; width: 120px; height: 80px; margin: auto; padding: 0px; border: medium; background-color: black; }
+
+button.copy {display:none !important}

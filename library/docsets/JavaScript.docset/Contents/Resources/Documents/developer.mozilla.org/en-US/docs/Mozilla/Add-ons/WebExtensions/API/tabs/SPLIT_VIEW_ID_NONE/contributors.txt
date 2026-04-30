@@ -1,0 +1,3 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/mozilla/add-ons/webextensions/api/tabs/split_view_id_none/index.md
+

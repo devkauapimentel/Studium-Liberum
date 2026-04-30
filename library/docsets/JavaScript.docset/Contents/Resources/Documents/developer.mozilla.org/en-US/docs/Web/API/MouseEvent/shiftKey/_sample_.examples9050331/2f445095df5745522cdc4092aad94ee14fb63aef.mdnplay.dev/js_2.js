@@ -1,0 +1,9 @@
+
+          let log = document.querySelector("#log");
+document.addEventListener("click", logKey);
+
+function logKey(e) {
+  log.textContent = `The shift key is pressed: ${e.shiftKey}`;
+}
+;
+        

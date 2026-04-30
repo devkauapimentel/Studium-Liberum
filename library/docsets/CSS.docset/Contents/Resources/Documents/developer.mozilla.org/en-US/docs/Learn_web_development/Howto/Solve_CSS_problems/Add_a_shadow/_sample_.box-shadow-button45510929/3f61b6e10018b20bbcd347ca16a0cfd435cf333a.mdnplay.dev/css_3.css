@@ -1,0 +1,6 @@
+
+.wrapper { height: 150px; display: flex; align-items: center; justify-content: center; }
+button { padding: 5px 10px; border: 0px; border-radius: 5px; font-weight: bold; font-size: 140%; background-color: rgb(219, 31, 72); color: white; }
+.shadow { box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 10px 2px; }
+
+button.copy {display:none !important}

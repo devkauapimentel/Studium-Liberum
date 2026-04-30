@@ -1,0 +1,7 @@
+
+.box { border: 2px dotted rgb(96, 139, 168); display: flex; flex-direction: column; align-items: flex-start; width: 200px; }
+.box div { background-color: rgba(96, 139, 168, 0.2); border: 2px solid rgb(96, 139, 168); border-radius: 5px; padding: 20px; }
+.box > :first-child { align-self: stretch; }
+.box .selected { align-self: center; }
+
+button.copy {display:none !important}

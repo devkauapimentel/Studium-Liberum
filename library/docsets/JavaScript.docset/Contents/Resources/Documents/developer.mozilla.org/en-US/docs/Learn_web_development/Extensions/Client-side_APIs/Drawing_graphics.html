@@ -1,0 +1,1535 @@
+<html><!-- Mirrored from developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:05:01 GMT --><head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Drawing graphics</title>
+          
+          <script>try {
+  document.documentElement.dataset.theme =
+    localStorage.getItem("theme") || "light dark";
+} catch (error) {
+  console.warn("Unable to set theme", error);
+}
+
+try {
+  if (localStorage.getItem("nop") === "yes") {
+    document.documentElement.dataset["nop"] = "yes";
+  }
+} catch (error) {
+  console.warn("Unable to set nop", error);
+}
+</script>
+          <link rel="stylesheet" href="../../../../../static/client/styles-global.03146ed4c65bc5ea.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/270.66bae6059a1c23f9.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-layout.632d2f3884f10ca3.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-content-section.2ee991ba88f986cf.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-heading-anchor.0eec5185ab9425b7.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-toc.9b9bd019efd16b86.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-article-footer.81ae18c89fc527dc.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-left-sidebar.6f954e8939555f77.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-page-layout.5a4354f33e894319.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-a11y-menu.5796ee87cb69f93f.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-navigation.3a34ee593a554c40.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-logo.aea5ff6edf1b9cfb.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-menu.3376b3e11656fba0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs-bar.9a51a3c76a6231d0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs.d06ce8d09f42feb8.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-footer.a2850e459e2d290b.css" fetchpriority="high">
+          <link rel="preload" href="../../../../../static/client/jetbrains-mono-latin.119994ed445212c7.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low"><link rel="preload" href="../../../../../static/client/inter-latin.9a3b1bc220d426ef.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+          <script data-cfasync="false" data-report-only="on" data-prompt="0" src="../../../../../../transcend-cdn.com/cm/d556c3a1-e57c-4bdf-a490-390a1aebf6dd/airgap.js"></script>
+          <script src="../../../../../static/client/runtime.c294a6bdc7a42570.js" type="module"></script><script src="../../../../../static/client/1111.53dba753dc3eb961.js" type="module"></script><script src="../../../../../static/client/8903.f870aafb338b203a.js" type="module"></script><script src="../../../../../static/client/index.9a449352d879bbd5.js" type="module"></script>
+          
+    <link rel="icon" sizes="32x32" href="../../../../../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../../../../../favicon.svg">
+   <meta name="description" content="The browser contains some very powerful graphics programming tools, from the Scalable Vector Graphics (SVG) language, to APIs for drawing on HTML &lt;canvas&gt; elements, (see The Canvas API and WebGL). This article provides an introduction to canvas, and further resources to allow you to learn more."><meta name="og:url" content="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics"><meta name="og:title" content="Drawing graphics - Learn web development | MDN"><meta name="og:locale" content="en_US"><meta name="og:description" content="The browser contains some very powerful graphics programming tools, from the Scalable Vector Graphics (SVG) language, to APIs for drawing on HTML &lt;canvas&gt; elements, (see The Canvas API and WebGL). This article provides an introduction to canvas, and further resources to allow you to learn more."><meta name="og:image" content="https://developer.mozilla.org/mdn-social-image.46ac2375.png"><meta name="og:image:type" content="image/png"><meta name="og:image:height" content="1024"><meta name="og:image:width" content="1024"><meta name="og:image:alt" content="The MDN logo"><meta name="og:site_name" content="MDN Web Docs"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="MozDevNet">
+          <link rel="canonical" href="Drawing_graphics.html">
+          <link rel="apple-touch-icon" href="../../../../../apple-touch-icon.png">
+          <link rel="manifest" href="../../../../../manifest.json">
+          <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/opensearch.xml" title="MDN Web Docs">
+          <link rel="alternate" type="application/rss+xml" title="MDN Blog RSS Feed" href="https://developer.mozilla.org/en-US/blog/rss.xml">
+        </head>
+        
+      <body class="page-layout">
+        <ul class="a11y-menu">
+      <li>
+        <a href="#content">Skip to main content</a>
+      </li>
+      <li>
+        <a href="#search">Skip to search</a>
+      </li>
+    </ul>
+        <div class="page-layout__banner" data-scheme="">
+          <mdn-placement-top></mdn-placement-top>
+        </div>
+        <header class="page-layout__header">
+          
+      <nav class="navigation" data-scheme="" data-open="false">
+        <div class="navigation__logo">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">
+        <svg class="logo__image" width="83" height="24" viewBox="0 0 83 24" role="img">
+          <title>MDN</title>
+          <path class="logo__letter" d="M9.4 0 2.81 21.17H.12L6.69 0H9.4Zm2.38 0v21.17H9.4V0h2.4Zm9.27 0-6.56 21.17H11.8L18.36 0h2.69Zm2.39 0v21.17h-2.4V0h2.4Z"></path>
+          <path class="logo__text" d="M45.55 16.83h-3.93v-1.27h.87v-3.63c0-.85-.16-1.45-.48-1.82a1.65 1.65 0 0 0-1.3-.52c-.74 0-1.3.25-1.66.78a2.98 2.98 0 0 0-.58 1.58v3.59h1.38v1.26h-3.93v-1.26h.87v-3.6c0-.88-.16-1.48-.48-1.83a1.7 1.7 0 0 0-1.29-.52 1.93 1.93 0 0 0-1.65.75 2.85 2.85 0 0 0-.58 1.6v3.62h1.59v1.27h-4.64v-1.27h1.37V9.75h-1.4V8.46h3.08v1.47c.28-.48.62-.87 1.08-1.2a3 3 0 0 1 1.68-.45c.67 0 1.22.16 1.73.48.5.32.85.8 1.03 1.47.25-.57.62-1.03 1.13-1.4.5-.37 1.1-.55 1.81-.55.8 0 1.5.25 2.05.75.55.51.85 1.3.85 2.35v4.18h1.4v1.27Zm9.77 0H52.3v-1.66c-.27.51-.66.95-1.13 1.29-.56.4-1.23.59-1.9.55-1.11 0-2-.37-2.67-1.12a4.41 4.41 0 0 1-1-3.06c0-1.15.3-2.2.93-3.15.6-.94 1.58-1.43 2.94-1.43 1.36 0 2.25.5 2.83 1.5V5.22h-2V3.93h3.63v11.63h1.38v1.27Zm-3.06-3.86v-1.02a2.28 2.28 0 0 0-.73-1.67 2.4 2.4 0 0 0-1.66-.65 2.18 2.18 0 0 0-1.88.9 3.63 3.63 0 0 0-.65 2.2c0 .95.23 1.68.7 2.19.45.5 1.03.76 1.7.76.73 0 1.33-.3 1.79-.88.48-.6.71-1.21.73-1.83Zm14.14 3.86h-4.43v-1.27h1.37v-3.63c0-.85-.16-1.45-.5-1.82a1.68 1.68 0 0 0-1.31-.52c-.71 0-1.29.23-1.7.69a2.52 2.52 0 0 0-.67 1.6v3.66h1.38v1.26H56.1v-1.26h1.38v-5.8h-1.42V8.47h3.12V9.9c.6-1.06 1.57-1.6 2.92-1.6.83 0 1.54.26 2.12.77.57.5.85 1.28.85 2.34v4.19h1.38v1.24h-.05Z"></path>
+          <path class="logo__cursor" d="M67.71 21.98H83V24H67.71v-2.02Z"></path>
+        </svg>
+      </a>
+    </div>
+        <div class="navigation__search" data-view="mobile">
+          <mdn-search-button></mdn-search-button>
+        </div>
+        <button class="navigation__button" type="button" aria-expanded="false" aria-controls="navigation__popup" aria-label="Toggle navigation"></button>
+        <div class="navigation__popup" id="navigation__popup">
+          <div class="navigation__menu">
+      <nav class="menu">
+        <div class="menu__tab" data-section="html">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">HTML</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" data-glean-id="menu_click_menu: html -&gt; /en-US/docs/Web/HTML">HTML: Markup language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>HTML reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Elements">Elements</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Global_attributes">Global attributes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Attributes">Attributes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference" aria-label="See all HTML references" title="See all HTML references" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>HTML guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Responsive_images">Responsive images</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Cheatsheet" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Cheatsheet">HTML cheatsheet</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Date_and_time_formats" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Date_and_time_formats">Date &amp; time formats</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides" aria-label="See all HTML guides" title="See all HTML guides" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Markup languages</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/SVG">SVG</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/MathML">MathML</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/XML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/XML">XML</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="css">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">CSS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" data-glean-id="menu_click_menu: css -&gt; /en-US/docs/Web/CSS">CSS: Styling language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>CSS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Properties">Properties</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Selectors">Selectors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/At-rules">At-rules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Values">Values</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" aria-label="See all CSS references" title="See all CSS references" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>CSS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Box_model/Introduction">Box model</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Animations/Using">Animations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Flexbox</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Applying_color" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Colors/Applying_color">Colors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides" aria-label="See all CSS guides" title="See all CSS guides" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Layout cookbook</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts">Column layouts</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element">Centering an element</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Card" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Card">Card component</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="javascript">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label" data-type="long">JavaScript</span><span class="menu__tab-label" data-type="short">JS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" data-glean-id="menu_click_menu: javascript -&gt; /en-US/docs/Web/JavaScript">JavaScript: Scripting language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>JS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../../Web/JavaScript/Reference/Global_Objects.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects</a>
+                              </li><li>
+                                <a href="../../../Web/JavaScript/Reference/Operators.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a>
+                              </li><li>
+                                <a href="../../../Web/JavaScript/Reference/Statements.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Statements">Statements &amp; declarations</a>
+                              </li><li>
+                                <a href="../../../Web/JavaScript/Reference/Functions.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Functions">Functions</a>
+                              </li><li>
+                                <a href="../../../Web/JavaScript/Reference.html" aria-label="See all JavaScript references" title="See all JavaScript references" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>JS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../../Web/JavaScript/Guide/Control_flow_and_error_handling.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow &amp; error handing</a>
+                              </li><li>
+                                <a href="../../../Web/JavaScript/Guide/Loops_and_iteration.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops and iteration</a>
+                              </li><li>
+                                <a href="../../../Web/JavaScript/Guide/Working_with_objects.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Working_with_objects">Working with objects</a>
+                              </li><li>
+                                <a href="../../../Web/JavaScript/Guide/Using_classes.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Using_classes">Using classes</a>
+                              </li><li>
+                                <a href="../../../Web/JavaScript/Guide.html" aria-label="See all JavaScript guides" title="See all JavaScript guides" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="webapis">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Web APIs</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="../../../Web/API.html" data-glean-id="menu_click_menu: webapis -&gt; /en-US/docs/Web/API">Web APIs: Programming interfaces</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Web API reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../../Web/API/File_System_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/File_System_API">File system API</a>
+                              </li><li>
+                                <a href="../../../Web/API/Fetch_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API">Fetch API</a>
+                              </li><li>
+                                <a href="../../../Web/API/Geolocation_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Geolocation_API">Geolocation API</a>
+                              </li><li>
+                                <a href="../../../Web/API/HTML_DOM_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/HTML_DOM_API">HTML DOM API</a>
+                              </li><li>
+                                <a href="../../../Web/API/Push_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Push_API">Push API</a>
+                              </li><li>
+                                <a href="../../../Web/API/Service_Worker_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Service_Worker_API">Service worker API</a>
+                              </li><li>
+                                <a href="../../../Web/API.html" aria-label="See all Web API guides" title="See all Web API guides" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Web API guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../../Web/API/Web_Animations_API/Using_the_Web_Animations_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API">Using the Web animation API</a>
+                              </li><li>
+                                <a href="../../../Web/API/Fetch_API/Using_Fetch.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API/Using_Fetch">Using the Fetch API</a>
+                              </li><li>
+                                <a href="../../../Web/API/History_API/Working_with_the_History_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/History_API/Working_with_the_History_API">Working with the History API</a>
+                              </li><li>
+                                <a href="../../../Web/API/Web_Speech_API/Using_the_Web_Speech_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Using the Web speech API</a>
+                              </li><li>
+                                <a href="../../../Web/API/Web_Workers_API/Using_web_workers.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using web workers</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="all">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">All</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web" data-glean-id="menu_click_menu: all -&gt; /en-US/docs/Web">All web technology</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Technologies</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Accessibility">Accessibility</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/HTTP">HTTP</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/URI" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/URI">URI</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Mozilla/Add-ons/WebExtensions">Web extensions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/WebAssembly">WebAssembly</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/WebDriver">WebDriver</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web" aria-label="See all web technology references" title="See all web technology references" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Topics</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Media" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Media">Media</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Performance">Performance</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Privacy" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Privacy">Privacy</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Security">Security</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Progressive_web_apps">Progressive web apps</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="learn">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Learn</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" data-glean-id="menu_click_menu: learn -&gt; /en-US/docs/Learn_web_development">Learn web development</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Frontend developer course</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Getting_started">Getting started modules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core">Core modules</a>
+                              </li><li>
+                                <a class="" href="https://developer.mozilla.org/en-US/curriculum/" data-glean-id="menu_click_submenu: learn -&gt; /en-US/curriculum/">MDN Curriculum</a>
+                              </li><li>
+                                <a class="external" href="https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar" data-glean-id="menu_click_submenu: learn -&gt; https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar">Check out the video course from Scrimba, our partner</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn HTML</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn CSS</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics module</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn JavaScript</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript module</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="tools">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Tools</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Discover our tools
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="circle-play" href="https://developer.mozilla.org/en-US/play" data-glean-id="menu_click_submenu: tools -&gt; /en-US/play">Playground</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="shield-check" href="https://developer.mozilla.org/en-US/observatory" data-glean-id="menu_click_submenu: tools -&gt; /en-US/observatory">HTTP Observatory</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator">Border-image generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator">Border-radius generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator">Box-shadow generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_format_converter" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_format_converter">Color format converter</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_mixer" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_mixer">Color mixer</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes/Shape_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Shapes/Shape_generator">Shape generator</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="about">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">About</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Get to know MDN better
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="mdn-m" href="https://developer.mozilla.org/en-US/about" data-glean-id="menu_click_submenu: about -&gt; /en-US/about">About MDN</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="chart-no-axes-combined" href="https://developer.mozilla.org/en-US/advertising" data-glean-id="menu_click_submenu: about -&gt; /en-US/advertising">Advertise with us</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="users" href="https://developer.mozilla.org/en-US/community" data-glean-id="menu_click_submenu: about -&gt; /en-US/community">Community</a>
+                              </li><li>
+                                <a class="menu__panel-icon external" data-icon="github" href="https://github.com/mdn" data-glean-id="menu_click_submenu: about -&gt; https://github.com/mdn">MDN on GitHub</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="blog">
+            <a class="menu__tab-link" href="https://developer.mozilla.org/en-US/blog/" data-glean-id="menu_click_link: top-level -&gt; /en-US/blog/">Blog</a>
+          </div>
+      </nav>
+    </div>
+          <div class="navigation__search" data-view="desktop">
+            <mdn-search-button></mdn-search-button>
+          </div>
+          <mdn-user-menu></mdn-user-menu>
+        </div>
+      </nav>
+      <mdn-search-modal id="search"></mdn-search-modal>
+     
+      
+    
+        </header>
+        <div class="page-layout__main">
+      <div class="breadcrumbs-bar" data-scheme="">
+        <mdn-toggle-sidebar></mdn-toggle-sidebar> 
+      <ol class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+        
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" property="item" typeof="WebPage"><span property="name">Learn</span></a>
+              <meta property="position" content="1">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions" property="item" typeof="WebPage"><span property="name">Extension modules</span></a>
+              <meta property="position" content="2">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../Client-side_APIs.html" property="item" typeof="WebPage"><span property="name">Client-side web APIs</span></a>
+              <meta property="position" content="3">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="Drawing_graphics.html" property="item" typeof="WebPage"><span property="name">Drawing graphics</span></a>
+              <meta property="position" content="4">
+            </li>
+          
+      </ol>
+    
+        <mdn-collection-save-button doc-url="/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics" doc-title="Drawing graphics"></mdn-collection-save-button>
+        <mdn-color-theme></mdn-color-theme>
+        <mdn-language-switcher locale="en-US" native="English (US)" translations="[{&quot;locale&quot;:&quot;en-US&quot;,&quot;title&quot;:&quot;Drawing graphics&quot;,&quot;native&quot;:&quot;English (US)&quot;},{&quot;locale&quot;:&quot;de&quot;,&quot;title&quot;:&quot;Zeichnen von Grafiken&quot;,&quot;native&quot;:&quot;Deutsch&quot;},{&quot;locale&quot;:&quot;fr&quot;,&quot;title&quot;:&quot;Dessiner des graphismes&quot;,&quot;native&quot;:&quot;Français&quot;},{&quot;locale&quot;:&quot;ja&quot;,&quot;title&quot;:&quot;グラフィックの描画&quot;,&quot;native&quot;:&quot;日本語&quot;},{&quot;locale&quot;:&quot;zh-CN&quot;,&quot;title&quot;:&quot;绘制图形&quot;,&quot;native&quot;:&quot;中文 (简体)&quot;}]" url="Drawing_graphics.html"></mdn-language-switcher>
+      </div><div class="layout__2-sidebars-inline reference-layout">
+        <main id="content" class="layout__content">
+          <div class="layout__header reference-layout__header">
+            
+            
+            <mdn-survey></mdn-survey>
+            <h1>Drawing graphics</h1>
+             <section class="content-section">
+    
+    <ul class="prev-next"><li class="prev"><a class="button secondary" href="Video_and_audio_APIs.html"><span class="button-wrap"> Previous </span></a></li><li class="menu"><a class="button secondary" href="../Client-side_APIs.html"><span class="button-wrap"> Overview: Client-side web APIs</span></a></li><li class="next"><a class="button secondary" href="Client-side_storage.html"><span class="button-wrap"> Next  </span></a></li></ul>
+<p>The browser contains some very powerful graphics programming tools, from the Scalable Vector Graphics (<a href="https://developer.mozilla.org/en-US/docs/Web/SVG">SVG</a>) language, to APIs for drawing on HTML <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas"><code>&lt;canvas&gt;</code></a> elements, (see <a href="../../../Web/API/Canvas_API.html">The Canvas API</a> and <a href="../../../Web/API/WebGL_API.html">WebGL</a>). This article provides an introduction to canvas, and further resources to allow you to learn more.</p>
+<figure class="table-container"><table>
+  <tbody>
+    <tr>
+      <th scope="row">Prerequisites:</th>
+      <td>
+        Familiarity with <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content">HTML</a>, <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics">CSS</a>, and <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting">JavaScript</a>, especially <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics">JavaScript object basics</a> and core API coverage such as <a href="../../Core/Scripting/DOM_scripting.html">DOM scripting</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Network_requests">Network requests</a>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Learning outcomes:</th>
+      <td>
+        <ul>
+          <li>The concepts and use cases enabled by the APIs covered in this lesson.</li>
+          <li>Basic syntax and usage of <code>&lt;canvas&gt;</code> and associated APIs.</li>
+          <li>Using timers and <code>requestAnimationFrame()</code> to set up animation loops.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table></figure>
+  </section>
+          </div>
+          <aside class="layout__right-sidebar reference-layout__toc">
+            <nav class="reference-toc">
+      <h2>In this article</h2>
+      <ul>
+        <li><a href="#graphics_on_the_web">Graphics on the Web</a></li><li><a href="#getting_started_with_a_canvas">Getting started with a &lt;canvas&gt;</a></li><li><a href="#2d_canvas_basics">2D canvas basics</a></li><li><a href="#loops_and_animations">Loops and animations</a></li><li><a href="#webgl">WebGL</a></li><li><a href="#summary">Summary</a></li><li><a href="#see_also">See also</a></li><li><a href="#examples">Examples</a></li>
+      </ul>
+    </nav>
+            <mdn-placement-sidebar></mdn-placement-sidebar>
+          </aside>
+          <div class="layout__body reference-layout__body">
+            <section class="content-section" aria-labelledby="graphics_on_the_web">
+    <!--lit-part n0Kj+qHQErs=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Graphics%20on%20the%20Web"></a><h2 id="graphics_on_the_web" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#graphics_on_the_web">Graphics on the Web</a></h2><!--/lit-part-->
+    <p>The Web was originally just text, which was very boring, so images were introduced — first via the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img"><code>&lt;img&gt;</code></a> element and later via CSS properties such as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background-image"><code>background-image</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/SVG">SVG</a>.</p>
+<p>This however was still not enough. While you could use <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics">CSS</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting">JavaScript</a> to animate (and otherwise manipulate) SVG vector images — as they are represented by markup — there was still no way to do the same for bitmap images, and the tools available were rather limited. The Web still had no way to effectively create animations, games, 3D scenes, and other requirements commonly handled by lower level languages such as C++ or Java.</p>
+<p>The situation started to improve when browsers began to support the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas"><code>&lt;canvas&gt;</code></a> element and associated <a href="../../../Web/API/Canvas_API.html">Canvas API</a> in 2004. As you'll see below, canvas provides some useful tools for creating 2D animations, games, data visualizations, and other types of applications, especially when combined with some of the other APIs the web platform provides, but can be difficult or impossible to make accessible</p>
+<p>The below example shows a simple 2D canvas-based bouncing balls animation that we originally met in our <a href="../Advanced_JavaScript_objects/Object_building_practice.html">Introducing JavaScript objects</a> module:</p>
+<div class="code-example"><pre class="language-html hidden live-sample___bouncing-balls notranslate live-sample---bouncing-balls"><code>&lt;h1&gt;bouncing balls&lt;/h1&gt;
+&lt;canvas&gt;&lt;/canvas&gt;
+</code></pre></div>
+<div class="code-example"><pre class="language-css hidden live-sample___bouncing-balls notranslate live-sample---bouncing-balls"><code>html,
+body {
+  margin: 0;
+}
+
+html {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  height: inherit;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: -1px;
+  position: absolute;
+  margin: 0;
+  top: -4px;
+  right: 5px;
+
+  color: transparent;
+  text-shadow: 0 0 4px white;
+}
+</code></pre></div>
+<div class="code-example"><pre class="language-js hidden live-sample___bouncing-balls notranslate live-sample---bouncing-balls"><code>// set up canvas
+
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
+
+const width = (canvas.width = window.innerWidth);
+const height = (canvas.height = window.innerHeight);
+
+// function to generate random number
+
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// function to generate random RGB color value
+
+function randomRGB() {
+  return `rgb(${random(0, 255)} ${random(0, 255)} ${random(0, 255)})`;
+}
+
+const balls = [];
+
+class Ball {
+  constructor(x, y, velX, velY, color, size) {
+    this.x = x;
+    this.y = y;
+    this.velX = velX;
+    this.velY = velY;
+    this.color = color;
+    this.size = size;
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.fillStyle = this.color;
+    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+
+  update() {
+    if (this.x + this.size &gt;= width) {
+      this.velX = -Math.abs(this.velX);
+    }
+
+    if (this.x - this.size &lt;= 0) {
+      this.velX = Math.abs(this.velX);
+    }
+
+    if (this.y + this.size &gt;= height) {
+      this.velY = -Math.abs(this.velY);
+    }
+
+    if (this.y - this.size &lt;= 0) {
+      this.velY = Math.abs(this.velY);
+    }
+
+    this.x += this.velX;
+    this.y += this.velY;
+  }
+
+  collisionDetect() {
+    for (const ball of balls) {
+      if (!(this === ball)) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance &lt; this.size + ball.size) {
+          ball.color = this.color = randomRGB();
+        }
+      }
+    }
+  }
+}
+
+while (balls.length &lt; 25) {
+  const size = random(10, 20);
+  const ball = new Ball(
+    // ball position always drawn at least one ball width
+    // away from the edge of the canvas, to avoid drawing errors
+    random(0 + size, width - size),
+    random(0 + size, height - size),
+    random(-7, 7),
+    random(-7, 7),
+    randomRGB(),
+    size,
+  );
+
+  balls.push(ball);
+}
+
+function loop() {
+  ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+  ctx.fillRect(0, 0, width, height);
+
+  for (const ball of balls) {
+    ball.draw();
+    ball.update();
+    ball.collisionDetect();
+  }
+
+  requestAnimationFrame(loop);
+}
+
+loop();
+</code></pre></div>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="bouncing-balls sample" id="frame_bouncing-balls" width="100%" height="500" src="Drawing_graphics/_sample_.bouncing-balls8897203/c6d76a3dd76c5213b127578c63a3bc98b35548af.mdnplay.dev/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/runner.html-_-uuid=c6d76a3dd76c5213b127578c63a3bc98b35548af&amp;state=lVZbb9s2FP4rZ8IGSI3s2MGCAr4EaDds3cOGon3YjGlAaYmyOFCUS1K2tcD%25252FfYekKNFOunRJ4Egfz%25252BU7V%25252FoxqnTNo0W0quYP26YVORM72BLO1eoWoUysciIORD2s.html" data-live-path="/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/" data-live-id="bouncing-balls" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<p>Around 2006–2007, Mozilla started work on an experimental 3D canvas implementation. This became <a href="../../../Web/API/WebGL_API.html">WebGL</a>, which gained traction among browser vendors, and was standardized around 2009–2010. WebGL allows you to create real 3D graphics inside your web browser.</p>
+<p>This article will focus mainly on 2D canvas, as raw WebGL code is very complex. We will however show how to use <a href="#webgl">a WebGL library to create a 3D scene more easily</a>, and you can find a tutorial covering raw WebGL elsewhere — see <a href="../../../Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL.html">Getting started with WebGL</a>.</p>
+  </section><section class="content-section" aria-labelledby="getting_started_with_a_canvas">
+    <!--lit-part y//4JKtPL34=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Getting%20started%20with%20a%20%3Ccanvas%3E"></a><h2 id="getting_started_with_a_canvas" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#getting_started_with_a_canvas">Getting started with a &lt;canvas&gt;</a></h2><!--/lit-part-->
+    <p>If you want to create a 2D <em>or</em> 3D scene on a web page, you need to start with an HTML <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas"><code>&lt;canvas&gt;</code></a> element. This element is used to define the area on the page into which the image will be drawn. This is as simple as including the element on the page:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;canvas width="320" height="240"&gt;&lt;/canvas&gt;
+</code></pre></div>
+<p>This will create a canvas on the page with a size of 320 by 240 pixels.</p>
+<p>You should put some fallback content inside the <code>&lt;canvas&gt;</code> tags. This should describe the canvas content to users of browsers that don't support canvas, or users of screen readers.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;canvas width="320" height="240"&gt;
+  &lt;p&gt;Description of the canvas for those unable to view it.&lt;/p&gt;
+&lt;/canvas&gt;
+</code></pre></div>
+<p>The fallback should provide useful alternative content to the canvas content. For example, if you are rendering a constantly updating graph of stock prices, the fallback content could be a static image of the latest stock graph, with <code>alt</code> text saying what the prices are in text or a list of links to individual stock pages.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+Canvas content is not accessible to screen readers. Include descriptive text as the value of the <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label"><code>aria-label</code></a> attribute directly on the canvas element itself or include fallback content placed within the opening and closing <code>&lt;canvas&gt;</code> tags. Canvas content is not part of the DOM, but nested fallback content is.</p>
+</div>
+  </section><section class="content-section" aria-labelledby="creating_and_sizing_our_canvas">
+    <!--lit-part JpUbwM+k+R0=--><!--lit-node 0--><h3 id="creating_and_sizing_our_canvas" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#creating_and_sizing_our_canvas">Creating and sizing our canvas</a></h3><!--/lit-part-->
+    <p>Let's start by creating our own canvas template to create future experiments in.</p>
+<ol>
+<li>
+<p>First, create a directory on your local hard drive called <code>canvas-template</code>.</p>
+</li>
+<li>
+<p>Create a new file in the directory called <code>index.html</code> and save the following contents inside it:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;!doctype html&gt;
+&lt;html lang="en-US"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Canvas&lt;/title&gt;
+    &lt;script src="script.js" defer&gt;&lt;/script&gt;
+    &lt;link href="style.css" rel="stylesheet" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;canvas class="myCanvas"&gt;
+      &lt;p&gt;Add suitable fallback here.&lt;/p&gt;
+    &lt;/canvas&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<div class="code-example"><pre class="language-html hidden live-sample___2-canvas-rectangles live-sample___3_canvas_paths live-sample___4-canvas-text live-sample___5-canvas-images live-sample___6-canvas-for-loop notranslate live-sample---2-canvas-rectangles live-sample---3_canvas_paths live-sample---4-canvas-text live-sample---5-canvas-images live-sample---6-canvas-for-loop"><code>&lt;canvas class="myCanvas"&gt;
+  &lt;p&gt;Add suitable fallback here.&lt;/p&gt;
+&lt;/canvas&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Create a new file inside the directory called <code>style.css</code> and save the following CSS rule in it:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css live-sample___2-canvas-rectangles live-sample___3_canvas_paths live-sample___4-canvas-text live-sample___5-canvas-images live-sample___6-canvas-for-loop live-sample___7-canvas-walking-animation notranslate live-sample---2-canvas-rectangles live-sample---3_canvas_paths live-sample---4-canvas-text live-sample---5-canvas-images live-sample---6-canvas-for-loop live-sample---7-canvas-walking-animation"><code>body {
+  margin: 0;
+  overflow: hidden;
+}
+</code></pre></div>
+</li>
+<li>
+<p>Create a new file inside the directory called <code>script.js</code>. Leave this file blank for now.</p>
+</li>
+<li>
+<p>Now open <code>script.js</code> and add the following lines of JavaScript:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___2-canvas-rectangles live-sample___3_canvas_paths live-sample___4-canvas-text live-sample___5-canvas-images live-sample___6-canvas-for-loop live-sample___7-canvas-walking-animation notranslate live-sample---2-canvas-rectangles live-sample---3_canvas_paths live-sample---4-canvas-text live-sample---5-canvas-images live-sample---6-canvas-for-loop live-sample---7-canvas-walking-animation"><code>const canvas = document.querySelector(".myCanvas");
+const width = (canvas.width = window.innerWidth);
+const height = (canvas.height = window.innerHeight);
+</code></pre></div>
+<p>Here we have stored a reference to the canvas in the <code>canvas</code> constant. In the second line we set both a new constant <code>width</code> and the canvas' <code>width</code> property equal to <a href="../../../Web/API/Window/innerWidth.html"><code>Window.innerWidth</code></a> (which gives us the viewport width). In the third line we set both a new constant <code>height</code> and the canvas' <code>height</code> property equal to <a href="../../../Web/API/Window/innerHeight.html"><code>Window.innerHeight</code></a> (which gives us the viewport height). So now we have a canvas that fills the entire width and height of the browser window!</p>
+<p>You'll also see that we are chaining assignments together with multiple equals signs — this is allowed in JavaScript, and it is a good technique if you want to make multiple variables all equal to the same value. We wanted to make the canvas width and height easily accessible in the width/height variables, as they are useful values to have available for later (for example, if you want to draw something exactly halfway across the width of the canvas).</p>
+</li>
+</ol>
+<div class="notecard note">
+<p><strong>Note:</strong>
+You should generally set the size of the canvas using HTML attributes or DOM properties, as explained above. You could use CSS, but the trouble then is that the sizing is done after the canvas has rendered, and just like any other image, the canvas could become pixelated/distorted.</p>
+</div>
+  </section><section class="content-section" aria-labelledby="getting_the_canvas_context_and_final_setup">
+    <!--lit-part 95+Xh7hlBxQ=--><!--lit-node 0--><h3 id="getting_the_canvas_context_and_final_setup" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#getting_the_canvas_context_and_final_setup">Getting the canvas context and final setup</a></h3><!--/lit-part-->
+    <p>We need to do one final thing before we can consider our canvas template finished. To draw onto the canvas we need to get a special reference to the drawing area called a context. This is done using the <a href="../../../Web/API/HTMLCanvasElement/getContext.html"><code>HTMLCanvasElement.getContext()</code></a> method, which for basic usage takes a single string as a parameter representing the type of context you want to retrieve.</p>
+<p>In this case we want a 2d canvas, so add the following JavaScript line below the others in <code>script.js</code>:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___2-canvas-rectangles live-sample___3_canvas_paths live-sample___4-canvas-text live-sample___5-canvas-images live-sample___6-canvas-for-loop live-sample___7-canvas-walking-animation notranslate live-sample---2-canvas-rectangles live-sample---3_canvas_paths live-sample---4-canvas-text live-sample---5-canvas-images live-sample---6-canvas-for-loop live-sample---7-canvas-walking-animation"><code>const ctx = canvas.getContext("2d");
+</code></pre></div>
+<div class="notecard note">
+<p><strong>Note:</strong>
+Other context values you could choose include <code>webgl</code> for WebGL, <code>webgpu</code> for WebGPU, etc., but we won't need those in this article.</p>
+</div>
+<p>So that's it — our canvas is now primed and ready for drawing on! The <code>ctx</code> variable now contains a <a href="../../../Web/API/CanvasRenderingContext2D.html"><code>CanvasRenderingContext2D</code></a> object, and all drawing operations on the canvas will involve manipulating this object.</p>
+<p>Let's do one last thing before we move on. We'll color the canvas background black to give you a first taste of the canvas API. Add the following lines at the bottom of your JavaScript:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___2-canvas-rectangles live-sample___3_canvas_paths live-sample___4-canvas-text live-sample___5-canvas-images live-sample___6-canvas-for-loop notranslate live-sample---2-canvas-rectangles live-sample---3_canvas_paths live-sample---4-canvas-text live-sample---5-canvas-images live-sample---6-canvas-for-loop"><code>ctx.fillStyle = "black";
+ctx.fillRect(0, 0, width, height);
+</code></pre></div>
+<p>Here we are setting a fill color using the canvas' <a href="../../../Web/API/CanvasRenderingContext2D/fillStyle.html" title="fillStyle"><code>fillStyle</code></a> property (this takes <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units#color">color values</a> just like CSS properties do), then drawing a rectangle that covers the entire area of the canvas with the <a href="../../../Web/API/CanvasRenderingContext2D/fillRect.html" title="fillRect"><code>fillRect</code></a> method (the first two parameters are the coordinates of the rectangle's top left-hand corner; the last two are the width and height you want the rectangle drawn at — we told you those <code>width</code> and <code>height</code> variables would be useful)!</p>
+<p>OK, our template is done and it's time to move on.</p>
+  </section><section class="content-section" aria-labelledby="2d_canvas_basics">
+    <!--lit-part pyZGwTP8/WQ=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/2D%20canvas%20basics"></a><h2 id="2d_canvas_basics" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#2d_canvas_basics">2D canvas basics</a></h2><!--/lit-part-->
+    <p>As we said above, all drawing operations are done by manipulating a <a href="../../../Web/API/CanvasRenderingContext2D.html"><code>CanvasRenderingContext2D</code></a> object (in our case, <code>ctx</code>). Many operations need to be given coordinates to pinpoint exactly where to draw something — the top left of the canvas is point (0, 0), the horizontal (x) axis runs from left to right, and the vertical (y) axis runs from top to bottom.</p>
+<p><img src="Drawing_graphics/canvas_default_grid.png" alt="Gridded graph paper with small squares covering its area with a steelblue square in the middle. The top left corner of the canvas is point (0, 0) of the canvas x-axis and y-axis. The horizontal (x) axis runs from left to right denoting the width, and the vertical (y) axis runs from top to bottom denotes the height. The top left corner of the blue square is labeled as being a distance of x units from the y-axis and y units from the x-axis." width="220" height="220" loading="lazy"></p>
+<p>Drawing shapes tends to be done using the rectangle shape primitive, or by tracing a line along a certain path and then filling in the shape. Below we'll show how to do both.</p>
+  </section><section class="content-section" aria-labelledby="simple_rectangles">
+    <!--lit-part yjQGk/Uy5es=--><!--lit-node 0--><h3 id="simple_rectangles" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#simple_rectangles">Simple rectangles</a></h3><!--/lit-part-->
+    <p>Let's start with some simple rectangles.</p>
+<ol>
+<li>
+<p>First of all, make a copy of your newly coded canvas template directory.</p>
+</li>
+<li>
+<p>Add the following lines to the bottom of your JavaScript file:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___2-canvas-rectangles notranslate live-sample---2-canvas-rectangles"><code>ctx.fillStyle = "red";
+ctx.fillRect(50, 50, 100, 150);
+</code></pre></div>
+<p>If you load your HTML in the browser, you should see a red rectangle has appeared on your canvas. Its top left corner is 50 pixels away from the top and left of the canvas edge (as defined by the first two parameters), and it is 100 pixels wide and 150 pixels tall (as defined by the third and fourth parameters).</p>
+</li>
+<li>
+<p>Let's add another rectangle into the mix — a green one this time. Add the following at the bottom of your JavaScript:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___2-canvas-rectangles notranslate live-sample---2-canvas-rectangles"><code>ctx.fillStyle = "green";
+ctx.fillRect(75, 75, 100, 100);
+</code></pre></div>
+<p>Save and refresh, and you'll see your new rectangle. This raises an important point: graphics operations like drawing rectangles, lines, and so forth are performed in the order in which they occur. Think of it like painting a wall, where each coat of paint overlaps and may even hide what's underneath. You can't do anything to change this, so you have to think carefully about the order in which you draw the graphics.</p>
+</li>
+<li>
+<p>Note that you can draw semi-transparent graphics by specifying a semi-transparent color, for example by using <code>rgb()</code>. The "alpha channel" defines the amount of transparency the color has. The higher its value, the more it will obscure whatever's behind it. Add the following to your code:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___2-canvas-rectangles notranslate live-sample---2-canvas-rectangles"><code>ctx.fillStyle = "rgb(255 0 255 / 75%)";
+ctx.fillRect(25, 100, 175, 50);
+</code></pre></div>
+</li>
+<li>
+<p>Now try drawing some more rectangles of your own; have fun!</p>
+</li>
+</ol>
+  </section><section class="content-section" aria-labelledby="strokes_and_line_widths">
+    <!--lit-part SJ60o/z5ZkA=--><!--lit-node 0--><h3 id="strokes_and_line_widths" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#strokes_and_line_widths">Strokes and line widths</a></h3><!--/lit-part-->
+    <p>So far we've looked at drawing filled rectangles, but you can also draw rectangles that are just outlines (called <strong>strokes</strong> in graphic design). To set the color you want for your stroke, you use the <a href="../../../Web/API/CanvasRenderingContext2D/strokeStyle.html" title="strokeStyle"><code>strokeStyle</code></a> property; drawing a stroke rectangle is done using <a href="../../../Web/API/CanvasRenderingContext2D/strokeRect.html" title="strokeRect"><code>strokeRect</code></a>.</p>
+<ol>
+<li>
+<p>Add the following to the previous example, again below the previous JavaScript lines:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>ctx.strokeStyle = "white";
+ctx.strokeRect(25, 25, 175, 200);
+</code></pre></div>
+</li>
+<li>
+<p>The default width of strokes is 1 pixel; you can adjust the <a href="../../../Web/API/CanvasRenderingContext2D/lineWidth.html" title="lineWidth"><code>lineWidth</code></a> property value to change this (it takes a number representing the number of pixels wide the stroke is). Add the following line in between the previous two lines:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>ctx.lineWidth = 5;
+</code></pre></div>
+</li>
+</ol>
+<p>Now you should see that your white outline has become much thicker! That's it for now. At this point your example should look like this:</p>
+<div class="code-example"><pre class="language-js hidden live-sample___2-canvas-rectangles notranslate live-sample---2-canvas-rectangles"><code>ctx.strokeStyle = "white";
+ctx.lineWidth = 5;
+ctx.strokeRect(25, 25, 175, 200);
+</code></pre></div>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="2-canvas-rectangles sample" id="frame_2-canvas-rectangles" width="100%" height="250" src="Drawing_graphics/_sample_.2-canvas-rectangles26751665/b4951fc4ad2ca3e215a18ec7ed17dc419eda65df.mdnplay.dev/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/runner.html-_-uuid=b4951fc4ad2ca3e215a18ec7ed17dc419eda65df&amp;state=dZLRaoMwFIZfJQQGFsQ6QQadLYze7Hq96I03mpyarDHp4mmtlL37EnW1ox2YkBzzffwec6ECa0UXNGOFPhUNYapommVO627dF3K6yjUh2WH1xjlpjhKLUgHZFUqVBdsTARaibH5w.html" data-live-path="/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/" data-live-id="2-canvas-rectangles" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<p>You can press the <strong>Play</strong> button to open the example in MDN Playground and edit the source code.</p>
+  </section><section class="content-section" aria-labelledby="drawing_paths">
+    <!--lit-part JBDBUFk3w84=--><!--lit-node 0--><h3 id="drawing_paths" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#drawing_paths">Drawing paths</a></h3><!--/lit-part-->
+    <p>If you want to draw anything more complex than a rectangle, you need to draw a path. Basically, this involves writing code to specify exactly what path the pen should move along on your canvas to trace the shape you want to draw. Canvas includes functions for drawing straight lines, circles, Bézier curves, and more.</p>
+<p>Start the section off by making a fresh copy of your canvas template in which to draw the new example.</p>
+<p>We'll be using some common methods and properties across all of the below sections:</p>
+<ul>
+<li><a href="../../../Web/API/CanvasRenderingContext2D/beginPath.html" title="beginPath()"><code>beginPath()</code></a> — start drawing a path at the point where the pen currently is on the canvas. On a new canvas, the pen starts out at (0, 0).</li>
+<li><a href="../../../Web/API/CanvasRenderingContext2D/moveTo.html" title="moveTo()"><code>moveTo()</code></a> — move the pen to a different point on the canvas, without recording or tracing the line; the pen "jumps" to the new position.</li>
+<li><a href="../../../Web/API/CanvasRenderingContext2D/fill.html" title="fill()"><code>fill()</code></a> — draw a filled shape by filling in the path you've traced so far.</li>
+<li><a href="../../../Web/API/CanvasRenderingContext2D/stroke.html" title="stroke()"><code>stroke()</code></a> — draw an outline shape by drawing a stroke along the path you've drawn so far.</li>
+<li>You can also use features like <code>lineWidth</code> and <code>fillStyle</code>/<code>strokeStyle</code> with paths as well as rectangles.</li>
+</ul>
+<p>A typical, simple path-drawing operation would look something like so:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>ctx.fillStyle = "red";
+ctx.beginPath();
+ctx.moveTo(50, 50);
+// draw your path
+ctx.fill();
+</code></pre></div>
+<h4 id="drawing_lines">Drawing lines</h4>
+<p>Let's draw an equilateral triangle on the canvas.</p>
+<ol>
+<li>
+<p>First of all, add the following helper function to the bottom of your code. This converts degree values to radians, which is useful because whenever you need to provide an angle value in JavaScript, it will nearly always be in radians, but humans usually think in degrees.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___3_canvas_paths notranslate live-sample---3_canvas_paths"><code>function degToRad(degrees) {
+  return (degrees * Math.PI) / 180;
+}
+</code></pre></div>
+</li>
+<li>
+<p>Next, start off your path by adding the following below your previous addition; here we set a color for our triangle, start drawing a path, and then move the pen to (50, 50) without drawing anything. That's where we'll start drawing our triangle.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___3_canvas_paths notranslate live-sample---3_canvas_paths"><code>ctx.fillStyle = "red";
+ctx.beginPath();
+ctx.moveTo(50, 50);
+</code></pre></div>
+</li>
+<li>
+<p>Now add the following lines at the bottom of your script:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___3_canvas_paths notranslate live-sample---3_canvas_paths"><code>ctx.lineTo(150, 50);
+const triHeight = 50 * Math.tan(degToRad(60));
+ctx.lineTo(100, 50 + triHeight);
+ctx.lineTo(50, 50);
+ctx.fill();
+</code></pre></div>
+<p>Let's run through this in order:</p>
+<p>First we draw a line across to (150, 50) — our path now goes 100 pixels to the right along the x axis.</p>
+<p>Second, we work out the height of our equilateral triangle, using a bit of simple trigonometry. Basically, we are drawing the triangle pointing downwards. The angles in an equilateral triangle are always 60 degrees; to work out the height we can split it down the middle into two right-angled triangles, which will each have angles of 90 degrees, 60 degrees, and 30 degrees. In terms of the sides:</p>
+<ul>
+<li>The longest side is called the <strong>hypotenuse</strong></li>
+<li>The side next to the 60 degree angle is called the <strong>adjacent</strong> — which we know is 50 pixels, as it is half of the line we just drew.</li>
+<li>The side opposite the 60 degree angle is called the <strong>opposite</strong>, which is the height of the triangle we want to calculate.</li>
+</ul>
+<p><img src="Drawing_graphics/trigonometry.png" alt="An equilateral triangle pointing downwards with labeled angles and sides. The horizontal line at the top is labeled 'adjacent'. A perpendicular dotted line, from the middle of the adjacent line, labeled 'opposite', splits the triangle creating two equal right triangles. The right side of the triangle is labeled the hypotenuse, as it is the hypotenuse of the right triangle formed by the line labeled 'opposite'. while all three-sided of the triangle are of equal length, the hypotenuse is the longest side of the right triangle." width="200" height="166" loading="lazy"></p>
+<p>One of the basic trigonometric formulae states that the length of the adjacent multiplied by the tangent of the angle is equal to the opposite, hence we come up with <code>50 * Math.tan(degToRad(60))</code>. We use our <code>degToRad()</code> function to convert 60 degrees to radians, as <a href="../../../Web/JavaScript/Reference/Global_Objects/Math/tan.html"><code>Math.tan()</code></a> expects an input value in radians.</p>
+</li>
+<li>
+<p>With the height calculated, we draw another line to <code>(100, 50 + triHeight)</code>. The X coordinate is simple; it must be halfway between the previous two X values we set. The Y value on the other hand must be 50 plus the triangle height, as we know the top of the triangle is 50 pixels from the top of the canvas.</p>
+</li>
+<li>
+<p>The next line draws a line back to the starting point of the triangle.</p>
+</li>
+<li>
+<p>Last of all, we run <code>ctx.fill()</code> to end the path and fill in the shape.</p>
+</li>
+</ol>
+<h4 id="drawing_circles">Drawing circles</h4>
+<p>Now let's look at how to draw a circle in canvas. This is accomplished using the <a href="../../../Web/API/CanvasRenderingContext2D/arc.html" title="arc()"><code>arc()</code></a> method, which draws all or part of a circle at a specified point.</p>
+<ol>
+<li>
+<p>Let's add an arc to our canvas — add the following to the bottom of your code:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___3_canvas_paths notranslate live-sample---3_canvas_paths"><code>ctx.fillStyle = "blue";
+ctx.beginPath();
+ctx.arc(150, 106, 50, degToRad(0), degToRad(360), false);
+ctx.fill();
+</code></pre></div>
+<p><code>arc()</code> takes six parameters. The first two specify the position of the arc's center (X and Y, respectively). The third is the circle's radius, the fourth and fifth are the start and end angles at which to draw the circle (so specifying 0 and 360 degrees gives us a full circle), and the sixth parameter defines whether the circle should be drawn counterclockwise (anticlockwise) or clockwise (<code>false</code> is clockwise).</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+0 degrees is horizontally to the right.</p>
+</div>
+</li>
+<li>
+<p>Let's try adding another arc:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___3_canvas_paths notranslate live-sample---3_canvas_paths"><code>ctx.fillStyle = "yellow";
+ctx.beginPath();
+ctx.arc(200, 106, 50, degToRad(-45), degToRad(45), true);
+ctx.lineTo(200, 106);
+ctx.fill();
+</code></pre></div>
+<p>The pattern here is very similar, but with two differences:</p>
+<ul>
+<li>We have set the last parameter of <code>arc()</code> to <code>true</code>, meaning that the arc is drawn counterclockwise, which means that even though the arc is specified as starting at -45 degrees and ending at 45 degrees, we draw the arc around the 270 degrees not inside this portion. If you were to change <code>true</code> to <code>false</code> and then re-run the code, only the 90 degree slice of the circle would be drawn.</li>
+<li>Before calling <code>fill()</code>, we draw a line to the center of the circle. This means that we get the rather nice Pac-Man-style cutout rendered. If you removed this line (try it!) then re-ran the code, you'd get just an edge of the circle chopped off between the start and end point of the arc. This illustrates another important point of the canvas — if you try to fill an incomplete path (i.e., one that is not closed), the browser fills in a straight line between the start and end point and then fills it in.</li>
+</ul>
+</li>
+</ol>
+<p>That's it for now; your final example should look like this:</p>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="3 canvas paths sample" id="frame_3_canvas_paths" width="100%" height="200" src="Drawing_graphics/_sample_.3_canvas_paths53715541/270206ba4f75fbb6e88d51c99cfc3b6884aa4f13.mdnplay.dev/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/runner.html-_-uuid=270206ba4f75fbb6e88d51c99cfc3b6884aa4f13&amp;state=jVNBbtswEPzKgiepdWU6rY3CsQMUuaSHAkESIBddKHFtMaXIlKJiC0H%25252B3qVkWarTpAV04I52ZodD8pkVvtRsyVa5ME%25252BiglyLqlqnrGwuWyBlF6kBWD1efJMSqlp5kWmE.html" data-live-path="/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/" data-live-id="3_canvas_paths" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<p>You can press the <strong>Play</strong> button to open the example in MDN Playground and edit the source code.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+To find out more about advanced path drawing features such as Bézier curves, check out our <a href="../../../Web/API/Canvas_API/Tutorial/Drawing_shapes.html">Drawing shapes with canvas</a> tutorial.</p>
+</div>
+  </section><section class="content-section" aria-labelledby="text">
+    <!--lit-part jnY40xCHL+8=--><!--lit-node 0--><h3 id="text" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#text">Text</a></h3><!--/lit-part-->
+    <p>Canvas also has features for drawing text. Let's explore these briefly. Start by making another fresh copy of your canvas template in which to draw the new example.</p>
+<p>Text is drawn using two methods:</p>
+<ul>
+<li><a href="../../../Web/API/CanvasRenderingContext2D/fillText.html" title="fillText()"><code>fillText()</code></a> — draws filled text.</li>
+<li><a href="../../../Web/API/CanvasRenderingContext2D/strokeText.html" title="strokeText()"><code>strokeText()</code></a> — draws outline (stroke) text.</li>
+</ul>
+<p>Both of these take three properties in their basic usage: the text string to draw and the X and Y coordinates of the point to start drawing the text at. This works out as the <strong>bottom left</strong> corner of the <strong>text box</strong> (literally, the box surrounding the text you draw), which might confuse you as other drawing operations tend to start from the top left corner — bear this in mind.</p>
+<p>There are also a number of properties to help control text rendering such as <a href="../../../Web/API/CanvasRenderingContext2D/font.html" title="font"><code>font</code></a>, which lets you specify font family, size, etc. It takes as its value the same syntax as the CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font"><code>font</code></a> property.</p>
+<p>Canvas content is not accessible to screen readers. Text painted to the canvas is not available to the DOM, but must be made available to be accessible. In this example, we include the text as the value for <code>aria-label</code>.</p>
+<p>Try adding the following block to the bottom of your JavaScript:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___4-canvas-text notranslate live-sample---4-canvas-text"><code>ctx.strokeStyle = "white";
+ctx.lineWidth = 1;
+ctx.font = "36px arial";
+ctx.strokeText("Canvas text", 50, 50);
+
+ctx.fillStyle = "red";
+ctx.font = "48px georgia";
+ctx.fillText("Canvas text", 50, 150);
+
+canvas.setAttribute("aria-label", "Canvas text");
+</code></pre></div>
+<p>Here we draw two lines of text, one outline and the other stroke. The example should look like so:</p>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="4-canvas-text sample" id="frame_4-canvas-text" width="100%" height="180" src="Drawing_graphics/_sample_.4-canvas-text1930296/00d96ce20846ad283c841b4e1a22e295154b91e3.mdnplay.dev/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/runner.html-_-uuid=00d96ce20846ad283c841b4e1a22e295154b91e3&amp;state=dZJNb8IwDIb%25252FSpQTk7oC%25252B9LEAAlx2XlM2qWXtDE0I01Y4lIQ4r%25252FPaUvLpk1qpMbx8%25252Fq1kxPPsdB8wqeZMHvhWaaF97OEF8dlHUj4PDGMTXfzhZTMlwpFqoGt.html" data-live-path="/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/" data-live-id="4-canvas-text" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<p>Press the <strong>Play</strong> button to open the example in MDN Playground and edit the source code. Have a play and see what you can come up with! You can find more information on the options available for canvas text at <a href="../../../Web/API/Canvas_API/Tutorial/Drawing_text.html">Drawing text</a>.</p>
+  </section><section class="content-section" aria-labelledby="drawing_images_onto_canvas">
+    <!--lit-part KS67m+wTR8s=--><!--lit-node 0--><h3 id="drawing_images_onto_canvas" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#drawing_images_onto_canvas">Drawing images onto canvas</a></h3><!--/lit-part-->
+    <p>It is possible to render external images onto your canvas. These can be simple images, frames from videos, or the content of other canvases. For the moment we'll just look at the case of using some simple images on our canvas.</p>
+<ol>
+<li>
+<p>As before, make another fresh copy of your canvas template in which to draw the new example.</p>
+<p>Images are drawn onto canvas using the <a href="../../../Web/API/CanvasRenderingContext2D/drawImage.html" title="drawImage()"><code>drawImage()</code></a> method. The simplest version takes three parameters — a reference to the image you want to render, and the X and Y coordinates of the image's top left corner.</p>
+</li>
+<li>
+<p>Let's start by getting an image source to embed in our canvas. Add the following lines to the bottom of your JavaScript:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___5-canvas-images notranslate live-sample---5-canvas-images"><code>const image = new Image();
+image.src =
+  "https://mdn.github.io/shared-assets/images/examples/fx-nightly-512.png";
+</code></pre></div>
+<p>Here we create a new <a href="../../../Web/API/HTMLImageElement.html"><code>HTMLImageElement</code></a> object using the <a href="../../../Web/API/HTMLImageElement/Image.html" title="Image()"><code>Image()</code></a> constructor. The returned object is the same type as that which is returned when you grab a reference to an existing <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img"><code>&lt;img&gt;</code></a> element. We then set its <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#src"><code>src</code></a> attribute to equal our Firefox logo image. At this point, the browser starts loading the image.</p>
+</li>
+<li>
+<p>We could now try to embed the image using <code>drawImage()</code>, but we need to make sure the image file has been loaded first, otherwise the code will fail. We can achieve this using the <code>load</code> event, which will only be fired when the image has finished loading. Add the following block below the previous one:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>image.addEventListener("load", () =&gt; ctx.drawImage(image, 20, 20));
+</code></pre></div>
+<p>If you load your example in the browser now, you should see the image embedded in the canvas, albeit rather large.</p>
+</li>
+<li>
+<p>But there's more! What if we want to display only a part of the image, or to resize it? We can do both with the more complex version of <code>drawImage()</code>. Update your <code>ctx.drawImage()</code> line like so:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>ctx.drawImage(image, 0, 0, 512, 512, 50, 40, 185, 185);
+</code></pre></div>
+<div class="code-example"><pre class="language-js hidden live-sample___5-canvas-images notranslate live-sample---5-canvas-images"><code>image.addEventListener("load", () =&gt;
+  ctx.drawImage(image, 0, 0, 512, 512, 50, 40, 185, 185),
+);
+</code></pre></div>
+<ul>
+<li>The first parameter is the image reference, as before.</li>
+<li>Parameters 2 and 3 define the coordinates of the top left corner of the area you want to cut out of the loaded image, relative to the top-left corner of the image itself. Nothing to the left of the first parameter or above the second will be drawn.</li>
+<li>Parameters 4 and 5 define the width and height of the area we want to cut out from the original image we loaded.</li>
+<li>Parameters 6 and 7 define the coordinates at which you want to draw the top-left corner of the cut-out portion of the image, relative to the top-left corner of the canvas.</li>
+<li>Parameters 8 and 9 define the width and height to draw the cut-out area of the image. In this case, we have specified the same dimensions as the original slice, but you could resize it by specifying different values.</li>
+</ul>
+</li>
+<li>
+<p>When the image is meaningfully updated, the description must also be updated.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___5-canvas-images notranslate live-sample---5-canvas-images"><code>canvas.setAttribute("aria-label", "Firefox Logo");
+</code></pre></div>
+</li>
+</ol>
+<p>The final example should look like so:</p>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="5-canvas-images sample" id="frame_5-canvas-images" width="100%" height="260" src="Drawing_graphics/_sample_.5-canvas-images86660591/520ede5bbeb094a67924356cb88a8c857e113a42.mdnplay.dev/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/runner.html-_-uuid=520ede5bbeb094a67924356cb88a8c857e113a42&amp;state=TZLBbtwgEIZfBXHySl6cRI1UbdeRoqhVK%25252BXUHHrxBZuxTYLBhfHaVpR374A33ZWwBQPfzP8PvPMeB8MP%25252FNhIe5KBNUaGUFZ8WJ9SoOIPlWXsOD48KsXCpFHWBlgrjall.html" data-live-path="/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/" data-live-id="5-canvas-images" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<p>Press the <strong>Play</strong> button to open the example in MDN Playground and edit the source code.</p>
+  </section><section class="content-section" aria-labelledby="loops_and_animations">
+    <!--lit-part eNXnZxq3GfU=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Loops%20and%20animations"></a><h2 id="loops_and_animations" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#loops_and_animations">Loops and animations</a></h2><!--/lit-part-->
+    <p>We have so far covered some very basic uses of 2D canvas, but really you won't experience the full power of canvas unless you update or animate it in some way. After all, canvas does provide scriptable images! If you aren't going to change anything, then you might as well just use static images and save yourself all the work.</p>
+  </section><section class="content-section" aria-labelledby="creating_a_loop">
+    <!--lit-part +8HZZiQQg9Y=--><!--lit-node 0--><h3 id="creating_a_loop" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#creating_a_loop">Creating a loop</a></h3><!--/lit-part-->
+    <p>Playing with loops in canvas is rather fun — you can run canvas commands inside a <a href="../../../Web/JavaScript/Reference/Statements/for.html"><code>for</code></a> (or other type of) loop just like any other JavaScript code.</p>
+<p>Let's build an example.</p>
+<ol>
+<li>
+<p>Make another fresh copy of your canvas template.</p>
+</li>
+<li>
+<p>Add the following line to the bottom of your JavaScript. This contains a new method, <a href="../../../Web/API/CanvasRenderingContext2D/translate.html" title="translate()"><code>translate()</code></a>, which moves the origin point of the canvas:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___6-canvas-for-loop notranslate live-sample---6-canvas-for-loop"><code>ctx.translate(width / 2, height / 2);
+</code></pre></div>
+<p>This causes the coordinate origin (0, 0) to be moved to the center of the canvas, rather than being at the top left corner. This is very useful in many situations, like this one, where we want our design to be drawn relative to the center of the canvas.</p>
+</li>
+<li>
+<p>Now add the following code to the bottom of the JavaScript:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___6-canvas-for-loop notranslate live-sample---6-canvas-for-loop"><code>function degToRad(degrees) {
+  return (degrees * Math.PI) / 180;
+}
+
+function rand(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+let length = 250;
+let moveOffset = 20;
+</code></pre></div>
+<p>Here we are implementing the same <code>degToRad()</code> function we saw in the triangle example above, a <code>rand()</code> function that returns a random number between given lower and upper bounds, and the <code>length</code> and <code>moveOffset</code> variables (which we'll find out more about later).</p>
+</li>
+<li>
+<p>The idea here is that we'll draw something on the canvas inside the <code>for</code> loop, and iterate on it each time so we can create something interesting. Add the following code inside your <code>for</code> loop:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___6-canvas-for-loop notranslate live-sample---6-canvas-for-loop"><code>for (let i = 0; i &lt; length; i++) {
+  ctx.fillStyle = `rgb(${255 - length} 0 ${255 - length} / 90%)`;
+  ctx.beginPath();
+  ctx.moveTo(moveOffset, moveOffset);
+  ctx.lineTo(moveOffset + length, moveOffset);
+  const triHeight = (length / 2) * Math.tan(degToRad(60));
+  ctx.lineTo(moveOffset + length / 2, moveOffset + triHeight);
+  ctx.lineTo(moveOffset, moveOffset);
+  ctx.fill();
+
+  length--;
+  moveOffset += 0.7;
+  ctx.rotate(degToRad(5));
+}
+</code></pre></div>
+<p>So on each iteration, we:</p>
+<ul>
+<li>Set the <code>fillStyle</code> to be a shade of slightly transparent purple, which changes each time based on the value of <code>length</code>. As you'll see later the length gets smaller each time the loop runs, so the effect here is that the color gets brighter with each successive triangle drawn.</li>
+<li>Begin the path.</li>
+<li>Move the pen to a coordinate of <code>(moveOffset, moveOffset)</code>. This variable defines how far we want to move each time we draw a new triangle.</li>
+<li>Draw a line to a coordinate of <code>(moveOffset+length, moveOffset)</code>. This draws a line of length <code>length</code> parallel to the X axis.</li>
+<li>Calculate the triangle's height, as before.</li>
+<li>Draw a line to the downward-pointing corner of the triangle, then draw a line back to the start of the triangle.</li>
+<li>Call <code>fill()</code> to fill in the triangle.</li>
+<li>Update the variables that describe the sequence of triangles, so we can be ready to draw the next one. We decrease the <code>length</code> value by 1, so the triangles get smaller each time; increase <code>moveOffset</code> by a small amount so each successive triangle is slightly further away, and use another new function, <a href="../../../Web/API/CanvasRenderingContext2D/rotate.html" title="rotate()"><code>rotate()</code></a>, which allows us to rotate the entire canvas! We rotate it by 5 degrees before drawing the next triangle.</li>
+</ul>
+</li>
+</ol>
+<p>That's it! The final example should look like so:</p>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="6-canvas-for-loop sample" id="frame_6-canvas-for-loop" width="100%" height="550" src="Drawing_graphics/_sample_.6-canvas-for-loop87277910/1e738676aca2fd277a67d54b52f30fec00ebacee.mdnplay.dev/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/runner.html-_-uuid=1e738676aca2fd277a67d54b52f30fec00ebacee&amp;state=jVPbbtswDP0VwtgAeUkcN0B2yaXA0JfuYVjRFtiLHypbdKxNljpZaRIE%25252BfdRvsUpimFA4NBH55BHJH0MCleqYBGsMq5feAWZ4lW1ToLycFMDSXCdaIDV8%25252FVXIaDaSsdT.html" data-live-path="/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/" data-live-id="6-canvas-for-loop" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<p>Press the <strong>Play</strong> button to open the example in MDN Playground and edit the source code. We'd like to encourage you to play with the example and make it your own! For example:</p>
+<ul>
+<li>Draw rectangles or arcs instead of triangles, or even embed images.</li>
+<li>Play with the <code>length</code> and <code>moveOffset</code> values.</li>
+<li>Introduce some random numbers using that <code>rand()</code> function we included above but didn't use.</li>
+</ul>
+  </section><section class="content-section" aria-labelledby="animations">
+    <!--lit-part jGCJKYrKpqM=--><!--lit-node 0--><h3 id="animations" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#animations">Animations</a></h3><!--/lit-part-->
+    <p>The loop example we built above was fun, but really you need a constant loop that keeps going and going for any serious canvas applications (such as games and real time visualizations). If you think of your canvas as being like a movie, you really want the display to update on each frame to show the updated view, with an ideal refresh rate of 60 frames per second so that movement appears nice and smooth to the human eye.</p>
+<p>There are a few JavaScript functions that will allow you to run functions repeatedly, several times a second, the best one for our purposes here being <a href="../../../Web/API/Window/requestAnimationFrame.html"><code>window.requestAnimationFrame()</code></a>. It takes one parameter — the name of the function you want to run for each frame. The next time the browser is ready to update the screen, your function will get called. If that function draws the new update to your animation, then calls <code>requestAnimationFrame()</code> again just before the end of the function, the animation loop will continue to run. The loop ends when you stop calling <code>requestAnimationFrame()</code> or if you call <a href="../../../Web/API/Window/cancelAnimationFrame.html"><code>window.cancelAnimationFrame()</code></a> after calling <code>requestAnimationFrame()</code> but before the frame is called.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+It's good practice to call <code>cancelAnimationFrame()</code> from your main code when you're done using the animation, to ensure that no updates are still waiting to be run.</p>
+</div>
+<p>The browser works out complex details such as making the animation run at a consistent speed, and not wasting resources animating things that can't be seen.</p>
+<p>To see how it works, let's quickly look again at our <a href="#frame_bouncing-balls">Bouncing Balls example</a>. The code for the loop that keeps everything moving looks like this:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>function loop() {
+  ctx.fillStyle = "rgb(0 0 0 / 25%)";
+  ctx.fillRect(0, 0, width, height);
+
+  for (const ball of balls) {
+    ball.draw();
+    ball.update();
+    ball.collisionDetect();
+  }
+
+  requestAnimationFrame(loop);
+}
+
+loop();
+</code></pre></div>
+<p>We run the <code>loop()</code> function once at the bottom of the code to start the cycle, drawing the first animation frame; the <code>loop()</code> function then takes charge of calling <code>requestAnimationFrame(loop)</code> to run the next frame of the animation, again and again.</p>
+<p>Note that on each frame we are completely clearing the canvas and redrawing everything. For every ball present we draw it, update its position, and check to see if it is colliding with any other balls. Once you've drawn a graphic to a canvas, there's no way to manipulate that graphic individually like you can with DOM elements. You can't move each ball around on the canvas, because once it's drawn, it's part of the canvas, and is not an individual accessible element or object. Instead, you have to erase and redraw, either by erasing the entire frame and redrawing everything, or by having code that knows exactly what parts need to be erased and only erases and redraws the minimum area of the canvas necessary.</p>
+<p>Optimizing animation of graphics is an entire specialty of programming, with lots of clever techniques available. Those are beyond what we need for our example, though!</p>
+<p>In general, the process of doing a canvas animation involves the following steps:</p>
+<ol>
+<li>Clear the canvas contents (e.g., with <a href="../../../Web/API/CanvasRenderingContext2D/fillRect.html" title="fillRect()"><code>fillRect()</code></a> or <a href="../../../Web/API/CanvasRenderingContext2D/clearRect.html" title="clearRect()"><code>clearRect()</code></a>).</li>
+<li>Save state (if necessary) using <a href="../../../Web/API/CanvasRenderingContext2D/save.html" title="save()"><code>save()</code></a> — this is needed when you want to save settings you've updated on the canvas before continuing, which is useful for more advanced applications.</li>
+<li>Draw the graphics you are animating.</li>
+<li>Restore the settings you saved in step 2, using <a href="../../../Web/API/CanvasRenderingContext2D/restore.html" title="restore()"><code>restore()</code></a></li>
+<li>Call <code>requestAnimationFrame()</code> to schedule drawing of the next frame of the animation.</li>
+</ol>
+<div class="notecard note">
+<p><strong>Note:</strong>
+We won't cover <code>save()</code> and <code>restore()</code> here, but they are explained nicely in our <a href="../../../Web/API/Canvas_API/Tutorial/Transformations.html">Transformations</a> tutorial (and the ones that follow it).</p>
+</div>
+  </section><section class="content-section" aria-labelledby="walking_object_animation">
+    <!--lit-part ae9/3RhUECA=--><!--lit-node 0--><h3 id="walking_object_animation" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#walking_object_animation">Walking object animation</a></h3><!--/lit-part-->
+    <p>Now let's create our own simple animation — we'll be animating a moving object across the screen using a sprite sheet.</p>
+<ol>
+<li>
+<p>Make another fresh copy of our canvas template and open it in your code editor.</p>
+</li>
+<li>
+<p>Update the fallback HTML to reflect the image:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html live-sample___7-canvas-walking-animation notranslate live-sample---7-canvas-walking-animation"><code>&lt;canvas class="myCanvas"&gt;
+  &lt;p&gt;A cat walking.&lt;/p&gt;
+&lt;/canvas&gt;
+</code></pre></div>
+</li>
+<li>
+<p>This time, we won't be coloring the background black. So after acquiring the <code>ctx</code> variable, paint the background light gray instead:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___7-canvas-walking-animation notranslate live-sample---7-canvas-walking-animation"><code>ctx.fillStyle = "#e5e6e9";
+ctx.fillRect(0, 0, width, height);
+</code></pre></div>
+</li>
+<li>
+<p>At the bottom of the JavaScript, add the following line to once again make the coordinate origin sit in the middle of the canvas:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___7-canvas-walking-animation notranslate live-sample---7-canvas-walking-animation"><code>ctx.translate(width / 2, height / 2);
+</code></pre></div>
+</li>
+<li>
+<p>Now let's create a new <a href="../../../Web/API/HTMLImageElement.html"><code>HTMLImageElement</code></a> object, set its <a href="../../../Web/API/HTMLImageElement/src.html"><code>src</code></a> to the image we want to load, and add an <code>onload</code> event handler that will cause the <code>draw()</code> function to fire when the image is loaded:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___7-canvas-walking-animation notranslate live-sample---7-canvas-walking-animation"><code>const image = new Image();
+image.src =
+  "https://developer.mozilla.org/shared-assets/images/examples/web-animations/cat_sprite.png";
+image.onload = draw;
+</code></pre></div>
+</li>
+<li>
+<p>Now we'll add some variables to keep track of the position the sprite is to be drawn on the screen, and the sprite number we want to display.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___7-canvas-walking-animation notranslate live-sample---7-canvas-walking-animation"><code>let spriteIndex = 0;
+let posX = 0;
+const spriteWidth = 300;
+const spriteHeight = 150;
+const totalSprites = 12;
+</code></pre></div>
+<p>The sprite image is created by and shared at the courtesy of <a href="https://nearestnabors.com/" class="external" target="_blank">Rachel Nabors</a>, for their documentation work on the <a href="../../../Web/API/Web_Animations_API.html">Web Animations API</a>. It looks like this:</p>
+<p><img src="../../../../../shared-assets/images/examples/web-animations/cat_sprite.png" alt="A sprite sheet with three columns, each column containing a sequence of images of a black cat moving to the left at different paces. Each sprite is 300 pixels wide and 150 pixels high." loading="lazy"></p>
+<p>It has three columns. Each column is a sequence representing the cat moving at a different pace (walking, trotting, and galloping). Each sequence contains either 12 or 13 sprites — each one is 300 pixels wide and 150 pixels high. We will be using the leftmost walking sequence, which contains 12 sprites. To display each sprite cleanly we will have to use <code>drawImage()</code> to chop out a single sprite image from the spritesheet and display only that part, like we did above with the Firefox logo. The X and Y coordinates of the slice will have to be a multiple of <code>spriteWidth</code> and <code>spriteHeight</code>, respectively; because we are using the leftmost sequence, the X coordinate is always 0. The slice size will always be <code>spriteWidth</code> by <code>spriteHeight</code>.</p>
+</li>
+<li>
+<p>Now let's insert an empty <code>draw()</code> function at the bottom of the code, ready for filling up with some code:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>function draw() {}
+</code></pre></div>
+<div class="code-example"><pre class="language-js hidden live-sample___7-canvas-walking-animation notranslate live-sample---7-canvas-walking-animation"><code>function draw() {
+</code></pre></div>
+</li>
+<li>
+<p>The rest of the code in this section goes inside <code>draw()</code>. First, add the following line, which clears the canvas to prepare for drawing each frame. Notice that we have to specify the top-left corner of the rectangle as <code>-(width / 2), -(height / 2)</code> because we specified the origin position as <code>width/2, height/2</code> earlier on.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___7-canvas-walking-animation notranslate live-sample---7-canvas-walking-animation"><code>ctx.fillRect(-(width / 2), -(height / 2), width, height);
+</code></pre></div>
+</li>
+<li>
+<p>Next, we'll draw our image using drawImage — the 9-parameter version. Add the following:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___7-canvas-walking-animation notranslate live-sample---7-canvas-walking-animation"><code>ctx.drawImage(
+  image,
+  0,
+  spriteIndex * spriteHeight,
+  spriteWidth,
+  spriteHeight,
+  0 + posX,
+  -spriteHeight / 2,
+  spriteWidth,
+  spriteHeight,
+);
+</code></pre></div>
+<p>As you can see:</p>
+<ul>
+<li>We specify <code>image</code> as the image to embed.</li>
+<li>Parameters 2 and 3 specify the top-left corner of the slice to cut out of the source image, with the X value as 0 (for the leftmost column) and the Y value cycling through multiples of <code>spriteHeight</code>. You can replace the X value with <code>spriteWidth</code> or <code>2 * spriteWidth</code> to select the other columns.</li>
+<li>Parameters 4 and 5 specify the size of the slice to cut out — <code>spriteWidth</code> and <code>spriteHeight</code>.</li>
+<li>Parameters 6 and 7 specify the top-left corner of the box into which to draw the slice on the canvas — the X position is 0 + <code>posX</code>, meaning that we can alter the drawing position by altering the <code>posX</code> value. The Y position is <code>-spriteHeight / 2</code>, which means that the image will be vertically centered on the canvas.</li>
+<li>Parameters 8 and 9 specify the size of the image on the canvas. We just want to keep its original size, so we specify <code>spriteWidth</code> and <code>spriteHeight</code> as the width and height.</li>
+</ul>
+</li>
+<li>
+<p>Now we'll alter the <code>spriteIndex</code> value after each draw — well, after some of them anyway. Add the following block to the bottom of the <code>draw()</code> function:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___7-canvas-walking-animation notranslate live-sample---7-canvas-walking-animation"><code>if (posX % 11 === 0) {
+  if (spriteIndex === totalSprites - 1) {
+    spriteIndex = 0;
+  } else {
+    spriteIndex++;
+  }
+}
+</code></pre></div>
+<p>We are wrapping the whole block in <code>if (posX % 11 === 0) { }</code>. We use the modulo (<code>%</code>) operator (also known as the <a href="../../../Web/JavaScript/Reference/Operators/Remainder.html">remainder operator</a>) to check whether the <code>posX</code> value can be exactly divided by 11 with no remainder. If so, we move on to the next sprite by incrementing <code>spriteIndex</code> (wrapping to 0 after we're done with the last one). This effectively means that we are only updating the sprite on every 11th frame, or roughly about 6 frames a second (<code>requestAnimationFrame()</code> calls us at up to 60 frames per second if possible). We are deliberately slowing down the frame rate because we only have 12 sprites to work with, and if we display one every 60th of a second, our object will move way too fast!</p>
+<p>Inside the outer block we use an <a href="../../../Web/JavaScript/Reference/Statements/if...html"><code>if...else</code></a> statement to check whether the <code>spriteIndex</code> value is at the last one. If we are showing the last sprite already, we reset <code>spriteIndex</code> back to 0; if not we just increment it by 1.</p>
+</li>
+<li>
+<p>Next we need to work out how to change the <code>posX</code> value on each frame — add the following code block just below your last one.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___7-canvas-walking-animation notranslate live-sample---7-canvas-walking-animation"><code>if (posX &lt; -width / 2 - spriteWidth) {
+  const newStartPos = width / 2;
+  posX = Math.ceil(newStartPos);
+} else {
+  posX -= 2;
+}
+</code></pre></div>
+<p>We are using another <code>if...else</code> statement to see if the value of <code>posX</code> has become less than <code>-width/2 - spriteWidth</code>, which means our cat has walked off the left edge of the screen. If so, we calculate a position that would put the cat just to the right of the right side of the screen.</p>
+<p>If our cat hasn't yet walked off the edge of the screen, we decrement <code>posX</code> by 2. This will make it move a little bit to the left the next time we draw it.</p>
+</li>
+<li>
+<p>Finally, we need to make the animation loop by calling <a href="../../../Web/API/Window/requestAnimationFrame.html" title="requestAnimationFrame()"><code>requestAnimationFrame()</code></a> at the bottom of the <code>draw()</code> function:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___7-canvas-walking-animation notranslate live-sample---7-canvas-walking-animation"><code>window.requestAnimationFrame(draw);
+</code></pre></div>
+</li>
+</ol>
+<div class="code-example"><pre class="language-js hidden live-sample___7-canvas-walking-animation notranslate live-sample---7-canvas-walking-animation"><code>}
+</code></pre></div>
+<p>That's it! The final example should look like so:</p>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="7-canvas-walking-animation sample" id="frame_7-canvas-walking-animation" width="100%" height="260" src="Drawing_graphics/_sample_.7-canvas-walking-animation30045860/279f371633cef52203e58efd51793bc0fb7a6086.mdnplay.dev/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/runner.html-_-uuid=279f371633cef52203e58efd51793bc0fb7a6086&amp;state=jVTRitswEPwV4VJwmthOUq7QND44DsrdQ6E0D9cHQ9HZG9utLLnSJk565N%25252B7kpXYKS0UQpB2d1azM5JfggobEayCdc7lnhuWC25MmgXN8d4FsuA2k4yt29s7lnNkHRc%25252F.html" data-live-path="/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/" data-live-id="7-canvas-walking-animation" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<p>You can press the <strong>Play</strong> button to open the example in MDN Playground and edit the source code.</p>
+  </section><section class="content-section" aria-labelledby="a_simple_drawing_application">
+    <!--lit-part vkj6fei7UJE=--><!--lit-node 0--><h3 id="a_simple_drawing_application" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#a_simple_drawing_application">A simple drawing application</a></h3><!--/lit-part-->
+    <p>As a final animation example, we'd like to show you a very simple drawing application, to illustrate how the animation loop can be combined with user input (like mouse movement, in this case). We won't get you to walk through and build this one; we'll just explore the most interesting parts of the code.</p>
+<div class="code-example"><pre class="language-html hidden live-sample___8-canvas-drawing-app notranslate live-sample---8-canvas-drawing-app"><code>&lt;div class="toolbar"&gt;
+  &lt;input type="color" aria-label="select pen color" value="#ff0000" /&gt;
+  &lt;div&gt;
+    &lt;input
+      type="range"
+      min="2"
+      max="50"
+      value="30"
+      aria-label="select pen size" /&gt;&lt;span class="output"&gt;30&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;button&gt;Clear canvas&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;canvas class="myCanvas"&gt;
+  &lt;p&gt;Add suitable fallback here.&lt;/p&gt;
+&lt;/canvas&gt;
+</code></pre></div>
+<div class="code-example"><pre class="language-css hidden live-sample___8-canvas-drawing-app notranslate live-sample---8-canvas-drawing-app"><code>body {
+  margin: 0;
+  overflow: hidden;
+  background: #cccccc;
+}
+
+.toolbar {
+  height: 75px;
+  background: #cccccc;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolbar div {
+  margin: 0 20px;
+  flex: 3;
+}
+
+input[type="color"],
+button {
+  flex: 1;
+}
+
+input[type="range"] {
+  width: calc(100% - 20px);
+}
+
+output {
+  width: 20px;
+}
+
+span {
+  position: relative;
+  bottom: 5px;
+}
+</code></pre></div>
+<div class="code-example"><pre class="language-js hidden live-sample___8-canvas-drawing-app notranslate live-sample---8-canvas-drawing-app"><code>const canvas = document.querySelector(".myCanvas");
+const width = (canvas.width = window.innerWidth);
+const height = (canvas.height = window.innerHeight - 85);
+const ctx = canvas.getContext("2d");
+
+ctx.fillStyle = "black";
+ctx.fillRect(0, 0, width, height);
+
+const colorPicker = document.querySelector('input[type="color"]');
+const sizePicker = document.querySelector('input[type="range"]');
+const output = document.querySelector(".output");
+const clearBtn = document.querySelector("button");
+
+// covert degrees to radians
+function degToRad(degrees) {
+  return (degrees * Math.PI) / 180;
+}
+
+// update sizePicker output value
+
+sizePicker.addEventListener(
+  "input",
+  () =&gt; (output.textContent = sizePicker.value),
+);
+</code></pre></div>
+<p>You can play with the example live below; you can also click the <strong>Play</strong> button to open it in the MDN Playground, where you can edit the source code:</p>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="8-canvas-drawing-app sample" id="frame_8-canvas-drawing-app" width="100%" height="600" src="Drawing_graphics/_sample_.8-canvas-drawing-app5446625/5f20114cc92077749acf1bdbfb71366bf3c18964.mdnplay.dev/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/runner.html-_-uuid=5f20114cc92077749acf1bdbfb71366bf3c18964&amp;state=lVX9b9s2EP1XDiqGyoUtKwmyFbZjoAtWtEAHBO2ANZj6Ay2dbbYUqZGUP1bkf%25252B%25252BR1JeXxNgMw5De8Y7vHt%25252FR36OtLUU0ixYF30EumDE3WWSVEiums2iZSYAFl1Vt.html" data-live-path="/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/" data-live-id="8-canvas-drawing-app" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<p>Let's look at the most interesting parts. First of all, we keep track of the mouse's X and Y coordinates and whether it is being clicked or not with three variables: <code>curX</code>, <code>curY</code>, and <code>pressed</code>. When the mouse moves, we fire a function set as the <code>onmousemove</code> event handler, which captures the current X and Y values. We also use <code>onmousedown</code> and <code>onmouseup</code> event handlers to change the value of <code>pressed</code> to <code>true</code> when the mouse button is pressed, and back to <code>false</code> again when it is released.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___8-canvas-drawing-app notranslate live-sample---8-canvas-drawing-app"><code>let curX;
+let curY;
+let pressed = false;
+
+// update mouse pointer coordinates
+document.addEventListener("mousemove", (e) =&gt; {
+  curX = e.pageX;
+  curY = e.pageY;
+});
+
+canvas.addEventListener("mousedown", () =&gt; (pressed = true));
+
+canvas.addEventListener("mouseup", () =&gt; (pressed = false));
+</code></pre></div>
+<p>When the "Clear canvas" button is pressed, we run a simple function that clears the whole canvas back to black, the same way we've seen before:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___8-canvas-drawing-app notranslate live-sample---8-canvas-drawing-app"><code>clearBtn.addEventListener("click", () =&gt; {
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, width, height);
+});
+</code></pre></div>
+<p>The drawing loop is pretty simple this time around — if pressed is <code>true</code>, we draw a circle with a fill style equal to the value in the color picker, and a radius equal to the value set in the range input. We have to draw the circle 85 pixels above where we measured it from, because the vertical measurement is taken from the top of the viewport, but we are drawing the circle relative to the top of the canvas, which starts below the 85 pixel-high toolbar. If we drew it with just <code>curY</code> as the y coordinate, it would appear 85 pixels lower than the mouse position.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___8-canvas-drawing-app notranslate live-sample---8-canvas-drawing-app"><code>function draw() {
+  if (pressed) {
+    ctx.fillStyle = colorPicker.value;
+    ctx.beginPath();
+    ctx.arc(
+      curX,
+      curY - 85,
+      sizePicker.value,
+      degToRad(0),
+      degToRad(360),
+      false,
+    );
+    ctx.fill();
+  }
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+</code></pre></div>
+<p>All <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"><code>&lt;input&gt;</code></a> types are well supported. If a browser doesn't support an input type, it will fall back to a plain text fields.</p>
+  </section><section class="content-section" aria-labelledby="webgl">
+    <!--lit-part 4YuSZjmd//0=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/WebGL"></a><h2 id="webgl" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#webgl">WebGL</a></h2><!--/lit-part-->
+    <p>It's now time to leave 2D behind, and take a quick look at 3D canvas. 3D canvas content is specified using the <a href="../../../Web/API/WebGL_API.html">WebGL API</a>, which is a completely separate API from the 2D canvas API, even though they both render onto <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas"><code>&lt;canvas&gt;</code></a> elements.</p>
+<p>WebGL is based on <a href="https://developer.mozilla.org/en-US/docs/Glossary/OpenGL">OpenGL</a> (Open Graphics Library), and allows you to communicate directly with the computer's <a href="https://developer.mozilla.org/en-US/docs/Glossary/GPU">GPU</a>. As such, writing raw WebGL is closer to low level languages such as C++ than regular JavaScript; it is quite complex but incredibly powerful.</p>
+  </section><section class="content-section" aria-labelledby="using_a_library">
+    <!--lit-part 1AVR708CqI8=--><!--lit-node 0--><h3 id="using_a_library" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#using_a_library">Using a library</a></h3><!--/lit-part-->
+    <p>Because of its complexity, most people write 3D graphics code using a third party JavaScript library such as <a href="../../../Games/Techniques/3D_on_the_web/Building_up_a_basic_demo_with_Three.html">Three.js</a>, <a href="https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/Building_up_a_basic_demo_with_PlayCanvas">PlayCanvas</a>, or <a href="../../../Games/Techniques/3D_on_the_web/Building_up_a_basic_demo_with_Babylon.html">Babylon.js</a>. Most of these work in a similar way, providing functionality to create primitive and custom shapes, position viewing cameras and lighting, covering surfaces with textures, and more. They handle the WebGL for you, letting you work on a higher level.</p>
+<p>Yes, using one of these means learning another new API (a third party one, in this case), but they are a lot simpler than coding raw WebGL.</p>
+  </section><section class="content-section" aria-labelledby="a_spinning_cube">
+    <!--lit-part 0w3+HqrtKko=--><!--lit-node 0--><h3 id="a_spinning_cube" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#a_spinning_cube">A spinning cube</a></h3><!--/lit-part-->
+    <p>Let's look at an example of how to create something with a WebGL library. We'll choose <a href="../../../Games/Techniques/3D_on_the_web/Building_up_a_basic_demo_with_Three.html">Three.js</a>, as it is one of the most popular ones. In this tutorial we'll create a 3D spinning cube.</p>
+<ol>
+<li>
+<p>To start with, create a new folder in your local hard drive called <code>webgl-cube</code>.</p>
+</li>
+<li>
+<p>Inside it, create a new file called <code>index.html</code> and add the following content to it:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;!doctype html&gt;
+&lt;html lang="en-US"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+
+    &lt;title&gt;Three.js basic cube example&lt;/title&gt;
+
+    &lt;script src="https://cdn.jsdelivr.net/npm/three-js@79.0.0/three.min.js"&gt;&lt;/script&gt;
+    &lt;script src="script.js" defer&gt;&lt;/script&gt;
+    &lt;link href="style.css" rel="stylesheet" /&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<div class="code-example"><pre class="language-html hidden live-sample___9-webgl-cube notranslate live-sample---9-webgl-cube"><code>&lt;script src="https://cdn.jsdelivr.net/npm/three-js@79.0.0/three.min.js"&gt;&lt;/script&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Next, create another new file called <code>script.js</code>, again in the same folder as before. Leave it empty for now.</p>
+</li>
+<li>
+<p>Now create another new file called <code>style.css</code>, again in the same folder, and add the following content to it:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css live-sample___9-webgl-cube notranslate live-sample---9-webgl-cube"><code>html,
+body {
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+</code></pre></div>
+</li>
+<li>
+<p>We've got <code>three.js</code> included in our page (this is what the first <code>&lt;script&gt;</code> element in our HTML is doing), so now we can start to write JavaScript that makes use of it into <code>script.js</code>. Let's start by creating a new scene — add the following into your <code>script.js</code> file:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___9-webgl-cube notranslate live-sample---9-webgl-cube"><code>const scene = new THREE.Scene();
+</code></pre></div>
+<p>The <a href="https://threejs.org/docs/index.html#api/en/scenes/Scene" class="external" target="_blank"><code>Scene()</code></a> constructor creates a new scene, which represents the whole 3D world we are trying to display.</p>
+</li>
+<li>
+<p>Next, we need a <strong>camera</strong> so we can see the scene. In 3D imagery terms, the camera represents a viewer's position in the world. To create a camera, add the following lines next:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___9-webgl-cube notranslate live-sample---9-webgl-cube"><code>const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000,
+);
+camera.position.z = 5;
+</code></pre></div>
+<p>The <a href="https://threejs.org/docs/index.html#api/en/cameras/PerspectiveCamera" class="external" target="_blank"><code>PerspectiveCamera()</code></a> constructor takes four arguments:</p>
+<ul>
+<li>The field of view: How wide the area in front of the camera is that should be visible onscreen, in degrees.</li>
+<li>The <a href="https://developer.mozilla.org/en-US/docs/Glossary/Aspect_ratio">aspect ratio</a>: Usually, this is the ratio of the scene's width divided by the scene's height. Using another value will distort the scene (which might be what you want, but usually isn't).</li>
+<li>The near plane: How close to the camera objects can be before we stop rendering them to the screen. Think about how when you move your fingertip closer and closer to the space between your eyes, eventually you can't see it anymore.</li>
+<li>The far plane: How far away things are from the camera before they are no longer rendered.</li>
+</ul>
+<p>We also set the camera's position to be 5 distance units out of the Z axis, which, like in CSS, is out of the screen towards you, the viewer.</p>
+</li>
+<li>
+<p>The third vital ingredient is a renderer. This is an object that renders a given scene, as viewed through a given camera. We'll create one for now using the <a href="https://threejs.org/docs/index.html#api/en/renderers/WebGLRenderer" class="external" target="_blank"><code>WebGLRenderer()</code></a> constructor, but we'll not use it till later. Add the following lines next:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___9-webgl-cube notranslate live-sample---9-webgl-cube"><code>const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+</code></pre></div>
+<p>The first line creates a new renderer, the second line sets the size at which the renderer will draw the camera's view, and the third line appends the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas"><code>&lt;canvas&gt;</code></a> element created by the renderer to the document's <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/body"><code>&lt;body&gt;</code></a>. Now anything the renderer draws will be displayed in our window.</p>
+</li>
+<li>
+<p>Next, we want to create the cube we'll display on the canvas. Add the following chunk of code at the bottom of your JavaScript:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___9-webgl-cube notranslate live-sample---9-webgl-cube"><code>let cube;
+
+const loader = new THREE.TextureLoader();
+
+loader.load(
+  "https://mdn.github.io/shared-assets/images/examples/learn/metal003.png",
+  (texture) =&gt; {
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(2, 2);
+
+    const geometry = new THREE.BoxGeometry(2.4, 2.4, 2.4);
+    const material = new THREE.MeshLambertMaterial({ map: texture });
+    cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    draw();
+  },
+);
+</code></pre></div>
+<p>There's a bit more to take in here, so let's go through it in stages:</p>
+<ul>
+<li>We first create a <code>cube</code> global variable so we can access our cube from anywhere in the code.</li>
+<li>Next, we create a new <a href="https://threejs.org/docs/index.html#api/en/loaders/TextureLoader" class="external" target="_blank"><code>TextureLoader</code></a> object, then call <code>load()</code> on it. <code>load()</code> takes two parameters in this case (although it can take more): the texture we want to load (a PNG), and a function that will run when the texture has loaded.</li>
+<li>Inside this function we use properties of the <a href="https://threejs.org/docs/index.html#api/en/textures/Texture" class="external" target="_blank"><code>texture</code></a> object to specify that we want a 2 x 2 repeat of the image wrapped around all sides of the cube. Next, we create a new <a href="https://threejs.org/docs/index.html#api/en/geometries/BoxGeometry" class="external" target="_blank"><code>BoxGeometry</code></a> object and a new <a href="https://threejs.org/docs/index.html#api/en/materials/MeshLambertMaterial" class="external" target="_blank"><code>MeshLambertMaterial</code></a> object, and bring them together in a <a href="https://threejs.org/docs/index.html#api/en/objects/Mesh" class="external" target="_blank"><code>Mesh</code></a> to create our cube. An object typically requires a geometry (what shape it is) and a material (what its surface looks like).</li>
+<li>Last of all, we add our cube to the scene, then call our <code>draw()</code> function to start off the animation.</li>
+</ul>
+</li>
+<li>
+<p>Before we get to defining <code>draw()</code>, we'll add a couple of lights to the scene, to liven things up a bit; add the following blocks next:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___9-webgl-cube notranslate live-sample---9-webgl-cube"><code>const light = new THREE.AmbientLight("white"); // soft white light
+scene.add(light);
+
+const spotLight = new THREE.SpotLight("white");
+spotLight.position.set(100, 1000, 1000);
+spotLight.castShadow = true;
+scene.add(spotLight);
+</code></pre></div>
+<p>An <a href="https://threejs.org/docs/index.html#api/en/lights/AmbientLight" class="external" target="_blank"><code>AmbientLight</code></a> object is a kind of soft light that lightens the whole scene a bit, like the sun when you are outside. The <a href="https://threejs.org/docs/index.html#api/en/lights/SpotLight" class="external" target="_blank"><code>SpotLight</code></a> object, on the other hand, is a directional beam of light, more like a flashlight/torch (or a spotlight, in fact).</p>
+</li>
+<li>
+<p>Last of all, let's add our <code>draw()</code> function to the bottom of the code:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___9-webgl-cube notranslate live-sample---9-webgl-cube"><code>function draw() {
+  cube.rotation.x += 0.01;
+  cube.rotation.y += 0.01;
+  renderer.render(scene, camera);
+
+  requestAnimationFrame(draw);
+}
+</code></pre></div>
+<p>This is fairly intuitive; on each frame, we rotate our cube slightly on its X and Y axes, then render the scene as viewed by our camera, then finally call <code>requestAnimationFrame()</code> to schedule drawing our next frame.</p>
+</li>
+</ol>
+<p>The finished product should look like:</p>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="9-webgl-cube sample" id="frame_9-webgl-cube" width="100%" height="500" src="Drawing_graphics/_sample_.9-webgl-cube82891170/b5dd367a389ebd09d6c1ffc0e18c22c528eab8fe.mdnplay.dev/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/runner.html-_-uuid=b5dd367a389ebd09d6c1ffc0e18c22c528eab8fe&amp;state=jVRRT9swEP4rVp5SLTiBDaG1FI0hBg9FmigSL3lx46MxSuzMdkgB9b9ztpOWrHvYS%25252Bzcfffd5%25252FOd36PS1lU0jc5NoUVjidHFPEejbcw0TQsu6bPhUIkXTSXYVDZ1aksN.html" data-live-path="/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics/" data-live-id="9-webgl-cube" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<div class="notecard note">
+<p><strong>Note:</strong>
+In our GitHub repo you can also find another interesting 3D cube example — <a href="https://github.com/mdn/learning-area/tree/main/javascript/apis/drawing-graphics/threejs-video-cube" class="external" target="_blank">Three.js Video Cube</a> (<a href="../../../../../../mdn.github.io/learning-area/javascript/apis/drawing-graphics/threejs-video-cube/index.html" class="external" target="_blank">see it live also</a>). This uses <a href="../../../Web/API/MediaDevices/getUserMedia.html" title="getUserMedia()"><code>getUserMedia()</code></a> to take a video stream from a computer web cam and project it onto the side of the cube as a texture!</p>
+</div>
+  </section><section class="content-section" aria-labelledby="summary">
+    <!--lit-part ftL4dvEqxtk=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Summary"></a><h2 id="summary" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#summary">Summary</a></h2><!--/lit-part-->
+    <p>At this point, you should have a useful idea of the basics of graphics programming using Canvas and WebGL and what you can do with these APIs, as well as a good idea of where to go for further information. Have fun!</p>
+  </section><section class="content-section" aria-labelledby="see_also">
+    <!--lit-part p88DAUaBJzA=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/See%20also"></a><h2 id="see_also" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#see_also">See also</a></h2><!--/lit-part-->
+    <p>Here we have covered only the real basics of canvas — there is so much more to learn! The below articles will take you further.</p>
+<ul>
+<li><a href="../../../Web/API/Canvas_API/Tutorial.html">Canvas tutorial</a> — A very detailed tutorial series explaining what you should know about 2D canvas in much more detail than was covered here. Essential reading.</li>
+<li><a href="../../../Web/API/WebGL_API/Tutorial.html">WebGL tutorial</a> — A series that teaches the basics of raw WebGL programming.</li>
+<li><a href="../../../Games/Techniques/3D_on_the_web/Building_up_a_basic_demo_with_Three.html">Building up a basic demo with Three.js</a> — basic Three.js tutorial. We also have equivalent guides for <a href="https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/Building_up_a_basic_demo_with_PlayCanvas">PlayCanvas</a> or <a href="../../../Games/Techniques/3D_on_the_web/Building_up_a_basic_demo_with_Babylon.html">Babylon.js</a>.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Games">Game development</a> — the landing page for web games development on MDN. There are some really useful tutorials and techniques available here related to 2D and 3D canvas — see the Techniques and Tutorials menu options.</li>
+</ul>
+  </section><section class="content-section" aria-labelledby="examples">
+    <!--lit-part cjTOnCoGGWc=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Examples"></a><h2 id="examples" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#examples">Examples</a></h2><!--/lit-part-->
+    <ul>
+<li><a href="https://github.com/mdn/webaudio-examples/tree/main/violent-theremin" class="external" target="_blank">Violent theremin</a> — Uses the Web Audio API to generate sound, and canvas to generate a pretty visualization to go along with it.</li>
+<li><a href="https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic" class="external" target="_blank">Voice change-o-matic</a> — Uses a canvas to visualize real-time audio data from the Web Audio API.</li>
+</ul>
+<ul class="prev-next"><li class="prev"><a class="button secondary" href="Video_and_audio_APIs.html"><span class="button-wrap"> Previous </span></a></li><li class="menu"><a class="button secondary" href="../Client-side_APIs.html"><span class="button-wrap"> Overview: Client-side web APIs</span></a></li><li class="next"><a class="button secondary" href="Client-side_storage.html"><span class="button-wrap"> Next  </span></a></li></ul>
+  </section> 
+      <section class="content-section article-footer" aria-labelledby="feedback">
+        <div class="article-footer__inner">
+          <div class="article-footer__svg-container"><!--lit-part OWLzZqRMsCU=--><svg xmlns="http://www.w3.org/2000/svg" width="162" height="162" fill="none" viewBox="0 0 162 162"><mask id="b" fill="#fff"><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z"></path></mask><path stroke="url(#a)" stroke-dasharray="6, 6" stroke-width="2" d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z" mask="url(#b)" style="stroke:url(#a)" transform="translate(-63.992 -25.587)"></path><ellipse cx="8.066" cy="111.597" fill="currentColor" rx="53.677" ry="53.699" transform="matrix(.71707 -.697 .7243 .6895 0 0)"></ellipse><g clip-path="url(#c)" transform="translate(-63.992 -25.587)"><path fill="#9abff5" d="m144.256 137.379 32.906 12.434a4.41 4.41 0 0 1 2.559 5.667l-9.326 24.679a4.41 4.41 0 0 1-5.667 2.559l-8.226-3.108-2.332 6.17c-.466 1.233-.375 1.883-1.609 1.417l-2.253-.527c-.411-.155-.95-.594-1.206-1.161l-4.734-10.484-12.545-4.741a4.41 4.41 0 0 1-2.559-5.667l9.325-24.679a4.41 4.41 0 0 1 5.667-2.559m9.961 29.617 8.227 3.108 3.264-8.638-.498-6.768-4.113-1.555.548 7.258-4.319-1.632zm-12.339-4.663 8.226 3.108 3.264-8.637-.498-6.769-4.113-1.554.548 7.257-4.319-1.632z"></path></g><g clip-path="url(#d)" transform="translate(-63.992 -25.587)"><path fill="#81b0f3" d="M135.35 60.136 86.67 41.654c-3.346-1.27-7.124.428-8.394 3.775L64.414 81.938c-1.27 3.347.428 7.125 3.774 8.395l12.17 4.62-3.465 9.128c-.693 1.826-1.432 2.457.394 3.15l3.014 1.625c.609.231 1.637.274 2.477-.104l15.53-6.983 18.56 7.047c3.346 1.27 7.124-.428 8.395-3.775l13.862-36.51c1.27-3.346-.428-7.124-3.775-8.395M95.261 83.207l-12.17-4.62 4.852-12.779 7.19-7.017 6.085 2.31-7.725 7.51 6.389 2.426zm18.255 6.93-12.17-4.62 4.852-12.778 7.189-7.017 6.085 2.31-7.725 7.51 6.39 2.426z"></path></g><defs><clipPath id="c"><path fill="#fff" d="m198.638 146.586-65.056-24.583-24.583 65.057 65.056 24.582z"></path></clipPath><clipPath id="d"><path fill="#fff" d="m66.438 14.055 96.242 36.54-36.54 96.243-96.243-36.54z"></path></clipPath><linearGradient id="a" x1="97.203" x2="199.995" y1="47.04" y2="152.793" gradientUnits="userSpaceOnUse"><stop stop-color="#086dfc"></stop><stop offset=".246" stop-color="#2c81fa"></stop><stop offset=".516" stop-color="#5497f8"></stop><stop offset=".821" stop-color="#80b0f6"></stop><stop offset="1" stop-color="#9abff5"></stop></linearGradient></defs></svg><!--/lit-part--></div>
+          <h2 id="feedback">
+            Help improve MDN
+          </h2>
+          <mdn-content-feedback locale="en-US"></mdn-content-feedback>
+          <a class="article-footer__contribute" href="https://developer.mozilla.org/en-US/docs/MDN/Community/Getting_started">Learn how to contribute</a> <p class="article-footer__last-modified">
+    This page was last modified on <time datetime="2026-01-25T19:35:57.000Z">Jan 25, 2026</time> by <a href="Drawing_graphics/contributors.txt">MDN contributors</a>.
+  </p> <div class="article-footer__links">
+    <a class="external" href="https://github.com/mdn/content/blob/main/files/en-us/learn_web_development/extensions/client-side_apis/drawing_graphics/index.md?plain=1" title="Folder: en-us/learn_web_development/extensions/client-side_apis/drawing_graphics (Opens in a new tab)" target="_blank" rel="noopener">View this page on GitHub</a> • <a class="external" href="https://github.com/mdn/content/issues/new?template=page-report.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn_web_development%2FExtensions%2FClient-side_APIs%2FDrawing_graphics&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Flearn_web_development%2Fextensions%2Fclient-side_apis%2Fdrawing_graphics%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn_web_development%2FExtensions%2FClient-side_APIs%2FDrawing_graphics%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Flearn_web_development%2Fextensions%2Fclient-side_apis%2Fdrawing_graphics%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2F06e6e54baef7032c4e81ca93291fde0a0585de8b%0A*+Document+last+modified%3A+2026-01-25T19%3A35%3A57.000Z%0A%0A%3C%2Fdetails%3E" title="This will take you to GitHub to file a new issue." target="_blank" rel="noopener">Report a problem with this content</a>
+  </div>
+        </div>
+      </section>
+    
+          </div>
+        </main>
+        <aside class="layout__left-sidebar" id="main-sidebar">
+          <nav class="left-sidebar">
+      <div class="left-sidebar__header">
+        <mdn-sidebar-filter></mdn-sidebar-filter>
+      </div>
+      <div class="left-sidebar__content"><ol><li class="section"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development">Learn web development</a></li><li class="section"><a href="https://developer.mozilla.org/en-US/curriculum/">MDN curriculum</a></li><li class="section"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started">Getting started modules</a></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup">Environment setup</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Installing_software">Installing software</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Browsing_the_web">Browsing the web</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Code_editors">Code editors</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Dealing_with_files">Dealing with files</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Command_line">Command line</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website">Your first website</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/What_will_your_website_look_like">What will it look like?</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content">Creating the content</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content">Styling the content</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity">Adding interactivity</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Publishing_your_website">Publishing</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards">Web standards</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works">How the web works</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/The_web_standards_model">The web standards model</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_browsers_load_websites">How browsers load websites</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Soft_skills">Soft skills</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Soft_skills/Research_and_learning">Research and learning</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Soft_skills/Collaboration_and_teamwork">Collaboration and teamwork</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Soft_skills/Workflows_and_processes">Workflows and processes</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Soft_skills/Finding_a_job">Finding a job</a></li></ol></details></li><li class="section"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core">Core modules</a></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax">Basic HTML syntax</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Webpage_metadata">Web page metadata</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragraphs">Headings and paragraphs</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Emphasis_and_importance">Emphasis and importance</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Lists">Lists</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/HTML_text_basics">Test: HTML text basics</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Advanced_text_features">Advanced text features</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Advanced_HTML_text">Test: Advanced HTML text</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Marking_up_a_letter">Challenge: Letter markup</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents">Structuring documents</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links">Creating links</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Links">Test: Links</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_a_page_of_content">Challenge: Bird watching site</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_images">Images</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Images">Test: Images</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio">Video and audio</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Audio_and_video">Test: Audio and video</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page">Challenge: Splash page</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics">Table basics</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility">Table accessibility</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Planet_data_table">Challenge: Planet data table</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms">Forms and buttons</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Forms_and_buttons">Test: Forms and buttons</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Forms_challenge">Challenge: Feedback form</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Debugging_HTML">Debugging HTML</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills">Test: HTML tests index</a></li><li><details><summary><span>Additional tutorials</span></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Including_vector_graphics_in_HTML">Vector graphics</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/General_embedding_technologies">Embedding technologies</a></li></ol></details></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS">What is CSS?</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started">CSS getting started</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Styling_a_bio_page">Challenge: Biography page</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors">Basic selectors</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Attribute_selectors">Attribute selectors</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Pseudo_classes_and_elements">Pseudo-classes and elements</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Combinators">Combinators</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Selectors">Test: Selectors</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model">Box model</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Box_model">Test: Box model</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts">Handling conflicts</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Cascade">Test: Cascade</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Fixing_blog_styles">Challenge: Fixing blog styles</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units">Values and units</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Values">Test: Values and units</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Sizing">Sizing</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Sizing">Test: Sizing</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Backgrounds_and_borders">Backgrounds and borders</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Backgrounds_and_borders">Test: Backgrounds and borders</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Overflow">Overflow</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Overflow">Test: Overflow</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Size_decorate_content_panel">Challenge: Sizing and decorating</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Images_media_forms">Images, media, forms</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Images">Test: Images and forms</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Tables">Styling tables</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Home_color_scheme_search">Challenge: Styling color scheme search</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Debugging_CSS">Debugging CSS</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills">Test: Styling basics tests index</a></li><li><details><summary><span>Additional tutorials</span></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Advanced_styling_effects">Advanced styling effects</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers">Cascade layers</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_different_text_directions">Multiple text directions</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Organizing">Organizing your CSS</a></li></ol></details></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling">CSS text styling</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Fundamentals">Text and font fundamentals</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Styling_lists">Styling lists</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Styling_links">Styling links</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Web_fonts">Web fonts</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Typesetting_a_homepage">Challenge: Community school homepage</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Introduction">Introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Floats">Floats</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Floats">Test: Floats</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning">Positioning</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Position">Test: Positioning</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox">Flexbox</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Flexbox">Test: Flexbox</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Grids">CSS grid layout</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Grid">Test: CSS grid</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Fundamental_Layout_Comprehension">Challenge: Fundamental layout</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design">Responsive web design</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Media_queries">Media queries</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Responsive_design">Test: RWD &amp; media queries</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Mobile-first_challenge">Challenge: mobile-first</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills">Test: Layout tests index</a></li><li><details><summary><span>Additional tutorials</span></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Multiple-column_Layout">Multiple-column layout</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Practical_positioning_examples">Practical positioning examples</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Legacy_Layout_Methods">Legacy layout methods</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Supporting_Older_Browsers">Supporting older browsers</a></li></ol></details></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript">What is JavaScript?</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/A_first_splash">JavaScript walkthrough</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_went_wrong">Troubleshooting</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Variables">Variables</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Variables">Test: Variables</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Math">Numbers and operators</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Math">Test: Math</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Strings">Strings</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Useful_string_methods">String methods</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Strings">Test: Strings</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays">Arrays</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Arrays">Test: Arrays</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Silly_story_generator">Challenge: Story generator</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Conditionals">Conditionals</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Conditionals">Test: Conditionals</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Loops">Loops</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Loops">Test: Loops</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions">Functions</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Build_your_own_function">Build your own function</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Return_values">Function return values</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Functions">Test: Functions</a></li><li><a href="../../Core/Scripting/Events.html">Events</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling">Event bubbling</a></li><li><a href="../../Core/Scripting/Test_your_skills/Events.html">Test: Events</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics">Objects</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Object_basics">Test: Objects</a></li><li><a href="../../Core/Scripting/DOM_scripting.html">DOM scripting</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Image_gallery">Challenge: Image gallery</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Network_requests">Network requests</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON">JSON</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/JSON">Test: JSON</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/House_data_UI">Challenge: House data UI</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Debugging_JavaScript">Debugging and error handling</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills">Test: JavaScript tests index</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries">JavaScript frameworks and libraries</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/Introduction">Introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/Main_features">Framework features</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_getting_started">React getting started</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_todo_list_beginning">React ToDo app</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_components">React components</a></li><li><a href="../../Core/Frameworks_libraries/React_interactivity_events_state.html">React events and state</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_interactivity_filtering_conditional_rendering">React editing, filtering, conditional UI</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_accessibility">React accessibility</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_resources">React resources</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility">Accessibility</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility">What is accessibility?</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Tooling">Accessibility tools</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML">Accessible HTML</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Test_your_skills/HTML">Test: HTML a11y</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/CSS_and_JavaScript">Accessible CSS and JS</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Test_your_skills/CSS_and_JavaScript">Test: CSS/JS a11y</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/WAI-ARIA_basics">WAI-ARIA</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Test_your_skills/WAI-ARIA">Test: WAI-ARIA</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Multimedia">Accessible multimedia</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Mobile">Mobile accessibility</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Accessibility_troubleshooting">Challenge: A11y debugging</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Test_your_skills">Test: A11y tests index</a></li></ol></details></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Design_for_developers">Design for developers</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Version_control">Version control</a></li><li class="section"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions">Extension modules</a></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects">Advanced JavaScript objects</a></summary><ol><li><a href="../Advanced_JavaScript_objects/Object_prototypes.html">Object prototypes</a></li><li><a href="../Advanced_JavaScript_objects/Object-oriented_programming.html">Object-oriented programming</a></li><li><a href="../Advanced_JavaScript_objects/Classes_in_JavaScript.html">Classes in JavaScript</a></li><li><a href="../Advanced_JavaScript_objects/Test_your_skills/Object-oriented_JavaScript.html">Test: Object-oriented JavaScript</a></li><li><a href="../Advanced_JavaScript_objects/Object_building_practice.html">Object building practice</a></li><li><a href="../Advanced_JavaScript_objects/Adding_bouncing_balls_features.html">Challenge: Bouncing balls features</a></li><li><a href="../Advanced_JavaScript_objects/Test_your_skills.html">Test: OOJS tests index</a></li></ol></details></li><li><details open=""><summary><a href="../Client-side_APIs.html">Client-side web APIs</a></summary><ol><li><a href="Introduction.html">Introduction</a></li><li><a href="Video_and_audio_APIs.html">Video and audio</a></li><li><em><a href="Drawing_graphics.html" aria-current="page">Drawing graphics</a></em></li><li><a href="Client-side_storage.html">Client-side storage</a></li><li><a href="Third_party_APIs.html">Third-party APIs</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS">Asynchronous JavaScript</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing">Introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises">Using promises</a></li><li><a href="../Async_JS/Implementing_a_promise-based_API.html">Implementing promise-based APIs</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing_workers">Introducing workers</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Sequencing_animations">Challenge: Animation sequence</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms">Web forms</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Your_first_form">Your first form</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/How_to_structure_a_web_form">How to structure a web form</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Basic_native_form_controls">Basic native form controls</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/HTML5_input_types">The HTML5 input types</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Other_form_controls">Other form controls</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Styling_web_forms">Styling web forms</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling">Advanced form styling</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select">Customizable selects</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select_listboxes">Customizable listboxes</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/UI_pseudo-classes">UI pseudo-classes</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation">Client-side form validation</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data">Sending form data</a></li><li><details><summary><span>Additional tutorials</span></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/How_to_build_custom_form_controls">Custom form controls</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Sending_forms_through_JavaScript">JS form submission</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/HTML_forms_in_legacy_browsers">Forms in legacy browsers</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/User_input_methods">UI methods &amp; controls</a></li></ol></details></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools">Understanding client-side tools</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Overview">Overview</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Package_management">Package management</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Introducing_complete_toolchain">Sample toolchain</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Deployment">Deploying our app</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side">Server-side websites</a></summary><ol><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps">First steps</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Introduction">Introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview">Client-server overview</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Web_frameworks">Server-side frameworks</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Website_security">Website security</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django">Django (Python)</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Introduction">Django introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/development_environment">Dev environment setup</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Tutorial_local_library_website">1: Local library tutorial</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/skeleton_website">2: Skeleton website</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Models">3: Models</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Admin_site">4: Django admin site</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Home_page">5: Home page</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Generic_views">6: Generic list and detail views</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Sessions">7: Sessions framework</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Authentication">8: Authentication and permissions</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Forms">9: Forms</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Testing">10: Testing</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Deployment">11: Deploying</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/web_application_security">Django security</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/django_assessment_blog">Challenge: Django blog</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs">Express (Node.js)</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/Introduction">Express/Node introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/development_environment">Dev environment setup</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/Tutorial_local_library_website">1: Local library tutorial</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/skeleton_website">2: Skeleton website</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/mongoose">3: Using databases with Mongoose</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/routes">4: Routes and controllers</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/Displaying_data">5: Displaying data</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/forms">6: Working with forms</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/deployment">7: Deploying</a></li></ol></details></li><li><details><summary><span>Additional tutorials</span></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Apache_Configuration_htaccess">Apache .htaccess</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Configuring_server_MIME_types">Server MIME type config</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Node_server_without_framework">Plain Node.js server</a></li></ol></details></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance">Web performance</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/why_web_performance">The "why" of web performance</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/What_is_web_performance">What is web performance?</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/Perceived_performance">Perceived performance</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/Measuring_performance">Measuring performance</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/Multimedia">Multimedia: Images</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/video">Multimedia: video</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/JavaScript">Performant JavaScript</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/HTML">Performant HTML</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/CSS">Performant CSS</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/business_case_for_performance">Performance business case</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/Best_practices">Best practices &amp; tips</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing">Testing</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Introduction">Introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Testing_strategies">Testing strategies</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/HTML_and_CSS">Common HTML and CSS problems</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Feature_detection">Feature detection</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Automated_testing">Automated testing</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Your_own_automation_environment">Automation environment setup</a></li></ol></details></li><li class="section"><span>Further resources</span></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto">How to solve common problems</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_CSS_problems">Common CSS problems</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_HTML_problems">Common HTML problems</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_JavaScript_problems">Common JavaScript problems</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Design_and_accessibility">Design and accessibility</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup">Tools and setup</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics">Web mechanics</a></li></ol></details></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/About">About</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Educators">Resources for educators</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Changelog">Changelog</a></li></ol></div>
+    </nav>
+        </aside>
+      </div>
+    </div>
+        
+      
+    
+      
+
+
+    <div class="page-layout__footer footer"><div><a href="http://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics">Drawing graphics</a> by <a href="http://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics$history">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC-BY-SA 2.5</a>.</div></div></body><!-- Mirrored from developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:05:01 GMT --></html>

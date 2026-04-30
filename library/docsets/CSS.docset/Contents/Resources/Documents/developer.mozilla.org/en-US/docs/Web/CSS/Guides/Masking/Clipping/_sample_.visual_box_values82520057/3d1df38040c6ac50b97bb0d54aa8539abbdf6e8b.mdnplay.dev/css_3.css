@@ -1,0 +1,15 @@
+
+body { display: flex; flex-flow: wrap; place-content: center; }
+blockquote { float: left; font-size: 1.2rem; }
+q { color: white; font-family: sans-serif; display: block; margin-bottom: 0.5em; }
+p { margin: 0px; line-height: 1.6; }
+body { --value: initial; }
+body:has([value="border-box"]:checked) { --value: border-box; }
+body:has([value="padding-box"]:checked) { --value: padding-box; }
+body:has([value="content-box"]:checked) { --value: content-box; }
+body:has([type="checkbox"]:checked) blockquote { border-radius: 70px; }
+blockquote { width: 210px; padding: 20px; margin: 20px; border: 20px dashed rgb(222, 222, 222); background-color: rgb(237, 237, 237); background-image: linear-gradient(rebeccapurple, magenta); background-repeat: no-repeat; }
+.clippath { background-origin: var(--value); clip-path: var(--value); }
+.box-model { background-origin: var(--value); }
+
+button.copy {display:none !important}

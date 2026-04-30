@@ -1,0 +1,21 @@
+
+article { display: flex; gap: 1em; }
+label { display: block; white-space: nowrap; }
+pre { border: 2px dashed crimson; height: 150px; width: 20em; margin-bottom: 3em; text-align: center; }
+.wide { width: 40em; }
+::before { font-weight: bold; color: white; background: crimson; display: inline-block; min-width: 50%; padding: 3px 5px; box-sizing: border-box; }
+.hidden { overflow: hidden; }
+.hidden::before { content: "hidden: "; }
+.clip { overflow: clip; }
+.clip::before { content: "clip: "; }
+.scroll { overflow: scroll; }
+.scroll::before { content: "scroll: "; }
+.auto { overflow: auto; }
+.auto::before { content: "auto: "; }
+.overlay { overflow: overlay; }
+.overlay::before { content: "overlay (or clip if not supported): "; }
+.visible { overflow: visible; }
+.visible::before { content: "visible: "; }
+article:not(:has(pre.clip)) > fieldset > label:nth-of-type(2), article:not(:has(pre.hidden, pre.scroll, pre.auto, pre.overlay)) fieldset fieldset { opacity: 0.2; pointer-events: none; }
+
+button.copy {display:none !important}

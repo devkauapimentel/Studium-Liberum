@@ -1,0 +1,5 @@
+
+@font-face { font-family: "Bitstream Vera Serif Bold"; src: url("../mdn.github.io/shared-assets/fonts/FiraSans-Regular.woff2"); }
+body { font-family: "Bitstream Vera Serif Bold", serif; }
+
+button.copy {display:none !important}

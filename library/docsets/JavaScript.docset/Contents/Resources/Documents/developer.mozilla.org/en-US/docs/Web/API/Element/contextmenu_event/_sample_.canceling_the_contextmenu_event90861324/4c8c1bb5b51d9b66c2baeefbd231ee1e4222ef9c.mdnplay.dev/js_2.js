@@ -1,0 +1,8 @@
+
+          const noContext = document.getElementById("noContextMenu");
+
+noContext.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+;
+        

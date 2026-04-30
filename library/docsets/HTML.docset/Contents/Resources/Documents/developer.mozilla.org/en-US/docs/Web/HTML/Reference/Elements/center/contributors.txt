@@ -1,0 +1,17 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/elements/center/index.md
+
+# Original Wiki contributors
+robertjlooby
+Sheppy
+crehn
+teoli
+mfluehr
+RobBelics
+kscarfone
+tregagnon
+ethertank
+lmt_swallow
+cers
+George3
+Jscher2000

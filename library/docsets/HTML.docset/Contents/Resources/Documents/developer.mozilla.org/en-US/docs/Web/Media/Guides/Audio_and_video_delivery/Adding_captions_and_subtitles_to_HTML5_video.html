@@ -1,0 +1,1054 @@
+<html><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:44:18 GMT --><head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Adding captions and subtitles to HTML video</title>
+          
+          <script>try {
+  document.documentElement.dataset.theme =
+    localStorage.getItem("theme") || "light dark";
+} catch (error) {
+  console.warn("Unable to set theme", error);
+}
+
+try {
+  if (localStorage.getItem("nop") === "yes") {
+    document.documentElement.dataset["nop"] = "yes";
+  }
+} catch (error) {
+  console.warn("Unable to set nop", error);
+}
+</script>
+          <link rel="stylesheet" href="../../../../../../static/client/styles-global.03146ed4c65bc5ea.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/270.66bae6059a1c23f9.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-reference-layout.632d2f3884f10ca3.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-content-section.2ee991ba88f986cf.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-heading-anchor.0eec5185ab9425b7.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-reference-toc.9b9bd019efd16b86.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-article-footer.81ae18c89fc527dc.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-left-sidebar.6f954e8939555f77.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-page-layout.5a4354f33e894319.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-a11y-menu.5796ee87cb69f93f.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-navigation.3a34ee593a554c40.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-logo.aea5ff6edf1b9cfb.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-menu.3376b3e11656fba0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-breadcrumbs-bar.9a51a3c76a6231d0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-breadcrumbs.d06ce8d09f42feb8.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../../static/client/styles-footer.a2850e459e2d290b.css" fetchpriority="high">
+          <link rel="preload" href="../../../../../../static/client/jetbrains-mono-latin.119994ed445212c7.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low"><link rel="preload" href="../../../../../../static/client/inter-latin.9a3b1bc220d426ef.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+          <script data-cfasync="false" data-report-only="on" data-prompt="0" src="../../../../../../../transcend-cdn.com/cm/d556c3a1-e57c-4bdf-a490-390a1aebf6dd/airgap.js"></script>
+          <script src="../../../../../../static/client/runtime.c294a6bdc7a42570.js" type="module"></script><script src="../../../../../../static/client/1111.53dba753dc3eb961.js" type="module"></script><script src="../../../../../../static/client/8903.f870aafb338b203a.js" type="module"></script><script src="../../../../../../static/client/index.9a449352d879bbd5.js" type="module"></script>
+          
+    <link rel="icon" sizes="32x32" href="../../../../../../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../../../../../../favicon.svg">
+   <meta name="description" content="In other articles we looked at how to build a cross browser video player using the HTMLMediaElement and Window.fullScreen APIs, and also at how to style the player. This article will take the same player and show how to add captions and subtitles to it, using the WebVTT format and the &lt;track&gt; element."><meta name="og:url" content="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video"><meta name="og:title" content="Adding captions and subtitles to HTML video - Media | MDN"><meta name="og:locale" content="en_US"><meta name="og:description" content="In other articles we looked at how to build a cross browser video player using the HTMLMediaElement and Window.fullScreen APIs, and also at how to style the player. This article will take the same player and show how to add captions and subtitles to it, using the WebVTT format and the &lt;track&gt; element."><meta name="og:image" content="https://developer.mozilla.org/mdn-social-image.46ac2375.png"><meta name="og:image:type" content="image/png"><meta name="og:image:height" content="1024"><meta name="og:image:width" content="1024"><meta name="og:image:alt" content="The MDN logo"><meta name="og:site_name" content="MDN Web Docs"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="MozDevNet">
+          <link rel="canonical" href="Adding_captions_and_subtitles_to_HTML5_video.html">
+          <link rel="apple-touch-icon" href="../../../../../../apple-touch-icon.png">
+          <link rel="manifest" href="../../../../../../manifest.json">
+          <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/opensearch.xml" title="MDN Web Docs">
+          <link rel="alternate" type="application/rss+xml" title="MDN Blog RSS Feed" href="https://developer.mozilla.org/en-US/blog/rss.xml">
+        </head>
+        
+      <body class="page-layout">
+        <ul class="a11y-menu">
+      <li>
+        <a href="#content">Skip to main content</a>
+      </li>
+      <li>
+        <a href="#search">Skip to search</a>
+      </li>
+    </ul>
+        <div class="page-layout__banner" data-scheme="">
+          <mdn-placement-top></mdn-placement-top>
+        </div>
+        <header class="page-layout__header">
+          
+      <nav class="navigation" data-scheme="" data-open="false">
+        <div class="navigation__logo">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">
+        <svg class="logo__image" width="83" height="24" viewBox="0 0 83 24" role="img">
+          <title>MDN</title>
+          <path class="logo__letter" d="M9.4 0 2.81 21.17H.12L6.69 0H9.4Zm2.38 0v21.17H9.4V0h2.4Zm9.27 0-6.56 21.17H11.8L18.36 0h2.69Zm2.39 0v21.17h-2.4V0h2.4Z"></path>
+          <path class="logo__text" d="M45.55 16.83h-3.93v-1.27h.87v-3.63c0-.85-.16-1.45-.48-1.82a1.65 1.65 0 0 0-1.3-.52c-.74 0-1.3.25-1.66.78a2.98 2.98 0 0 0-.58 1.58v3.59h1.38v1.26h-3.93v-1.26h.87v-3.6c0-.88-.16-1.48-.48-1.83a1.7 1.7 0 0 0-1.29-.52 1.93 1.93 0 0 0-1.65.75 2.85 2.85 0 0 0-.58 1.6v3.62h1.59v1.27h-4.64v-1.27h1.37V9.75h-1.4V8.46h3.08v1.47c.28-.48.62-.87 1.08-1.2a3 3 0 0 1 1.68-.45c.67 0 1.22.16 1.73.48.5.32.85.8 1.03 1.47.25-.57.62-1.03 1.13-1.4.5-.37 1.1-.55 1.81-.55.8 0 1.5.25 2.05.75.55.51.85 1.3.85 2.35v4.18h1.4v1.27Zm9.77 0H52.3v-1.66c-.27.51-.66.95-1.13 1.29-.56.4-1.23.59-1.9.55-1.11 0-2-.37-2.67-1.12a4.41 4.41 0 0 1-1-3.06c0-1.15.3-2.2.93-3.15.6-.94 1.58-1.43 2.94-1.43 1.36 0 2.25.5 2.83 1.5V5.22h-2V3.93h3.63v11.63h1.38v1.27Zm-3.06-3.86v-1.02a2.28 2.28 0 0 0-.73-1.67 2.4 2.4 0 0 0-1.66-.65 2.18 2.18 0 0 0-1.88.9 3.63 3.63 0 0 0-.65 2.2c0 .95.23 1.68.7 2.19.45.5 1.03.76 1.7.76.73 0 1.33-.3 1.79-.88.48-.6.71-1.21.73-1.83Zm14.14 3.86h-4.43v-1.27h1.37v-3.63c0-.85-.16-1.45-.5-1.82a1.68 1.68 0 0 0-1.31-.52c-.71 0-1.29.23-1.7.69a2.52 2.52 0 0 0-.67 1.6v3.66h1.38v1.26H56.1v-1.26h1.38v-5.8h-1.42V8.47h3.12V9.9c.6-1.06 1.57-1.6 2.92-1.6.83 0 1.54.26 2.12.77.57.5.85 1.28.85 2.34v4.19h1.38v1.24h-.05Z"></path>
+          <path class="logo__cursor" d="M67.71 21.98H83V24H67.71v-2.02Z"></path>
+        </svg>
+      </a>
+    </div>
+        <div class="navigation__search" data-view="mobile">
+          <mdn-search-button></mdn-search-button>
+        </div>
+        <button class="navigation__button" type="button" aria-expanded="false" aria-controls="navigation__popup" aria-label="Toggle navigation"></button>
+        <div class="navigation__popup" id="navigation__popup">
+          <div class="navigation__menu">
+      <nav class="menu">
+        <div class="menu__tab" data-section="html">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">HTML</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="../../../HTML.html" data-glean-id="menu_click_menu: html -&gt; /en-US/docs/Web/HTML">HTML: Markup language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>HTML reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../../HTML/Reference/Elements.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Elements">Elements</a>
+                              </li><li>
+                                <a href="../../../HTML/Reference/Global_attributes.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Global_attributes">Global attributes</a>
+                              </li><li>
+                                <a href="../../../HTML/Reference/Attributes.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Attributes">Attributes</a>
+                              </li><li>
+                                <a href="../../../HTML/Reference.html" aria-label="See all HTML references" title="See all HTML references" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>HTML guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../../HTML/Guides/Responsive_images.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Responsive_images">Responsive images</a>
+                              </li><li>
+                                <a href="../../../HTML/Guides/Cheatsheet.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Cheatsheet">HTML cheatsheet</a>
+                              </li><li>
+                                <a href="../../../HTML/Guides/Date_and_time_formats.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Date_and_time_formats">Date &amp; time formats</a>
+                              </li><li>
+                                <a href="../../../HTML/Guides.html" aria-label="See all HTML guides" title="See all HTML guides" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Markup languages</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/SVG">SVG</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/MathML">MathML</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/XML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/XML">XML</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="css">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">CSS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" data-glean-id="menu_click_menu: css -&gt; /en-US/docs/Web/CSS">CSS: Styling language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>CSS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Properties">Properties</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Selectors">Selectors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/At-rules">At-rules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Values">Values</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" aria-label="See all CSS references" title="See all CSS references" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>CSS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Box_model/Introduction">Box model</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Animations/Using">Animations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Flexbox</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Applying_color" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Colors/Applying_color">Colors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides" aria-label="See all CSS guides" title="See all CSS guides" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Layout cookbook</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts">Column layouts</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element">Centering an element</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Card" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Card">Card component</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="javascript">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label" data-type="long">JavaScript</span><span class="menu__tab-label" data-type="short">JS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" data-glean-id="menu_click_menu: javascript -&gt; /en-US/docs/Web/JavaScript">JavaScript: Scripting language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>JS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Statements">Statements &amp; declarations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Functions">Functions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" aria-label="See all JavaScript references" title="See all JavaScript references" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>JS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow &amp; error handing</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops and iteration</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Working_with_objects">Working with objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Using_classes">Using classes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" aria-label="See all JavaScript guides" title="See all JavaScript guides" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="webapis">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Web APIs</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/API" data-glean-id="menu_click_menu: webapis -&gt; /en-US/docs/Web/API">Web APIs: Programming interfaces</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Web API reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/File_System_API">File system API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API">Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Geolocation_API">Geolocation API</a>
+                              </li><li>
+                                <a href="../../../API/HTML_DOM_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/HTML_DOM_API">HTML DOM API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Push_API">Push API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Service_Worker_API">Service worker API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API" aria-label="See all Web API guides" title="See all Web API guides" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Web API guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API">Using the Web animation API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API/Using_Fetch">Using the Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/History_API/Working_with_the_History_API">Working with the History API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Using the Web speech API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using web workers</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="all">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">All</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web" data-glean-id="menu_click_menu: all -&gt; /en-US/docs/Web">All web technology</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Technologies</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../../Accessibility.html" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Accessibility">Accessibility</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/HTTP">HTTP</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/URI" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/URI">URI</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Mozilla/Add-ons/WebExtensions">Web extensions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/WebAssembly">WebAssembly</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/WebDriver">WebDriver</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web" aria-label="See all web technology references" title="See all web technology references" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Topics</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Media" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Media">Media</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Performance">Performance</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Privacy" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Privacy">Privacy</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Security">Security</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Progressive_web_apps">Progressive web apps</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="learn">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Learn</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" data-glean-id="menu_click_menu: learn -&gt; /en-US/docs/Learn_web_development">Learn web development</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Frontend developer course</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Getting_started">Getting started modules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core">Core modules</a>
+                              </li><li>
+                                <a class="" href="https://developer.mozilla.org/en-US/curriculum/" data-glean-id="menu_click_submenu: learn -&gt; /en-US/curriculum/">MDN Curriculum</a>
+                              </li><li>
+                                <a class="external" href="https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar" data-glean-id="menu_click_submenu: learn -&gt; https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar">Check out the video course from Scrimba, our partner</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn HTML</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn CSS</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics module</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn JavaScript</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript module</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="tools">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Tools</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Discover our tools
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="circle-play" href="https://developer.mozilla.org/en-US/play" data-glean-id="menu_click_submenu: tools -&gt; /en-US/play">Playground</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="shield-check" href="https://developer.mozilla.org/en-US/observatory" data-glean-id="menu_click_submenu: tools -&gt; /en-US/observatory">HTTP Observatory</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator">Border-image generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator">Border-radius generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator">Box-shadow generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_format_converter" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_format_converter">Color format converter</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_mixer" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_mixer">Color mixer</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes/Shape_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Shapes/Shape_generator">Shape generator</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="about">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">About</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Get to know MDN better
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="mdn-m" href="https://developer.mozilla.org/en-US/about" data-glean-id="menu_click_submenu: about -&gt; /en-US/about">About MDN</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="chart-no-axes-combined" href="https://developer.mozilla.org/en-US/advertising" data-glean-id="menu_click_submenu: about -&gt; /en-US/advertising">Advertise with us</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="users" href="https://developer.mozilla.org/en-US/community" data-glean-id="menu_click_submenu: about -&gt; /en-US/community">Community</a>
+                              </li><li>
+                                <a class="menu__panel-icon external" data-icon="github" href="https://github.com/mdn" data-glean-id="menu_click_submenu: about -&gt; https://github.com/mdn">MDN on GitHub</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="blog">
+            <a class="menu__tab-link" href="https://developer.mozilla.org/en-US/blog/" data-glean-id="menu_click_link: top-level -&gt; /en-US/blog/">Blog</a>
+          </div>
+      </nav>
+    </div>
+          <div class="navigation__search" data-view="desktop">
+            <mdn-search-button></mdn-search-button>
+          </div>
+          <mdn-user-menu></mdn-user-menu>
+        </div>
+      </nav>
+      <mdn-search-modal id="search"></mdn-search-modal>
+     
+      
+    
+        </header>
+        <div class="page-layout__main">
+      <div class="breadcrumbs-bar" data-scheme="">
+        <mdn-toggle-sidebar></mdn-toggle-sidebar> 
+      <ol class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+        
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web" property="item" typeof="WebPage"><span property="name">Web</span></a>
+              <meta property="position" content="1">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/Media" property="item" typeof="WebPage"><span property="name">Media</span></a>
+              <meta property="position" content="2">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides" property="item" typeof="WebPage"><span property="name">Guides</span></a>
+              <meta property="position" content="3">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery" property="item" typeof="WebPage"><span property="name">Audio and video delivery</span></a>
+              <meta property="position" content="4">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="Adding_captions_and_subtitles_to_HTML5_video.html" property="item" typeof="WebPage"><span property="name">Adding captions and subtitles to HTML video</span></a>
+              <meta property="position" content="5">
+            </li>
+          
+      </ol>
+    
+        <mdn-collection-save-button doc-url="/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video" doc-title="Adding captions and subtitles to HTML video"></mdn-collection-save-button>
+        <mdn-color-theme></mdn-color-theme>
+        <mdn-language-switcher locale="en-US" native="English (US)" translations="[{&quot;locale&quot;:&quot;en-US&quot;,&quot;title&quot;:&quot;Adding captions and subtitles to HTML video&quot;,&quot;native&quot;:&quot;English (US)&quot;},{&quot;locale&quot;:&quot;de&quot;,&quot;title&quot;:&quot;Hinzufügen von Untertiteln und Beschriftungen zu HTML-Videos&quot;,&quot;native&quot;:&quot;Deutsch&quot;},{&quot;locale&quot;:&quot;ja&quot;,&quot;title&quot;:&quot;HTML5 の動画へのキャプションと字幕の追加&quot;,&quot;native&quot;:&quot;日本語&quot;},{&quot;locale&quot;:&quot;ru&quot;,&quot;title&quot;:&quot;Adding captions and subtitles to HTML5 video&quot;,&quot;native&quot;:&quot;Русский&quot;},{&quot;locale&quot;:&quot;zh-CN&quot;,&quot;title&quot;:&quot;向 HTML 视频中添加字幕&quot;,&quot;native&quot;:&quot;中文 (简体)&quot;}]" url="Adding_captions_and_subtitles_to_HTML5_video.html"></mdn-language-switcher>
+      </div><div class="layout__2-sidebars-inline reference-layout">
+        <main id="content" class="layout__content">
+          <div class="layout__header reference-layout__header">
+            
+            
+            <mdn-survey></mdn-survey>
+            <h1>Adding captions and subtitles to HTML video</h1>
+             <section class="content-section">
+    
+    <p>In other articles we looked at how to <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/cross_browser_video_player">build a cross browser video player</a> using the <a href="../../../API/HTMLMediaElement.html"><code>HTMLMediaElement</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/fullScreen"><code>Window.fullScreen</code></a> APIs, and also at how to <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Video_player_styling_basics">style the player</a>. This article will take the same player and show how to add captions and subtitles to it, using <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Video_Text_Tracks_Format">the WebVTT format</a> and the <a href="../../../HTML/Reference/Elements/track.html"><code>&lt;track&gt;</code></a> element.</p>
+<p>In this article, our example uses an excerpt from the <a href="https://durian.blender.org/" class="external" target="_blank">Sintel open movie</a>, created by the <a href="https://www.blender.org/about/foundation/" class="external" target="_blank">Blender Foundation</a>.</p>
+  </section>
+          </div>
+          <aside class="layout__right-sidebar reference-layout__toc">
+            <nav class="reference-toc">
+      <h2>In this article</h2>
+      <ul>
+        <li><a href="#html_and_video_captions">HTML and video captions</a></li><li><a href="#modifications_to_the_html_and_css">Modifications to the HTML and CSS</a></li><li><a href="#subtitle_implementation">Subtitle implementation</a></li><li><a href="#styling_the_displayed_subtitles">Styling the displayed subtitles</a></li><li><a href="#result">Result</a></li>
+      </ul>
+    </nav>
+            <mdn-placement-sidebar></mdn-placement-sidebar>
+          </aside>
+          <div class="layout__body reference-layout__body">
+            <section class="content-section" aria-labelledby="html_and_video_captions">
+    <!--lit-part thUnag+ZeDc=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/HTML%20and%20video%20captions"></a><h2 id="html_and_video_captions" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#html_and_video_captions">HTML and video captions</a></h2><!--/lit-part-->
+    <p>Before diving into how to add captions to the video player, there are a number of things that we will first mention, which you should be aware of before we start.</p>
+  </section><section class="content-section" aria-labelledby="captions_versus_subtitles">
+    <!--lit-part bqodwzNkhKc=--><!--lit-node 0--><h3 id="captions_versus_subtitles" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#captions_versus_subtitles">Captions versus subtitles</a></h3><!--/lit-part-->
+    <p><a href="https://screenfont.ca/learn/" class="external" target="_blank">Captions and subtitles are not the same thing</a>: they have significantly different audiences, and convey different information, and it is recommended that you read up on the differences if you are not sure what they are. They are however implemented in the same way technically, so the material in this article will apply to both.</p>
+<p>For this article we will refer to the text tracks displayed as subtitles, as their content is aimed at hearing people who have difficulty understanding the language of the film, rather than deaf or hard-of-hearing people.</p>
+  </section><section class="content-section" aria-labelledby="the_track_element">
+    <!--lit-part //CINhBRphs=--><!--lit-node 0--><h3 id="the_track_element" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#the_track_element">The <code>&lt;track&gt;</code> element</a></h3><!--/lit-part-->
+    <p>HTML allows us to specify subtitles for a video using the <a href="../../../HTML/Reference/Elements/track.html"><code>&lt;track&gt;</code></a> element. The various attributes of this element allow us to specify such things as the type of content that we're adding, the language it's in, and of course a reference to the text file that contains the actual subtitle information.</p>
+  </section><section class="content-section" aria-labelledby="webvtt">
+    <!--lit-part w9sIuUYPdCo=--><!--lit-node 0--><h3 id="webvtt" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#webvtt">WebVTT</a></h3><!--/lit-part-->
+    <p>The files that contain the actual subtitle data are text files that follow a specified format, in this case the <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API">Web Video Text Tracks</a> (WebVTT) format.</p>
+<p>Video providers (such as the <a href="https://www.blender.org/about/foundation/" class="external" target="_blank">Blender Foundation</a>) provide captions and subtitles in a text format with their videos, but they're usually in the SubRip Text (SRT) format. These can be easily converted to WebVTT using an online converter.</p>
+  </section><section class="content-section" aria-labelledby="modifications_to_the_html_and_css">
+    <!--lit-part zVDcw9RXZrI=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Modifications%20to%20the%20HTML%20and%20CSS"></a><h2 id="modifications_to_the_html_and_css" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#modifications_to_the_html_and_css">Modifications to the HTML and CSS</a></h2><!--/lit-part-->
+    <p>This section summarizes the modifications made to the previous article's code in order to facilitate the addition of subtitles to the video. If you are not interested in this, and just want to get straight into the JavaScript and more relevant CSS, skip to the <a href="#subtitle_implementation">Subtitle implementation</a> section.</p>
+<p>In this example we are using a different video, <a href="https://durian.blender.org/" class="external" target="_blank">Sintel</a>, as it actually has some speech in it and therefore is better for illustrating how subtitles work!</p>
+  </section><section class="content-section" aria-labelledby="html_markup">
+    <!--lit-part J2ncFcly63k=--><!--lit-node 0--><h3 id="html_markup" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#html_markup">HTML markup</a></h3><!--/lit-part-->
+    <p>As mentioned above, we need to make use of the new HTML <code>&lt;track&gt;</code> element to add our subtitle files to the HTML video. We actually have our subtitles in three different languages — English, German, and Spanish — so we will reference all three of the relevant VTT files by adding <code>&lt;track&gt;</code> elements inside our HTML <code>&lt;video&gt;</code> element:</p>
+<div class="code-example"><pre class="language-html hidden live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>&lt;figure id="videoContainer"&gt;
+</code></pre></div>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>&lt;video id="video" controls preload="metadata"&gt;
+  &lt;source src="/shared-assets/videos/sintel-short.mp4" type="video/mp4" /&gt;
+  &lt;source src="/shared-assets/videos/sintel-short.webm" type="video/webm" /&gt;
+  &lt;track
+    label="English"
+    kind="subtitles"
+    srclang="en"
+    src="/shared-assets/misc/sintel-en.vtt"
+    default /&gt;
+  &lt;track
+    label="Deutsch"
+    kind="subtitles"
+    srclang="de"
+    src="/shared-assets/misc/sintel-de.vtt" /&gt;
+  &lt;track
+    label="Español"
+    kind="subtitles"
+    srclang="es"
+    src="/shared-assets/misc/sintel-es.vtt" /&gt;
+&lt;/video&gt;
+</code></pre></div>
+<p>As you can see, each <code>&lt;track&gt;</code> element has the following attributes set:</p>
+<ul>
+<li><code>kind</code> is given a value of <code>subtitles</code>, indicating the type of content the files contain</li>
+<li><code>label</code> is given a value indicating which language that subtitle set is for — for example <code>English</code> or <code>Deutsch</code> — these labels will appear in the user interface to allow the user to easily select which subtitle language they want to see.</li>
+<li><code>src</code> is assigned a valid URL pointing to the relevant WebVTT subtitle file in each case.</li>
+<li><code>srclang</code> indicates what language each subtitle files' contents are in.</li>
+<li>The <code>default</code> attribute is set on the English <code>&lt;track&gt;</code> element, indicating to the browser that this is the default subtitle file definition to use when subtitles have been turned on and the user has not made a specific selection.</li>
+</ul>
+<p>In addition to adding the <code>&lt;track&gt;</code> elements, we have also added a new button to control the subtitles menu that we will build. As a consequence, the video controls now look as follows:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>&lt;div id="video-controls" class="controls" data-state="hidden"&gt;
+  &lt;button id="play-pause" type="button" data-state="play"&gt;Play/Pause&lt;/button&gt;
+  &lt;button id="stop" type="button" data-state="stop"&gt;Stop&lt;/button&gt;
+  &lt;div class="progress"&gt;
+    &lt;progress id="progress" value="0"&gt;
+      &lt;span id="progress-bar"&gt;&lt;/span&gt;
+    &lt;/progress&gt;
+  &lt;/div&gt;
+  &lt;button id="mute" type="button" data-state="mute"&gt;Mute/Unmute&lt;/button&gt;
+  &lt;button id="vol-inc" type="button" data-state="vol-up"&gt;Vol+&lt;/button&gt;
+  &lt;button id="vol-dec" type="button" data-state="vol-down"&gt;Vol-&lt;/button&gt;
+  &lt;button id="fs" type="button" data-state="go-fullscreen"&gt;Fullscreen&lt;/button&gt;
+  &lt;button id="subtitles" type="button" data-state="subtitles"&gt;
+    &lt;span&gt;CC&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+</code></pre></div>
+<div class="code-example"><pre class="language-html hidden live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>  &lt;figcaption&gt;
+    &amp;copy; Blender Foundation |
+    &lt;a href="http://mango.blender.org"&gt;mango.blender.org&lt;/a&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="css_changes">
+    <!--lit-part fv2rbKvDOSg=--><!--lit-node 0--><h3 id="css_changes" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#css_changes">CSS changes</a></h3><!--/lit-part-->
+    <div class="code-example"><pre class="language-css hidden live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>:root {
+  color: #333333;
+  font-family:
+    "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Lucida",
+    "Helvetica", "Arial", sans-serif;
+}
+a {
+  color: #0095dd;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #2255aa;
+  text-decoration: underline;
+}
+figure {
+  position: relative;
+  max-width: 64rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #666666;
+}
+figcaption {
+  display: block;
+  font-size: 0.75rem;
+  color: white;
+  margin-top: 0.5rem;
+}
+video {
+  width: 100%;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 2rem;
+  position: relative;
+}
+.controls[data-state="hidden"] {
+  display: none;
+}
+.controls button {
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: none;
+  cursor: pointer;
+  color: transparent;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.controls button:hover,
+.controls button:focus {
+  opacity: 0.5;
+}
+.controls button[data-state="play"] {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNkU0NTY5NkE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNkU0NTY5NUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+kBUJ9AAAAXFJREFUeNrsmLtOAkEUhneQyiAdDTExGlYMBaW9oq/ge8jlUbwkthTY2EGBLehbKK0UxsQgVK7/SWbMZo3j3mbmxPAnXyi2+fIzZ3dmRBAEHucUPO6hBhUyNXAH3umxJRZgCBo/nCKCe+DVoliUN5LUCd46lFOMwk4iPCRCiDl+Ko5X3RJOm99OEcGAyVyIrFO8lEPE9jXTBNvgRq4ba6+ZuAs5nFMwy3NQdFOcRpBSBtfgk6ugykkebZoUpGyBqyxtmhZUaYFnzoKqzcukbdoUVDkGT5wFKSVwEadNV4IqR3+16VrQkxuSVRxBVzvqKija+tQl/fafyx00u7/YBxOOU0yttcEHx9fMPphy/JJQa50krdkUrIMHjruZDdBN25ppwYOsrZkSpNZ68hDFast/Bg7Bo4nDu+7g/m/Oxc6u3+YMnBY6wTEDwXvdbmYXvDi82aKrP183xZQd0LcsSktrIC9PvV+neH1HvRZ0kC8BBgADq2RhyZa7BQAAAABJRU5ErkJggg==");
+}
+.controls button[data-state="pause"] {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNzE0QzJGQUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNzAxODM5QUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+r7sqzQAAANdJREFUeNrs2MEKwjAMBuDGswd9C/UdPHvy6Ft6UTyKr6RDcceawDpKHZsE2kb4Az87GOiHNLCFvPfOcs2c9ZJ/MKSrDefCaeXnQmm7M9dfpgQoDY+CsDRy9moMeKqICznGJoqHhIie/JhXvnUNmxa9KQF6I3NBfzPFANYC7uTKRtkqeyZLOyQ0dLcVPRgSAAEEEEAAAQQQwJ9ftzQ92YAHzjLKXtmT7YUVX3UA5gK+DJiaMeDNAPCaToyl9dvdTazfpMIC810QJmed3cACk7CjBrByfQQYAHwMIXlfZRgfAAAAAElFTkSuQmCC");
+}
+.controls button[data-state="stop"] {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNzAxODM5M0E0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNzAxODM5MkE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+KkF/7gAAAOFJREFUeNrsmMsKwjAQRTNdu/ELpAUR/AVdC/6nu66kK/0hFXyBj22cQCohQqDUJFO4A4cusphDmFvaIa21klyFkl7mBltszZgt8zTHiXgzDTP/cfIEp8wtoZjP3UiGBOuMci2N60RuSIjoyo9x5ql7sdPo6+QJaiG5oMGkGIKpBddmVHuy7NKwa0gK+yronYNYIdGYQQhCEIIQhCAEIThoQZIuuPpDz0XMD1b81SHFsQUvApweIcGdAMG9nxh3u1UyJ5Vvs3VmqtD6zdSE2TCHhGJH27P0L42wo4Zg5voIMAB0bCBXvSa7VQAAAABJRU5ErkJggg==");
+}
+.controls button[data-state="mute"] {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBMzYxQThBMUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBMzYxQThBMEE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ohJkMQAAAjNJREFUeNrsmM8rRFEUx8ePxo8YokmJpMiGkIWU8mNJIZRkKcWGnfwDNgoh2ZB/gWzsKXakiSaUskP5LaMxz/fWmTqd3rx5Y96dod6pT3r33td83HPfvee9DMMwPH85MlxBV9AVjBNKkJNEzInrcpCbtI9DguMgIn8LfINrsA16QXY6BPtAmISkoETJjqmllSrBbvDJBHjcgFAM0X3g1y3YDJ7ED8tQKW0DC+BBjL0E1boEa8Cdyczw6AJV7LoYrNBa5ZKlTgtW0Foy4ghG287BLMij9hHwwfp3nRQsAmcx5OI9JFegkfr6xUwOOyGYD44s5OTNB+BZ9Ks120D9K2KWM+0KroGvOCJ2BFV4wQR4YWMuQA5l45G1d9oVDP9Szmr6VWpf2bhpal9mbet2BQ0Ngipm2LhTautkbSfpFixgm3qEUuxj976bCWamsC55o/XnoaOunNbmG3sI8+RNqRR0rNzSleJCkWLfX0vxOG0vHtrsVXpbWH/Q7CYzwYgGuSYwz6436e8Aazuym+KNJPZCGWrGJsUeGN2oi8VG3eHEUXecgOChOEEMEqqn/lXWHkjkqLMKfxLFgpq5OpZaXiwMOl1u3SYgGKBTxMsqGV5u7egoWGttFKzqGKsUJ8mSScFaoqvkb7VR8quHoR0sgnsxNij+AW0vTaEYgncWa3VPlvo6XzuHEnjtVCkdTceL+1QMwTBJbYEekJWuLwtmnz7K2NH269rA/brlCrqC/13wR4ABACa7olAORNxuAAAAAElFTkSuQmCC");
+}
+.controls button[data-state="unmute"] {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBMzk2MTA2OUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBMzk2MTA2OEE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+LD0czAAAARZJREFUeNrsly8LAkEQxW/lksUgGMxWs8VgEdRgEMwmv4Lfw2TwawgaxGI2WQ0Gm0WDBv+db3SFK4K3nnMjzIMfF/exzHs7Z4Ig8CQr5QmXGlSDf2fQGONKz8kh1UwUHNUBt6hnPc5jMNgEl+ddyDNYAQcy52rQRD2U5ulDFcEcZELjZKSkuACmYXOSaiYPxiAnsQfpxib2BsUVdRqM7Owl+pL0wemVzBCU1nLc8+KS4jM+vuOjwJJi32OUbjNqUA3+wOBVusGB3e9YFOe6RU/dDJSSLup3OoIaWEoOyQ40wFpyijegCraSa2YF6mAvuQcXoGVXM7FFTaluf9WdTD/uXdcfd67dbgiyLEWty4IaVIPCdBdgAJkkaR2v57S0AAAAAElFTkSuQmCC");
+}
+.controls button[data-state="vol-up"] {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNzU1OEJFREE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNzU1OEJFQ0E0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+1Pk2GwAAAQ9JREFUeNrsmL0KwjAQgHMOiogIPoLSQR9CcdDRxclXLIrg2mdSsYK41HjBVEJsM6XNld7BR6GF9mu4y8+BlFJQjo6gHmoEc3REyAG5qcc1cUViZPrnZAnOahazuSATl+A5oFxObDqBWSQA8MRLP3DWpeg0+jlZgpJIXUBjqrg1gmuVIRY7Hy/2lYNQ8vMZ5Rx8cw6yYNsENwVTCZRUsFndOQNkrNlXMc2A54HJKC91Peo52PUt+KBeJENk4fG7SwprsdA7ZN4PsiALVrny+BJcFdzbUtry87GzMYIvAk6pSzAhIJjYCWl2t+YibPtN9QkjV/tNheoRnvRQ1yV2R47i2zwVpe03rmIWDBAfAQYAByYx7rBsQ/AAAAAASUVORK5CYII=");
+}
+.controls button[data-state="vol-down"] {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNzU1OEJGMUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNzU1OEJGMEE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+B37OGAAAANpJREFUeNrs2MEKwjAMBuDGk0efwSGCr6FXfU/FHeZV30hQ50U8dSmsMiLUCV0b5Q/87DDYPspCRshaazTXyGgvd4I+bc05e87V3U6UC2fLKd5MArhIDJM5c6Yh4CEjzmfXNVG3SYjowZdx5q+uZtPkZRJAq6Qv6Ge6GEAAAQQQwP61csMmUpZ9X/rNqKPYEw2j7p+BNARwHek7dM/YDNEk+B9EkwAIIIAAfgY+FZjuIeBJAfAo555cv91Mvs2W2xMWofWbR1btUaeC1ZySM5OHRthRA5i5GgEGAJmoHqaNWADvAAAAAElFTkSuQmCC");
+}
+.controls button[data-state="go-fullscreen"] {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCM0M2OUNCREE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCM0M2OUNCQ0E0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+cU+iTAAAAZBJREFUeNrs2D9OwzAUBvC6iMMgBgYGpLIxIqYS0cPQKkOIuBErZ2DiDnQoHVBpaQnPEpUs13+e/T5LHfKkb6mr+BfHbh2rrusGx1yqB0pLA83ojyKpBd09xa5/4EkE1oAxaUoBa+CDa7jAIfOCv5R3IPCVskXPQX3BBwDuhvKFesRrMNKF2+UC9Zy7onw6kBMQTg/ArTknuUBzQSCQXpzRb8MFularBBkaObvvhgP0VQ4yiHMtUgkwFRnFlQCGkFUqrhTQhZxTLoz2e8omhisJNJE2zkZ6cRzgwXZLKZWK/Ka8edo1ckV5CQGT9oOJQMh2L1TDwZGXFDimXAbazykj9I6aW9X/Ilh4kBr3QVlSrnMXSS6wsn5GbOQet2/3IksAbZwLMGZ8pwhQ4344HTNvBAr04UaS0c4BtiAcC2n1/cjdsLYgXBRp9DtN3fK3IBxnJKe5L007EC6EXKFe3JfifwU/UgzcgHAmcos8WTil3AGBZ5STEqdbzwDcrOTplhQ5Sz1+609Ye2APjNSfAAMAv4p3Pa/O/tsAAAAASUVORK5CYII=");
+}
+.controls button[data-state="cancel-fullscreen"] {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCM0M2OUNCOUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCMzlFNDkzMUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+1VELOwAAAadJREFUeNrs2EtOwzAQBuAEOAEIKsQluAAbGqSGHRIrEKveoQEWNOF0SFyGZ6GkwowlWwpm7IwdT8kiI/2LWk39yY4faiqESPpcG0nPq/fARE5xM0btrIGw7fQ4gJeQJ8gRI24MeYac+wIvICv5fcgrE1Li3lUftUZSgAeQhXpQMCGbOJ03yC51BM8gSyYkhpN95b7voA+yQtpukLbMgjsNWSRUZKXa/2wQBjJzjVwosA1ZNdowoMwtFRcKtCHNzzagsDybk/ZlItCGpAJJuK5AjVx1ANYuHAb0PYsPIZsdtpgt9RvRzuIEWa1dp1hYtqBOU3zf0qEvUK/uVmBqotI0/ffb1XBhHYBIlQyL5Dr2NlNGBBZcJ0kZAVhwniQP6qgLrS/II9dJMoF8RhhBee06jj3FGK72ANYIchwLiOFkByeQOQFYqCv9koL0BeYOnK65AzgzfgtDZqFACk7XHdI2Q9pakVTgxAPnW7lruinAfcgHE86FfIHsUUdwCvlmwmFIubde+b6DU/V3BAeuiVxoXMgqHq3hwjLyulEP98EBOAB/148AAwA7RI/R8UopbwAAAABJRU5ErkJggg==");
+}
+.controls .progress {
+  flex-grow: 1;
+  cursor: pointer;
+  height: 80%;
+}
+.controls progress {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: #0095dd;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+.controls progress::-moz-progress-bar {
+  background-color: #0095dd;
+}
+
+.controls progress::-webkit-progress-value {
+  background-color: #0095dd;
+}
+figure:fullscreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+figure:fullscreen video {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+figure:fullscreen figcaption {
+  display: none;
+}
+figure:fullscreen .controls {
+  background-color: #666666;
+}
+@media screen and (width &lt;= 42.5em) {
+  .controls {
+    height: auto;
+  }
+
+  .controls button {
+    width: calc(100% / 7);
+    margin-top: 2.5rem;
+  }
+
+  .controls .progress {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: 0;
+    height: 2rem;
+  }
+
+  .controls .progress progress {
+    width: 98%;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+}
+</code></pre></div>
+<p>There's almost no change to the CSS from the previous version, except one place where we replace <code>width: calc(100% / 6)</code> with <code>width: calc(100% / 7)</code> to account for the new button. We also set <code>position: relative</code> on the figure, so the subtitle menu popup could be positioned relative to it.</p>
+<p>No image is used for the captions button, so it is styled as:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>.controls button[data-state="subtitles"] {
+  padding: 2px;
+}
+.controls button[data-state="subtitles"] span {
+  max-width: 100%;
+  width: 2rem;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #666666;
+  background-color: black;
+  border-radius: 4px;
+}
+</code></pre></div>
+<p>There are also other CSS changes that are specific to some extra JavaScript implementation, but these will be mentioned at the appropriate place below.</p>
+  </section><section class="content-section" aria-labelledby="subtitle_implementation">
+    <!--lit-part SBRIGh2VRLg=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Subtitle%20implementation"></a><h2 id="subtitle_implementation" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#subtitle_implementation">Subtitle implementation</a></h2><!--/lit-part-->
+    <p>A lot of what we do to access the video subtitles revolves around JavaScript. Similar to the video controls, if a browser supports HTML video subtitles, there will be a button provided within the native control set to access them. However, since we have defined our own video controls, this button is hidden, and we need to define our own.</p>
+<p>Browsers do vary as to what they support, so we will be attempting to bring a more unified UI to each browser where possible. There's more on browser compatibility issues later on.</p>
+<div class="code-example"><pre class="language-js hidden live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>const videoContainer = document.getElementById("videoContainer");
+const video = document.getElementById("video");
+const videoControls = document.getElementById("video-controls");
+const playPause = document.getElementById("play-pause");
+const stop = document.getElementById("stop");
+const mute = document.getElementById("mute");
+const volInc = document.getElementById("vol-inc");
+const volDec = document.getElementById("vol-dec");
+const progress = document.getElementById("progress");
+const fullscreen = document.getElementById("fs");
+
+// Hide the default controls
+video.controls = false;
+// Display the user defined video controls
+videoControls.setAttribute("data-state", "visible");
+function changeButtonState(type) {
+  if (type === "play-pause") {
+    // Play/Pause button
+    if (video.paused || video.ended) {
+      playPause.setAttribute("data-state", "play");
+    } else {
+      playPause.setAttribute("data-state", "pause");
+    }
+  } else if (type === "mute") {
+    // Mute button
+    mute.setAttribute("data-state", video.muted ? "unmute" : "mute");
+  }
+}
+video.addEventListener("play", () =&gt; {
+  changeButtonState("play-pause");
+});
+
+video.addEventListener("pause", () =&gt; {
+  changeButtonState("play-pause");
+});
+
+stop.addEventListener("click", (e) =&gt; {
+  video.pause();
+  video.currentTime = 0;
+  progress.value = 0;
+
+  // Update the play/pause button's 'data-state' which allows the
+  // correct button image to be set via CSS
+  changeButtonState("play-pause");
+});
+
+mute.addEventListener("click", (e) =&gt; {
+  video.muted = !video.muted;
+  changeButtonState("mute");
+});
+playPause.addEventListener("click", (e) =&gt; {
+  if (video.paused || video.ended) {
+    video.play();
+  } else {
+    video.pause();
+  }
+});
+function checkVolume(dir) {
+  if (dir) {
+    const currentVolume = Math.floor(video.volume * 10) / 10;
+    if (dir === "+" &amp;&amp; currentVolume &lt; 1) {
+      video.volume += 0.1;
+    } else if (dir === "-" &amp;&amp; currentVolume &gt; 0) {
+      video.volume -= 0.1;
+    }
+
+    // If the volume has been turned off, also set it as muted
+    // Note: can only do this with the custom control set as when the 'volumechange' event is raised,
+    // there is no way to know if it was via a volume or a mute change
+    video.muted = currentVolume &lt;= 0;
+  }
+  changeButtonState("mute");
+}
+
+function alterVolume(dir) {
+  checkVolume(dir);
+}
+volInc.addEventListener("click", (e) =&gt; {
+  alterVolume("+");
+});
+volDec.addEventListener("click", (e) =&gt; {
+  alterVolume("-");
+});
+video.addEventListener("volumechange", () =&gt; {
+  checkVolume();
+});
+progress.addEventListener("click", (e) =&gt; {
+  if (!Number.isFinite(video.duration)) return;
+  const rect = progress.getBoundingClientRect();
+  const pos = (e.pageX - rect.left) / progress.offsetWidth;
+  video.currentTime = pos * video.duration;
+});
+
+video.addEventListener("loadedmetadata", () =&gt; {
+  progress.setAttribute("max", video.duration);
+});
+video.addEventListener("timeupdate", () =&gt; {
+  if (!progress.getAttribute("max"))
+    progress.setAttribute("max", video.duration);
+  progress.value = video.currentTime;
+});
+
+if (!document?.fullscreenEnabled) {
+  fullscreen.style.display = "none";
+}
+fullscreen.addEventListener("click", (e) =&gt; {
+  if (document.fullscreenElement !== null) {
+    // The document is in fullscreen mode
+    document.exitFullscreen();
+    // Set the fullscreen button's 'data-state' which allows the
+    // correct button image to be set via CSS
+    fullscreen.setAttribute("data-state", "go-fullscreen");
+  } else {
+    // The document is not in fullscreen mode
+    videoContainer.requestFullscreen();
+    fullscreen.setAttribute("data-state", "cancel-fullscreen");
+  }
+});
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="initial_setup">
+    <!--lit-part irJlBtDL9wM=--><!--lit-node 0--><h3 id="initial_setup" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#initial_setup">Initial setup</a></h3><!--/lit-part-->
+    <p>As with all the other buttons, one of the first things we need to do is store a handle to the subtitles' button:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>const subtitles = document.getElementById("subtitles");
+</code></pre></div>
+<p>We also initially turn off all subtitles, in case the browser turns any of them on by default:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>for (const track of video.textTracks) {
+  track.mode = "hidden";
+}
+</code></pre></div>
+<p>The <code>video.textTracks</code> property contains an array of all the text tracks attached to the video. We loop through each one and set its <code>mode</code> to <code>hidden</code>.</p>
+<p>Note: The <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API">WebVTT API</a> gives us access to all the text tracks that are defined for an HTML video using the <code>&lt;track&gt;</code> element.</p>
+  </section><section class="content-section" aria-labelledby="building_a_caption_menu">
+    <!--lit-part 01pHirpX0X8=--><!--lit-node 0--><h3 id="building_a_caption_menu" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#building_a_caption_menu">Building a caption menu</a></h3><!--/lit-part-->
+    <p>Our aim is to use the <code>subtitles</code> button we added earlier to display a menu that allows users to choose which language they want the subtitles displayed in, or to turn them off entirely.</p>
+<p>We have added the button, but before we make it do anything, we need to build the menu that goes with it. This menu is built dynamically, so that languages can be added or removed later by editing the <code>&lt;track&gt;</code> elements within the video's markup.</p>
+<p>All we need to do is to go through the video's <code>textTracks</code>, reading their properties and building the menu up from there:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>const subtitleMenuButtons = [];
+let subtitlesMenu;
+if (video.textTracks) {
+  const df = document.createDocumentFragment();
+  subtitlesMenu = df.appendChild(document.createElement("ul"));
+  subtitlesMenu.className = "subtitles-menu";
+  subtitlesMenu.appendChild(createMenuItem("subtitles-off", "", "Off"));
+  for (const track of video.textTracks) {
+    subtitlesMenu.appendChild(
+      createMenuItem(
+        `subtitles-${track.language}`,
+        track.language,
+        track.label,
+      ),
+    );
+  }
+  videoContainer.appendChild(subtitlesMenu);
+}
+</code></pre></div>
+<p>This code creates a <a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment"><code>documentFragment</code></a>, which is used to hold an unordered list containing our subtitles menu. First of all an option is added to allow the user to switch all subtitles off, and then buttons are added for each text track, reading the language and label from each one.</p>
+<p>The creation of each list item and button is done by the <code>createMenuItem()</code> function, which is defined as follows:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>function createMenuItem(id, lang, label) {
+  const listItem = document.createElement("li");
+  const button = listItem.appendChild(document.createElement("button"));
+  button.setAttribute("id", id);
+  button.className = "subtitles-button";
+  if (lang.length &gt; 0) button.setAttribute("lang", lang);
+  button.value = label;
+  button.setAttribute("data-state", "inactive");
+  button.appendChild(document.createTextNode(label));
+  button.addEventListener("click", (e) =&gt; {
+    // Set all buttons to inactive
+    subtitleMenuButtons.forEach((button) =&gt; {
+      button.setAttribute("data-state", "inactive");
+    });
+
+    // Find the language to activate
+    const lang = button.getAttribute("lang");
+    for (const track of video.textTracks) {
+      // For the 'subtitles-off' button, the first condition will never match so all will subtitles be turned off
+      if (track.language === lang) {
+        track.mode = "showing";
+        button.setAttribute("data-state", "active");
+      } else {
+        track.mode = "hidden";
+      }
+    }
+    subtitlesMenu.style.display = "none";
+  });
+  subtitleMenuButtons.push(button);
+  return listItem;
+}
+</code></pre></div>
+<p>This function builds the required <a href="../../../HTML/Reference/Elements/li.html"><code>&lt;li&gt;</code></a> and <a href="../../../HTML/Reference/Elements/button.html"><code>&lt;button&gt;</code></a> elements, and returns them so they can be added to the subtitles menu list. It also sets up the required event listeners on the button to toggle the relevant subtitle set on or off. This is done by setting the required subtitle's <code>mode</code> attribute to <code>showing</code>, and setting the others to <code>hidden</code>.</p>
+<p>Once the menu is built, it is then inserted into the DOM at the bottom of the videoContainer.</p>
+<p>Initially the menu is hidden by default, so an event listener needs to be added to our subtitles button to toggle it:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>subtitles.addEventListener("click", (e) =&gt; {
+  if (subtitlesMenu) {
+    subtitlesMenu.style.display =
+      subtitlesMenu.style.display === "block" ? "none" : "block";
+  }
+});
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="subtitle_menu_css">
+    <!--lit-part LGVmWps3gCs=--><!--lit-node 0--><h3 id="subtitle_menu_css" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#subtitle_menu_css">Subtitle menu CSS</a></h3><!--/lit-part-->
+    <p>We also added some rudimentary styling for the newly created subtitles menu:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>.subtitles-menu {
+  display: none;
+  position: absolute;
+  bottom: 3rem;
+  right: 0;
+  background: #666666;
+  list-style-type: none;
+  margin: 0;
+  width: 100px;
+  padding: 10px;
+}
+
+.subtitles-menu li {
+  padding: 0;
+  text-align: center;
+}
+
+.subtitles-menu li button {
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  width: 90%;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="styling_the_displayed_subtitles">
+    <!--lit-part rAFyWuivE4M=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Styling%20the%20displayed%20subtitles"></a><h2 id="styling_the_displayed_subtitles" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#styling_the_displayed_subtitles">Styling the displayed subtitles</a></h2><!--/lit-part-->
+    <p>One of the less well known about and supported features of WebVTT is the ability to style the individual subtitles (something called text cues) <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API#styling_webvtt_in_html_or_a_stylesheet">via CSS</a>.</p>
+<p>The <code>::cue</code> pseudo-element is the key to targeting individual text track cues for styling, as it matches any defined cue. There are only a handful of CSS properties that can be applied to a text cue:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color"><code>color</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/opacity"><code>opacity</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/visibility"><code>visibility</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-decoration"><code>text-decoration</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-shadow"><code>text-shadow</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background"><code>background</code></a> shorthand properties</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/outline"><code>outline</code></a> shorthand properties</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font"><code>font</code></a> shorthand properties, including <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-height"><code>line-height</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/white-space"><code>white-space</code></a></li>
+</ul>
+<p>For example, to change the text color of the text track cues you can write:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>::cue {
+  color: #cccccc;
+}
+</code></pre></div>
+<p>If the WebVTT file uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Video_Text_Tracks_Format#voice_tag_vv">voice spans</a>, which allow cues to be defined as having a particular "voice":</p>
+<pre class="language-plain notranslate">0
+00:00:00.000 --&gt; 00:00:12.000
+&lt;v Test&gt;[Test]&lt;/v&gt;
+</pre>
+<p>Then this specific 'voice' will be stylable like so:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css live-sample___video-player-with-captions notranslate live-sample---video-player-with-captions"><code>::cue(v[voice="Test"]) {
+  color: white;
+  background: #0095dd;
+}
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="result">
+    <!--lit-part DijSZeS6FNs=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Result"></a><h2 id="result" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#result">Result</a></h2><!--/lit-part-->
+    <div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="video-player-with-captions sample" id="frame_video-player-with-captions" height="400" src="Adding_captions_and_subtitles_to_HTML5_video/_sample_.video-player-with-captions88220936/49b856d0ff9534e60d05dcf19e95bd0ec65d4a16.mdnplay.dev/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video/runner.html-_-uuid=49b856d0ff9534e60d05dcf19e95bd0ec65d4a16&amp;state=7X3pluJIku6r0HnvdGUOGYEQe2Rl9dWOAAkkECB1zjmjDUloRQtCqq6HmmeYF7suiTW2jKyT1b8izskMcHczN7ftM1cQFr9%25252FMGPX%25252BfDw4deNZSShXrO0r98%25252B7C1N.html" data-live-path="/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video/" data-live-id="video-player-with-captions" allow="fullscreen" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+  </section> 
+      <section class="content-section article-footer" aria-labelledby="feedback">
+        <div class="article-footer__inner">
+          <div class="article-footer__svg-container"><!--lit-part OWLzZqRMsCU=--><svg xmlns="http://www.w3.org/2000/svg" width="162" height="162" fill="none" viewBox="0 0 162 162"><mask id="b" fill="#fff"><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z"></path></mask><path stroke="url(#a)" stroke-dasharray="6, 6" stroke-width="2" d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z" mask="url(#b)" style="stroke:url(#a)" transform="translate(-63.992 -25.587)"></path><ellipse cx="8.066" cy="111.597" fill="currentColor" rx="53.677" ry="53.699" transform="matrix(.71707 -.697 .7243 .6895 0 0)"></ellipse><g clip-path="url(#c)" transform="translate(-63.992 -25.587)"><path fill="#9abff5" d="m144.256 137.379 32.906 12.434a4.41 4.41 0 0 1 2.559 5.667l-9.326 24.679a4.41 4.41 0 0 1-5.667 2.559l-8.226-3.108-2.332 6.17c-.466 1.233-.375 1.883-1.609 1.417l-2.253-.527c-.411-.155-.95-.594-1.206-1.161l-4.734-10.484-12.545-4.741a4.41 4.41 0 0 1-2.559-5.667l9.325-24.679a4.41 4.41 0 0 1 5.667-2.559m9.961 29.617 8.227 3.108 3.264-8.638-.498-6.768-4.113-1.555.548 7.258-4.319-1.632zm-12.339-4.663 8.226 3.108 3.264-8.637-.498-6.769-4.113-1.554.548 7.257-4.319-1.632z"></path></g><g clip-path="url(#d)" transform="translate(-63.992 -25.587)"><path fill="#81b0f3" d="M135.35 60.136 86.67 41.654c-3.346-1.27-7.124.428-8.394 3.775L64.414 81.938c-1.27 3.347.428 7.125 3.774 8.395l12.17 4.62-3.465 9.128c-.693 1.826-1.432 2.457.394 3.15l3.014 1.625c.609.231 1.637.274 2.477-.104l15.53-6.983 18.56 7.047c3.346 1.27 7.124-.428 8.395-3.775l13.862-36.51c1.27-3.346-.428-7.124-3.775-8.395M95.261 83.207l-12.17-4.62 4.852-12.779 7.19-7.017 6.085 2.31-7.725 7.51 6.389 2.426zm18.255 6.93-12.17-4.62 4.852-12.778 7.189-7.017 6.085 2.31-7.725 7.51 6.39 2.426z"></path></g><defs><clipPath id="c"><path fill="#fff" d="m198.638 146.586-65.056-24.583-24.583 65.057 65.056 24.582z"></path></clipPath><clipPath id="d"><path fill="#fff" d="m66.438 14.055 96.242 36.54-36.54 96.243-96.243-36.54z"></path></clipPath><linearGradient id="a" x1="97.203" x2="199.995" y1="47.04" y2="152.793" gradientUnits="userSpaceOnUse"><stop stop-color="#086dfc"></stop><stop offset=".246" stop-color="#2c81fa"></stop><stop offset=".516" stop-color="#5497f8"></stop><stop offset=".821" stop-color="#80b0f6"></stop><stop offset="1" stop-color="#9abff5"></stop></linearGradient></defs></svg><!--/lit-part--></div>
+          <h2 id="feedback">
+            Help improve MDN
+          </h2>
+          <mdn-content-feedback locale="en-US"></mdn-content-feedback>
+          <a class="article-footer__contribute" href="https://developer.mozilla.org/en-US/docs/MDN/Community/Getting_started">Learn how to contribute</a> <p class="article-footer__last-modified">
+    This page was last modified on <time datetime="2025-10-13T00:33:39.000Z">Oct 13, 2025</time> by <a href="Adding_captions_and_subtitles_to_HTML5_video/contributors.txt">MDN contributors</a>.
+  </p> <div class="article-footer__links">
+    <a class="external" href="https://github.com/mdn/content/blob/main/files/en-us/web/media/guides/audio_and_video_delivery/adding_captions_and_subtitles_to_html5_video/index.md?plain=1" title="Folder: en-us/web/media/guides/audio_and_video_delivery/adding_captions_and_subtitles_to_html5_video (Opens in a new tab)" target="_blank" rel="noopener">View this page on GitHub</a> • <a class="external" href="https://github.com/mdn/content/issues/new?template=page-report.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FMedia%2FGuides%2FAudio_and_video_delivery%2FAdding_captions_and_subtitles_to_HTML5_video&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Fweb%2Fmedia%2Fguides%2Faudio_and_video_delivery%2Fadding_captions_and_subtitles_to_html5_video%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FMedia%2FGuides%2FAudio_and_video_delivery%2FAdding_captions_and_subtitles_to_HTML5_video%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Fweb%2Fmedia%2Fguides%2Faudio_and_video_delivery%2Fadding_captions_and_subtitles_to_html5_video%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2F9cfc2285428932f448a1747e347b1e35a3e0172b%0A*+Document+last+modified%3A+2025-10-13T00%3A33%3A39.000Z%0A%0A%3C%2Fdetails%3E" title="This will take you to GitHub to file a new issue." target="_blank" rel="noopener">Report a problem with this content</a>
+  </div>
+        </div>
+      </section>
+    
+          </div>
+        </main>
+        <aside class="layout__left-sidebar" id="main-sidebar">
+          <nav class="left-sidebar">
+      <div class="left-sidebar__header">
+        <mdn-sidebar-filter></mdn-sidebar-filter>
+      </div>
+      <div class="left-sidebar__content"><ol><li class="section"><a href="https://developer.mozilla.org/en-US/docs/Web/Media">Media</a></li><li class="section"><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides">Guides</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Images">Using images in HTML</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_manipulation">Audio and video manipulation</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay">Autoplay guide for media and Web Audio APIs</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Streaming">Streaming audio and video</a></li><li><details open=""><summary><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery">Audio and video delivery</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/cross_browser_video_player">Creating a cross-browser video player</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Video_player_styling_basics">Video player styling basics</a></li><li><em><a href="Adding_captions_and_subtitles_to_HTML5_video.html" aria-current="page">Adding captions and subtitles to HTML video</a></em></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Cross-browser_audio_basics">Cross-browser audio basics</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/buffering_seeking_time_ranges">Media buffering, seeking, and time ranges</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/WebAudio_playbackRate_explained">Web audio playbackRate explained</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Live_streaming_web_audio_and_video">Livestreaming web audio and video</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Setting_up_adaptive_streaming_media_sources">Setting up adaptive streaming media sources</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats">Media formats</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/codecs_parameter">Codecs in common media types</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/WebRTC_codecs">Codecs used by WebRTC</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Configuring_servers_for_Ogg_media">Configuring servers for Ogg media</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Audio_concepts">Digital audio concepts</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Video_concepts">Digital video concepts</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Support_issues">Handling unsupported media</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types">Image file type and format guide</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Containers">Media container formats (file types)</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Audio_codecs">Web audio codec guide</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Video_codecs">Web video codec guide</a></li></ol></details></li></ol></div>
+    </nav>
+        </aside>
+      </div>
+    </div>
+        
+      
+    
+      
+
+
+    <div class="page-layout__footer footer"><div><a href="http://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video">Adding captions and subtitles to HTML video</a> by <a href="http://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video$history">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC-BY-SA 2.5</a>.</div></div></body><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:44:18 GMT --></html>

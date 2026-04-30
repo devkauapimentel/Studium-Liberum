@@ -1,0 +1,6 @@
+
+[role="button"] { padding: 2px; background-color: navy; color: white; cursor: default; }
+[role="button"]:hover, [role="button"]:focus, [role="button"]:active { background-color: white; color: navy; }
+ul { list-style: none; }
+
+button.copy {display:none !important}

@@ -1,0 +1,5 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 22px; line-height: normal; font-family: Arial, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+#container { border: 2px solid rgb(34, 34, 221); margin: 1rem auto; padding: 1rem; background-color: rgb(170, 153, 255); }
+
+button.copy {display:none !important}

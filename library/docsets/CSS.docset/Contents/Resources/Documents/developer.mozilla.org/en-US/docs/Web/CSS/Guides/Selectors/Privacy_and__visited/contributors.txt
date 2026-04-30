@@ -1,0 +1,13 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/css/guides/selectors/privacy_and__colon_visited/index.md
+
+# Original Wiki contributors
+jswisher
+wbamberg
+mfluehr
+una
+Sheppy
+DBaron
+Dholbert
+gavenkoa
+fscholz

@@ -1,0 +1,18 @@
+
+.heart { clip-path: shape(from 20px 70px, arc to 100px 70px of 1% cw, arc to 180px 70px of 1% cw, curve to 100px 190px with 180px 130px, curve to 20px 70px with 20px 130px); }
+:root { --m: 10; }
+.heart { width: calc(20px * var(--m)); height: calc(20px * var(--m)); display: inline-block; background: linear-gradient(rebeccapurple, magenta) blue; clip-path: border-box
+    shape(
+      from calc(2px * var(--m)) calc(7px * var(--m)),
+      arc to calc(10px * var(--m)) calc(7px * var(--m)) of 1% cw,
+      arc to calc(18px * var(--m)) calc(7px * var(--m)) of 1% cw,
+      curve to calc(10px * var(--m)) calc(19px * var(--m)) with
+        calc(18px * var(--m)) calc(13px * var(--m)),
+      curve to calc(2px * var(--m)) calc(7px * var(--m)) with
+        calc(2px * var(--m)) calc(13px * var(--m))
+    ); }
+.small { --m: 4; }
+.medium { --m: 8; }
+.large { --m: 12; }
+
+button.copy {display:none !important}

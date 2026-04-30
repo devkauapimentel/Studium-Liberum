@@ -1,0 +1,7 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/how_to/add_javascript_to_your_web_page/index.md
+
+# Original Wiki contributors
+RomainLanz
+Jeremie
+Andrew_Pfeiffer

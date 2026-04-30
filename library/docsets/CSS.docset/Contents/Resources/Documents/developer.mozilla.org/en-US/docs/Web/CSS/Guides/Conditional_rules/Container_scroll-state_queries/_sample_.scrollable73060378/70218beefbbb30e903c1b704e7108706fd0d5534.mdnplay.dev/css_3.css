@@ -1,0 +1,18 @@
+
+* { box-sizing: border-box; }
+html { font-family: Helvetica, Arial, sans-serif; height: 100%; }
+body { height: inherit; width: 100%; max-width: 540px; padding: 20px; margin: 0px auto; }
+p { line-height: 1.5; }
+img { display: block; width: 90%; margin: 30px auto; padding: 20px; border: 2px solid gray; aspect-ratio: 3 / 2; }
+.back-to-top { width: 64px; height: 64px; color: white; text-align: center; position: fixed; bottom: 10px; right: 10px; translate: 80px; transition: translate 0.4s, background-color 0.2s; }
+.back-to-top { text-decoration: none; border-radius: 50%; border: 1px solid rgba(0, 0, 0, 0.467); background-color: rgba(0, 0, 0, 0.467); color: white; font-size: 3rem; text-shadow: black 0px 0px 2px; padding-bottom: 10px; }
+.back-to-top:hover, .back-to-top:focus { background: rgba(0, 0, 0, 0.6); }
+html { container-name: scroller; }
+@container scroller scroll-state(scrollable: top) {
+  .back-to-top { translate: 0px; }
+}
+@supports not (container-type: scroll-state) {
+  body::before { content: "Your browser does not support `scroll-state` container queries."; color: black; background-color: wheat; position: fixed; left: 0px; right: 0px; top: 40%; text-align: center; padding: 1rem 0px; z-index: 1; }
+}
+
+button.copy {display:none !important}

@@ -1,0 +1,5 @@
+
+section { border: 1px solid black; width: 250px; height: 250px; }
+div { width: 250px; height: 250px; margin-bottom: 10px; background: linear-gradient(red, blue) blue; mask-image: url("./shared-assets/images/examples/mask-star.svg"); mask-repeat: no-repeat; -webkit-mask-position-x: right; -webkit-mask-position-y: top; }
+
+button.copy {display:none !important}

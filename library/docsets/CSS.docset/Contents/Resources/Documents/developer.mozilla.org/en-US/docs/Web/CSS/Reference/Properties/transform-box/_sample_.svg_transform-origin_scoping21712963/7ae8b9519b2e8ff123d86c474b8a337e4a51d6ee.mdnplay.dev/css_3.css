@@ -1,0 +1,8 @@
+
+svg { width: 80vh; border: 1px solid rgb(217, 217, 217); position: absolute; margin: auto; inset: 0px; }
+#box { transform-origin: 50% 50%; transform-box: fill-box; animation: 3s linear infinite rotate-box; }
+@keyframes rotate-box { 
+  100% { transform: rotate(360deg); }
+}
+
+button.copy {display:none !important}

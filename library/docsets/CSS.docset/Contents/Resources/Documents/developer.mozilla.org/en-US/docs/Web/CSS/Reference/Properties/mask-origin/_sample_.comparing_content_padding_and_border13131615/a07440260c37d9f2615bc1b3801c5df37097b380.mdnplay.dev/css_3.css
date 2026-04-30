@@ -1,0 +1,11 @@
+
+div { width: 100px; height: 100px; margin: 10px; border: 10px solid blue; background-color: rgb(140, 255, 160); padding: 10px; mask-image: url("../mdn.github.io/shared-assets/images/examples/mask-star.svg"); }
+section { border: 1px solid black; }
+.content div { mask-origin: content-box; }
+.padding div { mask-origin: padding-box; }
+.border div { mask-origin: border-box; }
+.comparison div { mask-image: none; }
+section::before { content: attr(class); display: block; text-align: center; }
+body { display: flex; flex-flow: wrap; gap: 10px; }
+
+button.copy {display:none !important}

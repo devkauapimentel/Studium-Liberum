@@ -1,0 +1,8 @@
+
+.collapse { white-space-collapse: collapse; }
+.preserve { white-space-collapse: preserve; }
+.preserve-breaks { white-space-collapse: preserve-breaks; }
+.preserve-spaces { }
+h2 { font-size: 1.6rem; font-family: monospace; border-bottom: 1px dotted rgb(204, 204, 204); }
+
+button.copy {display:none !important}

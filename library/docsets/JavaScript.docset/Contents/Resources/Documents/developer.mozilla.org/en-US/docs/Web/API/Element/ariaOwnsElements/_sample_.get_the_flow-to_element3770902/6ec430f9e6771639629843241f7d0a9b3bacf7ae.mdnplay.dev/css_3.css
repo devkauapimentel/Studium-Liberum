@@ -1,0 +1,9 @@
+
+.menu { position: relative; display: inline-block; color: purple; }
+.submenu { display: none; position: absolute; background-color: rgb(249, 249, 249); min-width: 160px; box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 14px 0px; z-index: 1; top: 20px; left: 0px; }
+.menu:hover ~ .submenu { display: block; }
+.submenu a { color: black; padding: 12px 16px; text-decoration: none; display: block; }
+.submenu a:hover { background-color: rgb(241, 241, 241); }
+#log { height: 80px; overflow: scroll; padding: 0.5rem; margin: 5px; border: 1px solid black; }
+
+button.copy {display:none !important}

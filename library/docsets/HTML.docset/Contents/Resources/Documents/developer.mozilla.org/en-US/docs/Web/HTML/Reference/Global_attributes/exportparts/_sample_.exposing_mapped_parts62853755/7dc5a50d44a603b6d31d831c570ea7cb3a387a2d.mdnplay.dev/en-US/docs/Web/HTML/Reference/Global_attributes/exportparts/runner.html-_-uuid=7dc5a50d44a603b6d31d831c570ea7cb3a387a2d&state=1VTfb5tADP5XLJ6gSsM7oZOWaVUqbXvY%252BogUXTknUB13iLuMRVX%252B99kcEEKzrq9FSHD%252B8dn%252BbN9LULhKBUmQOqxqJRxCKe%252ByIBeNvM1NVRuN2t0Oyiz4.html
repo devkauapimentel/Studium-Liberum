@@ -1,0 +1,48 @@
+<html>
+  <!-- Online page at https://7dc5a50d44a603b6d31d831c570ea7cb3a387a2d.mdnplay.dev/en-US/docs/Web/HTML/Reference/Global_attributes/exportparts/runner.html?uuid=7dc5a50d44a603b6d31d831c570ea7cb3a387a2d&state=1VTfb5tADP5XLJ6gSsM7oZOWaVUqbXvY%2BogUXTknUB13iLuMRVX%2B99kcEEKzrq9FSHD%2B8dn%2BbN9LULhKBUmQOqxqJRxCKe%2ByIBeNvM1NVRuN2t0Oyiz4lGmAVJa%2FIVfCWjJ9EpbkUIvGjafOqrfrFQUKiQ2pUquMAy0qHKVbFrEq5h%2F6kN8ViCcjj3MAlr3TfWeMe52Bl%2F4TYvhL44EDOtCxI6htRF1j4w1rYFdC3BDOY1FaoNcVCL7GNK5nduuZHZfy2up%2BZuXz9XZpPEvjWhd77dC6y856lvBPbRrHNHFDvYwe7mXC9tst%2Fy5Gha%2BoV%2FnDWekT7JU95153ngtbCz0UOBuBaW82046wzzX%2FiwmYeq%2Ff4z1r%2F9T%2F%2Fqp%2Fz%2FnI4Hw2gkWQW0sbFd%2BARYW5833zHKPsptF2MeAmznSSsCCcchnBC0faGdq8Fst94RIaDiVXmT5leoKrjStKvU84gMUOuQO20GKDrD6HncTyNUeLUcAUvh2UqnrmovKDdab6qrCi0u1S4q7UGLLj%2FM7Igm4kuluCsnCopYXN4%2FdvvbMPRwZGW9cccmeaMBqEAPZAMxtGK4hj%2BKxacbSQC6W8HHZlYx2Ueuo9eHYiGBfhDqTJDxxxuUfXB18fH2T4xi0XrS7RbCGkaX8Sb4RHnNulcE7kxa9OHo5ZA1RGYkJkmBp1TwE%2FpzPiGWvJi6nll6JUMhyzLCvu2A%2FCCYeElpQFEegWQLViNGCd%2BHOiGCz4b2fGe%2BCD9GXM9wM2g9aFVrJC2hjFqxSc%2FgI%3D&code=62853755& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <template id="card-component-template">
+  <div class="base" part="base">
+    <div part="header"><slot name="header_slot"></slot></div>
+    <div part="body"><slot name="body_slot"></slot></div>
+    <div part="footer"><slot name="footer_slot"></slot></div>
+  </div>
+</template>
+
+<card-wrapper>
+  <p slot="H">This is the header</p>
+  <p slot="B">This is the body</p>
+  <p slot="F">This is the footer</p>
+</card-wrapper>
+<template id="card-wrapper">
+  <card-component exportparts="
+       base:card__base,
+       header:card__header,
+       footer:card__footer
+     ">
+    <span slot="header_slot"><slot name="H"></slot></span>
+    <span slot="body_slot"><slot name="B"></slot></span>
+    <span slot="footer_slot"><slot name="F"></slot></span>
+  </card-component>
+</template>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../../js_3.js'></script>
+</body>
+</html>

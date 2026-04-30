@@ -1,0 +1,28 @@
+<html><!-- Mirrored from mdn.github.io/learning-area/javascript/building-blocks/events/random-color-eventhandlerattributes.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 23:28:39 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Random color example —&nbsp;event handler attribute</title>
+    <style>
+      button {
+        margin: 10px
+      };
+    </style>
+  </head>
+  <body>
+    <button onclick="bgChange()">Change color</button>
+    <script>
+      function random(number) {
+        return Math.floor(Math.random()*number);
+      }
+
+      function bgChange() {
+        const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+        document.body.style.backgroundColor = rndCol;
+      }
+    </script>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/learning-area/javascript/building-blocks/events/random-color-eventhandlerattributes.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 23:28:39 GMT --></html>

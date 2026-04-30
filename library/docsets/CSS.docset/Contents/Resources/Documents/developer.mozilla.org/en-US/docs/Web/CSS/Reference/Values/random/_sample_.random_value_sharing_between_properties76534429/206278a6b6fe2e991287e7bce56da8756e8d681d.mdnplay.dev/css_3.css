@@ -1,0 +1,8 @@
+
+body { background: black; }
+.particle { border-radius: 50%; background: white; position: fixed; width: random(--particle-size, 0.25em, 1em); height: random(--particle-size, 0.25em, 1em); top: random(0%, 100%); left: random(0%, 100%); animation: 1s infinite alternate-reverse move; }
+@supports not (order: random(1, 2)) {
+  body::before { color: white; content: "Your browser doesn't support the random() function."; }
+}
+
+button.copy {display:none !important}

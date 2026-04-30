@@ -1,0 +1,7 @@
+
+div { margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+input { flex: 2 1 0%; }
+label { flex: 1 1 0%; text-align: right; }
+body { width: 400px; margin: 0px auto; }
+
+button.copy {display:none !important}

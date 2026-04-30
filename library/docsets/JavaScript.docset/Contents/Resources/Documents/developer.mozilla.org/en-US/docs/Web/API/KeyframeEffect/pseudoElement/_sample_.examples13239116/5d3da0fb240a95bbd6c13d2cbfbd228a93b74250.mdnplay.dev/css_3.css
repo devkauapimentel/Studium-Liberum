@@ -1,0 +1,5 @@
+
+#text::after { content: "👹"; display: inline-block; font-size: 2rem; }
+#text::before { content: "🤠"; display: inline-block; font-size: 2rem; }
+
+button.copy {display:none !important}

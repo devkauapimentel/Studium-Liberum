@@ -1,0 +1,28 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/elements/acronym/index.md
+
+# Original Wiki contributors
+jswisher
+exercism-1
+teoli
+mfluehr
+CNG
+erikadoyle
+bboyle
+utkarsh
+Tyriar
+kscarfone
+ethertank
+tregagnon
+Sheppy
+avsaro
+Jeremie
+grendel
+cers
+fscholz
+Marsf
+Sevenspade
+Ms2ger
+Witia
+PablO
+alecananian

@@ -1,0 +1,308 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/chrono/time_point.html --><head><meta charset="utf-8"><title>Talk:cpp/chrono/time point</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_4787.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_chrono_time_point skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fchrono%2Ftime+point&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fchrono%2Ftime+point" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/chrono/time_point.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./time_point.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./time_point.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./time_point.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/chrono/time_point&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/chrono/time_point&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/chrono/time_point&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./time_point.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/chrono/time point</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../chrono.html" title="Talk:cpp/chrono">chrono</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>If the example code was for production, I would agree with its use of <i>auto</i>.  However, for example code, the auto obscures the concepts that the example is trying to convey.  I believe the following code (that only replaces auto) may be a more useful example.
+</p><p>By the way, the comment on the <i>using namespace</i> is perfect.
+</p>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;algorithm&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;iomanip&gt;</span>
+<span class="co2">#include &lt;ctime&gt;</span>
+<span class="co2">#include &lt;chrono&gt;</span>
+&nbsp;
+<span class="kw4">void</span> slow_motion<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">int</span> a<span class="br0">[</span><span class="br0">]</span> <span class="br0">{</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span>,<span class="nu0">4</span>,<span class="nu0">5</span>,<span class="nu0">6</span>,<span class="nu0">7</span>,<span class="nu0">8</span>,<span class="nu0">9</span>,<span class="nu0">10</span>,<span class="nu0">11</span>,<span class="nu0">12</span><span class="br0">}</span><span class="sy4">;</span>
+    <span class="kw1">while</span> <span class="br0">(</span><a href="../../cpp/algorithm/next_permutation.html"><span class="kw1653">std::<span class="me2">next_permutation</span></span></a><span class="br0">(</span><a href="../../cpp/iterator/begin.html"><span class="kw679">std::<span class="me2">begin</span></span></a><span class="br0">(</span>a<span class="br0">)</span>, <a href="../../cpp/iterator/end.html"><span class="kw683">std::<span class="me2">end</span></span></a><span class="br0">(</span>a<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">using</span> <span class="kw1">namespace</span> std<span class="sy4">::</span><span class="me2">literals</span><span class="sy4">;</span> <span class="co1">// enables the usage of 24h instead of std::chrono::hours(24)</span>
+&nbsp;
+    <a href="../../cpp/chrono/time_point.html"><span class="kw993">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">time_point</span></span></a><span class="sy1">&lt;</span><a href="../../cpp/chrono/system_clock.html"><span class="kw1009">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">system_clock</span></span></a><span class="sy1">&gt;</span> now<span class="br0">(</span>
+        <a href="../../cpp/chrono/system_clock/now.html"><span class="kw2676">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">system_clock</span><span class="sy4">::</span><span class="me2">now</span></span></a><span class="br0">(</span><span class="br0">)</span>
+    <span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../cpp/chrono/c/time_t.html"><span class="kw1029">std::<span class="me2">time_t</span></span></a> t_c <span class="sy1">=</span> <a href="../../cpp/chrono/system_clock/to_time_t.html"><span class="kw2677">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">system_clock</span><span class="sy4">::</span><span class="me2">to_time_t</span></span></a><span class="br0">(</span>now <span class="sy2">-</span> 24h<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"24 hours ago, the time was "</span>
+              <span class="sy1">&lt;&lt;</span> <a href="../../cpp/io/manip/put_time.html"><span class="kw1805">std::<span class="me2">put_time</span></span></a><span class="br0">(</span><a href="../../cpp/chrono/c/localtime.html"><span class="kw1025">std::<span class="me2">localtime</span></span></a><span class="br0">(</span><span class="sy3">&amp;</span>t_c<span class="br0">)</span>, <span class="st0">"%F&nbsp;%T"</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+&nbsp;
+    <a href="../../cpp/chrono/time_point.html"><span class="kw993">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">time_point</span></span></a><span class="sy1">&lt;</span><a href="../../cpp/chrono/steady_clock.html"><span class="kw1011">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">steady_clock</span></span></a><span class="sy1">&gt;</span> start <span class="sy1">=</span>
+        <a href="../../cpp/chrono/steady_clock/now.html"><span class="kw2674">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">steady_clock</span><span class="sy4">::</span><span class="me2">now</span></span></a><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    slow_motion<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../cpp/chrono/time_point.html"><span class="kw993">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">time_point</span></span></a><span class="sy1">&lt;</span><a href="../../cpp/chrono/steady_clock.html"><span class="kw1011">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">steady_clock</span></span></a><span class="sy1">&gt;</span> end 
+        <span class="sy1">=</span> <a href="../../cpp/chrono/steady_clock/now.html"><span class="kw2674">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">steady_clock</span><span class="sy4">::</span><span class="me2">now</span></span></a><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a>
+      <span class="sy1">&lt;&lt;</span> <span class="st0">"Slow calculations took "</span>
+      <span class="sy1">&lt;&lt;</span> <a href="../../cpp/chrono/duration/duration_cast.html"><span class="kw1006">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">duration_cast</span></span></a><span class="sy1">&lt;</span><a href="../../cpp/chrono/duration.html"><span class="kw997">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">microseconds</span></span></a><span class="sy1">&gt;</span><span class="br0">(</span>end <span class="sy2">-</span> start<span class="br0">)</span>.<span class="me1">count</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"µs ≈ "</span>
+      <span class="sy1">&lt;&lt;</span> <a href="../../cpp/chrono/duration/duration_cast.html"><span class="kw1006">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">duration_cast</span></span></a><span class="sy1">&lt;</span><a href="../../cpp/chrono/duration.html"><span class="kw998">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">milliseconds</span></span></a><span class="sy1">&gt;</span><span class="br0">(</span>end <span class="sy2">-</span> start<span class="br0">)</span>.<span class="me1">count</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"ms ≈ "</span>
+      <span class="sy1">&lt;&lt;</span> <a href="../../cpp/chrono/duration/duration_cast.html"><span class="kw1006">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">duration_cast</span></span></a><span class="sy1">&lt;</span><a href="../../cpp/chrono/duration.html"><span class="kw999">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="sy1">&gt;</span><span class="br0">(</span>end <span class="sy2">-</span> start<span class="br0">)</span>.<span class="me1">count</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"s.<span class="es1">\n</span>"</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+</div>
+<p><a href="https://en.cppreference.com/w/Special:Contributions/24.246.171.55" title="Special:Contributions/24.246.171.55">24.246.171.55</a> 03:36, 15 February 2021 (PST) Unferth
+</p>
+<dl><dd> Sounds more than reasonable.) <span style="font-size:25px;color:green"><b>✔</b></span>&nbsp;<b>Done</b> Thank you. --<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 10:09, 15 February 2021 (PST)
+<dl><dd>I think it was bad idea. Old example showed good concise way of using `now`, as it will be used in real word. -- <a href="https://en.cppreference.com/mwiki/index.php?title=User:Valiko&amp;action=edit&amp;redlink=1" class="new" title="User:Valiko (page does not exist)">Valiko</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Valiko&amp;action=edit&amp;redlink=1" class="new" title="User talk:Valiko (page does not exist)">talk</a>) 05:55, 16 February 2021 (PST)
+</dd><dd>If adding a production code version, perhaps as comments?  (<a href="https://en.cppreference.com/w/Special:Contributions/130.76.24.18" title="Special:Contributions/130.76.24.18">130.76.24.18</a> 09:11, 24 February 2021 (PST))
+<dl><dd><span style="font-size:21px;color:green"><b>✔</b></span> <a href="../../cpp/chrono/time_point.html#Example" title="cpp/chrono/time point">Updated</a>, once again.) In <i>Examples</i> the actual types exposure is more useful, IMO. After all, the replacement with <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">auto</span></span></span> for real-code hardly can cause any trouble. --<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 16:08, 24 February 2021 (PST)
+<dl><dd>This site is not tutorial on C++, so IMO those long types only distract attention from the essential points. Please also look at the "What is the purpose of this site?" in <a href="../../Cppreference%25253AAbout.html" title="Cppreference:FAQ">Cppreference:FAQ</a> -- <a href="https://en.cppreference.com/mwiki/index.php?title=User:Valiko&amp;action=edit&amp;redlink=1" class="new" title="User:Valiko (page does not exist)">Valiko</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Valiko&amp;action=edit&amp;redlink=1" class="new" title="User talk:Valiko (page does not exist)">talk</a>) 05:34, 25 February 2021 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<p>Completely disagree with adding those comments, I think they just add noise to the example, and I don't think anyone needs to be told how to replace a type with <span class="t-lc">auto</span>. Regarding auto type deduction vs explicit types, I think explicit types are more demonstrative, having an example that doesn't even mention the type being documented would be rather embarrassing. I would however encourage the idea of omitting the template arguments (<span class="t-lc"><a href="../../cpp/chrono/steady_clock.html" title="cpp/chrono/steady clock">std::chrono::steady_clock</a></span>) and relying on CTAD, I don't think they're adding any demonstrative value. --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 08:23, 25 February 2021 (PST)
+</p>
+<dl><dd>In the example, one can always click on "std::chrono::system_clock::now" and see what type it returns, no need to explicitly mention that long type. Like iterators (just one more example). -- <a href="https://en.cppreference.com/mwiki/index.php?title=User:Valiko&amp;action=edit&amp;redlink=1" class="new" title="User:Valiko (page does not exist)">Valiko</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Valiko&amp;action=edit&amp;redlink=1" class="new" title="User talk:Valiko (page does not exist)">talk</a>) 11:49, 25 February 2021 (PST)
+</dd></dl>
+<dl><dd><dl><dd> Whilst it's true that you can click all of the links of functions to see what they return, I think it would be more convenient to the reader to save them the effort. I'm no authority here, but I believe an example should show an enlightening example of how a <span class="t-lc"><a href="../../cpp/chrono/time_point.html" title="cpp/chrono/time point">std::chrono::time_point</a></span> could be used, not how to a half-assed execution time measurement or how to call <span class="t-lc"><a href="../../cpp/chrono/steady_clock/now.html" title="cpp/chrono/steady clock/now">std::chrono::steady_clock::now()</a></span> or any of the other stuff in the example. To that end, I think it makes the most sense for the <span class="t-lc"><a href="../../cpp/chrono/time_point.html" title="cpp/chrono/time point">std::chrono::time_point</a></span> type to be spelled out and for the reader to know what they're looking at and see what they're looking for at a glance. --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 13:20, 25 February 2021 (PST)
+</dd></dl>
+</dd></dl>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/chrono/time_point&amp;action=edit&amp;section=1" title="Edit section: Return value speaks of d, but not defined">edit</a>]</span> <span class="mw-headline" id="Return_value_speaks_of_d.2C_but_not_defined">Return value speaks of <code>d</code>, but not defined</span></h3>
+<p>For the member functions <code>ceil</code>, <code>floor</code> and <code>round</code>, the return value states:
+</p><p><i><code>d</code> rounded to nearest time point using duration of type <code>ToDuration</code>...</i>
+</p><p>yet <code>d</code> is not described.  <code>tp</code> is the parameter, and I'd understand if <code>d</code> were a duration.  Can someone clarify?
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Ljestrada&amp;action=edit&amp;redlink=1" class="new" title="User:Ljestrada (page does not exist)">ticotico</a> (<a href="../../User_talk%25253ALjestrada.html" title="User talk:Ljestrada">talk</a>) 08:17, 14 June 2022 (PDT)
+</p>
+<dl><dd> Looks like a copy paste error from the respective <a href="../../cpp/chrono/duration/round.html" title="cpp/chrono/duration/round">duration</a> pages --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 09:12, 14 June 2022 (PDT)
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 181/1000000
+Preprocessor generated node count: 854/1000000
+Post‐expand include size: 1461/4194304 bytes
+Template argument size: 3778/4194304 bytes
+Highest expansion depth: 9/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:20137-0!*!0!*!*!*!* and timestamp 20240518055555 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/chrono/time_point&amp;oldid=140260">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/chrono/time_point&amp;oldid=140260</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./time_point.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/chrono/time_point" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/chrono/time_point" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/chrono/time_point&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/chrono/time_point&amp;oldid=140260" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/chrono/time_point&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 14 June 2022, at 09:12.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 2,219 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.441 secs. -->
+	
+
+
+</body></html>

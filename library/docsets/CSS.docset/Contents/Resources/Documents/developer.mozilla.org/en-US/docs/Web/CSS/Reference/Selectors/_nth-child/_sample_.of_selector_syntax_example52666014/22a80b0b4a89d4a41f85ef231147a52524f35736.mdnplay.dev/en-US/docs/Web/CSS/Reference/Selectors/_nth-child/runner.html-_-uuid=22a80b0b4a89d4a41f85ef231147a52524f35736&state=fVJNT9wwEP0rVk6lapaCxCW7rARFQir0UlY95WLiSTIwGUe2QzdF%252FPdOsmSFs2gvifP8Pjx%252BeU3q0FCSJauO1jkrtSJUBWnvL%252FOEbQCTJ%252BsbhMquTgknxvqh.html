@@ -1,0 +1,89 @@
+<html>
+  <!-- Online page at https://22a80b0b4a89d4a41f85ef231147a52524f35736.mdnplay.dev/en-US/docs/Web/CSS/Reference/Selectors/:nth-child/runner.html?uuid=22a80b0b4a89d4a41f85ef231147a52524f35736&state=fVJNT9wwEP0rVk6lapaCxCW7rARFQir0UlY95WLiSTIwGUe2QzdF%2FPdOsmSFs2gvifP8Pjx%2BeU3q0FCSJauO1jkrtSJUBWnvL%2FOEbQCTJ%2BsbhMquTgknxvqhRmr1R%2BhA9EMHcMgRaf1T9xQjm95Zhgj6jYV2xh51v8WZzwMCz8I2GITVHze6hy1GqquekCPkHuzsezbEgem164p4piv0dXy6PyCDy6RHje562z0fXL0DiE%2B40dwfN%2FqlHcH%2BnlenY9vJt6TwXsr%2Fql4HYWk5pKVukPpMec0%2B9VJhucz5LeecO9rRDPpW7jVTJcF2OQplkf51us3U8BwxQh9SH3qCTLFUvNwnePwn2Nni3EEzoq02BrlKCcqQqe9Tnowx5jXaVciysTg7v5hpBnQCI9GjdQacxLRb5S2hUcE2OtiJtxhv5iM3fbRBOJm6%2BFRCmHGo00L%2BfPMFXoCVLdXO5eTdRhfPlbMdm7SwZCV8r59lTPsedDWUuUuQOp6GNuQdamhAloRVHZK3%2Fw%3D%3D&code=52666014& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;ul&gt;
+  &lt;li class="noted"&gt;Diego&lt;/li&gt;
+  &lt;li&gt;Shilpa&lt;/li&gt;
+  &lt;li class="noted"&gt;Caterina&lt;/li&gt;
+  &lt;li&gt;Jayla&lt;/li&gt;
+  &lt;li&gt;Tyrone&lt;/li&gt;
+  &lt;li&gt;Ricardo&lt;/li&gt;
+  &lt;li class="noted"&gt;Gila&lt;/li&gt;
+  &lt;li&gt;Sienna&lt;/li&gt;
+  &lt;li&gt;Titilayo&lt;/li&gt;
+  &lt;li class="noted"&gt;Lexi&lt;/li&gt;
+  &lt;li&gt;Aylin&lt;/li&gt;
+  &lt;li&gt;Leo&lt;/li&gt;
+  &lt;li&gt;Leyla&lt;/li&gt;
+  &lt;li class="noted"&gt;Bruce&lt;/li&gt;
+  &lt;li&gt;Aisha&lt;/li&gt;
+  &lt;li&gt;Veronica&lt;/li&gt;
+  &lt;li class="noted"&gt;Kyouko&lt;/li&gt;
+  &lt;li&gt;Shireen&lt;/li&gt;
+  &lt;li&gt;Tanya&lt;/li&gt;
+  &lt;li class="noted"&gt;Marlene&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>* {
+  font-family: sans-serif;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 1.2rem;
+  padding-left: 0;
+}
+
+li {
+  margin: 0.125rem;
+  padding: 0.25rem;
+}
+
+li {
+  border: 1px solid tomato;
+}
+
+.noted {
+  border-bottom: 5px solid tomato;
+}
+li:nth-child(even of .noted) {
+  background-color: tomato;
+  border-bottom-color: seagreen;
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code></code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=22a80b0b4a89d4a41f85ef231147a52524f35736&amp;state=fVJNT9wwEP0rVk6lapaCxCW7rARFQir0UlY95WLiSTIwGUe2QzdF%2FPdOsmSFs2gvifP8Pjx%2BeU3q0FCSJauO1jkrtSJUBWnvL%2FOEbQCTJ%2BsbhMquTgknxvqhRmr1R%2BhA9EMHcMgRaf1T9xQjm95Zhgj6jYV2xh51v8WZzwMCz8I2GITVHze6hy1GqquekCPkHuzsezbEgem164p4piv0dXy6PyCDy6RHje562z0fXL0DiE%2B40dwfN%2FqlHcH%2BnlenY9vJt6TwXsr%2Fql4HYWk5pKVukPpMec0%2B9VJhucz5LeecO9rRDPpW7jVTJcF2OQplkf51us3U8BwxQh9SH3qCTLFUvNwnePwn2Nni3EEzoq02BrlKCcqQqe9Tnowx5jXaVciysTg7v5hpBnQCI9GjdQacxLRb5S2hUcE2OtiJtxhv5iM3fbRBOJm6%2BFRCmHGo00L%2BfPMFXoCVLdXO5eTdRhfPlbMdm7SwZCV8r59lTPsedDWUuUuQOp6GNuQdamhAloRVHZK3%2Fw%3D%3D&amp;code=52666014&amp;" class="leave">Open in Playground</a>
+          <a href="https://22a80b0b4a89d4a41f85ef231147a52524f35736.mdnplay.dev/en-US/docs/Web/CSS/Reference/Selectors/:nth-child/runner.html?state=fVJNT9wwEP0rVk6lapaCxCW7rARFQir0UlY95WLiSTIwGUe2QzdF%2FPdOsmSFs2gvifP8Pjx%2BeU3q0FCSJauO1jkrtSJUBWnvL%2FOEbQCTJ%2BsbhMquTgknxvqhRmr1R%2BhA9EMHcMgRaf1T9xQjm95Zhgj6jYV2xh51v8WZzwMCz8I2GITVHze6hy1GqquekCPkHuzsezbEgem164p4piv0dXy6PyCDy6RHje562z0fXL0DiE%2B40dwfN%2FqlHcH%2BnlenY9vJt6TwXsr%2Fql4HYWk5pKVukPpMec0%2B9VJhucz5LeecO9rRDPpW7jVTJcF2OQplkf51us3U8BwxQh9SH3qCTLFUvNwnePwn2Nni3EEzoq02BrlKCcqQqe9Tnowx5jXaVciysTg7v5hpBnQCI9GjdQacxLRb5S2hUcE2OtiJtxhv5iM3fbRBOJm6%2BFRCmHGo00L%2BfPMFXoCVLdXO5eTdRhfPlbMdm7SwZCV8r59lTPsedDWUuUuQOp6GNuQdamhAloRVHZK3%2Fw%3D%3D&amp;code=a7b787c4-5b56-4ba1-bedd-df5a5ca6bf52" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

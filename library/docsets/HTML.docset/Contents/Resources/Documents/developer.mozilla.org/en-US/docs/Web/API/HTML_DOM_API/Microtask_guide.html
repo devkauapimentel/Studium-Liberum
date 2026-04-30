@@ -1,0 +1,755 @@
+<html><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:42:45 GMT --><head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Using microtasks in JavaScript with queueMicrotask()</title>
+          
+          <script>try {
+  document.documentElement.dataset.theme =
+    localStorage.getItem("theme") || "light dark";
+} catch (error) {
+  console.warn("Unable to set theme", error);
+}
+
+try {
+  if (localStorage.getItem("nop") === "yes") {
+    document.documentElement.dataset["nop"] = "yes";
+  }
+} catch (error) {
+  console.warn("Unable to set nop", error);
+}
+</script>
+          <link rel="stylesheet" href="../../../../../static/client/styles-global.03146ed4c65bc5ea.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/270.66bae6059a1c23f9.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-layout.632d2f3884f10ca3.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-content-section.2ee991ba88f986cf.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-heading-anchor.0eec5185ab9425b7.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-toc.9b9bd019efd16b86.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-article-footer.81ae18c89fc527dc.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-left-sidebar.6f954e8939555f77.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-page-layout.5a4354f33e894319.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-a11y-menu.5796ee87cb69f93f.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-navigation.3a34ee593a554c40.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-logo.aea5ff6edf1b9cfb.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-menu.3376b3e11656fba0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs-bar.9a51a3c76a6231d0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs.d06ce8d09f42feb8.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-footer.a2850e459e2d290b.css" fetchpriority="high">
+          <link rel="preload" href="../../../../../static/client/jetbrains-mono-latin.119994ed445212c7.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low"><link rel="preload" href="../../../../../static/client/inter-latin.9a3b1bc220d426ef.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+          <script data-cfasync="false" data-report-only="on" data-prompt="0" src="../../../../../../transcend-cdn.com/cm/d556c3a1-e57c-4bdf-a490-390a1aebf6dd/airgap.js"></script>
+          <script src="../../../../../static/client/runtime.c294a6bdc7a42570.js" type="module"></script><script src="../../../../../static/client/1111.53dba753dc3eb961.js" type="module"></script><script src="../../../../../static/client/8903.f870aafb338b203a.js" type="module"></script><script src="../../../../../static/client/index.9a449352d879bbd5.js" type="module"></script>
+          
+    <link rel="icon" sizes="32x32" href="../../../../../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../../../../../favicon.svg">
+   <meta name="description" content="A microtask is a short function which is executed after the function or program which created it exits and only if the JavaScript execution stack is empty, but before returning control to the event loop being used by the user agent to drive the script's execution environment."><meta name="og:url" content="https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide"><meta name="og:title" content="Using microtasks in JavaScript with queueMicrotask() - Web APIs | MDN"><meta name="og:locale" content="en_US"><meta name="og:description" content="A microtask is a short function which is executed after the function or program which created it exits and only if the JavaScript execution stack is empty, but before returning control to the event loop being used by the user agent to drive the script's execution environment."><meta name="og:image" content="https://developer.mozilla.org/mdn-social-image.46ac2375.png"><meta name="og:image:type" content="image/png"><meta name="og:image:height" content="1024"><meta name="og:image:width" content="1024"><meta name="og:image:alt" content="The MDN logo"><meta name="og:site_name" content="MDN Web Docs"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="MozDevNet">
+          <link rel="canonical" href="Microtask_guide.html">
+          <link rel="apple-touch-icon" href="../../../../../apple-touch-icon.png">
+          <link rel="manifest" href="../../../../../manifest.json">
+          <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/opensearch.xml" title="MDN Web Docs">
+          <link rel="alternate" type="application/rss+xml" title="MDN Blog RSS Feed" href="https://developer.mozilla.org/en-US/blog/rss.xml">
+        </head>
+        
+      <body class="page-layout">
+        <ul class="a11y-menu">
+      <li>
+        <a href="#content">Skip to main content</a>
+      </li>
+      <li>
+        <a href="#search">Skip to search</a>
+      </li>
+    </ul>
+        <div class="page-layout__banner" data-scheme="">
+          <mdn-placement-top></mdn-placement-top>
+        </div>
+        <header class="page-layout__header">
+          
+      <nav class="navigation" data-scheme="" data-open="false">
+        <div class="navigation__logo">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">
+        <svg class="logo__image" width="83" height="24" viewBox="0 0 83 24" role="img">
+          <title>MDN</title>
+          <path class="logo__letter" d="M9.4 0 2.81 21.17H.12L6.69 0H9.4Zm2.38 0v21.17H9.4V0h2.4Zm9.27 0-6.56 21.17H11.8L18.36 0h2.69Zm2.39 0v21.17h-2.4V0h2.4Z"></path>
+          <path class="logo__text" d="M45.55 16.83h-3.93v-1.27h.87v-3.63c0-.85-.16-1.45-.48-1.82a1.65 1.65 0 0 0-1.3-.52c-.74 0-1.3.25-1.66.78a2.98 2.98 0 0 0-.58 1.58v3.59h1.38v1.26h-3.93v-1.26h.87v-3.6c0-.88-.16-1.48-.48-1.83a1.7 1.7 0 0 0-1.29-.52 1.93 1.93 0 0 0-1.65.75 2.85 2.85 0 0 0-.58 1.6v3.62h1.59v1.27h-4.64v-1.27h1.37V9.75h-1.4V8.46h3.08v1.47c.28-.48.62-.87 1.08-1.2a3 3 0 0 1 1.68-.45c.67 0 1.22.16 1.73.48.5.32.85.8 1.03 1.47.25-.57.62-1.03 1.13-1.4.5-.37 1.1-.55 1.81-.55.8 0 1.5.25 2.05.75.55.51.85 1.3.85 2.35v4.18h1.4v1.27Zm9.77 0H52.3v-1.66c-.27.51-.66.95-1.13 1.29-.56.4-1.23.59-1.9.55-1.11 0-2-.37-2.67-1.12a4.41 4.41 0 0 1-1-3.06c0-1.15.3-2.2.93-3.15.6-.94 1.58-1.43 2.94-1.43 1.36 0 2.25.5 2.83 1.5V5.22h-2V3.93h3.63v11.63h1.38v1.27Zm-3.06-3.86v-1.02a2.28 2.28 0 0 0-.73-1.67 2.4 2.4 0 0 0-1.66-.65 2.18 2.18 0 0 0-1.88.9 3.63 3.63 0 0 0-.65 2.2c0 .95.23 1.68.7 2.19.45.5 1.03.76 1.7.76.73 0 1.33-.3 1.79-.88.48-.6.71-1.21.73-1.83Zm14.14 3.86h-4.43v-1.27h1.37v-3.63c0-.85-.16-1.45-.5-1.82a1.68 1.68 0 0 0-1.31-.52c-.71 0-1.29.23-1.7.69a2.52 2.52 0 0 0-.67 1.6v3.66h1.38v1.26H56.1v-1.26h1.38v-5.8h-1.42V8.47h3.12V9.9c.6-1.06 1.57-1.6 2.92-1.6.83 0 1.54.26 2.12.77.57.5.85 1.28.85 2.34v4.19h1.38v1.24h-.05Z"></path>
+          <path class="logo__cursor" d="M67.71 21.98H83V24H67.71v-2.02Z"></path>
+        </svg>
+      </a>
+    </div>
+        <div class="navigation__search" data-view="mobile">
+          <mdn-search-button></mdn-search-button>
+        </div>
+        <button class="navigation__button" type="button" aria-expanded="false" aria-controls="navigation__popup" aria-label="Toggle navigation"></button>
+        <div class="navigation__popup" id="navigation__popup">
+          <div class="navigation__menu">
+      <nav class="menu">
+        <div class="menu__tab" data-section="html">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">HTML</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="../../HTML.html" data-glean-id="menu_click_menu: html -&gt; /en-US/docs/Web/HTML">HTML: Markup language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>HTML reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../HTML/Reference/Elements.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Elements">Elements</a>
+                              </li><li>
+                                <a href="../../HTML/Reference/Global_attributes.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Global_attributes">Global attributes</a>
+                              </li><li>
+                                <a href="../../HTML/Reference/Attributes.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Attributes">Attributes</a>
+                              </li><li>
+                                <a href="../../HTML/Reference.html" aria-label="See all HTML references" title="See all HTML references" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>HTML guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../HTML/Guides/Responsive_images.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Responsive_images">Responsive images</a>
+                              </li><li>
+                                <a href="../../HTML/Guides/Cheatsheet.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Cheatsheet">HTML cheatsheet</a>
+                              </li><li>
+                                <a href="../../HTML/Guides/Date_and_time_formats.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Date_and_time_formats">Date &amp; time formats</a>
+                              </li><li>
+                                <a href="../../HTML/Guides.html" aria-label="See all HTML guides" title="See all HTML guides" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Markup languages</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/SVG">SVG</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/MathML">MathML</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/XML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/XML">XML</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="css">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">CSS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" data-glean-id="menu_click_menu: css -&gt; /en-US/docs/Web/CSS">CSS: Styling language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>CSS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Properties">Properties</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Selectors">Selectors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/At-rules">At-rules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Values">Values</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" aria-label="See all CSS references" title="See all CSS references" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>CSS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Box_model/Introduction">Box model</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Animations/Using">Animations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Flexbox</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Applying_color" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Colors/Applying_color">Colors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides" aria-label="See all CSS guides" title="See all CSS guides" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Layout cookbook</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts">Column layouts</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element">Centering an element</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Card" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Card">Card component</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="javascript">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label" data-type="long">JavaScript</span><span class="menu__tab-label" data-type="short">JS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" data-glean-id="menu_click_menu: javascript -&gt; /en-US/docs/Web/JavaScript">JavaScript: Scripting language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>JS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Statements">Statements &amp; declarations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Functions">Functions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" aria-label="See all JavaScript references" title="See all JavaScript references" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>JS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow &amp; error handing</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops and iteration</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Working_with_objects">Working with objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Using_classes">Using classes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" aria-label="See all JavaScript guides" title="See all JavaScript guides" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="webapis">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Web APIs</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/API" data-glean-id="menu_click_menu: webapis -&gt; /en-US/docs/Web/API">Web APIs: Programming interfaces</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Web API reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/File_System_API">File system API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API">Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Geolocation_API">Geolocation API</a>
+                              </li><li>
+                                <a href="../HTML_DOM_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/HTML_DOM_API">HTML DOM API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Push_API">Push API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Service_Worker_API">Service worker API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API" aria-label="See all Web API guides" title="See all Web API guides" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Web API guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API">Using the Web animation API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API/Using_Fetch">Using the Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/History_API/Working_with_the_History_API">Working with the History API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Using the Web speech API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using web workers</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="all">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">All</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web" data-glean-id="menu_click_menu: all -&gt; /en-US/docs/Web">All web technology</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Technologies</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../Accessibility.html" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Accessibility">Accessibility</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/HTTP">HTTP</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/URI" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/URI">URI</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Mozilla/Add-ons/WebExtensions">Web extensions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/WebAssembly">WebAssembly</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/WebDriver">WebDriver</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web" aria-label="See all web technology references" title="See all web technology references" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Topics</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Media" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Media">Media</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Performance">Performance</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Privacy" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Privacy">Privacy</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Security">Security</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Progressive_web_apps">Progressive web apps</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="learn">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Learn</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" data-glean-id="menu_click_menu: learn -&gt; /en-US/docs/Learn_web_development">Learn web development</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Frontend developer course</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Getting_started">Getting started modules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core">Core modules</a>
+                              </li><li>
+                                <a class="" href="https://developer.mozilla.org/en-US/curriculum/" data-glean-id="menu_click_submenu: learn -&gt; /en-US/curriculum/">MDN Curriculum</a>
+                              </li><li>
+                                <a class="external" href="https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar" data-glean-id="menu_click_submenu: learn -&gt; https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar">Check out the video course from Scrimba, our partner</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn HTML</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn CSS</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics module</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn JavaScript</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript module</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="tools">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Tools</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Discover our tools
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="circle-play" href="https://developer.mozilla.org/en-US/play" data-glean-id="menu_click_submenu: tools -&gt; /en-US/play">Playground</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="shield-check" href="https://developer.mozilla.org/en-US/observatory" data-glean-id="menu_click_submenu: tools -&gt; /en-US/observatory">HTTP Observatory</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator">Border-image generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator">Border-radius generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator">Box-shadow generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_format_converter" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_format_converter">Color format converter</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_mixer" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_mixer">Color mixer</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes/Shape_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Shapes/Shape_generator">Shape generator</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="about">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">About</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Get to know MDN better
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="mdn-m" href="https://developer.mozilla.org/en-US/about" data-glean-id="menu_click_submenu: about -&gt; /en-US/about">About MDN</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="chart-no-axes-combined" href="https://developer.mozilla.org/en-US/advertising" data-glean-id="menu_click_submenu: about -&gt; /en-US/advertising">Advertise with us</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="users" href="https://developer.mozilla.org/en-US/community" data-glean-id="menu_click_submenu: about -&gt; /en-US/community">Community</a>
+                              </li><li>
+                                <a class="menu__panel-icon external" data-icon="github" href="https://github.com/mdn" data-glean-id="menu_click_submenu: about -&gt; https://github.com/mdn">MDN on GitHub</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="blog">
+            <a class="menu__tab-link" href="https://developer.mozilla.org/en-US/blog/" data-glean-id="menu_click_link: top-level -&gt; /en-US/blog/">Blog</a>
+          </div>
+      </nav>
+    </div>
+          <div class="navigation__search" data-view="desktop">
+            <mdn-search-button></mdn-search-button>
+          </div>
+          <mdn-user-menu></mdn-user-menu>
+        </div>
+      </nav>
+      <mdn-search-modal id="search"></mdn-search-modal>
+     
+      
+    
+        </header>
+        <div class="page-layout__main">
+      <div class="breadcrumbs-bar" data-scheme="">
+        <mdn-toggle-sidebar></mdn-toggle-sidebar> 
+      <ol class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+        
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web" property="item" typeof="WebPage"><span property="name">Web</span></a>
+              <meta property="position" content="1">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API" property="item" typeof="WebPage"><span property="name">Web APIs</span></a>
+              <meta property="position" content="2">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../HTML_DOM_API.html" property="item" typeof="WebPage"><span property="name">HTML DOM API</span></a>
+              <meta property="position" content="3">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="Microtask_guide.html" property="item" typeof="WebPage"><span property="name">Using microtasks in JavaScript with queueMicrotask()</span></a>
+              <meta property="position" content="4">
+            </li>
+          
+      </ol>
+    
+        <mdn-collection-save-button doc-url="/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide" doc-title="Using microtasks in JavaScript with queueMicrotask()"></mdn-collection-save-button>
+        <mdn-color-theme></mdn-color-theme>
+        <mdn-language-switcher locale="en-US" native="English (US)" translations="[{&quot;locale&quot;:&quot;en-US&quot;,&quot;title&quot;:&quot;Using microtasks in JavaScript with queueMicrotask()&quot;,&quot;native&quot;:&quot;English (US)&quot;},{&quot;locale&quot;:&quot;de&quot;,&quot;title&quot;:&quot;Verwenden von Microtasks in JavaScript mit queueMicrotask()&quot;,&quot;native&quot;:&quot;Deutsch&quot;},{&quot;locale&quot;:&quot;fr&quot;,&quot;title&quot;:&quot;Utiliser les microtâches en JavaScript avec queueMicrotask()&quot;,&quot;native&quot;:&quot;Français&quot;},{&quot;locale&quot;:&quot;ja&quot;,&quot;title&quot;:&quot;JavaScript で queueMicrotask() によるマイクロタスクの使用&quot;,&quot;native&quot;:&quot;日本語&quot;},{&quot;locale&quot;:&quot;ko&quot;,&quot;title&quot;:&quot;JavaScript의 queueMicrotask()와 함께 마이크로태스크 사용하기&quot;,&quot;native&quot;:&quot;한국어&quot;},{&quot;locale&quot;:&quot;zh-CN&quot;,&quot;title&quot;:&quot;在 JavaScript 中通过 queueMicrotask() 使用微任务&quot;,&quot;native&quot;:&quot;中文 (简体)&quot;}]" url="Microtask_guide.html"></mdn-language-switcher>
+      </div><div class="layout__2-sidebars-inline reference-layout">
+        <main id="content" class="layout__content">
+          <div class="layout__header reference-layout__header">
+            
+            
+            <mdn-survey></mdn-survey>
+            <h1>Using microtasks in JavaScript with queueMicrotask()</h1>
+             <section class="content-section">
+    
+    <p>A <strong>microtask</strong> is a short function which is executed after the function or program which created it exits <em>and</em> only if the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model#stack_and_execution_contexts">JavaScript execution stack</a> is empty, but before returning control to the event loop being used by the <a href="https://developer.mozilla.org/en-US/docs/Glossary/User_agent">user agent</a> to drive the script's execution environment.</p>
+<p>This event loop may be either the browser's main event loop or the event loop driving a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API">web worker</a>. This lets the given function run without the risk of interfering with another script's execution, yet also ensures that the microtask runs before the user agent has the opportunity to react to actions taken by the microtask.</p>
+<p>JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">promises</a> and the <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver">Mutation Observer API</a> both use the microtask queue to run their callbacks, but there are other times when the ability to defer work until the current event loop pass is wrapping up is helpful. In order to allow microtasks to be used by third-party libraries, frameworks, and polyfills, the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/queueMicrotask" title="queueMicrotask()"><code>queueMicrotask()</code></a> method is exposed on the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window"><code>Window</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope"><code>WorkerGlobalScope</code></a> interfaces.</p>
+  </section>
+          </div>
+          <aside class="layout__right-sidebar reference-layout__toc">
+            <nav class="reference-toc">
+      <h2>In this article</h2>
+      <ul>
+        <li><a href="#tasks_vs._microtasks">Tasks vs. microtasks</a></li><li><a href="#using_microtasks">Using microtasks</a></li><li><a href="#examples">Examples</a></li><li><a href="#see_also">See also</a></li>
+      </ul>
+    </nav>
+            <mdn-placement-sidebar></mdn-placement-sidebar>
+          </aside>
+          <div class="layout__body reference-layout__body">
+            <section class="content-section" aria-labelledby="tasks_vs._microtasks">
+    <!--lit-part pMZj//bkD14=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Tasks%20vs%2E%20microtasks"></a><h2 id="tasks_vs._microtasks" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#tasks_vs._microtasks">Tasks vs. microtasks</a></h2><!--/lit-part-->
+    <p>To properly discuss microtasks, it's first useful to know what a JavaScript task is and how microtasks differ from tasks. This is a quick, simplified explanation, but if you would like more details, you can read the information in the article <a href="Microtask_guide/In_depth.html">In depth: Microtasks and the JavaScript runtime environment</a>.</p>
+  </section><section class="content-section" aria-labelledby="tasks">
+    <!--lit-part jKbQudHJyNA=--><!--lit-node 0--><h3 id="tasks" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#tasks">Tasks</a></h3><!--/lit-part-->
+    <p>A <strong>task</strong> is anything which is scheduled to be run by the standard mechanisms such as initially starting to run a program, an event being dispatched asynchronously, or an interval or timeout being fired. These all get scheduled on the <strong>task queue</strong>.</p>
+<p>For example, tasks get added to the task queue when:</p>
+<ul>
+<li>A new JavaScript program or subprogram is executed (such as from a console, or by running the code in a <a href="../../HTML/Reference/Elements/script.html"><code>&lt;script&gt;</code></a> element) directly.</li>
+<li>The user clicks an element. A task is then created and executes all event callbacks.</li>
+<li>A timeout or interval created with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout" title="setTimeout()"><code>setTimeout()</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval" title="setInterval()"><code>setInterval()</code></a> is reached, causing the corresponding callback to be added to the task queue.</li>
+</ul>
+<p>The event loop driving your code handles these tasks one after another, in the order in which they were enqueued. The oldest runnable task in the task queue will be executed during a single iteration of the event loop. After that, microtasks will be executed until the microtask queue is empty, and then the browser may choose to update rendering. Then the browser moves on to the next iteration of event loop.</p>
+  </section><section class="content-section" aria-labelledby="microtasks">
+    <!--lit-part Kah42O47sAs=--><!--lit-node 0--><h3 id="microtasks" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#microtasks">Microtasks</a></h3><!--/lit-part-->
+    <p>At first the difference between microtasks and tasks seems minor. And they are similar; both are made up of JavaScript code which gets placed on a queue and run at an appropriate time. However, whereas the event loop runs only the tasks present on the queue when the iteration began, one after another, it handles the microtask queue very differently.</p>
+<p>There are two key differences:</p>
+<ol>
+<li>Each time a task exits, the event loop checks to see if the task is returning control to other JavaScript code. If not, it runs all of the microtasks in the microtask queue. The microtask queue is, then, processed multiple times per iteration of the event loop, including after handling events and other callbacks.</li>
+<li>If a microtask adds more microtasks to the queue by calling <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/queueMicrotask" title="queueMicrotask()"><code>queueMicrotask()</code></a>, those newly-added microtasks <em>execute before the next task is run</em>. That's because the event loop will keep calling microtasks until there are none left in the queue, even if more keep getting added.</li>
+</ol>
+<div class="notecard warning">
+<p><strong>Warning:</strong>
+Since microtasks can themselves enqueue more microtasks, and the event loop continues processing microtasks until the queue is empty, there's a real risk of getting the event loop endlessly processing microtasks. Be cautious with how you go about recursively adding microtasks.</p>
+</div>
+  </section><section class="content-section" aria-labelledby="using_microtasks">
+    <!--lit-part M9SSQ/LY0b4=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Using%20microtasks"></a><h2 id="using_microtasks" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#using_microtasks">Using microtasks</a></h2><!--/lit-part-->
+    <p>Before getting farther into this, it's important to note again that most developers won't use microtasks much, if at all. They're a highly specialized feature of modern browser-based JavaScript development, allowing you to schedule code to jump in front of other things in the long set of things waiting to happen on the user's computer. Abusing this capability will lead to performance problems.</p>
+  </section><section class="content-section" aria-labelledby="enqueueing_microtasks">
+    <!--lit-part Dak44hAflsg=--><!--lit-node 0--><h3 id="enqueueing_microtasks" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#enqueueing_microtasks">Enqueueing microtasks</a></h3><!--/lit-part-->
+    <p>As such, you should typically use microtasks only when there's no other solution, or when creating frameworks or libraries that need to use microtasks in order to create the functionality they're implementing. While there have been tricks available that made it possible to enqueue microtasks in the past (such as by creating a promise that resolves immediately), the addition of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/queueMicrotask" title="queueMicrotask()"><code>queueMicrotask()</code></a> method adds a standard way to introduce a microtask safely and without tricks.</p>
+<p>By introducing <code>queueMicrotask()</code>, the quirks that arise when sneaking in using promises to create microtasks can be avoided. For instance, when using promises to create microtasks, exceptions thrown by the callback are reported as rejected promises rather than being reported as standard exceptions. Also, creating and destroying promises takes additional overhead both in terms of time and memory, which a function that properly enqueues microtasks avoids.</p>
+<p>Pass the JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function"><code>Function</code></a> to call while the context is handling microtasks into the <code>queueMicrotask()</code> method, which is exposed on the global context as defined by either the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window"><code>Window</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker"><code>Worker</code></a> interface, depending on the current execution context.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>queueMicrotask(() =&gt; {
+  /* code to run in the microtask here */
+});
+</code></pre></div>
+<p>The microtask function itself takes no parameters, and does not return a value.</p>
+  </section><section class="content-section" aria-labelledby="when_to_use_microtasks">
+    <!--lit-part pKjx1O+INJ4=--><!--lit-node 0--><h3 id="when_to_use_microtasks" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#when_to_use_microtasks">When to use microtasks</a></h3><!--/lit-part-->
+    <p>In this section, we'll take a look at scenarios in which microtasks are particularly useful. Generally, it's about capturing or checking results, or performing cleanup, after the main body of a JavaScript execution context exits—but <em>before</em> any event handlers, timeouts and intervals, or other callbacks are processed.</p>
+<p>When is that useful?</p>
+<p>The main reason to use microtasks is to ensure consistent ordering of tasks, even when results or data is available synchronously, but while simultaneously reducing the risk of user-discernible delays in operations.</p>
+<h4 id="ensuring_ordering_on_conditional_use_of_promises">Ensuring ordering on conditional use of promises</h4>
+<p>One situation in which microtasks can be used to ensure that the ordering of execution is always consistent is when promises are used in one clause of an <code>if...else</code> statement (or other conditional statement), but not in the other clause. Consider code such as this:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>customElement.prototype.getData = function (url) {
+  if (this.cache[url]) {
+    this.data = this.cache[url];
+    this.dispatchEvent(new Event("load"));
+  } else {
+    fetch(url)
+      .then((result) =&gt; result.arrayBuffer())
+      .then((data) =&gt; {
+        this.cache[url] = data;
+        this.data = data;
+        this.dispatchEvent(new Event("load"));
+      });
+  }
+};
+</code></pre></div>
+<p>The problem introduced here is that by using a task in one branch of the <code>if...else</code> statement (in the case in which the image is available in the cache) but having promises involved in the <code>else</code> clause, we have a situation in which the order of operations can vary; for example, as seen below.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>element.addEventListener("load", () =&gt; console.log("Loaded data"));
+console.log("Fetching data…");
+element.getData();
+console.log("Data fetched");
+</code></pre></div>
+<p>Executing this code twice in a row gives the following results.</p>
+<p>When the data is not cached:</p>
+<pre class="language-plain notranslate">Fetching data…
+Data fetched
+Loaded data
+</pre>
+<p>When the data is cached:</p>
+<pre class="language-plain notranslate">Fetching data…
+Loaded data
+Data fetched
+</pre>
+<p>Even worse, sometimes the element's <code>data</code> property will be set, but other times it won't complete before this code finishes running.</p>
+<p>We can ensure consistent ordering of these operations by using a microtask in the <code>if</code> clause to balance the two clauses:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>customElement.prototype.getData = function (url) {
+  if (this.cache[url]) {
+    queueMicrotask(() =&gt; {
+      this.data = this.cache[url];
+      this.dispatchEvent(new Event("load"));
+    });
+  } else {
+    fetch(url)
+      .then((result) =&gt; result.arrayBuffer())
+      .then((data) =&gt; {
+        this.cache[url] = data;
+        this.data = data;
+        this.dispatchEvent(new Event("load"));
+      });
+  }
+};
+</code></pre></div>
+<p>This balances the clauses by having both situations handle the setting of <code>data</code> and firing of the <code>load</code> event within a microtask (using <code>queueMicrotask()</code> in the <code>if</code> clause and using the promises used by <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch" title="fetch()"><code>fetch()</code></a> in the <code>else</code> clause).</p>
+<h4 id="batching_operations">Batching operations</h4>
+<p>You can also use microtasks to collect multiple requests from various sources into a single batch, avoiding the possible overhead involved with multiple calls to handle the same kind of work.</p>
+<p>The snippet below creates a function that batches multiple messages into an array, using a microtask to send them as a single object when the context exits.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const messageQueue = [];
+
+let sendMessage = (message) =&gt; {
+  messageQueue.push(message);
+
+  if (messageQueue.length === 1) {
+    queueMicrotask(() =&gt; {
+      const json = JSON.stringify(messageQueue);
+      messageQueue.length = 0;
+      fetch("url-of-receiver", json);
+    });
+  }
+};
+</code></pre></div>
+<p>When <code>sendMessage()</code> gets called, the specified message is first pushed onto the message queue array. Then things get interesting.</p>
+<p>If the message we just added to the array is the first one, we enqueue a microtask that will send a batch. The microtask will execute, as always, when the JavaScript execution path reaches the top level, just before running callbacks. That means that any further calls to <code>sendMessage()</code> made in the interim will push their messages onto the message queue, but because of the array length check before adding a microtask, no new microtask is enqueued.</p>
+<p>When the microtask runs, then, it has an array of potentially many messages waiting for it. It starts by encoding it as JSON using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify"><code>JSON.stringify()</code></a> method. After that, the array's contents aren't needed anymore, so we empty the <code>messageQueue</code> array. Finally, we use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch" title="fetch()"><code>fetch()</code></a> method to send the JSON string to the server.</p>
+<p>This lets every call to <code>sendMessage()</code> made during the same iteration of the event loop add their messages to the same <code>fetch()</code> operation, without potentially having other tasks such as timeouts or the like delay the transmission.</p>
+<p>The server will receive the JSON string, then will presumably decode it and process the messages it finds in the resulting array.</p>
+  </section><section class="content-section" aria-labelledby="examples">
+    <!--lit-part cjTOnCoGGWc=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Examples"></a><h2 id="examples" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#examples">Examples</a></h2><!--/lit-part-->
+    <!--?-->
+  </section><section class="content-section" aria-labelledby="simple_microtask_example">
+    <!--lit-part lZEd20ecNhg=--><!--lit-node 0--><h3 id="simple_microtask_example" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#simple_microtask_example">Simple microtask example</a></h3><!--/lit-part-->
+    <p>In this simple example, we see that enqueueing a microtask causes the microtask's callback to run after the body of this top-level script is done running.</p>
+<div class="code-example"><pre class="language-html hidden notranslate live-sample---simple_microtask_example"><code>&lt;pre id="log"&gt;&lt;/pre&gt;
+</code></pre></div>
+<h4 id="javascript">JavaScript</h4>
+<div class="code-example"><pre class="language-js hidden notranslate live-sample---simple_microtask_example"><code>const logElem = document.getElementById("log");
+const log = (s) =&gt; (logElem.innerText += `${s}\n`);
+</code></pre></div>
+<p>In the following code, we see a call to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/queueMicrotask" title="queueMicrotask()"><code>queueMicrotask()</code></a> used to schedule a microtask to run. This call is bracketed by calls to <code>log()</code>, a custom function that outputs text to the screen.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate live-sample---simple_microtask_example"><code>log("Before enqueueing the microtask");
+queueMicrotask(() =&gt; {
+  log("The microtask has run.");
+});
+log("After enqueueing the microtask");
+</code></pre></div>
+<h4 id="result">Result</h4>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="Simple microtask example sample" id="frame_simple_microtask_example" width="640" height="80" src="Microtask_guide/_sample_.simple_microtask_example48422358/984994156b7f61fd14d59e26c9ebb103dd65eaf8.mdnplay.dev/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/runner.html-_-uuid=984994156b7f61fd14d59e26c9ebb103dd65eaf8&amp;state=hVA9b4NADP0r1qnDoVZ0bwCpkTpkyMZ4AwgcuJbzJXdGaoX47zGQpN06%25252Ben5fVieVM9uUG8qOwcE2%25252BZGDb4zqshehSgMqRfVxCgCAZ%25252FLbDxFBhF9DOggh9Y3o0Pi.html" data-live-path="/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/" data-live-id="simple_microtask_example" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+  </section><section class="content-section" aria-labelledby="timeout_and_microtask_example">
+    <!--lit-part ZcyKZimfiZo=--><!--lit-node 0--><h3 id="timeout_and_microtask_example" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#timeout_and_microtask_example">Timeout and microtask example</a></h3><!--/lit-part-->
+    <p>In this example, a timeout is scheduled to fire after zero milliseconds (or "as soon as possible"). This demonstrates the difference between what "as soon as possible" means when scheduling a new task (such as by using <code>setTimeout()</code>) versus using a microtask.</p>
+<div class="code-example"><pre class="language-html hidden notranslate live-sample---timeout_and_microtask_example"><code>&lt;pre id="log"&gt;&lt;/pre&gt;
+</code></pre></div>
+<h4 id="javascript_2">JavaScript</h4>
+<div class="code-example"><pre class="language-js hidden notranslate live-sample---timeout_and_microtask_example"><code>const logElem = document.getElementById("log");
+const log = (s) =&gt; (logElem.innerText += `${s}\n`);
+</code></pre></div>
+<p>In the following code, we see a call to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/queueMicrotask" title="queueMicrotask()"><code>queueMicrotask()</code></a> used to schedule a microtask to run. This call is bracketed by calls to <code>log()</code>, a custom function that outputs text to the screen.</p>
+<p>The code below schedules a timeout to occur in zero milliseconds, then enqueues a microtask. This is bracketed by calls to <code>log()</code> to output additional messages.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate live-sample---timeout_and_microtask_example"><code>const callback = () =&gt; log("Regular timeout callback has run");
+
+const urgentCallback = () =&gt; log("*** Oh noes! An urgent callback has run!");
+
+log("Main program started");
+setTimeout(callback, 0);
+queueMicrotask(urgentCallback);
+log("Main program exiting");
+</code></pre></div>
+<h4 id="result_2">Result</h4>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="Timeout and microtask example sample" id="frame_timeout_and_microtask_example" width="640" height="100" src="Microtask_guide/_sample_.timeout_and_microtask_example24965628/ca83c69d2655587be5e28acd4b9844c3d4fd1f00.mdnplay.dev/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/runner.html-_-uuid=ca83c69d2655587be5e28acd4b9844c3d4fd1f00&amp;state=bZFNT8MwDIb%25252Fihdx6Mo0OMNaCRAHDhMS2jGHhdRKw1JnJI40NO2%25252Fk9KWD7FTrOR5n1j2UbTcOXEjVvuAYJtKCueNFPXqKl%25252FUksRC6BgzkIu3%25252FtSeIkOGHh12.html" data-live-path="/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/" data-live-id="timeout_and_microtask_example" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<p>Note that the output logged from the main program body appears first, followed by the output from the microtask, followed by the timeout's callback. That's because when the task that's handling the execution of the main program exits, the microtask queue gets processed before the task queue on which the timeout callback is located. To help keep this straight, remember that tasks and microtasks are kept on separate queues, and that microtasks run first.</p>
+  </section><section class="content-section" aria-labelledby="microtask_from_a_function">
+    <!--lit-part q5RWkkrUhG8=--><!--lit-node 0--><h3 id="microtask_from_a_function" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#microtask_from_a_function">Microtask from a function</a></h3><!--/lit-part-->
+    <p>This example expands slightly on the previous one by adding a function that does some work. This function uses <code>queueMicrotask()</code> to schedule a microtask. The important thing to take away from this one is that the microtask isn't processed when the function exits, but when the main program exits.</p>
+<div class="code-example"><pre class="language-html hidden notranslate live-sample---microtask_from_a_function"><code>&lt;pre id="log"&gt;&lt;/pre&gt;
+</code></pre></div>
+<h4 id="javascript_3">JavaScript</h4>
+<div class="code-example"><pre class="language-js hidden notranslate live-sample---microtask_from_a_function"><code>const logElem = document.getElementById("log");
+const log = (s) =&gt; (logElem.innerText += `${s}\n`);
+</code></pre></div>
+<p>The main program code follows. The <code>doWork()</code> function here calls <code>queueMicrotask()</code>, yet the microtask still doesn't fire until the entire program exits, since that's when the task exits and there's nothing else on the execution stack.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate live-sample---microtask_from_a_function"><code>const callback = () =&gt; log("Regular timeout callback has run");
+
+const urgentCallback = () =&gt; log("*** Oh noes! An urgent callback has run!");
+
+const doWork = () =&gt; {
+  let result = 1;
+
+  queueMicrotask(urgentCallback);
+
+  for (let i = 2; i &lt;= 10; i++) {
+    result *= i;
+  }
+  return result;
+};
+
+log("Main program started");
+setTimeout(callback, 0);
+log(`10! equals ${doWork()}`);
+log("Main program exiting");
+</code></pre></div>
+<h4 id="result_3">Result</h4>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="Microtask from a function sample" id="frame_microtask_from_a_function" width="640" height="100" src="Microtask_guide/_sample_.microtask_from_a_function86043471/fe0b3c41dd723d23eb98fb307e6b6f6c6eaba253.mdnplay.dev/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/runner.html-_-uuid=fe0b3c41dd723d23eb98fb307e6b6f6c6eaba253&amp;state=bZJNb8IwDIb%25252Fiqk4tAUx2HFQpG3aYQc0aULapQey1msz0gQSR2Kq%25252Bt%25252Fn0nbs65JY9vs%25252BiRPXQUmVCm6C1cEiyDxJA2WKNFivrjixTnUwDTLnWMDBe7tnRjsC.html" data-live-path="/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/" data-live-id="microtask_from_a_function" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+  </section><section class="content-section" aria-labelledby="see_also">
+    <!--lit-part p88DAUaBJzA=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/See%20also"></a><h2 id="see_also" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#see_also">See also</a></h2><!--/lit-part-->
+    <ul>
+<li><a href="Microtask_guide/In_depth.html">In depth: Microtasks and the JavaScript runtime environment</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/queueMicrotask" title="queueMicrotask()"><code>queueMicrotask()</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS">Asynchronous JavaScript</a>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing">Introducing asynchronous JavaScript</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises">Graceful asynchronous programming with Promises</a></li>
+</ul>
+</li>
+</ul>
+  </section> 
+      <section class="content-section article-footer" aria-labelledby="feedback">
+        <div class="article-footer__inner">
+          <div class="article-footer__svg-container"><!--lit-part OWLzZqRMsCU=--><svg xmlns="http://www.w3.org/2000/svg" width="162" height="162" fill="none" viewBox="0 0 162 162"><mask id="b" fill="#fff"><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z"></path></mask><path stroke="url(#a)" stroke-dasharray="6, 6" stroke-width="2" d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z" mask="url(#b)" style="stroke:url(#a)" transform="translate(-63.992 -25.587)"></path><ellipse cx="8.066" cy="111.597" fill="currentColor" rx="53.677" ry="53.699" transform="matrix(.71707 -.697 .7243 .6895 0 0)"></ellipse><g clip-path="url(#c)" transform="translate(-63.992 -25.587)"><path fill="#9abff5" d="m144.256 137.379 32.906 12.434a4.41 4.41 0 0 1 2.559 5.667l-9.326 24.679a4.41 4.41 0 0 1-5.667 2.559l-8.226-3.108-2.332 6.17c-.466 1.233-.375 1.883-1.609 1.417l-2.253-.527c-.411-.155-.95-.594-1.206-1.161l-4.734-10.484-12.545-4.741a4.41 4.41 0 0 1-2.559-5.667l9.325-24.679a4.41 4.41 0 0 1 5.667-2.559m9.961 29.617 8.227 3.108 3.264-8.638-.498-6.768-4.113-1.555.548 7.258-4.319-1.632zm-12.339-4.663 8.226 3.108 3.264-8.637-.498-6.769-4.113-1.554.548 7.257-4.319-1.632z"></path></g><g clip-path="url(#d)" transform="translate(-63.992 -25.587)"><path fill="#81b0f3" d="M135.35 60.136 86.67 41.654c-3.346-1.27-7.124.428-8.394 3.775L64.414 81.938c-1.27 3.347.428 7.125 3.774 8.395l12.17 4.62-3.465 9.128c-.693 1.826-1.432 2.457.394 3.15l3.014 1.625c.609.231 1.637.274 2.477-.104l15.53-6.983 18.56 7.047c3.346 1.27 7.124-.428 8.395-3.775l13.862-36.51c1.27-3.346-.428-7.124-3.775-8.395M95.261 83.207l-12.17-4.62 4.852-12.779 7.19-7.017 6.085 2.31-7.725 7.51 6.389 2.426zm18.255 6.93-12.17-4.62 4.852-12.778 7.189-7.017 6.085 2.31-7.725 7.51 6.39 2.426z"></path></g><defs><clipPath id="c"><path fill="#fff" d="m198.638 146.586-65.056-24.583-24.583 65.057 65.056 24.582z"></path></clipPath><clipPath id="d"><path fill="#fff" d="m66.438 14.055 96.242 36.54-36.54 96.243-96.243-36.54z"></path></clipPath><linearGradient id="a" x1="97.203" x2="199.995" y1="47.04" y2="152.793" gradientUnits="userSpaceOnUse"><stop stop-color="#086dfc"></stop><stop offset=".246" stop-color="#2c81fa"></stop><stop offset=".516" stop-color="#5497f8"></stop><stop offset=".821" stop-color="#80b0f6"></stop><stop offset="1" stop-color="#9abff5"></stop></linearGradient></defs></svg><!--/lit-part--></div>
+          <h2 id="feedback">
+            Help improve MDN
+          </h2>
+          <mdn-content-feedback locale="en-US"></mdn-content-feedback>
+          <a class="article-footer__contribute" href="https://developer.mozilla.org/en-US/docs/MDN/Community/Getting_started">Learn how to contribute</a> <p class="article-footer__last-modified">
+    This page was last modified on <time datetime="2025-10-05T23:43:11.000Z">Oct 5, 2025</time> by <a href="Microtask_guide/contributors.txt">MDN contributors</a>.
+  </p> <div class="article-footer__links">
+    <a class="external" href="https://github.com/mdn/content/blob/main/files/en-us/web/api/html_dom_api/microtask_guide/index.md?plain=1" title="Folder: en-us/web/api/html_dom_api/microtask_guide (Opens in a new tab)" target="_blank" rel="noopener">View this page on GitHub</a> • <a class="external" href="https://github.com/mdn/content/issues/new?template=page-report.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FHTML_DOM_API%2FMicrotask_guide&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Fweb%2Fapi%2Fhtml_dom_api%2Fmicrotask_guide%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FHTML_DOM_API%2FMicrotask_guide%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Fweb%2Fapi%2Fhtml_dom_api%2Fmicrotask_guide%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2F6b9019694341254ad8e3e0572f03988337f6f7ae%0A*+Document+last+modified%3A+2025-10-05T23%3A43%3A11.000Z%0A%0A%3C%2Fdetails%3E" title="This will take you to GitHub to file a new issue." target="_blank" rel="noopener">Report a problem with this content</a>
+  </div>
+        </div>
+      </section>
+    
+          </div>
+        </main>
+        <aside class="layout__left-sidebar" id="main-sidebar">
+          <nav class="left-sidebar">
+      <div class="left-sidebar__header">
+        <mdn-sidebar-filter></mdn-sidebar-filter>
+      </div>
+      <div class="left-sidebar__content"><ol><li class="section"><a href="../HTML_DOM_API.html">HTML DOM API</a></li><li><details open=""><summary><span>Guides</span></summary><ol><li><em><a href="Microtask_guide.html" aria-current="page">Using microtasks in JavaScript with queueMicrotask()</a></em></li><li><a href="Microtask_guide/In_depth.html">In depth: Microtasks and the JavaScript runtime environment</a></li></ol></details></li><li><details open=""><summary><span>Interfaces</span></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/BeforeUnloadEvent"><code>BeforeUnloadEvent</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMStringMap"><code>DOMStringMap</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent"><code>ErrorEvent</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent"><code>HashChangeEvent</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageData"><code>ImageData</code></a></li><li><a href="../HTMLAnchorElement.html"><code>HTMLAnchorElement</code></a></li><li><a href="../HTMLAreaElement.html"><code>HTMLAreaElement</code></a></li><li><a href="../HTMLAudioElement.html"><code>HTMLAudioElement</code></a></li><li><a href="../HTMLBaseElement.html"><code>HTMLBaseElement</code></a></li><li><a href="../HTMLBodyElement.html"><code>HTMLBodyElement</code></a></li><li><a href="../HTMLBRElement.html"><code>HTMLBRElement</code></a></li><li><a href="../HTMLButtonElement.html"><code>HTMLButtonElement</code></a></li><li><a href="../HTMLCanvasElement.html"><code>HTMLCanvasElement</code></a></li><li><a href="../HTMLDataElement.html"><code>HTMLDataElement</code></a></li><li><a href="../HTMLDataListElement.html"><code>HTMLDataListElement</code></a></li><li><a href="../HTMLDialogElement.html"><code>HTMLDialogElement</code></a></li><li><a href="../HTMLDivElement.html"><code>HTMLDivElement</code></a></li><li><a href="../HTMLDListElement.html"><code>HTMLDListElement</code></a></li><li><a href="../HTMLDocument.html"><code>HTMLDocument</code></a></li><li><a href="../HTMLElement.html"><code>HTMLElement</code></a></li><li><a href="../HTMLEmbedElement.html"><code>HTMLEmbedElement</code></a></li><li><a href="../HTMLFieldSetElement.html"><code>HTMLFieldSetElement</code></a></li><li><a href="../HTMLFormControlsCollection.html"><code>HTMLFormControlsCollection</code></a></li><li><a href="../HTMLFormElement.html"><code>HTMLFormElement</code></a></li><li><a href="../HTMLFrameSetElement.html"><code>HTMLFrameSetElement</code></a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../HTMLGeolocationElement.html"><code>HTMLGeolocationElement</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../HTMLHeadElement.html"><code>HTMLHeadElement</code></a></li><li><a href="../HTMLHeadingElement.html"><code>HTMLHeadingElement</code></a></li><li><a href="../HTMLHRElement.html"><code>HTMLHRElement</code></a></li><li><a href="../HTMLHtmlElement.html"><code>HTMLHtmlElement</code></a></li><li><a href="../HTMLIFrameElement.html"><code>HTMLIFrameElement</code></a></li><li><a href="../HTMLImageElement.html"><code>HTMLImageElement</code></a></li><li><a href="../HTMLInputElement.html"><code>HTMLInputElement</code></a></li><li><a href="../HTMLLabelElement.html"><code>HTMLLabelElement</code></a></li><li><a href="../HTMLLegendElement.html"><code>HTMLLegendElement</code></a></li><li><a href="../HTMLLIElement.html"><code>HTMLLIElement</code></a></li><li><a href="../HTMLLinkElement.html"><code>HTMLLinkElement</code></a></li><li><a href="../HTMLMapElement.html"><code>HTMLMapElement</code></a></li><li><a href="../HTMLMediaElement.html"><code>HTMLMediaElement</code></a></li><li><a href="../HTMLMenuElement.html"><code>HTMLMenuElement</code></a></li><li><a href="../HTMLMetaElement.html"><code>HTMLMetaElement</code></a></li><li><a href="../HTMLMeterElement.html"><code>HTMLMeterElement</code></a></li><li><a href="../HTMLModElement.html"><code>HTMLModElement</code></a></li><li><a href="../HTMLObjectElement.html"><code>HTMLObjectElement</code></a></li><li><a href="../HTMLOListElement.html"><code>HTMLOListElement</code></a></li><li><a href="../HTMLOptGroupElement.html"><code>HTMLOptGroupElement</code></a></li><li><a href="../HTMLOptionElement.html"><code>HTMLOptionElement</code></a></li><li><a href="../HTMLOptionsCollection.html"><code>HTMLOptionsCollection</code></a></li><li><a href="../HTMLOutputElement.html"><code>HTMLOutputElement</code></a></li><li><a href="../HTMLParagraphElement.html"><code>HTMLParagraphElement</code></a></li><li><a href="../HTMLPictureElement.html"><code>HTMLPictureElement</code></a></li><li><a href="../HTMLPreElement.html"><code>HTMLPreElement</code></a></li><li><a href="../HTMLProgressElement.html"><code>HTMLProgressElement</code></a></li><li><a href="../HTMLQuoteElement.html"><code>HTMLQuoteElement</code></a></li><li><a href="../HTMLScriptElement.html"><code>HTMLScriptElement</code></a></li><li><a href="../HTMLSelectElement.html"><code>HTMLSelectElement</code></a></li><li><a href="../HTMLSourceElement.html"><code>HTMLSourceElement</code></a></li><li><a href="../HTMLSpanElement.html"><code>HTMLSpanElement</code></a></li><li><a href="../HTMLStyleElement.html"><code>HTMLStyleElement</code></a></li><li><a href="../HTMLTableCaptionElement.html"><code>HTMLTableCaptionElement</code></a></li><li><a href="../HTMLTableCellElement.html"><code>HTMLTableCellElement</code></a></li><li><a href="../HTMLTableColElement.html"><code>HTMLTableColElement</code></a></li><li><a href="../HTMLTableElement.html"><code>HTMLTableElement</code></a></li><li><a href="../HTMLTableRowElement.html"><code>HTMLTableRowElement</code></a></li><li><a href="../HTMLTableSectionElement.html"><code>HTMLTableSectionElement</code></a></li><li><a href="../HTMLTextAreaElement.html"><code>HTMLTextAreaElement</code></a></li><li><a href="../HTMLTemplateElement.html"><code>HTMLTemplateElement</code></a></li><li><a href="../HTMLTimeElement.html"><code>HTMLTimeElement</code></a></li><li><a href="../HTMLTitleElement.html"><code>HTMLTitleElement</code></a></li><li><a href="../HTMLTrackElement.html"><code>HTMLTrackElement</code></a></li><li><a href="../HTMLUListElement.html"><code>HTMLUListElement</code></a></li><li><a href="../HTMLUnknownElement.html"><code>HTMLUnknownElement</code></a></li><li><a href="../HTMLVideoElement.html"><code>HTMLVideoElement</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/History"><code>History</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Location"><code>Location</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel"><code>MessageChannel</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent"><code>MessageEvent</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/MessagePort"><code>MessagePort</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator"><code>Navigator</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/PageRevealEvent"><code>PageRevealEvent</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEvent"><code>PageSwapEvent</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/PageTransitionEvent"><code>PageTransitionEvent</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Plugin"><code>Plugin</code></a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/PluginArray"><code>PluginArray</code></a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent"><code>PromiseRejectionEvent</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/RadioNodeList"><code>RadioNodeList</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/TimeRanges"><code>TimeRanges</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/UserActivation"><code>UserActivation</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ValidityState"><code>ValidityState</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window"><code>Window</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkletGlobalScope"><code>WorkletGlobalScope</code></a></li></ol></details></li><li><details open=""><summary><span>Events</span></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event"><code>Document: DOMContentLoaded</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/readystatechange_event"><code>Document: readystatechange</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/afterscriptexecute_event"><code>Element: afterscriptexecute</code></a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/auxclick_event"><code>Element: auxclick</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/beforescriptexecute_event"><code>Element: beforescriptexecute</code></a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event"><code>Element: blur</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event"><code>Element: click</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event"><code>Element: contextmenu</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/DOMActivate_event"><code>Element: DOMActivate</code></a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event"><code>Element: focus</code></a></li><li><a href="../HTMLInputElement/select_event.html"><code>Element: select</code></a></li><li><a href="../HTMLDialogElement/cancel_event.html"><code>HTMLDialogElement: cancel</code></a></li><li><a href="../HTMLDialogElement/close_event.html"><code>HTMLDialogElement: close</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event"><code>HTMLElement: input</code></a></li><li><a href="../HTMLElement/beforetoggle_event.html"><code>HTMLElement: beforetoggle</code></a></li><li><a href="../HTMLElement/toggle_event.html"><code>HTMLElement: toggle</code></a></li><li><a href="../HTMLFormElement/reset_event.html"><code>HTMLFormElement: reset</code></a></li><li><a href="../HTMLFormElement/submit_event.html"><code>HTMLFormElement: submit</code></a></li><li><a href="../HTMLElement/change_event.html"><code>HTMLInputElement: change</code></a></li><li><a href="../HTMLInputElement/invalid_event.html"><code>HTMLInputElement: invalid</code></a></li><li><a href="../HTMLMediaElement/abort_event.html"><code>HTMLMediaElement: abort</code></a></li><li><a href="../HTMLMediaElement/canplay_event.html"><code>HTMLMediaElement: canplay</code></a></li><li><a href="../HTMLMediaElement/canplaythrough_event.html"><code>HTMLMediaElement: canplaythrough</code></a></li><li><a href="../HTMLMediaElement/durationchange_event.html"><code>HTMLMediaElement: durationchange</code></a></li><li><a href="../HTMLMediaElement/emptied_event.html"><code>HTMLMediaElement: emptied</code></a></li><li><a href="../HTMLMediaElement/error_event.html"><code>HTMLMediaElement: error</code></a></li><li><a href="../HTMLMediaElement/loadeddata_event.html"><code>HTMLMediaElement: loadeddata</code></a></li><li><a href="../HTMLMediaElement/loadedmetadata_event.html"><code>HTMLMediaElement: loadedmetadata</code></a></li><li><a href="../HTMLMediaElement/loadstart_event.html"><code>HTMLMediaElement: loadstart</code></a></li><li><a href="../HTMLMediaElement/play_event.html"><code>HTMLMediaElement: play</code></a></li><li><a href="../HTMLMediaElement/playing_event.html"><code>HTMLMediaElement: playing</code></a></li><li><a href="../HTMLMediaElement/progress_event.html"><code>HTMLMediaElement: progress</code></a></li><li><a href="../HTMLMediaElement/seeked_event.html"><code>HTMLMediaElement: seeked</code></a></li><li><a href="../HTMLMediaElement/seeking_event.html"><code>HTMLMediaElement: seeking</code></a></li><li><a href="../HTMLMediaElement/stalled_event.html"><code>HTMLMediaElement: stalled</code></a></li><li><a href="../HTMLMediaElement/suspend_event.html"><code>HTMLMediaElement: suspend</code></a></li><li><a href="../HTMLMediaElement/timeupdate_event.html"><code>HTMLMediaElement: timeupdate</code></a></li><li><a href="../HTMLMediaElement/volumechange_event.html"><code>HTMLMediaElement: volumechange</code></a></li><li><a href="../HTMLMediaElement/waiting_event.html"><code>HTMLMediaElement: waiting</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/afterprint_event"><code>Window: afterprint</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeprint_event"><code>Window: beforeprint</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event"><code>Window: beforeunload</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event"><code>Window: hashchange</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/languagechange_event"><code>Window: languagechange</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event"><code>Window: load</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event"><code>Window: message</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/offline_event"><code>Window: offline</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event"><code>Window: online</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/pagehide_event"><code>Window: pagehide</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event"><code>Window: pageshow</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/rejectionhandled_event"><code>Window: rejectionhandled</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event"><code>Window: storage</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event"><code>Window: unload</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/unhandledrejection_event"><code>Window: unhandledrejection</code></a></li></ol></details></li></ol></div>
+    </nav>
+        </aside>
+      </div>
+    </div>
+        
+      
+    
+      
+
+
+    <div class="page-layout__footer footer"><div><a href="http://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide">Using microtasks in JavaScript with queueMicrotask()</a> by <a href="http://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide$history">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC-BY-SA 2.5</a>.</div></div></body><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:42:45 GMT --></html>

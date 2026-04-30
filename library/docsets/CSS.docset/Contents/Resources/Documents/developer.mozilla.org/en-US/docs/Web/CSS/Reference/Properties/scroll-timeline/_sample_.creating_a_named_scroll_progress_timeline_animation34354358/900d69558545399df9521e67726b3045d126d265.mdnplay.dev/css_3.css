@@ -1,0 +1,15 @@
+
+#container { height: 300px; overflow-y: scroll; scroll-timeline: --square-timeline y; position: relative; }
+#square { background-color: deeppink; width: 100px; height: 100px; position: absolute; bottom: 0px; animation-duration: 1ms; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: rotateAnimation; animation-range: initial; animation-timeline: --square-timeline; }
+#stretcher { height: 600px; background: rgb(222, 222, 222); }
+@keyframes rotateAnimation { 
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@layer no-support {
+  @supports not (scroll-timeline: --square-timeline) {
+  body::before { content: "Your browser doesn't support the `scroll-timeline` property."; background-color: wheat; display: block; text-align: center; padding: 1em; }
+}
+}
+
+button.copy {display:none !important}

@@ -1,0 +1,9 @@
+
+.center { text-align: center; }
+form > fieldset > * { vertical-align: top; }
+form input, form textarea, form [contenteditable] { min-width: 15rem; padding: 0.25rem; }
+[contenteditable] { appearance: textfield; display: inline-block; min-height: 1rem; border: 1px solid; }
+form table { display: inline-table; }
+table ol { text-align: left; }
+
+button.copy {display:none !important}

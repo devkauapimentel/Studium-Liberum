@@ -1,0 +1,6 @@
+
+input:out-of-range { outline: 3px solid red; }
+body { margin: 0.5rem; }
+pre { padding: 1rem; height: 2rem; background-color: lightgrey; outline: 1px solid grey; }
+
+button.copy {display:none !important}

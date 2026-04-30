@@ -1,0 +1,5 @@
+
+div { width: 300px; height: 150px; }
+.layered-image { background: linear-gradient(to right, transparent, mistyrose), url("./en-US/docs/Web/CSS/Guides/Images/Using_gradients/critters.png"); }
+
+button.copy {display:none !important}

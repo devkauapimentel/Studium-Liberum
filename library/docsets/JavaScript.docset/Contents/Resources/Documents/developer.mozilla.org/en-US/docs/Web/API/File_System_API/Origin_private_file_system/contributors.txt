@@ -1,0 +1,3 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/file_system_api/origin_private_file_system/index.md
+

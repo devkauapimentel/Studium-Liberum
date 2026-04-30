@@ -1,0 +1,9 @@
+
+.wrapper { height: 150px; display: flex; align-items: center; justify-content: center; }
+button { padding: 5px 10px; border: 0px; border-radius: 5px; font-weight: bold; font-size: 140%; cursor: pointer; }
+.fade:focus, .fade:active { background-color: black; }
+.fade { background-color: rgb(219, 31, 72); color: white; transition: background-color 1s; }
+.fade:hover { background-color: rgb(0, 67, 105); }
+.fade:focus, .fade:active { background-color: black; transition: none; }
+
+button.copy {display:none !important}

@@ -1,0 +1,21 @@
+
+@font-face { font-family: Inconsolata; src: url("../fonts.gstatic.com/s/inconsolata/v31/QlddNThLqRwH-OJ1UHjlKENVzlm-WkL3GZQmAwPyya15.woff2") format("woff2"); }
+@font-face { font-family: "Anek Malayalam"; src: url("../fonts.gstatic.com/s/anekmalayalam/v4/6qLUKZActRTs_mZAJUZWWkhke0nYa-f6__Azq3-gP1W7db9_.woff2") format("woff2"); }
+body { font-family: system-ui; }
+table { border-collapse: collapse; width: 100%; }
+tbody th { text-align: right; }
+th, td { padding: 0.25rem; font-weight: normal; text-align: center; }
+td { border: 1px solid; font-size: 5rem; }
+.inconsolata { font-family: Inconsolata, sans-serif; }
+.anek-malayalam { font-family: "Anek Malayalam", sans-serif; }
+td:nth-child(2) { font-width: 50%; }
+td:nth-child(3) { font-width: 62.5%; }
+td:nth-child(4) { font-width: 75%; }
+td:nth-child(5) { font-width: 87.5%; }
+td:nth-child(6) { font-width: 100%; }
+td:nth-child(7) { font-width: 112.5%; }
+td:nth-child(8) { font-width: 125%; }
+td:nth-child(9) { font-width: 150%; }
+td:nth-child(10) { font-width: 200%; }
+
+button.copy {display:none !important}

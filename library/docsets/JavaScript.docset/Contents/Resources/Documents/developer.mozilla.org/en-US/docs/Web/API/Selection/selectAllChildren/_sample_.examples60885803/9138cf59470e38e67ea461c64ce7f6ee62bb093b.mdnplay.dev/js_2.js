@@ -1,0 +1,9 @@
+
+          const button = document.querySelector("button");
+const footer = document.querySelector("footer");
+
+button.addEventListener("click", (e) => {
+  window.getSelection().selectAllChildren(footer);
+});
+;
+        

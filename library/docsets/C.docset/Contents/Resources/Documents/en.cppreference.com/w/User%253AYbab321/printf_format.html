@@ -1,0 +1,420 @@
+<html><!-- Online page at https://en.cppreference.com/w/User%253AYbab321/printf_format.html --><head><meta charset="utf-8"><title>User:Ybab321/printf format</title><link rel="stylesheet" href="../css_1.css" type="text/css"><link rel="stylesheet" href="../css_2.css" type="text/css"><link rel="stylesheet" href="../css_3.css" type="text/css"><link rel="stylesheet" href="../css_4.css" type="text/css"><link rel="stylesheet" href="../css_5.css" type="text/css"><script type="text/javascript" src="../js_1.js"></script><script type="text/javascript" src="../js_2.js"></script><script type="text/javascript" src="../js_7248.js"></script><script type="text/javascript" src="../js_4.js"></script><script type="text/javascript" src="../js_5.js"></script><script type="text/javascript" src="../js_6.js"></script><script type="text/javascript" src="../js_7.js"></script><script type="text/javascript" src="../js_8.js"></script><script type="text/javascript" src="../js_9.js"></script><script type="text/javascript" src="../js_10.js"></script><script type="text/javascript" src="../js_11.js"></script><script type="text/javascript" src="../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-2 ns-subject page-User_Ybab321_printf_format skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=User%3AYbab321%2Fprintf+format&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=User%3AYbab321%2Fprintf+format" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-user" class="selected"><span><a href="./printf_format.html" title="View the user page [c]" accesskey="c">User page</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Ybab321/printf_format&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./printf_format.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./printf_format.html">View</a></span></li>
+					<li id="ca-viewsource"><span><a href="https://en.cppreference.com/mwiki/index.php?title=User:Ybab321/printf_format&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=User:Ybab321/printf_format&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./printf_format.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">User:Ybab321/printf format</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../User%25253AYbab321.html" title="User:Ybab321">User:Ybab321</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>The <b>format</b> string consists of ordinary byte characters (except <code><b>%</b></code>), which are copied unchanged into the output stream, and conversion specifications. Each conversion specification has the following format:
+</p>
+<dl><dd><ul><li> introductory <code><b>%</b></code> character.
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> <span class="t-mark">(optional)</span> flags that modify the behavior of the conversion:
+</li></ul>
+<dl><dd><ul><li> <code><b>-</b></code>: the result of the conversion is left-justified within the field (by default it is right-justified).
+</li><li> <code><b>+</b></code>: the sign of signed conversions is always prepended to the result of the conversion (by default the result is preceded by minus only when it is negative).
+</li><li> <i>space</i>: if the result of a signed conversion does not start with a sign character, or is empty, space is prepended to the result. It is ignored if <code>+</code> flag is present.
+</li><li> <code><b>#</b></code>: for floating-point and non-decimal integer conversions, the <i>alternative form</i> of the conversion is performed. See below for the exact semantics. Other conversions using this flag have undefined behavior.
+</li><li> <code><b>0</b></code>: for floating-point and integer conversions, leading zeros are used to pad the field instead of <i>space</i> characters. For integer numbers it is ignored if the precision is explicitly specified. Other conversions using this flag have undefined behavior. It is ignored if <code>-</code> flag is present.
+</li></ul>
+</dd></dl>
+</dd></dl>
+<dl><dd><ul><li> <span class="t-mark">(optional)</span> integer value or <code><b>*</b></code>: specifies <i>minimum field width</i>. The result is padded with <i>space</i> characters (by default), if required, on the left when right-justified, or on the right if left-justified. In the case when <code>*</code> is used, the width is specified by an additional argument of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>, which appears before the argument to be converted and the argument supplying precision if one is supplied. If the value of the argument is negative, then the <code>-</code> flag is implied and the absolute value used for minimum field width.
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> <span class="t-mark">(optional)</span> <code><b>.</b></code> followed by integer number or <code><b>*</b></code>: specifies the <i>precision</i> of the conversion. In the case when <code>*</code> is used, the <i>precision</i> is specified by an additional argument of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>, which appears before the argument to be converted, but after the argument supplying minimum field width if one is supplied. If the value of this argument is negative, it is ignored. If neither a number nor <code>*</code> is used, the precision is taken as zero. See below for the exact semantics.
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> <span class="t-mark">(optional)</span> <i>length modifier</i> that specifies the size of the argument (in combination with the conversion format specifier, it specifies the type of the corresponding argument).
+</li></ul>
+</dd></dl>
+<dl><dd><ul><li> conversion format specifier.
+</li></ul>
+</dd></dl>
+<p>If a conversion specification is invalid, the behavior is undefined.
+</p>
+<h4> <span class="mw-headline" id="Non-numeric">Non-numeric</span></h4>
+<ul><li> <code><b>%</b></code>: Writes <code>%</code> character. Has no argument. No modifiers supported, full conversion specification must be <code>%%</code>.
+</li><li> <code><b>p</b></code>: Writes a pointer. Argument is a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span></span></span>. Output format is implementation defined.
+</li><li> <code><b>c</b></code>: Writes a character. Argument type depends on the length modifier:
+</li></ul>
+<dl><dd><ul><li> (none): Argument is an <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>, which is converted to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span> and copied to the output stream.
+</li><li> <code><b>l</b></code>: Argument is a <span class="t-c"><span class="mw-geshi cpp source-cpp">wint_t</span></span>, which is converted to a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">wchar_t</span></span></span>, put into a null terminated array, and printed with the semantics of <code>%ls</code>.
+</li></ul>
+</dd></dl>
+<ul><li> <code><b>s</b></code>: Write a string. Argument is a pointer to the initial element of an array of characters. Argument type depends on the length modifier:
+</li></ul>
+<dl><dd><ul><li> (none): Argument is a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span><span class="sy2">*</span></span></span>. Characters are copied to the output stream.
+</li><li> <code><b>l</b></code>: Argument is a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">wchar_t</span><span class="sy2">*</span></span></span>. String is converted to a narrow string via <span class="t-c"><span class="mw-geshi cpp source-cpp">wcrtomb</span></span> (with zero-initialised conversion state), and resulting characters copied to the output stream. For the precision modifier and <code>%n</code> specifier, the number of characters refers to the wide string, not the converted-to narrow string.
+</li></ul>
+</dd><dd> The precision specifies the maximum number of characters to write. Characters are copied until the maximum is reached or a null terminator is found. The null terminator does not contribute to the number of characters reported by <code>%n</code>.
+</dd></dl>
+<p>Even though <code>%c</code> expects <code>int</code> argument, it is safe to pass a <code>char</code> because of the integer promotion that takes place when a variadic function is called.
+</p>
+<h4> <span class="mw-headline" id="Integer">Integer</span></h4>
+<p>Let <code>SInt</code> and <code>UInt</code> be respective types determined by the length specifier:
+</p>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-c99"><td>
+<ul><li> <code><b>hh</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">char</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span>
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-c99">(since C99)</span></td></tr>
+</tbody></table>
+<ul><li> <code><b>h</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">short</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">short</span></span></span>
+</li><li> <code><b>(none)</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span></span></span>
+</li><li> <code><b>l</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span></span></span>
+</li></ul>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-c99"><td>
+<ul><li> <code><b>ll</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span></span></span>
+</li><li> <code><b>j</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp">intmax_t</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">uintmax_t</span></span>
+</li><li> <code><b>z</b></code>: signed version of <span class="t-c"><span class="mw-geshi cpp source-cpp">size_t</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">size_t</span></span>
+</li><li> <code><b>t</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp">ptrdiff_t</span></span> and unsigned version of <span class="t-c"><span class="mw-geshi cpp source-cpp">ptrdiff_t</span></span>
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-c99">(since C99)</span></td></tr>
+</tbody></table>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-c23"><td>
+<ul><li> <code><b>w<i>N</i></b></code>: Any signed integer type with bit-width <code><i>N</i></code> and any unsigned integer type with bit-width <code><i>N</i></code>
+</li><li> <code><b>wf<i>N</i></b></code>: <code>int_fast<i>N</i>_t</code> and <code>uint_fast<i>N</i>_t</code>
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-c23">(since C23)</span></td></tr>
+</tbody></table>
+<p>Then:
+</p>
+<ul><li> <code><b>d/i</b></code>: Writes a signed integer in decimal representation. Argument is an <code>SInt</code>.
+</li><li> <code><b>u</b></code>: Writes an unsigned integer in decimal representation. Argument is an <code>UInt</code>.
+</li><li> <code><b>x/X</b></code>: Writes an unsigned integer in hexadecimal representation. Argument is an <code>UInt</code>. The alternative form prefixes <code>0x</code> if the argument is non-zero. If the format specifier is uppercase, the corresponding output will also be uppercase.
+</li></ul>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-c23"><td>
+<ul><li> <code><b>b</b></code>: Writes an unsigned integer in binary representation. Argument is an <code>UInt</code>. The alternative form prefixes <code>0b</code> if the argument is non-zero.
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-c23">(since C23)</span></td></tr>
+</tbody></table>
+<ul><li> <code><b>o</b></code>: Writes an unsigned integer in octal representation. Argument is an <code>UInt</code>. The alternative form increases the precision as much as is needed for the first digit written to be zero.
+</li><li> <code><b>n</b></code>: Returns the number of characters written so far by this call to the function, including minimum field width padding. Argument is an <code>SInt*</code> to write the result to. Only supported modifier is length modifier.
+</li></ul>
+<dl><dd> The precision specifies the minimum number of digits to write, leading zeros will be written if necessary. If unspecified, a precision of 1 is used. If precision is 0 and the argument is 0, no digits will be written.
+</dd></dl>
+<p>The correct conversion specifications for the fixed-width character types (<span class="t-lc">int8_t</span>, etc) are defined in the header <a href="../c/types/integer.html" title="c/types/integer"><code>&lt;inttypes.h&gt;</code></a> (although <span class="t-lc"><a href="../cpp/types/integer.html" title="cpp/types/integer">PRIdMAX</a></span>, <span class="t-lc"><a href="../cpp/types/integer.html" title="cpp/types/integer">PRIuMAX</a></span>, etc is synonymous with <code>%jd</code>, <code>%ju</code>, etc).
+</p><p>The memory-writing conversion specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>n</span></span> is a common target of security exploits where format strings depend on user input and is not supported by the bounds-checked <code>printf_s</code> family of functions.
+</p><p>There is a <a href="../c/language/eval_order.html" title="c/language/eval order">sequence point</a> after the action of each conversion specifier; this permits storing multiple <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>n</span></span> results in the same variable or, as an edge case, printing a string modified by an earlier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>n</span></span> within the same call.
+</p>
+<h4> <span class="mw-headline" id="Floating-point">Floating-point</span></h4>
+<p>The argument type is determined by the length specifier:
+</p>
+<ul><li> <code><b>(none)</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span>
+</li></ul>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-c99"><td>
+<ul><li> <code><b>l</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span>
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-c99">(since C99)</span></td></tr>
+</tbody></table>
+<ul><li> <code><b>L</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span>
+</li></ul>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-c23"><td>
+<ul><li> <code><b>H</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp">_Decimal32</span></span>
+</li><li> <code><b>D</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp">_Decimal64</span></span>
+</li><li> <code><b>DD</b></code>: <span class="t-c"><span class="mw-geshi cpp source-cpp">_Decimal128</span></span>
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-c23">(since C23)</span></td></tr>
+</tbody></table>
+<p>Then:
+</p>
+<ul><li> If the argument is infinity, then <code>inf</code> or <code>infinity</code> is written. Which one is used is implementation defined.
+</li><li> If the argument is not-a-number, then <code>nan</code> or <code>nan(<i>char_sequence</i>)</code> is written. Which one is used is implementation defined.
+</li></ul>
+<p>Otherwise:
+</p>
+<ul><li> <code><b>f/F</b></code>: Writes a floating-point in decimal notation <i>[-]ddd.ddd</i>. The precision specifies the number of decimal places, trailing zeros will be written if necessary. If unspecified, a precision of 6 is used.
+</li><li> <code><b>e/E</b></code>: Writes a floating-point in decimal exponent notation <i>[-]d.ddd</i><code><b>e</b></code><i>±dd</i>. If the exponent is less than 10, it is written with a leading zero. The precision specifies the number of decimal places, trailing zeros will be written if necessary. If unspecified, a precision of 6 is used.
+</li><li> <code><b>g/G</b></code>: Writes a floating-point in decimal or decimal exponent notation, depending on the argument and precision.
+</li></ul>
+<dl><dd> Let <i>P = max(0, precision - 1)</i>, or 5 if precision is unspecified.
+</dd><dd> Let <i>EXP</i> be the exponent written if <code>%e</code> were the specification.
+<ul><li> If <i>-4 ≤ EXP ≤ P</i>, then the argument is written as if the <code>e/E</code> format specifier was used with precision <i>P</i>.
+</li><li> Otherwise, the argument is written as if the <code>f/F</code> format specifier was used with precision <i>P - EXP</i>.
+</li></ul>
+</dd></dl>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-c99"><td>
+<ul><li> <code><b>a/A</b></code>: Writes a floating-point in hexadecimal exponent notation <i>[-]</i><code><b>0x</b></code><i>h.hhh</i><code><b>p</b></code><i>±d</i>. The precision specifies the number of digits following the decimal point, trailing zeros will be written if necessary.
+</li></ul>
+<dl><dd><ul><li> If the argument type is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span>:
+</li></ul>
+<dl><dd><ul><li> If the precision is unspecified:
+</li></ul>
+<dl><dd><ul><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../cpp/types/climits.html"><span class="kw414">FLT_RADIX</span></a></span></span> is a power of 2, the exact value is printed with no trailing zeros.
+</li><li> Otherwise, enough digits are printed to distinguish the number from any other value of the argument type, except that trailing zeros may be omitted.
+</li></ul>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-c23"><td>
+<dl><dd><ul><li> Otherwise, for decimal arguments:
+</li></ul>
+<dl><dd> Let <i>P</i> be the (format) precision.
+</dd><dd> Let <i>p</i> be the (numerical) precision of the argument.
+</dd><dd> Let the argument be expressed with integers <i>s,c,q</i> as <i>s × c × 10<span class="t-su">q<br></span></i> where <i>c</i> is non-negative.
+</dd><dd> Let <i>n</i> be the number of significant digits in <i>c</i>.
+<ul><li> If <i>P</i> is specified and <i>0 &lt; P &lt; min(p, n)</i>, then the argument is rounded to <i>P</i> decimal digits, with unbounded exponent range, such that <i>c</i> is a <i>P</i>-digit integer
+</li><li> If <i>0 ≤ -q ≤ n + 5</i>, then the argument is written as if the <code>f/F</code> format specifier was used with precision <i>-q</i>.
+</li><li> Otherwise, the argument is written as if the <code>e/E</code> format specifier was used with precision <i>n - 1</i>, except that if <i>c = 0</i>, then <i>q</i> is written for the exponent and no leading zeros are written.
+</li></ul>
+</dd></dl>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-c23">(since C23)</span></td></tr>
+</tbody></table>
+<dl><dd> There is exactly one digit before the decimal place, but it is unspecified how this digit is chosen. For example, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu12">0x1</span>.<span class="me1">fp</span><span class="sy2">+</span><span class="nu0">6</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">0xf.6p<span class="sy2">+</span><span class="nu0">3</span></span></span> are both valid outputs for an argument of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu16">123.0</span></span></span> with precision 1.
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-c99">(since C99)</span></td></tr>
+</tbody></table>
+<p>The alternative form writes a decimal point even if precision is 0. If the format specifier is uppercase, the corresponding output will also be uppercase.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1928/1000000
+Preprocessor generated node count: 3527/1000000
+Post‐expand include size: 26441/4194304 bytes
+Template argument size: 10640/4194304 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:22980-0!*!0!!*!*!* and timestamp 20250418112613 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=User:Ybab321/printf_format&amp;oldid=176993">https://en.cppreference.com/mwiki/index.php?title=User:Ybab321/printf_format&amp;oldid=176993</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./printf_format.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/User:Ybab321/printf_format" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/User:Ybab321/printf_format" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-contributions"><a href="https://en.cppreference.com/w/Special:Contributions/Ybab321" title="A list of contributions of this user">User contributions</a></li><li id="t-log"><a href="https://en.cppreference.com/w/Special:Log/Ybab321">Logs</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=User:Ybab321/printf_format&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=User:Ybab321/printf_format&amp;oldid=176993" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=User:Ybab321/printf_format&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 11 October 2024, at 05:04.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 3.219 secs. -->
+	
+
+
+</body></html>

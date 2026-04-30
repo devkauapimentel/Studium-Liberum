@@ -1,0 +1,7 @@
+
+.container { background: url("./shared-assets/images/examples/listen_to_black_women.jpg") left center / contain no-repeat goldenrod; }
+p { backdrop-filter: hue-rotate(240deg) blur(5px); background-color: rgba(255, 255, 255, 0.1); text-shadow: black 2px 2px; }
+.container { padding: 3rem; width: 30rem; }
+p { padding: 0.5rem; color: white; font-size: 2rem; font-family: sans-serif; }
+
+button.copy {display:none !important}

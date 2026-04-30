@@ -1,0 +1,288 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/language/zero_initialization.html --><head><meta charset="utf-8"><title>Talk:cpp/language/zero initialization</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_5436.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_language_zero_initialization skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Fzero+initialization&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Fzero+initialization" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/language/zero_initialization.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./zero_initialization.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./zero_initialization.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./zero_initialization.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./zero_initialization.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/language/zero initialization</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../language.html" title="Talk:cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./zero_initialization.html#c99_zero_init"><span class="tocnumber">1</span> <span class="toctext">c99 zero init</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./zero_initialization.html#Syntax_1:_static_T_object.3B"><span class="tocnumber">2</span> <span class="toctext">Syntax 1: static T object;</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./zero_initialization.html#syntax_2"><span class="tocnumber">3</span> <span class="toctext">syntax 2</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./zero_initialization.html#Only_char_arrays.3F_or_also_wchar_t.2C_char16.2C_char32_arrays.3F"><span class="tocnumber">4</span> <span class="toctext">Only char arrays? or also wchar_t, char16, char32 arrays?</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="./zero_initialization.html#Syntax_section_confusing"><span class="tocnumber">5</span> <span class="toctext">Syntax section confusing</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;action=edit&amp;section=1" title="Edit section: c99 zero init">edit</a>]</span> <span class="mw-headline" id="c99_zero_init"> c99 zero init </span></h2>
+<p>@ <a href="../../User%25253ACubbi.html" title="User:Cubbi">User:Cubbi</a> <b>T t{}; and T t = {0};</b> are different see <a rel="nofollow" class="external autonumber" href="http://stackoverflow.com/questions/14031727/what-is-the-difference-between-struct-0-and-memset-0">[1]</a>
+Since C99 is fully supported in C++11 we should add this. Do you agree? <a href="https://en.cppreference.com/mwiki/index.php?title=User:Yanpas&amp;action=edit&amp;redlink=1" class="new" title="User:Yanpas (page does not exist)">Yanpas</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Yanpas&amp;action=edit&amp;redlink=1" class="new" title="User talk:Yanpas (page does not exist)">talk</a>) 07:47, 17 August 2016 (PDT)
+</p>
+<dl><dd>They are different, but irrelevant to this page. <span class="t-c"><span class="mw-geshi cpp source-cpp">T t<span class="br0">{</span><span class="br0">}</span></span></span> is a <a href="../../cpp/language/list_initialization.html" title="cpp/language/list initialization">direct-list-init</a> which invokes value init because the list is empty, <span class="t-c"><span class="mw-geshi cpp source-cpp">T t <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span></span></span> is a <a href="../../cpp/language/list_initialization.html" title="cpp/language/list initialization">copy-list-init</a> that, for an aggregate T, invokes copy init of its first element and value init of the remaining elements. C99 is not supported by C++11, and has nothing to do with this anyway (if you're interested in C, see <a href="../../c/language/array_initialization.html" title="c/language/array initialization">array init</a> and <a href="../../c/language/struct_initialization.html" title="c/language/struct initialization">struct init</a>). --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 09:05, 17 August 2016 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;action=edit&amp;section=2" title="Edit section: Syntax 1: static T object;">edit</a>]</span> <span class="mw-headline" id="Syntax_1:_static_T_object.3B"> Syntax 1: static T object; </span></h2>
+<p>Does that apply to static the storage qualifier or can it be a static class member? From the mention of thread-local it clearly applies for the storage-qualifier form. 
+</p><p>Please clarify this by noting explicitly "static storage duration" - If this were a lesser site I'd do it, however given the importance of this resource and the careful wording required, I dare not.
+</p><p>Thanks
+</p>
+<dl><dd> <a href="https://en.cppreference.com/mwiki/index.php?title=User:Alec&amp;action=edit&amp;redlink=1" class="new" title="User:Alec (page does not exist)">Alec</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Alec&amp;action=edit&amp;redlink=1" class="new" title="User talk:Alec (page does not exist)">talk</a>) 04:45, 4 April 2018 (PDT)
+<dl><dd> the page already says about that line "every named variable with static or thread-local storage duration that is not subject to constant initialization", with a link to the storage duration page - what's ambiguous about it? Note that it certainly can be a static class member. -<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 07:38, 4 April 2018 (PDT)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;action=edit&amp;section=3" title="Edit section: syntax 2">edit</a>]</span> <span class="mw-headline" id="syntax_2"> syntax 2 </span></h2>
+<p>I am unable to understand how the explanation of syntax 2 relates to the syntax presented.--<a href="https://en.cppreference.com/mwiki/index.php?title=User:Itaj&amp;action=edit&amp;redlink=1" class="new" title="User:Itaj (page does not exist)">Itaj</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Itaj&amp;action=edit&amp;redlink=1" class="new" title="User talk:Itaj (page does not exist)">talk</a>) 01:58, 20 September 2018 (PDT)
+</p>
+<dl><dd> those syntaxes are some of the examples where value initialization may take place. Not an exhaustive list, just examples. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 04:59, 20 September 2018 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;action=edit&amp;section=4" title="Edit section: Only char arrays? or also wchar t, char16, char32 arrays?">edit</a>]</span> <span class="mw-headline" id="Only_char_arrays.3F_or_also_wchar_t.2C_char16.2C_char32_arrays.3F"> Only char arrays? or also wchar_t, char16, char32 arrays? </span></h2>
+<p>AFAIK the rule for char arrays ("strings") also applies to wchar_t, char16 and char32 arrays, or not? It should be mentioned here, I think. --<a href="../../User%25253ARoker.html" title="User:Roker">Roker</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Roker&amp;action=edit&amp;redlink=1" class="new" title="User talk:Roker (page does not exist)">talk</a>) 03:28, 26 November 2018 (PST)
+</p>
+<dl><dd> sure, generalized to all char types. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:48, 26 November 2018 (PST)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;action=edit&amp;section=5" title="Edit section: Syntax section confusing">edit</a>]</span> <span class="mw-headline" id="Syntax_section_confusing"> Syntax section confusing </span></h2>
+<ul><li> page filename:  "zero_initialization"
+</li><li> page title:  "Zero-initialization"
+</li><li> page tagline:  "Sets the initial value of an object to zero"
+</li><li> first heading:  "Syntax"
+</li><li> first sentence under first heading:  "Note that this is not the syntax for zero-initialization, which does not have a dedicated syntax in the language."
+</li></ul>
+<p>(reader left confused - thought I was here for zero initialization? --<a href="https://en.cppreference.com/mwiki/index.php?title=User:Dksmiffs&amp;action=edit&amp;redlink=1" class="new" title="User:Dksmiffs (page does not exist)">Dksmiffs</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Dksmiffs&amp;action=edit&amp;redlink=1" class="new" title="User talk:Dksmiffs (page does not exist)">talk</a>) 10:36, 30 October 2022 (PDT))
+</p>
+<dl><dd> This is indeed the zero initialisation page, and there is indeed no dedicated syntax for zero init in the language. It sounds like you didn't try reading beyond the first sentence, which may be the cause of your confusion? --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 13:05, 30 October 2022 (PDT)
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 86/1000000
+Preprocessor generated node count: 247/1000000
+Post‐expand include size: 295/4194304 bytes
+Template argument size: 32/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12791-0!*!0!!en!*!* and timestamp 20240518063128 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;oldid=144698">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;oldid=144698</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./zero_initialization.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/language/zero_initialization" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/language/zero_initialization" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;oldid=144698" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/zero_initialization&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 30 October 2022, at 13:05.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,311 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.211 secs. -->
+	
+
+
+</body></html>

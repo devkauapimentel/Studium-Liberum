@@ -1,0 +1,7 @@
+
+h2 { background-color: rgb(222, 222, 222); }
+card-wrapper, card-component { border: 1px dashed blue; width: fit-content; }
+::part(body) { color: red; font-style: italic; }
+::part(header), ::part(footer) { font-weight: bold; }
+
+button.copy {display:none !important}

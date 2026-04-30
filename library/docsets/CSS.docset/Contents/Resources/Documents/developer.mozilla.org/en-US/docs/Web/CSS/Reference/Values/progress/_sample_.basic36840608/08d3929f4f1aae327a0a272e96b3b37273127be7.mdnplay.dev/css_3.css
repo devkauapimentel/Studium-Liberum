@@ -1,0 +1,14 @@
+
+html { height: 100%; font-family: sans-serif; }
+body, section { height: inherit; }
+section { --custom-min-width: 300px; --custom-max-width: 700px; --custom-width: 600px; min-width: var(--custom-min-width); max-width: var(--custom-max-width); width: var(--custom-width); background-color: cyan; }
+.progress { height: 4px; background-color: red; width: calc(
+    progress(
+        var(--custom-width),
+        var(--custom-min-width),
+        var(--custom-max-width)
+      ) *
+      100%
+  ); }
+
+button.copy {display:none !important}

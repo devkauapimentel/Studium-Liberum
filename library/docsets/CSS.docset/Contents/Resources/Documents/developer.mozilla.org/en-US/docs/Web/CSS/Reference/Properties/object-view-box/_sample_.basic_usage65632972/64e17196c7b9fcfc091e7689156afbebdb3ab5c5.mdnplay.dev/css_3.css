@@ -1,0 +1,12 @@
+
+img { width: 200px; height: 200px; border: 1px solid red; }
+.intrinsic { }
+.zoom-in { }
+.zoom-out { }
+@supports not (object-view-box: none) {
+  body::before { content: "Your browser does not support the 'object-view-box' property."; color: black; background-color: rgb(255, 205, 51); display: block; width: 100%; text-align: center; }
+}
+figure { display: inline-block; margin: 0px; }
+figcaption { text-align: center; }
+
+button.copy {display:none !important}

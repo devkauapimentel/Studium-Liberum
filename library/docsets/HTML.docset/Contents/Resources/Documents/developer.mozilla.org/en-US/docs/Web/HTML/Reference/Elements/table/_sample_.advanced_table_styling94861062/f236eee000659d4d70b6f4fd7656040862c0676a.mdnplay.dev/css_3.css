@@ -1,0 +1,16 @@
+
+table { border-collapse: collapse; border-spacing: 0px; border: 2px solid rgb(140, 140, 140); font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 16px; line-height: normal; font-family: "Open Sans", Helvetica, Arial, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+caption { caption-side: bottom; padding: 10px; font-weight: bold; }
+th, td { border: 1px solid rgb(160, 160, 160); padding: 4px 6px; }
+th { vertical-align: bottom; }
+thead > tr { background-color: rgb(228, 240, 245); }
+thead > tr:nth-of-type(2) { border-bottom: 2px solid rgb(140, 140, 140); }
+thead > tr:last-of-type > th:nth-of-type(1) { background-color: rgb(225, 255, 225); }
+thead > tr:last-of-type > th:nth-of-type(2) { background-color: rgb(255, 225, 225); }
+tbody > tr > th:first-of-type { text-align: left; background-color: rgb(225, 229, 244); }
+tbody > tr:nth-of-type(2n) { background-color: rgb(237, 238, 242); }
+tbody > tr > td:last-of-type { text-align: right; }
+tfoot > tr { border-top: 2px dashed rgb(140, 140, 140); background-color: rgb(228, 240, 245); }
+tfoot th, tfoot td { text-align: right; font-weight: bold; }
+
+button.copy {display:none !important}

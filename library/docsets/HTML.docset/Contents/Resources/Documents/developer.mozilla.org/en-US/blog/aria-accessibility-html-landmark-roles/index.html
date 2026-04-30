@@ -1,0 +1,766 @@
+<html><!-- Mirrored from developer.mozilla.org/en-US/blog/aria-accessibility-html-landmark-roles/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:52:43 GMT --><head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Using HTML landmark roles to improve accessibility</title>
+          
+          <script>try {
+  document.documentElement.dataset.theme =
+    localStorage.getItem("theme") || "light dark";
+} catch (error) {
+  console.warn("Unable to set theme", error);
+}
+
+try {
+  if (localStorage.getItem("nop") === "yes") {
+    document.documentElement.dataset["nop"] = "yes";
+  }
+} catch (error) {
+  console.warn("Unable to set nop", error);
+}
+</script>
+          <link rel="stylesheet" href="../../../static/client/styles-global.03146ed4c65bc5ea.css" fetchpriority="high"><link rel="stylesheet" href="../../../static/client/styles-blog-post.d0b92f36d3ccd2ae.css" fetchpriority="high"><link rel="stylesheet" href="../../../static/client/styles-content-section.2ee991ba88f986cf.css" fetchpriority="high"><link rel="stylesheet" href="../../../static/client/styles-heading-anchor.0eec5185ab9425b7.css" fetchpriority="high"><link rel="stylesheet" href="../../../static/client/styles-page-layout.5a4354f33e894319.css" fetchpriority="high"><link rel="stylesheet" href="../../../static/client/styles-a11y-menu.5796ee87cb69f93f.css" fetchpriority="high"><link rel="stylesheet" href="../../../static/client/styles-navigation.3a34ee593a554c40.css" fetchpriority="high"><link rel="stylesheet" href="../../../static/client/styles-logo.aea5ff6edf1b9cfb.css" fetchpriority="high"><link rel="stylesheet" href="../../../static/client/styles-menu.3376b3e11656fba0.css" fetchpriority="high"><link rel="stylesheet" href="../../../static/client/styles-breadcrumbs-bar.9a51a3c76a6231d0.css" fetchpriority="high"><link rel="stylesheet" href="../../../static/client/styles-breadcrumbs.d06ce8d09f42feb8.css" fetchpriority="high"><link rel="stylesheet" href="../../../static/client/styles-footer.a2850e459e2d290b.css" fetchpriority="high">
+          <link rel="preload" href="../../../static/client/jetbrains-mono-latin.119994ed445212c7.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low"><link rel="preload" href="../../../static/client/inter-latin.9a3b1bc220d426ef.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+          <script data-cfasync="false" data-report-only="on" data-prompt="0" src="../../../../transcend-cdn.com/cm/d556c3a1-e57c-4bdf-a490-390a1aebf6dd/airgap.js"></script>
+          <script src="../../../static/client/runtime.c294a6bdc7a42570.js" type="module"></script><script src="../../../static/client/1111.53dba753dc3eb961.js" type="module"></script><script src="../../../static/client/8903.f870aafb338b203a.js" type="module"></script><script src="../../../static/client/index.9a449352d879bbd5.js" type="module"></script>
+          
+    <link rel="icon" sizes="32x32" href="../../../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+   <meta name="description" content="Learn what HTML landmark roles are, how they improve accessibility, and how you can include them on your website effectively."><meta name="og:url" content="https://developer.mozilla.org/en-US/blog/aria-accessibility-html-landmark-roles/"><meta name="og:title" content="Using HTML landmark roles to improve accessibility | MDN Blog"><meta name="og:locale" content="en_US"><meta name="og:description" content="Learn what HTML landmark roles are, how they improve accessibility, and how you can include them on your website effectively."><meta name="og:image" content="https://developer.mozilla.org/mdn-social-image.46ac2375.png"><meta name="og:image:type" content="image/png"><meta name="og:image:height" content="1024"><meta name="og:image:width" content="1024"><meta name="og:image:alt" content="The MDN logo"><meta name="og:site_name" content="MDN Web Docs"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="MozDevNet">
+          <link rel="canonical" href="index.html">
+          <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+          <link rel="manifest" href="../../../manifest.json">
+          <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/opensearch.xml" title="MDN Web Docs">
+          <link rel="alternate" type="application/rss+xml" title="MDN Blog RSS Feed" href="https://developer.mozilla.org/en-US/blog/rss.xml">
+        </head>
+        
+      <body class="page-layout">
+        <ul class="a11y-menu">
+      <li>
+        <a href="#content">Skip to main content</a>
+      </li>
+      <li>
+        <a href="#search">Skip to search</a>
+      </li>
+    </ul>
+        <div class="page-layout__banner" data-scheme="">
+          <mdn-placement-top></mdn-placement-top>
+        </div>
+        <header class="page-layout__header">
+          
+      <nav class="navigation" data-scheme="" data-open="false">
+        <div class="navigation__logo">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">
+        <svg class="logo__image" width="83" height="24" viewBox="0 0 83 24" role="img">
+          <title>MDN</title>
+          <path class="logo__letter" d="M9.4 0 2.81 21.17H.12L6.69 0H9.4Zm2.38 0v21.17H9.4V0h2.4Zm9.27 0-6.56 21.17H11.8L18.36 0h2.69Zm2.39 0v21.17h-2.4V0h2.4Z"></path>
+          <path class="logo__text" d="M45.55 16.83h-3.93v-1.27h.87v-3.63c0-.85-.16-1.45-.48-1.82a1.65 1.65 0 0 0-1.3-.52c-.74 0-1.3.25-1.66.78a2.98 2.98 0 0 0-.58 1.58v3.59h1.38v1.26h-3.93v-1.26h.87v-3.6c0-.88-.16-1.48-.48-1.83a1.7 1.7 0 0 0-1.29-.52 1.93 1.93 0 0 0-1.65.75 2.85 2.85 0 0 0-.58 1.6v3.62h1.59v1.27h-4.64v-1.27h1.37V9.75h-1.4V8.46h3.08v1.47c.28-.48.62-.87 1.08-1.2a3 3 0 0 1 1.68-.45c.67 0 1.22.16 1.73.48.5.32.85.8 1.03 1.47.25-.57.62-1.03 1.13-1.4.5-.37 1.1-.55 1.81-.55.8 0 1.5.25 2.05.75.55.51.85 1.3.85 2.35v4.18h1.4v1.27Zm9.77 0H52.3v-1.66c-.27.51-.66.95-1.13 1.29-.56.4-1.23.59-1.9.55-1.11 0-2-.37-2.67-1.12a4.41 4.41 0 0 1-1-3.06c0-1.15.3-2.2.93-3.15.6-.94 1.58-1.43 2.94-1.43 1.36 0 2.25.5 2.83 1.5V5.22h-2V3.93h3.63v11.63h1.38v1.27Zm-3.06-3.86v-1.02a2.28 2.28 0 0 0-.73-1.67 2.4 2.4 0 0 0-1.66-.65 2.18 2.18 0 0 0-1.88.9 3.63 3.63 0 0 0-.65 2.2c0 .95.23 1.68.7 2.19.45.5 1.03.76 1.7.76.73 0 1.33-.3 1.79-.88.48-.6.71-1.21.73-1.83Zm14.14 3.86h-4.43v-1.27h1.37v-3.63c0-.85-.16-1.45-.5-1.82a1.68 1.68 0 0 0-1.31-.52c-.71 0-1.29.23-1.7.69a2.52 2.52 0 0 0-.67 1.6v3.66h1.38v1.26H56.1v-1.26h1.38v-5.8h-1.42V8.47h3.12V9.9c.6-1.06 1.57-1.6 2.92-1.6.83 0 1.54.26 2.12.77.57.5.85 1.28.85 2.34v4.19h1.38v1.24h-.05Z"></path>
+          <path class="logo__cursor" d="M67.71 21.98H83V24H67.71v-2.02Z"></path>
+        </svg>
+      </a>
+    </div>
+        <div class="navigation__search" data-view="mobile">
+          <mdn-search-button></mdn-search-button>
+        </div>
+        <button class="navigation__button" type="button" aria-expanded="false" aria-controls="navigation__popup" aria-label="Toggle navigation"></button>
+        <div class="navigation__popup" id="navigation__popup">
+          <div class="navigation__menu">
+      <nav class="menu">
+        <div class="menu__tab" data-section="html">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">HTML</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="../../docs/Web/HTML.html" data-glean-id="menu_click_menu: html -&gt; /en-US/docs/Web/HTML">HTML: Markup language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>HTML reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../docs/Web/HTML/Reference/Elements.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Elements">Elements</a>
+                              </li><li>
+                                <a href="../../docs/Web/HTML/Reference/Global_attributes.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Global_attributes">Global attributes</a>
+                              </li><li>
+                                <a href="../../docs/Web/HTML/Reference/Attributes.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Attributes">Attributes</a>
+                              </li><li>
+                                <a href="../../docs/Web/HTML/Reference.html" aria-label="See all HTML references" title="See all HTML references" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>HTML guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../docs/Web/HTML/Guides/Responsive_images.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Responsive_images">Responsive images</a>
+                              </li><li>
+                                <a href="../../docs/Web/HTML/Guides/Cheatsheet.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Cheatsheet">HTML cheatsheet</a>
+                              </li><li>
+                                <a href="../../docs/Web/HTML/Guides/Date_and_time_formats.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Date_and_time_formats">Date &amp; time formats</a>
+                              </li><li>
+                                <a href="../../docs/Web/HTML/Guides.html" aria-label="See all HTML guides" title="See all HTML guides" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Markup languages</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/SVG">SVG</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/MathML">MathML</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/XML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/XML">XML</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="css">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">CSS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" data-glean-id="menu_click_menu: css -&gt; /en-US/docs/Web/CSS">CSS: Styling language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>CSS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Properties">Properties</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Selectors">Selectors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/At-rules">At-rules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Values">Values</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" aria-label="See all CSS references" title="See all CSS references" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>CSS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Box_model/Introduction">Box model</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Animations/Using">Animations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Flexbox</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Applying_color" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Colors/Applying_color">Colors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides" aria-label="See all CSS guides" title="See all CSS guides" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Layout cookbook</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts">Column layouts</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element">Centering an element</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Card" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Card">Card component</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="javascript">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label" data-type="long">JavaScript</span><span class="menu__tab-label" data-type="short">JS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" data-glean-id="menu_click_menu: javascript -&gt; /en-US/docs/Web/JavaScript">JavaScript: Scripting language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>JS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Statements">Statements &amp; declarations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Functions">Functions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" aria-label="See all JavaScript references" title="See all JavaScript references" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>JS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow &amp; error handing</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops and iteration</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Working_with_objects">Working with objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Using_classes">Using classes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" aria-label="See all JavaScript guides" title="See all JavaScript guides" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="webapis">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Web APIs</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/API" data-glean-id="menu_click_menu: webapis -&gt; /en-US/docs/Web/API">Web APIs: Programming interfaces</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Web API reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/File_System_API">File system API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API">Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Geolocation_API">Geolocation API</a>
+                              </li><li>
+                                <a href="../../docs/Web/API/HTML_DOM_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/HTML_DOM_API">HTML DOM API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Push_API">Push API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Service_Worker_API">Service worker API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API" aria-label="See all Web API guides" title="See all Web API guides" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Web API guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API">Using the Web animation API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API/Using_Fetch">Using the Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/History_API/Working_with_the_History_API">Working with the History API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Using the Web speech API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using web workers</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="all">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">All</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web" data-glean-id="menu_click_menu: all -&gt; /en-US/docs/Web">All web technology</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Technologies</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../docs/Web/Accessibility.html" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Accessibility">Accessibility</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/HTTP">HTTP</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/URI" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/URI">URI</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Mozilla/Add-ons/WebExtensions">Web extensions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/WebAssembly">WebAssembly</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/WebDriver">WebDriver</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web" aria-label="See all web technology references" title="See all web technology references" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Topics</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Media" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Media">Media</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Performance">Performance</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Privacy" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Privacy">Privacy</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Security">Security</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Progressive_web_apps">Progressive web apps</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="learn">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Learn</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" data-glean-id="menu_click_menu: learn -&gt; /en-US/docs/Learn_web_development">Learn web development</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Frontend developer course</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Getting_started">Getting started modules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core">Core modules</a>
+                              </li><li>
+                                <a class="" href="https://developer.mozilla.org/en-US/curriculum/" data-glean-id="menu_click_submenu: learn -&gt; /en-US/curriculum/">MDN Curriculum</a>
+                              </li><li>
+                                <a class="external" href="https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar" data-glean-id="menu_click_submenu: learn -&gt; https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar">Check out the video course from Scrimba, our partner</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn HTML</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn CSS</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics module</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn JavaScript</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript module</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="tools">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Tools</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Discover our tools
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="circle-play" href="https://developer.mozilla.org/en-US/play" data-glean-id="menu_click_submenu: tools -&gt; /en-US/play">Playground</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="shield-check" href="https://developer.mozilla.org/en-US/observatory" data-glean-id="menu_click_submenu: tools -&gt; /en-US/observatory">HTTP Observatory</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator">Border-image generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator">Border-radius generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator">Box-shadow generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_format_converter" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_format_converter">Color format converter</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_mixer" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_mixer">Color mixer</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes/Shape_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Shapes/Shape_generator">Shape generator</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="about">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">About</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Get to know MDN better
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="mdn-m" href="https://developer.mozilla.org/en-US/about" data-glean-id="menu_click_submenu: about -&gt; /en-US/about">About MDN</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="chart-no-axes-combined" href="https://developer.mozilla.org/en-US/advertising" data-glean-id="menu_click_submenu: about -&gt; /en-US/advertising">Advertise with us</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="users" href="https://developer.mozilla.org/en-US/community" data-glean-id="menu_click_submenu: about -&gt; /en-US/community">Community</a>
+                              </li><li>
+                                <a class="menu__panel-icon external" data-icon="github" href="https://github.com/mdn" data-glean-id="menu_click_submenu: about -&gt; https://github.com/mdn">MDN on GitHub</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="blog">
+            <a class="menu__tab-link" href="https://developer.mozilla.org/en-US/blog/" data-glean-id="menu_click_link: top-level -&gt; /en-US/blog/">Blog</a>
+          </div>
+      </nav>
+    </div>
+          <div class="navigation__search" data-view="desktop">
+            <mdn-search-button></mdn-search-button>
+          </div>
+          <mdn-user-menu></mdn-user-menu>
+        </div>
+      </nav>
+      <mdn-search-modal id="search"></mdn-search-modal>
+     
+      
+    
+        </header>
+        <div class="page-layout__main">
+      <div class="breadcrumbs-bar" data-scheme="">
+         
+      <ol class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+        
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/blog/" property="item" typeof="WebPage"><span property="name">MDN Blog</span></a>
+              <meta property="position" content="1">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="index.html" property="item" typeof="WebPage"><span property="name">Using HTML landmark roles to improve accessibility</span></a>
+              <meta property="position" content="2">
+            </li>
+          
+      </ol>
+    
+        
+        <mdn-color-theme></mdn-color-theme>
+        <mdn-language-switcher locale="en-US" native="English (US)" translations="[{&quot;locale&quot;:&quot;en-US&quot;,&quot;title&quot;:&quot;Using HTML landmark roles to improve accessibility&quot;,&quot;native&quot;:&quot;English (US)&quot;}]" url="index.html"></mdn-language-switcher>
+      </div><article id="content" class="blog-post">
+        <aside class="blog-post__toc">
+          <nav class="blog-toc">
+    <h2>In this article</h2>
+    <ul>
+      <li><a href="#what_are_html_landmark_roles">What are HTML landmark roles?</a></li><li><a href="#how_to_use_landmark_roles">How to use landmark roles</a></li><li><a href="#summary">Summary</a></li>
+    </ul>
+  </nav>
+          <mdn-placement-sidebar></mdn-placement-sidebar>
+        </aside>
+        <div class="blog-post__content blog-post-content">
+          <header class="blog-post-content__header">
+            <figure class="blog-post-header__image">
+    <img alt="HTML landmark roles for improved accessibility, learn about landmark roles and how to use them, May 15, 2023" src="html-landmark-roles.png" height="420" width="800">
+  </figure>
+            
+            <h1 class="blog-post-header__heading">Using HTML landmark roles to improve accessibility</h1>
+            <div class="blog-post-header__author-read-time">
+              <!--lit-part LzVZ8IXXqQU=-->
+    <!--lit-part lTQa1GcEeD8=--> <!--lit-node 0--><a href="https://github.com/schalkneethling/" class="external blog-post-author" target="_blank" rel="noreferrer">
+          <!--lit-part JlV0cUVu8Nk=--><!--lit-node 0--><img class="blog-post-author__avatar" src="../author/schalk-neethling/avatar.jpg" alt="Author avatar" loading="eager">
+      <!--lit-part-->Schalk Neethling<!--/lit-part--> <!--/lit-part-->
+        </a><!--/lit-part--> <!--lit-part LyNua6ecL5A=-->
+    <time class="date">
+      <!--lit-part-->May 15, 2023<!--/lit-part-->
+    </time>
+  <!--/lit-part-->
+    <!--lit-part q8Xd1R1bIgc=--><span class="read-time"><!--lit-part-->11 minutes read<!--/lit-part-->
+  </span><!--/lit-part-->
+  <!--/lit-part-->
+            </div>
+          </header>
+          <main class="blog-post-content__content">
+            
+    <section class="content-section">
+    
+    <p>It's important to make sure that your website is accessible to all users, including those using assistive technologies such as screen readers.
+One way to do this is by using <a href="../../docs/Web/Accessibility/ARIA/Reference/Roles/landmark_role.html">ARIA landmark roles</a> to help screen reader users easily navigate your website. There are other benefits to using landmark roles, such as improving the semantics of your HTML and making it easier to style your website. In this blog post, we'll take a closer look at these landmarks and how to use them on your website using a simple example.</p>
+  </section><section class="content-section" aria-labelledby="what_are_html_landmark_roles">
+    <!--lit-part LKgzZMRMETw=--><!--lit-node 0--><h2 id="what_are_html_landmark_roles" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#what_are_html_landmark_roles">What are HTML landmark roles?</a></h2><!--/lit-part-->
+    <p>Landmarks are defined in the <a href="https://www.w3.org/TR/wai-aria-1.2/#landmark_roles" class="external" target="_blank">Accessible Rich Internet Applications (ARIA) specification</a> as regions of a page that a user might want quick access to. While it is not stated that this is specifically for screen reader users, they are a group of users for which these are particularly helpful. There are eight landmark roles defined in the ARIA specification:</p>
+<ul>
+<li><code>banner</code></li>
+<li><code>navigation</code></li>
+<li><code>search</code></li>
+<li><code>main</code></li>
+<li><code>region</code></li>
+<li><code>complementary</code></li>
+<li><code>form</code></li>
+<li><code>contentinfo</code></li>
+</ul>
+<p>One way to assign a specific role to an element is by using the <code>role</code> attribute on the element. For example:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;div class="banner" role="banner"&gt;&lt;/div&gt;
+</code></pre></div>
+<p>While there may be cases where you need to set the role of an element explicitly, some HTML elements already have roles associated with them. For the rest of this post, we will follow the <a href="https://www.w3.org/TR/using-aria/#rule1" class="external" target="_blank">first rule of ARIA</a>, which is as follows:</p>
+<blockquote>
+<p>If you can use a native HTML element or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state, or property to make it accessible, then do so.</p>
+</blockquote>
+  </section><section class="content-section" aria-labelledby="how_to_use_landmark_roles">
+    <!--lit-part QukcM1xqBIA=--><!--lit-node 0--><h2 id="how_to_use_landmark_roles" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#how_to_use_landmark_roles">How to use landmark roles</a></h2><!--/lit-part-->
+    <p>For the purpose of illustrating how HTML landmarks work, we will build a basic web page that will improve the user experience and accessibility of a page for screen reader users. We will not write any CSS but focus on writing clean, semantic HTML.</p>
+<p>Save the following HTML to a file called <code>index.html</code> and open it in your favorite browser.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" /&gt;
+    &lt;title&gt;Mr. Pineapple's Pizzeria&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>You should see a blank page with the title "Mr. Pineapple's Pizzeria" in the browser tab. For each of the landmarks, we will add the appropriate HTML and inspect the accessibility tree to see how it changes.</p>
+  </section><section class="content-section" aria-labelledby="the_banner_landmark">
+    <!--lit-part DwYCfzMPuKE=--><!--lit-node 0--><h3 id="the_banner_landmark" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#the_banner_landmark">The banner landmark</a></h3><!--/lit-part-->
+    <p>The banner landmark is used to identify the header of a webpage, which typically contains the website's logo, navigation, and search input. When the <a href="../../docs/Web/HTML/Reference/Elements/header.html"><code>&lt;header&gt;</code></a> element is <em>not</em> used as a child of the <a href="../../docs/Web/HTML/Reference/Elements/main.html"><code>&lt;main&gt;</code></a> element or another sectioning element, it is assigned the <code>banner</code> role.</p>
+<p>Let's see how this looks by adding a banner landmark to our page.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;body&gt;
+  &lt;header&gt;
+    &lt;a class="logo" href="/"&gt;
+      &lt;span class="visually-hidden"&gt;Mr. Pineapple's Pizzeria&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/header&gt;
+&lt;/body&gt;
+</code></pre></div>
+<p>Refresh the page and open the developer tools. Depending on your browser, how you access the accessibility tree will be different. You can follow the links below for more information:</p>
+<ul>
+<li><a href="https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/" class="external" target="_blank">Firefox</a></li>
+<li><a href="https://developer.chrome.com/blog/full-accessibility-tree/" class="external" target="_blank">Chromium</a> (Edge, Chrome, Arc)</li>
+<li>In Safari, open the <a href="https://support.apple.com/guide/safari/sfri20948/mac" class="external" target="_blank">developer tools</a> (called the Web Inspector). Select an element in the <strong>Elements</strong> tab. On the far right, select the <strong>Node</strong> tab and expand the <strong>Accessibility</strong> section.</li>
+</ul>
+<p><img src="safari-a11y-inspector.png" alt="Safari web inspector panel with the node tab selected. It shows the expanded accessibility tree inspector at the bottom of the panel." width="992" height="558" loading="lazy"></p>
+<p>As you can see from the screenshot, with the <code>&lt;header&gt;</code> element selected, the role is shown as <code>banner</code>. We are off to a great start!</p>
+<blockquote>
+<p><strong>Note</strong> The Firefox developer tools' accessibility inspector will not show the appropriate role for the element. Instead, it will display the role for all of these elements as "landmark". This <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1572512" class="external" target="_blank">issue has been addressed</a> and will land in Firefox 114. If you are using <a href="https://www.mozilla.org/en-US/firefox/developer/" class="external" target="_blank">Firefox for developers</a>, the issue will already be resolved.</p>
+</blockquote>
+  </section><section class="content-section" aria-labelledby="the_navigation_landmark">
+    <!--lit-part ImgPT8CTgXg=--><!--lit-node 0--><h3 id="the_navigation_landmark" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#the_navigation_landmark">The navigation landmark</a></h3><!--/lit-part-->
+    <p>The <code>navigation</code> landmark is used to identify a set of links that help users navigate the web page or related web pages. This can include things like sidebar navigation, the site's main navigation, or a set of related links in the page's footer.</p>
+<p>As mentioned earlier, one of the common elements found in the page header is the site's primary navigation. Let's add one to our page:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;nav aria-label="Primary"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a aria-current="page" href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/menu"&gt;Our pizzas&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/contact"&gt;Get in touch&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre></div>
+<p>Here, we use the <a href="../../docs/Web/HTML/Reference/Elements/nav.html"><code>&lt;nav&gt;</code> element</a> element because it implicitly has the <code>navigation</code> role. Since a page could have multiple navigation elements, it is important to identify each of these landmarks uniquely. For this, we use the <code>aria-label</code> attribute and give the navigation landmark the name "Primary".</p>
+<blockquote>
+<p><strong>Note</strong> When a screen reader describes the above navigation landmark, it will say "Primary navigation". This is why the word "navigation" is not included in the <code>aria-label</code> value.</p>
+</blockquote>
+<p>If you inspect the <code>&lt;nav&gt;</code> element, you will notice two things: the element is identified as a navigation landmark and exposes the value we assigned using <code>aria-label</code>.</p>
+<p><img src="nav-role.png" alt="Shows the nav element highlighted in the elements inspector. It shows the accessibility inspector identifying the element as a navigation landmark with the name &quot;Primary&quot;." width="752" height="423" loading="lazy"></p>
+  </section><section class="content-section" aria-labelledby="the_search_landmark">
+    <!--lit-part N7f7hPEgax8=--><!--lit-node 0--><h3 id="the_search_landmark" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#the_search_landmark">The search landmark</a></h3><!--/lit-part-->
+    <p>The <code>search</code> role is used to group a set of related elements that together provide a means to search the website. The most common way to use this role is through a form.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;form name="site-search" action="/search" method="get" role="search"&gt;
+  &lt;label for="query"&gt;Find your perfect pizza&lt;/label&gt;
+  &lt;input type="search" id="query" name="query" /&gt;
+&lt;/form&gt;
+</code></pre></div>
+<p>Here we encounter the first instance where we need to assign a role to an element explicitly. As there is no native HTML element that has the implicit role of search, we assign the role to the <a href="../../docs/Web/HTML/Reference/Elements/form.html"><code>&lt;form&gt;</code></a> element in this example.
+This will change with the introduction of a new HTML element that we'll discuss later in this article.</p>
+<p>If you inspect the form element using the developer tools, you will see that it correctly identifies the landmark as a search landmark:</p>
+<p><img src="search-role.png" alt="Shows the search form highlighted in the elements inspector. Below it shows the accessibility inspector identifying the element as a search navigation landmark." width="784" height="441" loading="lazy"></p>
+  </section><section class="content-section" aria-labelledby="the_main_landmark">
+    <!--lit-part ouMwfOFgWso=--><!--lit-node 0--><h3 id="the_main_landmark" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#the_main_landmark">The main landmark</a></h3><!--/lit-part-->
+    <p>We are now stepping out of the header and into the main content of our page. This introduces the next landmark, aptly named <code>main</code>. It is important to note that a page can only have a single <a href="../../docs/Web/HTML/Reference/Elements/main.html"><code>&lt;main&gt;</code> element</a>.</p>
+<p><img src="main-role.png" alt="Shows the main element highlighted in the elements inspector. Below it shows the accessibility inspector identifying the element as the main navigational landmark." width="688" height="387" loading="lazy"></p>
+<p>Selecting the <code>&lt;main&gt;</code> element in the developer tools will now correctly identify our main content.</p>
+  </section><section class="content-section" aria-labelledby="the_region_landmark">
+    <!--lit-part nNDhu+yhgjM=--><!--lit-node 0--><h3 id="the_region_landmark" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#the_region_landmark">The region landmark</a></h3><!--/lit-part-->
+    <p>Our main content can be made up of different types of content or regions, and as luck would have it, there is a role for that. The <code>region</code> role is an interesting one; technically there <em>is</em> an HTML element with an implicit role of <code>region</code>, but the element in question is shrouded in a bit of controversy.</p>
+<p>The element I am referring to is the <a href="../../docs/Web/HTML/Reference/Elements/section.html"><code>&lt;section&gt;</code></a> element, or as some people call it, a <code>&lt;div&gt;</code> by another name. The reason for the controversy is that when used as in the example below, it doesn't have any semantic meaning:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;section&gt;
+  &lt;h2&gt;Our pizzas&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Margherita with pineapple&lt;/li&gt;
+    &lt;li&gt;Veggie with pineapple&lt;/li&gt;
+    &lt;li&gt;Meaty with pineapple&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre></div>
+<p>Inspecting it with the developer tools will also show that it is not identified as a region navigational landmark:</p>
+<p><img src="bland-section.png" alt="Shows the section element highlighted in the elements inspector. In the accessibility inspector the section is not identified as a region navigation role." width="752" height="423" loading="lazy"></p>
+<p>So how do we turn this into a region? We can do this by associating a heading element with the section using the <a href="../../docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby.html"><code>aria-labelledby</code></a> attribute. This serves two purposes: it turns the section into a region navigational landmark and the heading then provides a unique name for the region.</p>
+<p>In rare cases where there is no heading to associate with the <code>&lt;section&gt;</code> element, you can also use the <code>aria-label</code> attribute to achieve the same end result. Let's update our previous code to do just that:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;section aria-labelledby="our-pizzas-heading"&gt;
+  &lt;h2 id="our-pizzas-heading"&gt;Our pizzas&lt;/h2&gt;
+  &lt;p&gt;
+    All our pizzas come with the best pizza topping in the world. Pineapple!
+  &lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Margherita with pineapple&lt;/li&gt;
+    &lt;li&gt;Veggie with pineapple&lt;/li&gt;
+    &lt;li&gt;Meaty with pineapple&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre></div>
+<p>When you inspect the <code>&lt;section&gt;</code> element now, it will be correctly identified as a region landmark and show the inherited name from the heading element:</p>
+<p><img src="region-role.png" alt="Shows the section element highlighted in the elements inspector. In the accessibility inspector the section is correctly identified as a region navigation role." width="816" height="459" loading="lazy"></p>
+<p>At this stage, it is important to reiterate the reason for using landmarks. Landmarks are meant to identify key areas of a page a user would most likely be interested in and would want to navigate to. Therefore, be mindful when deciding which areas of your page should be highlighted as a landmark.</p>
+  </section><section class="content-section" aria-labelledby="the_complementary_landmark">
+    <!--lit-part F0yDd/9J6N8=--><!--lit-node 0--><h3 id="the_complementary_landmark" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#the_complementary_landmark">The complementary landmark</a></h3><!--/lit-part-->
+    <p>The <code>complementary</code> landmark is meant to identify content that is, well, complementary to the main content while still remaining meaningful when separated from the main content. This can include things like related articles, show times, or weather information. For our page, we will link to some great pizza recipes.</p>
+<p>This time around, we <em>do</em> have a native HTML element we can use for our complementary landmark:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;aside aria-labelledby="pizza-recipe-heading"&gt;
+  &lt;h3 id="pizza-recipe-heading"&gt;Make your own pie!&lt;/h3&gt;
+  &lt;p&gt;Below is a list of our favorite pizza recipes.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/mushroom-pizza"&gt;The shroom&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/smokey-joe"&gt;Smokey Joe&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/fromage"&gt;Fromage&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/aside&gt;
+</code></pre></div>
+<p>The <a href="../../docs/Web/HTML/Reference/Elements/aside.html"><code>&lt;aside&gt;</code></a> element has the implicit role of complementary and is, therefore, the perfect choice for our needs. Because we can have more than one complementary region on a page, it is important that we name each of these uniquely and descriptively. We can achieve this by either associating a heading element with the attribute <code>aria-labelledby</code> or using <code>aria-label</code> on the <code>&lt;aside&gt;</code> element.</p>
+<p>Inspecting the element in the developer tools will show that it is identified as a complementary navigational landmark role and inherits its name from the associated heading element.</p>
+<p><img src="complementary-role.png" alt="Shows the aside element highlighted in the elements inspector. In the accessibility inspector the section is correctly identified as a complementary navigation role." width="800" height="450" loading="lazy"></p>
+  </section><section class="content-section" aria-labelledby="the_form_landmark">
+    <!--lit-part 0uieuQxH/3s=--><!--lit-node 0--><h3 id="the_form_landmark" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#the_form_landmark">The form landmark</a></h3><!--/lit-part-->
+    <p>At first glance, this one might seem obvious, and it would be if it were not for an important nuance similar to what was discussed for the <code>&lt;section&gt;</code> element. Lets add a newsletter subscription form to our page.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;div class="newsletter"&gt;
+  &lt;h3&gt;Subscribe to Mr. Pineapple's newsletter&lt;/h3&gt;
+  &lt;p&gt;
+    In our newsletter, you can expect even more wonderful pizza recipes, all
+    featuring the versatile pineapple.
+  &lt;/p&gt;
+  &lt;form name="newsletter" action="/subscribe" type="post"&gt;
+    &lt;label for="email"&gt;Please provide your email address&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" /&gt;
+
+    &lt;button type="submit"&gt;Pineapple Me 🍍&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre></div>
+<p>If you inspect the <a href="../../docs/Web/HTML/Reference/Elements/form.html"><code>&lt;form&gt;</code></a> element, you might be disappointed to see that it is not identified as a form landmark but a generic section:</p>
+<p><img src="generic-form.png" alt="Shows the form element highlighted in the elements inspector. In the accessibility inspector the form is not identified as a form navigation role." width="816" height="459" loading="lazy"></p>
+<p>What gives? As with the <code>&lt;section&gt;</code> element earlier, you need to either associate a heading element with the form or use the <code>aria-label</code> attribute. We already have a descriptive heading, so all we need to do is associate the heading with the form.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;div class="newsletter"&gt;
+  &lt;h3 id="newsletter-subscribe-form-heading"&gt;
+    Subscribe to Mr. Pineapple's newsletter
+  &lt;/h3&gt;
+  &lt;p&gt;
+    In our newsletter, you can expect even more wonderful pizza recipes, all
+    featuring the versatile pineapple.
+  &lt;/p&gt;
+  &lt;form
+    aria-labelledby="newsletter-subscribe-form-heading"
+    name="newsletter"
+    action="/subscribe"
+    type="post"&gt;
+    &lt;label for="email"&gt;Please provide your email address&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" /&gt;
+
+    &lt;button type="submit"&gt;Pineapple Me 🍍&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre></div>
+<p>With those changes in place, inspecting the form element will yield the expected result:</p>
+<p><img src="form-role.png" alt="Shows the form element highlighted in the elements inspector. In the accessibility inspector the form is correctly identified as a form navigation role." width="816" height="459" loading="lazy"></p>
+  </section><section class="content-section" aria-labelledby="the_contentinfo_landmark">
+    <!--lit-part UxcW/1wPuSw=--><!--lit-node 0--><h3 id="the_contentinfo_landmark" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#the_contentinfo_landmark">The contentinfo landmark</a></h3><!--/lit-part-->
+    <p>The <code>contentinfo</code> landmark is used to identify information about the web page, such as copyright information or links to privacy statements. The most common use case for this is the footer of a page. Here <em>again</em>, we have a native HTML element that comes to the rescue.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;footer&gt;
+  &lt;p&gt;Copyright &amp;copy; Mr. Pineapple's Pizzeria - 2023&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre></div>
+<p>As with the <code>&lt;header&gt;</code> element, it is important that the <a href="../../docs/Web/HTML/Reference/Elements/footer.html"><code>&lt;footer&gt;</code></a> element not be inside the <code>&lt;main&gt;</code> element or another sectioning element. If so, it will not have the implicit role of <code>contentinfo</code>. Seeing that our <code>&lt;footer&gt;</code> element is a direct descendant of the <code>&lt;body&gt;</code> element, inspecting it in the developer tools will yield the expected result.</p>
+<p><img src="contentinfo-role.png" alt="Shows the footer element highlighted in the elements inspector. In the accessibility inspector the footer is correctly identified as a contentinfo navigation role." width="720" height="405" loading="lazy"></p>
+  </section><section class="content-section" aria-labelledby="a_new_search_html_element">
+    <!--lit-part OLJ50Etw6rs=--><!--lit-node 0--><h3 id="a_new_search_html_element" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#a_new_search_html_element">A new search HTML element</a></h3><!--/lit-part-->
+    <p>We have now covered all of the landmark roles, and for each landmark, we had a native HTML element we could use. Sure, we had to do a little bit of extra work for the <code>region</code> and <code>form</code> landmarks, but we never had to use the <code>role</code> attribute explicitly.</p>
+<p>But wait, what about the <code>search</code> landmark? We <em>had</em> to use the <code>role</code> attribute on the form. Dang it, you got me! But I did mention that I would have a surprise for you later in the post. The days of having to assign the <code>search</code> role to a form explicitly are coming to an end with the introduction of the new <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-search-element" class="external" target="_blank"><code>&lt;search&gt;</code></a> element. So, how do we use it? Let's update our earlier search landmark to use the new element:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;search&gt;
+  &lt;form name="site-search" action="/search" method="get" role="search"&gt;
+    &lt;label for="query"&gt;Find your perfect pizza&lt;/label&gt;
+    &lt;input type="search" id="query" name="query" /&gt;
+  &lt;/form&gt;
+&lt;/search&gt;
+</code></pre></div>
+<p>This is life on the bleeding edge though, so if you inspect the <code>&lt;search&gt;</code> element today (early 2023), you will find that it shows up as ignored in the accessibility tree.</p>
+<p><img src="search-ignored.png" alt="Shows the search element highlighted in the elements inspector. In the accessibility inspector the search element is shown as ignored." width="720" height="405" loading="lazy"></p>
+<p>This is why I kept the <code>role</code> attribute on the nested <code>&lt;form&gt;</code> element. Once browsers and screen readers start to implement the <code>&lt;search&gt;</code> element, there will no longer be a need for the <code>role</code> attribute on the form. There was a time when the <code>&lt;main&gt;</code> element had the same problem, mainly due to a lack of support in Internet Explorer, and one therefore needed to add <code>role="main"</code> to the element explicitly.</p>
+<p>We can now take a step back and look at the glorious accessibility tree we built together:</p>
+<p><img src="a11y-tree.png" alt="Shows the full accessibility tree which includes all of the landmark navigational role we have created." width="736" height="414" loading="lazy"></p>
+<p>It's a thing of beauty, is it not?</p>
+<h4 id="enabling_the_full_accessibility_tree_in_chrome">Enabling the full accessibility tree in Chrome</h4>
+<p>Note that showing this tree is an experimental feature in Chromium browsers. With accessibility tab selected in the developer tools, you should see and entry that reads, "Enable fullpage accessibility tree" with a unchecked checkbox to the left.</p>
+<p><img src="enable-fullpage-a11y-tree-chromium.png" alt="Shows the accessibility tab in the developer tools with the fullpage accessibility tree option visible." width="784" height="441" loading="lazy"></p>
+<p>When you check the checkbox, a notice will be shown asking you to reload the DevTools. Once you click the button and the DevTools reloads, you will see a new icon at the top right of the Elements panel. Clicking this icon will show the full accessibility tree.</p>
+<p><img src="a11y-tree-button-elements-panel.png" alt="Shows the elements tab in the developer tools with the the new accessibility tree icon at the top right." width="752" height="423" loading="lazy"></p>
+  </section><section class="content-section" aria-labelledby="demonstrating_the_landmarks_with_a_screen_reader">
+    <!--lit-part nLZoDEAk060=--><!--lit-node 0--><h3 id="demonstrating_the_landmarks_with_a_screen_reader" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#demonstrating_the_landmarks_with_a_screen_reader">Demonstrating the landmarks with a screen reader</a></h3><!--/lit-part-->
+    <p>Bringing it all together, let's see how our landmarks work with a screen reader.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=zmVyUrhRoU0" class="external" target="_blank">Watch the video</a> on Mozilla Developer which shows how a screen reader user can use our landmarks to navigate.</li>
+<li><a href="https://codesandbox.io/s/1qyfug?file=/index.html" class="external" target="_blank">Check the CodeSandbox for this post</a> to try out the page we created above in its finished form.</li>
+</ul>
+  </section><section class="content-section" aria-labelledby="summary">
+    <!--lit-part ftL4dvEqxtk=--><!--lit-node 0--><h2 id="summary" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#summary">Summary</a></h2><!--/lit-part-->
+    <p>HTML landmarks are an important tool for making webpages more accessible to screen reader users. By defining landmarks on your webpage, you can help users navigate more easily and find the information they need quickly. Remember to use the appropriate HTML elements whenever possible and to label your landmarks clearly, so users know what they're for.</p>
+  </section><section class="content-section" aria-labelledby="useful_resources">
+    <!--lit-part +ovk6xzTelo=--><!--lit-node 0--><h3 id="useful_resources" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#useful_resources">Useful resources</a></h3><!--/lit-part-->
+    <ul>
+<li><a href="https://www.scottohara.me/blog/2023/03/24/search-element.html" class="external" target="_blank">The search element</a></li>
+<li><a href="https://support.apple.com/en-za/guide/voiceover/vo2682/mac" class="external" target="_blank">VoiceOver user guide</a></li>
+<li><a href="https://support.apple.com/en-za/guide/voiceover/vo35709/mac" class="external" target="_blank">Apple's support page for landmarks with VoiceOver</a></li>
+</ul>
+  </section>
+  
+          </main>
+          <footer class="blog-post-content__footer">
+            <!--lit-part DBcMX3Xmtro=--><div class="blog-post-previous-next"><!--lit-part Trx9QqutGvg=-->
+        <!--lit-node 0--><a href="https://developer.mozilla.org/en-US/blog/baseline-unified-view-stable-web-features/" class="blog-post-previous-next__previous">
+          <article>
+            <h2>
+              <strong><!--lit-part-->Previous post<!--/lit-part--></strong>
+              <!--lit-part-->Introducing Baseline: a unified view of stable web features<!--/lit-part-->
+            </h2>
+          </article>
+        </a>
+      <!--/lit-part--> <!--lit-part 5xmcrbT2NtE=-->
+        <!--lit-node 0--><a href="https://developer.mozilla.org/en-US/blog/accessibility-celebrating-gaad-2023/" class="blog-post-previous-next__next">
+          <article>
+            <h2>
+              <strong><!--lit-part-->Next post<!--/lit-part--></strong>
+              <!--lit-part-->Celebrating Global Accessibility Awareness Day<!--/lit-part-->
+            </h2>
+          </article>
+        </a>
+      <!--/lit-part--></div><!--/lit-part-->
+          </footer>
+        </div>
+      </article>
+    </div>
+        
+      
+    
+      
+
+
+    <div class="page-layout__footer footer"><div><a href="http://developer.mozilla.org/en-US/blog/aria-accessibility-html-landmark-roles/">Using HTML landmark roles to improve accessibility</a> by <a href="http://developer.mozilla.org/en-US/blog/aria-accessibility-html-landmark-roles/$history">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC-BY-SA 2.5</a>.</div></div></body><!-- Mirrored from developer.mozilla.org/en-US/blog/aria-accessibility-html-landmark-roles/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:52:43 GMT --></html>

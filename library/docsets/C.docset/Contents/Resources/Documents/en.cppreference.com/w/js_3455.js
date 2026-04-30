@@ -1,0 +1,3 @@
+if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Talk","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":1,"wgPageName":"Talk:c/io/fprintf","wgTitle":"c/io/fprintf","wgCurRevisionId":76677,"wgArticleId":13998,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Talk:c/io/fprintf","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}

@@ -1,0 +1,33 @@
+<html><!-- Mirrored from mdn.github.io/dom-examples/channel-messaging-basic/page2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:51:44 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Page 2</title>
+    <style>
+      body {
+        background-color: aliceblue;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="output">page2.html (iframe body)</p>
+    <script>
+      const output = document.querySelector(".output");
+
+      window.addEventListener("message", onMessage);
+
+      function onMessage(e) {
+        if (!e.ports.length) return;
+
+        output.innerText = e.data;
+        // Use the transferred port to post a message to the main frame
+        e.ports[0].postMessage("A%20message%20from%20the%20iframe%20in%20page2.html");
+      }
+    </script>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/dom-examples/channel-messaging-basic/page2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:51:45 GMT --></html>

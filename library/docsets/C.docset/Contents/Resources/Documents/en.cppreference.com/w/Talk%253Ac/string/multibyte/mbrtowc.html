@@ -1,0 +1,322 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Ac/string/multibyte/mbrtowc.html --><head><meta charset="utf-8"><title>Talk:c/string/multibyte/mbrtowc</title><link rel="stylesheet" href="../../../css_1.css" type="text/css"><link rel="stylesheet" href="../../../css_2.css" type="text/css"><link rel="stylesheet" href="../../../css_3.css" type="text/css"><link rel="stylesheet" href="../../../css_6.css" type="text/css"><link rel="stylesheet" href="../../../css_5.css" type="text/css"><script type="text/javascript" src="../../../js_1.js"></script><script type="text/javascript" src="../../../js_2.js"></script><script type="text/javascript" src="../../../js_7444.js"></script><script type="text/javascript" src="../../../js_4.js"></script><script type="text/javascript" src="../../../js_5.js"></script><script type="text/javascript" src="../../../js_6.js"></script><script type="text/javascript" src="../../../js_7.js"></script><script type="text/javascript" src="../../../js_8.js"></script><script type="text/javascript" src="../../../js_9.js"></script><script type="text/javascript" src="../../../js_10.js"></script><script type="text/javascript" src="../../../js_11.js"></script><script type="text/javascript" src="../../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_c_string_multibyte_mbrtowc skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Ac%2Fstring%2Fmultibyte%2Fmbrtowc&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Ac%2Fstring%2Fmultibyte%2Fmbrtowc" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../../c/string/multibyte/mbrtowc.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./mbrtowc.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./mbrtowc.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./mbrtowc.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/string/multibyte/mbrtowc&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/string/multibyte/mbrtowc&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/string/multibyte/mbrtowc&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./mbrtowc.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:c/string/multibyte/mbrtowc</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../Talk%25253Ac.html" title="Talk:c">Talk:c</a>‎ | <a href="../multibyte.html" title="Talk:c/string/multibyte">string/multibyte</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./mbrtowc.html#Revision_as_of_16:49.2C_18_February_2015"><span class="tocnumber">1</span> <span class="toctext">Revision as of 16:49, 18 February 2015</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./mbrtowc.html#.28size_t.29_in_the_list_of_return_values"><span class="tocnumber">2</span> <span class="toctext"><span><span><span>(</span><span>size_t</span><span>)</span></span></span> in the list of return values</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./mbrtowc.html#mbrtowc.28NULL.2C_.22.22.2C_1.2C_ps.29"><span class="tocnumber">3</span> <span class="toctext">mbrtowc(NULL, "", 1, ps)</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./mbrtowc.html#int_rc.3B_or_size_t_rc.3B"><span class="tocnumber">4</span> <span class="toctext">int rc; or size_t rc;</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/string/multibyte/mbrtowc&amp;action=edit&amp;section=1" title="Edit section: Revision as of 16:49, 18 February 2015">edit</a>]</span> <span class="mw-headline" id="Revision_as_of_16:49.2C_18_February_2015">Revision as of 16:49, 18 February 2015</span></h3>
+<p>May I know the thinking behind this revision which changed
+</p>
+<pre>    static mbstate_t state; // zero-initialized
+</pre>
+<p>to
+</p>
+<pre>    mbstate_t state;
+    memset(&amp;state, 0, sizeof state);
+</pre>
+<p>? <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 03:05, 10 March 2017 (PST)
+</p>
+<dl><dd> the comment on that revision says "local state". I think I thought keeping the state local makes more sense for this demo because a function like "print_mb" might end up copied into beginner code even though there's a comment right above it saying how to do it right (wprintf). As noted in <a href="./c16rtomb.html" title="Talk:c/string/multibyte/c16rtomb">Talk:c/string/multibyte/c16rtomb</a>, I currently think it's ok either way. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 05:45, 10 March 2017 (PST)
+<dl><dd> Many thanks for sharing. I too think that it's ok either way but within the context of serial code. I had been wondering whether you made the change to the "local state" to position your example closer to thread safe code since a block scoped variable with automatic storage duration has a unique address in each thread. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 03:11, 11 March 2017 (PST)
+</dd></dl>
+</dd></dl>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/string/multibyte/mbrtowc&amp;action=edit&amp;section=2" title="Edit section: (size t) in the list of return values">edit</a>]</span> <span class="mw-headline" id=".28size_t.29_in_the_list_of_return_values"><span class="t-c"><span class="mw-geshi c source-c"><span class="br0">(</span><a href="../../../c/types/size_t.html"><span class="kw100">size_t</span></a><span class="br0">)</span></span></span> in the list of return values</span></h3>
+<p>Should the text <span class="t-c"><span class="mw-geshi c source-c"><span class="br0">(</span><a href="../../../c/types/size_t.html"><span class="kw100">size_t</span></a><span class="br0">)</span></span></span> be deleted from this page? While ISO C11 mentions <span class="t-c"><span class="mw-geshi c source-c"><span class="br0">(</span><a href="../../../c/types/size_t.html"><span class="kw100">size_t</span></a><span class="br0">)</span></span></span> in the list of return values of functions mbrtowc, mbrtoc16, and mbrtoc32, only function mbrtowc still includes it. I see the revision history of mbrtoc16 back in September, 2012, and wonder whether the text should be in or out. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 03:46, 24 March 2017 (PDT)
+</p>
+<dl><dd> The return value of this function has type <span class="t-c"><span class="mw-geshi c source-c"><a href="../../../c/types/size_t.html"><span class="kw100">size_t</span></a></span></span>, the expression <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">-</span><span class="nu0">1</span></span></span> does not, and the value -1 is not a value of type <span class="t-c"><span class="mw-geshi c source-c"><a href="../../../c/types/size_t.html"><span class="kw100">size_t</span></a></span></span>. Although it is obvious what happens to the target audience of the standard (language implementors), it may not be clear to the target audience of cppreference (language users). I would rather add the explicit cast to the description of the return value in <span class="t-lc"><a href="../../../c/string/multibyte/mbrtoc32.html" title="c/string/multibyte/mbrtoc32">mbrtoc32</a></span> and anything else that claims to return negative numbers despite the return type being unsigned. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:34, 24 March 2017 (PDT)
+<dl><dd> Me too. Will do. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 07:12, 24 March 2017 (PDT)
+</dd></dl>
+</dd></dl>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/string/multibyte/mbrtowc&amp;action=edit&amp;section=3" title="Edit section: mbrtowc(NULL, &quot;&quot;, 1, ps)">edit</a>]</span> <span class="mw-headline" id="mbrtowc.28NULL.2C_.22.22.2C_1.2C_ps.29">mbrtowc(NULL, "", 1, ps)</span></h3>
+<p>Here is the discussing before the editing: I wish to include a note addressing the intent and a conflict related to 7.29.6.3.2/2.
+</p><p>Notes
+</p><p>In C11 as published, the intended usage of "mbrtowc(NULL, "", 1, ps)" seems to be resetting the conversion state object to an initial conversion state. In other words, a '\0' byte occurring in a continuation byte of a multibyte character sequence should be unambiguously considered a null character, not an illegal sequence, regardless the current conversion state. This conflicts with the semantics of mbrtowc's storage of a partially-converted multibyte character. Therefore, there is no way to reset the internal conversion state (ps == NULL) once an illegal sequence has been encountered despite that being the intent. Programs needing the functionality of mbrtowc should use it with a non-null conversion-state pointer.<a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 04:17, 16 September 2017 (PDT)
+</p>
+<dl><dd> way too much text for a note, and it is addressing the wrong audience. What are you actually trying to say, to a programmer, not a WG14 member? That ps should not be a null pointer? This page never suggested it could be. That multibyte string is terminated on the first '\0'? That would be part of the definition of multibyte string. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 05:24, 16 September 2017 (PDT)
+</dd><dd>My suggested note is just a draft. It is not cast in stone. It has two purposes: layout a topic and start a discussion. At the same time, I am always looking for signs which will explain to me the rules that include/exclude text from the pages of cppreference. For a brief moment, I wish to  pursue that last thought. The standards document introduces the ordered list of return values of function mbrtowc() with the parenthetical phrase "(given the current conversion state):." Help me out here. Why was this wording excluded from the Returns section of cppreference's description of this function? Excluding the phrase seems to me to change the grammar of the ordered list. So, what is the thinking behind the exclusion? <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 03:11, 19 September 2017 (PDT)
+<dl><dd> No part of the standard is "included" or "excluded". It is a different document with a different target audience. If someone wants to read it, there are links at <a href="../../../Cppreference%25253AAbout.html" title="Cppreference:FAQ">Cppreference:FAQ</a>. Have you used this function in production? What problems did you encounter? What questions did you and the programmers who work with you have? What did it do that wasn't obvious from the existing description? What did you have to look up in other references or Q&amp;A forums? What do other references (posix, linux, etc) say about it function? Quoting the standard for everything, besides being potentially illegal, is not going to make this useful as a reference. Speaking of usefulness, __STDC_MB_MIGHT_NEQ_WC__ is both irrelevant and already described on the predefined macros page, why did you copy it here? --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:44, 19 September 2017 (PDT)
+<dl><dd>I shall try to unpack your questions one by one starting with the last question since it is about a different topic. Also, this question gives me a chance to explain how I approach cppreference before making an edit. I noticed in the history of both mbrtoc16()/c16rtomb() and mbrtoc32()/c32rtomb() that from the beginning, 10 Sep 2012, these pages mentioned macros __STDC_UTF_16__ and __STDC_UTF_32__, respectively. Today, I verified that these two macro names appeared in cppreference's predefined macros page on 28 June 2014. During the three years since, noone saw fit to make the argument that the macros are now already described on the predefined macros page and that their descriptions should now be removed from the function pages. Seeing the macros on both sets of pages did not prompt me to think that the predefined macros page was sufficient by itself. Then I realized that macro __STDC_ISO_10646__ has a similar relation with mbrtowc()/wcrtomb(). So, on 7 June 2017, I added a description while using P12's efforts as a role model. From there, it was a small step to argue that macro __STDC_MB_MIGHT_NEQ_WC__ is also related to mbrtowc()/wcrtomb() and like __STDC_UTF_16__ and __STDC_UTF_32__ deserves a mention on the function pages. I admit that at the time I did not consider the issue of relevancy. I saw something specified in the standards document and thought that it deserved an explanation in cppreference's reference document. I thought that a brief comment on the function pages would reveal a larger picture about mbrtowc()/wcrtomb(). Further, I cannot know all that you consider relevant. What I can consider is what the standards deemed sufficiently relevant to include in its specifications. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 06:48, 20 September 2017 (PDT)
+<dl><dd> The macro __STDC_MB_MIGHT_NEQ_WC__ has nothing at all to do with these functions or with any part of the C standard library. It describes a core language feature. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 07:43, 20 September 2017 (PDT)
+</dd></dl>
+</dd><dd>"Quoting the standard for everything, besides being potentially illegal, is not going to make this useful as a reference." I did not mean to imply that the missing parenthetical phrase should be lifted verbatim from the standards document. If I seemed to ask why the exact phrase was missing, I should have been more explicit by asking why something like the phrase was missing from cppreference's page. (I just noticed that the same parenthetical phrase qualifies the Returns section on the standard's subclauses specifying mbrtoc16() and mbrtoc32().) If I learned anything from the C books which I have purchased since the 1980s, it is that there are several ways to say the same thing and that some ways are clearer than others. I'll return to that parenthetical phrase in a minute. Our discussion is sharpening my thoughts about it. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 06:48, 20 September 2017 (PDT)
+</dd><dd>"What questions did you and the programmers who work with you have?" Unfortunately, I have no programming colleagues. What questions do I have? Well, I "asked" a single question in the rough draft of my suggested note in order to start this discussion. In a moment I shall re-ask that question in, I hope, a clearer fashion. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 06:48, 20 September 2017 (PDT)
+</dd><dd>"Have you used this function in production?" No. I approach this function as a novitiate seeking enlightenment. I am reading the standards document, cppreference's take on the standards, and C books. 99% of the C books in my library do not even mention the C library. I surf the Internet with the search string "mbrtowc" and experience disappointment. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 06:48, 20 September 2017 (PDT)
+</dd><dd>"What do other references (posix, linux, etc) say about it function?" The Web pages <a rel="nofollow" class="external free" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/mbrtowc.html">http://pubs.opengroup.org/onlinepubs/9699919799/functions/mbrtowc.html</a> and <a rel="nofollow" class="external free" href="https://www.freebsd.org/cgi/man.cgi?query=mbrtowc&amp;sektion=3&amp;apropos=0&amp;manpath=FreeBSD+11.1-RELEASE+and+Ports">https://www.freebsd.org/cgi/man.cgi?query=mbrtowc&amp;sektion=3&amp;apropos=0&amp;manpath=FreeBSD+11.1-RELEASE+and+Ports</a> exclude the parenthetical phrase. BUT, n1570 does include it. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 06:48, 20 September 2017 (PDT)
+</dd><dd>"What problems did you encounter? What did it do that wasn't obvious from the existing description?" Now we enter the weeds. Consider the banana symbol in a multibyte character string: f0 9f 8d 8c 00. Next, consider that string to be corrupted: f0 9f 8d 00 00. I understand that the standard states that this case is not allowed (5.2.1.1/Bullet #4): "A byte with all bits zero shall be interpreted as a null character independent of shift state. Such a byte shall not occur as part of any other multibyte character." But, what if it does? What if the null character is part of some other multibyte character, as in the corruption above? How does mbrtowc() handle it, and how does this function rebound from the unspecified conversion state? 
+<dl><dd> "What happens with f0 9f 8d 00 00?" is the only part of this that makes sense to me. Since 00 cannot follow 8d in UTF-8, I expect EILSEQ. Violation of the standard clause "Such a byte shall not occur as part of any other multibyte character." is undefined behavior (per $4.2), but to get there you would need to load an imaginary locale that defines an MB encoding that uses embedded zeroes (or leading zeroes in non-initial shift states). --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 07:43, 20 September 2017 (PDT)
+<dl><dd> May I impose on you to continue your line of thought about what happens with f0 9f 8d 00 00? I too expect EILSEQ but only after I take into account the current conversion state (by that I mean I apply the parenthetical phrase); otherwise, I think that a null character follows 8d because that is the first entry in the ordered list of returns. Applying mbrtowc with byte-at-a-time decoding has the conversion state in some partial-character state, i.e. some non-initial state, when the function encounters that first 00 after 8d; after looking at that 00, the function leaves the conversion state unspecified. Can mbrtowc then be invoked in some way which resets its conversion state object to an initial conversion state, or is the object locked in that partial-character state? I have been trying to tease the answer from the C11:7.29.6.3.2/2 and from cppreference without success. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 04:15, 21 September 2017 (PDT)
+<dl><dd> How to reset a trashed mbstate? See <span class="t-lc"><a href="../../../c/string/multibyte/mbstate_t.html" title="c/string/multibyte/mbstate t">mbstate_t</a></span> or in fact in the very first sentence of this Talk page. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:00, 21 September 2017 (PDT)
+<dl><dd> Thanks. I now understand that we do not use mbrtowc itself to reset the trashed user-provided mbstate. Also, as far as I can tell, there is no way to reset a trashed internal conversion state. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 07:04, 21 September 2017 (PDT)
+<dl><dd> There is no internal conversion state here. Eliminating that was the whole point of mbrtowc. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 07:35, 21 September 2017 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd><dd>Is the first occurrence of the null character in the banana string an unambiguous string terminator or is it part of an illegal sequence? As far as I can tell, both C translators available at Coliru respond with illegal sequence. And, I guess the current conversion state is unspecified. Perhaps you possess C translators which I cannot afford. Perhaps you can run the corrupted example through those translators. Excluding the parenthetical phrase implies, it seems to me, that the first occurrence of the null character in the corrupted banana string is an unambiguous string terminator, and so zero should be returned. But, including the parenthetical phrase, like the standard does, seems to imply the possibility of bypassing the order of the entries of the list of Returns. Perhaps the first return that applies really is "illegal sequence," but then invoke this function separately with "s==NULL". I get another illegal sequence because the conversion state was left as a non-initial conversion state. Then use memset() to reset the conversion state and again invoke mbrtowc() with "s==NULL and get the zero return value. I.E. "given the current conversion state." Maybe what I really should be asking is this: is the parenthetical phrase in the standards document superfluous? And is that why it does not appear in cppreference? Thanks for taking the time. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 06:48, 20 September 2017 (PDT)
+<dl><dd> We already say that conversion state is used. I suppose it could say more clearly that it's  an in/out parameter, but it doesn't make sense in the section that describes the return value, since it's not part of the return value. As you saw, other references agree. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 07:43, 20 September 2017 (PDT)
+<dl><dd> Sorry, I am unable to see where this page already says that the conversion state is used. What I do see is, "(including any shift sequences)." I guess I am missing something. On the other hand, the page about wcrtomb() reads, "(including any shift sequences, and taking into account the current multibyte conversion state *ps)." Should cppreference's page for mbrtowc() say the same thing? <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 05:44, 25 September 2017 (PDT)
+<dl><dd> yes, saying, in the first sentence (not in return value description) "taking into account the current multibyte conversion state *ps" is what I mean by "it could say more clearly that it's an in/out parameter". Right now this page only says the conversion state is "used when interpreting" in the description of the conversions state parameter. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 08:23, 26 September 2017 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/string/multibyte/mbrtowc&amp;action=edit&amp;section=4" title="Edit section: int rc; or size t rc;">edit</a>]</span> <span class="mw-headline" id="int_rc.3B_or_size_t_rc.3B">int rc; or size_t rc;</span></h3>
+<p>Examples of related conversion functions are now using size_t as the type of the return code variable. The type of rc has flip-flopped in the examples. Earlier this year the rationale that int made an example more readable accompanied an edit of this page. In the interest of consistency, should the type be int or size_t throughout the examples of the six related conversion functions? <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 02:44, 22 September 2017 (PDT)
+</p>
+<dl><dd> I still believe int rc is the right way, but with a second editor changing the code to size_t, I would look for a published design rationale (or at least another editor's professional opinion). To compare my experience with others, I just scanned the first 7 out of 45 pages of Debian code search results (grouped by package) for production use cases
+<ul><li> size_t users: gcc, zsh, putty, radare2, libiconv, chromium-browser, mutt, xz-utils
+</li><li> int users: gnutls28, libiberty, gnupg and other users of regex_internal.c, newt, dbacl
+</li><li> both: readline (size_t in mbutil.c's _rl_find_next_mbchar_internal and int in complete.c's compute_lcd_of_matches) 
+</li></ul>
+</dd><dd>seems current practice does not give a notable preference. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 08:04, 22 September 2017 (PDT)
+<dl><dd>While I have no strong preference between the two types (probably due to inexperience), I do prefer self-consistency among the examples of the six functions and perhaps a consistency with the type mentioned in the six Synopses: size_t. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Newatthis&amp;action=edit&amp;redlink=1" class="new" title="User:Newatthis (page does not exist)">Newatthis</a> (<a href="../../../User_talk%25253ANewatthis.html" title="User talk:Newatthis">talk</a>) 03:49, 23 September 2017 (PDT)
+</dd></dl>
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 188/1000000
+Preprocessor generated node count: 371/1000000
+Post‐expand include size: 994/4194304 bytes
+Template argument size: 93/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:16202-0!*!0!!en!*!* and timestamp 20240518080114 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/string/multibyte/mbrtowc&amp;oldid=95753">https://en.cppreference.com/mwiki/index.php?title=Talk:c/string/multibyte/mbrtowc&amp;oldid=95753</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./mbrtowc.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:c/string/multibyte/mbrtowc" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:c/string/multibyte/mbrtowc" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/string/multibyte/mbrtowc&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/string/multibyte/mbrtowc&amp;oldid=95753" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/string/multibyte/mbrtowc&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 26 September 2017, at 08:23.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,247 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.227 secs. -->
+	
+
+
+</body></html>

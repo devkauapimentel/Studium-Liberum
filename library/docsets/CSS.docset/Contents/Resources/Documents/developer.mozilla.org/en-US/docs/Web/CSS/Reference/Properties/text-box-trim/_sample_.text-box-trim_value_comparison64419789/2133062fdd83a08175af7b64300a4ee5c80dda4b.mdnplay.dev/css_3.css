@@ -1,0 +1,10 @@
+
+html { font-family: Roboto, sans-serif; height: 100%; }
+body { height: inherit; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+section { display: flex; justify-content: space-between; }
+section:nth-of-type(2) { justify-content: flex-end; padding-bottom: 30px; }
+select { width: 6rem; }
+p { margin: 0px; font-size: 6rem; font-weight: bold; border-top: 5px solid magenta; border-bottom: 5px solid magenta; }
+output { border: 2px solid gray; border-radius: 10px; padding: 10px; margin: 0px; width: fit-content; }
+
+button.copy {display:none !important}

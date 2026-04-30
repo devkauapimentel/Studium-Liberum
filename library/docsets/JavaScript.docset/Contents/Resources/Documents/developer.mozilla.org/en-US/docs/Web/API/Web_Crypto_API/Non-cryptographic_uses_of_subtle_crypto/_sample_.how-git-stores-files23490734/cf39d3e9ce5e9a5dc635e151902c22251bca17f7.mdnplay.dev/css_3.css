@@ -1,0 +1,4 @@
+
+output { display: block; font-family: monospace; }
+
+button.copy {display:none !important}

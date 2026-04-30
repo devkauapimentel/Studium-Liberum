@@ -1,0 +1,9 @@
+
+section { height: 150px; }
+.box1 { background-color: rgb(224, 206, 247); border: 5px solid rebeccapurple; }
+.box2, .box3 { background-color: aliceblue; border: 5px solid steelblue; }
+.box2 { overflow: auto; }
+.box3 { display: flow-root; }
+.float { float: left; width: 200px; height: 100px; background-color: rgba(255, 255, 255, 0.5); border: 1px solid black; padding: 10px; }
+
+button.copy {display:none !important}

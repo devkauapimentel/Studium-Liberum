@@ -1,0 +1,5 @@
+
+body { background: beige; }
+div { position: absolute; inset: 10% 40% 20% 15%; background: gold; border: 1px solid blue; }
+
+button.copy {display:none !important}

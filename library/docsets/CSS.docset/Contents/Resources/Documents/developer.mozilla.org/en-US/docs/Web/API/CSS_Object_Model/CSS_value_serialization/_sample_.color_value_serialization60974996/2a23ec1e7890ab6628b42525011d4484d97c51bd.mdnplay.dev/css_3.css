@@ -1,0 +1,8 @@
+
+.example { padding: 10px; margin: 5px; color: white; }
+.hsl { background-color: rgb(0, 0, 255); }
+.lab { background-color: lab(100 0 0); }
+.named { background-color: blue; }
+.alpha { background-color: rgba(64, 191, 64, 0.3); }
+
+button.copy {display:none !important}

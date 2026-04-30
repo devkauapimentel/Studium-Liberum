@@ -1,0 +1,7 @@
+
+div { height: 100px; width: 100px; outline: 1px dotted; line-height: 100px; font-size: 40px; text-align: center; font-family: Helvetica, Arial, sans-serif; }
+#div1 { background-color: lightpink; }
+#div2 { background-color: lightyellow; }
+#div3 { background-color: lightgreen; }
+
+button.copy {display:none !important}

@@ -1,0 +1,5 @@
+
+math { math-style: normal; }
+.compact { math-style: compact; }
+
+button.copy {display:none !important}

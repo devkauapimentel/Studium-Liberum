@@ -1,0 +1,381 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/language/aggregate_initialization.html --><head><meta charset="utf-8"><title>Talk:cpp/language/aggregate initialization</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_4690.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_language_aggregate_initialization skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Faggregate+initialization&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Faggregate+initialization" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/language/aggregate_initialization.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./aggregate_initialization.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./aggregate_initialization.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./aggregate_initialization.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/aggregate_initialization&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/aggregate_initialization&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/aggregate_initialization&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./aggregate_initialization.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/language/aggregate initialization</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../language.html" title="Talk:cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>&gt;&gt; no user-provided constructors (explicitly defaulted or deleted constructors are allowed) 
+Are deleted constructors really allowed? It doesn't work for me
+<a rel="nofollow" class="external free" href="http://coliru.stacked-crooked.com/a/12f9a83938b94190">http://coliru.stacked-crooked.com/a/12f9a83938b94190</a>
+<a href="../../User%25253ABalki.html" title="User:Balki">Balki</a> (<a href="../../User_talk%25253ABalki.html" title="User talk:Balki">talk</a>) 03:41, 18 April 2014 (PDT)
+</p>
+<dl><dd> that's a GCC bug: <a rel="nofollow" class="external free" href="http://gcc.gnu.org/bugzilla/show_bug.cgi?id=52707">http://gcc.gnu.org/bugzilla/show_bug.cgi?id=52707</a> clang works as intended: <a rel="nofollow" class="external free" href="http://coliru.stacked-crooked.com/a/5efc1114524cb68d">http://coliru.stacked-crooked.com/a/5efc1114524cb68d</a> --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 09:10, 18 April 2014 (PDT)
+</dd></dl>
+<p>&gt;&gt; I think it might be worthwhile to mention in the notes that flexible array members aren't valid constructs in C++.  The two sentences (in serial) "aggregate initialization is recursive" + "If the object is an array of unknown size, and the supplied brace-enclosed initializer list has n clauses, the size of the array is n" may lead some fool (such as myself) to think otherwise.<a href="https://en.cppreference.com/mwiki/index.php?title=User:Nathan.s.chappell&amp;action=edit&amp;redlink=1" class="new" title="User:Nathan.s.chappell (page does not exist)">Nathan.s.chappell</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Nathan.s.chappell&amp;action=edit&amp;redlink=1" class="new" title="User talk:Nathan.s.chappell (page does not exist)">talk</a>) 04:52, 14 November 2018 (PST)
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./aggregate_initialization.html#Got_a_few_questions.2Fopinions_on_the_example_section_that_I.27d_like_to_share:"><span class="tocnumber">1</span> <span class="toctext">Got a few questions/opinions on the example section that I'd like to share:</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./aggregate_initialization.html#Expand_on_brace_elision"><span class="tocnumber">2</span> <span class="toctext">Expand on brace elision</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./aggregate_initialization.html#example_of_aggregate_initialization_inheritance_would_help_to_be_complete"><span class="tocnumber">3</span> <span class="toctext">example of aggregate initialization inheritance would help to be complete</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./aggregate_initialization.html#missing-field-initializers_warning_when_fields_are_not_initialized_in_aggregate_initialization"><span class="tocnumber">4</span> <span class="toctext">missing-field-initializers warning when fields are not initialized in aggregate initialization</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/aggregate_initialization&amp;action=edit&amp;section=1" title="Edit section: Got a few questions/opinions on the example section that I'd like to share:">edit</a>]</span> <span class="mw-headline" id="Got_a_few_questions.2Fopinions_on_the_example_section_that_I.27d_like_to_share:"> Got a few questions/opinions on the example section that I'd like to share: </span></h2>
+<p>I believe 2 more aggregate struct examples might be helpful(number 1 recently failed me when my struct contained an empty vector):
+</p><p>S s5 = {0}; //may fail to initialize internal aggregate (a[3])?
+S s6 = {}; //should fail as no default values are given(?)
+</p><p><br>
+Regarding:
+//  char cr[3] = {'a', 'b', 'c', 'd'}; // too many initializer clauses
+</p><p>Is the following expression: 
+</p><p>char cr[3] = {'a', 'b', 'c'} //char array containing no room for \0 
+</p><p>1. Valid and fine
+2. Valid but not recommended as it is not null-terminated
+3. Valid C but invalid C++
+4. Other
+</p><p>And finally regarding:
+//    U u3 = { "asdf" }; // error: invalid conversion to int
+Should the comment read as "to int" or "from char*"?
+</p><p><br>
+My apologies if these questions are inappropriate.
+</p><p>--<a href="https://en.cppreference.com/mwiki/index.php?title=User:Skew&amp;action=edit&amp;redlink=1" class="new" title="User:Skew (page does not exist)">Skew</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Skew&amp;action=edit&amp;redlink=1" class="new" title="User talk:Skew (page does not exist)">talk</a>) 09:14, 21 October 2020 (PDT)
+</p>
+<dl><dd> both {0} and {} fall under the paragraph "If the number of initializer clauses is less than the number of members or initializer list is completely empty". The char array with no room for \0 is mentioned in the last of the Notes (valid C invalid C++). Conversion is from const char[5] (type of "asdf" to int (the type of a), it fails because it's to int and not to const char* (the type of b). --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:25, 23 October 2020 (PDT)
+</dd></dl>
+<p>I am very sad that designated initializers are restricted to being only in declared order.  Omitting some fields and using the others in don't-care ordering was the entire reason this feature existed and was useful in C99, making this a complete misfeature that is utterly useless to add to the language in the present form. <a href="https://en.cppreference.com/w/Special:Contributions/124.157.79.144" title="Special:Contributions/124.157.79.144">124.157.79.144</a> 15:27, 2 November 2020 (PST)
+</p>
+<dl><dd> Designated initializes (as they are in C++20) can nonetheless be useful (at least) to:
+<ul><li> emulate named actual parameters,
+</li><li> emulate function's default parameters skipping:
+</li></ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+&nbsp;
+<span class="kw1">struct</span> S <span class="br0">{</span> <span class="kw4">int</span> i<span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> <span class="kw4">double</span> d<span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> <span class="kw4">char</span> c<span class="br0">{</span><span class="st0">'a'</span><span class="br0">}</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<span class="kw4">void</span> foo<span class="br0">(</span>S s<span class="br0">)</span> <span class="br0">{</span>
+    <a href="../../cpp/io/cout.html"><span class="kw1776">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"S { i = "</span> <span class="sy1">&lt;&lt;</span> s.<span class="me1">i</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"; d = "</span> <span class="sy1">&lt;&lt;</span> s.<span class="me1">d</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"; c = '"</span> <span class="sy1">&lt;&lt;</span> s.<span class="me1">c</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"'; };<span class="es1">\n</span>"</span><span class="sy4">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    foo<span class="br0">(</span><span class="br0">{</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>                         <span class="co1">// OK: S { i = 0; d = 0; c = 'a'; };</span>
+    foo<span class="br0">(</span><span class="br0">{</span>.<span class="me1">i</span> <span class="sy1">=</span> <span class="nu0">2</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>                   <span class="co1">// OK: S { i = 2; d = 0; c = 'a'; };</span>
+    foo<span class="br0">(</span><span class="br0">{</span>.<span class="me1">d</span> <span class="sy1">=</span> <span class="nu0">3</span>,<span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>                  <span class="co1">// OK: S { i = 0; d = 3; c = 'a'; };</span>
+    foo<span class="br0">(</span><span class="br0">{</span>.<span class="me1">c</span> <span class="sy1">=</span> <span class="st0">'A'</span>,<span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>                <span class="co1">// OK: S { i = 0; d = 0; c = 'A'; };</span>
+    foo<span class="br0">(</span><span class="br0">{</span>.<span class="me1">i</span> <span class="sy1">=</span> <span class="nu0">3</span>, .<span class="me1">c</span> <span class="sy1">=</span> <span class="st0">'B'</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>         <span class="co1">// OK: S { i = 3; d = 0; c = 'B'; };</span>
+    foo<span class="br0">(</span><span class="br0">{</span>.<span class="me1">i</span> <span class="sy1">=</span> <span class="nu0">4</span>, .<span class="me1">d</span> <span class="sy1">=</span> <span class="nu0">5</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>           <span class="co1">// OK: S { i = 4; d = 5; c = 'a'; };</span>
+    foo<span class="br0">(</span><span class="br0">{</span>.<span class="me1">d</span> <span class="sy1">=</span> <span class="nu0">6</span>, .<span class="me1">c</span> <span class="sy1">=</span> <span class="st0">'C'</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>         <span class="co1">// OK: S { i = 0; d = 6; c = 'C'; };</span>
+    foo<span class="br0">(</span><span class="br0">{</span>.<span class="me1">i</span> <span class="sy1">=</span> <span class="nu0">7</span>, .<span class="me1">d</span> <span class="sy1">=</span> <span class="nu0">6</span>, .<span class="me1">c</span> <span class="sy1">=</span> <span class="st0">'D'</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK: S { i = 7; d = 6; c = 'D'; };</span>
+<span class="co1">//  foo({.d = 8, .i = 9});           // Error: designator order mismatch.</span>
+<span class="br0">}</span></pre></div></div> --<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 13:18, 3 January 2021 (PST)
+<dl><dd><dl><dd> To be fair, C incompat is a common criticism of the change: a header shared between C and C++ still has to avoid this C feature. But it did standardize a common compiler extension that some C++ users found useful. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 08:41, 4 January 2021 (PST)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/aggregate_initialization&amp;action=edit&amp;section=2" title="Edit section: Expand on brace elision">edit</a>]</span> <span class="mw-headline" id="Expand_on_brace_elision"> Expand on brace elision </span></h2>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;array&gt;</span>
+<span class="co2">#include &lt;utility&gt;</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="co1">// std::array&lt;std::pair&lt;int, int&gt;, 3&gt;{{0, 0}, {1, 1}, {2, 2}}; // error: too many initializers for 'std::array&lt;std::pair&lt;int, int&gt;, 3&gt;'</span>
+    <a href="../../cpp/container/array.html"><span class="kw1277">std::<span class="me2">array</span></span></a><span class="sy1">&lt;</span><a href="../../cpp/utility/pair.html"><span class="kw1105">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">int</span><span class="sy1">&gt;</span>, <span class="nu0">3</span><span class="sy1">&gt;</span><span class="br0">{</span><span class="br0">{</span><span class="br0">{</span><span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">}</span>, <span class="br0">{</span><span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">}</span>, <span class="br0">{</span><span class="nu0">2</span>, <span class="nu0">2</span><span class="br0">}</span><span class="br0">}</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// Well and good</span>
+    <a href="../../cpp/container/array.html"><span class="kw1277">std::<span class="me2">array</span></span></a><span class="sy1">&lt;</span><a href="../../cpp/utility/pair.html"><span class="kw1105">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">int</span><span class="sy1">&gt;</span>, <span class="nu0">3</span><span class="sy1">&gt;</span><span class="br0">{</span><a href="../../cpp/utility/pair.html"><span class="kw1105">std::<span class="me2">pair</span></span></a><span class="br0">{</span><span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">}</span>, <span class="br0">{</span><span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">}</span>, <span class="br0">{</span><span class="nu0">2</span>, <span class="nu0">2</span><span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// Allows brace elision</span>
+<span class="br0">}</span></pre></div></div>
+</div>
+<p>It's not clear where or why brace elision is allowed, think we should try to explain this. --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 03:57, 27 May 2021 (PDT)
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/aggregate_initialization&amp;action=edit&amp;section=3" title="Edit section: example of aggregate initialization inheritance would help to be complete">edit</a>]</span> <span class="mw-headline" id="example_of_aggregate_initialization_inheritance_would_help_to_be_complete"> example of aggregate initialization inheritance would help to be complete </span></h2>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> X
+<span class="br0">{</span>
+    <span class="kw4">int</span> a<span class="sy4">;</span>
+    <span class="kw4">int</span> b<span class="sy4">;</span>
+    <span class="kw4">int</span> c<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<span class="kw1">struct</span> Y <span class="sy4">:</span> X
+<span class="br0">{</span>
+    <span class="kw4">int</span> d<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+Y y<span class="br0">{</span> <span class="br0">{</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">}</span>, <span class="nu0">4</span><span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+</div>
+<p><br>
+Is it possible to use designated initialization with inheritance?
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Ron1010&amp;action=edit&amp;redlink=1" class="new" title="User:Ron1010 (page does not exist)">Ron1010</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Ron1010&amp;action=edit&amp;redlink=1" class="new" title="User talk:Ron1010 (page does not exist)">talk</a>) 12:43, 6 February 2023 (PST)
+</p>
+<dl><dd> Making your snipped runnable online, this is what we may use:
+</dd></dl>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">struct</span> X
+    <span class="br0">{</span>
+        <span class="kw4">int</span> a<span class="sy4">;</span>
+        <span class="kw4">int</span> b<span class="sy4">;</span>
+        <span class="kw4">int</span> c<span class="sy4">;</span>
+    <span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+    <span class="kw1">struct</span> Y <span class="sy4">:</span> X
+    <span class="br0">{</span>
+        <span class="kw4">int</span> d<span class="sy4">;</span>
+    <span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+    <span class="br0">[</span><span class="br0">[</span>maybe_unused<span class="br0">]</span><span class="br0">]</span>   Y y<span class="br0">{</span> <span class="br0">{</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">}</span>, <span class="nu0">4</span><span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+    <span class="br0">[</span><span class="br0">[</span>maybe_unused<span class="br0">]</span><span class="br0">]</span>   Y λ<span class="br0">{</span> <span class="br0">{</span> .<span class="me1">a</span> <span class="sy1">=</span> <span class="nu0">1</span>, .<span class="me1">b</span> <span class="sy1">=</span> <span class="nu0">2</span>, .<span class="me1">c</span> <span class="sy1">=</span> <span class="nu0">3</span> <span class="br0">}</span>, <span class="nu0">4</span> <span class="br0">}</span><span class="sy4">;</span>    
+<span class="br0">}</span></pre></div></div>
+</div> --<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 13:35, 7 February 2023 (PST)
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/aggregate_initialization&amp;action=edit&amp;section=4" title="Edit section: missing-field-initializers warning when fields are not initialized in aggregate initialization">edit</a>]</span> <span class="mw-headline" id="missing-field-initializers_warning_when_fields_are_not_initialized_in_aggregate_initialization"> missing-field-initializers warning when fields are not initialized in aggregate initialization </span></h2>
+<p>I added in a previous version a note, below these code lines:
+</p><p><code>A a{.x = 1, .z = 2}; // ok, b.y initialized to 0</code>
+</p><p><code>A b{.y = 2}; // ok, b.x and b.z are initialized to 0</code>
+</p><p>Saying:
+</p><p><code>
+// note: some compilers may issue a "missing-field-initializers" warning for above lines
+</code>
+</p><p><code>
+// for not initializing all members, even though members are initialized by default to {}
+</code>
+</p><p>(See for example: <a rel="nofollow" class="external free" href="https://godbolt.org/z/9jjoP4YP5">https://godbolt.org/z/9jjoP4YP5</a>)
+</p><p>This note was added following a discussion in another forum where it was not clear to some of the audience that the warning doesn't say that the fields are not initialized! (i.e. a few people were confused by the warning and argued, wrongly, that the fields are uninitialized - because of the warning).
+Thus, I believe that leaving this note on the page may be useful to some of the readers, to avoid this confusion.
+</p><p>--<a href="https://en.cppreference.com/mwiki/index.php?title=User:Amirk&amp;action=edit&amp;redlink=1" class="new" title="User:Amirk (page does not exist)">Amirk</a> (<a href="../../User_talk%25253AAmirk.html" title="User talk:Amirk">talk</a>) 13:33, 24 April 2025 (PDT)
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 144/1000000
+Preprocessor generated node count: 435/1000000
+Post‐expand include size: 1473/4194304 bytes
+Template argument size: 3005/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13507-0!*!0!!en!*!* and timestamp 20250424203346 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/aggregate_initialization&amp;oldid=182817">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/aggregate_initialization&amp;oldid=182817</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./aggregate_initialization.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/language/aggregate_initialization" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/language/aggregate_initialization" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/aggregate_initialization&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/aggregate_initialization&amp;oldid=182817" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/aggregate_initialization&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 24 April 2025, at 13:33.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.063 secs. -->
+	
+
+
+</body></html>

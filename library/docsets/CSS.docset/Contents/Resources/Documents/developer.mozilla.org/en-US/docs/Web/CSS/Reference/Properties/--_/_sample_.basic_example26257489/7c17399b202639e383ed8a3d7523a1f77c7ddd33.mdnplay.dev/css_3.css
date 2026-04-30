@@ -1,0 +1,8 @@
+
+:root { --first-color: #1166ff; --second-color: #ffff77; }
+#firstParagraph { background-color: var(--first-color); color: var(--second-color); }
+#secondParagraph { background-color: var(--second-color); color: var(--first-color); }
+#container { --first-color: #229900; }
+#thirdParagraph { background-color: var(--first-color); color: var(--second-color); }
+
+button.copy {display:none !important}

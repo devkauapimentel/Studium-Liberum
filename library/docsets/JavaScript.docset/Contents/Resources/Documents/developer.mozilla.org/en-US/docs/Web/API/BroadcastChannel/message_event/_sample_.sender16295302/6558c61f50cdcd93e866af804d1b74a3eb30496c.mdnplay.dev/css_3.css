@@ -1,0 +1,8 @@
+
+body { border: 1px solid black; padding: 0.5rem; height: 150px; font-family: "Fira Sans", sans-serif; }
+h1 { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.6em; line-height: normal; font-family: "Fira Sans", sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; margin-bottom: 1rem; }
+textarea { padding: 0.2rem; }
+label, br { margin: 0.5rem 0px; }
+button { vertical-align: top; height: 1.5rem; }
+
+button.copy {display:none !important}

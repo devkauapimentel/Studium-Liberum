@@ -1,0 +1,40 @@
+<html><!-- Mirrored from mdn.github.io/dom-examples/shadow-dom/shadowrootmode/scoping.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:47:25 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS scoping in declarative shadow DOM</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p hidden="">⛔ Your browser doesn't support <code>shadowrootmode</code> attribute yet.</p>
+    <article>
+      <style>
+        p {
+          padding: 8px;
+          background-color: wheat;
+        }
+      </style>
+      <p>I'm in the DOM.</p>
+    </article>
+    <article>
+      
+    </article>
+
+    <script>
+      const isShadowRootModeSupported = HTMLTemplateElement.prototype.hasOwnProperty('shadowRootMode');
+
+      document.querySelector('p[hidden]').toggleAttribute('hidden', isShadowRootModeSupported);
+    </script>
+    <!--
+      Used in:
+      - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
+    -->
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/dom-examples/shadow-dom/shadowrootmode/scoping.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:47:25 GMT --></html>

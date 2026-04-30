@@ -1,0 +1,7 @@
+
+:lang(ja) { writing-mode: vertical-rl; text-orientation: mixed; }
+:lang(mn-Mong) { writing-mode: vertical-lr; text-orientation: mixed; }
+:lang(ja), :lang(mn-Mong) { float: left; }
+:lang(mn-Mong) { font-family: "Noto Sans Mongolian", sans-serif; }
+
+button.copy {display:none !important}

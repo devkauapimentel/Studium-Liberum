@@ -1,0 +1,21 @@
+
+.no-autospace { text-autospace: no-autospace; }
+.auto { text-autospace: auto; }
+.normal { text-autospace: normal; }
+.ideograph-alpha { text-autospace: ideograph-alpha; }
+.ideograph-numeric { text-autospace: ideograph-numeric; }
+figure {
+  margin: 1rem;
+  & div { font-size: 2rem; padding: 1rem; font-family: sans-serif; border: 1px solid tomato; }
+  & p { margin: 0px; }
+}
+main { max-width: max-content; }
+@supports not (text-autospace: normal) {
+  form { display: none; }
+  .unsupported { color: red; }
+}
+@supports (text-autospace: normal) {
+  .unsupported { display: none; }
+}
+
+button.copy {display:none !important}

@@ -1,0 +1,9 @@
+
+@font-face { font-family: "Roboto VF"; src: url("../mdn.github.io/shared-assets/fonts/variable-fonts/Roboto-VF.woff2") format("woff2-variations"); font-weight: 100 900; font-width: 75% 100%; font-style: oblique 0deg 12deg; font-display: swap; }
+p { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; line-height: normal; font-family: "Roboto VF", Helvetica, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; font-size: 4rem; margin: 1rem; display: inline-block; }
+.adjustable { border: 1px dashed; --text-axis: 5; }
+.p1 { font-style: oblique 14deg; }
+.p2 { font-variation-settings: "slnt" 12; }
+.p3 { font-variation-settings: "slnt" var(--text-axis); }
+
+button.copy {display:none !important}

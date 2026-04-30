@@ -1,0 +1,18 @@
+
+h2 {
+  & + p {
+  & ~ p { font-style: italic; }
+  & + p { color: red; }
+}
+}
+.myClass {
+  & + p { text-decoration: underline; }
+}
+#myId {
+  & > .myClass { outline: 3px dashed red; }
+}
+* {
+  & > p { font-size: 1.1rem; }
+}
+
+button.copy {display:none !important}

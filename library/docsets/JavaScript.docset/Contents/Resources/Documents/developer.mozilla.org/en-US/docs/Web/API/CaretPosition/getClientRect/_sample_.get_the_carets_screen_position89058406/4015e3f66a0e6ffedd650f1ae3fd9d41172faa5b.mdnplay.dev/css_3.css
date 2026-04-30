@@ -1,0 +1,5 @@
+
+input { width: 100%; padding: 10px; font-size: 16px; box-sizing: border-box; }
+#log { height: 200px; overflow: scroll; padding: 0.5rem; border: 1px solid black; }
+
+button.copy {display:none !important}

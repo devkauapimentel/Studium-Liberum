@@ -1,0 +1,351 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/experimental/ranges.html --><head><meta charset="utf-8"><title>Talk:cpp/experimental/ranges</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_6647.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_experimental_ranges skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fexperimental%2Franges&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fexperimental%2Franges" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/experimental/ranges.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./ranges.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./ranges.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./ranges.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/experimental/ranges&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/experimental/ranges&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/experimental/ranges&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./ranges.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/experimental/ranges</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>I haven't even added Clause 7 yet and this already feels too long. Separate pages for clauses 4-7, maybe? But then it might feel too short. <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 15:02, 2 December 2016 (PST)
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/experimental/ranges&amp;action=edit&amp;section=1" title="Edit section: Qualified names in signatures?">edit</a>]</span> <span class="mw-headline" id="Qualified_names_in_signatures.3F"> Qualified names in signatures? </span></h2>
+<p>Our usual style is to use fully qualified names in signatures (it allows automatic links and all that), but this seems...a little too much:
+</p>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../cpp/header/experimental/ranges/algorithm.html" title="cpp/header/experimental/ranges/algorithm">&lt;experimental/ranges/algorithm&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">experimental</span><span class="sy4">::</span><span class="me2">ranges</span><span class="sy4">::</span><span class="me2">ForwardIterator</span> I,<br>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; std<span class="sy4">::</span><span class="me2">experimental</span><span class="sy4">::</span><span class="me2">ranges</span><span class="sy4">::</span><span class="me2">Sentinel</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> S,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">class</span> T, <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">class</span> Proj <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">experimental</span><span class="sy4">::</span><a href="../../cpp/experimental/ranges/functional/identity.html"><span class="kw2858">ranges::<span class="me2">identity</span></span></a>,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; std<span class="sy4">::</span><span class="me2">experimental</span><span class="sy4">::</span><span class="me2">ranges</span><span class="sy4">::</span><span class="me2">IndirectStrictWeakOrder</span><span class="sy1">&lt;</span><span class="kw4">const</span> T<span class="sy2">*</span>,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; std<span class="sy4">::</span><span class="me2">experimental</span><span class="sy4">::</span><span class="me2">ranges</span><span class="sy4">::</span><a href="../../cpp/ranges-placeholder/iterator/projected.html"><span class="kw2696">projected</span></a><span class="sy1">&lt;</span>I, Proj<span class="sy1">&gt;&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Comp <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">experimental</span><span class="sy4">::</span><a href="../../cpp/ranges-functional-placeholder/less.html"><span class="kw2863">ranges::<span class="me2">less</span></span></a><span class="sy1">&lt;&gt;&gt;</span><br>
+</p>
+<span class="kw4">bool</span> binary_search<span class="br0">(</span>I first, S last, <span class="kw4">const</span> T<span class="sy3">&amp;</span> value, Comp comp <span class="sy1">=</span> Comp<span class="br0">{</span><span class="br0">}</span>, Proj proj <span class="sy1">=</span> Proj<span class="br0">{</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Even this seems a bit excessive:
+</p>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../cpp/header/experimental/ranges/algorithm.html" title="cpp/header/experimental/ranges/algorithm">&lt;experimental/ranges/algorithm&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span>ranges<span class="sy4">::</span><span class="me2">ForwardIterator</span> I, ranges<span class="sy4">::</span><span class="me2">Sentinel</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> S,<br>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">class</span> T, <span class="kw1">class</span> Proj <span class="sy1">=</span> <a href="../../cpp/experimental/ranges/functional/identity.html"><span class="kw2858">ranges::<span class="me2">identity</span></span></a>,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ranges<span class="sy4">::</span><span class="me2">IndirectStrictWeakOrder</span><span class="sy1">&lt;</span><span class="kw4">const</span> T<span class="sy2">*</span>, ranges<span class="sy4">::</span><a href="../../cpp/ranges-placeholder/iterator/projected.html"><span class="kw2696">projected</span></a><span class="sy1">&lt;</span>I, Proj<span class="sy1">&gt;&gt;</span> Comp <span class="sy1">=</span> <a href="../../cpp/ranges-functional-placeholder/less.html"><span class="kw2863">ranges::<span class="me2">less</span></span></a><span class="sy1">&lt;&gt;&gt;</span><br>
+</p>
+<span class="kw4">bool</span> binary_search<span class="br0">(</span>I first, S last, <span class="kw4">const</span> T<span class="sy3">&amp;</span> value, Comp comp <span class="sy1">=</span> Comp<span class="br0">{</span><span class="br0">}</span>, Proj proj <span class="sy1">=</span> Proj<span class="br0">{</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>And <code>binary_search</code> isn't even close to the worst. Any ideas? <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 20:54, 5 January 2017 (PST)
+</p>
+<dl><dd> I think it would work if autolinker could pick up from just the most-nested namespace. <code>filesystem::path</code>, <code>ranges::less</code>, etc. I am looking at Networking TS right now (NB comments round) and that is going to be another handful of <code>std::experimental::net::whatever</code>s. To drop full qualifications completely, autolinker would have to be come really smart.. or the dcl templates would have to allow manual linking and lots of tedious editing. We'll need <a href="../../User%25253AP12.html" title="User:P12">User:P12</a> to weigh in on that. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:11, 6 January 2017 (PST)
+</dd></dl>
+<dl><dd> Another option could be to start wrapping dcls in namespaces, as in
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">namespace</span> std<span class="sy4">::</span><span class="me2">experimental</span><span class="sy4">::</span><span class="me2">ranges</span> <span class="br0">{</span>
+  <span class="kw1">template</span> <span class="sy1">&lt;</span>ForwardIterator I, Sentinel<span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> S...
+<span class="br0">}</span></pre></div></div>
+<dl><dd> but again not clear if autolinker can be smart enough to link ForwardIterator here. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 11:39, 6 January 2017 (PST)
+<dl><dd> If I understand correctly, linking in {{<a href="https://en.cppreference.com/w/Template:dcl" title="Template:dcl">dcl</a>}} (via {{<a href="https://en.cppreference.com/w/Template:c/core" title="Template:c/core">c/core</a>}}) is powered by GeSHi's keyword links feature and controlled by <a href="../../MediaWiki%25253AGeshi-keyword-list-cpp.html" title="MediaWiki:Geshi-keyword-list-cpp">MediaWiki:Geshi-keyword-list-cpp</a> rather than by <a href="../../MediaWiki%25253AAutolinker-definition-cpp.html" title="MediaWiki:Autolinker-definition-cpp">MediaWiki:Autolinker-definition-cpp</a> (which powers {{<a href="https://en.cppreference.com/w/Template:lc" title="Template:lc">lc</a>}}). So unless we want to hack GeSHi, we can try altering the list to make it treat, e.g., <code>filesystem::path</code> as the keyword rather than <code>std::experimental::filesystem::path</code>. The drawbacks are 1) the <code>std::experimental::</code> part presumably won't be linkified, and 2) potential conflicts when something gets merged into the standard (e.g., if this had been done for the filesystem TS,  <code>filesystem::path</code> would have been pointing to the TS version, and then we can't make it point to the IS version). One way to solve it might be to invent a "new language" for subpages of <a href="../../cpp/experimental.html" title="cpp/experimental">cpp/experimental</a> so that they get a different keyword list, and then we can make <code>filesystem::path</code> go to <span class="t-lc"><a href="../../cpp/experimental/fs/path.html" title="cpp/experimental/fs/path">std::experimental::filesystem::path</a></span> on <a href="https://en.cppreference.com/mwiki/index.php?title=cpp/experimental/foo&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/foo (page does not exist)">cpp/experimental/foo</a> but <span class="t-lc"><a href="../../cpp/filesystem/path.html" title="cpp/filesystem/path">std::filesystem::path</a></span> on <a href="https://en.cppreference.com/mwiki/index.php?title=cpp/foo&amp;action=edit&amp;redlink=1" class="new" title="cpp/foo (page does not exist)">cpp/foo</a>, but that 1) requires server-side changes and 2) could be hard to maintain since we would be duplicating a lot of stuff. <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 19:50, 10 January 2017 (PST)
+<dl><dd>Revisiting this again, I've been using the <span class="t-c"><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">foo</span></span></span> form since it's about as short as possible, while still permitting automatic linking without server-side changes. The "conflict" part isn't a significant issue for the Ranges TS at least, since the intent is for it to eventually become <span class="t-c"><span class="mw-geshi cpp source-cpp">std\d<span class="sy2">+</span><span class="sy4">::</span><span class="me2">meow</span></span></span> rather than <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">ranges</span><span class="sy4">::</span><span class="me2">meow</span></span></span>. So we just have to tell GeSHi that the "keyword" is <code>ranges::foo</code> rather than <code>std::experimental::ranges::foo</code>. (Autolinker is trickier, but it's also used in much fewer places. Worst case scenario, we can easily create a wrapper template so that {{<a href="https://en.cppreference.com/mwiki/index.php?title=Template:lc-rng&amp;action=edit&amp;redlink=1" class="new" title="Template:lc-rng (page does not exist)">lc-rng</a>|foo}} does the equivalent of {{<a href="https://en.cppreference.com/w/Template:lc" title="Template:lc">lc</a>|std::experimental::ranges::foo|ranges::foo}}.) <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 12:26, 23 January 2017 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd> I have some plans and even some prototyped code for a new autolinker that would be namespace-aware. That would solve the verbosity issues in the long-term. We could even drop std:: and add something like on-hover tooltips that would show fully-qualified names. I think that hacking the keyword definitions is a good solution short-term. --<a href="../../User%25253AP12.html" title="User:P12">P12</a> 01:58, 1 February 2017 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/experimental/ranges&amp;action=edit&amp;section=2" title="Edit section: Should we keep concept rows in the parameters table?">edit</a>]</span> <span class="mw-headline" id="Should_we_keep_concept_rows_in_the_parameters_table.3F"> Should we keep concept rows in the parameters table? </span></h2>
+<p>Take <a href="../../cpp/experimental/ranges/algorithm/sort.html" title="cpp/experimental/ranges/algorithm/sort">cpp/experimental/ranges/algorithm/sort</a> for an example, to what extent should we bother documenting the requirements in the table (with {{<a href="https://en.cppreference.com/w/Template:par_req_named" title="Template:par req named">par req named</a>}} etc.)? Note that <span class="t-c"><span class="mw-geshi cpp source-cpp">Sortable<span class="sy1">&lt;</span>I, Comp, Proj<span class="sy1">&gt;</span><span class="br0">(</span><span class="br0">)</span></span></span> eventually decomposes into a large number of requirements, not all obvious. (Let's assume that we have all the links and pages in place so with enough clicking and note-taking one can figure it out from the signature and the definition of the various concepts.) <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 15:17, 20 January 2017 (PST)
+</p>
+<dl><dd> I would think the point of named concepts (as opposed to individual constraints) is that the user doesn't need to decompose them, so <a href="../../cpp/experimental/ranges/iterator/Sortable.html" title="cpp/experimental/ranges/iterator/Sortable"><code>Sortable</code></a> is the only requirement that should be listed. Even in today's library, if something requires <a href="../../cpp/named_req/RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyRandomAccessIterator</span></a>, we don't also say it is required to be <a href="../../cpp/named_req/BidirectionalIterator.html" title="cpp/named req/BidirectionalIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyBidirectionalIterator</span></a> and everything else down to <a href="../../cpp/named_req/DefaultConstructible.html" title="cpp/named req/DefaultConstructible"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">DefaultConstructible</span></a> --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 18:38, 20 January 2017 (PST)
+<dl><dd> If that's the case, then we wouldn't need to bother since it's implied in the signature. The problem is that some of the constraints are not obvious (<span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/ranges-placeholder/iterator/projected.html"><span class="kw2696">projected</span></a></span></span> being the worst offender, because it is used all over the place and adds a <span class="t-c"><span class="mw-geshi cpp source-cpp">IndirectRegularInvocable<span class="sy1">&lt;</span>P, I<span class="sy1">&gt;</span></span></span> constraint via its template-parameter-list), and it's really hard now to answer a question like "I have a vector of <span class="t-c"><span class="mw-geshi cpp source-cpp">T</span></span>s, what must <span class="t-c"><span class="mw-geshi cpp source-cpp">T</span></span> satisfy in order for <span class="t-c"><span class="mw-geshi cpp source-cpp">sort</span></span> to work?" Previously, the answer is fairly straightforward. Now we have to wade through a large tree of concepts and multiple customization point objects with complex definitions before we can figure out the answer and be certain that we didn't miss anything. <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 19:16, 20 January 2017 (PST)
+<dl><dd>After thinking about this some more, perhaps it's better to just use <a href="../../cpp/experimental/ranges/iterator/Sortable.html" title="cpp/experimental/ranges/iterator/Sortable"><code>Sortable</code></a> on the <a href="../../cpp/experimental/ranges/algorithm/sort.html" title="cpp/experimental/ranges/algorithm/sort"><tt>ranges::sort</tt></a> page, and then decompose as needed on the concept page as part of the notes. I still think we need to decompose sprawling concepts like <a href="../../cpp/experimental/ranges/iterator/Sortable.html" title="cpp/experimental/ranges/iterator/Sortable"><code>Sortable</code></a> somewhere, since they represent a pretty big tree of requirements, and I think we should at least break it down into easier to digest pieces. <p> The iterator concepts are rather different: they have a ~linear hierarchy, so the requirements are easier to pin down, and in any event, those requirements are most interesting to people who <i>write</i> iterators, not people who use them (who can just check the iterator category in the documentation etc. and match it against the algorithm's requirement), whereas here the requirements are of great interest to people who use <span class="t-c"><span class="mw-geshi cpp source-cpp">sort</span></span>. <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 01:33, 23 January 2017 (PST)
+</p></dd></dl>
+</dd></dl>
+</dd></dl>
+<p>I'm currently inclined to think that we should partially decompose:
+</p>
+<ul><li> "sort requires <a href="../../cpp/experimental/ranges/iterator/Sortable.html" title="cpp/experimental/ranges/iterator/Sortable"><code>Sortable</code></a>" or "merge requires <a href="../../cpp/experimental/ranges/iterator/Mergeable.html" title="cpp/experimental/ranges/iterator/Mergeable"><code>Mergeable</code></a>" is basically circular and isn't informative;
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">Sortable<span class="sy1">&lt;</span>I, R, P<span class="sy1">&gt;</span></span></span> and especially <span class="t-c"><span class="mw-geshi cpp source-cpp">Mergeable<span class="sy1">&lt;</span>I1, I2, Out, R, P1, P2<span class="sy1">&gt;</span></span></span> have way too many parameters, making them tricky to follow and also hard to define;
+</li><li> In general, I think we don't need to decompose a concept if its requirements can be generally described in a sentence of reasonable length, possibly with the aid of well-established terms of art (like "random access iterator").
+</li></ul>
+<p>So, for <code>sort</code>, I would decompose it down to
+</p>
+<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">RandomAccessIterator</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span>
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">Sentinel</span><span class="sy1">&lt;</span>S, I<span class="sy1">&gt;</span></span></span>
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">Sortable</span><span class="sy1">&lt;</span>I, Comp, Proj<span class="sy1">&gt;</span></span></span>, decomposed into
+</li></ul>
+<dl><dd><ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">Permutable</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span>, decomposed into
+</li></ul>
+<dl><dd><ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">ForwardIterator</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span> (subsumed by RAI on the algorithm)
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">IndirectlyMovableStorable</span><span class="sy1">&lt;</span>I, I<span class="sy1">&gt;</span></span></span>
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">IndirectlySwappable</span><span class="sy1">&lt;</span>I, I<span class="sy1">&gt;</span></span></span>
+</li></ul>
+</dd></dl>
+<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">IndirectRegularUnaryInvocable</span><span class="sy1">&lt;</span>Proj, I<span class="sy1">&gt;</span></span></span> (required by <code>projected</code>), partially decomposed into
+</li></ul>
+<dl><dd><ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">CopyConstructible</span><span class="sy1">&lt;</span>Proj<span class="sy1">&gt;</span></span></span>
+</li><li> A pile of <a href="../../cpp/experimental/ranges/concepts/Invocable.html" title="cpp/experimental/ranges/concepts/Invocable"><code>RegularInvocable</code>s</a> that can be described in a sentence.
+</li></ul>
+</dd></dl>
+<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">IndirectStrictWeakOrder</span><span class="sy1">&lt;</span>Comp, ranges<span class="sy4">::</span><a href="../../cpp/ranges-placeholder/iterator/projected.html"><span class="kw2696">projected</span></a><span class="sy1">&lt;</span>I, Proj<span class="sy1">&gt;&gt;</span></span></span>, partially decomposed into
+</li></ul>
+<dl><dd><ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">ranges<span class="sy4">::</span><span class="me2">CopyConstructible</span><span class="sy1">&lt;</span>Comp<span class="sy1">&gt;</span></span></span>
+</li><li> A pile of <a href="../../cpp/experimental/ranges/concepts/StrictWeakOrder.html" title="cpp/experimental/ranges/concepts/StrictWeakOrder"><code>StrictWeakOrder</code></a> requirements, again described with words.
+</li></ul>
+</dd></dl>
+</dd></dl>
+The indirect callable traits are odd because they bundle in a <a href="../../cpp/experimental/ranges/concepts/CopyConstructible.html" title="cpp/experimental/ranges/concepts/CopyConstructible"><code>CopyConstructible</code></a> requirement that doesn't really belong. It may be possible to just call out the concept in the text description and not actually decompose it. <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 14:42, 18 May 2018 (PDT)<p></p>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2136/1000000
+Preprocessor generated node count: 4220/1000000
+Post‐expand include size: 14124/4194304 bytes
+Template argument size: 6803/4194304 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:15757-0!*!0!!*!*!* and timestamp 20250318111345 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/experimental/ranges&amp;oldid=103567">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/experimental/ranges&amp;oldid=103567</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./ranges.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/experimental/ranges" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/experimental/ranges" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/experimental/ranges&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/experimental/ranges&amp;oldid=103567" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/experimental/ranges&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 15 June 2018, at 16:00.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 2.680 secs. -->
+	
+
+
+</body></html>

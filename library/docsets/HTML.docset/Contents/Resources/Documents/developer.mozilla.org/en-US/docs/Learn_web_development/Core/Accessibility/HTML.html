@@ -1,0 +1,966 @@
+<html><!-- Mirrored from developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:42:46 GMT --><head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>HTML: A good basis for accessibility</title>
+          
+          <script>try {
+  document.documentElement.dataset.theme =
+    localStorage.getItem("theme") || "light dark";
+} catch (error) {
+  console.warn("Unable to set theme", error);
+}
+
+try {
+  if (localStorage.getItem("nop") === "yes") {
+    document.documentElement.dataset["nop"] = "yes";
+  }
+} catch (error) {
+  console.warn("Unable to set nop", error);
+}
+</script>
+          <link rel="stylesheet" href="../../../../../static/client/styles-global.03146ed4c65bc5ea.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/270.66bae6059a1c23f9.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-layout.632d2f3884f10ca3.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-content-section.2ee991ba88f986cf.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-heading-anchor.0eec5185ab9425b7.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-toc.9b9bd019efd16b86.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-article-footer.81ae18c89fc527dc.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-left-sidebar.6f954e8939555f77.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-page-layout.5a4354f33e894319.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-a11y-menu.5796ee87cb69f93f.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-navigation.3a34ee593a554c40.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-logo.aea5ff6edf1b9cfb.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-menu.3376b3e11656fba0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs-bar.9a51a3c76a6231d0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs.d06ce8d09f42feb8.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-footer.a2850e459e2d290b.css" fetchpriority="high">
+          <link rel="preload" href="../../../../../static/client/jetbrains-mono-latin.119994ed445212c7.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low"><link rel="preload" href="../../../../../static/client/inter-latin.9a3b1bc220d426ef.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+          <script data-cfasync="false" data-report-only="on" data-prompt="0" src="../../../../../../transcend-cdn.com/cm/d556c3a1-e57c-4bdf-a490-390a1aebf6dd/airgap.js"></script>
+          <script src="../../../../../static/client/runtime.c294a6bdc7a42570.js" type="module"></script><script src="../../../../../static/client/1111.53dba753dc3eb961.js" type="module"></script><script src="../../../../../static/client/8903.f870aafb338b203a.js" type="module"></script><script src="../../../../../static/client/index.9a449352d879bbd5.js" type="module"></script>
+          
+    <link rel="icon" sizes="32x32" href="../../../../../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../../../../../favicon.svg">
+   <meta name="description" content="A great deal of web content can be made accessible just by making sure the correct Hypertext Markup Language elements are used for the correct purpose at all times. This article looks in detail at how HTML can be used to ensure maximum accessibility."><meta name="og:url" content="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML"><meta name="og:title" content="HTML: A good basis for accessibility - Learn web development | MDN"><meta name="og:locale" content="en_US"><meta name="og:description" content="A great deal of web content can be made accessible just by making sure the correct Hypertext Markup Language elements are used for the correct purpose at all times. This article looks in detail at how HTML can be used to ensure maximum accessibility."><meta name="og:image" content="https://developer.mozilla.org/mdn-social-image.46ac2375.png"><meta name="og:image:type" content="image/png"><meta name="og:image:height" content="1024"><meta name="og:image:width" content="1024"><meta name="og:image:alt" content="The MDN logo"><meta name="og:site_name" content="MDN Web Docs"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="MozDevNet">
+          <link rel="canonical" href="HTML.html">
+          <link rel="apple-touch-icon" href="../../../../../apple-touch-icon.png">
+          <link rel="manifest" href="../../../../../manifest.json">
+          <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/opensearch.xml" title="MDN Web Docs">
+          <link rel="alternate" type="application/rss+xml" title="MDN Blog RSS Feed" href="https://developer.mozilla.org/en-US/blog/rss.xml">
+        </head>
+        
+      <body class="page-layout">
+        <ul class="a11y-menu">
+      <li>
+        <a href="#content">Skip to main content</a>
+      </li>
+      <li>
+        <a href="#search">Skip to search</a>
+      </li>
+    </ul>
+        <div class="page-layout__banner" data-scheme="">
+          <mdn-placement-top></mdn-placement-top>
+        </div>
+        <header class="page-layout__header">
+          
+      <nav class="navigation" data-scheme="" data-open="false">
+        <div class="navigation__logo">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">
+        <svg class="logo__image" width="83" height="24" viewBox="0 0 83 24" role="img">
+          <title>MDN</title>
+          <path class="logo__letter" d="M9.4 0 2.81 21.17H.12L6.69 0H9.4Zm2.38 0v21.17H9.4V0h2.4Zm9.27 0-6.56 21.17H11.8L18.36 0h2.69Zm2.39 0v21.17h-2.4V0h2.4Z"></path>
+          <path class="logo__text" d="M45.55 16.83h-3.93v-1.27h.87v-3.63c0-.85-.16-1.45-.48-1.82a1.65 1.65 0 0 0-1.3-.52c-.74 0-1.3.25-1.66.78a2.98 2.98 0 0 0-.58 1.58v3.59h1.38v1.26h-3.93v-1.26h.87v-3.6c0-.88-.16-1.48-.48-1.83a1.7 1.7 0 0 0-1.29-.52 1.93 1.93 0 0 0-1.65.75 2.85 2.85 0 0 0-.58 1.6v3.62h1.59v1.27h-4.64v-1.27h1.37V9.75h-1.4V8.46h3.08v1.47c.28-.48.62-.87 1.08-1.2a3 3 0 0 1 1.68-.45c.67 0 1.22.16 1.73.48.5.32.85.8 1.03 1.47.25-.57.62-1.03 1.13-1.4.5-.37 1.1-.55 1.81-.55.8 0 1.5.25 2.05.75.55.51.85 1.3.85 2.35v4.18h1.4v1.27Zm9.77 0H52.3v-1.66c-.27.51-.66.95-1.13 1.29-.56.4-1.23.59-1.9.55-1.11 0-2-.37-2.67-1.12a4.41 4.41 0 0 1-1-3.06c0-1.15.3-2.2.93-3.15.6-.94 1.58-1.43 2.94-1.43 1.36 0 2.25.5 2.83 1.5V5.22h-2V3.93h3.63v11.63h1.38v1.27Zm-3.06-3.86v-1.02a2.28 2.28 0 0 0-.73-1.67 2.4 2.4 0 0 0-1.66-.65 2.18 2.18 0 0 0-1.88.9 3.63 3.63 0 0 0-.65 2.2c0 .95.23 1.68.7 2.19.45.5 1.03.76 1.7.76.73 0 1.33-.3 1.79-.88.48-.6.71-1.21.73-1.83Zm14.14 3.86h-4.43v-1.27h1.37v-3.63c0-.85-.16-1.45-.5-1.82a1.68 1.68 0 0 0-1.31-.52c-.71 0-1.29.23-1.7.69a2.52 2.52 0 0 0-.67 1.6v3.66h1.38v1.26H56.1v-1.26h1.38v-5.8h-1.42V8.47h3.12V9.9c.6-1.06 1.57-1.6 2.92-1.6.83 0 1.54.26 2.12.77.57.5.85 1.28.85 2.34v4.19h1.38v1.24h-.05Z"></path>
+          <path class="logo__cursor" d="M67.71 21.98H83V24H67.71v-2.02Z"></path>
+        </svg>
+      </a>
+    </div>
+        <div class="navigation__search" data-view="mobile">
+          <mdn-search-button></mdn-search-button>
+        </div>
+        <button class="navigation__button" type="button" aria-expanded="false" aria-controls="navigation__popup" aria-label="Toggle navigation"></button>
+        <div class="navigation__popup" id="navigation__popup">
+          <div class="navigation__menu">
+      <nav class="menu">
+        <div class="menu__tab" data-section="html">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">HTML</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="../../../Web/HTML.html" data-glean-id="menu_click_menu: html -&gt; /en-US/docs/Web/HTML">HTML: Markup language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>HTML reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../../Web/HTML/Reference/Elements.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Elements">Elements</a>
+                              </li><li>
+                                <a href="../../../Web/HTML/Reference/Global_attributes.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Global_attributes">Global attributes</a>
+                              </li><li>
+                                <a href="../../../Web/HTML/Reference/Attributes.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Attributes">Attributes</a>
+                              </li><li>
+                                <a href="../../../Web/HTML/Reference.html" aria-label="See all HTML references" title="See all HTML references" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>HTML guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../../Web/HTML/Guides/Responsive_images.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Responsive_images">Responsive images</a>
+                              </li><li>
+                                <a href="../../../Web/HTML/Guides/Cheatsheet.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Cheatsheet">HTML cheatsheet</a>
+                              </li><li>
+                                <a href="../../../Web/HTML/Guides/Date_and_time_formats.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Date_and_time_formats">Date &amp; time formats</a>
+                              </li><li>
+                                <a href="../../../Web/HTML/Guides.html" aria-label="See all HTML guides" title="See all HTML guides" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Markup languages</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/SVG">SVG</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/MathML">MathML</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/XML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/XML">XML</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="css">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">CSS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" data-glean-id="menu_click_menu: css -&gt; /en-US/docs/Web/CSS">CSS: Styling language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>CSS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Properties">Properties</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Selectors">Selectors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/At-rules">At-rules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Values">Values</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" aria-label="See all CSS references" title="See all CSS references" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>CSS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Box_model/Introduction">Box model</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Animations/Using">Animations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Flexbox</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Applying_color" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Colors/Applying_color">Colors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides" aria-label="See all CSS guides" title="See all CSS guides" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Layout cookbook</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts">Column layouts</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element">Centering an element</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Card" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Card">Card component</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="javascript">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label" data-type="long">JavaScript</span><span class="menu__tab-label" data-type="short">JS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" data-glean-id="menu_click_menu: javascript -&gt; /en-US/docs/Web/JavaScript">JavaScript: Scripting language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>JS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Statements">Statements &amp; declarations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Functions">Functions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" aria-label="See all JavaScript references" title="See all JavaScript references" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>JS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow &amp; error handing</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops and iteration</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Working_with_objects">Working with objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Using_classes">Using classes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" aria-label="See all JavaScript guides" title="See all JavaScript guides" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="webapis">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Web APIs</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/API" data-glean-id="menu_click_menu: webapis -&gt; /en-US/docs/Web/API">Web APIs: Programming interfaces</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Web API reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/File_System_API">File system API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API">Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Geolocation_API">Geolocation API</a>
+                              </li><li>
+                                <a href="../../../Web/API/HTML_DOM_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/HTML_DOM_API">HTML DOM API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Push_API">Push API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Service_Worker_API">Service worker API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API" aria-label="See all Web API guides" title="See all Web API guides" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Web API guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API">Using the Web animation API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API/Using_Fetch">Using the Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/History_API/Working_with_the_History_API">Working with the History API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Using the Web speech API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using web workers</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="all">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">All</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web" data-glean-id="menu_click_menu: all -&gt; /en-US/docs/Web">All web technology</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Technologies</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../../Web/Accessibility.html" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Accessibility">Accessibility</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/HTTP">HTTP</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/URI" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/URI">URI</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Mozilla/Add-ons/WebExtensions">Web extensions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/WebAssembly">WebAssembly</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/WebDriver">WebDriver</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web" aria-label="See all web technology references" title="See all web technology references" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Topics</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Media" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Media">Media</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Performance">Performance</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Privacy" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Privacy">Privacy</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Security">Security</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Progressive_web_apps">Progressive web apps</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="learn">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Learn</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" data-glean-id="menu_click_menu: learn -&gt; /en-US/docs/Learn_web_development">Learn web development</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Frontend developer course</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Getting_started">Getting started modules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core">Core modules</a>
+                              </li><li>
+                                <a class="" href="https://developer.mozilla.org/en-US/curriculum/" data-glean-id="menu_click_submenu: learn -&gt; /en-US/curriculum/">MDN Curriculum</a>
+                              </li><li>
+                                <a class="external" href="https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar" data-glean-id="menu_click_submenu: learn -&gt; https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar">Check out the video course from Scrimba, our partner</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn HTML</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn CSS</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics module</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn JavaScript</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript module</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="tools">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Tools</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Discover our tools
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="circle-play" href="https://developer.mozilla.org/en-US/play" data-glean-id="menu_click_submenu: tools -&gt; /en-US/play">Playground</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="shield-check" href="https://developer.mozilla.org/en-US/observatory" data-glean-id="menu_click_submenu: tools -&gt; /en-US/observatory">HTTP Observatory</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator">Border-image generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator">Border-radius generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator">Box-shadow generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_format_converter" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_format_converter">Color format converter</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_mixer" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_mixer">Color mixer</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes/Shape_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Shapes/Shape_generator">Shape generator</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="about">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">About</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Get to know MDN better
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="mdn-m" href="https://developer.mozilla.org/en-US/about" data-glean-id="menu_click_submenu: about -&gt; /en-US/about">About MDN</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="chart-no-axes-combined" href="https://developer.mozilla.org/en-US/advertising" data-glean-id="menu_click_submenu: about -&gt; /en-US/advertising">Advertise with us</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="users" href="https://developer.mozilla.org/en-US/community" data-glean-id="menu_click_submenu: about -&gt; /en-US/community">Community</a>
+                              </li><li>
+                                <a class="menu__panel-icon external" data-icon="github" href="https://github.com/mdn" data-glean-id="menu_click_submenu: about -&gt; https://github.com/mdn">MDN on GitHub</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="blog">
+            <a class="menu__tab-link" href="https://developer.mozilla.org/en-US/blog/" data-glean-id="menu_click_link: top-level -&gt; /en-US/blog/">Blog</a>
+          </div>
+      </nav>
+    </div>
+          <div class="navigation__search" data-view="desktop">
+            <mdn-search-button></mdn-search-button>
+          </div>
+          <mdn-user-menu></mdn-user-menu>
+        </div>
+      </nav>
+      <mdn-search-modal id="search"></mdn-search-modal>
+     
+      
+    
+        </header>
+        <div class="page-layout__main">
+      <div class="breadcrumbs-bar" data-scheme="">
+        <mdn-toggle-sidebar></mdn-toggle-sidebar> 
+      <ol class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+        
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" property="item" typeof="WebPage"><span property="name">Learn</span></a>
+              <meta property="position" content="1">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" property="item" typeof="WebPage"><span property="name">Core learning modules</span></a>
+              <meta property="position" content="2">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility" property="item" typeof="WebPage"><span property="name">Accessibility</span></a>
+              <meta property="position" content="3">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="HTML.html" property="item" typeof="WebPage"><span property="name">Accessible HTML</span></a>
+              <meta property="position" content="4">
+            </li>
+          
+      </ol>
+    
+        <mdn-collection-save-button doc-url="/en-US/docs/Learn_web_development/Core/Accessibility/HTML" doc-title="HTML: A good basis for accessibility"></mdn-collection-save-button>
+        <mdn-color-theme></mdn-color-theme>
+        <mdn-language-switcher locale="en-US" native="English (US)" translations="[{&quot;locale&quot;:&quot;en-US&quot;,&quot;title&quot;:&quot;HTML: A good basis for accessibility&quot;,&quot;native&quot;:&quot;English (US)&quot;},{&quot;locale&quot;:&quot;de&quot;,&quot;title&quot;:&quot;HTML: Eine gute Grundlage für Barrierefreiheit&quot;,&quot;native&quot;:&quot;Deutsch&quot;},{&quot;locale&quot;:&quot;es&quot;,&quot;title&quot;:&quot;HTML: Una buena base para la accesibilidad&quot;,&quot;native&quot;:&quot;Español&quot;},{&quot;locale&quot;:&quot;fr&quot;,&quot;title&quot;:&quot;HTML : une bonne base pour l'accessibilité&quot;,&quot;native&quot;:&quot;Français&quot;},{&quot;locale&quot;:&quot;ja&quot;,&quot;title&quot;:&quot;HTML: アクセシビリティの良き基本&quot;,&quot;native&quot;:&quot;日本語&quot;},{&quot;locale&quot;:&quot;ko&quot;,&quot;title&quot;:&quot;HTML: 접근성의 좋은 기반&quot;,&quot;native&quot;:&quot;한국어&quot;},{&quot;locale&quot;:&quot;pt-BR&quot;,&quot;title&quot;:&quot;HTML: Boas práticas em acessibilidade&quot;,&quot;native&quot;:&quot;Português (do&nbsp;Brasil)&quot;},{&quot;locale&quot;:&quot;ru&quot;,&quot;title&quot;:&quot;HTML: Хорошая основа для доступности&quot;,&quot;native&quot;:&quot;Русский&quot;},{&quot;locale&quot;:&quot;zh-CN&quot;,&quot;title&quot;:&quot;HTML：无障碍的良好基础&quot;,&quot;native&quot;:&quot;中文 (简体)&quot;},{&quot;locale&quot;:&quot;zh-TW&quot;,&quot;title&quot;:&quot;HTML：無障礙的良好基礎&quot;,&quot;native&quot;:&quot;正體中文 (繁體)&quot;}]" url="HTML.html"></mdn-language-switcher>
+      </div><div class="layout__2-sidebars-inline reference-layout">
+        <main id="content" class="layout__content">
+          <div class="layout__header reference-layout__header">
+            
+            
+            <mdn-survey></mdn-survey>
+            <h1>HTML: A good basis for accessibility</h1>
+             <section class="content-section">
+    
+    <ul class="prev-next"><li class="prev"><a class="button secondary" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Tooling"><span class="button-wrap"> Previous </span></a></li><li class="menu"><a class="button secondary" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility"><span class="button-wrap"> Overview: Accessibility on the web</span></a></li><li class="next"><a class="button secondary" href="Test_your_skills/HTML.html"><span class="button-wrap"> Next  </span></a></li></ul>
+<p>A great deal of web content can be made accessible just by making sure the correct Hypertext Markup Language elements are used for the correct purpose at all times. This article looks in detail at how HTML can be used to ensure maximum accessibility.</p>
+<figure class="table-container"><table>
+  <tbody>
+    <tr>
+      <th scope="row">Prerequisites:</th>
+      <td>Familiarity with <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content">HTML</a>, <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics">CSS</a>, a <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility">basic understanding of accessibility concepts</a>.</td>
+    </tr>
+    <tr>
+      <th scope="row">Learning outcomes:</th>
+      <td>
+        <ul>
+          <li>Use semantic HTML, aka "The right element for the right job", because the browser provides so many built-in accessibility hooks.</li>
+          <li>Accessible best practices such as alt text, good link text, form labels, and table row and column headings and scoping.</li>
+          <li>Using simple plain language, steering clear of slang and abbreviations where possible, and providing definitions where it is not possible.</li>
+          <li>The concept and practice of keyboard accessibility.</li>
+          <li>The importance of source order.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table></figure>
+  </section>
+          </div>
+          <aside class="layout__right-sidebar reference-layout__toc">
+            <nav class="reference-toc">
+      <h2>In this article</h2>
+      <ul>
+        <li><a href="#html_and_accessibility">HTML and accessibility</a></li><li><a href="#good_semantics">Good semantics</a></li><li><a href="#accessible_data_tables">Accessible data tables</a></li><li><a href="#text_alternatives">Text alternatives</a></li><li><a href="#more_on_links">More on links</a></li><li><a href="#summary">Summary</a></li>
+      </ul>
+    </nav>
+            <mdn-placement-sidebar></mdn-placement-sidebar>
+          </aside>
+          <div class="layout__body reference-layout__body">
+            <section class="content-section" aria-labelledby="html_and_accessibility">
+    <!--lit-part h0lRPLxKjF8=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/HTML%20and%20accessibility"></a><h2 id="html_and_accessibility" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#html_and_accessibility">HTML and accessibility</a></h2><!--/lit-part-->
+    <p>As you learn more about HTML — read more resources, look at more examples, etc. — you'll keep seeing a common theme: the importance of using semantic HTML (sometimes called POSH, or Plain Old Semantic HTML). This means using the correct HTML elements for their intended purpose as much as possible.</p>
+<p>You might wonder why this is so important. After all, you can use a combination of CSS and JavaScript to make just about any HTML element behave in whatever way you want. For example, a control button to play a video on your site could be marked up like this:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;div&gt;Play video&lt;/div&gt;
+</code></pre></div>
+<p>But as you'll see in greater detail later on, it makes sense to use the correct element for the job:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;button&gt;Play video&lt;/button&gt;
+</code></pre></div>
+<p>Not only do HTML <code>&lt;button&gt;</code>s have some suitable styling applied by default (which you will probably want to override), they also have built-in keyboard accessibility — users can navigate between buttons using the <kbd>Tab</kbd> key and activate their selection using <kbd>Space</kbd>, <kbd>Return</kbd> or <kbd>Enter</kbd>.</p>
+<p>Semantic HTML doesn't take any longer to write than non-semantic (bad) markup if you do it consistently from the start of your project. Even better, semantic markup has other benefits beyond accessibility:</p>
+<ol>
+<li><strong>Easier to develop with</strong> — as mentioned above, you get some functionality for free, plus it is arguably easier to understand.</li>
+<li><strong>Better on mobile</strong> — semantic HTML is arguably lighter in file size than non-semantic spaghetti code, and easier to make responsive.</li>
+<li><strong>Good for SEO</strong> — search engines give more importance to keywords inside headings, links, etc. than keywords included in non-semantic <code>&lt;div&gt;</code>s, etc., so your documents will be more findable by customers.</li>
+</ol>
+<p>Let's get on and look at accessible HTML in more detail.</p>
+  </section><section class="content-section" aria-labelledby="good_semantics">
+    <!--lit-part +OS2uEFITdA=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Good%20semantics"></a><h2 id="good_semantics" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#good_semantics">Good semantics</a></h2><!--/lit-part-->
+    <p>We've already talked about the importance of proper semantics, and why we should use the right HTML element for the job. This cannot be ignored, as it is one of the main places that accessibility is badly broken if not handled properly.</p>
+<p>Out there on the web, the truth is that people do some very strange things with HTML markup. Often, misuse of HTML is because of legacy practices that haven't gone away yet, but sometimes it occurs because authors don't know any better. Whatever the case, you should replace bad code with good semantic markup wherever possible, in both static HTML pages and dynamically-generated HTML from <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side">server-side</a> code or <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries">client-side JavaScript frameworks</a> such as React.</p>
+<p>Sometimes you are not in a position to get rid of lousy markup — your pages might be dependant on server-side code or web/framework components that you have no control over, or you might have third-party content on your page (such as ad banners).</p>
+<p>The goal isn't "all or nothing"; every improvement you can make will help the cause of accessibility.</p>
+  </section><section class="content-section" aria-labelledby="use_well-structured_text_content">
+    <!--lit-part XiEeRaQjMqI=--><!--lit-node 0--><h3 id="use_well-structured_text_content" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#use_well-structured_text_content">Use well-structured text content</a></h3><!--/lit-part-->
+    <p>One of the best accessibility aids a screen reader user can have is an excellent text structure with headings, paragraphs, lists, etc. A good semantic example might look something like the following:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html example-good notranslate"><code>&lt;h1&gt;My heading&lt;/h1&gt;
+
+&lt;p&gt;This is the first section of my document.&lt;/p&gt;
+
+&lt;p&gt;I'll add another paragraph here too.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Here is&lt;/li&gt;
+  &lt;li&gt;a list for&lt;/li&gt;
+  &lt;li&gt;you to read&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;My subheading&lt;/h2&gt;
+
+&lt;p&gt;
+  This is the first subsection of my document. I'd love people to be able to
+  find this content!
+&lt;/p&gt;
+
+&lt;h2&gt;My 2nd subheading&lt;/h2&gt;
+
+&lt;p&gt;
+  This is the second subsection of my content, which I think is more interesting
+  than the last one.
+&lt;/p&gt;
+</code></pre></div>
+<p>We've prepared a version with longer text for you to try out with a screen reader (see <a href="../../../../../../mdn.github.io/learning-area/accessibility/html/good-semantics.html" class="external" target="_blank">good-semantics.html</a>). If you try navigating through this, you'll see that this is pretty easy to navigate:</p>
+<ol>
+<li>The screen reader reads each header out as you progress through the content, notifying you what a heading is, what is a paragraph, etc.</li>
+<li>It stops after each element, letting you go at whatever pace is comfortable for you.</li>
+<li>You can jump to the next/previous heading in many screen readers.</li>
+<li>You can also bring up a list of all headings in many screen readers, allowing you to use them as a handy table of contents to find specific content.</li>
+</ol>
+<p>People sometimes write headings, paragraphs, etc. using line breaks and adding HTML elements purely for styling, something like the following:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html example-bad notranslate"><code>&lt;span style="font-size: 3em"&gt;My heading&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;
+This is the first section of my document.
+&lt;br /&gt;&lt;br /&gt;
+I'll add another paragraph here too.
+&lt;br /&gt;&lt;br /&gt;
+1. Here is
+&lt;br /&gt;&lt;br /&gt;
+2. a list for
+&lt;br /&gt;&lt;br /&gt;
+3. you to read
+&lt;br /&gt;&lt;br /&gt;
+&lt;span style="font-size: 2.5em"&gt;My subheading&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+This is the first subsection of my document. I'd love people to be able to find
+this content!
+&lt;br /&gt;&lt;br /&gt;
+&lt;span style="font-size: 2.5em"&gt;My 2nd subheading&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+This is the second subsection of my content. I think is more interesting than
+the last one.
+</code></pre></div>
+<p>If you try our longer version out with a screen reader (see <a href="../../../../../../mdn.github.io/learning-area/accessibility/html/bad-semantics.html" class="external" target="_blank">bad-semantics.html</a>), you'll not have a very good experience — the screen reader hasn't got anything to use as signposts, so you can't retrieve a useful table of contents, and the whole page is seen as a single giant block, so it is just read out in one go, all at once.</p>
+<p>There are other issues too beyond accessibility — it is harder to style the content using CSS, or manipulate it with JavaScript, for example, because there are no elements to use as selectors.</p>
+  </section><section class="content-section" aria-labelledby="use_clear_language">
+    <!--lit-part NmCNgr2LNeQ=--><!--lit-node 0--><h3 id="use_clear_language" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#use_clear_language">Use clear language</a></h3><!--/lit-part-->
+    <p>The language you use can also affect accessibility. In general, you should use clear language that is not overly complex and doesn't use unnecessary jargon or slang terms. This not only benefits people with cognitive or other disabilities; it benefits readers for whom the text is not written in their first language, younger people…, everyone, in fact! Apart from this, you should try to avoid using language and characters that don't get read out clearly by the screen reader. For example:</p>
+<ul>
+<li>Don't use dashes if you can avoid it. Instead of writing 5–7, write 5 to 7.</li>
+<li>Expand abbreviations — instead of writing Jan, write January.</li>
+<li>Expand acronyms, at least once or twice, then use the <a href="../../../Web/HTML/Reference/Elements/abbr.html"><code>&lt;abbr&gt;</code></a> tag to describe them.</li>
+</ul>
+  </section><section class="content-section" aria-labelledby="structure_page_sections_logically">
+    <!--lit-part zQF1LgTDTik=--><!--lit-node 0--><h3 id="structure_page_sections_logically" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#structure_page_sections_logically">Structure page sections logically</a></h3><!--/lit-part-->
+    <p>You should use appropriate <a href="../../../Web/HTML/Reference/Elements.html#content_sectioning">sectioning elements</a> to structure your webpages, for example navigation (<a href="../../../Web/HTML/Reference/Elements/nav.html"><code>&lt;nav&gt;</code></a>), footer (<a href="../../../Web/HTML/Reference/Elements/footer.html"><code>&lt;footer&gt;</code></a>), and repeating content units (<a href="../../../Web/HTML/Reference/Elements/article.html"><code>&lt;article&gt;</code></a>). These provide extra semantics for screen readers (and other tools) to give users extra clues about the content they are navigating.</p>
+<p>For example, a modern content structure could look something like this:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;header&gt;
+  &lt;h1&gt;Header&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+  &lt;!-- main navigation in here --&gt;
+&lt;/nav&gt;
+
+&lt;!-- Here is our page's main content --&gt;
+&lt;main&gt;
+  &lt;!-- It contains an article --&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Article heading&lt;/h2&gt;
+
+    &lt;!-- article content in here --&gt;
+  &lt;/article&gt;
+
+  &lt;aside&gt;
+    &lt;h2&gt;Related&lt;/h2&gt;
+
+    &lt;!-- aside content in here --&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;!-- And here is our main footer that is used across all the pages of our website --&gt;
+
+&lt;footer&gt;
+  &lt;!-- footer content in here --&gt;
+&lt;/footer&gt;
+</code></pre></div>
+<p>You can find a <a href="../../../../../../mdn.github.io/learning-area/html/introduction-to-html/document_and_website_structure/index.html" class="external" target="_blank">full example here</a>.</p>
+<p>In addition to having good semantics and an attractive layout, your content should make logical sense in its source order — you can always place it where you want using CSS later on, but you should get the source order right to start with, so what screen reader users get read out to them will make sense.</p>
+  </section><section class="content-section" aria-labelledby="use_semantic_ui_controls_where_possible">
+    <!--lit-part yg9VangiXzA=--><!--lit-node 0--><h3 id="use_semantic_ui_controls_where_possible" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#use_semantic_ui_controls_where_possible">Use semantic UI controls where possible</a></h3><!--/lit-part-->
+    <p>By UI controls, we mean the main parts of web documents that users interact with — most commonly buttons, links, and form controls. In this section, we'll look at the basic accessibility concerns to be aware of when creating such controls. Later articles on WAI-ARIA and multimedia will look at other aspects of UI accessibility.</p>
+<p>One key aspect of the accessibility of UI controls is that by default, browsers allow them to be manipulated by the keyboard. You can try this out using our <a href="../../../../../../mdn.github.io/learning-area/tools-testing/cross-browser-testing/accessibility/native-keyboard-accessibility.html" class="external" target="_blank">native-keyboard-accessibility.html</a> example (see the <a href="https://github.com/mdn/learning-area/blob/main/tools-testing/cross-browser-testing/accessibility/native-keyboard-accessibility.html" class="external" target="_blank">source code</a>). Open this in a new tab, and try pressing the tab key; after a few presses, you should see the tab focus start to move through the different focusable elements. The focused elements are given a highlighted default style in every browser (it differs slightly between different browsers) so that you can tell what element is focused.</p>
+<p><img src="HTML/button-focused-unfocused.png" alt="Three buttons with the text &quot;Click me!&quot;, &quot;Click me too!&quot;, and &quot;And me!&quot; inside them respectively. The third button has a blue outline around it to indicate current tab focus." width="288" height="39" loading="lazy"></p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+You can enable an overlay that shows the page tabbing order in your developer tools. For more information see: <a href="https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html#show-web-page-tabbing-order" class="external" target="_blank">Accessibility Inspector &gt; Show web page tabbing order</a>.</p>
+</div>
+<p>You can then press Enter/Return to follow a focused link or press a button (we've included some JavaScript to make the buttons alert a message), or start typing to enter text in a text input. Other form elements have different controls; for example, the <a href="../../../Web/HTML/Reference/Elements/select.html"><code>&lt;select&gt;</code></a> element can have its options displayed and cycled between using the up and down arrow keys.</p>
+<p>You essentially get this behavior for free, just by using the appropriate elements, for example:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html example-good notranslate"><code>&lt;h1&gt;Links&lt;/h1&gt;
+
+&lt;p&gt;This is a link to &lt;a href="https://www.mozilla.org"&gt;Mozilla&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;
+  Another link, to the
+  &lt;a href="https://developer.mozilla.org"&gt;Mozilla Developer Network&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;Buttons&lt;/h2&gt;
+
+&lt;p&gt;
+  &lt;button data-message="This is from the first button"&gt;Click me!&lt;/button&gt;
+  &lt;button data-message="This is from the second button"&gt;Click me too!&lt;/button&gt;
+  &lt;button data-message="This is from the third button"&gt;And me!&lt;/button&gt;
+&lt;/p&gt;
+
+&lt;h2&gt;Form&lt;/h2&gt;
+
+&lt;form&gt;
+  &lt;div&gt;
+    &lt;label for="name"&gt;Fill in your name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for="age"&gt;Enter your age:&lt;/label&gt;
+    &lt;input type="text" id="age" name="age" /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for="mood"&gt;Choose your mood:&lt;/label&gt;
+    &lt;select id="mood" name="mood"&gt;
+      &lt;option&gt;Happy&lt;/option&gt;
+      &lt;option&gt;Sad&lt;/option&gt;
+      &lt;option&gt;Angry&lt;/option&gt;
+      &lt;option&gt;Worried&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</code></pre></div>
+<p>This means using links, buttons, form elements, and labels appropriately (including the <a href="../../../Web/HTML/Reference/Elements/label.html"><code>&lt;label&gt;</code></a> element for form controls).</p>
+<p>However, this is another case where people sometimes do strange things with HTML. For example, you sometimes see buttons marked up using <a href="../../../Web/HTML/Reference/Elements/div.html"><code>&lt;div&gt;</code></a>s, for example:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html example-bad notranslate"><code>&lt;div data-message="This is from the first button"&gt;Click me!&lt;/div&gt;
+&lt;div data-message="This is from the second button"&gt;Click me too!&lt;/div&gt;
+&lt;div data-message="This is from the third button"&gt;And me!&lt;/div&gt;
+</code></pre></div>
+<p>But using such code is not advised — you immediately lose the native keyboard accessibility you would have had if you'd just used <a href="../../../Web/HTML/Reference/Elements/button.html"><code>&lt;button&gt;</code></a> elements, plus you don't get any of the default CSS styling that buttons get. In the rare to non-existent case when you need to use a non-button element for a button, use the <a href="../../../Web/Accessibility/ARIA/Reference/Roles/button_role.html"><code>button</code> role</a> and implement all the default button behaviors, including keyboard and mouse button support.</p>
+<h4 id="building_keyboard_accessibility_back_in">Building keyboard accessibility back in</h4>
+<p>Adding such advantages back in takes a bit of work (you can see an example in our <a href="../../../../../../mdn.github.io/learning-area/tools-testing/cross-browser-testing/accessibility/fake-div-buttons.html" class="external" target="_blank">fake-div-buttons.html</a> example — also see the <a href="https://github.com/mdn/learning-area/blob/main/tools-testing/cross-browser-testing/accessibility/fake-div-buttons.html" class="external" target="_blank">source code</a>). Here we've given our fake <code>&lt;div&gt;</code> buttons the ability to be focused (including via tab) by giving each one the attribute <code>tabindex="0"</code>. We also include <code>role="button"</code> so screen reader users know they can focus on and interact with the element:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;div data-message="This is from the first button" tabindex="0" role="button"&gt;
+  Click me!
+&lt;/div&gt;
+&lt;div data-message="This is from the second button" tabindex="0" role="button"&gt;
+  Click me too!
+&lt;/div&gt;
+&lt;div data-message="This is from the third button" tabindex="0" role="button"&gt;
+  And me!
+&lt;/div&gt;
+</code></pre></div>
+<p>Basically, the <a href="../../../Web/HTML/Reference/Global_attributes/tabindex.html"><code>tabindex</code></a> attribute is primarily intended to allow tabbable elements to have a custom tab order (specified in positive numerical order), instead of just being tabbed through in their default source order. This is nearly always a bad idea, as it can cause major confusion. Use it only if you really need to, for example, if the layout shows things in a very different visual order to the source code, and you want to make things work more logically. There are two other options for <code>tabindex</code>:</p>
+<ul>
+<li><code>tabindex="0"</code> — as indicated above, this value allows elements that are not normally tabbable to become tabbable. This is the most useful value of <code>tabindex</code>.</li>
+<li><code>tabindex="-1"</code> — this allows not normally tabbable elements to receive focus programmatically, e.g., via JavaScript, or as the target of links.</li>
+</ul>
+<p>While the above addition allows us to tab to the buttons, it does not allow us to activate them via the <kbd>Enter</kbd>/<kbd>Return</kbd> key. To do that, we had to add the following bit of JavaScript:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>document.onkeydown = (e) =&gt; {
+  // The Enter/Return key
+  if (e.key === "Enter") {
+    document.activeElement.click();
+  }
+};
+</code></pre></div>
+<p>Here we add a listener to the <code>document</code> object to detect when a button has been pressed on the keyboard. We check what button was pressed via the event object's <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key"><code>key</code></a> property; if the key pressed is <kbd>Enter</kbd>/<kbd>Return</kbd>, we run the function stored in the button's <code>onclick</code> handler using <code>document.activeElement.click()</code>. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/activeElement"><code>activeElement</code></a> which gives us the element that is currently focused on the page.</p>
+<p>This is a lot of extra hassle to build the functionality back in. And there's bound to be other problems with it. <strong>Better to just use the right element for the right job in the first place.</strong></p>
+<h4 id="use_meaningful_text_labels">Use meaningful text labels</h4>
+<p>UI control text labels are very useful to all users, but getting them right is particularly important to users with disabilities.</p>
+<p>You should make sure that your button and link text labels are understandable and distinctive. Don't just use "Click here" for your labels, as screen reader users sometimes get up a list of buttons and form controls. The following screenshot shows our controls being listed by VoiceOver on Mac.</p>
+<p><img src="HTML/voiceover-formcontrols.png" alt="List of form input labels being listed by VoiceOver software on Mac. This list contains meaningless labels like 'happy menu button` given to various form controls like button, textfield and link" width="802" height="604" loading="lazy"></p>
+<p>Make sure your labels make sense out of context, read on their own, as well as in the context of the paragraph they are in. For example, the following shows an example of good link text:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html example-good notranslate"><code>&lt;p&gt;
+  Whales are really awesome creatures.
+  &lt;a href="whales.html"&gt;Find out more about whales&lt;/a&gt;.
+&lt;/p&gt;
+</code></pre></div>
+<p>but this is bad link text:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html example-bad notranslate"><code>&lt;p&gt;
+  Whales are really awesome creatures. To find out more about whales,
+  &lt;a href="whales.html"&gt;click here&lt;/a&gt;.
+&lt;/p&gt;
+</code></pre></div>
+<div class="notecard note">
+<p><strong>Note:</strong>
+You can find a lot more about link implementation and best practices in our <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links">Creating links</a> article. You can also see some good and bad examples at <a href="../../../../../../mdn.github.io/learning-area/accessibility/html/good-links.html" class="external" target="_blank">good-links.html</a> and <a href="../../../../../../mdn.github.io/learning-area/accessibility/html/bad-links.html" class="external" target="_blank">bad-links.html</a>.</p>
+</div>
+<p>Form labels are also important for giving you a clue about what you need to enter into each form input. The following seems like a reasonable enough example:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html example-bad notranslate"><code>Fill in your name: &lt;input type="text" id="name" name="name" /&gt;
+</code></pre></div>
+<p>However, this is not so useful for disabled users. There is nothing in the above example to associate the label unambiguously with the form input and make it clear how to fill it in if you cannot see it. If you access this with some screen readers, you may only be given a description along the lines of "edit text."</p>
+<p>The following is a much better example:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html example-good notranslate"><code>&lt;div&gt;
+  &lt;label for="name"&gt;Fill in your name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" /&gt;
+&lt;/div&gt;
+</code></pre></div>
+<p>With code like this, the label will be clearly associated with the input; the description will be more like "Fill in your name: edit text."</p>
+<p><img src="HTML/voiceover-good-form-label.png" alt="A good form label that reads 'Fill in your name' is given to a text input form control. " width="257" height="32" loading="lazy"></p>
+<p>As an added bonus, in most browsers associating a label with a form input means that you can click the label to select or activate the form element. This gives the input a bigger hit area, making it easier to select.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+You can see some good and bad form examples in <a href="../../../../../../mdn.github.io/learning-area/accessibility/html/good-form.html" class="external" target="_blank">good-form.html</a> and <a href="../../../../../../mdn.github.io/learning-area/accessibility/html/bad-form.html" class="external" target="_blank">bad-form.html</a>.</p>
+</div>
+<p>You can find a nice explanation of the importance of proper text labels, and how to investigate text label issues using the <a href="https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html" class="external" target="_blank">Firefox Accessibility Inspector</a>, in the following video:</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YhlAVlfH0rQ" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
+  </section><section class="content-section" aria-labelledby="accessible_data_tables">
+    <!--lit-part RAjNj3zdnKw=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Accessible%20data%20tables"></a><h2 id="accessible_data_tables" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#accessible_data_tables">Accessible data tables</a></h2><!--/lit-part-->
+    <p>A basic data table can be written with very simple markup, for example:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Name&lt;/td&gt;
+    &lt;td&gt;Age&lt;/td&gt;
+    &lt;td&gt;Pronouns&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Gabriel&lt;/td&gt;
+    &lt;td&gt;13&lt;/td&gt;
+    &lt;td&gt;he/him&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Elva&lt;/td&gt;
+    &lt;td&gt;8&lt;/td&gt;
+    &lt;td&gt;she/her&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Freida&lt;/td&gt;
+    &lt;td&gt;5&lt;/td&gt;
+    &lt;td&gt;she/her&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre></div>
+<p>But this has problems — there is no way for a screen reader user to associate rows or columns together as groupings of data. To do this, you need to know what the header rows are and if they are heading up rows, columns, etc. This can only be done visually for the above table (see <a href="../../../../../../mdn.github.io/learning-area/accessibility/html/bad-table.html" class="external" target="_blank">bad-table.html</a> and try the example out yourself).</p>
+<p>Now have a look at our <a href="https://github.com/mdn/learning-area/blob/main/css/styling-boxes/styling-tables/punk-bands-complete.html" class="external" target="_blank">punk bands table example</a> — you can see a few accessibility aids at work here:</p>
+<ul>
+<li>Table headers are defined using <a href="../../../Web/HTML/Reference/Elements/th.html"><code>&lt;th&gt;</code></a> elements — you can also specify if they are headers for rows or columns using the <code>scope</code> attribute. This gives you complete groups of data that can be consumed by screen readers as single units.</li>
+<li>The <a href="../../../Web/HTML/Reference/Elements/caption.html"><code>&lt;caption&gt;</code></a> element and the <code>&lt;table&gt;</code> element's <code>summary</code> attribute both do similar jobs — they act as alt text for a table, giving a screen reader user a useful quick summary of the table's contents. The <code>&lt;caption&gt;</code> element is generally preferred as it makes its content accessible to sighted users too, who might also find it useful. You don't really need both.</li>
+</ul>
+<div class="notecard note">
+<p><strong>Note:</strong>
+See our <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility">HTML table accessibility</a> article for more details about accessible data tables.</p>
+</div>
+  </section><section class="content-section" aria-labelledby="text_alternatives">
+    <!--lit-part Qs7k5GAQ8Ds=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Text%20alternatives"></a><h2 id="text_alternatives" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#text_alternatives">Text alternatives</a></h2><!--/lit-part-->
+    <p>Whereas textual content is inherently accessible, the same cannot necessarily be said for multimedia content — image and video content cannot be seen by visually-impaired people, and audio content cannot be heard by hearing-impaired people. We cover video and audio content in detail in the <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Multimedia">Accessible multimedia</a>, but for this article we'll look at accessibility for the humble <a href="../../../Web/HTML/Reference/Elements/img.html"><code>&lt;img&gt;</code></a> element.</p>
+<p>We have a simple example written up, <a href="../../../../../../mdn.github.io/learning-area/accessibility/html/accessible-image.html" class="external" target="_blank">accessible-image.html</a>, which features four copies of the same image:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;img src="dinosaur.png" /&gt;
+
+&lt;img
+  src="dinosaur.png"
+  alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth." /&gt;
+
+&lt;img
+  src="dinosaur.png"
+  alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth."
+  title="The Mozilla red dinosaur" /&gt;
+
+&lt;img src="dinosaur.png" aria-labelledby="dino-label" /&gt;
+
+&lt;p id="dino-label"&gt;
+  The Mozilla red Tyrannosaurus Rex: A two legged dinosaur standing upright like
+  a human, with small arms, and a large head with lots of sharp teeth.
+&lt;/p&gt;
+</code></pre></div>
+<p>The first image, when viewed by a screen reader, doesn't really offer the user much help — VoiceOver for example reads out "/dinosaur.png, image". It reads out the filename to try to provide some help. In this example the user will at least know it is a dinosaur of some kind, but often files may be uploaded with machine-generated file names (e.g., from a digital camera) and these file names would likely provide no context to the image's content.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+This is why you should never include text content inside an image — screen readers can't access it. There are other disadvantages too — you can't select it and copy/paste it. Just don't do it!</p>
+</div>
+<p>When a screen reader encounters the second image, it reads out the full alt attribute — "A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.".</p>
+<p>This highlights the importance of not only using meaningful file names in case so-called <strong>alt text</strong> is not available, but also making sure that alt text is provided in <code>alt</code> attributes wherever possible.</p>
+<p>Note that the contents of the <code>alt</code> attribute should always provide a direct representation of the image and what it conveys visually. The alt should be brief and concise and include all the information conveyed in the image that is not duplicated in the surrounding text.</p>
+<p>The content of the <code>alt</code> attribute for a single image differs based on the context. For example, if the photo of Fluffy is an avatar next to a review for Yuckymeat dog food, <code>alt="Fluffy"</code> is appropriate. If the photo is part of Fluffy's adoption page for the animal rescue society, information conveyed in the image that is relevant for a prospective dog parent that is not duplicated in the surrounding text should be included. A longer description, such as <code>alt="Fluffy, a tri-color terrier with very short hair, with a tennis ball in her mouth."</code> is appropriate. As the surrounding text likely has Fluffy's size and breed, that is not included in the <code>alt</code>. However, as the dog's biography likely doesn't include hair length, colors, or toy preferences, which the potential parent needs to know, it is included. Is the image outdoors, or does Fluffy have a red collar with a blue leash? Not important in terms of adopting the pet and therefore not included. All information image conveys that a sighted user can access and is relevant to the context is what needs to be conveyed; nothing more. Keep it short, precise, and useful.</p>
+<p>Any personal knowledge or extra description shouldn't be included here, as it is not useful for people who have not seen the image before. If the ball is Fluffy's favorite toy or if a sighted user can't know that from the image, then don't include it.</p>
+<p>One thing to consider is whether your images have meaning inside your content, or whether they are purely for visual decoration, and thus have no meaning. If they are decorative, it is better to write an empty text as a value for <code>alt</code> attribute (see <a href="#empty_alt_attributes">Empty alt attributes</a>) or to just include them in the page as CSS background images.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+Read <a href="../Structuring_content/HTML_images.html">HTML images</a> and <a href="../../../Web/HTML/Guides/Responsive_images.html">Responsive images</a> for a lot more information about image implementation and best practices.
+You can also check <a href="https://www.w3.org/WAI/tutorials/images/decision-tree/" class="external" target="_blank">An alt Decision Tree</a> to learn how to use an alt attribute for images in various situations.</p>
+</div>
+<p>If you do want to provide extra contextual information, you should put it in the text surrounding the image, or inside a <code>title</code> attribute, as shown above. In this case, most screen readers will read out the alt text, the title attribute, and the filename. In addition, browsers display title text as tooltips when moused over.</p>
+<p><img src="HTML/title-attribute.png" alt="Screenshot of a red Tyrannosaurus Rex with the text &quot;The mozilla red dinosaur&quot; displayed as tooltip on mouseover." width="352" height="234" loading="lazy"></p>
+<p>Let's have another quick look at the fourth method:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;img src="dinosaur.png" aria-labelledby="dino-label" /&gt;
+
+&lt;p id="dino-label"&gt;The Mozilla red Tyrannosaurus…&lt;/p&gt;
+</code></pre></div>
+<p>In this case, we are not using the <code>alt</code> attribute at all — instead, we have presented our description of the image as a regular text paragraph, given it an <code>id</code>, and then used the <code>aria-labelledby</code> attribute to refer to that <code>id</code>, which causes screen readers to use that paragraph as the alt text/label for that image. This is especially useful if you want to use the same text as a label for multiple images — something that isn't possible with <code>alt</code>.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+<a href="../../../Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby.html"><code>aria-labelledby</code></a> is part of the <a href="https://w3c.github.io/aria/" class="external" target="_blank">WAI-ARIA</a> spec, which allows developers to add in extra semantics to their markup to improve screen reader accessibility where needed.</p>
+</div>
+  </section><section class="content-section" aria-labelledby="figures_and_figure_captions">
+    <!--lit-part R+RwUEHL3QY=--><!--lit-node 0--><h3 id="figures_and_figure_captions" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#figures_and_figure_captions">Figures and figure captions</a></h3><!--/lit-part-->
+    <p>HTML includes two elements — <a href="../../../Web/HTML/Reference/Elements/figure.html"><code>&lt;figure&gt;</code></a> and <a href="../../../Web/HTML/Reference/Elements/figcaption.html"><code>&lt;figcaption&gt;</code></a> — which associate a figure of some kind (it could be anything, not necessarily an image) with a figure caption:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;figure&gt;
+  &lt;img
+    src="dinosaur.png"
+    alt="The Mozilla Tyrannosaurus"
+    aria-describedby="dinodescr" /&gt;
+  &lt;figcaption id="dinodescr"&gt;
+    A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a
+    human, with small arms, and a large head with lots of sharp teeth.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre></div>
+<p>While there is mixed screen reader support of associating figure captions with their figures, including <a href="../../../Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby.html"><code>aria-labelledby</code></a> or <a href="../../../Web/Accessibility/ARIA/Reference/Attributes/aria-describedby.html"><code>aria-describedby</code></a> creates the association if none is present. That said, the element structure is useful for CSS styling, plus it provides a way to place a description of the image next to it in the source.</p>
+  </section><section class="content-section" aria-labelledby="empty_alt_attributes">
+    <!--lit-part ly1DB9fb2c8=--><!--lit-node 0--><h3 id="empty_alt_attributes" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#empty_alt_attributes">Empty alt attributes</a></h3><!--/lit-part-->
+    <div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;h3&gt;
+  &lt;img src="article-icon.png" alt="" /&gt;
+  Tyrannosaurus Rex: the king of the dinosaurs
+&lt;/h3&gt;
+</code></pre></div>
+<p>There may be times where an image is included in a page's design, but its primary purpose is for visual decoration. You'll notice in the code example above that the image's <code>alt</code> attribute is empty — this is to make screen readers recognize the image, but not attempt to describe the image (instead they'd just say "image", or similar).</p>
+<p>The reason to use an empty <code>alt</code> instead of not including it is because many screen readers announce the whole image URL if no <code>alt</code> is provided. In the above example, the image is acting as a visual decoration to the heading it's associated with. In cases like this, and in cases where an image is only decoration and has no content value, you should include an empty <code>alt</code> in your <code>img</code> elements. Another alternative is to use the aria <a href="../../../Web/Accessibility/ARIA/Reference/Roles.html"><code>role</code></a> attribute <a href="../../../Web/Accessibility/ARIA/Reference/Roles/presentation_role.html"><code>role="presentation"</code></a> as this also stops screen readers from reading out alternative text.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+If possible you should use CSS to display images that are only decorative.</p>
+</div>
+  </section><section class="content-section" aria-labelledby="more_on_links">
+    <!--lit-part GANwZTzfSSg=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/More%20on%20links"></a><h2 id="more_on_links" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#more_on_links">More on links</a></h2><!--/lit-part-->
+    <p>Links (the <a href="../../../Web/HTML/Reference/Elements/a.html"><code>&lt;a&gt;</code></a> element with an <code>href</code> attribute), depending on how they are used, can help or harm accessibility. By default, links are accessible in appearance. They can improve accessibility by helping a user quickly navigate to different sections of a document. They can also harm accessibility if their accessible styling is removed or if JavaScript causes them to behave in unexpected ways.</p>
+  </section><section class="content-section" aria-labelledby="link_styling">
+    <!--lit-part VsFWdAdudiw=--><!--lit-node 0--><h3 id="link_styling" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#link_styling">Link styling</a></h3><!--/lit-part-->
+    <p>By default, links are visually different from other text in both color and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-decoration">text-decoration</a>, with links being blue and underlined by default, purple and underlined if visited, and with a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus">focus-ring</a> when they receive keyboard focus.</p>
+<p>Color should not be used as the sole method of distinguishing links from non-linking content. Link text color, like all text, has to be significantly different from the background color (<a href="../../../Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast.html">a 4.5:1 contrast</a>). In addition, links should visually be significantly different from non-linking text, with a minimum contrast requirement of 3:1 between link text and surrounding text and between default, visited, and focus/active states and a 4.5:1 contrast between all those state colors and the background color.</p>
+  </section><section class="content-section" aria-labelledby="onclick_events">
+    <!--lit-part jiU4z1L9/jA=--><!--lit-node 0--><h3 id="onclick_events" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#onclick_events"><code>onclick</code> events</a></h3><!--/lit-part-->
+    <p>Anchor tags are often abused with the <code>onclick</code> event to create pseudo-buttons by setting <strong>href</strong> to <code>"#"</code> or <code>"javascript:void(0)"</code> to prevent the page from refreshing.</p>
+<p>These values cause unexpected behavior when copying or dragging links, opening links in a new tab or window, bookmarking, and when JavaScript is still downloading, errors out, or is disabled. This also conveys incorrect semantics to assistive technologies (e.g., screen readers). In these cases, it is recommended to use a <a href="../../../Web/HTML/Reference/Elements/button.html"><code>&lt;button&gt;</code></a> instead. In general you should only use an anchor for navigation using a proper URL.</p>
+  </section><section class="content-section" aria-labelledby="external_links_and_linking_to_non-html_resources">
+    <!--lit-part t2j2ggy5on4=--><!--lit-node 0--><h3 id="external_links_and_linking_to_non-html_resources" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#external_links_and_linking_to_non-html_resources">External links and linking to non-HTML resources</a></h3><!--/lit-part-->
+    <p>Links that open in a new tab or window via the <code>target="_blank"</code> declaration and links to whose <code>href</code> value points to a file resource should include an indicator about the behavior that will occur when the link is activated.</p>
+<p>People experiencing low vision conditions, who are navigating with the aid of screen reading technology, or who have cognitive concerns may become confused when the new tab, window, or application is opened unexpectedly. Older versions of screen reading software may not even announce the behavior.</p>
+<h4 id="link_that_opens_a_new_tab_or_window">Link that opens a new tab or window</h4>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;a target="_blank" href="https://www.wikipedia.org/"
+  &gt;Wikipedia (opens in a new window)&lt;/a
+&gt;
+</code></pre></div>
+<h4 id="link_to_a_non-html_resource">Link to a non-HTML resource</h4>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;a target="_blank" href="2017-annual-report.ppt"
+  &gt;2017 Annual Report (PowerPoint)&lt;/a
+&gt;
+</code></pre></div>
+<p>If an icon is used in place of text to signify this kind of links behavior, make sure it includes an <a href="../../../Web/HTML/Reference/Elements/img.html#alt">alternate description</a>.</p>
+<ul>
+<li><a href="https://webaim.org/techniques/hypertext/hypertext_links" class="external" target="_blank">WebAIM: Links and Hypertext - Hypertext Links</a></li>
+<li><a href="../../../Web/Accessibility/Guides/Understanding_WCAG/Understandable.html#guideline_3.2_—_predictable_make_web_pages_appear_and_operate_in_predictable_ways">MDN Understanding WCAG, Guideline 3.2 explanations</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20-TECHS/G200.html" class="external" target="_blank">G200: Opening new windows and tabs from a link only when necessary | W3C Techniques for WCAG 2.0</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20-TECHS/G201.html" class="external" target="_blank">G201: Giving users advanced warning when opening a new window | W3C Techniques for WCAG 2.0</a></li>
+</ul>
+  </section><section class="content-section" aria-labelledby="skip_links">
+    <!--lit-part WmL32ouYLeI=--><!--lit-node 0--><h3 id="skip_links" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#skip_links">Skip links</a></h3><!--/lit-part-->
+    <p>A skip link, also known as skipnav, is an <code>a</code> element placed as close as possible to the opening <a href="../../../Web/HTML/Reference/Elements/body.html"><code>&lt;body&gt;</code></a> element that links to the beginning of the page's main content. This link allows people to bypass content repeated throughout multiple pages on a website, such as a website's header and primary navigation.</p>
+<p>Skip links are especially useful for people who navigate with the aid of assistive technology such as switch control, voice command, or mouth sticks/head wands, where the act of moving through repetitive links can be a laborious task.</p>
+<ul>
+<li><a href="https://webaim.org/techniques/skipnav/" class="external" target="_blank">WebAIM: "Skip Navigation" Links</a></li>
+<li><a href="https://www.a11yproject.com/posts/skip-nav-links/" class="external" target="_blank">How–to: Use Skip Navigation links - The A11Y Project</a></li>
+<li><a href="../../../Web/Accessibility/Guides/Understanding_WCAG/Operable.html#guideline_2.4_%e2%80%94_navigable_provide_ways_to_help_users_navigate_find_content_and_determine_where_they_are">MDN Understanding WCAG, Guideline 2.4 explanations</a></li>
+<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html" class="external" target="_blank">Understanding Success Criterion 2.4.1 | W3C Understanding WCAG 2.0</a></li>
+</ul>
+  </section><section class="content-section" aria-labelledby="proximity">
+    <!--lit-part vscFiijMegw=--><!--lit-node 0--><h3 id="proximity" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#proximity">Proximity</a></h3><!--/lit-part-->
+    <p>Large amounts of interactive content—including anchors—placed in close visual proximity to each other should have space inserted to separate them. This spacing is beneficial for people who suffer from fine motor control issues and may accidentally activate the wrong interactive content while navigating.</p>
+<p>Spacing may be created using CSS properties such as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin"><code>margin</code></a>.</p>
+<ul>
+<li><a href="https://axesslab.com/hand-tremors/" class="external" target="_blank">Hand tremors and the giant-button-problem - Axess Lab</a></li>
+</ul>
+  </section><section class="content-section" aria-labelledby="summary">
+    <!--lit-part ftL4dvEqxtk=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Summary"></a><h2 id="summary" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#summary">Summary</a></h2><!--/lit-part-->
+    <p>You should now be well-versed in writing accessible HTML for most occasions. In the next article, we'll give you some tests that you can use to check how well you've understood and retained all this information.</p>
+<ul class="prev-next"><li class="prev"><a class="button secondary" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Tooling"><span class="button-wrap"> Previous </span></a></li><li class="menu"><a class="button secondary" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility"><span class="button-wrap"> Overview: Accessibility on the web</span></a></li><li class="next"><a class="button secondary" href="Test_your_skills/HTML.html"><span class="button-wrap"> Next  </span></a></li></ul>
+  </section> 
+      <section class="content-section article-footer" aria-labelledby="feedback">
+        <div class="article-footer__inner">
+          <div class="article-footer__svg-container"><!--lit-part OWLzZqRMsCU=--><svg xmlns="http://www.w3.org/2000/svg" width="162" height="162" fill="none" viewBox="0 0 162 162"><mask id="b" fill="#fff"><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z"></path></mask><path stroke="url(#a)" stroke-dasharray="6, 6" stroke-width="2" d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z" mask="url(#b)" style="stroke:url(#a)" transform="translate(-63.992 -25.587)"></path><ellipse cx="8.066" cy="111.597" fill="currentColor" rx="53.677" ry="53.699" transform="matrix(.71707 -.697 .7243 .6895 0 0)"></ellipse><g clip-path="url(#c)" transform="translate(-63.992 -25.587)"><path fill="#9abff5" d="m144.256 137.379 32.906 12.434a4.41 4.41 0 0 1 2.559 5.667l-9.326 24.679a4.41 4.41 0 0 1-5.667 2.559l-8.226-3.108-2.332 6.17c-.466 1.233-.375 1.883-1.609 1.417l-2.253-.527c-.411-.155-.95-.594-1.206-1.161l-4.734-10.484-12.545-4.741a4.41 4.41 0 0 1-2.559-5.667l9.325-24.679a4.41 4.41 0 0 1 5.667-2.559m9.961 29.617 8.227 3.108 3.264-8.638-.498-6.768-4.113-1.555.548 7.258-4.319-1.632zm-12.339-4.663 8.226 3.108 3.264-8.637-.498-6.769-4.113-1.554.548 7.257-4.319-1.632z"></path></g><g clip-path="url(#d)" transform="translate(-63.992 -25.587)"><path fill="#81b0f3" d="M135.35 60.136 86.67 41.654c-3.346-1.27-7.124.428-8.394 3.775L64.414 81.938c-1.27 3.347.428 7.125 3.774 8.395l12.17 4.62-3.465 9.128c-.693 1.826-1.432 2.457.394 3.15l3.014 1.625c.609.231 1.637.274 2.477-.104l15.53-6.983 18.56 7.047c3.346 1.27 7.124-.428 8.395-3.775l13.862-36.51c1.27-3.346-.428-7.124-3.775-8.395M95.261 83.207l-12.17-4.62 4.852-12.779 7.19-7.017 6.085 2.31-7.725 7.51 6.389 2.426zm18.255 6.93-12.17-4.62 4.852-12.778 7.189-7.017 6.085 2.31-7.725 7.51 6.39 2.426z"></path></g><defs><clipPath id="c"><path fill="#fff" d="m198.638 146.586-65.056-24.583-24.583 65.057 65.056 24.582z"></path></clipPath><clipPath id="d"><path fill="#fff" d="m66.438 14.055 96.242 36.54-36.54 96.243-96.243-36.54z"></path></clipPath><linearGradient id="a" x1="97.203" x2="199.995" y1="47.04" y2="152.793" gradientUnits="userSpaceOnUse"><stop stop-color="#086dfc"></stop><stop offset=".246" stop-color="#2c81fa"></stop><stop offset=".516" stop-color="#5497f8"></stop><stop offset=".821" stop-color="#80b0f6"></stop><stop offset="1" stop-color="#9abff5"></stop></linearGradient></defs></svg><!--/lit-part--></div>
+          <h2 id="feedback">
+            Help improve MDN
+          </h2>
+          <mdn-content-feedback locale="en-US"></mdn-content-feedback>
+          <a class="article-footer__contribute" href="https://developer.mozilla.org/en-US/docs/MDN/Community/Getting_started">Learn how to contribute</a> <p class="article-footer__last-modified">
+    This page was last modified on <time datetime="2025-11-04T01:20:56.000Z">Nov 4, 2025</time> by <a href="HTML/contributors.txt">MDN contributors</a>.
+  </p> <div class="article-footer__links">
+    <a class="external" href="https://github.com/mdn/content/blob/main/files/en-us/learn_web_development/core/accessibility/html/index.md?plain=1" title="Folder: en-us/learn_web_development/core/accessibility/html (Opens in a new tab)" target="_blank" rel="noopener">View this page on GitHub</a> • <a class="external" href="https://github.com/mdn/content/issues/new?template=page-report.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn_web_development%2FCore%2FAccessibility%2FHTML&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Flearn_web_development%2Fcore%2Faccessibility%2Fhtml%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn_web_development%2FCore%2FAccessibility%2FHTML%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Flearn_web_development%2Fcore%2Faccessibility%2Fhtml%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2F4cb9d89a204a9532370693b982e8a3b274a874b1%0A*+Document+last+modified%3A+2025-11-04T01%3A20%3A56.000Z%0A%0A%3C%2Fdetails%3E" title="This will take you to GitHub to file a new issue." target="_blank" rel="noopener">Report a problem with this content</a>
+  </div>
+        </div>
+      </section>
+    
+          </div>
+        </main>
+        <aside class="layout__left-sidebar" id="main-sidebar">
+          <nav class="left-sidebar">
+      <div class="left-sidebar__header">
+        <mdn-sidebar-filter></mdn-sidebar-filter>
+      </div>
+      <div class="left-sidebar__content"><ol><li class="section"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development">Learn web development</a></li><li class="section"><a href="https://developer.mozilla.org/en-US/curriculum/">MDN curriculum</a></li><li class="section"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started">Getting started modules</a></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup">Environment setup</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Installing_software">Installing software</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Browsing_the_web">Browsing the web</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Code_editors">Code editors</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Dealing_with_files">Dealing with files</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Command_line">Command line</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website">Your first website</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/What_will_your_website_look_like">What will it look like?</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content">Creating the content</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content">Styling the content</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity">Adding interactivity</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Publishing_your_website">Publishing</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards">Web standards</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works">How the web works</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/The_web_standards_model">The web standards model</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_browsers_load_websites">How browsers load websites</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Soft_skills">Soft skills</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Soft_skills/Research_and_learning">Research and learning</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Soft_skills/Collaboration_and_teamwork">Collaboration and teamwork</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Soft_skills/Workflows_and_processes">Workflows and processes</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Soft_skills/Finding_a_job">Finding a job</a></li></ol></details></li><li class="section"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core">Core modules</a></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML</a></summary><ol><li><a href="../Structuring_content/Basic_HTML_syntax.html">Basic HTML syntax</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Webpage_metadata">Web page metadata</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragraphs">Headings and paragraphs</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Emphasis_and_importance">Emphasis and importance</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Lists">Lists</a></li><li><a href="../Structuring_content/Test_your_skills/HTML_text_basics.html">Test: HTML text basics</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Advanced_text_features">Advanced text features</a></li><li><a href="../Structuring_content/Test_your_skills/Advanced_HTML_text.html">Test: Advanced HTML text</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Marking_up_a_letter">Challenge: Letter markup</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents">Structuring documents</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links">Creating links</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Links">Test: Links</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_a_page_of_content">Challenge: Bird watching site</a></li><li><a href="../Structuring_content/HTML_images.html">Images</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Images">Test: Images</a></li><li><a href="../Structuring_content/HTML_video_and_audio.html">Video and audio</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Audio_and_video">Test: Audio and video</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page">Challenge: Splash page</a></li><li><a href="../Structuring_content/HTML_table_basics.html">Table basics</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility">Table accessibility</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Planet_data_table">Challenge: Planet data table</a></li><li><a href="../Structuring_content/HTML_forms.html">Forms and buttons</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Forms_and_buttons">Test: Forms and buttons</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Forms_challenge">Challenge: Feedback form</a></li><li><a href="../Structuring_content/Debugging_HTML.html">Debugging HTML</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills">Test: HTML tests index</a></li><li><details><summary><span>Additional tutorials</span></summary><ol><li><a href="../Structuring_content/Including_vector_graphics_in_HTML.html">Vector graphics</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/General_embedding_technologies">Embedding technologies</a></li></ol></details></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS">What is CSS?</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started">CSS getting started</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Styling_a_bio_page">Challenge: Biography page</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors">Basic selectors</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Attribute_selectors">Attribute selectors</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Pseudo_classes_and_elements">Pseudo-classes and elements</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Combinators">Combinators</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Selectors">Test: Selectors</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model">Box model</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Box_model">Test: Box model</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts">Handling conflicts</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Cascade">Test: Cascade</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Fixing_blog_styles">Challenge: Fixing blog styles</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units">Values and units</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Values">Test: Values and units</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Sizing">Sizing</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Sizing">Test: Sizing</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Backgrounds_and_borders">Backgrounds and borders</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Backgrounds_and_borders">Test: Backgrounds and borders</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Overflow">Overflow</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Overflow">Test: Overflow</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Size_decorate_content_panel">Challenge: Sizing and decorating</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Images_media_forms">Images, media, forms</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills/Images">Test: Images and forms</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Tables">Styling tables</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Home_color_scheme_search">Challenge: Styling color scheme search</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Debugging_CSS">Debugging CSS</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills">Test: Styling basics tests index</a></li><li><details><summary><span>Additional tutorials</span></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Advanced_styling_effects">Advanced styling effects</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers">Cascade layers</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_different_text_directions">Multiple text directions</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Organizing">Organizing your CSS</a></li></ol></details></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling">CSS text styling</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Fundamentals">Text and font fundamentals</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Styling_lists">Styling lists</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Styling_links">Styling links</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Web_fonts">Web fonts</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Typesetting_a_homepage">Challenge: Community school homepage</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Introduction">Introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Floats">Floats</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Floats">Test: Floats</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning">Positioning</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Position">Test: Positioning</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox">Flexbox</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Flexbox">Test: Flexbox</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Grids">CSS grid layout</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Grid">Test: CSS grid</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Fundamental_Layout_Comprehension">Challenge: Fundamental layout</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design">Responsive web design</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Media_queries">Media queries</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Responsive_design">Test: RWD &amp; media queries</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Mobile-first_challenge">Challenge: mobile-first</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills">Test: Layout tests index</a></li><li><details><summary><span>Additional tutorials</span></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Multiple-column_Layout">Multiple-column layout</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Practical_positioning_examples">Practical positioning examples</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Legacy_Layout_Methods">Legacy layout methods</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Supporting_Older_Browsers">Supporting older browsers</a></li></ol></details></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript">What is JavaScript?</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/A_first_splash">JavaScript walkthrough</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_went_wrong">Troubleshooting</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Variables">Variables</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Variables">Test: Variables</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Math">Numbers and operators</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Math">Test: Math</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Strings">Strings</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Useful_string_methods">String methods</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Strings">Test: Strings</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays">Arrays</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Arrays">Test: Arrays</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Silly_story_generator">Challenge: Story generator</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Conditionals">Conditionals</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Conditionals">Test: Conditionals</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Loops">Loops</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Loops">Test: Loops</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions">Functions</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Build_your_own_function">Build your own function</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Return_values">Function return values</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Functions">Test: Functions</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events">Events</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling">Event bubbling</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Events">Test: Events</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics">Objects</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Object_basics">Test: Objects</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting">DOM scripting</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Image_gallery">Challenge: Image gallery</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Network_requests">Network requests</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON">JSON</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/JSON">Test: JSON</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/House_data_UI">Challenge: House data UI</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Debugging_JavaScript">Debugging and error handling</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills">Test: JavaScript tests index</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries">JavaScript frameworks and libraries</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/Introduction">Introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/Main_features">Framework features</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_getting_started">React getting started</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_todo_list_beginning">React ToDo app</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_components">React components</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_interactivity_events_state">React events and state</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_interactivity_filtering_conditional_rendering">React editing, filtering, conditional UI</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_accessibility">React accessibility</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_resources">React resources</a></li></ol></details></li><li><details open=""><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility">Accessibility</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility">What is accessibility?</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Tooling">Accessibility tools</a></li><li><em><a href="HTML.html" aria-current="page">Accessible HTML</a></em></li><li><a href="Test_your_skills/HTML.html">Test: HTML a11y</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/CSS_and_JavaScript">Accessible CSS and JS</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Test_your_skills/CSS_and_JavaScript">Test: CSS/JS a11y</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/WAI-ARIA_basics">WAI-ARIA</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Test_your_skills/WAI-ARIA">Test: WAI-ARIA</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Multimedia">Accessible multimedia</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Mobile">Mobile accessibility</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Accessibility_troubleshooting">Challenge: A11y debugging</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/Test_your_skills">Test: A11y tests index</a></li></ol></details></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Design_for_developers">Design for developers</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Version_control">Version control</a></li><li class="section"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions">Extension modules</a></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects">Advanced JavaScript objects</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object_prototypes">Object prototypes</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming">Object-oriented programming</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Classes_in_JavaScript">Classes in JavaScript</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Test_your_skills/Object-oriented_JavaScript">Test: Object-oriented JavaScript</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object_building_practice">Object building practice</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Adding_bouncing_balls_features">Challenge: Bouncing balls features</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Test_your_skills">Test: OOJS tests index</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs">Client-side web APIs</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Introduction">Introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Video_and_audio_APIs">Video and audio</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics">Drawing graphics</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Client-side_storage">Client-side storage</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Third_party_APIs">Third-party APIs</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS">Asynchronous JavaScript</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing">Introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises">Using promises</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Implementing_a_promise-based_API">Implementing promise-based APIs</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing_workers">Introducing workers</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Sequencing_animations">Challenge: Animation sequence</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms">Web forms</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Your_first_form">Your first form</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/How_to_structure_a_web_form">How to structure a web form</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Basic_native_form_controls">Basic native form controls</a></li><li><a href="../../Extensions/Forms/HTML5_input_types.html">The HTML5 input types</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Other_form_controls">Other form controls</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Styling_web_forms">Styling web forms</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling">Advanced form styling</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select">Customizable selects</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select_listboxes">Customizable listboxes</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/UI_pseudo-classes">UI pseudo-classes</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation">Client-side form validation</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data">Sending form data</a></li><li><details><summary><span>Additional tutorials</span></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/How_to_build_custom_form_controls">Custom form controls</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Sending_forms_through_JavaScript">JS form submission</a></li><li><a href="../../Extensions/Forms/HTML_forms_in_legacy_browsers.html">Forms in legacy browsers</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/User_input_methods">UI methods &amp; controls</a></li></ol></details></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools">Understanding client-side tools</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Overview">Overview</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Package_management">Package management</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Introducing_complete_toolchain">Sample toolchain</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Deployment">Deploying our app</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side">Server-side websites</a></summary><ol><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps">First steps</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Introduction">Introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview">Client-server overview</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Web_frameworks">Server-side frameworks</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Website_security">Website security</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django">Django (Python)</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Introduction">Django introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/development_environment">Dev environment setup</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Tutorial_local_library_website">1: Local library tutorial</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/skeleton_website">2: Skeleton website</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Models">3: Models</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Admin_site">4: Django admin site</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Home_page">5: Home page</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Generic_views">6: Generic list and detail views</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Sessions">7: Sessions framework</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Authentication">8: Authentication and permissions</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Forms">9: Forms</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Testing">10: Testing</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Deployment">11: Deploying</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/web_application_security">Django security</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/django_assessment_blog">Challenge: Django blog</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs">Express (Node.js)</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/Introduction">Express/Node introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/development_environment">Dev environment setup</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/Tutorial_local_library_website">1: Local library tutorial</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/skeleton_website">2: Skeleton website</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/mongoose">3: Using databases with Mongoose</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/routes">4: Routes and controllers</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/Displaying_data">5: Displaying data</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/forms">6: Working with forms</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/deployment">7: Deploying</a></li></ol></details></li><li><details><summary><span>Additional tutorials</span></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Apache_Configuration_htaccess">Apache .htaccess</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Configuring_server_MIME_types">Server MIME type config</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Node_server_without_framework">Plain Node.js server</a></li></ol></details></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance">Web performance</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/why_web_performance">The "why" of web performance</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/What_is_web_performance">What is web performance?</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/Perceived_performance">Perceived performance</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/Measuring_performance">Measuring performance</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/Multimedia">Multimedia: Images</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/video">Multimedia: video</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/JavaScript">Performant JavaScript</a></li><li><a href="../../Extensions/Performance/HTML.html">Performant HTML</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/CSS">Performant CSS</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/business_case_for_performance">Performance business case</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/Best_practices">Best practices &amp; tips</a></li></ol></details></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing">Testing</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Introduction">Introduction</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Testing_strategies">Testing strategies</a></li><li><a href="../../Extensions/Testing/HTML_and_CSS.html">Common HTML and CSS problems</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Feature_detection">Feature detection</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Automated_testing">Automated testing</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Your_own_automation_environment">Automation environment setup</a></li></ol></details></li><li class="section"><span>Further resources</span></li><li><details><summary><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto">How to solve common problems</a></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_CSS_problems">Common CSS problems</a></li><li><a href="../../Howto/Solve_HTML_problems.html">Common HTML problems</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_JavaScript_problems">Common JavaScript problems</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Design_and_accessibility">Design and accessibility</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup">Tools and setup</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics">Web mechanics</a></li></ol></details></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/About">About</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Educators">Resources for educators</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Changelog">Changelog</a></li></ol></div>
+    </nav>
+        </aside>
+      </div>
+    </div>
+        
+      
+    
+      
+
+
+    <div class="page-layout__footer footer"><div><a href="http://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML">HTML: A good basis for accessibility</a> by <a href="http://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML$history">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC-BY-SA 2.5</a>.</div></div></body><!-- Mirrored from developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:42:46 GMT --></html>

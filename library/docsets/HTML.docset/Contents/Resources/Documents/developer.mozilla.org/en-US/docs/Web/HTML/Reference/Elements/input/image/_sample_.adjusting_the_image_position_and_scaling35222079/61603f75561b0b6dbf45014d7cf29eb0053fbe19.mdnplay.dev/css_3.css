@@ -1,0 +1,6 @@
+
+div { margin-bottom: 10px; }
+label { display: inline-block; width: 70px; text-align: right; padding-right: 10px; }
+#image { object-position: right top; object-fit: contain; background-color: rgb(221, 221, 221); }
+
+button.copy {display:none !important}

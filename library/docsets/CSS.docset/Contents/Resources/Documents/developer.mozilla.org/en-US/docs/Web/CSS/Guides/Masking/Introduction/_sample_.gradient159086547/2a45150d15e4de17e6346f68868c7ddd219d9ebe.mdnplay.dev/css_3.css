@@ -1,0 +1,7 @@
+
+body { display: flex; gap: 20px; padding: 15px; background-image: linear-gradient(to right, transparent 50%, rgba(0, 0, 0, 0.05) 50%), linear-gradient(transparent 50%, rgba(0, 0, 0, 0.05) 50%); background-size: 20px 20px; }
+div, svg, img { width: 220px; aspect-ratio: 1 / 1; }
+.applied-mask { mask-image: conic-gradient(black 90deg, transparent 270deg); }
+.mask-source { background: conic-gradient(black 90deg, transparent 270deg); }
+
+button.copy {display:none !important}

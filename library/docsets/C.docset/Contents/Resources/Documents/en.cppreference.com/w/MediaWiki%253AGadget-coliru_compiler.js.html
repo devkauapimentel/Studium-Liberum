@@ -1,0 +1,776 @@
+<html><!-- Online page at https://en.cppreference.com/w/MediaWiki%253AGadget-coliru_compiler.js.html --><head><meta charset="utf-8"><title>MediaWiki:Gadget-coliru compiler.js</title><link rel="stylesheet" href="./css_1.css" type="text/css"><link rel="stylesheet" href="./css_2.css" type="text/css"><link rel="stylesheet" href="./css_3.css" type="text/css"><link rel="stylesheet" href="./css_10.css" type="text/css"><link rel="stylesheet" href="./css_5.css" type="text/css"><script type="text/javascript" src="./js_1.js"></script><script type="text/javascript" src="./js_2.js"></script><script type="text/javascript" src="./js_3493.js"></script><script type="text/javascript" src="./js_4.js"></script><script type="text/javascript" src="./js_5.js"></script><script type="text/javascript" src="./js_6.js"></script><script type="text/javascript" src="./js_7.js"></script><script type="text/javascript" src="./js_8.js"></script><script type="text/javascript" src="./js_9.js"></script><script type="text/javascript" src="./js_10.js"></script><script type="text/javascript" src="./js_11.js"></script><script type="text/javascript" src="./js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-8 ns-subject page-MediaWiki_Gadget-coliru_compiler_js skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=MediaWiki%3AGadget-coliru+compiler.js&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=MediaWiki%3AGadget-coliru+compiler.js" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-mediawiki" class="selected"><span><a href="./MediaWiki%25253AGadget-coliru_compiler.js.html" title="View the system message [c]" accesskey="c">Message</a></span></li>
+					<li id="ca-talk"><span><a href="./MediaWiki_talk%25253AGadget-coliru_compiler.js.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./MediaWiki%25253AGadget-coliru_compiler.js.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./MediaWiki%25253AGadget-coliru_compiler.js.html">View</a></span></li>
+					<li id="ca-viewsource"><span><a href="https://en.cppreference.com/mwiki/index.php?title=MediaWiki:Gadget-coliru_compiler.js&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=MediaWiki:Gadget-coliru_compiler.js&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./MediaWiki%25253AGadget-coliru_compiler.js.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">MediaWiki:Gadget-coliru compiler.js</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div id="mw-clearyourcache" lang="en" dir="ltr" class="mw-content-ltr">
+<p><b>Note:</b> After saving, you may have to bypass your browser's cache to see the changes.
+</p>
+<ul><li> <b>Firefox / Safari:</b> Hold <i>Shift</i> while clicking <i>Reload</i>, or press either <i>Ctrl-F5</i> or <i>Ctrl-R</i> (<i>⌘-R</i> on a Mac)
+</li><li> <b>Google Chrome:</b> Press <i>Ctrl-Shift-R</i> (<i>⌘-Shift-R</i> on a Mac)
+</li><li> <b>Internet Explorer:</b> Hold <i>Ctrl</i> while clicking <i>Refresh</i>, or press <i>Ctrl-F5</i>
+</li><li> <b>Opera:</b> Clear the cache in <i>Tools → Preferences</i>
+</li></ul>
+</div>
+<div dir="ltr"><pre class="javascript source-javascript">&nbsp;
+&nbsp;
+<span class="coMULTI">/*
+    Copyright (C) 2013  Povilas Kanapickas &lt;povilas@radix.lt&gt;
+&nbsp;
+    This file is part of cppreference.com
+&nbsp;
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 2 of the License, or
+    (at your option) any later version.
+&nbsp;
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+&nbsp;
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses/.
+*/</span>
+&nbsp;
+String.<span class="me1">prototype</span>.<span class="me1">trim</span> <span class="sy0">=</span> <span class="kw2">function</span> <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">return</span> <span class="kw1">this</span>.<span class="me1">replace</span><span class="br0">(</span><span class="co2">/^\s+|\s+$/g</span><span class="sy0">,</span> <span class="st0">""</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+<span class="coMULTI">/* We add two new divs for the live editor and the program output. The divs are
+   inserted after the geshi code and output respectively. This way the ACE
+   editor and the compilation output are independent from the static geshi
+   text. We can easily switch between the live editor and the static version.
+*/</span>
+<span class="kw2">function</span> Editor<span class="br0">(</span>root<span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+    <span class="kw2">var</span> cmd_info_cxx <span class="sy0">=</span> <span class="br0">{</span>
+        cc<span class="sy0">:</span> <span class="br0">[</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 4.9 (C++98)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++-4.9 -std=c++98 '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 4.9 (C++11)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++-4.9 -std=c++11 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 4.9 (C++14)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++-4.9 -std=c++14 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 5.2 (C++98)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++-5.2 -std=c++98 '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 5.2 (C++11)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++-5.2 -std=c++11 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 5.2 (C++14)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++-5.2 -std=c++14 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 5.2 (C++17)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++-5.2 -std=c++1z '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 13.1 (C++98)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++ -std=c++98 '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 13.1 (C++11)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++ -std=c++11 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 13.1 (C++14)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++ -std=c++14 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 13.1 (C++17)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++ -std=c++17 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 13.1 (C++20)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++ -std=c++20 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 13.1 (C++23)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++ -std=c++23 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'clang 5.0 (C++98)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'clang++ -std=c++98 -stdlib=libc++ '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'clang 5.0 (C++11)'</span><span class="sy0">,</span>
+              cmd<span class="sy0">:</span> <span class="st0">'clang++ -std=c++11 -stdlib=libc++ '</span><span class="sy0">,</span>
+              opt_suff<span class="sy0">:</span> <span class="st0">' -latomic -lsupc++ '</span>
+            <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'clang 5.0 (C++14)'</span><span class="sy0">,</span>
+              cmd<span class="sy0">:</span> <span class="st0">'clang++ -std=c++14 -stdlib=libc++ '</span><span class="sy0">,</span>
+              opt_suff<span class="sy0">:</span> <span class="st0">' -latomic -lsupc++ '</span>
+            <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'clang 5.0 (C++17)'</span><span class="sy0">,</span>
+              cmd<span class="sy0">:</span> <span class="st0">'clang++ -std=c++17 -stdlib=libc++ '</span><span class="sy0">,</span>
+              opt_suff<span class="sy0">:</span> <span class="st0">' -latomic -lsupc++ '</span>
+            <span class="br0">}</span>
+        <span class="br0">]</span><span class="sy0">,</span>
+        default_id<span class="sy0">:</span> <span class="nu0">12</span><span class="sy0">,</span> <span class="co1">// =&gt; GCC 13.1 (C++23)</span>
+        opt<span class="sy0">:</span> <span class="st0">' -O2 -Wall -Wextra -pedantic -pthread -pedantic-errors main.cpp -lm '</span><span class="sy0">,</span>
+    <span class="br0">}</span>
+&nbsp;
+    <span class="kw2">var</span> cmd_info_c <span class="sy0">=</span> <span class="br0">{</span>
+        cc<span class="sy0">:</span> <span class="br0">[</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 4.9 (C89)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'gcc-4.9 -x c -std=c89 '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 4.9 (C99)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++-4.9 -x c -std=c99 '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 4.9 (C11)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++-4.9 -x c -std=c11 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 5.2 (C89)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++-5.2 -x c -std=c89 '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 5.2 (C99)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++-5.2 -x c -std=c99 '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 5.2 (C11)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++-5.2 -x c -std=c11 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 13.1 (C89)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++ -x c -std=c89 '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 13.1 (C99)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++ -x c -std=c99 '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 13.1 (C11)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++ -x c -std=c11 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 13.1 (C17)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++ -x c -std=c17 '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'GCC 13.1 (C23)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'g++ -x c -std=c2x '</span><span class="sy0">,</span> opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'clang 5.0 (C89)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'clang -x c -std=c89 -Wno-newline-eof '</span> <span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'clang 5.0 (C99)'</span><span class="sy0">,</span> cmd<span class="sy0">:</span> <span class="st0">'clang++ -x c -std=c99 -Wno-newline-eof '</span><span class="br0">}</span><span class="sy0">,</span>
+            <span class="br0">{</span> title<span class="sy0">:</span> <span class="st0">'clang 5.0 (C11)'</span><span class="sy0">,</span>
+                cmd<span class="sy0">:</span> <span class="st0">'clang++ -x c -std=c11 -Wno-newline-eof '</span><span class="sy0">,</span>
+                opt_suff<span class="sy0">:</span> <span class="st0">' -latomic '</span><span class="br0">}</span>
+        <span class="br0">]</span><span class="sy0">,</span>
+        default_id<span class="sy0">:</span> <span class="nu0">10</span><span class="sy0">,</span> <span class="co1">// =&gt; GCC 13.1 (C23)</span>
+        opt<span class="sy0">:</span> <span class="st0">' -O2 -Wall -Wextra -pedantic -pthread -pedantic-errors main.cpp -lm '</span><span class="sy0">,</span>
+    <span class="br0">}</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">check_is_cxx</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">if</span> <span class="br0">(</span>mw.<span class="me1">config</span>.<span class="me1">get</span><span class="br0">(</span><span class="st0">'wgTitle'</span><span class="br0">)</span>.<span class="me1">indexOf</span><span class="br0">(</span><span class="st0">'c/'</span><span class="br0">)</span> <span class="sy0">==</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">return</span> <span class="kw2">false</span><span class="sy0">;</span>
+        <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+            <span class="kw1">return</span> <span class="kw2">true</span><span class="sy0">;</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">if</span> <span class="br0">(</span><span class="kw1">this</span>.<span class="me1">check_is_cxx</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">this</span>.<span class="me1">cmd_info</span> <span class="sy0">=</span> cmd_info_cxx<span class="sy0">;</span>
+    <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+        <span class="kw1">this</span>.<span class="me1">cmd_info</span> <span class="sy0">=</span> cmd_info_c<span class="sy0">;</span>
+    <span class="br0">}</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">cmd_run_normal</span> <span class="sy0">=</span> <span class="st0">' 2&gt;&amp;1 | sed "s/^/☘/"; if [ -x a.out ]; then ./a.out | sed "s/^/☢/"; fi'</span>
+    <span class="kw1">this</span>.<span class="me1">cmd_run_share</span> <span class="sy0">=</span> <span class="st0">' &amp;&amp; ./a.out'</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">el</span> <span class="sy0">=</span> <span class="br0">{</span><span class="br0">}</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">root</span> <span class="sy0">=</span> root<span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">is_orig</span> <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">action_bar</span> <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">root</span>.<span class="me1">children</span><span class="br0">(</span><span class="st0">'.t-example-live-link:first'</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">// initialize the action bar</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">run_init_btn</span> <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">action_bar</span>.<span class="me1">children</span><span class="br0">(</span><span class="st0">'.coliru-btn-run-init'</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">run_btn</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div&gt;Run&lt;/div&gt;'</span><span class="br0">)</span>
+                        .<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'coliru-btn coliru-btn-run'</span><span class="br0">)</span>
+                        .<span class="me1">hide</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">appendTo</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">action_bar</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">share_btn</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div&gt;Share&lt;/div&gt;'</span><span class="br0">)</span>
+                        .<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'coliru-btn coliru-btn-share'</span><span class="br0">)</span>
+                        .<span class="me1">hide</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">appendTo</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">action_bar</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">exit_btn</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div&gt;Exit&lt;/div&gt;'</span><span class="br0">)</span>
+                        .<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'coliru-btn coliru-btn-exit'</span><span class="br0">)</span>
+                        .<span class="me1">hide</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">appendTo</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">action_bar</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">cc_select_div</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div/&gt;'</span><span class="br0">)</span>
+                        .<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'coliru-select-compiler'</span><span class="br0">)</span>
+                        .<span class="me1">hide</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">appendTo</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">action_bar</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">cc_select</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;select/&gt;'</span><span class="br0">)</span>.<span class="me1">appendTo</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">cc_select_div</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw2">var</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> <span class="kw1">this</span>.<span class="me1">cmd_info</span>.<span class="me1">cc</span>.<span class="me1">length</span><span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw2">var</span> cmd <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">cmd_info</span>.<span class="me1">cc</span><span class="br0">[</span>i<span class="br0">]</span><span class="sy0">;</span>
+        $<span class="br0">(</span><span class="st0">'&lt;option/&gt;'</span><span class="br0">)</span>.<span class="me1">text</span><span class="br0">(</span>cmd.<span class="me1">title</span><span class="br0">)</span>.<span class="me1">attr</span><span class="br0">(</span><span class="st0">'value'</span><span class="sy0">,</span> i.<span class="me1">toString</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+                                      .<span class="me1">appendTo</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">cc_select</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">cc_select</span>.<span class="me1">val</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">cmd_info</span>.<span class="me1">default_id</span>.<span class="me1">toString</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">pwr</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div&gt;Powered by &lt;a href="https://coliru.stacked-crooked.com"&gt;Coliru&lt;/a&gt; online compiler&lt;/div&gt;'</span><span class="br0">)</span>
+                        .<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'coliru-powered'</span><span class="br0">)</span>
+                        .<span class="me1">hide</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">appendTo</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">action_bar</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">// find and store the original code and output divs</span>
+    orig_code <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">root</span>.<span class="me1">children</span><span class="br0">(</span><span class="st0">'.mw-geshi:first'</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>orig_code.<span class="me1">length</span> <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">this</span>.<span class="me1">has_orig_code</span> <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">orig_code</span> <span class="sy0">=</span> orig_code.<span class="me1">first</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+        <span class="kw1">this</span>.<span class="me1">has_orig_code</span> <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">orig_code</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div/&gt;'</span><span class="br0">)</span>.<span class="me1">hide</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">insertAfter</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">action_bar</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+&nbsp;
+    orig_output <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">root</span>.<span class="me1">children</span><span class="br0">(</span><span class="st0">'.mw-geshi:last'</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>orig_output.<span class="me1">length</span> <span class="sy0">&gt;</span> <span class="nu0">0</span> <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>orig_output.<span class="kw1">is</span><span class="br0">(</span>orig_code<span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">this</span>.<span class="me1">has_orig_output</span> <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">orig_output</span> <span class="sy0">=</span> orig_output.<span class="me1">first</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+        <span class="kw1">this</span>.<span class="me1">has_orig_output</span> <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">output_p</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;p&gt;Output:&lt;/p&gt;'</span><span class="br0">)</span>.<span class="me1">hide</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">insertAfter</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">orig_code</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">orig_output</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div/&gt;'</span><span class="br0">)</span>.<span class="me1">hide</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">insertAfter</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">output_p</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+&nbsp;
+    <span class="kw1">if</span> <span class="br0">(</span><span class="kw1">this</span>.<span class="me1">has_orig_code</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">this</span>.<span class="me1">source_code</span> <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">orig_code</span>.<span class="me1">text</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">replace</span><span class="br0">(</span><span class="co2">/\u00a0/g</span><span class="sy0">,</span> <span class="st0">" "</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+        <span class="kw1">this</span>.<span class="me1">source_code</span> <span class="sy0">=</span> <span class="st0">''</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+&nbsp;
+    <span class="co1">// initialize the editor</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">edited_code</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div/&gt;'</span><span class="br0">)</span>.<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'t-example-code mw-geshi'</span><span class="br0">)</span>
+                                     .<span class="me1">hide</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">insertAfter</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">orig_code</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">editor_div</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div/&gt;'</span><span class="br0">)</span>.<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'ace_editor ace-tm'</span><span class="br0">)</span>
+                                    .<span class="me1">appendTo</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">edited_code</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">editor</span> <span class="sy0">=</span> ace.<span class="me1">edit</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">editor_div</span>.<span class="me1">get</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">setTheme</span><span class="br0">(</span><span class="st0">"ace/theme/textmate"</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">getSession</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">setMode</span><span class="br0">(</span><span class="st0">"ace/mode/c_cpp"</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">commands</span>.<span class="me1">bindKeys</span><span class="br0">(</span><span class="br0">{</span><span class="st0">"Ctrl-l"</span><span class="sy0">:</span><span class="kw2">null</span><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">commands</span>.<span class="me1">bindKeys</span><span class="br0">(</span><span class="br0">{</span><span class="st0">"Ctrl-t"</span><span class="sy0">:</span><span class="kw2">null</span><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">commands</span>.<span class="me1">bindKeys</span><span class="br0">(</span><span class="br0">{</span><span class="st0">"Command-l"</span><span class="sy0">:</span><span class="kw2">null</span><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">commands</span>.<span class="me1">addCommand</span><span class="br0">(</span><span class="br0">{</span>
+        <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">'Build and run'</span><span class="sy0">,</span>
+        bindKey<span class="sy0">:</span> <span class="br0">{</span>win<span class="sy0">:</span> <span class="st0">'Ctrl-B'</span><span class="sy0">,</span> mac<span class="sy0">:</span> <span class="st0">'Command-B'</span><span class="br0">}</span><span class="sy0">,</span>
+        exec<span class="sy0">:</span> <span class="kw2">function</span><span class="br0">(</span>editor<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">this</span>.<span class="me1">compile_now</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <span class="br0">}</span><span class="sy0">,</span>
+        readOnly<span class="sy0">:</span> <span class="kw2">true</span>
+    <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">commands</span>.<span class="me1">addCommand</span><span class="br0">(</span><span class="br0">{</span>
+        <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">'Disable Ctrl-S'</span><span class="sy0">,</span>
+        bindKey<span class="sy0">:</span> <span class="br0">{</span>win<span class="sy0">:</span> <span class="st0">'Ctrl-S'</span><span class="sy0">,</span> mac<span class="sy0">:</span> <span class="st0">'Command-S'</span><span class="br0">}</span><span class="sy0">,</span>
+        exec<span class="sy0">:</span> <span class="kw2">function</span><span class="br0">(</span>editor<span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span><span class="sy0">,</span>
+        readOnly<span class="sy0">:</span> <span class="kw2">true</span>
+    <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">getSession</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">setValue</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">source_code</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">// create compiler output block</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">compiler_output_p</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;p&gt;Compiler messages:&lt;/p&gt;'</span><span class="br0">)</span>
+                                  .<span class="me1">hide</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">insertAfter</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">edited_code</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">compiler_output</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div/&gt;'</span><span class="br0">)</span>.<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'coliru-output coliru-output-compiler mw-geshi'</span><span class="br0">)</span>
+                                         .<span class="me1">hide</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">insertAfter</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">compiler_output_p</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">compiler_output_div</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div/&gt;'</span><span class="br0">)</span>.<span class="me1">appendTo</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">compiler_output</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">// create output block</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">edited_output</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div/&gt;'</span><span class="br0">)</span>.<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'coliru-output coliru-output-program mw-geshi'</span><span class="br0">)</span>
+                                       .<span class="me1">hide</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">insertAfter</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">orig_output</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">output_div</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st0">'&lt;div/&gt;'</span><span class="br0">)</span>.<span class="me1">appendTo</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">edited_output</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">reset_editor</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">getSession</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">setValue</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">source_code</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">run_btn</span>.<span class="me1">click</span><span class="br0">(</span><span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">if</span> <span class="br0">(</span><span class="sy0">!</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">run_btn</span>.<span class="me1">hasClass</span><span class="br0">(</span><span class="st0">'coliru-btn-disabled'</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">this</span>.<span class="me1">compile_now</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span>.<span class="me1">bind</span><span class="br0">(</span><span class="kw1">this</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">share_btn</span>.<span class="me1">click</span><span class="br0">(</span><span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">if</span> <span class="br0">(</span><span class="sy0">!</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">share_btn</span>.<span class="me1">hasClass</span><span class="br0">(</span><span class="st0">'coliru-btn-disabled'</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">this</span>.<span class="me1">share</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span>.<span class="me1">bind</span><span class="br0">(</span><span class="kw1">this</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">exit_btn</span>.<span class="me1">click</span><span class="br0">(</span><span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">if</span> <span class="br0">(</span><span class="sy0">!</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">exit_btn</span>.<span class="me1">hasClass</span><span class="br0">(</span><span class="st0">'coliru-btn-disabled'</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">this</span>.<span class="me1">restore_orig</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span>.<span class="me1">bind</span><span class="br0">(</span><span class="kw1">this</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">enable_ui</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">(</span>value<span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">setReadOnly</span><span class="br0">(</span><span class="sy0">!</span>value<span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">(</span>value<span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">run_btn</span>.<span class="me1">removeClass</span><span class="br0">(</span><span class="st0">'coliru-btn-disabled'</span><span class="br0">)</span><span class="sy0">;</span>
+            <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">share_btn</span>.<span class="me1">removeClass</span><span class="br0">(</span><span class="st0">'coliru-btn-disabled'</span><span class="br0">)</span><span class="sy0">;</span>
+            <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">exit_btn</span>.<span class="me1">removeClass</span><span class="br0">(</span><span class="st0">'coliru-btn-disabled'</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+            <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">run_btn</span>.<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'coliru-btn-disabled'</span><span class="br0">)</span><span class="sy0">;</span>
+            <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">share_btn</span>.<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'coliru-btn-disabled'</span><span class="br0">)</span><span class="sy0">;</span>
+            <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">exit_btn</span>.<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'coliru-btn-disabled'</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">send</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">(</span>location<span class="sy0">,</span> cmd<span class="sy0">,</span> src<span class="sy0">,</span> f<span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">this</span>.<span class="me1">enable_ui</span><span class="br0">(</span><span class="kw2">false</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="co1">// Avoid trailing newline errors</span>
+        <span class="kw1">if</span> <span class="br0">(</span>src.<span class="me1">lastIndexOf</span><span class="br0">(</span><span class="st0">'<span class="es0">\n</span>'</span><span class="br0">)</span> <span class="sy0">!==</span> src.<span class="me1">length</span> <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">)</span> <span class="br0">{</span>
+          src <span class="sy0">+=</span> <span class="st0">'<span class="es0">\n</span>'</span><span class="sy0">;</span>
+        <span class="br0">}</span>
+&nbsp;
+        <span class="kw2">var</span> http_request <span class="sy0">=</span> <span class="kw2">new</span> XMLHttpRequest<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+        http_request.<span class="kw3">open</span><span class="br0">(</span><span class="st0">"POST"</span><span class="sy0">,</span>
+                          <span class="st0">"https://coliru.stacked-crooked.com/"</span> <span class="sy0">+</span> location<span class="sy0">,</span> <span class="kw2">true</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw2">var</span> parent <span class="sy0">=</span> <span class="kw1">this</span><span class="sy0">;</span>
+        http_request.<span class="me1">onreadystatechange</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">if</span> <span class="br0">(</span>http_request.<span class="me1">readyState</span> <span class="sy0">==</span> <span class="nu0">4</span><span class="br0">)</span> <span class="br0">{</span>
+                parent.<span class="me1">enable_ui</span><span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span><span class="sy0">;</span>
+                <span class="kw1">if</span> <span class="br0">(</span>http_request.<span class="kw3">status</span> <span class="sy0">==</span> <span class="nu0">200</span><span class="br0">)</span> <span class="br0">{</span>
+                    parent.<span class="me1">last_result</span> <span class="sy0">=</span> http_request.<span class="me1">responseText</span>.<span class="me1">trim</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+                    f<span class="br0">(</span><span class="br0">{</span>src<span class="sy0">:</span> parent.<span class="me1">editor</span>.<span class="me1">getValue</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">,</span>
+                       cmd<span class="sy0">:</span> parent.<span class="me1">cmd</span><span class="sy0">,</span>
+                       output<span class="sy0">:</span> parent.<span class="me1">last_result</span><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+                <span class="br0">}</span>
+            <span class="br0">}</span>
+        <span class="br0">}</span><span class="sy0">;</span>
+        <span class="kw2">var</span> post_data <span class="sy0">=</span> JSON.<span class="me1">stringify</span><span class="br0">(</span><span class="br0">{</span>
+            <span class="st0">"cmd"</span> <span class="sy0">:</span> cmd<span class="sy0">,</span> <span class="st0">"src"</span> <span class="sy0">:</span> src
+        <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+        http_request.<span class="me1">send</span><span class="br0">(</span>post_data<span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">compile_now</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw2">var</span> parent <span class="sy0">=</span> <span class="kw1">this</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">getSession</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">clearAnnotations</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">compiler_output_p</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">'fast'</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">compiler_output</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">'fast'</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">output_div</span>.<span class="me1">html</span><span class="br0">(</span><span class="st0">'Building and running...'</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw2">var</span> cmd <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">get_cmd</span><span class="br0">(</span><span class="kw2">false</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw2">var</span> src <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">getValue</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw1">this</span>.<span class="me1">send</span><span class="br0">(</span><span class="st0">"compile"</span><span class="sy0">,</span> cmd<span class="sy0">,</span> src<span class="sy0">,</span> <span class="kw2">function</span><span class="br0">(</span>obj<span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw2">var</span> lines <span class="sy0">=</span> obj.<span class="me1">output</span>.<span class="me1">split</span><span class="br0">(</span><span class="co2">/\n/</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+            <span class="co1">// analyze the compiler output</span>
+            <span class="kw2">var</span> annotations <span class="sy0">=</span> <span class="br0">[</span><span class="br0">]</span><span class="sy0">;</span>
+            <span class="kw2">var</span> annotation_lines <span class="sy0">=</span> <span class="br0">[</span><span class="br0">]</span><span class="sy0">;</span>
+&nbsp;
+            <span class="kw2">var</span> program_output <span class="sy0">=</span> <span class="st0">''</span><span class="sy0">;</span>
+            <span class="kw2">var</span> compiler_output <span class="sy0">=</span> <span class="st0">''</span><span class="sy0">;</span>
+&nbsp;
+            <span class="kw1">for</span> <span class="br0">(</span><span class="kw2">var</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">!==</span> lines.<span class="me1">length</span><span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">)</span> <span class="br0">{</span>
+                <span class="kw2">var</span> line <span class="sy0">=</span> lines<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">;</span>
+&nbsp;
+                <span class="kw2">var</span> is_compile_output <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+                <span class="kw2">var</span> is_shell_output <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+&nbsp;
+                <span class="kw1">if</span> <span class="br0">(</span>line.<span class="me1">indexOf</span><span class="br0">(</span><span class="st0">'☘'</span><span class="br0">)</span> <span class="sy0">==</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+                    is_compile_output <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span>
+                    line <span class="sy0">=</span> line.<span class="me1">substring</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+                <span class="br0">}</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">(</span>line.<span class="me1">indexOf</span><span class="br0">(</span><span class="st0">'☢'</span><span class="br0">)</span> <span class="sy0">==</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+                    line <span class="sy0">=</span> line.<span class="me1">substring</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+                <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+                    <span class="co1">// everything else comes from the shell. Presumably, this</span>
+                    <span class="co1">// indicates a serious error in the program</span>
+                    <span class="co1">// (e.g. it segfaults).</span>
+                    <span class="co1">// FIXME: probably need a better API</span>
+                    is_shell_output <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span>
+                <span class="br0">}</span>
+&nbsp;
+                <span class="kw1">if</span> <span class="br0">(</span>line <span class="sy0">!==</span> <span class="st0">''</span><span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+                    line <span class="sy0">=</span> line.<span class="me1">replace</span><span class="br0">(</span><span class="co2">/&lt;/g</span><span class="sy0">,</span> <span class="st0">'&amp;lt'</span><span class="br0">)</span>.<span class="me1">replace</span><span class="br0">(</span><span class="co2">/&gt;/g</span><span class="sy0">,</span> <span class="st0">'&amp;gt'</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+                    <span class="kw1">if</span> <span class="br0">(</span>is_compile_output<span class="br0">)</span> <span class="br0">{</span>
+                        <span class="co1">// check if line contains an error</span>
+                        <span class="kw2">var</span> has_error <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">,</span> has_any_error <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+                        <span class="kw2">var</span> error_lineno <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+                        <span class="kw2">var</span> error_text <span class="sy0">=</span> <span class="st0">""</span><span class="sy0">;</span>
+&nbsp;
+                        <span class="kw2">var</span> match <span class="sy0">=</span> line.<span class="me1">match</span><span class="br0">(</span><span class="co2">/^main.cpp:(\d+):\d+:(.*)/</span><span class="br0">)</span><span class="sy0">;</span>
+                        <span class="kw1">if</span> <span class="br0">(</span>match<span class="br0">)</span> <span class="br0">{</span>
+                            has_error <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span>
+                            error_lineno <span class="sy0">=</span> parseInt<span class="br0">(</span>match<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span><span class="sy0">;</span>
+                            error_text <span class="sy0">=</span> match<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span>.<span class="me1">trim</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+                        <span class="br0">}</span>
+&nbsp;
+                        <span class="co1">// add annotation if possible</span>
+                        <span class="kw1">if</span> <span class="br0">(</span>has_error<span class="br0">)</span> <span class="br0">{</span>
+                            <span class="kw1">if</span> <span class="br0">(</span>annotation_lines.<span class="me1">indexOf</span><span class="br0">(</span>error_lineno<span class="br0">)</span> <span class="sy0">===</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">)</span> <span class="br0">{</span>
+                                <span class="kw2">var</span> error_type <span class="sy0">=</span> <span class="st0">'error'</span><span class="sy0">;</span>
+                                <span class="kw1">if</span> <span class="br0">(</span>error_text.<span class="me1">match</span><span class="br0">(</span><span class="co2">/^warning:/</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+                                    error_type <span class="sy0">=</span> <span class="st0">'warning'</span><span class="sy0">;</span>
+                                <span class="br0">}</span>
+&nbsp;
+                                annotation_lines.<span class="me1">push</span><span class="br0">(</span>error_lineno<span class="br0">)</span><span class="sy0">;</span>
+                                annotations.<span class="me1">push</span><span class="br0">(</span><span class="br0">{</span>row<span class="sy0">:</span> error_lineno<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">,</span> column<span class="sy0">:</span> <span class="nu0">0</span><span class="sy0">,</span>
+                                                text<span class="sy0">:</span> error_text<span class="sy0">,</span> type<span class="sy0">:</span>error_type<span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+                            <span class="br0">}</span>
+                        <span class="br0">}</span>
+&nbsp;
+                        <span class="co1">// highlight the output line if possible</span>
+                        pre_open <span class="sy0">=</span> <span class="st0">'&lt;pre'</span><span class="sy0">;</span>
+                        <span class="kw1">if</span> <span class="br0">(</span>has_error<span class="br0">)</span> <span class="br0">{</span>
+                            pre_open <span class="sy0">+=</span> <span class="st0">' onclick="window.jump_to_error(this, '</span>
+                                    <span class="sy0">+</span> error_lineno <span class="sy0">+</span> <span class="st0">')" onmouseover="window.highlight_error(this, true)" onmouseout="window.highlight_error(this, false)"'</span><span class="sy0">;</span>
+                        <span class="br0">}</span>
+                        pre_open <span class="sy0">+=</span> <span class="st0">'&gt;'</span><span class="sy0">;</span>
+                        pre_close <span class="sy0">=</span> <span class="st0">'&lt;/pre&gt;'</span><span class="sy0">;</span>
+                        compiler_output <span class="sy0">+=</span> pre_open <span class="sy0">+</span> line <span class="sy0">+</span> pre_close<span class="sy0">;</span>
+                    <span class="br0">}</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">(</span>is_shell_output<span class="br0">)</span> <span class="br0">{</span>
+                        pre_open <span class="sy0">=</span> <span class="st0">'&lt;pre class="coliru-output-line-shell"&gt;'</span><span class="sy0">;</span>
+                        pre_close <span class="sy0">=</span> <span class="st0">'&lt;/pre&gt;'</span><span class="sy0">;</span>
+                        program_output <span class="sy0">+=</span> pre_open <span class="sy0">+</span> line <span class="sy0">+</span> pre_close<span class="sy0">;</span>
+                    <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+                        pre_open <span class="sy0">=</span> <span class="st0">'&lt;pre class="coliru-output-line-exe"&gt;'</span><span class="sy0">;</span>
+                        pre_close <span class="sy0">=</span> <span class="st0">'&lt;/pre&gt;'</span><span class="sy0">;</span>
+                        program_output <span class="sy0">+=</span> pre_open <span class="sy0">+</span> line <span class="sy0">+</span> pre_close<span class="sy0">;</span>
+                    <span class="br0">}</span>
+                <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+                    program_output <span class="sy0">+=</span> <span class="st0">'&lt;br/&gt;'</span><span class="sy0">;</span>
+                <span class="br0">}</span>
+            <span class="br0">}</span>
+&nbsp;
+            parent.<span class="me1">el</span>.<span class="me1">output_div</span>.<span class="me1">html</span><span class="br0">(</span>program_output<span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+            <span class="kw1">if</span> <span class="br0">(</span>compiler_output <span class="sy0">!==</span> <span class="st0">''</span><span class="br0">)</span> <span class="br0">{</span>
+                parent.<span class="me1">el</span>.<span class="me1">compiler_output_div</span>.<span class="me1">html</span><span class="br0">(</span>compiler_output<span class="br0">)</span><span class="sy0">;</span>
+                parent.<span class="me1">el</span>.<span class="me1">compiler_output_p</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">'fast'</span><span class="br0">)</span><span class="sy0">;</span>
+                parent.<span class="me1">el</span>.<span class="me1">compiler_output</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">'fast'</span><span class="br0">)</span><span class="sy0">;</span>
+            <span class="br0">}</span>
+&nbsp;
+            <span class="co1">// mark the errors in the code</span>
+            window.<span class="me1">setTimeout</span><span class="br0">(</span><span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+                parent.<span class="me1">editor</span>.<span class="me1">getSession</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">setAnnotations</span><span class="br0">(</span>annotations<span class="br0">)</span><span class="sy0">;</span>
+            <span class="br0">}</span><span class="sy0">,</span> <span class="nu0">100</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">share</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw2">var</span> cmd <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">get_cmd</span><span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw2">var</span> src <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">editor</span>.<span class="me1">getValue</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw1">this</span>.<span class="me1">send</span><span class="br0">(</span><span class="st0">"share"</span><span class="sy0">,</span> cmd<span class="sy0">,</span> src<span class="sy0">,</span> <span class="kw2">function</span> <span class="br0">(</span>obj<span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw2">var</span> url <span class="sy0">=</span> <span class="st0">"https://coliru.stacked-crooked.com/view?id="</span> <span class="sy0">+</span> obj.<span class="me1">output</span><span class="sy0">;</span>
+            window.<span class="kw3">open</span><span class="br0">(</span>url<span class="sy0">,</span> <span class="st0">'_blank'</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span><span class="br0">)</span>
+    <span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">get_cmd</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">(</span>is_shared<span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw2">var</span> val <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">cc_select</span>.<span class="me1">val</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw2">var</span> cc <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">cmd_info</span>.<span class="me1">cc</span><span class="br0">[</span>parseInt<span class="br0">(</span>val<span class="br0">)</span><span class="br0">]</span>.<span class="me1">cmd</span><span class="sy0">;</span>
+        cc <span class="sy0">=</span> cc <span class="sy0">+</span> <span class="kw1">this</span>.<span class="me1">cmd_info</span>.<span class="me1">opt</span>
+        <span class="kw1">if</span> <span class="br0">(</span><span class="kw1">this</span>.<span class="me1">cmd_info</span>.<span class="me1">cc</span><span class="br0">[</span>parseInt<span class="br0">(</span>val<span class="br0">)</span><span class="br0">]</span>.<span class="me1">opt_suff</span> <span class="sy0">!==</span> undefined<span class="br0">)</span> <span class="br0">{</span>
+            cc <span class="sy0">=</span> cc <span class="sy0">+</span> <span class="kw1">this</span>.<span class="me1">cmd_info</span>.<span class="me1">cc</span><span class="br0">[</span>parseInt<span class="br0">(</span>val<span class="br0">)</span><span class="br0">]</span>.<span class="me1">opt_suff</span><span class="sy0">;</span>
+        <span class="br0">}</span>
+        <span class="kw1">if</span> <span class="br0">(</span>is_shared<span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">return</span> cc <span class="sy0">+</span> <span class="kw1">this</span>.<span class="me1">cmd_run_share</span><span class="sy0">;</span>
+        <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+            <span class="kw1">return</span> cc <span class="sy0">+</span> <span class="kw1">this</span>.<span class="me1">cmd_run_normal</span><span class="sy0">;</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">replace_orig</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">if</span> <span class="br0">(</span><span class="sy0">!</span><span class="kw1">this</span>.<span class="me1">is_orig</span><span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">return</span><span class="sy0">;</span> <span class="co1">// already replaced</span>
+        <span class="br0">}</span>
+&nbsp;
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">root</span>.<span class="me1">height</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">root</span>.<span class="me1">height</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw2">var</span> parent <span class="sy0">=</span> <span class="kw1">this</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">run_init_btn</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">"fast"</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+            parent.<span class="me1">el</span>.<span class="me1">run_btn</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">"fast"</span><span class="br0">)</span>.<span class="me1">css</span><span class="br0">(</span><span class="st0">"display"</span><span class="sy0">,</span><span class="st0">"inline-block"</span><span class="br0">)</span><span class="sy0">;</span>
+            parent.<span class="me1">el</span>.<span class="me1">share_btn</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">"fast"</span><span class="br0">)</span>.<span class="me1">css</span><span class="br0">(</span><span class="st0">"display"</span><span class="sy0">,</span><span class="st0">"inline-block"</span><span class="br0">)</span><span class="sy0">;</span>
+            parent.<span class="me1">el</span>.<span class="me1">exit_btn</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">"fast"</span><span class="br0">)</span>.<span class="me1">css</span><span class="br0">(</span><span class="st0">"display"</span><span class="sy0">,</span><span class="st0">"inline-block"</span><span class="br0">)</span><span class="sy0">;</span>
+            parent.<span class="me1">el</span>.<span class="me1">cc_select_div</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">"fast"</span><span class="br0">)</span>.<span class="me1">css</span><span class="br0">(</span><span class="st0">"display"</span><span class="sy0">,</span><span class="st0">"inline-block"</span><span class="br0">)</span><span class="sy0">;</span>
+            parent.<span class="me1">el</span>.<span class="me1">pwr</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">"fast"</span><span class="br0">)</span>.<span class="me1">css</span><span class="br0">(</span><span class="st0">"display"</span><span class="sy0">,</span><span class="st0">"inline-block"</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">orig_code</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">"fast"</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+            parent.<span class="me1">el</span>.<span class="me1">edited_code</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">"fast"</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">orig_output</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">"fast"</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">if</span> <span class="br0">(</span><span class="sy0">!</span>parent.<span class="me1">has_orig_output</span><span class="br0">)</span> <span class="br0">{</span>
+                parent.<span class="me1">el</span>.<span class="me1">output_p</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">'fast'</span><span class="br0">)</span><span class="sy0">;</span>
+            <span class="br0">}</span>
+            parent.<span class="me1">el</span>.<span class="me1">edited_output</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">"fast"</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+                parent.<span class="me1">el</span>.<span class="me1">root</span>.<span class="me1">height</span><span class="br0">(</span><span class="st0">'auto'</span><span class="br0">)</span><span class="sy0">;</span>
+            <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw1">this</span>.<span class="me1">is_orig</span> <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+    <span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">restore_orig</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">if</span> <span class="br0">(</span><span class="kw1">this</span>.<span class="me1">is_orig</span><span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">return</span><span class="sy0">;</span> <span class="co1">// already replaced</span>
+        <span class="br0">}</span>
+&nbsp;
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">root</span>.<span class="me1">height</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">root</span>.<span class="me1">height</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw2">var</span> parent <span class="sy0">=</span> <span class="kw1">this</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">run_btn</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">"fast"</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+            parent.<span class="me1">el</span>.<span class="me1">run_init_btn</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">"fast"</span><span class="br0">)</span>.<span class="me1">css</span><span class="br0">(</span><span class="st0">"display"</span><span class="sy0">,</span><span class="st0">"inline-block"</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">share_btn</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">"fast"</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">exit_btn</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">"fast"</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">cc_select_div</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">"fast"</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">pwr</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">"fast"</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">edited_code</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">"fast"</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+            parent.<span class="me1">el</span>.<span class="me1">orig_code</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">"fast"</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">compiler_output_p</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">'fast'</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">compiler_output</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">'fast'</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">(</span><span class="sy0">!</span><span class="kw1">this</span>.<span class="me1">has_orig_output</span><span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">output_p</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">'fast'</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span>
+&nbsp;
+        <span class="kw2">var</span> parent <span class="sy0">=</span> <span class="kw1">this</span><span class="sy0">;</span>
+        <span class="kw1">this</span>.<span class="me1">el</span>.<span class="me1">edited_output</span>.<span class="me1">fadeOut</span><span class="br0">(</span><span class="st0">"fast"</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+            parent.<span class="me1">el</span>.<span class="me1">orig_output</span>.<span class="me1">fadeIn</span><span class="br0">(</span><span class="st0">"fast"</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+                parent.<span class="me1">el</span>.<span class="me1">root</span>.<span class="me1">height</span><span class="br0">(</span><span class="st0">'auto'</span><span class="br0">)</span><span class="sy0">;</span>
+            <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        <span class="kw1">this</span>.<span class="me1">is_orig</span> <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span>
+    <span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+    <span class="kw1">this</span>.<span class="me1">enable_ui</span><span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw2">function</span> get_script_cached<span class="br0">(</span>url<span class="sy0">,</span> callback<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">return</span> $.<span class="me1">ajax</span><span class="br0">(</span><span class="br0">{</span>
+            type<span class="sy0">:</span> <span class="st0">"GET"</span><span class="sy0">,</span>
+            url<span class="sy0">:</span> url<span class="sy0">,</span>
+            success<span class="sy0">:</span> callback<span class="sy0">,</span>
+            dataType<span class="sy0">:</span> <span class="st0">"script"</span><span class="sy0">,</span>
+            cache<span class="sy0">:</span> <span class="kw2">true</span>
+    <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+window.<span class="me1">highlight_error</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">(</span>node<span class="sy0">,</span> b<span class="br0">)</span> <span class="br0">{</span>
+    node.<span class="me1">style</span>.<span class="me1">cursor</span> <span class="sy0">=</span> b <span class="sy0">?</span> <span class="st0">'pointer'</span> <span class="sy0">:</span> <span class="st0">'auto'</span><span class="sy0">;</span>
+<span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+window.<span class="me1">jump_to_error</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">(</span>node<span class="sy0">,</span> lineno<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">var</span> root <span class="sy0">=</span> $<span class="br0">(</span>node<span class="br0">)</span>.<span class="me1">parents</span><span class="br0">(</span><span class="st0">'.t-example'</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>root.<span class="me1">length</span> <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">for</span> <span class="br0">(</span><span class="kw2">var</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> editors.<span class="me1">length</span><span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">if</span> <span class="br0">(</span>editors<span class="br0">[</span>i<span class="br0">]</span>.<span class="me1">el</span>.<span class="me1">root</span>.<span class="kw1">is</span><span class="br0">(</span>root<span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+                <span class="kw2">var</span> editor <span class="sy0">=</span> editors<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">;</span>
+                editor.<span class="me1">editor</span>.<span class="me1">gotoLine</span><span class="br0">(</span>lineno<span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">)</span><span class="sy0">;</span>
+                editor.<span class="me1">editor</span>.<span class="kw3">focus</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+            <span class="br0">}</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw2">var</span> editors <span class="sy0">=</span> <span class="br0">[</span><span class="br0">]</span><span class="sy0">;</span>
+&nbsp;
+$.<span class="me1">when</span><span class="br0">(</span>
+    get_script_cached<span class="br0">(</span><span class="st0">'https://cdn.jsdelivr.net/ace/1.2.4/noconflict/ace.js'</span><span class="br0">)</span>
+<span class="br0">)</span>.<span class="me1">done</span><span class="br0">(</span><span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    $.<span class="me1">when</span><span class="br0">(</span>
+        get_script_cached<span class="br0">(</span><span class="st0">'https://cdn.jsdelivr.net/ace/1.2.4/noconflict/mode-c_cpp.js'</span><span class="br0">)</span><span class="sy0">,</span>
+        $.<span class="me1">Deferred</span><span class="br0">(</span><span class="kw2">function</span><span class="br0">(</span>deferred<span class="br0">)</span> <span class="br0">{</span>
+            $<span class="br0">(</span>deferred.<span class="me1">resolve</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span><span class="br0">)</span>
+    <span class="br0">)</span>.<span class="me1">done</span><span class="br0">(</span><span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        $<span class="br0">(</span><span class="st0">'.t-example-live-link &gt; a'</span><span class="br0">)</span>.<span class="me1">each</span><span class="br0">(</span><span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+            $<span class="br0">(</span><span class="kw1">this</span><span class="br0">)</span>.<span class="me1">replaceWith</span><span class="br0">(</span><span class="st0">'&lt;div class="coliru-btn coliru-btn-run-init"&gt;Run this code&lt;/div&gt;'</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+        $<span class="br0">(</span><span class="st0">'.t-example &gt; .mw-geshi:first'</span><span class="br0">)</span>.<span class="me1">each</span><span class="br0">(</span><span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+            $<span class="br0">(</span><span class="kw1">this</span><span class="br0">)</span>.<span class="me1">addClass</span><span class="br0">(</span><span class="st0">'t-example-code'</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+        $<span class="br0">(</span><span class="st0">'.coliru-btn-run-init'</span><span class="br0">)</span>.<span class="me1">click</span><span class="br0">(</span><span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw2">var</span> root <span class="sy0">=</span> $<span class="br0">(</span><span class="kw1">this</span><span class="br0">)</span>.<span class="me1">parent</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">parent</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+            <span class="co1">// find the editor for this root element</span>
+            <span class="kw2">var</span> i<span class="sy0">;</span>
+            <span class="kw1">for</span> <span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> editors.<span class="me1">length</span><span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">)</span> <span class="br0">{</span>
+                <span class="kw1">if</span> <span class="br0">(</span>editors<span class="br0">[</span>i<span class="br0">]</span>.<span class="me1">el</span>.<span class="me1">root</span>.<span class="kw1">is</span><span class="br0">(</span>root<span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+                    <span class="kw1">break</span><span class="sy0">;</span>
+                <span class="br0">}</span>
+            <span class="br0">}</span>
+            <span class="kw1">if</span> <span class="br0">(</span>i <span class="sy0">==</span> editors.<span class="me1">length</span><span class="br0">)</span> <span class="br0">{</span>
+                editors<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">=</span> <span class="kw2">new</span> Editor<span class="br0">(</span>root<span class="br0">)</span><span class="sy0">;</span>
+            <span class="br0">}</span>
+&nbsp;
+            <span class="kw2">var</span> editor <span class="sy0">=</span> editors<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">;</span>
+            editor.<span class="me1">replace_orig</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+            editor.<span class="me1">compile_now</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span></pre></div></div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=MediaWiki:Gadget-coliru_compiler.js&amp;oldid=155719">https://en.cppreference.com/mwiki/index.php?title=MediaWiki:Gadget-coliru_compiler.js&amp;oldid=155719</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="./Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="./Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./MediaWiki%25253AGadget-coliru_compiler.js.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="./Special:WhatLinksHere/MediaWiki:Gadget-coliru_compiler.js" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="./Special:RecentChangesLinked/MediaWiki:Gadget-coliru_compiler.js" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=MediaWiki:Gadget-coliru_compiler.js&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=MediaWiki:Gadget-coliru_compiler.js&amp;oldid=155719" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=MediaWiki:Gadget-coliru_compiler.js&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 29 July 2023, at 14:47.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 10,486 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="./Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="./Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="./Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.078 secs. -->
+	
+
+
+</body></html>

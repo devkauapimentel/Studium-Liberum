@@ -1,0 +1,9 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/baseaudiocontext/statechange_event/index.md
+
+# Original Wiki contributors
+bryanbraun
+1valdis
+fscholz
+Jedipedia
+chrisdavidmills

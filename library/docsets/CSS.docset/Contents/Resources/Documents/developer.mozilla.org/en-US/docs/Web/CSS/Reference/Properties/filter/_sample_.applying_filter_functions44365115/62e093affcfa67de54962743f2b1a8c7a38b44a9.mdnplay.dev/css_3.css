@@ -1,0 +1,5 @@
+
+img { border: 5px solid yellow; }
+img:nth-of-type(2) { filter: grayscale(0.4) blur(5px); }
+
+button.copy {display:none !important}

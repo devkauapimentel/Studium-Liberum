@@ -1,0 +1,10 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/intersectionobserver/observe/index.md
+
+# Original Wiki contributors
+bergus
+Sebastianz
+fscholz
+UsainBloot
+tazsingh
+Sheppy

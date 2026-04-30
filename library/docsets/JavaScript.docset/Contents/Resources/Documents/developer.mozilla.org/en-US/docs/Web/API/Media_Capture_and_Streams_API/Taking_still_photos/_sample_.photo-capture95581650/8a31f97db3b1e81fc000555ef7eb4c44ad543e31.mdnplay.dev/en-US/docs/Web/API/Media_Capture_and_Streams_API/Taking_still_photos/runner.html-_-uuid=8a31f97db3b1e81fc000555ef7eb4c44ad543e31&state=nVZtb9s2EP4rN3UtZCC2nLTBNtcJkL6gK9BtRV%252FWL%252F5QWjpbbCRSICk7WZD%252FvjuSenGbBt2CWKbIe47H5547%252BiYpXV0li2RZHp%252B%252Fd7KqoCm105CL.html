@@ -1,0 +1,40 @@
+<html>
+  <!-- Online page at https://8a31f97db3b1e81fc000555ef7eb4c44ad543e31.mdnplay.dev/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos/runner.html?uuid=8a31f97db3b1e81fc000555ef7eb4c44ad543e31&state=nVZtb9s2EP4rN3UtZCC2nLTBNtcJkL6gK9BtRV%2FWL%2F5QWjpbbCRSICk7WZD%2FvjuSenGbBt2CWKbIe47H5547%2BiYpXV0li2RZHp%2B%2Fd7KqoCm105CLxrUGocBaLzNaXKllQw%2BAD6W0gFeibqqwrKwzwqGFUu%2BBoK1FtlvmusBzJXZyK5w2sxoLKV7gTuZoZ1t0Hy2aP3gunSwzb8tgiw7aBgR4cyDXKGp211qptnCtWwN7XOeiBm1AuxIN7GSBmkJh10ewQZeXIBTIWmwRNkbX4Erhoq8jWirYYU5vDmmnt3%2B%2Bit69mYfN6LgZn3e5bp3T5Kw4WyUNmlpaK%2BnI0zC%2FSs4vqorOTQGhEcssTDOwkDvIK2EtAcMqGXtiQrzeox%2FS%2FN9%2BKkQISjsQOyErsa5wtsy8UYCOo7FOGDfE8TxmzOdvHEhGkfB3LtRO2IANY0IR9X74dcS6dU3ruohlvY0MsPNVAtbk9EYDUTkafCgRLBGKqhfOnrUkmgaFAamIWlLNWl%2FNCJONokqOktxaEuBaF9dww7tttHILHgAcG6xhlbxpc1kIeGUodbhKjsLiKrkwUlT9uxWUFhKV3DzliUYUBSV1AfPZr%2BSG5m5XaqUig36nQtqmEtcLWFc6v%2FSoWpitVFM%2FsfD7d8AHY74DvtFWOlLDAgxWwskdjnwsQLRO%2B4m1Jky9gMcnzVWYEPnl1uhWFdNcV9qQg%2B06ncPx6RzmkMHp%2FOEkIk2BtHzcXIHVlSy84cnpKXSfDH4ZjK%2BmthSF3tOhCcAfBtKu0X%2FwftIBmOmplf8gbfAkhhbj2ZfSYX90r0Ci%2BUFoDjd3h7auRGRxHMlJjOAxfQaLvSxcSeD5%2FKF%2FL1FuS9dzFraNij3MldKqD2wWCosimwXBfmUrVSUVTof0xm2f%2FPb9XQ887dA4mYtqKiq5pZQ63XR23LIiE99ks2K3W4PXwZhE%2FoU1nnOvDDHAGalh%2FhSyDD7FYrG0D1KhxBKOdjTg2lmpijpjiJewAelbsceukRJXU9hIaRCWnlp5V1LxWbo2GryEN254Z7ARlWU6%2BTwcXOhNZ1DovK1ROe7ULyvk4bPr10XatyxWUIDELN2H6drNAApHvA8TW80A8fX3LJTffcDDvjjgBTfqH8Df1eXZywg%2Fo97yckeQN9I6VGj4jJXML6kZQTqBs%2FOgjLtvv9CuDu%2FAm8A8Kcy0dImJtpD04rMDt5OIoISqNA3pGzbhPw%2BeUVf%2Ba%2F0Fc1ZIsHp6aMBVkU7iZO82F3Rjpikac%2BiUadN0A9GCNunnCwV%2BBDrPW2OwWMDPNzRz%2B3nwyHrnR9juLpaE4iA8T7gb9pMbSH%2FqhTnpgugFHxz65%2B9hLoN0NPnJF0sWimbiBT3iBd2Fc0ZSNpFi8DYcQW%2F8XdOwP9uGUWccBP1jju%2B2%2FZ7ncXGyFvz0baR1VAL3S3BMrROX%2BFbmfCvH3ONu1hhk8AvciLZyaZ%2B4TatyvtLohwDd3G%2B5BtOYjVjtdGfgFacknotk%2FDzMUQQnRagV6OxmG2pP7901dbYzurEfCP%2B3Sr6xeUeyTedHQP%2FRsSexfxtYGmIphBNDIE6%2FoPeP795QHP5HXNaobReO7yZf54DqhdliN54A3wZH5x7zccDi%2FyGEFR5a%2BqNHXc47mY9PTI7896F6%2BkIIg24xElgYsX%2FNRw4l4VmcRxmOBdaj%2Fht5P0YfyRSQ%2B1V3qEMmg4r9ZUh9rEa6D%2F01mdz%2BCw%3D%3D&code=95581650& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <a name="//apple_ref/Section/Still%20photo%20capture%20demo" class="dashAnchor"></a><h1 id="Stillphotocapturedemo">Still photo capture demo</h1>
+<p>
+  This example demonstrates how to use
+  <code>navigator.mediaDevices.getUserMedia()</code> to set up a media stream
+  using your webcam or other video device, fetch an image from that stream, and
+  create a PNG using that image.
+</p>
+<button id="permissions-button">Allow camera</button>
+<div class="camera">
+  <video id="video">Video stream not available.</video>
+  <button id="start-button">Capture photo</button>
+</div>
+<canvas id="canvas"></canvas>
+<div class="output">
+  <img alt="The screen capture will appear in this box." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACWCAYAAABkW7XSAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAABLKADAAQAAAABAAAAlgAAAABJS0H3AAAEaUlEQVR4Ae3UgQkAIAwDQXX/Sbqkgls8XCcIl5I9M3c5AgQIBAROIKOIBAgQ+AIGyyMQIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECDyCygQpgJfsGgAAAABJRU5ErkJggg==" id="photo"></img>
+</div>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../js_3.js'></script>
+</body>
+</html>

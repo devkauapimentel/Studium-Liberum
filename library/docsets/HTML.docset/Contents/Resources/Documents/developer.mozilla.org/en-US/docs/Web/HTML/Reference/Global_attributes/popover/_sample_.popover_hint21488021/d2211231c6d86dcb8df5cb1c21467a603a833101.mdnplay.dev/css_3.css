@@ -1,0 +1,11 @@
+
+header { display: flex; justify-content: center; }
+header button { margin: 0.4rem auto; }
+#menu { margin: 0.4rem 0px 0px; inset: auto; position-area: bottom; }
+#menu ul { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem; padding: 0.4rem; }
+#menu li { grid-column-start: span 2; grid-column-end: auto; display: grid; grid-template-rows: inherit; grid-template-areas: inherit; grid-auto-flow: inherit; grid-auto-rows: inherit; grid-auto-columns: inherit; grid-template-columns: subgrid; gap: 1.4rem; }
+li [popovertarget] { cursor: pointer; font-size: 1.2rem; }
+li button { border: medium; padding: 0px; background-color: inherit; }
+div.info-popover { margin: 2rem; inset: auto; max-width: 300px; position-area: right; }
+
+button.copy {display:none !important}

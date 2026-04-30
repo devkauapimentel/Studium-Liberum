@@ -1,0 +1,15 @@
+
+@keyframes robotFloat { 
+  0%,100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+#gordon-chat pre { background: rgb(13, 17, 23); border-radius: 0.25rem; padding: 0px; margin: 0.5rem 0px; overflow-x: auto; white-space: pre; }
+#gordon-chat pre code { background: rgb(13, 17, 23); color: rgb(201, 209, 217); padding: 1rem; display: block; font-family: "roboto mono", monospace; font-size: 0.875rem; line-height: 1.5; white-space: pre; overflow-x: auto; }
+#gordon-chat pre code * { white-space: pre; }
+#gordon-chat .prose code.not-prose { background-color: rgb(229, 231, 235); color: rgb(17, 24, 39); padding: 0.2em 0.4em; border-radius: 0.25rem; font-family: "roboto mono", monospace; font-size: 0.875em; }
+.dark #gordon-chat .prose code.not-prose { background-color: rgb(55, 65, 81); color: rgb(229, 231, 235); }
+
+footer {
+    display: none !important;
+}
+.main-header, .large-3.columns, .left-off-canvas-menu, .get-started-cta, .main-footer, .left-off-canvas-toggle {display:none !important} .large-9 {width:100% !important} .toggle-mode {display:none !important} .main-header, .anchorLink, .left-off-canvas-menu, .left-off-canvas-toggle, .main_footer .container, .title_section, .docsidebarnav_section {display:none !important} .col-md-10 {width:100% !important} aside.sticky {display:none !important} #docs {margin-bottom:40px !important} header, footer, #pd_rating_holder_8453675, .col-nav, .col-toc {display:none !important} .content {padding:0px 26px 30px !important} section.section {max-width:none !important} @media only screen and (max-width: 1024px) { main.content {padding: 0px 13px 30px !important}} .tableofcontents_section, .docsidebarnav_section {display:none !important} .col-md-8 {width:100% !important} #_hj_feedback_container {display:none !important} .reading-time {display:none !important} .search-form {display:none !important} #onetrust-consent-sdk {display:none !important} .large-6 {width:100% !important} #DocumentationText {padding:0px !important} .advisory {padding:40px 20px 20px 20px !important} blockquote p::before {content:none !important} button.copy {display:none !important} #announcement-bar, #sidebar, body main.flex div.sticky {display:none !important} #docker-announcement-bar {display:none !important} ._hj-widget-container {display:none !important} body main.flex {display:block !important} body main.flex div.flex.lg\:w-full { width:auto !important} main, ._hj_feedback_container {border:none !important} h1 span.invisible, h2 span.invisible, h3 span.invisible, h4 span.invisible {display:none !important} [aria-role=tablist] {display:none !important} [aria-role=tab] {display:block !important} a.relative.-top-16 {top:0 !important} #TableOfContents, nav#sectiontree, #kapa-widget-container {display:none !important} .md-dropdown {display:none !important} #markdownDropdown {display:none !important} main.grid {display:block !important} main > div.sticky {display:none !important} nav.text-sm {display:none !important}

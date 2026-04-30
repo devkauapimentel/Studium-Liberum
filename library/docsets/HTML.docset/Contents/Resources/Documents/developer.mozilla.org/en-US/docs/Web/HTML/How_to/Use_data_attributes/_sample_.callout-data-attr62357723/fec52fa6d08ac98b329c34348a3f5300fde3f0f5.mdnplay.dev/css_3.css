@@ -1,0 +1,7 @@
+
+.callout { margin: 0.5em 0px; padding: 0.5em; border-radius: 4px; border-width: 2px; border-style: solid; }
+.callout:not([data-variant]) { border-color: rgb(15, 15, 15); background-color: rgba(15, 15, 15, 0.2); }
+.callout[data-variant="note"] { border-color: rgb(15, 15, 235); background-color: rgba(15, 15, 235, 0.2); }
+.callout[data-variant="warning"] { border-color: rgb(235, 15, 15); background-color: rgba(235, 15, 15, 0.2); }
+
+button.copy {display:none !important}

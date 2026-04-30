@@ -1,0 +1,10 @@
+
+.sources-container, .targets-container { width: calc(100% - 2rem); border: 2px dashed gray; padding: 0.5rem; margin: 1rem 0px; }
+#sources, #targets { display: grid; gap: 0.5rem; width: 100%; }
+#sources { grid-template-columns: 1fr 1fr 1fr; }
+#targets { grid-template-columns: 1fr 1fr; }
+#sources div, #targets div { border: 2px solid black; flex: 1 0 auto; display: flex; align-items: center; justify-content: center; }
+#sources div { height: 50px; }
+#targets div { height: 75px; }
+
+button.copy {display:none !important}

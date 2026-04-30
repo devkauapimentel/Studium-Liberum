@@ -1,0 +1,5 @@
+
+.my-box { border-width: 0.3em; border-style: solid; border-color: gold red gold gold; border-image: none; width: auto; }
+.red-text { color: red; }
+
+button.copy {display:none !important}

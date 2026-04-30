@@ -1,0 +1,13 @@
+
+body { display: flex; gap: 20px; padding: 15px; background-image: conic-gradient(transparent 90deg, rgba(0, 0, 0, 0.05) 90deg, rgba(0, 0, 0, 0.05) 180deg, transparent 180deg, transparent 270deg, rgba(0, 0, 0, 0.05) 270deg); background-size: 30px 30px; }
+div, svg, img { width: 220px; aspect-ratio: 1 / 1; }
+div { border: 1px solid black; }
+.add img { mask-composite: add; }
+.subtract img { mask-composite: subtract; }
+.intersect img { mask-composite: intersect; }
+.exclude img { mask-composite: exclude; }
+div::before { content: "mask-composite: " attr(class); display: block; text-align: center; font-family: monospace; }
+body { flex-flow: wrap; }
+img { mask-image: url("../mdn.github.io/shared-assets/images/examples/mask-star.svg"), repeating-linear-gradient(to right bottom, red 0px, red 20px, rgba(255, 0, 0, 0.333) 20px, rgba(255, 0, 0, 0.333) 40px, transparent 40px, transparent 60px), none; }
+
+button.copy {display:none !important}

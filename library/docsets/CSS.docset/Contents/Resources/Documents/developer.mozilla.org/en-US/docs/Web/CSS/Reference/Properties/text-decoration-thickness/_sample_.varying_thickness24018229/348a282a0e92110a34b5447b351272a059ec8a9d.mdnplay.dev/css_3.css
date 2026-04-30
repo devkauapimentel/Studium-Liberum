@@ -1,0 +1,6 @@
+
+.thin { text-decoration: underline 1px red; }
+.thick { text-decoration: underline 5px red; }
+.shorthand { text-decoration: underline 5px red; }
+
+button.copy {display:none !important}

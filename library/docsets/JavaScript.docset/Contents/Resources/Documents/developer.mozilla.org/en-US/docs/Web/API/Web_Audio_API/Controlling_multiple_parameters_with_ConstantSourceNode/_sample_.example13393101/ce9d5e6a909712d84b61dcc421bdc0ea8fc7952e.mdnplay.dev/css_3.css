@@ -1,0 +1,10 @@
+
+.controls { width: 400px; position: relative; vertical-align: middle; height: 44px; }
+#playButton:checked + label::after { content: "⏸"; }
+#playButton:not(:checked) + label::after { content: "▶️"; }
+#playButton + label::after { cursor: pointer; }
+#playButton { vertical-align: middle; display: none; }
+#volumeControl { vertical-align: bottom; }
+label { vertical-align: middle; }
+
+button.copy {display:none !important}

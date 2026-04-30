@@ -1,0 +1,8 @@
+
+thead { border-bottom: 2px solid rgb(160, 160, 160); background-color: rgb(44, 94, 119); color: white; }
+table { border-collapse: collapse; border: 2px solid rgb(140, 140, 140); font-family: sans-serif; font-size: 0.8rem; letter-spacing: 1px; }
+tbody { background-color: rgb(228, 240, 245); }
+th, td { border: 1px solid rgb(160, 160, 160); padding: 8px 10px; }
+tbody > tr > td:last-of-type { text-align: center; }
+
+button.copy {display:none !important}

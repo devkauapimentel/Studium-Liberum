@@ -1,0 +1,6 @@
+
+.wrapper { display: grid; grid-template-columns: repeat(3, 150px); grid-auto-flow: dense; }
+.top { }
+.bottom { }
+
+button.copy {display:none !important}

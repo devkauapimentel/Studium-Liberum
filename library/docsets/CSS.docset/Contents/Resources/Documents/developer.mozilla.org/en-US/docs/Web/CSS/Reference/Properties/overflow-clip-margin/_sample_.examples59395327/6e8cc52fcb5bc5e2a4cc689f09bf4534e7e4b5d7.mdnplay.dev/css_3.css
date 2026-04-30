@@ -1,0 +1,4 @@
+
+.box { border: 3px solid black; width: 250px; height: 100px; overflow: clip; }
+
+button.copy {display:none !important}

@@ -1,0 +1,10 @@
+
+:checked ~ .container > .item { animation-name: action; animation-duration: 3s; animation-delay: 500ms; animation-timeline: auto; }
+@keyframes action { 
+  0% { rotate: 45deg; }
+  100% { rotate: 765deg; }
+}
+div { width: 400px; height: 100px; border: 1px solid; background-color: palegoldenrod; position: relative; }
+span { --size: 50px; height: var(--size); width: var(--size); background-color: magenta; border: 1px solid; position: absolute; left: calc(50% - (var(--size) / 2)); top: calc(50% - (var(--size) / 2)); }
+
+button.copy {display:none !important}

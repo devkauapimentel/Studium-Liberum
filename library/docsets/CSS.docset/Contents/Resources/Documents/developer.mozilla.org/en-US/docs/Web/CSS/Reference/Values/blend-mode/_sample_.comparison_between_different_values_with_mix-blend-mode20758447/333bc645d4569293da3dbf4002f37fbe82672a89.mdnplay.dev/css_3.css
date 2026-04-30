@@ -1,0 +1,12 @@
+
+.container { width: 640px; height: 800px; display: grid; grid: auto-flow 160px / repeat(4, 160px); border-top: 1px solid rgb(216, 216, 216); border-left: 1px solid rgb(216, 216, 216); }
+.container > div { border-right: 1px solid rgb(216, 216, 216); border-bottom: 1px solid rgb(216, 216, 216); }
+.container > div > div { position: relative; margin-left: 20px; width: 120px; height: 120px; }
+.container div p { margin: 0px; line-height: 30px; color: rgb(163, 51, 51); text-align: center; }
+.circle { width: 80px; height: 80px; border-radius: 50%; mix-blend-mode: screen; position: absolute; }
+.circle-1 { background: red; }
+.circle-2 { background: lightgreen; left: 40px; }
+.circle-3 { background: blue; left: 20px; top: 40px; }
+.isolate { isolation: isolate; position: relative; }
+
+button.copy {display:none !important}

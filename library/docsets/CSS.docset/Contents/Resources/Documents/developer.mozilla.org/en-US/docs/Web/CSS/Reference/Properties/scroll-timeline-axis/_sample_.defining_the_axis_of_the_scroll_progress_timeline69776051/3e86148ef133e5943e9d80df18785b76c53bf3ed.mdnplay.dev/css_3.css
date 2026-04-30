@@ -1,0 +1,17 @@
+
+:root { scroll-timeline: --my-scroller x; }
+body { margin: 0px; overflow-y: hidden; }
+.content { height: 100vh; width: 2000px; }
+.box { width: 100px; height: 100px; border-radius: 10px; background-color: rebeccapurple; position: fixed; top: 25px; left: 25px; }
+.animation { animation-duration: 1ms; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: rotate-appear; animation-range: initial; animation-timeline: --my-scroller; }
+@keyframes rotate-appear { 
+  0% { rotate: 0deg; top: 0%; }
+  100% { rotate: 720deg; top: 100%; }
+}
+@layer no-support {
+  @supports not (scroll-timeline-axis: block) {
+  body::before { content: "Your browser doesn't support the `scroll-timeline-axis` property."; background-color: wheat; display: block; width: 100%; text-align: center; }
+}
+}
+
+button.copy {display:none !important}

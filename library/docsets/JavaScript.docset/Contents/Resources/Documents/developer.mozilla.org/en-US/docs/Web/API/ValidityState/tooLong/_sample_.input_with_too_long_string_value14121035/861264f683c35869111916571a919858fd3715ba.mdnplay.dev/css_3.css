@@ -1,0 +1,7 @@
+
+textarea:invalid { outline: 3px solid red; }
+body { margin: 0.5rem; }
+textarea { width: 75%; }
+pre { padding: 1rem; height: 2rem; background-color: lightgrey; outline: 1px solid grey; }
+
+button.copy {display:none !important}

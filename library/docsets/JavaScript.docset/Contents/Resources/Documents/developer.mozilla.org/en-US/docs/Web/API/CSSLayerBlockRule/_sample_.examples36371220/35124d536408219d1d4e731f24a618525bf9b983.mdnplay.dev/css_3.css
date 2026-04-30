@@ -1,0 +1,6 @@
+
+@layer special {
+  p { color: rebeccapurple; }
+}
+
+button.copy {display:none !important}

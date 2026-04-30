@@ -1,0 +1,13 @@
+<html><head>    <meta charset="utf-8">    <meta http-equiv="x-ua-compatible" content="ie=edge">    <title>JavaScript Demo: encodeURI()</title>    <meta name="viewport" content="width=device-width, initial-scale=1">    <link href="../../../../../../../../interactive_examples/assets/css/codemirror.css" rel="stylesheet">    <link href="../../../../../../../../interactive_examples/assets/css/editor-js.css" rel="stylesheet">  </head>  <body>        <section id="static"><pre><code id="static-js" data-height="">const uri = "https://mozilla.org/?x=шеллы";
+const encoded = encodeURI(uri);
+console.log(encoded);
+// Expected output: "https://mozilla.org/?x=%D1%88%D0%B5%D0%BB%D0%BB%D1%8B"
+
+try {
+  console.log(decodeURI(encoded));
+  // Expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) {
+  // Catches a malformed URI
+  console.error(e);
+}
+    </code></pre></section>        <section id="live" class="live hidden">          <header class="output-header border-rounded-top-no-bottom">            <h4 class="output-heading">JavaScript Demo: encodeURI()</h4>          </header>          <div id="editor" class="editor"></div>          <div class="output-container">            <div class="buttons-container">              <button id="execute" class="button run" type="button">                Run ›              </button>              <button id="reset" type="button" class="button">Reset</button>            </div>            <div id="console" class="output"><code></code></div>          </div>        </section>    <script src="../../../../../../../../interactive_examples/assets/js/codemirror.js"></script>    <script src="../../../../../../../../interactive_examples/assets/js/editor-js.js"></script></body></html>

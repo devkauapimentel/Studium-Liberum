@@ -1,0 +1,4 @@
+
+input[type="text"]:disabled { background: rgb(204, 204, 204); }
+
+button.copy {display:none !important}

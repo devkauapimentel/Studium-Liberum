@@ -1,0 +1,24 @@
+
+:root { color-scheme: light dark; --light-bg: ghostwhite; --light-color: darkslategray; --light-code: tomato; --dark-bg: darkslategray; --dark-color: ghostwhite; --dark-code: gold; }
+* { background-color: light-dark(var(--light-bg), var(--dark-bg)); color: light-dark(var(--light-color), var(--dark-color)); }
+.wrapper { display: flex; justify-content: space-around; padding: 0.8rem; }
+.light { color-scheme: light; }
+.dark { color-scheme: dark; }
+section { width: 25%; padding: 5px; color: light-dark(
+    var(--light-code),
+    var(--dark-code)
+  ); border: 2px solid light-dark(var(--light-code), var(--dark-code)); }
+@supports (background-image: light-dark(url("./en-US/docs/Web/CSS/Reference/Values/color_value/light-dark/light.png"), url("./en-US/docs/Web/CSS/Reference/Values/color_value/light-dark/dark.png"))) {
+  .supports { display: none; }
+}
+:root { --light-grad: linear-gradient(135deg, var(--light-bg) 20%, var(--light-code)); --dark-grad: linear-gradient(45deg, var(--dark-bg) 30%, var(--dark-code)); }
+section div { width: 80%; aspect-ratio: 1 / 1; margin: auto; border: 1px solid light-dark(var(--light-code), var(--dark-code)); }
+@supports not (  background-image: light-dark(url("./en-US/docs/Web/CSS/Reference/Values/color_value/light-dark/light.png"), url("./en-US/docs/Web/CSS/Reference/Values/color_value/light-dark/dark.png")) ) {
+  section div { width: 60%; }
+}
+section div { background-image: light-dark(
+    var(--light-grad),
+    var(--dark-grad)
+  ); }
+
+button.copy {display:none !important}

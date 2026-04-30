@@ -1,0 +1,1003 @@
+<html><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Seizure_disorders by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:42:49 GMT --><head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Web accessibility for seizures and physical reactions</title>
+          
+          <script>try {
+  document.documentElement.dataset.theme =
+    localStorage.getItem("theme") || "light dark";
+} catch (error) {
+  console.warn("Unable to set theme", error);
+}
+
+try {
+  if (localStorage.getItem("nop") === "yes") {
+    document.documentElement.dataset["nop"] = "yes";
+  }
+} catch (error) {
+  console.warn("Unable to set nop", error);
+}
+</script>
+          <link rel="stylesheet" href="../../../../../static/client/styles-global.03146ed4c65bc5ea.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/270.66bae6059a1c23f9.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-layout.632d2f3884f10ca3.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-content-section.2ee991ba88f986cf.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-heading-anchor.0eec5185ab9425b7.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-toc.9b9bd019efd16b86.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-article-footer.81ae18c89fc527dc.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-left-sidebar.6f954e8939555f77.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-page-layout.5a4354f33e894319.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-a11y-menu.5796ee87cb69f93f.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-navigation.3a34ee593a554c40.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-logo.aea5ff6edf1b9cfb.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-menu.3376b3e11656fba0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs-bar.9a51a3c76a6231d0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs.d06ce8d09f42feb8.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-footer.a2850e459e2d290b.css" fetchpriority="high">
+          <link rel="preload" href="../../../../../static/client/jetbrains-mono-latin.119994ed445212c7.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low"><link rel="preload" href="../../../../../static/client/inter-latin.9a3b1bc220d426ef.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+          <script data-cfasync="false" data-report-only="on" data-prompt="0" src="../../../../../../transcend-cdn.com/cm/d556c3a1-e57c-4bdf-a490-390a1aebf6dd/airgap.js"></script>
+          <script src="../../../../../static/client/runtime.c294a6bdc7a42570.js" type="module"></script><script src="../../../../../static/client/1111.53dba753dc3eb961.js" type="module"></script><script src="../../../../../static/client/8903.f870aafb338b203a.js" type="module"></script><script src="../../../../../static/client/index.9a449352d879bbd5.js" type="module"></script>
+          
+    <link rel="icon" sizes="32x32" href="../../../../../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../../../../../favicon.svg">
+   <meta name="description" content="This article introduces concepts behind making web content accessible for those with vestibular disorders, and how to measure and prevent content leading to seizures and/or other physical reactions."><meta name="og:url" content="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Seizure_disorders"><meta name="og:title" content="Web accessibility for seizures and physical reactions - Accessibility | MDN"><meta name="og:locale" content="en_US"><meta name="og:description" content="This article introduces concepts behind making web content accessible for those with vestibular disorders, and how to measure and prevent content leading to seizures and/or other physical reactions."><meta name="og:image" content="https://developer.mozilla.org/mdn-social-image.46ac2375.png"><meta name="og:image:type" content="image/png"><meta name="og:image:height" content="1024"><meta name="og:image:width" content="1024"><meta name="og:image:alt" content="The MDN logo"><meta name="og:site_name" content="MDN Web Docs"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="MozDevNet">
+          <link rel="canonical" href="Seizure_disorders.html">
+          <link rel="apple-touch-icon" href="../../../../../apple-touch-icon.png">
+          <link rel="manifest" href="../../../../../manifest.json">
+          <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/opensearch.xml" title="MDN Web Docs">
+          <link rel="alternate" type="application/rss+xml" title="MDN Blog RSS Feed" href="https://developer.mozilla.org/en-US/blog/rss.xml">
+        </head>
+        
+      <body class="page-layout">
+        <ul class="a11y-menu">
+      <li>
+        <a href="#content">Skip to main content</a>
+      </li>
+      <li>
+        <a href="#search">Skip to search</a>
+      </li>
+    </ul>
+        <div class="page-layout__banner" data-scheme="">
+          <mdn-placement-top></mdn-placement-top>
+        </div>
+        <header class="page-layout__header">
+          
+      <nav class="navigation" data-scheme="" data-open="false">
+        <div class="navigation__logo">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">
+        <svg class="logo__image" width="83" height="24" viewBox="0 0 83 24" role="img">
+          <title>MDN</title>
+          <path class="logo__letter" d="M9.4 0 2.81 21.17H.12L6.69 0H9.4Zm2.38 0v21.17H9.4V0h2.4Zm9.27 0-6.56 21.17H11.8L18.36 0h2.69Zm2.39 0v21.17h-2.4V0h2.4Z"></path>
+          <path class="logo__text" d="M45.55 16.83h-3.93v-1.27h.87v-3.63c0-.85-.16-1.45-.48-1.82a1.65 1.65 0 0 0-1.3-.52c-.74 0-1.3.25-1.66.78a2.98 2.98 0 0 0-.58 1.58v3.59h1.38v1.26h-3.93v-1.26h.87v-3.6c0-.88-.16-1.48-.48-1.83a1.7 1.7 0 0 0-1.29-.52 1.93 1.93 0 0 0-1.65.75 2.85 2.85 0 0 0-.58 1.6v3.62h1.59v1.27h-4.64v-1.27h1.37V9.75h-1.4V8.46h3.08v1.47c.28-.48.62-.87 1.08-1.2a3 3 0 0 1 1.68-.45c.67 0 1.22.16 1.73.48.5.32.85.8 1.03 1.47.25-.57.62-1.03 1.13-1.4.5-.37 1.1-.55 1.81-.55.8 0 1.5.25 2.05.75.55.51.85 1.3.85 2.35v4.18h1.4v1.27Zm9.77 0H52.3v-1.66c-.27.51-.66.95-1.13 1.29-.56.4-1.23.59-1.9.55-1.11 0-2-.37-2.67-1.12a4.41 4.41 0 0 1-1-3.06c0-1.15.3-2.2.93-3.15.6-.94 1.58-1.43 2.94-1.43 1.36 0 2.25.5 2.83 1.5V5.22h-2V3.93h3.63v11.63h1.38v1.27Zm-3.06-3.86v-1.02a2.28 2.28 0 0 0-.73-1.67 2.4 2.4 0 0 0-1.66-.65 2.18 2.18 0 0 0-1.88.9 3.63 3.63 0 0 0-.65 2.2c0 .95.23 1.68.7 2.19.45.5 1.03.76 1.7.76.73 0 1.33-.3 1.79-.88.48-.6.71-1.21.73-1.83Zm14.14 3.86h-4.43v-1.27h1.37v-3.63c0-.85-.16-1.45-.5-1.82a1.68 1.68 0 0 0-1.31-.52c-.71 0-1.29.23-1.7.69a2.52 2.52 0 0 0-.67 1.6v3.66h1.38v1.26H56.1v-1.26h1.38v-5.8h-1.42V8.47h3.12V9.9c.6-1.06 1.57-1.6 2.92-1.6.83 0 1.54.26 2.12.77.57.5.85 1.28.85 2.34v4.19h1.38v1.24h-.05Z"></path>
+          <path class="logo__cursor" d="M67.71 21.98H83V24H67.71v-2.02Z"></path>
+        </svg>
+      </a>
+    </div>
+        <div class="navigation__search" data-view="mobile">
+          <mdn-search-button></mdn-search-button>
+        </div>
+        <button class="navigation__button" type="button" aria-expanded="false" aria-controls="navigation__popup" aria-label="Toggle navigation"></button>
+        <div class="navigation__popup" id="navigation__popup">
+          <div class="navigation__menu">
+      <nav class="menu">
+        <div class="menu__tab" data-section="html">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">HTML</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="../../HTML.html" data-glean-id="menu_click_menu: html -&gt; /en-US/docs/Web/HTML">HTML: Markup language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>HTML reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../HTML/Reference/Elements.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Elements">Elements</a>
+                              </li><li>
+                                <a href="../../HTML/Reference/Global_attributes.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Global_attributes">Global attributes</a>
+                              </li><li>
+                                <a href="../../HTML/Reference/Attributes.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Attributes">Attributes</a>
+                              </li><li>
+                                <a href="../../HTML/Reference.html" aria-label="See all HTML references" title="See all HTML references" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>HTML guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../HTML/Guides/Responsive_images.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Responsive_images">Responsive images</a>
+                              </li><li>
+                                <a href="../../HTML/Guides/Cheatsheet.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Cheatsheet">HTML cheatsheet</a>
+                              </li><li>
+                                <a href="../../HTML/Guides/Date_and_time_formats.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Date_and_time_formats">Date &amp; time formats</a>
+                              </li><li>
+                                <a href="../../HTML/Guides.html" aria-label="See all HTML guides" title="See all HTML guides" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Markup languages</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/SVG">SVG</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/MathML">MathML</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/XML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/XML">XML</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="css">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">CSS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" data-glean-id="menu_click_menu: css -&gt; /en-US/docs/Web/CSS">CSS: Styling language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>CSS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Properties">Properties</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Selectors">Selectors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/At-rules">At-rules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Values">Values</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" aria-label="See all CSS references" title="See all CSS references" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>CSS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Box_model/Introduction">Box model</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Animations/Using">Animations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Flexbox</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Applying_color" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Colors/Applying_color">Colors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides" aria-label="See all CSS guides" title="See all CSS guides" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Layout cookbook</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts">Column layouts</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element">Centering an element</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Card" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Card">Card component</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="javascript">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label" data-type="long">JavaScript</span><span class="menu__tab-label" data-type="short">JS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" data-glean-id="menu_click_menu: javascript -&gt; /en-US/docs/Web/JavaScript">JavaScript: Scripting language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>JS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Statements">Statements &amp; declarations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Functions">Functions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" aria-label="See all JavaScript references" title="See all JavaScript references" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>JS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow &amp; error handing</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops and iteration</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Working_with_objects">Working with objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Using_classes">Using classes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" aria-label="See all JavaScript guides" title="See all JavaScript guides" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="webapis">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Web APIs</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/API" data-glean-id="menu_click_menu: webapis -&gt; /en-US/docs/Web/API">Web APIs: Programming interfaces</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Web API reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/File_System_API">File system API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API">Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Geolocation_API">Geolocation API</a>
+                              </li><li>
+                                <a href="../../API/HTML_DOM_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/HTML_DOM_API">HTML DOM API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Push_API">Push API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Service_Worker_API">Service worker API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API" aria-label="See all Web API guides" title="See all Web API guides" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Web API guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API">Using the Web animation API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API/Using_Fetch">Using the Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/History_API/Working_with_the_History_API">Working with the History API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Using the Web speech API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using web workers</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="all">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">All</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web" data-glean-id="menu_click_menu: all -&gt; /en-US/docs/Web">All web technology</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Technologies</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../Accessibility.html" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Accessibility">Accessibility</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/HTTP">HTTP</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/URI" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/URI">URI</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Mozilla/Add-ons/WebExtensions">Web extensions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/WebAssembly">WebAssembly</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/WebDriver">WebDriver</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web" aria-label="See all web technology references" title="See all web technology references" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Topics</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Media" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Media">Media</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Performance">Performance</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Privacy" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Privacy">Privacy</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Security">Security</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Progressive_web_apps">Progressive web apps</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="learn">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Learn</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" data-glean-id="menu_click_menu: learn -&gt; /en-US/docs/Learn_web_development">Learn web development</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Frontend developer course</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Getting_started">Getting started modules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core">Core modules</a>
+                              </li><li>
+                                <a class="" href="https://developer.mozilla.org/en-US/curriculum/" data-glean-id="menu_click_submenu: learn -&gt; /en-US/curriculum/">MDN Curriculum</a>
+                              </li><li>
+                                <a class="external" href="https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar" data-glean-id="menu_click_submenu: learn -&gt; https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar">Check out the video course from Scrimba, our partner</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn HTML</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn CSS</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics module</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn JavaScript</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript module</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="tools">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Tools</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Discover our tools
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="circle-play" href="https://developer.mozilla.org/en-US/play" data-glean-id="menu_click_submenu: tools -&gt; /en-US/play">Playground</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="shield-check" href="https://developer.mozilla.org/en-US/observatory" data-glean-id="menu_click_submenu: tools -&gt; /en-US/observatory">HTTP Observatory</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator">Border-image generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator">Border-radius generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator">Box-shadow generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_format_converter" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_format_converter">Color format converter</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_mixer" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_mixer">Color mixer</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes/Shape_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Shapes/Shape_generator">Shape generator</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="about">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">About</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Get to know MDN better
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="mdn-m" href="https://developer.mozilla.org/en-US/about" data-glean-id="menu_click_submenu: about -&gt; /en-US/about">About MDN</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="chart-no-axes-combined" href="https://developer.mozilla.org/en-US/advertising" data-glean-id="menu_click_submenu: about -&gt; /en-US/advertising">Advertise with us</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="users" href="https://developer.mozilla.org/en-US/community" data-glean-id="menu_click_submenu: about -&gt; /en-US/community">Community</a>
+                              </li><li>
+                                <a class="menu__panel-icon external" data-icon="github" href="https://github.com/mdn" data-glean-id="menu_click_submenu: about -&gt; https://github.com/mdn">MDN on GitHub</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="blog">
+            <a class="menu__tab-link" href="https://developer.mozilla.org/en-US/blog/" data-glean-id="menu_click_link: top-level -&gt; /en-US/blog/">Blog</a>
+          </div>
+      </nav>
+    </div>
+          <div class="navigation__search" data-view="desktop">
+            <mdn-search-button></mdn-search-button>
+          </div>
+          <mdn-user-menu></mdn-user-menu>
+        </div>
+      </nav>
+      <mdn-search-modal id="search"></mdn-search-modal>
+     
+      
+    
+        </header>
+        <div class="page-layout__main">
+      <div class="breadcrumbs-bar" data-scheme="">
+        <mdn-toggle-sidebar></mdn-toggle-sidebar> 
+      <ol class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+        
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web" property="item" typeof="WebPage"><span property="name">Web</span></a>
+              <meta property="position" content="1">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../../Accessibility.html" property="item" typeof="WebPage"><span property="name">Accessibility</span></a>
+              <meta property="position" content="2">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../Guides.html" property="item" typeof="WebPage"><span property="name">Guides</span></a>
+              <meta property="position" content="3">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="Seizure_disorders.html" property="item" typeof="WebPage"><span property="name">Preventing seizures and physical reactions</span></a>
+              <meta property="position" content="4">
+            </li>
+          
+      </ol>
+    
+        <mdn-collection-save-button doc-url="/en-US/docs/Web/Accessibility/Guides/Seizure_disorders" doc-title="Web accessibility for seizures and physical reactions"></mdn-collection-save-button>
+        <mdn-color-theme></mdn-color-theme>
+        <mdn-language-switcher locale="en-US" native="English (US)" translations="[{&quot;locale&quot;:&quot;en-US&quot;,&quot;title&quot;:&quot;Web accessibility for seizures and physical reactions&quot;,&quot;native&quot;:&quot;English (US)&quot;},{&quot;locale&quot;:&quot;de&quot;,&quot;title&quot;:&quot;Barrierefreiheit im Web bei Anfällen und körperlichen Reaktionen&quot;,&quot;native&quot;:&quot;Deutsch&quot;},{&quot;locale&quot;:&quot;fr&quot;,&quot;title&quot;:&quot;Accessibilité Web : crises et réactions physiques&quot;,&quot;native&quot;:&quot;Français&quot;}]" url="Seizure_disorders.html"></mdn-language-switcher>
+      </div><div class="layout__2-sidebars-inline reference-layout">
+        <main id="content" class="layout__content">
+          <div class="layout__header reference-layout__header">
+            
+            
+            <mdn-survey></mdn-survey>
+            <h1>Web accessibility for seizures and physical reactions</h1>
+             <section class="content-section">
+    
+    <p>This article introduces concepts behind making web content accessible for those with vestibular disorders, and how to measure and prevent content leading to seizures and/or other physical reactions.</p>
+  </section>
+          </div>
+          <aside class="layout__right-sidebar reference-layout__toc">
+            <nav class="reference-toc">
+      <h2>In this article</h2>
+      <ul>
+        <li><a href="#overview">Overview</a></li><li><a href="#flashing_blinking_flickering">Flashing, blinking, &amp; flickering</a></li><li><a href="#measuring_to_prevent_harm">Measuring to prevent harm</a></li><li><a href="#accessibility_solutions_for_developers">Accessibility Solutions for Developers</a></li><li><a href="#developmental_experimental_features">Developmental &amp; Experimental Features</a></li><li><a href="#see_also">See also</a></li>
+      </ul>
+    </nav>
+            <mdn-placement-sidebar></mdn-placement-sidebar>
+          </aside>
+          <div class="layout__body reference-layout__body">
+            <section class="content-section" aria-labelledby="overview">
+    <!--lit-part +s7I6lqHMu4=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Overview"></a><h2 id="overview" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#overview">Overview</a></h2><!--/lit-part-->
+    <!--?-->
+  </section><section class="content-section" aria-labelledby="seizures">
+    <!--lit-part SH1Tm9+Zl9M=--><!--lit-node 0--><h3 id="seizures" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#seizures">Seizures</a></h3><!--/lit-part-->
+    <p>Seizures caused by light are known as photosensitive epilepsy. Content that flickers, flashes, or blinks can trigger photosensitive epilepsy. Web technologies that use video, animated GIFs, animated PNGs, animated SVGs, <a href="https://developer.mozilla.org/en-US/docs/Glossary/Canvas">Canvas</a>, and CSS or JavaScript animations can all produce content that may induce seizures or other incapacitating physical reactions. Certain visual patterns, especially stripes, can also cause physical reactions even though they are not animated. Photosensitive epilepsy is actually a kind of "reflex epilepsy"—seizures occurring in response to a trigger. In the case of photosensitive epilepsy, seizures are triggered specifically by flashing lights, but other types of reflex epilepsies may be triggered by the act of reading or by noises. Patterns and images can also trigger epilepsy.</p>
+<p>The fact that static images may cause seizures and other disorders is documented in articles such as <a href="https://linkinghub.elsevier.com/retrieve/pii/S0960982217304062" class="external" target="_blank">"Gamma Oscillations and photosensitive epilepsy"</a>, where it is noted "<em>Certain visual images, even in the absence of motion or flicker, can trigger seizures in patients with photosensitive epilepsy</em>". The Epilepsy Foundation, in its article, <a href="https://www.epilepsy.com/stories/shedding-light-photosensitivity-one-epilepsys-most-complex-conditions" class="external" target="_blank">"Shedding Light on Photosensitivity, One of Epilepsy's Most Complex Conditions"</a> talks about static images and patterns: "<em>Static or moving patterns of discernible light and dark stripes have the same effect as flashing lights because of the alternation of dark and bright areas."</em> The Epilepsy Foundation of America Working Group is able to "quantify" the problem a little: <em>"A pattern with the potential for provoking seizures contains clearly discernible stripes, numbering more than five light-dark pairs of stripes in any orientation</em>". In addition to stripes, checkered patterns have also been known to cause photosensitive seizures, according to <a href="https://www.cedars-sinai.org/health-library/diseases-and-conditions/p/photosensitive-seizures.html" class="external" target="_blank">Cedars-Sinai</a>.</p>
+<p>Although static images are possible as triggers, they are less consistent. The trigger that is well established and strong is flashing/strobe lights. Dr. Selim Benbadis of USF's Comprehensive Epilepsy Program notes, <em>"The only thing that is really documented is flashing lights, which can trigger seizures in patients with photosensitive epilepsy. Only a few types of epilepsies are photosensitive though, and the vast majority of epilepsies are not."</em> In addition to seizures brought about by photosensitivity, listening to certain pieces of music can also trigger what are called musicogenic seizures, although these types of seizures seem to be much more rare. For a great introduction on the topic of musicogenic seizures, visit Epilepsy Ontario's web page on <a href="https://epilepsyontario.org/musicogenic-seizures/" class="external" target="_blank">Musicogenic Seizures</a>.</p>
+<p>Seizures and epilepsy are not the same. In its article <a href="https://www.epilepsy.com/stories/revised-definition-epilepsy" class="external" target="_blank">"A Revised Definition of Epilepsy"</a>, the Epilepsy Foundation notes that "<em>a seizure is an event and epilepsy is the disease involving recurrent unprovoked seizures</em>." According to the Epilepsy Foundation's page <a href="https://www.epilepsy.com/what-is-epilepsy/understanding-seizures/how-serious-are-seizures" class="external" target="_blank">"How Serious Are Seizures?"</a>, <em>"Sudden unexpected death in epilepsy (SUDEP) is likely the most common disease-related cause of death in people with epilepsy. It is not frequent but it is a very real problem and people need to be aware of its risk"</em>.</p>
+<p>The point is, seizures most definitely can be and are fatal, and developers and designers are incredibly important for making the web a safer place for those with sensitivities to photosensitive or musicogenic triggers.</p>
+<p>Seizures can be fatal, but even the ones that are "only" debilitating can be of such severity that they render the user incapacitated. Other disorders, such as disorientation, nausea, vomiting, and more can also be so severe that the user is unable to function. The Epilepsy Foundation's article, <a href="https://www.epilepsy.com/what-is-epilepsy/seizure-triggers/photosensitivity" class="external" target="_blank">"Photosensitivity and Seizures"</a>, provides a list of triggers that may cause seizures in photosensitive people; here's an excerpt from that list:</p>
+<ul>
+<li>Television screens or computer monitors due to the flicker or rolling images.</li>
+<li>Certain video games or TV broadcasts containing rapid flashes or alternating patterns of different colors.</li>
+<li>Intense strobe lights like visual fire alarms.</li>
+<li>Natural light, such as sunlight, especially when shimmering off water, flickering through trees or through the slats of Venetian blinds.</li>
+<li>Certain visual patterns, especially stripes of contrasting colors.</li>
+</ul>
+<p>That same article continues that many factors must combine to trigger the photosensitive reaction. Of note is that it includes the wavelength of light as a possible factor; wavelengths in the red part of the spectrum seem to be especially problematic. In the article, <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html" class="external" target="_blank">"Understanding WCAG 2.0 Three Flashes or Below Threshold"</a> notes generally that: <em>"Individuals who have photosensitive seizure disorders can have a seizure triggered by content that flashes at certain frequencies for more than a few flashes"</em> and goes on to note, very specifically that: "<em>People are even more sensitive to red flashing than to other colors, so a special test is provided for saturated red flashing</em>".</p>
+<p>You don't even need an image or video to cause harm. A <a href="../../HTML/Reference/Elements/div.html"><code>&lt;div&gt;</code></a> element set to change color and luminosity at high frequency, easily done via JavaScript, can cause real harm. And, flickering can occur everywhere. For example, "spinners" commonly used to display while pages load can easily "flicker" while spinning.</p>
+<p>Additional concerns exist for individuals with motor-skill problems. For example, the page for Trace Research &amp; Development Center's <a href="https://trace.umd.edu/peat/" class="external" target="_blank">Photosensitive Epilepsy Analysis Tool</a> notes that <em>"Photosensitive seizures can be provoked by certain types of flashing in web or computer content, including mouse-overs that cause large areas of the screen to rapidly flash on and off repeatedly"</em>.</p>
+  </section><section class="content-section" aria-labelledby="other_physical_reactions">
+    <!--lit-part F9Dxpp+zbm0=--><!--lit-node 0--><h3 id="other_physical_reactions" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#other_physical_reactions">Other physical reactions</a></h3><!--/lit-part-->
+    <p>Nausea, vertigo (or dizziness), and disorientation are very nonspecific symptoms associated with all kinds of diseases and not particularly suggestive of seizures (except maybe disorientation, which is seen in seizures). However, seizures are not the only adverse physical response possible from flashing, flickering, blinking, and other such stimuli. In 1997, a Japanese cartoon featured an animated "virus bomb". Some of the children watching the cartoon reacted by having seizures, others by suffering nausea, shaking, and vomiting blood. The reactions from the children were so severe, they had to be rushed to the emergency room. The physical disorders listed below are all possible consequences: each of these physical reactions may be so severe as to be incapacitating.</p>
+<ul>
+<li>Seizures</li>
+<li>Vestibular Disorders</li>
+<li>Migraines</li>
+<li>Nausea</li>
+<li>Vomiting</li>
+</ul>
+  </section><section class="content-section" aria-labelledby="flashing_blinking_flickering">
+    <!--lit-part JN6w/Yg/KdA=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Flashing%2C%20blinking%2C%20%26%20flickering"></a><h2 id="flashing_blinking_flickering" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#flashing_blinking_flickering">Flashing, blinking, &amp; flickering</a></h2><!--/lit-part-->
+    <p>Although "flashing" and "blinking" are sometimes used interchangeably, they are not the same. According to the W3C, blinking is a distraction problem, whereas flashing refers to content that occurs more than 3 times per second, and which is sufficiently large and bright. <a href="https://www.section508.gov/content/guide-accessible-web-design-development/#flashing" class="external" target="_blank">Section 508</a> prohibits flickering effects with a frequency greater than 3 Hz (flickers per second) and lower than 55 Hz. The Epilepsy Foundation's article <a href="https://www.epilepsy.com/stories/shedding-light-photosensitivity-one-epilepsys-most-complex-conditions" class="external" target="_blank">"Shedding Light on Photosensitivity, One of Epilepsy's Most Complex Conditions"</a> notes that <em>"Generally, flashing lights between the frequencies of five to 30 flashes per second (Hertz) are most likely to trigger seizures. In order to be safe, the consensus recommends that photosensitive individuals should not be exposed to flashes greater than three per second."</em> For some people, however, flashing/blinking can cause symptoms at less than 3 Hz.</p>
+<p>It's important to note that not all flashing and blinking is bad. NASA, in its document titled, <a href="https://web.archive.org/web/20250215094718/https://colorusage.arc.nasa.gov/flashing.php" class="external" target="_blank">"Blinking, Flashing, and Temporal Response"</a> notes that blinking and flashing can be powerful tools for drawing attention—as is necessary for warning buttons (this assumes that users can still see the screen while elements are flashing, which is not always true). For some users, blinking buttons also caution that they must be used sparingly, and with care. As it applies to web design, systems that alert company employees to danger by "hijacking" the screen to provide a flashing warning of emergency need to take into consideration the rate, size, and luminosity changes on the screen as these warnings are flashed.</p>
+  </section><section class="content-section" aria-labelledby="flashing_and_flickering—how_is_danger_quantified">
+    <!--lit-part ibld0M9oCas=--><!--lit-node 0--><h3 id="flashing_and_flickering—how_is_danger_quantified" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#flashing_and_flickering—how_is_danger_quantified">Flashing and flickering—how is danger quantified?</a></h3><!--/lit-part-->
+    <p>According to the article <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1528-1167.2005.31405.x" class="external" target="_blank">"Photic- and pattern-induced seizures: expert consensus of the Epilepsy Foundation of America Working Group",</a> <em>"A flash is a potential hazard if it has luminance ≥20 cd/m<sup>2</sup>, occurs at a frequency of ≥3 Hz, and occupies a solid visual angle of ≥0.006 steradians (approximately 10% of the central visual field or 25% of screen area at typical viewing distances)."</em></p>
+<p>How far is a typical viewing distance? The recommendation considered for a typical viewing distance at the time of writing was "<em>the area can be taken as applying to an area &gt;25% of the area of a television screen, assuming standard viewing distances of ≥2 m (∼9 feet)"</em>. Much has changed since that time, and we are now much closer to our screen.</p>
+<p>Certain colors, and/or combinations of colors, also matter. <a href="https://www.sciencedaily.com/releases/2009/09/090925092858.htm" class="external" target="_blank">"Certain Colors More Likely To Cause Epileptic Fits, Researchers Find"</a> notes that <em>"…complexities underlying brain dynamics could be modulated by certain color combinations more than the others, for example, red-blue flickering stimulus causes larger cortical excitation than red-green or blue-green stimulus."</em></p>
+  </section><section class="content-section" aria-labelledby="flashing_flashing_red">
+    <!--lit-part D8X1Xx4a65w=--><!--lit-node 0--><h3 id="flashing_flashing_red" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#flashing_flashing_red">Flashing &amp; flashing red</a></h3><!--/lit-part-->
+    <p><a href="https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html" class="external" target="_blank">WCAG 2.3.1 general flash and red flash thresholds</a> are defined as follows:</p>
+<ul>
+<li>A <strong>general flash</strong> is defined as a pair of opposing changes in <a href="https://w3c.github.io/wcag/guidelines/22/#dfn-relative-luminance" class="external" target="_blank">relative luminance</a> of 10% or more of the maximum relative luminance where the relative luminance of the darker image is below 0.80, and where "a pair of opposing changes" is an increase followed by a decrease, or a decrease followed by an increase;</li>
+<li>A <strong>red flash</strong> is defined as any pair of opposing transitions involving a saturated red.</li>
+</ul>
+<p>These standards are based on earlier research. In 2004, The Epilepsy Foundation of America convened a workshop developed a <a href="https://pubmed.ncbi.nlm.nih.gov/16146438/" class="external" target="_blank">consensus</a> on photosensitive seizures, stating <em>"A flash is a potential hazard if it has luminance at least 20 cd/m<sup>2</sup>, occurs at a frequency of least 3 Hz, and occupies a solid visual angle of at least 0.006 steradians (about 10% of the central visual field or 25% of screen area at typical viewing distances)."</em> The transition to or from a saturated red is important and constitutes a risk on its own: "<em>Irrespective of luminance, a transition to or from a saturated red is also considered a risk.</em>"</p>
+  </section><section class="content-section" aria-labelledby="size_and_distance">
+    <!--lit-part yVFOAUfQdTw=--><!--lit-node 0--><h3 id="size_and_distance" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#size_and_distance">Size and distance</a></h3><!--/lit-part-->
+    <h4 id="how_big_it_depends">How big? It depends</h4>
+<p>"Relative" size and distance both matter. According to <a href="https://trace.umd.edu/peat/" class="external" target="_blank">PEAT</a>, <em>"The combined area of flashes occurring concurrently occupies no more than a total of one quarter of any 341 x 256 pixel rectangle anywhere on the displayed screen area when the content is viewed at 1024 by 768 pixels."</em></p>
+<p>The point that the field of vision is an important consideration arises in the article addressing WCAG 2.3.1 continues: "<em>The 1024 x 768 screen is used as the reference screen resolution for the evaluation. The 341 x 256 pixel block represents a 10 degree viewport at a typical viewing distance. (The 10 degree field is taken from the original specifications and represents the central vision portion of the eye, where people are most susceptible to photo stimuli.)</em>"</p>
+<p>This pixel area ratio calculates for relative size, but distance also matters.</p>
+<p>Distance matters because it affects the total field of vision. When viewers wear ocular masks for gaming, the field of vision is likely enveloped in its entirety by the screen. <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API">WebXR</a> is an open specification that makes it possible to experience VR in your browser, which can be experienced on phone, computer or headset. The concern about flashing images in an ocular mask is a growing one, since the mask is so close to the eyes.</p>
+<p>Research generally indicates that VR usage may actually be safer than normal screen consumption, due to higher refresh rates. As <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17175" class="external" target="_blank">Fisher et al. 2022</a> summarizes, <em>"The limited data so far available raise no special seizure concerns in terms of VR technology, although this view may change with more experience. Certain types of VR content, including bright flashes, provocative patterns, or color changes would be expected to provoke seizures, just as they do in the real world."</em></p>
+<p>(Note that some users will not be able to see with blinking cursors, and may get migraines, motion sickness, and disorientation, although blinking cursors occupy a much smaller area of the screen.)</p>
+  </section><section class="content-section" aria-labelledby="patterns_and_parallax">
+    <!--lit-part i9P1GM9Fg44=--><!--lit-node 0--><h3 id="patterns_and_parallax" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#patterns_and_parallax">Patterns, and parallax</a></h3><!--/lit-part-->
+    <p>Contrasting dark and light geometric patterns are a known culprit; stripes and checks are the best known examples. The Epilepsy Foundation of America Working Group lists how many light-dark pairs of stripes are likely to provoke seizures, and, in what conditions. If a pattern is unchanging and straight, eight lines is the maximum allowable, but if it undulates, no more than five lines.</p>
+<p>Parallax effects can cause disorientation. Use parallax effects with caution; if you must use them, ensure the user has a control to turn them off.</p>
+<p>"A pattern with the potential for provoking seizures contains clearly discernible stripes, numbering more than five light-dark pairs of stripes in any orientation. When the light-dark stripes of any pattern collectively subtend at the eye from the minimal-expected viewing distance a solid angle of &gt;0.006 steradians, the luminance of the lightest stripe is &gt;50 cd/m<sup>2</sup>, and the pattern is presented for ≥0.5 s, then the pattern should display no more than five light-dark pairs of stripes, if the stripes change direction, oscillate, flash, or reverse in contrast; if the pattern is unchanging or smoothly drifting in one direction, no more than eight stripes."</p>
+<p>Not all is known, and even with the metrics listed above, additional factors come into play. For example, going from a smaller area to a larger one increases the likelihood that the brain responds, as well as increasing contrast, and increasing spatial frequency from a low to middle. It's also known, although the reasoning is not understood behind it, that going from basic orientations (for example, stripes) to a multiple one (for example, the checkered pattern that emerges when laying one set of stripes on top of, but perpendicular to, the original set) affects the brain.</p>
+  </section><section class="content-section" aria-labelledby="colors">
+    <!--lit-part f7oNwbKgSBo=--><!--lit-node 0--><h3 id="colors" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#colors">Colors</a></h3><!--/lit-part-->
+    <p>Understanding color is important for accessibility. See <a href="Colors_and_Luminance.html">understanding colors and luminance</a> as it relates to web accessibility and accessibility in general.</p>
+<p>How the color relates to its background—usually framed in terms of contrast—and how drastically the color changes frame to frame in animation is important. For more on this, see <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html" class="external" target="_blank">Three Flashes or Below Threshold Understanding SC 2.3.1</a>.</p>
+<h4 id="the_special_case_of_red">The Special Case of Red</h4>
+<p>It has been demonstrated that <a href="https://www.sciencedaily.com/releases/2009/09/090925092858.htm" class="external" target="_blank">some colors are more likely to cause epileptic fits than others</a>. Human physiology and psychology are affected by the color red in general. Its power to influence behavior has even been noted in animals.</p>
+<ul>
+<li><strong>Red Desaturation tests:</strong> The human eye is so sensitively tuned to red that ophthalmologists set up a test using it. The Red desaturation test assesses the integrity of the optic nerve. For more information as to how an ophthalmologist uses this test, see <a href="https://www.smartoptometry.app/red-desaturation/" class="external" target="_blank">Red Desaturation</a>.</li>
+<li><strong>Red Environment:</strong> Studies have shown that for those who suffer Traumatic Brain Injury, <a href="https://pubmed.ncbi.nlm.nih.gov/20649469/" class="external" target="_blank">cognitive function is reduced in a red environment</a>.</li>
+</ul>
+<p><a href="Colors_and_Luminance.html">Saturated Red</a> is a special, dangerous case, and there are special tests for it. In addition to a red environment affecting the cognitive function of those with Traumatic Brain Injury, color in the red spectrum wavelength seems to require special concern and special tests. Dr. Gregg Vanderheiden, when testing the Photosensitive Epilepsy Analysis Tool, noted that the seizure rates were much higher than expected. They found that we are much more sensitive to saturated red flashing. (See the video, <a href="https://www.pbs.org/video/university-place-the-photosensitive-epilepsy-analysis-tool-ep-429/" class="external" target="_blank">The Photosensitive Epilepsy Analysis Tool</a>.)</p>
+<h4 id="websafe_does_not_mean_seizure-safe">Websafe does not mean seizure-safe</h4>
+<p>Note that the color <strong>#990000</strong> is considered "<strong>websafe</strong>". That does <em>not</em> mean it is "safe for not causing seizures", it only means that the color may be "safely" reproduced accurately by the technology used to generate color on screens.</p>
+  </section><section class="content-section" aria-labelledby="measuring_to_prevent_harm">
+    <!--lit-part fe9ezoDXE8g=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Measuring%20to%20prevent%20harm"></a><h2 id="measuring_to_prevent_harm" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#measuring_to_prevent_harm">Measuring to prevent harm</a></h2><!--/lit-part-->
+    <p>Measuring the potential for harm is a good starting point. Factors considered within tests include color, luminosity, size, contrast, and in cases of animation, frequency. WCAG 2.1 provides guidance for evaluating content.</p>
+<p>In August, 2004, the Epilepsy Foundation of America convened a workshop to begin to develop an expert consensus on photosensitive seizures. The following, expert, and authoritative information is from: <a href="https://pubmed.ncbi.nlm.nih.gov/16146438/" class="external" target="_blank">Photic- and pattern-induced seizures: expert consensus of the Epilepsy Foundation of America Working Group.</a></p>
+<blockquote>
+<p>A flash is a potential hazard if it has luminance ≥20 cd/m<sup>2</sup>, occurs at a frequency of ≥3 Hz, and occupies a solid visual angle of ≥0.006 steradians (approximately 10% of the central visual field or 25% of screen area at typical viewing distances). A transition to or from saturated red also is considered a risk. A pattern with the potential for provoking seizures contains clearly discernible stripes, numbering more than five light-dark pairs of stripes in any orientation. When the light-dark stripes of any pattern collectively subtend at the eye from the minimal-expected viewing distance a solid angle of &gt;0.006 steradians, the luminance of the lightest stripe is &gt;50 cd/m2, and the pattern is presented for ≥0.5 s, then the pattern should display no more than five light-dark pairs of stripes, if the stripes change direction, oscillate, flash, or reverse in contrast; if the pattern is unchanging or smoothly drifting in one direction, no more than eight stripes. These principles are easier to apply in the case of fixed media, for example, a prerecorded TV show, which can be analyzed frame-by-frame, as compared with interactive media.</p>
+</blockquote>
+<p>The "cd/m<sup>2</sup>" refers to candela per square meter. So for the web developer, how does this relate to measurements for color, luminance, and saturation?</p>
+<p>The candela is a SI unit (International System of units) of luminous intensity. It's a photometric term, and photometry deals with the measurement of visible light as perceived by human eyes. Wikipedia's article on <a href="https://en.wikipedia.org/wiki/Candela_per_square_metre" class="external" target="_blank">"Candela per square metre"</a> puts it in terms of what we are familiar with as developers: on a display device, and in the RGB space. This is helpful, because there's a specific standard assumed to be used on monitors, printers, and the Internet, and it is the <strong>sRGB</strong> (standard Red Green Blue).</p>
+<blockquote>
+<p>As a measure of light emitted per unit area, this unit is frequently used to specify the brightness of a display device. The <a href="https://en.wikipedia.org/wiki/SRGB" class="external" target="_blank">sRGB</a> spec for monitors targets 80 cd/m<sup>2</sup>. Typically, calibrated monitors should have a brightness of 120 cd/m<sup>2</sup>. Most consumer desktop <a href="https://en.wikipedia.org/wiki/Liquid_crystal_display" class="external" target="_blank">liquid crystal displays</a> have luminances of 200 to 300 cd/m<sup>2</sup>. <a href="https://en.wikipedia.org/wiki/High-definition_television" class="external" target="_blank">High-definition televisions</a> range from 450 to about 1500 cd/m<sup>2</sup>.</p>
+</blockquote>
+<p>The takeaway is that the <strong>sRGB</strong> color space is a common touch point between research, assessment tools, and developers, since it is easily converted from the commonly used Hex code.</p>
+  </section><section class="content-section" aria-labelledby="human_physiology_and_psychology_as_a_consideration">
+    <!--lit-part 1W4m8O2VArE=--><!--lit-node 0--><h3 id="human_physiology_and_psychology_as_a_consideration" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#human_physiology_and_psychology_as_a_consideration">Human physiology and psychology as a consideration</a></h3><!--/lit-part-->
+    <p>Many experts work to quantify and measure to the greatest extent possible the kinds of web content that can serve as triggers for seizures. That said, it can't be forgotten that color is as much about human perception in the brain as it is the measurement of light coming from a computer screen.</p>
+<p>In addition to the psychological variances, there are also physiological differences among us. There will be variances and nuances as to how a real human being perceives, and responds to, color and light. For example, Tom Jewett, Lecturer Emeritus of Computer Sciences at Cal State University Long Beach, notes the following concerning <a href="https://colortutorial.design/hsb.html" class="external" target="_blank">lightness in the HSL color scale</a> <em>"…The distinction between levels of lightness is not actually linear as the HSL scale would imply; we are much more sensitive to changes in lighter values than to darker ones."</em></p>
+<p>It's important to understand that light and its measurements are linear, but human vision and human perception are not. Investigation and discussion is ongoing as to how to relate the machine measurement of light as it passes from a computer screen, through the distance to the human eye, filtered by human vision, and then manipulated through the human brain.</p>
+<p>Even age and sex can play a role. According to the Epilepsy Foundation's article, <a href="https://www.epilepsy.com/stories/shedding-light-photosensitivity-one-epilepsys-most-complex-conditions" class="external" target="_blank">"Shedding Light on Photosensitivity, One of Epilepsy's Most Complex Conditions"</a>, <em>"Children and adolescents are more prone than adults to have an abnormal response to light stimulation, and the first light-induced seizure almost always occurs before age 20".</em> The article follows with this statistic: <em>"Girls (60 percent) are more often affected than boys (40 percent), although seizures are more frequent in boys because they are more likely to be playing video games. Video games often contain potentially provocative light stimulation"</em>.</p>
+<p><strong>User testing is very problematic</strong>. Naturally, no one wants to subject a seizure-prone individual to user testing. It's dangerous. To that point, one of the most ethical thing that developers and designers can do is use tools that have been developed by experts in the field who have worked hand-in-hand with physicians to develop the tool. As of this writing, there are two commonly available tools that have been ethically and professionally developed by researchers and physicians for film/videos: <strong>PEAT</strong>, and the <strong>Harding Test</strong>.</p>
+  </section><section class="content-section" aria-labelledby="photosensitive_epilepsy_analysis_tool_peat">
+    <!--lit-part OSJ6kl52+ow=--><!--lit-node 0--><h3 id="photosensitive_epilepsy_analysis_tool_peat" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#photosensitive_epilepsy_analysis_tool_peat">Photosensitive Epilepsy Analysis Tool (PEAT)</a></h3><!--/lit-part-->
+    <p>The <a href="https://trace.umd.edu/" class="external" target="_blank">Trace Research and Development Center</a> has set a gold standard for a <a href="https://trace.umd.edu/peat/" class="external" target="_blank">Photosensitive Epilepsy Analysis Tool</a>, and they've made a point to make it <strong><em>free</em></strong> to download. PEAT can help authors determine whether animations or video in their content are likely to cause seizures. Please note the restriction on its use: <strong><em>Use of PEAT to assess material commercially produced for television broadcast, film, home entertainment, or gaming industries is prohibited. Use the Harding Test or other tools for commercial purposes.</em></strong></p>
+<p>To get a free copy of the University of Maryland's Photosensitive Epilepsy Analysis Tool, visit the <a href="https://trace.umd.edu/" class="external" target="_blank">Trace Research &amp; Development Center</a>.</p>
+<p><img src="Seizure_disorders/peatversion1pt6.png" alt="University of Maryland College of Information Studies Photosensitive Epilepsy Analysis Tool." width="851" height="607" loading="lazy"></p>
+  </section><section class="content-section" aria-labelledby="the_harding_test">
+    <!--lit-part IDxLgfOQIAk=--><!--lit-node 0--><h3 id="the_harding_test" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#the_harding_test">The Harding Test</a></h3><!--/lit-part-->
+    <p>As use of the PEAT tool is prohibited for commercial use, television programmers can use the Harding Test at <a href="https://hardingtest.com/" class="external" target="_blank">HardingTest.com</a>. The Harding Test is another gold standard. Television programmers in various countries must pass this test before being able to broadcast, so the group at <a href="https://hardingtest.com/" class="external" target="_blank">HardingTest.com</a> provides both analysis and certification of video content.</p>
+<p><img src="Seizure_disorders/screen_shot_2019-06-20_at_11.16.17_am.png" alt="Harding Flash and Pattern Analyzer." width="2074" height="1182" loading="lazy"></p>
+  </section><section class="content-section" aria-labelledby="accessibility_solutions_for_developers">
+    <!--lit-part vfLOFSR3WTE=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Accessibility%20Solutions%20for%20Developers"></a><h2 id="accessibility_solutions_for_developers" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#accessibility_solutions_for_developers">Accessibility Solutions for Developers</a></h2><!--/lit-part-->
+    <p>All animations are potentially dangerous. As designers and developers our responsibility is to ensure we do no harm either intentionally or unintentionally. If we must include something that has the potential to cause harm, it is vital to prevent users from accidentally encountering the harmful content, and to provide ways for users to prevent and control animations mitigating potential harm.</p>
+  </section><section class="content-section" aria-labelledby="what_the_web_developer_can_do">
+    <!--lit-part 5+leMTYwngc=--><!--lit-node 0--><h3 id="what_the_web_developer_can_do" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#what_the_web_developer_can_do">What the web developer can do</a></h3><!--/lit-part-->
+    <h4 id="do_no_harm">Do no harm</h4>
+<p><a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-21/" class="external" target="_blank">WCAG Guideline 2.3 Seizures and Physical Reactions</a> provides an overview: <em>"Do not design content in a way that is known to cause seizures or physical reactions"</em>. Don't include animation that a user cannot control. Don't design with patterns known to cause problems. If you must include a gif or png with flashing in it, record it in a video format instead so that controls are available to the user. Give the user the ability to avoid it, turn it off, or render it less harmful.</p>
+<h4 id="understand_malice">Understand malice</h4>
+<p>As a developer or designer, ask yourself if strobing content really needs to be on your webpage. Even if handled properly, there are those who may download offending content from your site and weaponize it. It is believed the first documented attempt at using computers to effect physical harm via animation began Saturday, March 22, 2008: The Epilepsy Foundation's website was hacked via posts with flashing images and links falsely claiming to be helpful. Users with vestibular disorders who were seeking help from the site were affected.</p>
+<p>A series of legal considerations are underway after journalist Kurt Eichenwald, a known epileptic, suffered a seizure after being sent an animated gif in December 2016: the flashing gif carried the message, <em>"You deserve a seizure for your posts"</em>.</p>
+<h4 id="control_exposure_control_access">Control exposure, control access</h4>
+<p>Controlling exposure to the page is key to ensuring that someone susceptible to seizures is not exposed to it accidentally. WCAG notes that a single object can make the entire page unusable.</p>
+<p>If you believe you may have an image or animation that may cause seizures, control access to it by first displaying a warning about the content, and then putting it in a location where the user must opt in to it, such as clicking a button, or ensuring that the link to the page has a distinct and obvious warning.</p>
+<p>Consider setting crawl directives for search engines to hint that they shouldn't include potentially harmful resources in their search indexes.
+You can do this using metadata in a <a href="../../HTML/Reference/Elements/meta/name/robots.html"><code>&lt;meta name="robots"&gt;</code></a> element with restrictive rules like <code>noindex, nofollow</code>.
+By not indexing the page (<code>noindex</code>) and not following links on the page (<code>nofollow</code>), the likelihood that users will stumble upon it via search will be reduced:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;…&lt;/title&gt;
+    &lt;meta name="robots" content="noindex, nofollow" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    …
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>For non-HTML resources, you can set crawl directives in a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Robots-Tag"><code>X-Robots-Tag</code></a> HTTP response header:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">http</span></div><pre class="language-http notranslate"><code>X-Robots-Tag: noindex
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="animated_gifs">
+    <!--lit-part bvtXQYlK+qQ=--><!--lit-node 0--><h3 id="animated_gifs" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#animated_gifs">Animated GIFs</a></h3><!--/lit-part-->
+    <p>All image types are potentially dangerous, however, animated GIFs deserve special mention because of their ubiquity, and the fact that the animation speed is actually controlled within the GIF file itself.</p>
+<h4 id="detect_if_a_gif_is_animated">Detect if a GIF is animated</h4>
+<ul>
+<li>The <a href="https://www.npmjs.com/package/animated-gif-detector" class="external" target="_blank">animated-gif-detector</a> npm package allows for the ability to determine animate <em>as early as possible</em> in a given HTTP request.</li>
+<li>Zakirt provides a gist for <a href="https://gist.github.com/zakirt/faa4a58cec5a7505b10e3686a226f285" class="external" target="_blank">animated-gif-detect.js</a></li>
+</ul>
+<p>With animated GIFs, ensure animation is inactive until the user chooses to activate it. For example, the user must push a button or check a box in order to start the animation.</p>
+  </section><section class="content-section" aria-labelledby="videos">
+    <!--lit-part f4IqIH6XGXI=--><!--lit-node 0--><h3 id="videos" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#videos">Videos</a></h3><!--/lit-part-->
+    <p>As in the case of animated GIFs, the user must push a button or check a box in order to start the animation. There are many ways to do this, such as NOT adding the <a href="../../API/HTMLMediaElement/autoplay.html"><code>autoplay</code></a> attribute to <code>&lt;video controls&gt;</code>, or setting <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-play-state"><code>animation-play-state</code></a> to <code>paused</code> as an initial state. To see a powerful example of how this can actually work see the article by Kirupa, <a href="https://www.kirupa.com/html5/toggling_animations_on_off.htm" class="external" target="_blank">"Toggling Animations On and Off"</a>. Kirupa uses the <code>animation-play-state</code> in concert with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition"><code>transition</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform"><code>transform</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion"><code>prefers-reduced-motion</code></a> to create a very accessible experience under the user's control.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-play-state"><code>animation-play-state</code></a> is a CSS property that sets whether an animation is running or paused.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>div {
+  animation-play-state: paused;
+}
+</code></pre></div>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions">CSS transitions</a> can be used to set the duration to zero for the initial stage of animation.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>div {
+  transition-duration: 0s;
+}
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="ensure_the_user_can_also_stop_animations_as_well_as_start_them">
+    <!--lit-part tpeOmuG0hfQ=--><!--lit-node 0--><h3 id="ensure_the_user_can_also_stop_animations_as_well_as_start_them" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#ensure_the_user_can_also_stop_animations_as_well_as_start_them">Ensure the user can also stop animations as well as start them</a></h3><!--/lit-part-->
+    <p>A <a href="../../HTML/Reference/Elements/video.html"><code>&lt;video&gt;</code></a> element with no attributes will not play automatically, and will also have no controls. Ensure that you add the <code>controls</code> attribute to the video element so that the user can stop the video as well as start it.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4" /&gt;
+  &lt;source src="video.ogg" type="video/ogg" /&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+</code></pre></div>
+<h4 id="programmatically_ensure_controls_are_available">Programmatically ensure controls are available</h4>
+<p>The <code>HTMLMediaElement.controls</code> property reflects the <code>controls</code> HTML attribute, which controls whether user interface controls for playing the media item will be displayed.</p>
+<h5 id="video">Video</h5>
+<p>To ensure that a video has controls that a user can access, ensure that you add the word "controls" to HTML video and audio elements.</p>
+<p><code>&lt;video controls&gt;</code></p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;video controls&gt;
+  &lt;source src="myVideo.mp4" type="video/mp4" /&gt;
+  &lt;source src="myVideo.webm" type="video/webm" /&gt;
+  &lt;p&gt;
+    Your browser doesn't support HTML video. Here is a
+    &lt;a href="myVideo.mp4"&gt;link to the video&lt;/a&gt; instead.
+  &lt;/p&gt;
+&lt;/video&gt;
+</code></pre></div>
+<h5 id="audio">Audio</h5>
+<p>Taking that same example and applying it to audio:</p>
+<p><code>&lt;audio controls&gt;</code></p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;audio controls&gt;
+  &lt;source src="myAudio.ogg" type="audio/ogg" /&gt;
+  &lt;source src="myAudio.mp3" type="audio/mpeg" /&gt;
+  &lt;p&gt;
+    Your browser does not support the audio element. Here is a
+    &lt;a href="myAudio.mp3"&gt;link to the audio&lt;/a&gt; instead.
+  &lt;/p&gt;
+&lt;/audio&gt;
+</code></pre></div>
+<h5 id="audio_as_part_of_video">Audio as part of Video</h5>
+<p>Note that the audio in videos can be controlled by the <code>muted</code> content attribute, even though the content is within the <a href="../../HTML/Reference/Elements/video.html"><code>&lt;video&gt;</code></a> element rather than the <a href="../../HTML/Reference/Elements/audio.html"><code>&lt;audio&gt;</code></a> element. This example is from the section on <a href="https://html.spec.whatwg.org/multipage/media.html#concept-media-muted" class="external" target="_blank">muted media attribute</a> description from the HTML Living Standard. It explains that the video will autoplay quietly in the background until the user takes action to unmute the audio.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;video src="adverts.cgi?kind=video" controls autoplay loop muted&gt;&lt;/video&gt;
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="control_speed">
+    <!--lit-part GVoy1FpJ5JY=--><!--lit-node 0--><h3 id="control_speed" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#control_speed">Control speed</a></h3><!--/lit-part-->
+    <p>This seems obvious, but because there are so many MIME types, the mechanisms for handling them varies greatly, and for that reason there's not a one-size-fits-all solution to the problem. This is further complicated by the fact that even how files are classified complicates how they should be handled. For example, the .gif file format is usually understood to be an image, but is also considered a video file format in some circles because of its ability to be animated. For a comprehensive listing of media types, please visit <a href="https://www.iana.org/assignments/media-types/media-types.xhtml" class="external" target="_blank">IANA.org's page for Media Types</a>.</p>
+<p>The methods for sniffing them out is not a casual exercise. You may be interested in following the <a href="https://mimesniff.spec.whatwg.org/" class="external" target="_blank">MIME Sniffing</a> standard at whatwg.org. Just about every kind of image can be animated; how they are animated varies, and therefore, the control of the animation varies.</p>
+<h4 id="commonly_animated_file_types">Commonly animated file types</h4>
+<ul>
+<li><strong>Bitmap</strong>: Animation</li>
+<li><strong>Canvas</strong>: MDN's tutorial on Canvas has a great section on <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations">basic animations</a>. <code>setInterval()</code> is a mainstay in Canvas animation, but it is also interesting to see how it interacts with screen refresh. See the article, <a href="https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe" class="external" target="_blank">"Controlling fps with requestAnimationFrame?"</a> in which they discuss the nuts and bolts of implementing <code>requestAnimationFrame</code> against the backdrop of screen refresh.</li>
+<li><strong>GIFs (Raster)</strong>: Tough to crack because control for their animation resides within the gif files themselves. For information about controlling the speed of GIFs see W3C's <a href="https://www.w3.org/TR/WCAG20-TECHS/G152.html" class="external" target="_blank">"G152: Setting animated gif images to stop blinking after n cycles (within 5 seconds)"</a>. A great Stack Overflow article on the subject is, <a href="https://stackoverflow.com/questions/2385203/can-you-control-gif-animation-with-javascript" class="external" target="_blank">"Can you control GIF animation with JavaScript?"</a></li>
+<li><strong>GIFV (Raster)</strong>: Considered a variant, video version of GIF. The format is not standardized, and must reference a "real" video file (e.g., a .webm file) which must exist elsewhere.</li>
+<li><strong>JPG (Raster)</strong></li>
+<li><strong>MNG (Raster)</strong>: Multiple-image Network Graphics is a graphics file format for animated images. Also considered by some to be a video format.</li>
+<li><strong>PNG, APNG (Raster)</strong>: Portable Network Graphics and Animated Portable Network Graphics may both be animated.</li>
+<li><strong>SVGs (Vector)</strong>: The MDN document, <a href="https://developer.mozilla.org/en-US/docs/Web/SVG">"SVG: Scalable Vector Graphics"</a>, notes that <em>"SVG is a text-based open Web standard. It is explicitly designed to work with other web standards such as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Guides/SVG_animation_with_SMIL">SMIL</a>."</em> SVGs can be used as an image like in this example: <code>&lt;img src="example.svg" alt="This is an image using a svg as a source"&gt;</code>. This means that SVG appearance and animation can be controlled through CSS keyframes and animations. For interaction with JavaScript, see the MDN documents on <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model#svg_dom">SVG Interfaces</a> and <a href="../../SVG/Guides/Applying_SVG_effects_to_HTML_content.html">Applying SVG effects to HTML content</a>.</li>
+<li><strong>Voxel (Raster)</strong>: Three-dimensional <a href="https://en.wikipedia.org/wiki/Voxel" class="external" target="_blank">voxel</a> raster graphics are employed in video games, as well as in medical imaging.</li>
+</ul>
+<h4 id="text_can_also_be_animated">Text can also be animated</h4>
+<p>Translations and transformations can animate text in a div, and do harm. Moving text can induce seizures for the same reasons that moving images do, so avoid animating your text. It's a good idea to avoid using moving text anyhow, as many screen readers cannot read moving text and it's bad user experience even for those with no vision or vestibular issues.</p>
+  </section><section class="content-section" aria-labelledby="css_for_animation">
+    <!--lit-part Mi2jul/xrPc=--><!--lit-node 0--><h3 id="css_for_animation" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#css_for_animation">CSS for animation</a></h3><!--/lit-part-->
+    <p>In the style sheet or within the <a href="../../HTML/Reference/Elements/style.html"><code>&lt;style&gt;</code></a> element, many options can combine together to create a powerful experience for the user. We've already mentioned the <code>animation</code> property earlier in this document. It's actually shorthand for all animation properties, including:</p>
+<ul>
+<li><code>animation-play-state</code></li>
+<li><code>animation-duration</code> has a value of <code>&lt;time&gt;</code>; this is the duration an animation takes to complete one cycle. This may be specified in either seconds <code>(s)</code> or milliseconds <code>(ms)</code>. A default value of <code>0s</code> indicates no animation should occur.</li>
+<li><code>animation-timing-function</code></li>
+</ul>
+<p>The animation property is already powerful on its own, but combined with other properties and queries such as <code>prefers-reduced-motion</code>, a powerful set of options can be set up for the user. Setting <code>animation-duration</code> and <code>transition-duration</code> properties to a short duration rather than setting them to <code>animation: none</code> and <code>transition: none</code>, enables a safeguard to prevent issues in any case there is a dependency on the animation to run.</p>
+  </section><section class="content-section" aria-labelledby="javascript_animation">
+    <!--lit-part t+K+UvGJrVM=--><!--lit-node 0--><h3 id="javascript_animation" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#javascript_animation">JavaScript animation</a></h3><!--/lit-part-->
+    <p>JavaScript is often used to control <a href="../../HTML/Reference/Elements/canvas.html"><code>&lt;canvas&gt;</code></a> elements and SVGs. Most JavaScript code that applies to HTML video also applies to audio. <code>HTMLMediaElement.playbackRate</code> is used to implement user controls for the playback rate for both video and audio. A value of 1.0 is default and considered normal speed; a value of 0.5 is half the speed, a value of 2.0 is twice the speed. A negative number plays the video or audio backwards. Set the playback rate property: <code>HTMLMediaElement.playbackRate = playbackSpeed</code>.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getAnimations">document.getAnimations()</a> is an experimental technology, and includes <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations">CSS Animations</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions">CSS Transitions</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API">Web Animations</a>. The MDN page on <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getAnimations">Document.getAnimations()</a> provides the following code sample of how to slow down all animations on a page to half speed:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>document.getAnimations().forEach((animation) =&gt; {
+  animation.playbackRate *= 0.5;
+});
+</code></pre></div>
+<h4 id="image_sources_for_animation">Image sources for animation</h4>
+<p>One of the easiest ways is to start with an image that is already in existence, using it as an image source, and then animating it. Remember, you can use GIFs, JPGs, PNGs, SVGs and other file types here as an image source, as long as they are allowed file types—and sizes—in your environment. SVGs are often not allowed, due to security concerns. The MDN document, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations">Basic animations</a>, provides outstanding examples of this, using multiple image sources for the sun, earth, and moon, and using several canvas methods to control the speed and animation of the earth as it orbits around the sun, and the moon as it orbits around the earth. Use the codepen available with this tutorial to adjust <code>ctx.rotate</code> in the code to see how the animation is affected when changes are made.</p>
+<h4 id="if_you_absolutely_positively_must_use_a_flashing_animation…">If you absolutely, positively must use a flashing animation…</h4>
+<p>Make sure it has a control on it. Make sure it is turned off when the viewer first encounters it, and that a user must opt-in to see the animation.</p>
+<p>An example of a format that has no controls available to the user is a gif file. Animation speed is controlled within the gif image itself. Converting an animated gif to video enables controls to be put on the animation, and gives the user agency. There are many free online converters available for use, such as <a href="https://ezgif.com/" class="external" target="_blank">EZGif</a> and <a href="https://gif-2-mp4.com/" class="external" target="_blank">GIF to MP4</a>.</p>
+<h4 id="set_user_expectations">Set user expectations</h4>
+<p>Give users a heads-up as to what will happen before they click on that link. Describe the animation that is to follow. See <a href="https://w3c.github.io/wcag/guidelines/22/#change-on-request" class="external" target="_blank">WCAG 2.2 Success Criterion 3.2.5 Change on Request</a>.</p>
+<h4 id="keep_it_small">Keep it small</h4>
+<p>If you absolutely positively must have flashing, keep it small. Generally speaking, limit the size of the flash to an area approximately 341 by 256 pixels or less. This pixel size assumes that a viewer is at a typical distance from the screen. As mentioned earlier, this size may be too big if the image is to be viewed at close range, such as in a VR headset. WebVR is an open specification that makes it possible to experience VR in your browser. WebVR can be experienced on phone, computer or headset.</p>
+<p>If you are designing for a game or VR that uses an ocular mask, <strong>or CAN be used by an ocular mask</strong>, such as in Firefox Reality (a browser for virtual reality), ensure that the size of the rectangle is much smaller than 341 by 256 pixels, because the image is much closer to a user's eyes.</p>
+<h4 id="reduce_contrast">Reduce contrast</h4>
+<p>Normally, higher contrast is a good thing when it comes to accessibility. The greater the contrast of a text color to its background (technically called <em>luminosity contrast ratio,</em> according to W3.org's page on <a href="https://www.w3.org/WAI/perspective-videos/contrast/" class="external" target="_blank">Colors with Good Contrast</a>, the easier such content is to read. Users with low vision are especially appreciative of efforts to ensure high contrast of text against its background. When the content is animated, however, <strong><em>reducing</em></strong> contrast is actually a way to reduce the likelihood that the animated content will cause seizures. Drop the contrast ratio if three flashes within one second are detected.</p>
+<p>The contrast ratio is defined in <a href="https://w3c.github.io/wcag/guidelines/22/" class="external" target="_blank">WCAG 2.2</a> as follows:</p>
+<dl>
+<dt id="contrast_ratio"><a href="#contrast_ratio"><em>contrast ratio</em></a></dt>
+<dd>
+<p>(L1 + 0.05) / (L2 + 0.05), where</p>
+<ul>
+<li>L1 is the <a href="https://w3c.github.io/wcag/guidelines/22/#dfn-relative-luminance" class="external" target="_blank">relative luminance</a> of the lighter of the colors, and</li>
+<li>L2 is the <a href="https://w3c.github.io/wcag/guidelines/22/#dfn-relative-luminance" class="external" target="_blank">relative luminance</a> of the darker of the colors.</li>
+</ul>
+</dd>
+</dl>
+<p>It's best if you can adjust the contrast before it is uploaded or published to the web. For videos and animated GIFs, the Adobe Suite of products is a phenomenal resource for traditional images. Also for images, an online tool available is pinetools.com's <a href="https://pinetools.com/brightness-contrast-image" class="external" target="_blank">Brightness and contrast online</a>. If you intend to make animated GIFs, for example, start with one that has a lower contrast ratio.</p>
+<p>JavaScript is also an option for reducing contrast dynamically. Here's a code example from the section titled, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Building_and_updating_the_DOM_tree#setting_the_background_color_of_a_paragraph">"Example: Setting the background color of a paragraph"</a>. Notice that the color in the example is described in the <strong>RGB</strong> color space.</p>
+<p><strong>HTML Content <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Building_and_updating_the_DOM_tree#html_2">(link to source page)</a></strong></p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;body&gt;
+  &lt;input type="button" value="Set paragraph background color" /&gt;
+  &lt;p&gt;hi&lt;/p&gt;
+  &lt;p&gt;hello&lt;/p&gt;
+&lt;/body&gt;
+</code></pre></div>
+<p><strong>JavaScript Content <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Building_and_updating_the_DOM_tree#javascript_2">(link to source page)</a></strong></p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>function setBackground() {
+  // now, get all the p elements in the document
+  const paragraphs = document.getElementsByTagName("p");
+
+  // get the second paragraph from the list
+  const secondParagraph = paragraphs[1];
+
+  // set the inline style
+  secondParagraph.style.background = "red";
+}
+
+document.querySelector("input").addEventListener("click", setBackground);
+</code></pre></div>
+<h4 id="avoid_fully_saturated_reds_for_flashing_content">Avoid fully saturated reds for flashing content</h4>
+<p>As mentioned earlier in this document, the Epilepsy Foundation of America convened a workshop in August 2004 to begin to develop an expert consensus on photosensitive seizures. Among their results was the understanding that <em>"A flash is a potential hazard if it has luminance at least 20 cd/m2, occurs at a frequency of least 3 Hz, and occupies a solid visual angle of at least 0.006 steradians (about 10% of the central visual field or 25% of screen area at typical viewing distances). A transition to or from saturated red also is considered a risk."</em> They also note in that same consensus: <em>"Irrespective of luminance, a transition to or from a saturated red is also considered a risk."</em></p>
+  </section><section class="content-section" aria-labelledby="provide_alternative_css_styles">
+    <!--lit-part ROLyapy6a7A=--><!--lit-node 0--><h3 id="provide_alternative_css_styles" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#provide_alternative_css_styles">Provide alternative CSS styles</a></h3><!--/lit-part-->
+    <p>With the understanding that much of animation and flashing can be controlled via CSS methods, it's important to explore ways to make alternative options available to users, and to make the control of these options convenient and visible.</p>
+<h4 id="alternative_style_sheets">Alternative Style Sheets</h4>
+<p>Modern browsers will display the alternate CSS available in alternate style sheets if the users know where to look for them. In some cases, the alternate styles are revealed when the users go through the View menu, in other cases they are manifested in the settings, sometimes both. Not all users know to look for these options via the browser or settings, so it's worth considering doing things the old-fashioned way, with obvious buttons or links to change the style so that users can see them. Doing so won't conflict with, or override, the browser's ability to read the alternate style sheets, or the ability of the user to set preferences in the settings.</p>
+<p>It's important to know that certain users, such as those who rely on speech-recognition systems, often depend on legacy buttons and links because their disability prevents them from using a mouse, or to be able to take advantage of touch events on mobile tablets.</p>
+<p>Common ways to include the alternative stylesheets into your HTML documents are to use the <a href="../../HTML/Reference/Elements/link.html"><code>&lt;link&gt;</code></a> element, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@import"><code>@import</code></a>.</p>
+<h4 id="the_link_element">The <a href="../../HTML/Reference/Elements/link.html"><code>&lt;link&gt;</code></a> element</h4>
+<p>Use the <a href="../../HTML/Reference/Elements/link.html"><code>&lt;link&gt;</code></a> element, alongside with and together with the attributes of <code>rel="alternate stylesheet"</code> and for title, <code>title="…"</code> in the <a href="../../HTML/Reference/Elements/head.html"><code>&lt;head&gt;</code></a> section of the webpage.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;head&gt;
+  &lt;title&gt;Home Page&lt;/title&gt;
+  &lt;link href="main.css" rel="stylesheet" title="Default Style" /&gt;
+  &lt;link
+    href="alternate1.css"
+    rel="alternate stylesheet"
+    title="Alternate One" /&gt;
+  &lt;link
+    href="alternate2.css"
+    rel="alternate stylesheet"
+    title="Alternate Two" /&gt;
+&lt;/head&gt;
+</code></pre></div>
+<p><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@import"><code>@import</code></a></strong> is also a way to incorporate style sheets, but it is not quite as well supported as the <a href="../../HTML/Reference/Elements/link.html"><code>&lt;link&gt;</code></a> element.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>@import "alternate1.css";
+@import "alternate2.css";
+</code></pre></div>
+<p>By using alternate style sheets (remember to add the titles) you are setting it up for users to be able to use their browsers to choose alternate styles.</p>
+  </section><section class="content-section" aria-labelledby="dynamic_style_switching">
+    <!--lit-part xJp/vFf30Ic=--><!--lit-node 0--><h3 id="dynamic_style_switching" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#dynamic_style_switching">Dynamic Style Switching</a></h3><!--/lit-part-->
+    <p>One problem with relying on the browser to reveal alternative styles is that not all users are technically savvy enough to discover the alternate styles. Or, because of their disability, are not able to. Buttons or links make it obvious that options are available to many grateful users. There's a multitude of ways to add toggle buttons to allow the user to switch to the different style sheets. That said, the use of alternative style sheets are not the only option. Another option is to manipulate the style of the page itself. According to the MDN document, <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information">Using dynamic styling information</a>, <em>"where possible, it really is best practice to dynamically manipulate classes via the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/className"><code>className</code></a> property since the ultimate appearance of all of the styling hooks can be controlled in a single stylesheet".</em> One of the best examples around as to how to do this is from the W3C's page, <a href="https://www.w3.org/TR/WCAG20-TECHS/C29.html" class="external" target="_blank">"C29: Using a style switcher to provide a conforming alternate version"</a>.</p>
+  </section><section class="content-section" aria-labelledby="extreme_cases_text-only_alternatives">
+    <!--lit-part 7qtoIJ4VMDI=--><!--lit-node 0--><h3 id="extreme_cases_text-only_alternatives" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#extreme_cases_text-only_alternatives">Extreme Cases: Text-Only Alternatives</a></h3><!--/lit-part-->
+    <p>A separate, alternative stylesheet that prevents images from being displayed is easy to make. It's a draconian solution; but it is one that is sometimes necessary for school teachers and other public servants who must serve those with extreme sensitivities. These public servants can ask their developers to develop a special alternative style sheet using <code>display: none</code>. Here's how to do it via CSS:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>img {
+  display: none;
+}
+</code></pre></div>
+<h4 id="take_advantage_of_media_queries_with_style">Take advantage of media queries with <a href="../../HTML/Reference/Elements/style.html"><code>&lt;style&gt;</code></a></h4>
+<p>In setting up media queries, you are enabling controls by the user; these controls are made available in the browser or in the OS. See the MDN document, <a href="Browsing_safely.html">Accessibility: What users can do to browse more safely</a> to see more details of how a user accesses the controls.</p>
+<h4 id="prefers-reduced-motion"><code>prefers-reduced-motion</code></h4>
+<p>Support for <code>prefers-reduced-motion</code> in modern browsers is growing.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>@media screen and (prefers-reduced-motion: reduce) {
+}
+@media screen and (prefers-reduced-motion) {
+}
+</code></pre></div>
+<p>To see a great example of how to use the code <code>prefers-reduced-motion</code>, visit the MDN document, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion"><code>prefers-reduced-motion</code></a>, or see the example below from the section on <a href="https://developer.chrome.com/blog/new-in-chrome-74/" class="external" target="_blank">"New in Chrome 74"</a>.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>button {
+  animation: vibrate 0.3s linear infinite both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button {
+    animation: none;
+  }
+}
+</code></pre></div>
+<h4 id="prefers-color-scheme"><code>prefers-color-scheme</code></h4>
+<p>This can be useful if the ambient light API is not available. Support is emerging.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>@media (prefers-color-scheme: dark) {
+  /* adjust styles for dark mode */
+}
+</code></pre></div>
+<h4 id="window.matchmedia">Window.matchMedia()</h4>
+<p>There is a powerful tool available to developers via Window.matchMedia(). A great resource is MDN's document on <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia"><code>Window.matchMedia()</code></a>.</p>
+<h4 id="media_update_feature">Media update feature</h4>
+<p>The more often the screen is refreshed, the more stable it appears to the human eye, and the less it "flickers". The vast majority of modern technology refreshes at a rate that does not cause problems with photosensitivity. However, not everybody is wealthy enough to be able to afford the most recent technology: older or underpowered computers can have low refresh rates. <a href="../../../../../../www.abilitynet.org.uk/sites/abilitynet.org.uk/files/Epilepsy%20and%20Computing%20Nov%202015.pdf" class="external" target="_blank">AbilityNet's Factsheet (November 2015) Computers and Epilepsy</a> describes more of the details on refresh rates.</p>
+<p>A very old article, Tech Republic's <a href="https://www.techrepublic.com/forums/discussions/epilepsy-and-crt-lcd-screen-flicker/" class="external" target="_blank">"Epilepsy and CRT/LCD screen flicker"</a>, had an interesting response concerning the refresh rates in Hz:</p>
+<ul>
+<li><em>"This effect is noticeable, and documented, up to 70 Hz."</em></li>
+<li><em>"These studies would seem to indicate that you should stay away from refresh rates under 70 Hz, and use a rate not divisible by 10."</em></li>
+</ul>
+<p>Eric Bailey, of CSS-Tricks, found an innovative use the update feature which, used in combination with animation-duration or transition-duration, to conclude at a rate that is imperceptible to the human eye. In other words, Eric's techniques address the refresh-rate problem. The CSS below is from the CSS-Tricks article, <a href="https://css-tricks.com/revisiting-prefers-reduced-motion/" class="external" target="_blank">" Revisiting prefers-reduced-motion, the reduced motion media query"</a>.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important; /* Hat tip Nick/cssremedy (https://css-tricks.com/revisiting-prefers-reduced-motion/#comment-1700170) */
+    transition-duration: 0.001ms !important;
+  }
+}
+</code></pre></div>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/update"><code>update</code></a> media feature is used to query the ability of the output device to modify the appearance of content once it has been rendered. It has the values of "none", "slow", and "fast".</p>
+  </section><section class="content-section" aria-labelledby="developmental_experimental_features">
+    <!--lit-part bsOmrtlJWjY=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Developmental%20%26%20Experimental%20Features"></a><h2 id="developmental_experimental_features" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#developmental_experimental_features">Developmental &amp; Experimental Features</a></h2><!--/lit-part-->
+    <!--?-->
+  </section><section class="content-section" aria-labelledby="media_queries_level_5">
+    <!--lit-part PSZxorV6Jdw=--><!--lit-node 0--><h3 id="media_queries_level_5" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#media_queries_level_5">Media Queries Level 5</a></h3><!--/lit-part-->
+    <p>EnvironmentMQ (Planned in Media Queries Level 5)</p>
+<dl>
+<dt id="light-level"><a href="#light-level"><code>light-level</code></a></dt>
+<dd>
+<p><a href="https://drafts.csswg.org/mediaqueries-5/#light-level" class="external" target="_blank"><code>light-level</code></a> has three valid values: dim, normal, and washed. Interestingly, the specification refrains from actually defining the three levels in terms of a measurement of lux, because devices with a light sensor usually adjust the brightness of the screen automatically. The specifications also note the difference in technology, such as e-ink, which remains readable in bright daylight, versus liquid crystals, which do not.</p>
+</dd>
+<dt id="environment-blending"><a href="#environment-blending"><code>environment-blending</code></a></dt>
+<dd>
+<p>From W3C's Draft document, Media Queries Level 5: <em>"The <a href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-environment-blending" class="external" target="_blank"><code>environment-blending</code></a> media feature is used to query the characteristics of the user's display so the author can adjust the style of the document. An author might choose to adjust the visuals and/or layout of the page depending on the display technology to increase the appeal or improve legibility."</em></p>
+</dd>
+</dl>
+<h4 id="user_preference_media_features_planned_in_media_queries_level_5">User Preference Media Features (Planned in Media Queries Level 5)</h4>
+<p><a href="https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences" class="external" target="_blank">User Preference Media Features</a> in <a href="https://drafts.csswg.org/mediaqueries-5/" class="external" target="_blank">W3C Editor's Draft Media Queries Level 5</a> are especially promising in providing user control over media. Here are some highlights:</p>
+<dl>
+<dt id="inverted-colors"><a href="#inverted-colors"><code>inverted-colors</code></a></dt>
+<dd>
+<p>According to the section, <a href="https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences" class="external" target="_blank">User Preference Media Features</a>, "The <a href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-inverted-colors" class="external" target="_blank"><code>inverted-colors</code></a> media feature indicates whether the content is displayed normally, or whether colors have been inverted."</p>
+</dd>
+<dt id="forced-colors"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/forced-colors"><code>forced-colors</code></a></dt>
+<dd>
+<p>In <a href="https://drafts.csswg.org/css-color-adjust-1/#forced-colors-mode" class="external" target="_blank"><code>forced-colors-mode</code></a>, the user agent enforces the user's preferred color palette on the page, overriding the author's chosen colors. From W3C's Draft document, Media Queries Level 5 section on forced-colors: <em>"The forced-colors media feature is used to detect if the user agent has enabled a <a href="https://drafts.csswg.org/css-color-adjust-1/#forced-colors-mode" class="external" target="_blank">forced colors mode</a> where it enforces a user-chosen limited color palette on the page".</em> The user will need to be made aware of this ability, and it will need to play nice with the appropriate value for the prefers-color-scheme media query.</p>
+</dd>
+<dt id="light-level_2"><a href="#light-level_2"><code>light-level</code></a></dt>
+<dd>
+<p>From W3C's Draft document, Media Queries Level 5 section on light-level: <em>"The <a href="https://drafts.csswg.org/mediaqueries-5/#descdef-media-light-level" class="external" target="_blank"><code>light-level</code></a> media feature is used to query about the ambient light-level in which the device is used, to allow the author to adjust style of the document in response."</em> This will be a godsend to those who have motor-skills problems, or for some with cognitive difficulties, who cannot find the right "button" to change their screen settings.</p>
+</dd>
+<dt id="prefers-contrast"><a href="#prefers-contrast">prefers-contrast</a></dt>
+<dd>
+<p>From W3C's Draft document, Media Queries Level 5 section on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-contrast"><code>prefers-contrast</code></a>: <em>"The <code>prefers-contrast</code> media feature is used to detect if the user has requested the system increase or decrease the amount of contrast between adjacent colors. For example, many users have difficulty reading text that has a small difference in contrast to the text background and would prefer a larger contrast."</em> Sometimes there can be such a thing as too much contrast; a halo effect around text can occur in such situations and actually reduce legibility. Putting the amount of contrast in the user's control is a definite gift for accessibility.</p>
+</dd>
+</dl>
+<h4 id="mediaquerylist_interface"><code>MediaQueryList</code> Interface</h4>
+<p>Section 4.2 from the CSSWG.org drafts integrates with the <a href="https://html.spec.whatwg.org/multipage/webappapis.html#event-loop" class="external" target="_blank">event loop</a> defined in HTML. <a href="https://drafts.csswg.org/cssom-view/#biblio-html" class="external" target="_blank">HTML</a> for the <a href="https://drafts.csswg.org/cssom-view/#mediaquerylist" class="external" target="_blank"><code>MediaQueryList</code></a> object. See the MDN document, <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList">MediaQueryList</a> for more information.</p>
+<h4 id="personalization_help_and_support">Personalization Help and Support</h4>
+<p>The requirement for the <code>literal</code> property is taken from <a href="https://w3c.github.io/adapt/help/#literal-explanation" class="external" target="_blank">WAI-Adapt: Help and Support</a>.</p>
+<p><strong>Requirement:</strong> Some users cannot understand non-literal text and icons such as metaphors, idioms etc. The <code>literal</code> property is intended to identify text or images as non-literal and allows the author to explain non-literal text and images to users.</p>
+  </section><section class="content-section" aria-labelledby="see_also">
+    <!--lit-part p88DAUaBJzA=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/See%20also"></a><h2 id="see_also" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#see_also">See also</a></h2><!--/lit-part-->
+    <!--?-->
+  </section><section class="content-section" aria-labelledby="mdn">
+    <!--lit-part +9MsWL9aezs=--><!--lit-node 0--><h3 id="mdn" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#mdn">MDN</a></h3><!--/lit-part-->
+    <ul>
+<li><a href="Browsing_safely.html">Accessibility: What users can do to browse more safely</a></li>
+<li><a href="Colors_and_Luminance.html">Accessibility: Understanding color and luminance</a></li>
+<li><a href="../../SVG/Guides/Applying_SVG_effects_to_HTML_content.html">Applying SVG effects to HTML Content</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations">Basic Animations</a> (Canvas Tutorial)</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Canvas API</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage">CanvasRenderingContext2D.drawImage()</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value"><code>&lt;color&gt;</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">Document Object Model</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList">MediaQueryList</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information">Using dynamic styling information</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">WebGL: 2D and 3D graphics for the web</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API">WebVR API</a></li>
+</ul>
+  </section><section class="content-section" aria-labelledby="color">
+    <!--lit-part JfYlW9vegR0=--><!--lit-node 0--><h3 id="color" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#color">Color</a></h3><!--/lit-part-->
+    <ul>
+<li><a href="https://colortutorial.design/" class="external" target="_blank">Color Tutorial: describing color</a> Tom Jewett</li>
+<li><a href="https://stackoverflow.com/questions/596216/formula-to-determine-perceived-brightness-of-rgb-color" class="external" target="_blank">Formula to Determine Brightness of RGB color</a> Stack Exchange Discussion Thread</li>
+<li><a href="https://www.scientificamerican.com/article/how-the-color-red-influences-our-behavior/" class="external" target="_blank">How the Color Red Influences Our Behavior</a> Scientific American By Susana Martinez-Conde, Stephen L. Macknik on November 1, 2014</li>
+</ul>
+  </section><section class="content-section" aria-labelledby="discussions">
+    <!--lit-part NUcGCQVhPgQ=--><!--lit-node 0--><h3 id="discussions" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#discussions">Discussions</a></h3><!--/lit-part-->
+    <ul>
+<li><a href="https://github.com/w3c/wcag/issues/553" class="external" target="_blank">Problems with WCAG 2.0 Flash Definition #553</a></li>
+<li><a href="https://github.com/w3c/wcag/issues/585" class="external" target="_blank">WCAG 2.1 Understanding 2.3.1 - missing/vague dimension definitions #585</a></li>
+</ul>
+  </section><section class="content-section" aria-labelledby="epilepsy_and_seizures">
+    <!--lit-part UpMZT+FKCQ8=--><!--lit-node 0--><h3 id="epilepsy_and_seizures" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#epilepsy_and_seizures">Epilepsy and Seizures</a></h3><!--/lit-part-->
+    <ul>
+<li><a href="https://www.epilepsy.com/stories/shedding-light-photosensitivity-one-epilepsys-most-complex-conditions" class="external" target="_blank">Shedding Light on Photosensitivity, One of Epilepsy's Most Complex Conditions</a> Epilepsy Foundation: <em>"Certain individuals are born with special sensitivity to flashing lights or contrasting visual patterns, such as stripes, grids and checkerboards. Because of this condition, their brain will produce seizure-like discharges when exposed to this type of visual stimulation."</em></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0960982217304062?via%3Dihub" class="external" target="_blank">Gamma oscillations and photosensitive epilepsy</a> Current Biology <a href="https://www.sciencedirect.com/journal/current-biology/vol/27/issue/9" class="external" target="_blank">Volume 27, Issue 9</a>, 8 May 2017, Pages R336-R338: <em>"Certain <a href="https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/retina-image" class="external" target="_blank">visual images</a>, even in the absence of motion or flicker, can trigger seizures in patients with photosensitive epilepsy."</em></li>
+<li><a href="https://www.cedars-sinai.org/health-library/diseases-and-conditions/p/photosensitive-seizures.html" class="external" target="_blank">Photosensitive Seizures. Cedars-Sinai</a> "<em>Photosensitive seizures are triggered by flashing or flickering lights. These seizures can also be triggered by certain patterns such as stripes.</em>"</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/16146438/" class="external" target="_blank">Photic-and pattern-induced seizures: expert consensus of the Epilepsy Foundation of America Working Group</a> Eplepsia 2005 Sept, 46(9):1423-5 PubMed.gov NCBI <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Harding%20G%5BAuthor%5D&amp;cauthor=true&amp;cauthor_uid=16146438" class="external" target="_blank">Harding G</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Wilkins%20AJ%5BAuthor%5D&amp;cauthor=true&amp;cauthor_uid=16146438" class="external" target="_blank">Wilkins AJ</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Erba%20G%5BAuthor%5D&amp;cauthor=true&amp;cauthor_uid=16146438" class="external" target="_blank">Erba G</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Barkley%20GL%5BAuthor%5D&amp;cauthor=true&amp;cauthor_uid=16146438" class="external" target="_blank">Barkley GL</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Fisher%20RS%5BAuthor%5D&amp;cauthor=true&amp;cauthor_uid=16146438" class="external" target="_blank">Fisher RS</a>; <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Epilepsy%20Foundation%20of%20America%20Working%20Group%5BCorporate%20Author%5D" class="external" target="_blank">Epilepsy Foundation of America Working Group</a>.</li>
+</ul>
+  </section><section class="content-section" aria-labelledby="gpii">
+    <!--lit-part zAk0gjiuq2Y=--><!--lit-node 0--><h3 id="gpii" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#gpii">GPII</a></h3><!--/lit-part-->
+    <ul>
+<li><a href="https://ds.gpii.net/learn/accessibility-masterlist" class="external" target="_blank">Accessibility Master List</a> Gregg Vanderheiden Ph.D. Editor</li>
+</ul>
+  </section><section class="content-section" aria-labelledby="iso">
+    <!--lit-part /hQpYQjO0nI=--><!--lit-node 0--><h3 id="iso" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#iso">ISO</a></h3><!--/lit-part-->
+    <ul>
+<li><a href="https://www.iso.org/obp/ui/#iso:std:iec:61966:-2-2:ed-1:v1:en" class="external" target="_blank">IEC 61966-2-2:2003(en)</a> Multimedia systems and equipment — Colour measurement and management — Part 2-2: Colour management — Extended RGB color space — scRGB</li>
+</ul>
+  </section><section class="content-section" aria-labelledby="photosensitive_epilepsy_analysis_tool">
+    <!--lit-part 2jYTzpzuIlU=--><!--lit-node 0--><h3 id="photosensitive_epilepsy_analysis_tool" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#photosensitive_epilepsy_analysis_tool">Photosensitive Epilepsy Analysis Tool</a></h3><!--/lit-part-->
+    <p>Along with the Harding tool, is generally recognized to be one of the two "gold standards" for analyzing flashes.</p>
+<ul>
+<li><a href="https://trace.umd.edu/peat/" class="external" target="_blank">Trace Research and Development Center</a></li>
+<li><a href="https://www.useragentman.com/blog/2017/04/02/using-peat-to-create-seizureless-web-animations/" class="external" target="_blank">Using PEAT To Create Seizureless Web Animations</a></li>
+</ul>
+  </section><section class="content-section" aria-labelledby="w3c">
+    <!--lit-part LCEKHGiBgY4=--><!--lit-node 0--><h3 id="w3c" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#w3c">W3C</a></h3><!--/lit-part-->
+    <ul>
+<li><a href="https://w3c.github.io/adapt/" class="external" target="_blank">WAI-Adapt Explainer</a></li>
+<li><a href="https://www.w3.org/TR/adapt-tools/" class="external" target="_blank">WAI-Adapt: Tools Module</a> Working Draft</li>
+<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html" class="external" target="_blank">Three Flashes or Below Threshold Understanding SC 2.3.1</a> Understanding WCAG 2.0 (Older, but contains some explanations of references made in the WCAG 2.1 criteria)</li>
+<li><a href="https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html" class="external" target="_blank">Three Flashes or Below Threshold Understanding Success Criterion 2.3.1</a> Understanding WCAG 2.1</li>
+<li><a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html" class="external" target="_blank">Understanding Success Criteria 1.4.3: Contrast (Minimum)</a></li>
+<li><a href="https://www.w3.org/WAI/" class="external" target="_blank">Web Accessibility Initiative (WAI)</a></li>
+<li><a href="https://w3c.github.io/wcag/guidelines/22/#dfn-relative-luminance" class="external" target="_blank">Web Content Accessibility Guidelines (WCAG) 2.2</a> definition of relative luminance</li>
+</ul>
+  </section> 
+      <section class="content-section article-footer" aria-labelledby="feedback">
+        <div class="article-footer__inner">
+          <div class="article-footer__svg-container"><!--lit-part OWLzZqRMsCU=--><svg xmlns="http://www.w3.org/2000/svg" width="162" height="162" fill="none" viewBox="0 0 162 162"><mask id="b" fill="#fff"><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z"></path></mask><path stroke="url(#a)" stroke-dasharray="6, 6" stroke-width="2" d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z" mask="url(#b)" style="stroke:url(#a)" transform="translate(-63.992 -25.587)"></path><ellipse cx="8.066" cy="111.597" fill="currentColor" rx="53.677" ry="53.699" transform="matrix(.71707 -.697 .7243 .6895 0 0)"></ellipse><g clip-path="url(#c)" transform="translate(-63.992 -25.587)"><path fill="#9abff5" d="m144.256 137.379 32.906 12.434a4.41 4.41 0 0 1 2.559 5.667l-9.326 24.679a4.41 4.41 0 0 1-5.667 2.559l-8.226-3.108-2.332 6.17c-.466 1.233-.375 1.883-1.609 1.417l-2.253-.527c-.411-.155-.95-.594-1.206-1.161l-4.734-10.484-12.545-4.741a4.41 4.41 0 0 1-2.559-5.667l9.325-24.679a4.41 4.41 0 0 1 5.667-2.559m9.961 29.617 8.227 3.108 3.264-8.638-.498-6.768-4.113-1.555.548 7.258-4.319-1.632zm-12.339-4.663 8.226 3.108 3.264-8.637-.498-6.769-4.113-1.554.548 7.257-4.319-1.632z"></path></g><g clip-path="url(#d)" transform="translate(-63.992 -25.587)"><path fill="#81b0f3" d="M135.35 60.136 86.67 41.654c-3.346-1.27-7.124.428-8.394 3.775L64.414 81.938c-1.27 3.347.428 7.125 3.774 8.395l12.17 4.62-3.465 9.128c-.693 1.826-1.432 2.457.394 3.15l3.014 1.625c.609.231 1.637.274 2.477-.104l15.53-6.983 18.56 7.047c3.346 1.27 7.124-.428 8.395-3.775l13.862-36.51c1.27-3.346-.428-7.124-3.775-8.395M95.261 83.207l-12.17-4.62 4.852-12.779 7.19-7.017 6.085 2.31-7.725 7.51 6.389 2.426zm18.255 6.93-12.17-4.62 4.852-12.778 7.189-7.017 6.085 2.31-7.725 7.51 6.39 2.426z"></path></g><defs><clipPath id="c"><path fill="#fff" d="m198.638 146.586-65.056-24.583-24.583 65.057 65.056 24.582z"></path></clipPath><clipPath id="d"><path fill="#fff" d="m66.438 14.055 96.242 36.54-36.54 96.243-96.243-36.54z"></path></clipPath><linearGradient id="a" x1="97.203" x2="199.995" y1="47.04" y2="152.793" gradientUnits="userSpaceOnUse"><stop stop-color="#086dfc"></stop><stop offset=".246" stop-color="#2c81fa"></stop><stop offset=".516" stop-color="#5497f8"></stop><stop offset=".821" stop-color="#80b0f6"></stop><stop offset="1" stop-color="#9abff5"></stop></linearGradient></defs></svg><!--/lit-part--></div>
+          <h2 id="feedback">
+            Help improve MDN
+          </h2>
+          <mdn-content-feedback locale="en-US"></mdn-content-feedback>
+          <a class="article-footer__contribute" href="https://developer.mozilla.org/en-US/docs/MDN/Community/Getting_started">Learn how to contribute</a> <p class="article-footer__last-modified">
+    This page was last modified on <time datetime="2026-02-10T04:17:33.000Z">Feb 10, 2026</time> by <a href="Seizure_disorders/contributors.txt">MDN contributors</a>.
+  </p> <div class="article-footer__links">
+    <a class="external" href="https://github.com/mdn/content/blob/main/files/en-us/web/accessibility/guides/seizure_disorders/index.md?plain=1" title="Folder: en-us/web/accessibility/guides/seizure_disorders (Opens in a new tab)" target="_blank" rel="noopener">View this page on GitHub</a> • <a class="external" href="https://github.com/mdn/content/issues/new?template=page-report.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAccessibility%2FGuides%2FSeizure_disorders&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Fweb%2Faccessibility%2Fguides%2Fseizure_disorders%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAccessibility%2FGuides%2FSeizure_disorders%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Fweb%2Faccessibility%2Fguides%2Fseizure_disorders%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2Fb56ef42f1aac2481bfe42bfcf6c235ceb22624c4%0A*+Document+last+modified%3A+2026-02-10T04%3A17%3A33.000Z%0A%0A%3C%2Fdetails%3E" title="This will take you to GitHub to file a new issue." target="_blank" rel="noopener">Report a problem with this content</a>
+  </div>
+        </div>
+      </section>
+    
+          </div>
+        </main>
+        <aside class="layout__left-sidebar" id="main-sidebar">
+          <nav class="left-sidebar">
+      <div class="left-sidebar__header">
+        <mdn-sidebar-filter></mdn-sidebar-filter>
+      </div>
+      <div class="left-sidebar__content"><ol><li class="section"><a href="../../Accessibility.html">Accessibility</a></li><li class="section"><a href="../Guides.html">Guides</a></li><li><a href="Information_for_Web_authors.html">Information for web authors</a></li><li><a href="Browsing_safely.html">Personalization to help browse safely</a></li><li><a href="Accessible_web_applications_and_widgets.html">Accessible web applications and widgets</a></li><li><a href="Keyboard-navigable_JavaScript_widgets.html">Keyboard-navigable JavaScript widgets</a></li><li><a href="Mobile_accessibility_checklist.html">Mobile accessibility checklist</a></li><li><a href="Cognitive_accessibility.html">Cognitive accessibility</a></li><li><a href="Accessibility_and_Spatial_Patterns.html">Spatial patterns</a></li><li><a href="Colors_and_Luminance.html">Colors and Luminance</a></li><li><em><a href="Seizure_disorders.html" aria-current="page">Preventing seizures and physical reactions</a></em></li><li><details><summary><a href="Understanding_WCAG.html">Understanding WCAG</a></summary><ol><li><a href="Understanding_WCAG/Keyboard.html">Keyboard accessible</a></li><li><a href="Understanding_WCAG/Operable.html">Operable</a></li><li><a href="Understanding_WCAG/Perceivable.html">Perceivable</a></li><li><a href="Understanding_WCAG/Robust.html">Robust</a></li><li><a href="Understanding_WCAG/Text_labels_and_names.html">Text labels and names</a></li><li><a href="Understanding_WCAG/Understandable.html">Understandable</a></li></ol></details></li><li class="section"><a href="../ARIA.html">ARIA</a></li><li><details><summary><a href="../ARIA/Guides.html">ARIA guides</a></summary><ol><li><a href="../ARIA/Guides/Live_regions.html">ARIA live regions</a></li><li><a href="../ARIA/Guides/Screen_Reader_Implementors.html">Screen reader implementors guide</a></li><li><a href="../ARIA/Guides/Techniques.html">Using ARIA: Roles, states, and properties</a></li><li><a href="../ARIA/Guides/Multipart_labels.html">Using ARIA for labels with embedded fields</a></li></ol></details></li><li class="section"><a href="../ARIA/Reference.html">ARIA reference</a></li><li><details><summary><a href="../ARIA/Reference/Attributes.html">Attributes</a></summary><ol><li><a href="../ARIA/Reference/Attributes/aria-activedescendant.html"><code>aria-activedescendant</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-atomic.html"><code>aria-atomic</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-autocomplete.html"><code>aria-autocomplete</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-braillelabel.html"><code>aria-braillelabel</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-brailleroledescription.html"><code>aria-brailleroledescription</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-busy.html"><code>aria-busy</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-checked.html"><code>aria-checked</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-colcount.html"><code>aria-colcount</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-colindex.html"><code>aria-colindex</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-colindextext.html"><code>aria-colindextext</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-colspan.html"><code>aria-colspan</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-controls.html"><code>aria-controls</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-current.html"><code>aria-current</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-describedby.html"><code>aria-describedby</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-description.html"><code>aria-description</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-details.html"><code>aria-details</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-disabled.html"><code>aria-disabled</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-dropeffect.html"><code>aria-dropeffect</code></a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../ARIA/Reference/Attributes/aria-errormessage.html"><code>aria-errormessage</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-expanded.html"><code>aria-expanded</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-flowto.html"><code>aria-flowto</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-grabbed.html"><code>aria-grabbed</code></a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../ARIA/Reference/Attributes/aria-haspopup.html"><code>aria-haspopup</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-hidden.html"><code>aria-hidden</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-invalid.html"><code>aria-invalid</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-keyshortcuts.html"><code>aria-keyshortcuts</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-label.html"><code>aria-label</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-labelledby.html"><code>aria-labelledby</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-level.html"><code>aria-level</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-live.html"><code>aria-live</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-modal.html"><code>aria-modal</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-multiline.html"><code>aria-multiline</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-multiselectable.html"><code>aria-multiselectable</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-orientation.html"><code>aria-orientation</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-owns.html"><code>aria-owns</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-placeholder.html"><code>aria-placeholder</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-posinset.html"><code>aria-posinset</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-pressed.html"><code>aria-pressed</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-readonly.html"><code>aria-readonly</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-relevant.html"><code>aria-relevant</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-required.html"><code>aria-required</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-roledescription.html"><code>aria-roledescription</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-rowcount.html"><code>aria-rowcount</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-rowindex.html"><code>aria-rowindex</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-rowindextext.html"><code>aria-rowindextext</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-rowspan.html"><code>aria-rowspan</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-selected.html"><code>aria-selected</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-setsize.html"><code>aria-setsize</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-sort.html"><code>aria-sort</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-valuemax.html"><code>aria-valuemax</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-valuemin.html"><code>aria-valuemin</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-valuenow.html"><code>aria-valuenow</code></a></li><li><a href="../ARIA/Reference/Attributes/aria-valuetext.html"><code>aria-valuetext</code></a></li></ol></details></li><li><details><summary><a href="../ARIA/Reference/Roles.html">Roles</a></summary><ol><li><a href="../ARIA/Reference/Roles/alert_role.html"><code>alert</code></a></li><li><a href="../ARIA/Reference/Roles/alertdialog_role.html"><code>alertdialog</code></a></li><li><a href="../ARIA/Reference/Roles/application_role.html"><code>application</code></a></li><li><a href="../ARIA/Reference/Roles/article_role.html"><code>article</code></a></li><li><a href="../ARIA/Reference/Roles/banner_role.html"><code>banner</code></a></li><li><a href="../ARIA/Reference/Roles/button_role.html"><code>button</code></a></li><li><a href="../ARIA/Reference/Roles/cell_role.html"><code>cell</code></a></li><li><a href="../ARIA/Reference/Roles/checkbox_role.html"><code>checkbox</code></a></li><li><a href="../ARIA/Reference/Roles/columnheader_role.html"><code>columnheader</code></a></li><li><a href="../ARIA/Reference/Roles/combobox_role.html"><code>combobox</code></a></li><li><a href="../ARIA/Reference/Roles/command_role.html"><code>command</code></a></li><li><a href="../ARIA/Reference/Roles/comment_role.html"><code>comment</code></a></li><li><a href="../ARIA/Reference/Roles/complementary_role.html"><code>complementary</code></a></li><li><a href="../ARIA/Reference/Roles/composite_role.html"><code>composite</code></a></li><li><a href="../ARIA/Reference/Roles/contentinfo_role.html"><code>contentinfo</code></a></li><li><a href="../ARIA/Reference/Roles/definition_role.html"><code>definition</code></a></li><li><a href="../ARIA/Reference/Roles/dialog_role.html"><code>dialog</code></a></li><li><a href="../ARIA/Reference/Roles/directory_role.html"><code>directory</code></a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../ARIA/Reference/Roles/document_role.html"><code>document</code></a></li><li><a href="../ARIA/Reference/Roles/feed_role.html"><code>feed</code></a></li><li><a href="../ARIA/Reference/Roles/figure_role.html"><code>figure</code></a></li><li><a href="../ARIA/Reference/Roles/form_role.html"><code>form</code></a></li><li><a href="../ARIA/Reference/Roles/generic_role.html"><code>generic</code></a></li><li><a href="../ARIA/Reference/Roles/grid_role.html"><code>grid</code></a></li><li><a href="../ARIA/Reference/Roles/gridcell_role.html"><code>gridcell</code></a></li><li><a href="../ARIA/Reference/Roles/group_role.html"><code>group</code></a></li><li><a href="../ARIA/Reference/Roles/heading_role.html"><code>heading</code></a></li><li><a href="../ARIA/Reference/Roles/img_role.html"><code>img</code></a></li><li><a href="../ARIA/Reference/Roles/input_role.html"><code>input</code></a></li><li><a href="../ARIA/Reference/Roles/landmark_role.html"><code>landmark</code></a></li><li><a href="../ARIA/Reference/Roles/link_role.html"><code>link</code></a></li><li><a href="../ARIA/Reference/Roles/list_role.html"><code>list</code></a></li><li><a href="../ARIA/Reference/Roles/listbox_role.html"><code>listbox</code></a></li><li><a href="../ARIA/Reference/Roles/listitem_role.html"><code>listitem</code></a></li><li><a href="../ARIA/Reference/Roles/log_role.html"><code>log</code></a></li><li><a href="../ARIA/Reference/Roles/main_role.html"><code>main</code></a></li><li><a href="../ARIA/Reference/Roles/mark_role.html"><code>mark</code></a></li><li><a href="../ARIA/Reference/Roles/marquee_role.html"><code>marquee</code></a></li><li><a href="../ARIA/Reference/Roles/math_role.html"><code>math</code></a></li><li><a href="../ARIA/Reference/Roles/menu_role.html"><code>menu</code></a></li><li><a href="../ARIA/Reference/Roles/menubar_role.html"><code>menubar</code></a></li><li><a href="../ARIA/Reference/Roles/menuitem_role.html"><code>menuitem</code></a></li><li><a href="../ARIA/Reference/Roles/menuitemcheckbox_role.html"><code>menuitemcheckbox</code></a></li><li><a href="../ARIA/Reference/Roles/menuitemradio_role.html"><code>menuitemradio</code></a></li><li><a href="../ARIA/Reference/Roles/meter_role.html"><code>meter</code></a></li><li><a href="../ARIA/Reference/Roles/navigation_role.html"><code>navigation</code></a></li><li><a href="../ARIA/Reference/Roles/none_role.html"><code>none</code></a></li><li><a href="../ARIA/Reference/Roles/note_role.html"><code>note</code></a></li><li><a href="../ARIA/Reference/Roles/option_role.html"><code>option</code></a></li><li><a href="../ARIA/Reference/Roles/presentation_role.html"><code>presentation</code></a></li><li><a href="../ARIA/Reference/Roles/progressbar_role.html"><code>progressbar</code></a></li><li><a href="../ARIA/Reference/Roles/radio_role.html"><code>radio</code></a></li><li><a href="../ARIA/Reference/Roles/radiogroup_role.html"><code>radiogroup</code></a></li><li><a href="../ARIA/Reference/Roles/range_role.html"><code>range</code></a></li><li><a href="../ARIA/Reference/Roles/region_role.html"><code>region</code></a></li><li><a href="../ARIA/Reference/Roles/roletype_role.html"><code>roletype</code></a></li><li><a href="../ARIA/Reference/Roles/row_role.html"><code>row</code></a></li><li><a href="../ARIA/Reference/Roles/rowgroup_role.html"><code>rowgroup</code></a></li><li><a href="../ARIA/Reference/Roles/rowheader_role.html"><code>rowheader</code></a></li><li><a href="../ARIA/Reference/Roles/scrollbar_role.html"><code>scrollbar</code></a></li><li><a href="../ARIA/Reference/Roles/search_role.html"><code>search</code></a></li><li><a href="../ARIA/Reference/Roles/searchbox_role.html"><code>searchbox</code></a></li><li><a href="../ARIA/Reference/Roles/section_role.html"><code>section</code></a></li><li><a href="../ARIA/Reference/Roles/sectionhead_role.html"><code>sectionhead</code></a></li><li><a href="../ARIA/Reference/Roles/select_role.html"><code>select</code></a></li><li><a href="../ARIA/Reference/Roles/separator_role.html"><code>separator</code></a></li><li><a href="../ARIA/Reference/Roles/slider_role.html"><code>slider</code></a></li><li><a href="../ARIA/Reference/Roles/spinbutton_role.html"><code>spinbutton</code></a></li><li><a href="../ARIA/Reference/Roles/status_role.html"><code>status</code></a></li><li><a href="../ARIA/Reference/Roles/structural_roles.html"><code>Structural</code></a></li><li><a href="../ARIA/Reference/Roles/structure_role.html"><code>structure</code></a></li><li><a href="../ARIA/Reference/Roles/suggestion_role.html"><code>suggestion</code></a></li><li><a href="../ARIA/Reference/Roles/switch_role.html"><code>switch</code></a></li><li><a href="../ARIA/Reference/Roles/tab_role.html"><code>tab</code></a></li><li><a href="../ARIA/Reference/Roles/table_role.html"><code>table</code></a></li><li><a href="../ARIA/Reference/Roles/tablist_role.html"><code>tablist</code></a></li><li><a href="../ARIA/Reference/Roles/tabpanel_role.html"><code>tabpanel</code></a></li><li><a href="../ARIA/Reference/Roles/term_role.html"><code>term</code></a></li><li><a href="../ARIA/Reference/Roles/textbox_role.html"><code>textbox</code></a></li><li><a href="../ARIA/Reference/Roles/timer_role.html"><code>timer</code></a></li><li><a href="../ARIA/Reference/Roles/toolbar_role.html"><code>toolbar</code></a></li><li><a href="../ARIA/Reference/Roles/tooltip_role.html"><code>tooltip</code></a></li><li><a href="../ARIA/Reference/Roles/tree_role.html"><code>tree</code></a></li><li><a href="../ARIA/Reference/Roles/treegrid_role.html"><code>treegrid</code></a></li><li><a href="../ARIA/Reference/Roles/treeitem_role.html"><code>treeitem</code></a></li><li><a href="../ARIA/Reference/Roles/widget_role.html"><code>widget</code></a></li><li><a href="../ARIA/Reference/Roles/window_role.html"><code>window</code></a></li></ol></details></li></ol></div>
+    </nav>
+        </aside>
+      </div>
+    </div>
+        
+      
+    
+      
+
+
+    <div class="page-layout__footer footer"><div><a href="http://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Seizure_disorders">Web accessibility for seizures and physical reactions</a> by <a href="http://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Seizure_disorders$history">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC-BY-SA 2.5</a>.</div></div></body><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Seizure_disorders by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:42:49 GMT --></html>

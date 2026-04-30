@@ -1,0 +1,33 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/learn_web_development/core/structuring_content/html_images/index.md
+
+# Original Wiki contributors
+chrisdavidmills
+philou
+atd30
+abbasalamin12
+RicardsVeveris
+choudh70
+LeonFrempong
+Mahdi_Karimi_Asl
+sudipbhandari126
+Sheppy
+cinephile85
+eremis101
+MNizam0802
+oyenirat
+adyavanapalli
+bripmccann
+sideshowbarker
+Ajimi
+stephaniehobson
+Potch
+andrealaw
+tedmetaltns
+david_ross
+Looserof7
+jamalss
+mishkadoma
+jswisher
+rishianand
+richardzacur

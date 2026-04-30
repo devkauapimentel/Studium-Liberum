@@ -1,0 +1,6 @@
+
+.anchor { anchor-name: --my-anchor; width: 120px; height: 60px; font-size: 2rem; background-color: lightpink; text-align: center; align-content: center; outline: 1px solid black; }
+.infobox { position-anchor: --my-anchor; position: absolute; position-area: right; width: anchor-size(width); color: darkblue; background-color: azure; outline: 1px solid rgb(221, 221, 221); }
+body { padding: 5em; }
+
+button.copy {display:none !important}

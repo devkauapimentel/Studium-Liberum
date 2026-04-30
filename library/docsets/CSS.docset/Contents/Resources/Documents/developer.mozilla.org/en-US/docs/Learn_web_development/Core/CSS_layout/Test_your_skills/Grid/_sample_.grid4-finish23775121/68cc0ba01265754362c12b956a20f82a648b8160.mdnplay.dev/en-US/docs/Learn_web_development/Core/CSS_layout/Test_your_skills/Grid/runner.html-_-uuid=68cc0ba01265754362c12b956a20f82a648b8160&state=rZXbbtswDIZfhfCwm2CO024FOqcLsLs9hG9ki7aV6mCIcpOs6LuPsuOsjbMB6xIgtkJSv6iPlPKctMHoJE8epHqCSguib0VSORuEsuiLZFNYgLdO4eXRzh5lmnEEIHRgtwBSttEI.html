@@ -1,0 +1,135 @@
+<html>
+  <!-- Online page at https://68cc0ba01265754362c12b956a20f82a648b8160.mdnplay.dev/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Grid/runner.html?uuid=68cc0ba01265754362c12b956a20f82a648b8160&state=rZXbbtswDIZfhfCwm2CO024FOqcLsLs9hG9ki7aV6mCIcpOs6LuPsuOsjbMB6xIgtkJSv6iPlPKctMHoJE8epHqCSguib0VSORuEsuiLZFNYgLdO4eXRzh5lmnEEIHRgtwBSttEIHiWUQmvnbJFMMeQrjmlD6CjPMiPtslGh7culchm1guekvAoGypQRDVKGe2E6zYOjFN0st11TJJBNGfT6lFoQDZ1SY5dWm%2BO0h4zHr%2B280sxGj4eZrdQ9zow%2FXAChPMzFH7Jej8gyZvbP8KZNgntCD%2BQMQut6Qromwdt3EaQZhTGzmTl4bp15sPCl86QkXo9WpR1h2nfgajiRU7bWInALXhPZ5yshOyU38zQecU7trPv%2Bk5eYKDEkCC0C9Vc9ml%2FeRWl%2BDPsLtgtHk3pj0M%2BZedW04W%2FUpnfyKamI%2BPIrnTzAcwyp%2BebL4WZ5iwYyft8BCUspoVf1urAvhS3sMmIew6WiTotDDo1Xch0tcZAGZDAiYOrdjnK4Xa26PRhl03ixog1vlTbAlRr1dkqGltdfrT4Oai3GvbwyuHKLVUhrxcYqXhInqQh4FDHCN8rmsBpmdEJKbrjpp1YUUgoHjTlYZ%2FHt%2FA0sRo1SVI%2BNd72VnLN2PocPX4fPIHI07VoV8GyRgdxqeY9mcPCZl%2BhTL6Tq6eheT6BTUj85jfvj3qa877r9b0DTP9GYVraA71LCkD8xHY%2BwyOYE%2Fhx2LnihgKKLvIcczsvJ%2B%2B6N5X3c1H76XijASbTWOMrEQbrzUTo%2BB9u2p6Dqw9QTXE9%2BTgXl1tzGzuQ3H1SDPNSxFZKXXw%3D%3D&code=23775121& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;div class="container"&gt;
+  &lt;div class="card"&gt;
+    &lt;img
+      alt="a single red balloon"
+      src="https://mdn.github.io/shared-assets/images/examples/balloons1.jpg" /&gt;
+    &lt;ul class="tags"&gt;
+      &lt;li&gt;balloon&lt;/li&gt;
+      &lt;li&gt;red&lt;/li&gt;
+      &lt;li&gt;sky&lt;/li&gt;
+      &lt;li&gt;blue&lt;/li&gt;
+      &lt;li&gt;Hot air balloon&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="card"&gt;
+    &lt;img
+      alt="balloons over some houses"
+      src="https://mdn.github.io/shared-assets/images/examples/balloons2.jpg" /&gt;
+    &lt;ul class="tags"&gt;
+      &lt;li&gt;balloons&lt;/li&gt;
+      &lt;li&gt;houses&lt;/li&gt;
+      &lt;li&gt;train&lt;/li&gt;
+      &lt;li&gt;harborside&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="card"&gt;
+    &lt;img
+      alt="close-up of balloons inflating"
+      src="https://mdn.github.io/shared-assets/images/examples/balloons3.jpg" /&gt;
+    &lt;ul class="tags"&gt;
+      &lt;li&gt;balloons&lt;/li&gt;
+      &lt;li&gt;inflating&lt;/li&gt;
+      &lt;li&gt;green&lt;/li&gt;
+      &lt;li&gt;blue&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="card"&gt;
+    &lt;img
+      alt="a balloon in the sun"
+      src="https://mdn.github.io/shared-assets/images/examples/balloons4.jpg" /&gt;
+    &lt;ul class="tags"&gt;
+      &lt;li&gt;balloon&lt;/li&gt;
+      &lt;li&gt;sun&lt;/li&gt;
+      &lt;li&gt;sky&lt;/li&gt;
+      &lt;li&gt;summer&lt;/li&gt;
+      &lt;li&gt;bright&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>body {
+  font: 1.2em / 1.5 sans-serif;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: 200px min-content;
+}
+
+.card &gt; img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tags {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags &gt; * {
+  background-color: #999999;
+  color: white;
+  padding: 0.2em 0.8em;
+  border-radius: 0.2em;
+  font-size: 80%;
+  margin: 5px;
+}
+
+.container {
+  /* Add styles here */
+}
+
+.tags {
+  /* Add styles here */
+}
+.container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code></code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=68cc0ba01265754362c12b956a20f82a648b8160&amp;state=rZXbbtswDIZfhfCwm2CO024FOqcLsLs9hG9ki7aV6mCIcpOs6LuPsuOsjbMB6xIgtkJSv6iPlPKctMHoJE8epHqCSguib0VSORuEsuiLZFNYgLdO4eXRzh5lmnEEIHRgtwBSttEIHiWUQmvnbJFMMeQrjmlD6CjPMiPtslGh7culchm1guekvAoGypQRDVKGe2E6zYOjFN0st11TJJBNGfT6lFoQDZ1SY5dWm%2BO0h4zHr%2B280sxGj4eZrdQ9zow%2FXAChPMzFH7Jej8gyZvbP8KZNgntCD%2BQMQut6Qromwdt3EaQZhTGzmTl4bp15sPCl86QkXo9WpR1h2nfgajiRU7bWInALXhPZ5yshOyU38zQecU7trPv%2Bk5eYKDEkCC0C9Vc9ml%2FeRWl%2BDPsLtgtHk3pj0M%2BZedW04W%2FUpnfyKamI%2BPIrnTzAcwyp%2BebL4WZ5iwYyft8BCUspoVf1urAvhS3sMmIew6WiTotDDo1Xch0tcZAGZDAiYOrdjnK4Xa26PRhl03ixog1vlTbAlRr1dkqGltdfrT4Oai3GvbwyuHKLVUhrxcYqXhInqQh4FDHCN8rmsBpmdEJKbrjpp1YUUgoHjTlYZ%2FHt%2FA0sRo1SVI%2BNd72VnLN2PocPX4fPIHI07VoV8GyRgdxqeY9mcPCZl%2BhTL6Tq6eheT6BTUj85jfvj3qa877r9b0DTP9GYVraA71LCkD8xHY%2BwyOYE%2Fhx2LnihgKKLvIcczsvJ%2B%2B6N5X3c1H76XijASbTWOMrEQbrzUTo%2BB9u2p6Dqw9QTXE9%2BTgXl1tzGzuQ3H1SDPNSxFZKXXw%3D%3D&amp;code=23775121&amp;" class="leave">Open in Playground</a>
+          <a href="https://68cc0ba01265754362c12b956a20f82a648b8160.mdnplay.dev/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Grid/runner.html?state=rZXbbtswDIZfhfCwm2CO024FOqcLsLs9hG9ki7aV6mCIcpOs6LuPsuOsjbMB6xIgtkJSv6iPlPKctMHoJE8epHqCSguib0VSORuEsuiLZFNYgLdO4eXRzh5lmnEEIHRgtwBSttEIHiWUQmvnbJFMMeQrjmlD6CjPMiPtslGh7culchm1guekvAoGypQRDVKGe2E6zYOjFN0st11TJJBNGfT6lFoQDZ1SY5dWm%2BO0h4zHr%2B280sxGj4eZrdQ9zow%2FXAChPMzFH7Jej8gyZvbP8KZNgntCD%2BQMQut6Qromwdt3EaQZhTGzmTl4bp15sPCl86QkXo9WpR1h2nfgajiRU7bWInALXhPZ5yshOyU38zQecU7trPv%2Bk5eYKDEkCC0C9Vc9ml%2FeRWl%2BDPsLtgtHk3pj0M%2BZedW04W%2FUpnfyKamI%2BPIrnTzAcwyp%2BebL4WZ5iwYyft8BCUspoVf1urAvhS3sMmIew6WiTotDDo1Xch0tcZAGZDAiYOrdjnK4Xa26PRhl03ixog1vlTbAlRr1dkqGltdfrT4Oai3GvbwyuHKLVUhrxcYqXhInqQh4FDHCN8rmsBpmdEJKbrjpp1YUUgoHjTlYZ%2FHt%2FA0sRo1SVI%2BNd72VnLN2PocPX4fPIHI07VoV8GyRgdxqeY9mcPCZl%2BhTL6Tq6eheT6BTUj85jfvj3qa877r9b0DTP9GYVraA71LCkD8xHY%2BwyOYE%2Fhx2LnihgKKLvIcczsvJ%2B%2B6N5X3c1H76XijASbTWOMrEQbrzUTo%2BB9u2p6Dqw9QTXE9%2BTgXl1tzGzuQ3H1SDPNSxFZKXXw%3D%3D&amp;code=bf7f694c-1d2c-407a-acea-76a49f06d97b" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

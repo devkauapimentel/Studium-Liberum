@@ -1,0 +1,10 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/keyframeeffect/getkeyframes/index.md
+
+# Original Wiki contributors
+fscholz
+delete12345
+birtles
+rachelnabors
+chrisdavidmills
+Sheppy

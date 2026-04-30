@@ -1,0 +1,20 @@
+
+.subject { width: 300px; height: 200px; background-color: deeppink; }
+.content { width: 75%; max-width: 800px; margin: 0px auto; }
+p { font-size: 1.5rem; line-height: 1.8; }
+.subject-container { border: 2px dashed black; width: 300px; margin: 0px auto; }
+.overlay { position: fixed; width: 100%; background-color: rgba(245, 222, 179, 0.667); display: flex; font-size: 1.2rem; font-weight: bold; color: red; justify-content: flex-end; }
+.top { top: 0px; height: 50%; align-items: end; }
+.bottom { bottom: 0px; height: 10%; }
+.animation { animation-timeline: view(50% 10%); animation-name: grow; animation-duration: 1ms; animation-timing-function: linear; }
+@keyframes grow { 
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+@layer no-support {
+  @supports not (animation-timeline: view()) {
+  body::before { content: "Your browser doesn't support the CSS `view()` function."; background-color: wheat; display: block; text-align: center; padding: 1em; }
+}
+}
+
+button.copy {display:none !important}

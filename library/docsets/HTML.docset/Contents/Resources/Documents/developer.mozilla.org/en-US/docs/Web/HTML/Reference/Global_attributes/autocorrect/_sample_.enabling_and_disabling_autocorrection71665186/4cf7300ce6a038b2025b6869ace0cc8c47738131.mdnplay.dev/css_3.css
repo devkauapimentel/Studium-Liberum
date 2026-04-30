@@ -1,0 +1,5 @@
+
+#log { height: 75px; overflow: scroll; padding: 0.5rem; border: 1px solid black; }
+button, input, textarea { display: block; }
+
+button.copy {display:none !important}

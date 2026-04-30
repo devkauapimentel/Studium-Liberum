@@ -1,0 +1,7 @@
+
+div { margin: 0em; padding: 2em; }
+#source { color: blue; border: 1px solid black; }
+#target { border: 1px solid black; }
+#output { height: 100px; overflow: scroll; }
+
+button.copy {display:none !important}

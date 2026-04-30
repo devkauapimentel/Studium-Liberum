@@ -1,0 +1,11 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/houdini_apis/index.md
+
+# Original Wiki contributors
+Wind1808
+enva-2-7-1-2
+estelle
+chrisdavidmills
+SphinxKnight
+jason2477
+Sheppy

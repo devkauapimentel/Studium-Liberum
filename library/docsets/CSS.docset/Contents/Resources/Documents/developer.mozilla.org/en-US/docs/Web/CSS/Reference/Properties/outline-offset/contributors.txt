@@ -1,0 +1,26 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/css/reference/properties/outline-offset/index.md
+
+# Original Wiki contributors
+wbamberg
+mfuji09
+fscholz
+sideshowbarker
+ddbeck
+mfluehr
+scholachoi
+Sebastianz
+Prinz_Rana
+EliasH
+kscarfone
+teoli
+Sheppy
+ethertank
+FredB
+syssgx
+grendel
+Jürgen Jeka
+j.j.
+Ms2ger
+BijuGC
+Waldo

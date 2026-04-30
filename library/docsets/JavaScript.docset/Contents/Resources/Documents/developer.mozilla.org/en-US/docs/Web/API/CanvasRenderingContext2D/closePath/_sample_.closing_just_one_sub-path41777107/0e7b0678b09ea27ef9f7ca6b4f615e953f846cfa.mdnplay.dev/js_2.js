@@ -1,0 +1,15 @@
+
+          const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+ctx.beginPath();
+ctx.arc(240, 20, 40, 0, Math.PI);
+ctx.moveTo(100, 20);
+ctx.arc(60, 20, 40, 0, Math.PI);
+ctx.moveTo(215, 80);
+ctx.arc(150, 80, 65, 0, Math.PI);
+ctx.closePath();
+ctx.lineWidth = 6;
+ctx.stroke();
+;
+        

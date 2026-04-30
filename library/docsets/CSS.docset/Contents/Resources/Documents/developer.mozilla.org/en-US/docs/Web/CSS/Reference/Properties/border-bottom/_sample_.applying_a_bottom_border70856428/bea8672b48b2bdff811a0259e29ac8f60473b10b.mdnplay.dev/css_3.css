@@ -1,0 +1,4 @@
+
+div { border-bottom: 4px dashed blue; background-color: gold; height: 100px; width: 100px; font-weight: bold; text-align: center; }
+
+button.copy {display:none !important}

@@ -1,0 +1,4 @@
+
+.content-box { padding: 0.3em; background: rgb(255, 255, 119); column-count: 3; column-rule-width: 2px; column-rule-style: inset; column-rule-color: rgb(51, 51, 255); }
+
+button.copy {display:none !important}

@@ -1,0 +1,6 @@
+
+tabbed-custom-element::part(tab) { color: blue; border-bottom: 4px solid transparent; }
+tabbed-custom-element::part(tab):hover { background-color: black; color: white; }
+tabbed-custom-element::part(tab active) { border-color: blue !important; }
+
+button.copy {display:none !important}

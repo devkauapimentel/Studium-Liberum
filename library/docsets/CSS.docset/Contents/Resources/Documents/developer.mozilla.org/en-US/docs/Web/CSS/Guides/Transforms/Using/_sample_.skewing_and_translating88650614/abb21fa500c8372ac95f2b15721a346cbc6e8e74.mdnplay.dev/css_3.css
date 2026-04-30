@@ -1,0 +1,4 @@
+
+img { transform: skewX(10deg) translateX(150px); transform-origin: left bottom; }
+
+button.copy {display:none !important}

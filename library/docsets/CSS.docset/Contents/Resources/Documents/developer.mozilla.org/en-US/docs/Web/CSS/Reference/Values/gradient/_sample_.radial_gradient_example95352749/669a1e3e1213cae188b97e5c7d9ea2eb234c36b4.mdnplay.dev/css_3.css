@@ -1,0 +1,5 @@
+
+div { width: 240px; height: 80px; }
+.radial-gradient { background: radial-gradient(red, yellow, dodgerblue); }
+
+button.copy {display:none !important}

@@ -1,0 +1,7 @@
+
+@supports not selector(:open) {
+  body::before { content: "Your browser doesn't support :open selector."; background-color: wheat; display: block; width: 100%; text-align: center; }
+  body > * { display: none; }
+}
+
+button.copy {display:none !important}

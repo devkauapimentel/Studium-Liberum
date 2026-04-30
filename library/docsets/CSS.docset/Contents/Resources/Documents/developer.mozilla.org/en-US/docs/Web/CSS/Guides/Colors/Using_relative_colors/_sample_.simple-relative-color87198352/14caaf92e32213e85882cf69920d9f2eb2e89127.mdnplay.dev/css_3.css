@@ -1,0 +1,7 @@
+
+#container { display: flex; width: 100vw; height: 100vh; box-sizing: border-box; }
+.item { flex: 1 1 0%; margin: 20px; }
+#one { background-color: red; }
+#two { background-color: rgb(from red 200 g b / alpha); }
+
+button.copy {display:none !important}

@@ -1,0 +1,340 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/atomic/atomic_thread_fence.html --><head><meta charset="utf-8"><title>Talk:cpp/atomic/atomic thread fence</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_6636.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_atomic_atomic_thread_fence skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fatomic%2Fatomic+thread+fence&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fatomic%2Fatomic+thread+fence" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/atomic/atomic_thread_fence.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./atomic_thread_fence.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./atomic_thread_fence.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./atomic_thread_fence.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic_thread_fence&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic_thread_fence&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic_thread_fence&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./atomic_thread_fence.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/atomic/atomic thread fence</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Am I the only one to wonder at that description?&nbsp;;) Maybe most of it comes from the standard rationale, but seriously, that single sentence is not only ugly, it's kinda... frightening.
+</p>
+<dl><dd> atomics are frightening! But yes, if you are referring to "For example, all non-atomic and relaxed atomic stores that happen before a std::memory_order_release fence in thread A will be synchronized with non-atomic and relaxed atomic loads from the same locations made in thread B after an std::memory_order_acquire fence if there exist atomic operations X and Y, both operating on some atomic object M, such that the fence in thread A is sequenced before X, X modifies M, Y is sequenced before the fence in thread B, and Y reads the value written by X or a value written by any side effect in the hypothetical release sequence X would head if it were a release operation..", it is far too long for a sentence. Re-written. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 18:52, 14 June 2016 (PDT)
+</dd></dl>
+<p>Is the last sentence under Fence-atomic Synchronization incorrect?  Should it rather say:
+</p>
+<dl><dd> In this case, all non-atomic and relaxed atomic stores that happen-before F [not X] in thread A will be synchronized-with all non-atomic and relaxed atomic loads from the same locations made in thread B after Y.
+</dd></dl>
+<p>--<a href="https://en.cppreference.com/mwiki/index.php?title=User:Paul_Licameli&amp;action=edit&amp;redlink=1" class="new" title="User:Paul Licameli (page does not exist)">Paul Licameli</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Paul_Licameli&amp;action=edit&amp;redlink=1" class="new" title="User talk:Paul Licameli (page does not exist)">talk</a>) 16:15, 21 June 2018 (EDT)
+</p>
+<dl><dd><dl><dd>Fixed. <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 13:32, 21 June 2018 (PDT)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic_thread_fence&amp;action=edit&amp;section=1" title="Edit section: improving the head section">edit</a>]</span> <span class="mw-headline" id="improving_the_head_section"> improving the head section </span></h2>
+<p>I'm trying to think of an intuitive explanation that would be shorter but encompass the long detailed formality of the fence-op/op-fence/fence-fence. Possibly it wouldn’t be precisely formal, but it should be short enough to come in the head section.
+How about:
+</p><p>“A release fence has the effect on all subsequent atomic stores in the thread, making them all release operations w.r.t. writes that were sequenced before the fence. Also, no writes can be reordered after the release fence.
+Similarly, an acquire fence has the effect on all preceding atomic loads in the thread, making them all acquire operations w.r.t. reads that were sequenced after the fence. Also, no reads can be reordered before the acquire fence.”--<a href="https://en.cppreference.com/mwiki/index.php?title=User:Itaj&amp;action=edit&amp;redlink=1" class="new" title="User:Itaj (page does not exist)">Itaj</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Itaj&amp;action=edit&amp;redlink=1" class="new" title="User talk:Itaj (page does not exist)">talk</a>) 16:10, 8 August 2016 (PDT)
+</p>
+<dl><dd>Well, it's not good enough for the head yet.--<a href="https://en.cppreference.com/mwiki/index.php?title=User:Itaj&amp;action=edit&amp;redlink=1" class="new" title="User:Itaj (page does not exist)">Itaj</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Itaj&amp;action=edit&amp;redlink=1" class="new" title="User talk:Itaj (page does not exist)">talk</a>) 16:18, 8 August 2016 (PDT)
+</dd><dd>Another try:
+</dd><dd>”An acquire fence synchronizes with all release atomic-stores operations and release fences that happen before it. Similarly, a release fence synchronizes with all acquire atomic-load operations and acquire fences that happen after it.”
+</dd><dd>This description informally uses the happen-before relation as defined by atomic-operations, and adds new synchronizations which in turn define a more refined happen-before relation.--<a href="https://en.cppreference.com/mwiki/index.php?title=User:Itaj&amp;action=edit&amp;redlink=1" class="new" title="User:Itaj (page does not exist)">Itaj</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Itaj&amp;action=edit&amp;redlink=1" class="new" title="User talk:Itaj (page does not exist)">talk</a>) 16:30, 8 August 2016 (PDT)
+<dl><dd>Yeah, these are both logically wrong, somehow combining them might result in a correct claim. I guess it's really not straight forward.--<a href="https://en.cppreference.com/mwiki/index.php?title=User:Itaj&amp;action=edit&amp;redlink=1" class="new" title="User:Itaj (page does not exist)">Itaj</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Itaj&amp;action=edit&amp;redlink=1" class="new" title="User talk:Itaj (page does not exist)">talk</a>) 16:34, 8 August 2016 (PDT)
+<dl><dd> An informal intro could probably be formulated in terms of allowed instruction reorderings, since that is the traditional meaning of "barrier". --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 19:33, 8 August 2016 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic_thread_fence&amp;action=edit&amp;section=2" title="Edit section: Shouldn't release fence be sequenced after atomic write&nbsp;?">edit</a>]</span> <span class="mw-headline" id="Shouldn.27t_release_fence_be_sequenced_after_atomic_write_.3F"> Shouldn't release fence be sequenced after atomic write&nbsp;? </span></h2>
+<p>Fence-fence synchronization
+<b>A release fence FA</b> in thread A synchronizes-with an acquire fence FB in thread B, if
+</p><p>There exists an atomic object M,
+There exists an <b>atomic write X</b> (with any memory order) that modifies M in thread A
+<b>FA is sequenced-before X</b> in thread A
+There exists an atomic read Y (with any memory order) in thread B
+Y reads the value written by X (or the value would be written by release sequence headed by X if X were a release operation)
+Y is sequenced-before FB in thread B
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic_thread_fence&amp;action=edit&amp;section=3" title="Edit section: Can we add a diagram">edit</a>]</span> <span class="mw-headline" id="Can_we_add_a_diagram"> Can we add a diagram </span></h2>
+<p>I will need some help to get the diagram correct. For example, for fence-fence synchronization I've got:
+</p>
+<pre>non-atomic/relaxed STORES ||
+cannot reorder forwards   || 
+                    Fence ||
+--------------------------||--S(M)---------------------------- Thread A
+                              Atomic STORE to variable M
+                                           Atomic LOAD from variable M
+-------------------------------------------L(M)----||--------- Thread B
+                                                   || Fence
+                                                   || non-atomic/relaxed LOADS
+                                                   || cannot reorder backwards
+</pre>
+<p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User:Amichaux (page does not exist)">Amichaux</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User talk:Amichaux (page does not exist)">talk</a>) 09:12, 16 March 2022 (PDT)
+</p>
+<dl><dd> rephrasing the dependency graphs in terms of permitted compiler and hardware reordering is always tempting (because it is less abstract), but very hard to do. I think examples with commentary serve as a better illustration. Also, for this case, reordering affects both loads and stores that sequence before the release fence, and they can be reordered past the fence, just not past any subsequent store (note thread-thread example uses three stores to illustrate the need; with just one atomic as in the diagram the standalone fence is a pessimization ) --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 11:06, 16 March 2022 (PDT)
+</dd></dl>
+<p>Okay, understood. However, I've seen good developers in multiple organizations treat atomic_thread_fence like it'll emit x86_64 instructions "lock ...", "sfence", "mfence", etc. This page is -- obviously -- accurate; however, it's also confusing. Maybe we can have a simple simple simple example, like so?
+</p><p><span class="t-cc"><span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span> Fence <span class="br0">{</span><br>
+<span class="kw1">public</span><span class="sy4">:</span><br>
+&nbsp; Fence<span class="br0">(</span><span class="br0">)</span> <span class="sy1">=</span> <span class="kw1">default</span><span class="sy4">;</span><br>
+&nbsp; ~Fence<span class="br0">(</span><span class="br0">)</span> <span class="sy1">=</span> <span class="kw1">default</span><span class="sy4">;</span><br>
+<br>
+&nbsp; <span class="kw4">void</span> lock<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> try_lock<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// always succeeds</span><br>
+<br>
+&nbsp; <span class="kw4">bool</span> try_lock<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; <a href="../../cpp/atomic/atomic_thread_fence.html"><span class="kw2104">std::<span class="me2">atomic_thread_fence</span></span></a><span class="br0">(</span><a href="../../cpp/atomic/memory_order.html"><span class="kw2099">std::<span class="me2">memory_order_acquire</span></span></a><span class="br0">)</span><span class="sy4">;</span><br>
+&nbsp; &nbsp; sync_.<span class="me1">fetch_add</span><span class="br0">(</span><span class="nu0">1</span>, <a href="../../cpp/atomic/memory_order.html"><span class="kw2099">std::<span class="me2">memory_order_acquire</span></span></a><span class="br0">)</span><span class="sy4">;</span><br>
+&nbsp; <span class="br0">}</span><br>
+&nbsp; <br>
+&nbsp; <span class="kw4">void</span> unlock<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; sync_.<span class="me1">fetch_add</span><span class="br0">(</span><span class="sy2">-</span><span class="nu0">1</span>, <a href="../../cpp/atomic/memory_order.html"><span class="kw2100">std::<span class="me2">memory_order_release</span></span></a><span class="br0">)</span><span class="sy4">;</span><br>
+&nbsp; &nbsp; <a href="../../cpp/atomic/atomic_thread_fence.html"><span class="kw2104">std::<span class="me2">atomic_thread_fence</span></span></a><span class="br0">(</span><a href="../../cpp/atomic/memory_order.html"><span class="kw2100">std::<span class="me2">memory_order_release</span></span></a><span class="br0">)</span><span class="sy4">;</span><br>
+&nbsp; <span class="br0">}</span><br>
+<br>
+<span class="kw1">private</span><span class="sy4">:</span><br>
+&nbsp; <a href="../../cpp/atomic/atomic.html"><span class="kw2070">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span>int32_t<span class="sy1">&gt;</span> sync_<span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span><br>
+<span class="br0">}</span><span class="sy4">;</span><br>
+<br>
+<br>
+Fence fence<span class="sy4">;</span><br>
+<span class="br0">{</span><br>
+&nbsp; <a href="../../cpp/thread/lock_guard.html"><span class="kw2170">std::<span class="me2">lock_guard</span></span></a> lock<span class="br0">{</span>fence<span class="br0">}</span><span class="sy4">;</span><br>
+&nbsp; <span class="co1">// everything in this code block is protected by the fence.</span><br>
+&nbsp; <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">4</span><span class="sy4">;</span> <span class="co1">// This is a store... so no loads/stores before the</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="co1">// fence can be sequenced after this line.</span><br>
+<br>
+&nbsp; getValue<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// This is a load... so no loads/stores after the fence</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// can be sequenced before this line</span><br>
+<span class="br0">}</span></span></span>
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User:Amichaux (page does not exist)">Amichaux</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User talk:Amichaux (page does not exist)">talk</a>) 10:40, 17 March 2022 (PDT)
+</p>
+<dl><dd> if you make the atomic op relaxed, you're approaching the first mini-example in <a rel="nofollow" class="external text" href="https://preshing.com/20131125/acquire-and-release-fences-dont-work-the-way-youd-expect/">Preshing's article</a>. Regarding your mention of mfence, fighting misconceptions is a good idea, let me actually make an explicit note on when these functions issue CPU instructions --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 12:13, 17 March 2022 (PDT)
+</dd></dl>
+<p>That clears up one common misconception. The next most common thing I've seen is the belief that std::atomic_thread_fence does anything without an atomic operation involved. If you carefully read the first sentence of this page, you might see that someone could come to that opinion. The error is demonstrated in <a rel="nofollow" class="external text" href="https://stackoverflow.com/questions/13632344/understanding-c11-memory-fences">this stack overflow post</a>. Alas, but I've seen this happen in two different mission critical code bases! Can we have an additional note that points out the requirement of an atomic operation for the fences to synchronize around?
+<a href="https://en.cppreference.com/mwiki/index.php?title=User:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User:Amichaux (page does not exist)">Amichaux</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User talk:Amichaux (page does not exist)">talk</a>) 18:38, 17 March 2022 (PDT)
+</p><p>Suggested addition -- after the "Notes" headline, but before the comment on machine instructions. "Although std::atomic_thread_fence affects memory synchronizing ording of non-atomic operations, it has no effect without some associated atomic operation (load/store) about which to synchronize. See Fence-Fence synchronization above"
+<a href="https://en.cppreference.com/mwiki/index.php?title=User:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User:Amichaux (page does not exist)">Amichaux</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User talk:Amichaux (page does not exist)">talk</a>) 10:20, 18 March 2022 (PDT)
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 39/1000000
+Preprocessor generated node count: 165/1000000
+Post‐expand include size: 151/4194304 bytes
+Template argument size: 783/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:15527-0!*!0!!*!*!* and timestamp 20240518074302 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic_thread_fence&amp;oldid=138902">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic_thread_fence&amp;oldid=138902</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./atomic_thread_fence.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/atomic/atomic_thread_fence" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/atomic/atomic_thread_fence" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic_thread_fence&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic_thread_fence&amp;oldid=138902" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic_thread_fence&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 18 March 2022, at 10:20.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,534 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.218 secs. -->
+	
+
+
+</body></html>

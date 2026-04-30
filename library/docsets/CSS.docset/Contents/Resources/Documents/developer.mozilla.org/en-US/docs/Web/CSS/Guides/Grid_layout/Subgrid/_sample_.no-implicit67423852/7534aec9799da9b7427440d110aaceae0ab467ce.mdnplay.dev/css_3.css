@@ -1,0 +1,10 @@
+
+* { box-sizing: border-box; }
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: normal; font-family: sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+.grid { border: 2px solid rgb(247, 103, 7); border-radius: 5px; background-color: rgb(255, 244, 230); }
+.item { border: 2px solid rgb(255, 169, 77); border-radius: 5px; color: rgb(217, 72, 15); }
+.subitem { background-color: rgb(217, 72, 15); color: white; border-radius: 5px; }
+.grid { display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(4, minmax(100px, auto)); }
+.item { display: grid; grid-column-start: 2; grid-column-end: 7; grid-row-start: 2; grid-row-end: 4; grid-template-columns: subgrid; grid-template-rows: subgrid; }
+
+button.copy {display:none !important}

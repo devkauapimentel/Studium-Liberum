@@ -1,0 +1,11 @@
+
+p { margin: 1em 0px; }
+.under { text-decoration: underline red; }
+.over { text-decoration: overline wavy lime; }
+.line { text-decoration: line-through; }
+.underover { text-decoration: underline overline dashed; }
+.thick { text-decoration: underline 4px purple; text-underline-offset: -5px; }
+.shadow { text-shadow: red 4px 4px 0px; }
+.emphasis { text-emphasis-style: triangle; text-emphasis-color: red; }
+
+button.copy {display:none !important}

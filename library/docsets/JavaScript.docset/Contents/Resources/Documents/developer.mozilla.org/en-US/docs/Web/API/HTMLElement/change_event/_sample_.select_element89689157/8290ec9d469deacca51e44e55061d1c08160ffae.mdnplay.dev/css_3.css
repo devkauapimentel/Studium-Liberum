@@ -1,0 +1,6 @@
+
+body { display: grid; grid-template-areas: "select result"; }
+select { grid-row-start: select; grid-column-start: select; grid-row-end: select; grid-column-end: select; }
+.result { grid-row-start: result; grid-column-start: result; grid-row-end: result; grid-column-end: result; }
+
+button.copy {display:none !important}

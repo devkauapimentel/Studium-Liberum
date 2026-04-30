@@ -1,0 +1,9 @@
+
+.scoped { padding: 20px; background: rgb(238, 238, 238); }
+.anchor { font-size: 1.8rem; color: white; text-shadow: black 1px 1px 1px; background-color: blue; width: fit-content; padding: 3px; }
+.positioned { background: orange; width: fit-content; padding: 3px; }
+.scoped { anchor-scope: --my-anchor; }
+.anchor { anchor-name: --my-anchor; }
+.positioned { position: absolute; position-anchor: --my-anchor; position-area: right; }
+
+button.copy {display:none !important}

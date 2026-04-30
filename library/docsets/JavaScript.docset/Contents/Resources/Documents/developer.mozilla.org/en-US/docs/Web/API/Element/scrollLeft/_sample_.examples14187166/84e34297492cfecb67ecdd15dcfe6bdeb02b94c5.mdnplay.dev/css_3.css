@@ -1,0 +1,5 @@
+
+#container { width: 100px; height: 100px; border: 1px solid rgb(204, 204, 204); overflow-x: scroll; }
+#content { width: 250px; background-color: rgb(204, 204, 204); }
+
+button.copy {display:none !important}

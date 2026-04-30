@@ -1,0 +1,8 @@
+
+@font-face { font-family: MonteCarlo; src: url("./shared-assets/fonts/monte-carlo/monte-carlo-regular.woff2"); }
+@font-face { font-family: MonteCarlo2; src: url("./shared-assets/fonts/monte-carlo/monte-carlo-regular.woff2"); font-feature-settings: "swsh"; }
+p { font-size: 3rem; margin: 0.7rem 3rem; }
+.swash-off { font-family: MonteCarlo, cursive; }
+.swash-on { font-family: MonteCarlo2, cursive; }
+
+button.copy {display:none !important}

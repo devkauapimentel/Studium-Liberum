@@ -1,0 +1,6 @@
+
+input { font-weight: bold; color: green; }
+.explicit-color::placeholder { color: currentcolor; }
+.opacity-change::placeholder { color: color-mix(in srgb, currentcolor 70%, transparent); }
+
+button.copy {display:none !important}

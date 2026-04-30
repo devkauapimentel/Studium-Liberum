@@ -1,0 +1,10 @@
+
+ul { display: flex; gap: 4vw; padding-left: 0px; margin: 32px 0px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; }
+li { list-style-type: none; background-color: rgb(238, 238, 238); flex: 0 0 33%; scroll-snap-align: start; text-align: center; line-height: 5; }
+fieldset { width: 20em; }
+label { font-family: monospace; display: block; }
+:has([value="before"]:checked) ul { }
+:has([value="after"]:checked) ul { }
+:has([value="none"]:checked) ul { }
+
+button.copy {display:none !important}

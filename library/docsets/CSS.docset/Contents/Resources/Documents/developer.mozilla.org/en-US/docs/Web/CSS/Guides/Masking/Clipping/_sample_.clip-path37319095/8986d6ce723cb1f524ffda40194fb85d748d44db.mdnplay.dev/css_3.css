@@ -1,0 +1,4 @@
+
+.diamond { height: 200px; width: 200px; background-color: blue; clip-path: polygon(0px 50%, 50% 100%, 100% 50%, 50% 0px); }
+
+button.copy {display:none !important}

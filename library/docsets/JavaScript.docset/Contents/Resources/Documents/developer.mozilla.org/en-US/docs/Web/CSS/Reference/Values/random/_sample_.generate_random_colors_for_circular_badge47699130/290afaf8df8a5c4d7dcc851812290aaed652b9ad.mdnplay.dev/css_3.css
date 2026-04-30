@@ -1,0 +1,9 @@
+
+.badge { display: inline-block; width: 5em; aspect-ratio: 1 / 1; border-radius: 50%; background: hsl(random(element-shared, 0, 360) 50 50); }
+.badge.desaturated { background: hsl(random(element-shared, 0, 360) 10 50); }
+.badge.unique { background: hsl(random(0, 360) 50 50); }
+@supports not (order: random(1, 2)) {
+  :root::after { content: "Your browser doesn't support the random() function."; }
+}
+
+button.copy {display:none !important}

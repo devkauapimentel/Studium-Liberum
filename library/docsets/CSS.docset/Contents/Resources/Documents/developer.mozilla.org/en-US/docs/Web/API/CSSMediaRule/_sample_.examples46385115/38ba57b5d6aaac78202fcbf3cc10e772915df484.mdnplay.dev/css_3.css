@@ -1,0 +1,6 @@
+
+@media (width >= 500px) {
+  body { color: blue; }
+}
+
+button.copy {display:none !important}

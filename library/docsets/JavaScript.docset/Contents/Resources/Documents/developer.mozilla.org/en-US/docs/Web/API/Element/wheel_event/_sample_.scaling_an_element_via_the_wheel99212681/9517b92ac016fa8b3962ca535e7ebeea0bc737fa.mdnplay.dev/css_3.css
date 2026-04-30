@@ -1,0 +1,5 @@
+
+body { min-height: 100vh; margin: 0px; display: flex; align-items: center; justify-content: center; }
+div { width: 105px; height: 105px; background: rgb(204, 221, 255); padding: 5px; }
+
+button.copy {display:none !important}

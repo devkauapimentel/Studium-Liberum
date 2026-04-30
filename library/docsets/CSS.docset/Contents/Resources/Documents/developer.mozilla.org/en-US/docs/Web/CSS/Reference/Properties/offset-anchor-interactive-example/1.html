@@ -1,0 +1,115 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CSS Demo: offset-anchor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../../../../../../../interactive_examples/assets/css/codemirror.css" rel="stylesheet">
+    <link href="../../../../../../../../interactive_examples/assets/css/editor-css.css" rel="stylesheet">
+    <style>#example-element {
+  offset-path: path("M 0,20 L 200,20");
+  animation: distance 3000ms infinite alternate ease-in-out;
+  width: 40px;
+  height: 40px;
+  background: cyan;
+  animation-play-state: paused;
+}
+
+#example-element.running {
+  animation-play-state: running;
+}
+
+.wrapper {
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 49%,
+    black 50%,
+    black 51%,
+    transparent 52%
+  );
+  border: 1px solid #cccccc;
+  width: 90%;
+}
+
+@keyframes distance {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+#playback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1em;
+}
+
+
+ button.copy {display:none !important}</style>  </head>
+
+  <body>
+    <header class="output-header border-rounded-top">
+      <h4 class="output-heading">CSS Demo: offset-anchor</h4>
+      <button id="reset" class="reset" type="button">Reset</button>
+    </header>
+    <noscript>
+      <div id="warning-no-script" class="warning-container">
+        <div class="warning">
+          The interactive example cannot be shown because JavaScript is
+          disabled.
+        </div>
+      </div>
+    </noscript>
+    <div id="warning-mathml-not-supported" class="warning-container hidden">
+      <div class="warning">
+        The interactive example cannot be shown because MathML is not supported
+        by your browser.
+      </div>
+    </div>
+    <div id="editor-wrapper" class="editor-wrapper border-rounded-bottom hidden">
+      <section id="example-choice-list" class="example-choice-list">
+          <div class="example-choice">
+<pre><code class="language-css">offset-anchor: auto;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">offset-anchor: right top;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">offset-anchor: left bottom;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">offset-anchor: 20% 80%;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+      </section>
+      <div id="output" class="output hidden">
+          <section class="default-example" id="default-example">
+  <div class="wrapper">
+    <div id="example-element"></div>
+  </div>
+  <button id="playback" type="button">Play</button>
+</section>
+      </div>
+    </div>
+
+    <script src="../../../../../../../../interactive_examples/assets/js/codemirror.js"></script>
+    <script src="../../../../../../../../interactive_examples/assets/js/editor-css.js"></script>
+    <script>const example = document.getElementById("example-element");
+const button = document.getElementById("playback");
+
+button.addEventListener("click", () => {
+  if (example.classList.contains("running")) {
+    example.classList.remove("running");
+    button.textContent = "Play";
+  } else {
+    example.classList.add("running");
+    button.textContent = "Pause";
+  }
+});
+</script></body></html>

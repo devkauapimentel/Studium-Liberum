@@ -1,0 +1,15 @@
+
+ol, li { margin: 0px; padding: 0px; }
+li { margin-bottom: 12px; }
+div { background-image: url("./en-US/docs/Web/CSS/Reference/Properties/background-repeat-y/star-solid.gif"); width: 160px; height: 70px; }
+.one { }
+.two { }
+.three { }
+.four { }
+@layer no-support {
+  @supports not (background-repeat-y: repeat) {
+  body::before { content: "Your browser doesn't support the `background-repeat-y` property."; background-color: wheat; display: block; padding: 1em; text-align: center; }
+}
+}
+
+button.copy {display:none !important}

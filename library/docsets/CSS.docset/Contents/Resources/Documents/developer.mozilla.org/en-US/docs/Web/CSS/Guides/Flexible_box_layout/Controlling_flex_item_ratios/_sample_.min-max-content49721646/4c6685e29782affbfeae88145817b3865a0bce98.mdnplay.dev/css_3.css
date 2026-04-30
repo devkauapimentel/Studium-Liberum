@@ -1,0 +1,5 @@
+
+.min-content { width: min-content; border: 2px dotted rgb(96, 139, 168); }
+.max-content { width: max-content; border: 2px dotted rgb(96, 139, 168); }
+
+button.copy {display:none !important}

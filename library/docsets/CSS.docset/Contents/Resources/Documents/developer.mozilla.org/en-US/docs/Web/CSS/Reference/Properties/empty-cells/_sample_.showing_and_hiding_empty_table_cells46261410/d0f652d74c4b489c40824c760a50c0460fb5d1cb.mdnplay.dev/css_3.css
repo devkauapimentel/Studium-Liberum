@@ -1,0 +1,6 @@
+
+.table_1 { empty-cells: show; }
+.table_2 { empty-cells: hide; }
+td, th { border: 1px solid gray; padding: 0.5rem; }
+
+button.copy {display:none !important}

@@ -1,0 +1,88 @@
+<html><!-- Mirrored from mdn.github.io/dom-examples/popover-api/nested-popovers/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:57:05 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nested popovers example</title>
+    <style>
+      body,
+      html {
+        font-family: sans-serif;
+      }
+
+      body [popover] {
+        border: 1px solid black;
+        width: 120px;
+        inset: unset;
+      }
+
+      #mainpopover {
+        left: 7px;
+        top: 38px;
+      }
+
+      #subpopover {
+        left: 120px;
+        top: 86px;
+      }
+
+      .listcontainer,
+      .subcontainer {
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        flex: 1;
+        text-decoration: none;
+        outline: none;
+        text-align: center;
+        line-height: 3;
+        color: black;
+      }
+
+      a:link,
+      a:visited {
+        background: palegoldenrod;
+        color: black;
+      }
+
+      a:hover,
+      a:focus {
+        background: orange;
+      }
+
+      a:active {
+        background: darkred;
+        color: white;
+      }
+    </style>
+    <script src="index.js" defer=""></script>
+  </head>
+  <body>
+    <button popovertarget="mainpopover" popovertargetaction="toggle">
+      Menu
+    </button>
+    <div id="mainpopover" popover="">
+      <nav class="listcontainer">
+        <a href="#">Home</a>
+        <div class="subcontainer" tabindex="0">
+          <a href="#">Pizza <strong>&gt;</strong></a>
+          <div id="subpopover" popover="">
+            <div class="listcontainer">
+              <a href="#">Margherita</a>
+              <a href="#">Pepperoni</a>
+              <a href="#">Ham &amp; Shroom</a>
+              <a href="#">Vegan</a>
+            </div>
+          </div>
+        </div>
+        <a href="#">Music</a>
+        <a href="#">Wombats</a>
+        <a href="#">Finland</a>
+      </nav>
+    </div>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/dom-examples/popover-api/nested-popovers/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:57:05 GMT --></html>

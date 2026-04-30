@@ -1,0 +1,4 @@
+
+.wrapper p::first-line { font-weight: bold; font-size: 130%; }
+
+button.copy {display:none !important}

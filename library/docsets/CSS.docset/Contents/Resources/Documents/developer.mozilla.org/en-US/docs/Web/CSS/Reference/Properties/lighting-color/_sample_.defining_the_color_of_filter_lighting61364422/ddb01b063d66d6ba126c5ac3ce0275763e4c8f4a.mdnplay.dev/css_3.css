@@ -1,0 +1,8 @@
+
+svg { background-image: repeating-linear-gradient(45deg, transparent 0px, transparent 9px, rgb(204, 204, 204) 0px, rgb(204, 204, 204) 10px); }
+rect { width: 100px; height: 100px; x: 10px; y: 10px; }
+#r2 { x: 150px; }
+feDiffuseLighting { lighting-color: blue; }
+feSpecularLighting { lighting-color: rgb(255, 0, 153); }
+
+button.copy {display:none !important}

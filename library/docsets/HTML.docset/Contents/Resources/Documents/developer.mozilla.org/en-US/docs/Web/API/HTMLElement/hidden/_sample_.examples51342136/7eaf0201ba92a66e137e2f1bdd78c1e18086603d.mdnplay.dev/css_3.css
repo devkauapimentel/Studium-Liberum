@@ -1,0 +1,6 @@
+
+.panel { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 16px; line-height: normal; font-family: "Open Sans", Helvetica, Arial, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; border: 1px solid rgb(34, 34, 221); padding: 12px; width: 500px; text-align: center; }
+.button { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 22px; line-height: normal; font-family: "Open Sans", Helvetica, Arial, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; padding: 5px 36px; }
+h1 { margin-top: 0px; font-size: 175%; }
+
+button.copy {display:none !important}

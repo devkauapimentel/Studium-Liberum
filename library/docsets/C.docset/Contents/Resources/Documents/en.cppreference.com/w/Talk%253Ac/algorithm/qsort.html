@@ -1,0 +1,274 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Ac/algorithm/qsort.html --><head><meta charset="utf-8"><title>Talk:c/algorithm/qsort</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_6.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_5563.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_c_algorithm_qsort skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Ac%2Falgorithm%2Fqsort&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Ac%2Falgorithm%2Fqsort" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../c/algorithm/qsort.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./qsort.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./qsort.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./qsort.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/algorithm/qsort&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/algorithm/qsort&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/algorithm/qsort&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./qsort.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:c/algorithm/qsort</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Ac.html" title="Talk:c">Talk:c</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/algorithm/qsort&amp;action=edit&amp;section=1" title="Edit section: GNU and CRT versions">edit</a>]</span> <span class="mw-headline" id="GNU_and_CRT_versions"> GNU and CRT versions </span></h2>
+<p>Could we mention in the <i>Note</i> section that C11 <span class="t-c"><span class="mw-geshi c source-c">qsort_s</span></span> function differs from the one in Microsoft's CRT&nbsp;?
+</p><p>C11 Annex K:
+<span class="t-c"><span class="mw-geshi c source-c">errno_t qsort_s<span class="br0">(</span> <span class="kw4">void</span> <span class="sy2">*</span>ptr, rsize_t count, rsize_t size, <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>comp<span class="br0">)</span><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">void</span> <span class="sy2">*</span>, <span class="kw4">const</span> <span class="kw4">void</span> <span class="sy2">*</span>, <span class="kw4">void</span> <span class="sy2">*</span><span class="br0">)</span>, <span class="kw4">void</span> <span class="sy2">*</span>context <span class="br0">)</span><span class="sy4">;</span></span></span>
+</p><p><br>
+<a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/qsort-s?view=msvc-170">Microsoft's interface</a>:
+</p><p><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">void</span> qsort_s <span class="br0">(</span><span class="kw4">void</span> <span class="sy2">*</span>base, <a href="../../c/types/size_t.html"><span class="kw100">size_t</span></a> num, <a href="../../c/types/size_t.html"><span class="kw100">size_t</span></a> width, <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>compare <span class="br0">)</span><span class="br0">(</span><span class="kw4">void</span> <span class="sy2">*</span>, <span class="kw4">const</span> <span class="kw4">void</span> <span class="sy2">*</span>, <span class="kw4">const</span> <span class="kw4">void</span> <span class="sy2">*</span><span class="br0">)</span>, <span class="kw4">void</span> <span class="sy2">*</span> context<span class="br0">)</span><span class="sy4">;</span></span></span>
+</p><p><br>
+There is also GNU <a rel="nofollow" class="external text" href="https://linux.die.net/man/3/qsort"><span class="t-c"><span class="mw-geshi c source-c">qsort_r</span></span></a> on Linux:
+</p><p><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">void</span> qsort_r<span class="br0">(</span><span class="kw4">void</span> <span class="sy2">*</span>base, <a href="../../c/types/size_t.html"><span class="kw100">size_t</span></a> nmemb, <a href="../../c/types/size_t.html"><span class="kw100">size_t</span></a> size, <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>compar<span class="br0">)</span><span class="br0">(</span><span class="kw4">const</span> <span class="kw4">void</span> <span class="sy2">*</span>, <span class="kw4">const</span> <span class="kw4">void</span> <span class="sy2">*</span>, <span class="kw4">void</span> <span class="sy2">*</span><span class="br0">)</span>, <span class="kw4">void</span> <span class="sy2">*</span>arg<span class="br0">)</span><span class="sy4">;</span></span></span>
+</p><p><br>
+And a different one in <a rel="nofollow" class="external text" href="https://www.unix.com/man-page/freebsd/3/qsort/">FreeBSD's</a>:
+</p><p><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">void</span> qsort_r<span class="br0">(</span><span class="kw4">void</span> <span class="sy2">*</span>base, <a href="../../c/types/size_t.html"><span class="kw100">size_t</span></a> nmemb, <a href="../../c/types/size_t.html"><span class="kw100">size_t</span></a> size, <span class="kw4">void</span> <span class="sy2">*</span>thunk, <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>compar<span class="br0">)</span><span class="br0">(</span><span class="kw4">void</span> <span class="sy2">*</span>, <span class="kw4">const</span> <span class="kw4">void</span> <span class="sy2">*</span>, <span class="kw4">const</span> <span class="kw4">void</span> <span class="sy2">*</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span></span></span>
+</p><p><br>
+The return type and constraint handler notwithstanding, GNU's version is compatible with C11's. Sadly, both Microsoft and FreeBSD use a different parameters order, and even worse, so does their comparison function, which means the incompatibility cannot be fixed by a macro or wrapper function.
+</p><p>This causes a lot of confusion, so I think an addendum mentioning this would be helpful in the article.
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Babbage&amp;action=edit&amp;redlink=1" class="new" title="User:Babbage (page does not exist)">Babbage</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Babbage&amp;action=edit&amp;redlink=1" class="new" title="User talk:Babbage (page does not exist)">talk</a>) 15:32, 23 August 2022 (PDT)
+</p>
+<dl><dd> I would vote <span class="t-c"><span class="mw-geshi c source-c">F</span></span> your proposal. Can be useful. --<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 16:23, 23 August 2022 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> W.r.t. MS's <code>_s</code> functions. From <a rel="nofollow" class="external free" href="https://open-std.org/jtc1/sc22/wg14/www/docs/n1967.htm">https://open-std.org/jtc1/sc22/wg14/www/docs/n1967.htm</a>:
+</dd><dd> <blockquote>Microsoft Visual Studio implements an early version of the APIs. However, the implementation is incomplete and conforms neither to C11 nor to the original TR 24731-1. For example, it doesn't provide the <span class="t-lc">set_constraint_handler_s</span> function but instead defines a <span class="t-lc">_invalid_parameter_handler _set_invalid_parameter_handler(_invalid_parameter_handler)</span> function with similar behavior but a slightly different and incompatible signature. It also doesn't define the <span class="t-lc">abort_handler_s</span> and <span class="t-lc">ignore_handler_s</span> functions, the <span class="t-lc">memset_s</span> function (which isn't part of the TR), or the <span class="t-lc">RSIZE_MAX</span> macro. The Microsoft implementation also doesn't treat overlapping source and destination sequences as runtime-constraint violations and instead has undefined behavior in such cases</blockquote>
+</dd><dd> Not sure if there would be a good place for a general note like this? But yeah, it's best assumed that MS doesn't implement annex K --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 01:36, 24 August 2022 (PDT)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/algorithm/qsort&amp;action=edit&amp;section=2" title="Edit section: Problematic sentence">edit</a>]</span> <span class="mw-headline" id="Problematic_sentence"> Problematic sentence </span></h2>
+<p>The article states (in the <i>Notes</i>):
+</p><p><code>"Until qsort_s, users of qsort often used global variables to pass additional context to the comparison function."</code>
+</p><p><br>
+Among the major C standard libraries, only the Windows CRT supports the Annex K/bounds-checking interfaces. And Microsoft's <code>qsort_s</code> does not conform to the C standard. This makes this sentence very misleading: there is still no standard context-aware <span class="t-c"><span class="mw-geshi c source-c"><a href="../../c/algorithm/qsort.html"><span class="kw817">qsort</span></a><span class="br0">(</span><span class="br0">)</span></span></span> in C.
+<a href="https://en.cppreference.com/mwiki/index.php?title=User:Babbage&amp;action=edit&amp;redlink=1" class="new" title="User:Babbage (page does not exist)">Babbage</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Babbage&amp;action=edit&amp;redlink=1" class="new" title="User talk:Babbage (page does not exist)">talk</a>) 14:28, 21 January 2024 (PST)
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 290/1000000
+Preprocessor generated node count: 550/1000000
+Post‐expand include size: 2543/4194304 bytes
+Template argument size: 1270/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:21123-0!*!0!!*!*!* and timestamp 20240518063938 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/algorithm/qsort&amp;oldid=168840">https://en.cppreference.com/mwiki/index.php?title=Talk:c/algorithm/qsort&amp;oldid=168840</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./qsort.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:c/algorithm/qsort" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:c/algorithm/qsort" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/algorithm/qsort&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/algorithm/qsort&amp;oldid=168840" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/algorithm/qsort&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 21 January 2024, at 15:28.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 981 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.153 secs. -->
+	
+
+
+</body></html>

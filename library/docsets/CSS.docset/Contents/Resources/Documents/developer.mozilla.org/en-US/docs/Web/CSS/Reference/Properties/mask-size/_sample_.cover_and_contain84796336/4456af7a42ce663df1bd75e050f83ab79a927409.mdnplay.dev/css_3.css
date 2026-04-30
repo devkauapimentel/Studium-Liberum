@@ -1,0 +1,10 @@
+
+div { width: 200px; height: 400px; background: linear-gradient(red, blue) blue; mask-image: url("./shared-assets/images/examples/mask-star.svg"); }
+.auto div { mask-size: auto; }
+.cover div { mask-size: cover; }
+.contain div { mask-size: contain; }
+section::before { content: "mask-size: " attr(class) ";"; display: block; text-align: center; border-bottom: 1px solid; }
+body { display: flex; flex-flow: wrap; gap: 10px; }
+section { border: 1px solid; }
+
+button.copy {display:none !important}

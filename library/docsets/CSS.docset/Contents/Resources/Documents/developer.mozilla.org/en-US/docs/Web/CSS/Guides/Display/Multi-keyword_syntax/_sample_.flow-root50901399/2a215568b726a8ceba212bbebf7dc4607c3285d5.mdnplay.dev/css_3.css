@@ -1,0 +1,9 @@
+
+#controls { padding: 1rem; outline: 2px dashed black; }
+body { margin: 10px; font-family: sans-serif; }
+div, p { outline: 2px solid black; background-color: cornflowerblue; display: block; margin-bottom: 2rem; }
+#parent { background-color: oldlace; min-height: 2rem; }
+#child { margin-top: 4rem; outline: 2px dashed red; }
+#sibling { background-color: lavender; }
+
+button.copy {display:none !important}

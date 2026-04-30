@@ -1,0 +1,4 @@
+
+img { mask-size: 95%, 100%; -webkit-mask-position-x: center; -webkit-mask-position-y: center; mask-repeat: no-repeat; mask-image: url("../mdn.github.io/shared-assets/images/examples/mask-star.svg"), repeating-radial-gradient(transparent 0px, transparent 5px, black 5px, black 10px); }
+
+button.copy {display:none !important}

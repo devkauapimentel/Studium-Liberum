@@ -1,0 +1,48 @@
+
+          const selectElem = document.querySelector("select");
+const inputElems = document.querySelectorAll("input");
+
+selectElem.onchange = () => {
+  for (const e of inputElems) {
+    e.value = "";
+  }
+
+  if (selectElem.value === "US") {
+    inputElems[2].parentNode.style.display = "inline";
+
+    inputElems[0].placeholder = "Area code";
+    inputElems[0].pattern = "[0-9]{3}";
+
+    inputElems[1].placeholder = "First part";
+    inputElems[1].pattern = "[0-9]{3}";
+    inputElems[1].setAttribute("aria-label", "First part of number");
+
+    inputElems[2].placeholder = "Second part";
+    inputElems[2].pattern = "[0-9]{4}";
+    inputElems[2].setAttribute("aria-label", "Second part of number");
+  } else if (selectElem.value === "UK") {
+    inputElems[2].parentNode.style.display = "none";
+
+    inputElems[0].placeholder = "Area code";
+    inputElems[0].pattern = "[0-9]{3,6}";
+
+    inputElems[1].placeholder = "Local number";
+    inputElems[1].pattern = "[0-9]{4,8}";
+    inputElems[1].setAttribute("aria-label", "Local number");
+  } else if (selectElem.value === "Germany") {
+    inputElems[2].parentNode.style.display = "inline";
+
+    inputElems[0].placeholder = "Area code";
+    inputElems[0].pattern = "[0-9]{3,5}";
+
+    inputElems[1].placeholder = "First part";
+    inputElems[1].pattern = "[0-9]{2,4}";
+    inputElems[1].setAttribute("aria-label", "First part of number");
+
+    inputElems[2].placeholder = "Second part";
+    inputElems[2].pattern = "[0-9]{4}";
+    inputElems[2].setAttribute("aria-label", "Second part of number");
+  }
+};
+;
+        

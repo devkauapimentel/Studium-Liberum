@@ -1,0 +1,9 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/paintworkletglobalscope/registerpaint/index.md
+
+# Original Wiki contributors
+bershanskiy
+kspk
+estelle
+1valdis
+jpmedley

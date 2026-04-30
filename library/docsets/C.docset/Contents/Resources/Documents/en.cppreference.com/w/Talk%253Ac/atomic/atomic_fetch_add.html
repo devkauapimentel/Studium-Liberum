@@ -1,0 +1,348 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Ac/atomic/atomic_fetch_add.html --><head><meta charset="utf-8"><title>Talk:c/atomic/atomic fetch add</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_6.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_7436.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_c_atomic_atomic_fetch_add skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Ac%2Fatomic%2Fatomic+fetch+add&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Ac%2Fatomic%2Fatomic+fetch+add" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../c/atomic/atomic_fetch_add.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./atomic_fetch_add.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./atomic_fetch_add.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./atomic_fetch_add.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/atomic/atomic_fetch_add&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/atomic/atomic_fetch_add&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/atomic/atomic_fetch_add&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./atomic_fetch_add.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:c/atomic/atomic fetch add</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Ac.html" title="Talk:c">Talk:c</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><ol><li>include &lt;threads.h&gt; does not work in the examples -- threads.h no such file or directory&nbsp;:(
+</li></ol>
+<p><a href="https://en.cppreference.com/w/Special:Contributions/2A02:6B8:0:3A05:5C35:CE68:FFFD:D3B9" title="Special:Contributions/2A02:6B8:0:3A05:5C35:CE68:FFFD:D3B9">2A02:6B8:0:3A05:5C35:CE68:FFFD:D3B9</a> 02:16, 22 April 2021 (PDT)
+</p>
+<dl><dd> the online compiler in use here doesn't support that part of C11. But you can run the example on godbolt for example: <a rel="nofollow" class="external free" href="https://godbolt.org/z/rTPsWGbGn">https://godbolt.org/z/rTPsWGbGn</a>  --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 20:11, 26 April 2021 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/atomic/atomic_fetch_add&amp;action=edit&amp;section=1" title="Edit section: Memory order for atomic fetch add explicit in example">edit</a>]</span> <span class="mw-headline" id="Memory_order_for_atomic_fetch_add_explicit_in_example"> Memory order for atomic_fetch_add_explicit in example </span></h2>
+<p>How I read the definition of memory_order
+<a rel="nofollow" class="external free" href="../../c/atomic/memory_order.html">https://en.cppreference.com/w/c/atomic/memory_order</a>
+a read-modify-write (like fetch_add here) would require to specifiy a memory_order that gurantees that writes happening in the last call of the command are visible in the next call of the command.
+<span class="t-c"><span class="mw-geshi c source-c"><a href="../../c/atomic/memory_order.html"><span class="kw911">memory_order_relaxed</span></a></span></span> does not gurantee and ordering among threads, so shouldn't it be <span class="t-c"><span class="mw-geshi c source-c"><a href="../../c/atomic/memory_order.html"><span class="kw915">memory_order_acq_rel</span></a></span></span> here?
+</p><p>(<a href="https://en.cppreference.com/mwiki/index.php?title=User:Destranix&amp;action=edit&amp;redlink=1" class="new" title="User:Destranix (page does not exist)">Destranix</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Destranix&amp;action=edit&amp;redlink=1" class="new" title="User talk:Destranix (page does not exist)">talk</a>) 07:53, 9 November 2022 (PST))
+</p>
+<dl><dd> no. acq_rel and other orders are about *other* (typically non-atomic) memory locations. Not the atomic involved in the operation.  --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 08:25, 9 November 2022 (PST)
+</dd></dl>
+<dl><dd><dl><dd> Do you have a source for this statement? Cause reading the description of <span class="t-c"><span class="mw-geshi c source-c"><a href="../../c/atomic/memory_order.html"><span class="kw911">memory_order_relaxed</span></a></span></span> it sounds like (it's explicitly stated that) no synchronisation happens, only atomicy and order within the thread is guranteed.
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> <a href="../../c/atomic/memory_order.html#Relaxed_ordering" title="c/atomic/memory order">c/atomic/memory_order#Relaxed_ordering</a> does not say "order within the thread", it says "modification order consistency", which is the property of all <a href="../../c/language/atomic.html" title="c/language/atomic">atomic variables</a>. Note also, same relaxed ordering section says "Typical use for relaxed memory ordering is incrementing counters" --11:13, 9 November 2022 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd> Ah okay, that explains a lot. Thank you.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd> Maybe it should be somehow clarified which atomic operations gurantee what ordering. On the sites I found the gurantees are defined using a "happens before", but "happens before" is only defined in the cpp version and does not seem to handle cases between atomics with no memory-order (but some terms don't seem to be defined or linked like "synchronizes-with" and also "consume operation" might maybe me intended to also mean certain atomic operations regardless of memory_order specified in the command).
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> yes, there's an unfinished todo marker in <a href="../../c/atomic/memory_order.html" title="c/atomic/memory order">c/atomic/memory_order</a> to fill in the formal description, which is pretty much the same as C++'s <a href="../../cpp/atomic/memory_order.html" title="cpp/atomic/memory order">cpp/atomic/memory_order</a>, C committee copied it. Atomic operations on their own do not order non-atomic memory accesses, it's the release/acquire/consume/seqcst operations that do so. You can make an atomic op to *also* be a release/acquire/consume/etc op by specifying non-relaxed memory_order parameter, because many algorithms need both at the same time, but you can also do it <a href="../../c/atomic/atomic_thread_fence.html" title="c/atomic/atomic thread fence">without an atomic</a>. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 21:36, 10 November 2022 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> Yeah, I understood that. I just find it confusing that <a rel="nofollow" class="external free" href="../../c/language/atomic.html">https://en.cppreference.com/w/c/language/atomic</a> says something like this:
+</dd><dd> There are four coherences that are guaranteed for all atomic operations:
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> * <b>write-write coherence</b>: If an operation A that modifies an atomic object M <i>happens-before</i> an operation B that modifies M, then A appears earlier than B in the modification order of M.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> Using "happens-before", but "happens-before" is then defined using memory-order although theese gurantees also apply when no memory-order (memory_order_relaxed) is used.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> So maybe one should add a sentence to the description saying something like:
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> "For two operations that access an atomic variable one of both always <i>happens-before</i> the other"
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> Also maybe it should be explicitly noted, that this also means, that all modifications on an atomic that happened-before are visible to all successing modifications in the modification order.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> (<a href="https://en.cppreference.com/mwiki/index.php?title=User:Destranix&amp;action=edit&amp;redlink=1" class="new" title="User:Destranix (page does not exist)">Destranix</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Destranix&amp;action=edit&amp;redlink=1" class="new" title="User talk:Destranix (page does not exist)">talk</a>) 00:13, 11 November 2022 (PST))
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> In <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">int</span> a,b<span class="sy4">;</span> a<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> b<span class="sy1">=</span><span class="nu0">2</span><span class="sy4">;</span></span></span>, modification of a <i>happens-before</i> modification of b, nothing to do with memory order or atomicity. write/write says given <span class="t-c"><span class="mw-geshi c source-c"><a href="../../c/atomic.html"><span class="kw965">atomic_int</span></a> a<span class="sy4">;</span> <a href="../../c/atomic/atomic_store.html"><span class="kw937">atomic_store</span></a><span class="br0">(</span><span class="sy3">&amp;</span>a, <span class="nu0">1</span>, <a href="../../c/atomic/memory_order.html"><span class="kw911">memory_order_relaxed</span></a><span class="br0">)</span><span class="sy4">;</span> <a href="../../c/atomic/atomic_store.html"><span class="kw937">atomic_store</span></a><span class="br0">(</span><span class="sy3">&amp;</span>a, <span class="nu0">2</span>, <a href="../../c/atomic/memory_order.html"><span class="kw911">memory_order_relaxed</span></a><span class="br0">)</span><span class="sy4">;</span></span></span> in a's personal timeline ("modification order") 1 will appear and then 2 will appear, compiler isn't permitted to swap them around. And even if the ``happens-before`` is a longer chain of sequencings and synchronizations (which indeed may involve release/acquire operations, some of which indeed may involve atomic ops with explicit memory orders), compiler still must ensure the coherence holds. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 08:14, 11 November 2022 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> I understand that. I'm just saying that it's not that easy to get an understanding of it using the given text on <a rel="nofollow" class="external free" href="../../c/language/atomic.html">https://en.cppreference.com/w/c/language/atomic</a> if you don't already know what should happen.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 122/1000000
+Preprocessor generated node count: 265/1000000
+Post‐expand include size: 941/4194304 bytes
+Template argument size: 354/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:20210-0!*!0!*!*!*!* and timestamp 20240518080740 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/atomic/atomic_fetch_add&amp;oldid=145022">https://en.cppreference.com/mwiki/index.php?title=Talk:c/atomic/atomic_fetch_add&amp;oldid=145022</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./atomic_fetch_add.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:c/atomic/atomic_fetch_add" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:c/atomic/atomic_fetch_add" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/atomic/atomic_fetch_add&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/atomic/atomic_fetch_add&amp;oldid=145022" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/atomic/atomic_fetch_add&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 12 November 2022, at 01:10.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 1,547 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.145 secs. -->
+	
+
+
+</body></html>

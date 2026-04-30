@@ -1,0 +1,5 @@
+
+div { width: 50px; height: 50px; margin: 3px; border: 3px solid black; display: inline-block; background-color: red; }
+.selected { border-color: aqua; }
+
+button.copy {display:none !important}

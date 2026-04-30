@@ -1,0 +1,10 @@
+
+@namespace svgNamespace url("../www.w3.org/2000/svg");
+@namespace htmlNameSpace url("../www.w3.org/1999/xhtml");
+a { font-size: 1.4rem; }
+|a { text-decoration: overline wavy lime; font-weight: bold; }
+a { color: red; fill: red; font-style: italic; }
+svgNamespace|a { color: green; fill: green; }
+htmlNameSpace|a { text-decoration-line: line-through; }
+
+button.copy {display:none !important}

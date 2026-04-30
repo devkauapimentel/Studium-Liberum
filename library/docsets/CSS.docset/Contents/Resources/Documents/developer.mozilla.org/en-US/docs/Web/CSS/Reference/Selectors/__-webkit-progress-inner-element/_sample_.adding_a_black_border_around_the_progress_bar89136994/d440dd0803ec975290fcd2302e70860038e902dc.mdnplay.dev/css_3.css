@@ -1,0 +1,5 @@
+
+progress { appearance: none; }
+::-webkit-progress-inner-element { border: 2px solid black; }
+
+button.copy {display:none !important}

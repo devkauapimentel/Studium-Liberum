@@ -1,0 +1,69 @@
+<html>
+  <!-- Online page at https://c18346727af5c8406d1c78692f9492f77e4e7b22.mdnplay.dev/en-US/docs/Web/API/NamedNodeMap/setNamedItemNS/runner.html?uuid=c18346727af5c8406d1c78692f9492f77e4e7b22&state=jVTBjtMwEP2VwUJqV1TJvW16AISExC6LisTFh7rptDFy7GBPSVer%2FjtjJ2kiFq3IIYmfZ97Me57kWVRUG7EU69AoC26%2FdBYLKfguxWadR3Qj7brxyKt4l1YsRBkC5%2FDLz%2FgsnQ0EjfIBPRRgsYWPX%2B8f03p%2Bt5I2z3tm0BZSpQ3oANZRBBRYVSOjJS6grbTBaXSrvNX2tFlwRiZtV%2BtSmy15hqGQFmA2RI0CCANJEQNtWLo9IxVRs8zztm0zvKi6MZiVrs7dnoW%2BRybAN%2Bt8qDZbDaUOrmRNnbgsPT55V3fV57c%2BFiCFahqjS0Xa2Zw3pIjSB5pkbxHZzjVayn6d0T9t0WBJzs%2BliPtdRu%2Bmx9fCeXsaPchPGS%2BC%2B91pgiLy96rhhFg4i0u9P7NpqWWDBB7D2RAH7L5XyA6nU5sBs8aG%2BGg0aWXMEzAhKW0DvH3uWTOD9kTVFW60mWRaaXeJvWd%2BV7BnP5AL1e43wo7PbQdH9nYspuwB1OEQQBOQYzwO4CyRiZuUOCjF4MBESdYRP%2FBsHT4T1g%2FbeZyVVwdh0UWk6ef36NegKSBNqTgk7o5a%2Fm2Tde3UoL%2FMfmlUWI5OTX169HjUFynpiyuVSR8ML76dldFHjYce6GyZ5hX%2Few3J0h6dh%2Fk4JeCOw7TcwXP0Z6K5O%2FKsSd1duaMeMLHLaFfERth2SFJ3jbU4MSO80Ae2KNpV9OSr9Jehik3k%2F4vRp4rE9Q8%3D&code=13425262& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;span ob:one="one"&gt;&lt;/span&gt;
+&lt;pre&gt;&lt;/pre&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code></code></pre>
+
+            <h2>js</h2>
+            <pre><code>const parser = new DOMParser();
+// ob:one in &lt;span&gt; is not in a namespace, while ob:one in &lt;warning&gt;, is.
+const xmlString =
+  '&lt;warning ob:one="test" xmlns:ob="http://www.example.com/ob"&gt;Beware!&lt;/warning&gt;';
+const doc = parser.parseFromString(xmlString, "application/xml");
+
+const span = document.querySelector("span");
+const pre = document.querySelector("pre");
+const warning = doc.querySelector("warning");
+const attrMap = span.attributes;
+
+let result = `The '&lt;span&gt;' element initially contains ${attrMap.length} attribute.\n\n`;
+
+result += "We remove `one` from '&lt;span&gt;' and adds it to '&lt;pre&gt;'.\n";
+const one = warning.attributes.removeNamedItemNS(
+  "http://www.example.com/ob",
+  "one",
+);
+attrMap.setNamedItemNS(one);
+result += `The '&lt;span&gt;' element now contains ${span.attributes.length} attributes:\n\n`;
+result += "Prefix\tLocal name\tQualified name\n";
+result += "=========================================\n";
+
+for (const attr of attrMap) {
+  result += `${attr.prefix}\t${attr.localName}\t\t${attr.name}\n`;
+}
+
+pre.textContent = result;</code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=c18346727af5c8406d1c78692f9492f77e4e7b22&amp;state=jVTBjtMwEP2VwUJqV1TJvW16AISExC6LisTFh7rptDFy7GBPSVer%2FjtjJ2kiFq3IIYmfZ97Me57kWVRUG7EU69AoC26%2FdBYLKfguxWadR3Qj7brxyKt4l1YsRBkC5%2FDLz%2FgsnQ0EjfIBPRRgsYWPX%2B8f03p%2Bt5I2z3tm0BZSpQ3oANZRBBRYVSOjJS6grbTBaXSrvNX2tFlwRiZtV%2BtSmy15hqGQFmA2RI0CCANJEQNtWLo9IxVRs8zztm0zvKi6MZiVrs7dnoW%2BRybAN%2Bt8qDZbDaUOrmRNnbgsPT55V3fV57c%2BFiCFahqjS0Xa2Zw3pIjSB5pkbxHZzjVayn6d0T9t0WBJzs%2BliPtdRu%2Bmx9fCeXsaPchPGS%2BC%2B91pgiLy96rhhFg4i0u9P7NpqWWDBB7D2RAH7L5XyA6nU5sBs8aG%2BGg0aWXMEzAhKW0DvH3uWTOD9kTVFW60mWRaaXeJvWd%2BV7BnP5AL1e43wo7PbQdH9nYspuwB1OEQQBOQYzwO4CyRiZuUOCjF4MBESdYRP%2FBsHT4T1g%2FbeZyVVwdh0UWk6ef36NegKSBNqTgk7o5a%2Fm2Tde3UoL%2FMfmlUWI5OTX169HjUFynpiyuVSR8ML76dldFHjYce6GyZ5hX%2Few3J0h6dh%2Fk4JeCOw7TcwXP0Z6K5O%2FKsSd1duaMeMLHLaFfERth2SFJ3jbU4MSO80Ae2KNpV9OSr9Jehik3k%2F4vRp4rE9Q8%3D&amp;code=13425262&amp;" class="leave">Open in Playground</a>
+          <a href="https://c18346727af5c8406d1c78692f9492f77e4e7b22.mdnplay.dev/en-US/docs/Web/API/NamedNodeMap/setNamedItemNS/runner.html?state=jVTBjtMwEP2VwUJqV1TJvW16AISExC6LisTFh7rptDFy7GBPSVer%2FjtjJ2kiFq3IIYmfZ97Me57kWVRUG7EU69AoC26%2FdBYLKfguxWadR3Qj7brxyKt4l1YsRBkC5%2FDLz%2FgsnQ0EjfIBPRRgsYWPX%2B8f03p%2Bt5I2z3tm0BZSpQ3oANZRBBRYVSOjJS6grbTBaXSrvNX2tFlwRiZtV%2BtSmy15hqGQFmA2RI0CCANJEQNtWLo9IxVRs8zztm0zvKi6MZiVrs7dnoW%2BRybAN%2Bt8qDZbDaUOrmRNnbgsPT55V3fV57c%2BFiCFahqjS0Xa2Zw3pIjSB5pkbxHZzjVayn6d0T9t0WBJzs%2BliPtdRu%2Bmx9fCeXsaPchPGS%2BC%2B91pgiLy96rhhFg4i0u9P7NpqWWDBB7D2RAH7L5XyA6nU5sBs8aG%2BGg0aWXMEzAhKW0DvH3uWTOD9kTVFW60mWRaaXeJvWd%2BV7BnP5AL1e43wo7PbQdH9nYspuwB1OEQQBOQYzwO4CyRiZuUOCjF4MBESdYRP%2FBsHT4T1g%2FbeZyVVwdh0UWk6ef36NegKSBNqTgk7o5a%2Fm2Tde3UoL%2FMfmlUWI5OTX169HjUFynpiyuVSR8ML76dldFHjYce6GyZ5hX%2Few3J0h6dh%2Fk4JeCOw7TcwXP0Z6K5O%2FKsSd1duaMeMLHLaFfERth2SFJ3jbU4MSO80Ae2KNpV9OSr9Jehik3k%2F4vRp4rE9Q8%3D&amp;code=35a9a6ab-5727-48ba-b8a8-34fbf1ff0e2e" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

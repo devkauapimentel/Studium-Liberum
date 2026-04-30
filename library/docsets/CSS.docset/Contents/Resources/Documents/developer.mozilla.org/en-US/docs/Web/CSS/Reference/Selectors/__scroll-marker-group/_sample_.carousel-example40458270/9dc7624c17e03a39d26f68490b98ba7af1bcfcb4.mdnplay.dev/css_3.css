@@ -1,0 +1,8 @@
+
+* { box-sizing: border-box; }
+body { margin: 0px; font-family: Helvetica, Arial, sans-serif; }
+ul { display: flex; gap: 4vw; padding-left: 0px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; }
+li { list-style-type: none; background-color: rgb(238, 238, 238); flex: 0 0 100%; height: 200px; padding-top: 20px; scroll-snap-align: start; text-align: center; }
+ul { }
+
+button.copy {display:none !important}

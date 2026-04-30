@@ -1,0 +1,14 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 14px; line-height: normal; font-family: "Open Sans", Arial, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+video { margin-top: 20px; border: 1px solid black; }
+.button { cursor: pointer; width: 150px; border: 1px solid black; font-size: 16px; text-align: center; padding-top: 2px; padding-bottom: 4px; color: white; background-color: darkgreen; }
+.wrapper { margin-bottom: 10px; width: 600px; }
+.track-row { height: 200px; }
+.left-side { float: left; width: calc(50% - 10px); }
+.right-side { float: right; width: calc(50% - 10px); }
+textarea { padding: 8px; }
+h3 { margin-bottom: 3px; }
+#supportedConstraints { column-count: 2; }
+#log { padding-top: 10px; }
+
+button.copy {display:none !important}

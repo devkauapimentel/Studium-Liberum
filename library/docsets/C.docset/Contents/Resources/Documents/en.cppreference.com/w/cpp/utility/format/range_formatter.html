@@ -1,0 +1,633 @@
+<html><!-- Online page at https://en.cppreference.com/w/cpp/utility/format/range_formatter.html --><head><meta charset="utf-8"><title>std::range_formatter</title><link rel="stylesheet" href="../../../css_1.css" type="text/css"><link rel="stylesheet" href="../../../css_2.css" type="text/css"><link rel="stylesheet" href="../../../css_3.css" type="text/css"><link rel="stylesheet" href="../../../css_4.css" type="text/css"><link rel="stylesheet" href="../../../css_5.css" type="text/css"><script type="text/javascript" src="../../../js_1.js"></script><script type="text/javascript" src="../../../js_2.js"></script><script type="text/javascript" src="../../../js_2758.js"></script><script type="text/javascript" src="../../../js_4.js"></script><script type="text/javascript" src="../../../js_5.js"></script><script type="text/javascript" src="../../../js_6.js"></script><script type="text/javascript" src="../../../js_7.js"></script><script type="text/javascript" src="../../../js_8.js"></script><script type="text/javascript" src="../../../js_9.js"></script><script type="text/javascript" src="../../../js_10.js"></script><script type="text/javascript" src="../../../js_11.js"></script><script type="text/javascript" src="../../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_utility_format_range_formatter skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Futility%2Fformat%2Frange+formatter&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Futility%2Fformat%2Frange+formatter" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="./range_formatter.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/format/range_formatter&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./range_formatter.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./range_formatter.html">View</a></span></li>
+					<li id="ca-edit"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/format/range_formatter&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/format/range_formatter&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./range_formatter.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">std::</span>range_formatter</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../utility.html" title="cpp/utility">utility</a>‎ | <a href="../format.html" title="cpp/utility/format">format</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp">C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../../compiler_support.html" title="cpp/compiler support">Compiler support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../freestanding.html" title="cpp/freestanding">Freestanding and hosted</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../language.html" title="cpp/language">Language</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../standard_library.html" title="cpp/standard library">Standard library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../headers.html" title="cpp/header">Standard library headers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../iterator/concepts.html" title="cpp/named req">Named requirements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../experimental/feature_test.html" title="cpp/feature test">Feature test macros</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../utility.html#Language_support" title="cpp/utility">Language support library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../concepts.html" title="cpp/concepts">Concepts library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../error.html" title="cpp/error">Diagnostics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../memory.html" title="cpp/memory">Memory management library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../meta.html" title="cpp/meta">Metaprogramming library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../utility.html" title="cpp/utility">General utilities library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../container.html" title="cpp/container">Containers library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../iterator.html" title="cpp/iterator">Iterators library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../ranges.html" title="cpp/ranges">Ranges library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../algorithm.html" title="cpp/algorithm">Algorithms library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../string.html" title="cpp/string">Strings library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../text.html" title="cpp/text">Text processing library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../numeric.html" title="cpp/numeric">Numerics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../chrono.html" title="cpp/chrono">Date and time library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../io.html" title="cpp/io">Input/output library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../filesystem.html" title="cpp/filesystem">Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../atomic.html" title="cpp/thread">Concurrency support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../experimental/execution.html" title="cpp/execution">Execution control library</a> <span class="t-mark-rev t-since-cxx26">(C++26)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../experimental.html" title="cpp/experimental">Technical specifications</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../symbol_index.html" title="cpp/symbol index">Symbols index</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../links/libs.html" title="cpp/links/libs">External libraries</a></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../../text.html" title="cpp/text">Text processing library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../../locale.html" title="cpp/locale">Localization library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../regex.html" title="cpp/regex">Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../format.html" title="cpp/utility/format">Formatting library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../../text.html#Null-terminated_sequence_utilities" title="cpp/text">Null-terminated sequence utilities</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../string/byte.html" title="cpp/string/byte">Byte strings</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../string/multibyte.html" title="cpp/string/multibyte">Multibyte strings</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../string/wide.html" title="cpp/string/wide">Wide strings</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../../text.html#Primitive_numeric_conversions" title="cpp/text">Primitive numeric conversions</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../to_chars.html" title="cpp/utility/to chars"><span class="t-lines"><span>to_chars</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../to_chars_result.html" title="cpp/utility/to chars result"><span class="t-lines"><span>to_chars_result</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../from_chars.html" title="cpp/utility/from chars"><span class="t-lines"><span>from_chars</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../from_chars_result.html" title="cpp/utility/from chars result"><span class="t-lines"><span>from_chars_result</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../chars_format.html" title="cpp/utility/chars format"><span class="t-lines"><span>chars_format</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../../text.html#Text_encoding_identifications" title="cpp/text">Text encoding identifications</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../locale/text_encoding.html" title="cpp/text/text encoding"><span class="t-lines"><span>text_encoding</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/text/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../format.html" title="cpp/utility/format">Formatting library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5"><a href="./spec.html" title="cpp/utility/format/spec">Standard format specification</a></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./format.html#Formatting_functions" title="cpp/utility/format/format">Formatting functions</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./format.html" title="cpp/utility/format/format"><span class="t-lines"><span>format</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./format_to.html" title="cpp/utility/format/format to"><span class="t-lines"><span>format_to</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./format_to_n.html" title="cpp/utility/format/format to n"><span class="t-lines"><span>format_to_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./formatted_size.html" title="cpp/utility/format/formatted size"><span class="t-lines"><span>formatted_size</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./vformat.html" title="cpp/utility/format/vformat"><span class="t-lines"><span>vformat</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./vformat_to.html" title="cpp/utility/format/vformat to"><span class="t-lines"><span>vformat_to</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./format.html#Format_strings" title="cpp/utility/format/format">Format strings</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./basic_format_string.html" title="cpp/utility/format/basic format string"><span class="t-lines"><span>basic_format_string</span><span>format_string</span><span>wformat_string</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./runtime_format.html" title="cpp/utility/format/runtime format"><span class="t-lines"><span>runtime_format</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./format.html#Formatting_concepts" title="cpp/utility/format/format">Formatting concepts</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./formattable.html" title="cpp/utility/format/formattable"><span class="t-lines"><span>formattable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Formatter</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./formatter.html" title="cpp/utility/format/formatter"><span class="t-lines"><span>formatter</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./tuple_formatter.html" title="cpp/utility/format/tuple formatter"><span class="t-lines"><span>formatter<span class="t-dsc-small">&lt;<i>pair-or-tuple</i>&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./ranges_formatter.html" title="cpp/utility/format/ranges formatter"><span class="t-lines"><span>formatter<span class="t-dsc-small">&lt;<i>range</i>&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>range_formatter</span></span></strong></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./enable_nonlocking_formatter_optimization.html" title="cpp/utility/format/enable nonlocking formatter optimization"><span class="t-lines"><span>enable_nonlocking_formatter_optimization</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./basic_format_parse_context.html" title="cpp/utility/format/basic format parse context"><span class="t-lines"><span>basic_format_parse_context</span><span>format_parse_context</span><span>wformat_parse_context</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./basic_format_context.html" title="cpp/utility/format/basic format context"><span class="t-lines"><span>basic_format_context</span><span>format_context</span><span>wformat_context</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./range_format.html" title="cpp/utility/format/range format"><span class="t-lines"><span>range_format</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./format_kind.html" title="cpp/utility/format/format kind"><span class="t-lines"><span>format_kind</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Formatting arguments</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./basic_format_arg.html" title="cpp/utility/format/basic format arg"><span class="t-lines"><span>basic_format_arg</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./basic_format_arg/handle.html" title="cpp/utility/format/basic format arg/handle"><span class="t-lines"><span>basic_format_arg::handle</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./basic_format_args.html" title="cpp/utility/format/basic format args"><span class="t-lines"><span>basic_format_args</span><span>format_args</span><span>wformat_args</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./visit_format_arg.html" title="cpp/utility/format/visit format arg"><span class="t-lines"><span>visit_format_arg</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span> <span class="t-mark-rev t-deprecated-cxx26">(deprecated in C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./make_format_args.html" title="cpp/utility/format/make format args"><span class="t-lines"><span>make_format_args</span><span>make_wformat_args</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./format.html#Format_error" title="cpp/utility/format/format">Format error</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./format_error.html" title="cpp/utility/format/format error"><span class="t-lines"><span>format_error</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/format/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../header/format.html" title="cpp/header/format">&lt;format&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx23">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T, <span class="kw1">class</span> CharT <span class="sy1">=</span> <span class="kw4">char</span> <span class="sy1">&gt;</span><br>
+<p>&nbsp; &nbsp; requires <a href="../../concepts/same_as.html"><span class="kw2952">std::<span class="me2">same_as</span></span></a><span class="sy1">&lt;</span><a href="../../types/remove_cvref.html"><span class="kw2662">std::<span class="me2">remove_cvref_t</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span>, T<span class="sy1">&gt;</span> <span class="sy3">&amp;&amp;</span> <a href="./formattable.html"><span class="kw3189">std::<span class="me2">formattable</span></span></a><span class="sy1">&lt;</span>T, CharT<span class="sy1">&gt;</span><br>
+</p>
+<span class="kw1">class</span> range_formatter<span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx23">(since C++23)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p><code>std::range_formatter</code> is a helper class template for implementing range <span class="t-lc"><a href="./formatter.html" title="cpp/utility/format/formatter">std::formatter</a></span> specializations.
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./range_formatter.html#Range_format_specification"><span class="tocnumber">1</span> <span class="toctext">Range format specification</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./range_formatter.html#Data_members"><span class="tocnumber">2</span> <span class="toctext">Data members</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./range_formatter.html#Member_functions"><span class="tocnumber">3</span> <span class="toctext">Member functions</span></a></li>
+<li class="toclevel-1"><a href="./range_formatter.html#std::range_formatter::set_separator"><span class="tocnumber">4</span> <span class="toctext"><span>std::range_formatter::</span>set_separator</span></a></li>
+<li class="toclevel-1"><a href="./range_formatter.html#std::range_formatter::set_brackets"><span class="tocnumber">5</span> <span class="toctext"><span>std::range_formatter::</span>set_brackets</span></a></li>
+<li class="toclevel-1"><a href="./range_formatter.html#std::range_formatter::underlying"><span class="tocnumber">6</span> <span class="toctext"><span>std::range_formatter::</span>underlying</span></a></li>
+<li class="toclevel-1"><a href="./range_formatter.html#std::range_formatter::parse"><span class="tocnumber">7</span> <span class="toctext"><span>std::range_formatter::</span>parse</span></a></li>
+<li class="toclevel-1"><a href="./range_formatter.html#std::range_formatter::format"><span class="tocnumber">8</span> <span class="toctext"><span>std::range_formatter::</span>format</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="./range_formatter.html#Defect_reports"><span class="tocnumber">8.1</span> <span class="toctext">Defect reports</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="./range_formatter.html#See_also"><span class="tocnumber">8.2</span> <span class="toctext">See also</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/format/range_formatter&amp;action=edit&amp;section=1" title="Edit section: Range format specification">edit</a>]</span> <span class="mw-headline" id="Range_format_specification">Range format specification</span></h3>
+<p>The syntax of <span class="t-spar">range-format-spec</span> is:
+</p>
+<table class="t-sdsc-begin">
+
+<tbody><tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td class="t-sdsc-nopad"> <span class="t-spar">range-fill-and-align</span> ﻿<span class="t-mark">(optional)</span> <span class="t-spar">width</span> ﻿<span class="t-mark">(optional)</span> <code><b>n</b></code><span class="t-mark">(optional)</span> <span class="t-spar">range-type</span> ﻿<span class="t-mark">(optional)</span> <span class="t-spar">range-underlying-spec</span> ﻿<span class="t-mark">(optional)</span>
+</td>
+<td class="t-sdsc-nopad">
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></tbody></table>
+<p>The <span class="t-spar">range-fill-and-align</span> is interpreted the same way as a <span class="t-spar">fill-and-align</span> except that the <span class="t-spar">fill</span> in <span class="t-spar">range-fill-and-align</span> is any character other than <code><b>{</b></code>, <code><b>}</b></code>, or <code><b>:</b></code>.
+</p><p>The <span class="t-spar">width</span> is described in <a href="./spec.html#Width_and_precision" title="cpp/utility/format/spec">standard format width specification</a>.
+</p><p>The <code><b>n</b></code> option causes the range to be formatted without the opening and closing brackets.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../../error/assert.html"><span class="kw779">assert</span></a><span class="br0">(</span><a href="./format.html"><span class="kw3166">std::<span class="me2">format</span></span></a><span class="br0">(</span><span class="st0">"{}"</span>, <a href="../../ranges/iota_view.html"><span class="kw2933">views::<span class="me2">iota</span></span></a><span class="br0">(</span><span class="nu0">1</span>, <span class="nu0">5</span><span class="br0">)</span><span class="br0">)</span> <span class="sy1">==</span> <span class="st0">"[1, 2, 3, 4]"</span><span class="br0">)</span><span class="sy4">;</span>
+<a href="../../error/assert.html"><span class="kw779">assert</span></a><span class="br0">(</span><a href="./format.html"><span class="kw3166">std::<span class="me2">format</span></span></a><span class="br0">(</span><span class="st0">"{:n}"</span>, <a href="../../ranges/iota_view.html"><span class="kw2933">views::<span class="me2">iota</span></span></a><span class="br0">(</span><span class="nu0">1</span>, <span class="nu0">5</span><span class="br0">)</span><span class="br0">)</span> <span class="sy1">==</span> <span class="st0">"1, 2, 3, 4"</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>The <span class="t-spar">format-spec</span> in a <span class="t-spar">range-underlying-spec</span> (its syntax is equivalent to <code>:</code> <span class="t-spar">format-spec</span>), if any, is interpreted by the range element formatter <code>std::formatter&lt;T, CharT&gt;</code>.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../../container/array.html"><span class="kw1277">std::<span class="me2">array</span></span></a> ints<span class="br0">{</span><span class="nu0">12</span>, <span class="nu0">10</span>, <span class="nu0">15</span>, <span class="nu0">14</span><span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<a href="../../error/assert.html"><span class="kw779">assert</span></a><span class="br0">(</span><a href="./format.html"><span class="kw3166">std::<span class="me2">format</span></span></a><span class="br0">(</span><span class="st0">"{}"</span>, ints<span class="br0">)</span> <span class="sy1">==</span> <span class="st0">"[12, 10, 15, 14]"</span><span class="br0">)</span><span class="sy4">;</span>
+<a href="../../error/assert.html"><span class="kw779">assert</span></a><span class="br0">(</span><a href="./format.html"><span class="kw3166">std::<span class="me2">format</span></span></a><span class="br0">(</span><span class="st0">"{::X}"</span>, ints<span class="br0">)</span> <span class="sy1">==</span> <span class="st0">"[C, A, F, E]"</span><span class="br0">)</span><span class="sy4">;</span>
+<a href="../../error/assert.html"><span class="kw779">assert</span></a><span class="br0">(</span><a href="./format.html"><span class="kw3166">std::<span class="me2">format</span></span></a><span class="br0">(</span><span class="st0">"{:n:_^4}"</span>, ints<span class="br0">)</span> <span class="sy1">==</span> <span class="st0">"_12_, _10_, _15_, _14_"</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>The <span class="t-spar">range-type</span> changes the way a range is formatted, with certain options only valid with certain argument types.
+</p><p>The available range presentation types are:
+</p>
+<ul><li> <code><b>m</b></code>: Indicates that the opening bracket should be <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">"{"</span></span></span>, the closing bracket should be <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">"}"</span></span></span>, the separator should be <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">", "</span></span></span>, and each range element should be formatted as if <code><b>m</b></code> were specified for its <span class="t-spar">tuple-type</span> (in <a href="./tuple_formatter.html#Format_specification" title="cpp/utility/format/tuple formatter"><span class="t-spar">tuple-format-spec</span></a>).
+</li></ul>
+<dl><dd><ul><li> If <code><b>m</b></code> is chosen as the <span class="t-spar">range-type</span>, the program is ill-formed unless <code>T</code> is either a specialization of:
+</li></ul>
+<dl><dd><ul><li> <span class="t-lc"><a href="../pair.html" title="cpp/utility/pair">std::pair</a></span>, or
+</li><li> <span class="t-lc"><a href="../tuple.html" title="cpp/utility/tuple">std::tuple</a></span> such that <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../tuple_size.html"><span class="kw1111">std::<span class="me2">tuple_size_v</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> <span class="sy1">==</span> <span class="nu0">2</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>.
+</li></ul>
+</dd></dl>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../../container/array.html"><span class="kw1277">std::<span class="me2">array</span></span></a> char_pairs
+<span class="br0">{</span>
+    <a href="../pair.html"><span class="kw1105">std::<span class="me2">pair</span></span></a><span class="br0">{</span><span class="st0">'A'</span>, <span class="nu0">5</span><span class="br0">}</span>, <a href="../pair.html"><span class="kw1105">std::<span class="me2">pair</span></span></a><span class="br0">{</span><span class="st0">'B'</span>, <span class="nu0">10</span><span class="br0">}</span>, <a href="../pair.html"><span class="kw1105">std::<span class="me2">pair</span></span></a><span class="br0">{</span><span class="st0">'C'</span>, <span class="nu0">12</span><span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<a href="../../error/assert.html"><span class="kw779">assert</span></a><span class="br0">(</span><a href="./format.html"><span class="kw3166">std::<span class="me2">format</span></span></a><span class="br0">(</span><span class="st0">"{}"</span>, char_pairs<span class="br0">)</span> <span class="sy1">==</span> <span class="st0">"[('A', 5), ('B', 10), ('C', 12)]"</span><span class="br0">)</span><span class="sy4">;</span>
+<a href="../../error/assert.html"><span class="kw779">assert</span></a><span class="br0">(</span><a href="./format.html"><span class="kw3166">std::<span class="me2">format</span></span></a><span class="br0">(</span><span class="st0">"{:m}"</span>, char_pairs<span class="br0">)</span> <span class="sy1">==</span> <span class="st0">"{'A': 5, 'B': 10, 'C': 12}"</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<ul><li> <code><b>s</b></code>: Indicates that the range should be formatted as a string.
+</li><li> <code><b>?s</b></code>: Indicates that the range should be formatted as an <a href="./spec.html#Formatting_escaped_characters_and_strings" title="cpp/utility/format/spec">escaped string</a>.
+</li></ul>
+<dl><dd><ul><li> If <code><b>s</b></code> or <code><b>?s</b></code> is chosen as the <span class="t-spar">range-type</span>, both <code><b>n</b></code> option and <span class="t-spar">range-underlying-spec</span> should not be included in the format specifier, and
+</li><li> the program is ill-formed unless <code>T</code> is <code>CharT</code>.
+</li></ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../../container/array.html"><span class="kw1277">std::<span class="me2">array</span></span></a> star<span class="br0">{</span><span class="st0">'S'</span>, <span class="st0">'T'</span>, <span class="st0">'A'</span>, <span class="st0">'R'</span><span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<a href="../../error/assert.html"><span class="kw779">assert</span></a><span class="br0">(</span><a href="./format.html"><span class="kw3166">std::<span class="me2">format</span></span></a><span class="br0">(</span><span class="st0">"{}"</span>, star<span class="br0">)</span> <span class="sy1">==</span> <span class="st0">"['S', 'T', 'A', 'R']"</span><span class="br0">)</span><span class="sy4">;</span>
+<a href="../../error/assert.html"><span class="kw779">assert</span></a><span class="br0">(</span><a href="./format.html"><span class="kw3166">std::<span class="me2">format</span></span></a><span class="br0">(</span><span class="st0">"{:s}"</span>, star<span class="br0">)</span> <span class="sy1">==</span> <span class="st0">"STAR"</span><span class="br0">)</span><span class="sy4">;</span>
+<a href="../../error/assert.html"><span class="kw779">assert</span></a><span class="br0">(</span><a href="./format.html"><span class="kw3166">std::<span class="me2">format</span></span></a><span class="br0">(</span><span class="st0">"{:?s}"</span>, star<span class="br0">)</span> <span class="sy1">==</span> <span class="st0">"<span class="es1">\"</span>STAR<span class="es1">\"</span>"</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/format/range_formatter&amp;action=edit&amp;section=2" title="Edit section: Data members">edit</a>]</span> <span class="mw-headline" id="Data_members">Data members</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-hitem">
+<td> Member name
+</td>
+<td> Definition
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <small><span class="mw-geshi cpp source-cpp"><a href="./formatter.html"><span class="kw3173">std::<span class="me2">formatter</span></span></a><span class="sy1">&lt;</span>T, CharT<span class="sy1">&gt;</span></span></small> <code><i>underlying_</i></code> <span class="t-mark">(private)</span>
+</td>
+<td> the underlying formatter for elements<br><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition-only member object*</span>)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <small><span class="mw-geshi cpp source-cpp"><a href="../../string/basic_string_view.html"><span class="kw1255">std::<span class="me2">basic_string_view</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span></span></small> <code><i>separator_</i></code> <span class="t-mark">(private)</span>
+</td>
+<td> a string representing the separator of the range formatted result. The default separator is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">", "</span></span></span>.<br><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition-only member object*</span>)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <small><span class="mw-geshi cpp source-cpp"><a href="../../string/basic_string_view.html"><span class="kw1255">std::<span class="me2">basic_string_view</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span></span></small> <code><i>opening-bracket_</i></code> <span class="t-mark">(private)</span>
+</td>
+<td> a string representing the opening bracket of the range formatted result. The default opening bracket is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">"["</span></span></span>.<br><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition-only member object*</span>)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <small><span class="mw-geshi cpp source-cpp"><a href="../../string/basic_string_view.html"><span class="kw1255">std::<span class="me2">basic_string_view</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span></span></small> <code><i>closing-bracket_</i></code> <span class="t-mark">(private)</span>
+</td>
+<td> a string representing the closing bracket of the range formatted result. The default closing bracket is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">"]"</span></span></span>.<br><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition-only member object*</span>)</span>
+</td></tr>
+
+</tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/format/range_formatter&amp;action=edit&amp;section=3" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>set_separator</span></span></div></div>
+</td>
+<td>  sets a specified separator for the range formatted result <br> <span class="t-mark">(public member function)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>set_brackets</span></span></div></div>
+</td>
+<td>  sets a specified opening and closing brackets for the range formatted result <br> <span class="t-mark">(public member function)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>underlying</span></span></div></div>
+</td>
+<td>  returns the underlying formatter <br> <span class="t-mark">(public member function)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>parse</span></span></div></div>
+</td>
+<td>  parses the format specifier as specified by <span class="t-spar">range-format-spec</span> <br> <span class="t-mark">(public member function)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>format</span></span></div></div>
+</td>
+<td>  writes the range formatted output as specified by <span class="t-spar">range-format-spec</span> <br> <span class="t-mark">(public member function)</span>
+</td></tr>
+
+</tbody></table>
+<div class="t-member">
+<h2> <span class="mw-headline" id="std::range_formatter::set_separator"><span style="font-size:0.7em; line-height:130%">std::range_formatter::</span>set_separator</span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span> <span class="kw4">void</span> set_separator<span class="br0">(</span> <a href="../../string/basic_string_view.html"><span class="kw1255">std::<span class="me2">basic_string_view</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> sep <span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Assigns <span class="t-c"><span class="mw-geshi cpp source-cpp">sep</span></span> to <code><i>separator_</i></code>.
+</p>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id="std::range_formatter::set_brackets"><span style="font-size:0.7em; line-height:130%">std::range_formatter::</span>set_brackets</span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span> <span class="kw4">void</span> set_brackets<span class="br0">(</span> <a href="../../string/basic_string_view.html"><span class="kw1255">std::<span class="me2">basic_string_view</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> opening,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="../../string/basic_string_view.html"><span class="kw1255">std::<span class="me2">basic_string_view</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> closing <span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Assigns <span class="t-c"><span class="mw-geshi cpp source-cpp">opening</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">closing</span></span> to <code><i>opening-bracket_</i></code> and <code><i>closing-bracket_</i></code>, respectively.
+</p>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id="std::range_formatter::underlying"><span style="font-size:0.7em; line-height:130%">std::range_formatter::</span>underlying</span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span> <a href="./formatter.html"><span class="kw3173">std::<span class="me2">formatter</span></span></a><span class="sy1">&lt;</span>T, CharT<span class="sy1">&gt;</span><span class="sy3">&amp;</span> underlying<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (1) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span> <span class="kw4">const</span> <a href="./formatter.html"><span class="kw3173">std::<span class="me2">formatter</span></span></a><span class="sy1">&lt;</span>T, CharT<span class="sy1">&gt;</span><span class="sy3">&amp;</span> underlying<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+<td> (2) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Returns <span class="t-c"><code><i>underlying_</i></code></span> (the underlying formatter).
+</p>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id="std::range_formatter::parse"><span style="font-size:0.7em; line-height:130%">std::range_formatter::</span>parse</span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> ParseContext <span class="sy1">&gt;</span><br>
+<span class="kw4">constexpr</span> <span class="kw4">auto</span> parse<span class="br0">(</span> ParseContext<span class="sy3">&amp;</span> ctx <span class="br0">)</span> <span class="sy2">-</span><span class="sy1">&gt;</span> ParseContext<span class="sy4">::</span><span class="me2">iterator</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Parses the format specifiers as a <span class="t-spar">range-format-spec</span> and stores the parsed specifiers in the current object.
+</p><p>Calls <span class="t-c"><code><i>underlying_</i></code><span class="mw-geshi cpp source-cpp">.<span class="me1">parse</span><span class="br0">(</span>ctx<span class="br0">)</span></span></span> to parse <span class="t-spar">format-spec</span> in <span class="t-spar">range-format-spec</span> or, if the latter is not present, an empty <span class="t-spar">format-spec</span>.
+</p><p>If <span class="t-spar">range-type</span> or the <code><b>n</b></code> option is present, the values of <code><i>opening-bracket_</i></code>, <code><i>closing-bracket_</i></code>, and <code><i>separator_</i></code> are modified as required.
+</p><p>It calls <span class="t-c"><code><i>underlying_</i></code><span class="mw-geshi cpp source-cpp">.<span class="me1">set_debug_format</span><span class="br0">(</span><span class="br0">)</span></span></span> if:
+</p>
+<ul><li> the <span class="t-spar">range-type</span> is neither <code><b>s</b></code> nor <code><b>?s</b></code>,
+</li><li> <span class="t-c"><code><i>underlying_</i></code><span class="mw-geshi cpp source-cpp">.<span class="me1">set_debug_format</span><span class="br0">(</span><span class="br0">)</span></span></span> is a valid expression, and
+</li><li> there is no <span class="t-spar">range-underlying-spec</span>.
+</li></ul>
+<p>Returns an iterator past the end of the <span class="t-spar">range-format-spec</span>.
+</p>
+</div>
+<div class="t-member">
+<h2> <span class="mw-headline" id="std::range_formatter::format"><span style="font-size:0.7em; line-height:130%">std::range_formatter::</span>format</span></h2>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../ranges/input_range.html"><span class="kw2921">ranges::<span class="me2">input_range</span></span></a> R, <span class="kw1">class</span> FormatContext <span class="sy1">&gt;</span><br>
+<p>&nbsp; requires <a href="./formattable.html"><span class="kw3189">std::<span class="me2">formattable</span></span></a><span class="sy1">&lt;</span><a href="../../ranges/range_reference_t.html"><span class="kw2914">ranges::<span class="me2">range_reference_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span>, CharT<span class="sy1">&gt;</span> <span class="sy3">&amp;&amp;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="../../concepts/same_as.html"><span class="kw2952">std::<span class="me2">same_as</span></span></a><span class="sy1">&lt;</span><a href="../../types/remove_cvref.html"><span class="kw2662">std::<span class="me2">remove_cvref_t</span></span></a><span class="sy1">&lt;</span><a href="../../ranges/range_reference_t.html"><span class="kw2914">ranges::<span class="me2">range_reference_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;&gt;</span>, T<span class="sy1">&gt;</span><br>
+</p>
+<span class="kw4">auto</span> format<span class="br0">(</span> R<span class="sy3">&amp;&amp;</span> r, FormatContext<span class="sy3">&amp;</span> ctx <span class="br0">)</span> <span class="kw4">const</span> <span class="sy2">-</span><span class="sy1">&gt;</span> FormatContext<span class="sy4">::</span><span class="me2">iterator</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>If the <span class="t-spar">range-type</span> was either <code><b>s</b></code> or <code><b>?s</b></code>, it writes the formatted <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../string/basic_string.html"><span class="kw1237">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span><span class="br0">(</span><a href="../../ranges/from_range.html"><span class="kw3602">std::<span class="me2">from_range</span></span></a>, r<span class="br0">)</span></span></span> as a string or an escaped string, respectively, into <span class="t-c"><span class="mw-geshi cpp source-cpp">ctx.<span class="me1">out</span><span class="br0">(</span><span class="br0">)</span></span></span>.
+</p><p>Otherwise, it writes the following into <span class="t-c"><span class="mw-geshi cpp source-cpp">ctx.<span class="me1">out</span><span class="br0">(</span><span class="br0">)</span></span></span> as specified by <span class="t-spar">range-format-spec</span>, in order:
+</p>
+<ul><li> <span class="t-c"><code><i>opening-bracket_</i></code></span>,
+</li><li> for each formattable element <span class="t-c"><span class="mw-geshi cpp source-cpp">e</span></span> of the range <span class="t-c"><span class="mw-geshi cpp source-cpp">r</span></span>:
+</li></ul>
+<dl><dd><ul><li> the result of writing <span class="t-c"><span class="mw-geshi cpp source-cpp">e</span></span> via <code><i>underlying_</i></code>, and
+</li><li> <span class="t-c"><code><i>separator_</i></code></span>, unless <span class="t-c"><span class="mw-geshi cpp source-cpp">e</span></span> is the last element of <span class="t-c"><span class="mw-geshi cpp source-cpp">r</span></span>, and
+</li></ul>
+</dd></dl>
+<ul><li> <span class="t-c"><code><i>closing-bracket_</i></code></span>.
+</li></ul>
+<p>Returns an iterator past the end of the output range.
+</p>
+</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/format/range_formatter&amp;action=edit&amp;section=4" title="Edit section: Defect reports">edit</a>]</span> <span class="mw-headline" id="Defect_reports">Defect reports</span></h3>
+<p>The following behavior-changing defect reports were applied retroactively to previously published C++ standards.
+</p>
+<table class="dsctable" style="font-size:0.8em">
+<tbody><tr>
+<th>DR
+</th>
+<th>Applied to
+</th>
+<th>Behavior as published
+</th>
+<th>Correct behavior
+</th></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://cplusplus.github.io/LWG/issue3892">LWG 3892</a>
+</td>
+<td>C++23
+</td>
+<td>the formatting of nested ranges was incorrect
+</td>
+<td>corrected
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/format/range_formatter&amp;action=edit&amp;section=5" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./formatter.html" title="cpp/utility/format/formatter"> <span class="t-lines"><span>formatter</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  defines formatting rules for a given type <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/format/dsc_formatter&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 6832/1000000
+Preprocessor generated node count: 12523/1000000
+Post‐expand include size: 167724/4194304 bytes
+Template argument size: 43821/4194304 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:22121-0!*!0!!en!*!* and timestamp 20250514153732 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/format/range_formatter&amp;oldid=178385">https://en.cppreference.com/mwiki/index.php?title=cpp/utility/format/range_formatter&amp;oldid=178385</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./range_formatter.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/utility/format/range_formatter" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/utility/format/range_formatter" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/format/range_formatter&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/format/range_formatter&amp;oldid=178385" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/format/range_formatter&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div id="cpp-languagess" hidden="">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/utility/format/range_formatter" title="cpp/utility/format/range formatter" lang="es" hreflang="es">Español</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/utility/format/range_formatter" title="cpp/utility/format/range formatter" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/utility/format/range_formatter" title="cpp/utility/format/range formatter" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/utility/format/range_formatter" title="cpp/utility/format/range formatter" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 12 December 2024, at 17:21.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 4.295 secs. -->
+	
+
+
+</body></html>

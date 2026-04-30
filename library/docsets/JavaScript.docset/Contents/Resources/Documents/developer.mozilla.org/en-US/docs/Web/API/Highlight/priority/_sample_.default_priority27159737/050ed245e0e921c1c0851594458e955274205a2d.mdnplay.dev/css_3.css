@@ -1,0 +1,5 @@
+
+::highlight(highlight-2) { color: blue; }
+::highlight(highlight-1) { color: white; background: orange; }
+
+button.copy {display:none !important}

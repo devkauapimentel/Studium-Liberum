@@ -1,0 +1,401 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/algorithm.html --><head><meta charset="utf-8"><title>Talk:cpp/algorithm</title><link rel="stylesheet" href="../css_1.css" type="text/css"><link rel="stylesheet" href="../css_2.css" type="text/css"><link rel="stylesheet" href="../css_3.css" type="text/css"><link rel="stylesheet" href="../css_4.css" type="text/css"><link rel="stylesheet" href="../css_5.css" type="text/css"><script type="text/javascript" src="../js_1.js"></script><script type="text/javascript" src="../js_2.js"></script><script type="text/javascript" src="../js_1980.js"></script><script type="text/javascript" src="../js_4.js"></script><script type="text/javascript" src="../js_5.js"></script><script type="text/javascript" src="../js_6.js"></script><script type="text/javascript" src="../js_7.js"></script><script type="text/javascript" src="../js_8.js"></script><script type="text/javascript" src="../js_9.js"></script><script type="text/javascript" src="../js_10.js"></script><script type="text/javascript" src="../js_11.js"></script><script type="text/javascript" src="../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_algorithm skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Falgorithm&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Falgorithm" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../cpp/algorithm.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./algorithm.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./algorithm.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./algorithm.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./algorithm.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/algorithm</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Simple question: Why is count() listed here and distance() listed in the iterators library?--<a href="https://en.cppreference.com/mwiki/index.php?title=User:Gemini67&amp;action=edit&amp;redlink=1" class="new" title="User:Gemini67 (page does not exist)">Gemini67</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Gemini67&amp;action=edit&amp;redlink=1" class="new" title="User talk:Gemini67 (page does not exist)">talk</a>) 06:35, 19 September 2014 (PDT)
+</p>
+<dl><dd>The most direct answer is probably that <span class="t-lc"><a href="../cpp/algorithm/count.html" title="cpp/algorithm/count">std::count</a></span> is a part of the algorithms library in C++ (chapter 25 of the standard), while <span class="t-lc"><a href="../cpp/iterator/distance.html" title="cpp/iterator/distance">std::distance</a></span> is part of the Iterators library (chapter 24 of the standard). They are also declared in different headers. Note that <code>std::count</code> does something with the elements of a sequence, while <code>std::distance</code> operates on iterators only. --<a href="../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 04:21, 19 September 2014 (PDT)
+<dl><dd>Thank you for the detailed explanation.<br>However, the question arose because I was looking for a count() without a condition == distance(). But I never used distance() before so I did not think about it ...<br>Is it possible to add a link to the iterators library, saying something like 'for more operations on iterators look here'?--<a href="https://en.cppreference.com/mwiki/index.php?title=User:Gemini67&amp;action=edit&amp;redlink=1" class="new" title="User:Gemini67 (page does not exist)">Gemini67</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Gemini67&amp;action=edit&amp;redlink=1" class="new" title="User talk:Gemini67 (page does not exist)">talk</a>) 06:35, 19 September 2014 (PDT)
+</dd><dd> It's an interesting observation that count degenerates into distance: I made a note on <span class="t-lc"><a href="../cpp/algorithm/count.html" title="cpp/algorithm/count">std::count</a></span> page. Many libraries in C++ are closely related, especially the ones that originated in STL (containers, algorithms, function objects, and iterators): I'm not sure it makes sense to single one out. --<a href="../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 07:06, 19 September 2014 (PDT)
+</dd></dl>
+</dd></dl>
+<p><a href="https://en.cppreference.com/w/Special:Contributions/134.130.191.106" title="Special:Contributions/134.130.191.106">134.130.191.106</a> 05:51, 12 June 2015 (PDT)Would it be possible to show the return type of the algorithms in this page?
+</p>
+<hr>
+<p>Rather a very general question with respect to the Wiki engine, but as the "problem" hit me the first time here, I ask here:
+</p><p>I now frequently link (from my C++ training documents) to en.cppreference.com pages, and sometimes I want to link directly to a sub-section. Usually this is quite easy by taking the title of the sub-section, replace spaces with underscore and append the result with a '#' to the page URL.
+</p><p>But I don't know how the parentheses - as in some subsection names of this page, e.g. "... (on sorted ranges)" -  need to be mapped and what I tried naively doesn't appear to work.
+</p><p><a href="../User%25253AMwe.html" title="User:Mwe">Mwe</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Mwe&amp;action=edit&amp;redlink=1" class="new" title="User talk:Mwe (page does not exist)">talk</a>) 09:38, 12 July 2015 (PDT)
+</p>
+<dl><dd>It's <a rel="nofollow" class="external free" href="../cpp/algorithm.html#Binary_search_operations_.28on_sorted_ranges.29">http://en.cppreference.com/w/cpp/algorithm#Binary_search_operations_.28on_sorted_ranges.29</a>. <a href="../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 12:06, 12 July 2015 (PDT)
+</dd></dl>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./algorithm.html#Is_it_appropriate_to_place_for_each_under_non-modifying_sequence_operations.3F"><span class="tocnumber">1</span> <span class="toctext">Is it appropriate to place for_each under non-modifying sequence operations?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./algorithm.html#Explicit_statement_for_empty_ranges_should_be_added"><span class="tocnumber">2</span> <span class="toctext">Explicit statement for empty ranges should be added</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./algorithm.html#Making_the_constrained_algorithms_more_obvious"><span class="tocnumber">3</span> <span class="toctext">Making the constrained algorithms more obvious</span></a>
+<ul>
+<li class="toclevel-2"><a href="./algorithm.html#Modifying_sequence_operations"><span class="tocnumber">3.1</span> <span class="toctext">Modifying sequence operations</span></a></li>
+<li class="toclevel-2"><a href="./algorithm.html#Modifying_sequence_operations_2"><span class="tocnumber">3.2</span> <span class="toctext">Modifying sequence operations</span></a></li>
+<li class="toclevel-2"><a href="./algorithm.html#Modifying_sequence_operations_3"><span class="tocnumber">3.3</span> <span class="toctext">Modifying sequence operations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="./algorithm.html#Page_name.3F"><span class="tocnumber">4</span> <span class="toctext">Page name?</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;action=edit&amp;section=1" title="Edit section: Is it appropriate to place for each under non-modifying sequence operations?">edit</a>]</span> <span class="mw-headline" id="Is_it_appropriate_to_place_for_each_under_non-modifying_sequence_operations.3F"> Is it appropriate to place for_each under non-modifying sequence operations? </span></h2>
+<p>If the elements in the sequence are mutable, it's possible to modify the elements with <span class="t-lc"><a href="../cpp/algorithm/for_each.html" title="cpp/algorithm/for each">std::for_each</a></span> algorithm.
+</p><p>Or do I misunderstand the terminology here?
+</p>
+<dl><dd> 'Modifying' in this context is referring to the sequence itself rather than the values within the sequence. <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../cpp/algorithm/for_each.html"><span class="kw1580">std::<span class="me2">for_each</span></span></a></span></span> won't invalidate any iterators (unlike e.g. <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../cpp/algorithm/reverse.html"><span class="kw1614">std::<span class="me2">reverse</span></span></a></span></span>), nor is it capable of producing a new sequence (e.g. <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../cpp/algorithm/transform.html"><span class="kw1601">std::<span class="me2">transform</span></span></a></span></span>). --<a href="../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 06:15, 29 November 2017 (PST)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;action=edit&amp;section=2" title="Edit section: Explicit statement for empty ranges should be added">edit</a>]</span> <span class="mw-headline" id="Explicit_statement_for_empty_ranges_should_be_added"> Explicit statement for empty ranges should be added </span></h2>
+<p>I think there should be added an explicit statement that executing any algo on empty range (first==last) is safe and either a noop or returns last immediately (if algo returns something or not).
+</p><p><a href="https://en.cppreference.com/w/Special:Contributions/192.64.159.11" title="Special:Contributions/192.64.159.11">192.64.159.11</a> 09:46, 16 March 2018 (PDT) Slava
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;action=edit&amp;section=3" title="Edit section: Making the constrained algorithms more obvious">edit</a>]</span> <span class="mw-headline" id="Making_the_constrained_algorithms_more_obvious"> Making the constrained algorithms more obvious </span></h2>
+<p>I suspect that newcomers will skip past the constrained algorithms section straight to the <i>Cpp17Algorithms</i> (sic) below, so it might be worthwhile moving the unconstrained algorithms into a <i>Legacy Algorithms</i> sub-page. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Cjdb&amp;action=edit&amp;redlink=1" class="new" title="User:Cjdb (page does not exist)">Cjdb</a> (<a href="../User_talk%25253ACjdb.html" title="User talk:Cjdb">talk</a>) 20:11, 1 July 2020 (PDT)
+</p>
+<dl><dd> how about inlining the technical differences in the same cpp/algorithm page, keeping the grouping by type, e.g.
+</dd></dl>
+<table class="t-dsc-begin">
+
+<tbody><tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Modifying_sequence_operations">  Modifying sequence operations </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../cpp/algorithm/copy.html" title="cpp/algorithm/copy"> <span class="t-lines"><span>copy</span><span>copy_if</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  copies a range of elements to a new location <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_copy&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="../cpp/algorithm/ranges/copy.html" title="cpp/algorithm/ranges/copy"> <span class="t-lines"><span>ranges::copy</span><span>ranges::copy_if</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> copies a range of elements to a new location<br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_copy&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../cpp/algorithm/copy_n.html" title="cpp/algorithm/copy n"> <span class="t-lines"><span>copy_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  copies a number of elements to a new location <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_copy_n&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="../cpp/algorithm/ranges/copy_n.html" title="cpp/algorithm/ranges/copy n"> <span class="t-lines"><span>ranges::copy_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> copies a number of elements to a new location<br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_copy_n&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<dl><dd> we'd have to drop "included in header" to avoid noise in that list --<a href="../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:08, 2 July 2020 (PDT)
+<dl><dd> I'd want the names of the constrained algos to have <code>ranges::</code> prefixed. <a href="../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 06:50, 2 July 2020 (PDT)
+<dl><dd> SGTM (it's already been done for the CPOs) <a href="https://en.cppreference.com/mwiki/index.php?title=User:Cjdb&amp;action=edit&amp;redlink=1" class="new" title="User:Cjdb (page does not exist)">Cjdb</a> (<a href="../User_talk%25253ACjdb.html" title="User talk:Cjdb">talk</a>) 09:30, 2 July 2020 (PDT)
+</dd></dl>
+</dd><dd> Done, but I'm not entirely sure how to make the navbar's content not appear overcrowded. Any suggestions? <a href="https://en.cppreference.com/mwiki/index.php?title=User:Cjdb&amp;action=edit&amp;redlink=1" class="new" title="User:Cjdb (page does not exist)">Cjdb</a> (<a href="../User_talk%25253ACjdb.html" title="User talk:Cjdb">talk</a>) 11:10, 2 July 2020 (PDT)
+<dl><dd> One possible way is to simply replace the cpp/algorithms navbar with cpp/algorithms/ranges' navbar, which includes the former in its breadcrumbs. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Cjdb&amp;action=edit&amp;redlink=1" class="new" title="User:Cjdb (page does not exist)">Cjdb</a> (<a href="../User_talk%25253ACjdb.html" title="User talk:Cjdb">talk</a>) 13:15, 2 July 2020 (PDT)
+<dl><dd> I missed this discussion when reverting the changes, but the changes are awful, the page is incredibly noisy with all the ranges stuff inlined. I suggest either keeping things the way they are and relying on readers to see the constrained algorithms section at the top of the page (would be nice to assume that technical reference readers wouldn't miss something like that); or do what the standard text does by including the ranges versions of the algorithms alongside the regular versions in each page and deleting the constrained algorithms section. --<a href="../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 09:27, 3 August 2020 (PDT)
+<dl><dd> separate page for what should be front and center is much worse that having to browse a longer page (also, sub-headings make it somewhat less tedious). I do like the idea of adding an overload to each algorithm's page because, IMO, any way you look up "sort" on cppreference, be it browsing /cpp/algorithm or landing directly on /cpp/algorithm/sort should present the modern sorts (rangified and parallel) along with the old STL sort. Otherwise cppreference falls in the same trap as so many C++ books that bias for old features by describing the new ones as an afterthought. I don't think /cpp/algorithm list would that be much shorter, but it would avoid awkward repeated descriptions on the right:
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<p>current:
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Modifying_sequence_operations_2">  Modifying sequence operations </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../cpp/algorithm/copy.html" title="cpp/algorithm/copy"> <span class="t-lines"><span>copy</span><span>copy_if</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  copies a range of elements to a new location <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_copy&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="../cpp/algorithm/ranges/copy.html" title="cpp/algorithm/ranges/copy"> <span class="t-lines"><span>ranges::copy</span><span>ranges::copy_if</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> copies a range of elements to a new location<br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_copy&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../cpp/algorithm/copy_n.html" title="cpp/algorithm/copy n"> <span class="t-lines"><span>copy_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  copies a number of elements to a new location <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_copy_n&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="../cpp/algorithm/ranges/copy_n.html" title="cpp/algorithm/ranges/copy n"> <span class="t-lines"><span>ranges::copy_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> copies a number of elements to a new location<br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_copy_n&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<p>possible:
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Modifying_sequence_operations_3">  Modifying sequence operations </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../cpp/algorithm/copy.html" title="cpp/algorithm/copy"> <span class="t-lines"><span>copy</span><span>copy_if</span><span>ranges::copy</span><span>ranges::copy_if</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>   copies a range of elements to a new location  <br> <span class="t-mark">(function template)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../cpp/algorithm/copy_n.html" title="cpp/algorithm/copy n"> <span class="t-lines"><span>copy_n</span><span>ranges::copy_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>   copies a number of elements to a new location  <br> <span class="t-mark">(function template)</span>
+</td></tr>
+
+</tbody></table>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd> I'll flip it back to Cjdb's version for now though, it's better than a separate page.  --<a href="../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 11:53, 3 August 2020 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<p>Okay I agree with that reasoning. I think it's probably the repeated description that make the page look so noisy in the first place. I do worry that a combined old-school and ranges description of the algorithms would become super noisy instead though, mostly due to the ranges' use of concepts and the extra template parameters. --<a href="../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 16:58, 3 August 2020 (PDT)
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;action=edit&amp;section=4" title="Edit section: Page name?">edit</a>]</span> <span class="mw-headline" id="Page_name.3F"> Page name? </span></h2>
+<p>The page URL is "algorithm" the header is <code>&lt;algorithm&gt;</code>, yet the name on the page is "Algorithms library". Is there any reason not to have that text say "Algorithm library"? That has the distinct advantage that it's consistent with the header name and so helps people remember to <code>#include &lt;algorithm&gt;</code>. <a href="https://en.cppreference.com/mwiki/index.php?title=User:BenFrantzDale&amp;action=edit&amp;redlink=1" class="new" title="User:BenFrantzDale (page does not exist)">BenFrantzDale</a> (<a href="../User_talk%25253ABenFrantzDale.html" title="User talk:BenFrantzDale">talk</a>) 16:25, 1 April 2021 (PDT)
+</p>
+<dl><dd> Not a chance, IMO, - too may links to update, to say the least. Also HTML/browsers-diversity put their own restrictions.<br> You may download the site's archive (if not yet) [<a rel="nofollow" class="external autonumber" href="../File%25253Acppreference-doc-20190607.zip.html">[1]</a>](~53mb) to investigate this site's dirs/pages structure.) Hm, 1 April? --<a href="../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 06:03, 2 April 2021 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> FWIW the C++ standard calls it "Algorithms library" <a rel="nofollow" class="external free" href="https://eel.is/c++draft/algorithms">https://eel.is/c++draft/algorithms</a> --<a href="../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 07:15, 6 April 2021 (PDT)
+</dd></dl>
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1374/1000000
+Preprocessor generated node count: 2073/1000000
+Post‐expand include size: 52607/4194304 bytes
+Template argument size: 11571/4194304 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13750-0!*!0!!en!*!* and timestamp 20241126113221 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;oldid=127999">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;oldid=127999</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./algorithm.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/algorithm" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/algorithm" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;oldid=127999" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 6 April 2021, at 06:15.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.403 secs. -->
+	
+
+
+</body></html>

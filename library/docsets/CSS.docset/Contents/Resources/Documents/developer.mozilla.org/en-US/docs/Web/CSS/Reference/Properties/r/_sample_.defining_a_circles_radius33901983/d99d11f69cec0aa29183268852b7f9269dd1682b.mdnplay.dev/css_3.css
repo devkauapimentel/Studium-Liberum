@@ -1,0 +1,5 @@
+
+svg { border: 1px solid black; }
+circle:first-of-type { r: 30px; fill: lightgreen; stroke: black; }
+
+button.copy {display:none !important}

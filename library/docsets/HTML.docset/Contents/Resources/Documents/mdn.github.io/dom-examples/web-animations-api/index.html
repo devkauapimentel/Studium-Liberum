@@ -1,0 +1,84 @@
+<html><!-- Mirrored from mdn.github.io/dom-examples/web-animations-api/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 14:00:46 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Web animations API demos | dom-examples</title>
+<meta name="generator" content="Jekyll v3.10.0">
+<meta property="og:title" content="Web animations API demos">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Code examples that accompany various MDN DOM and Web API documentation pages">
+<meta property="og:description" content="Code examples that accompany various MDN DOM and Web API documentation pages">
+<link rel="canonical" href="index.html">
+<meta property="og:url" content="index.html">
+<meta property="og:site_name" content="dom-examples">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Web animations API demos">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Code examples that accompany various MDN DOM and Web API documentation pages","headline":"Web animations API demos","url":"https://mdn.github.io/dom-examples/web-animations-api/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="../assets/css/style8b55.css?v=0dfd8b537402206b0ad4d70baecf18b4d9bd8226">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/dom-examples/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="../index.html">dom-examples</a></h1>
+      
+
+      <h1 id="web-animations-api-demos">Web animations API demos</h1>
+
+<p>Some simple demos to show Web Animations API features.</p>
+
+<h2 id="implicit-tofrom-keyframes">Implicit to/from keyframes</h2>
+<p>That is, when you write an animation, you can leave out the end state of the animation from the keyframes, and the browser will infer it, if it can. For example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let rotate360 = [
+  { transform: 'rotate(360deg)' }
+];
+</code></pre></div></div>
+
+<p><a href="implicit-keyframes.html">See the demo live</a>.</p>
+
+<h2 id="automatically-removing-filling-animations">Automatically removing filling animations</h2>
+<p>It is possible to trigger a large number of animations on the same element. If they are indefinite (i.e., forwards-filling), this can result in a huge animations list, which could create a memory leak. For this reason, we’ve implemented the part of the Web Animations spec that automatically removes overriding forward filling animations, unless the developer explicitly specifies to keep them.</p>
+
+<p><a href="replace-indefinite-animations.html">See a live demo of this</a>.</p>
+
+<p>The related JavaScript features are as follows:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">animation.commitStyles()</code> — run this method to commit the end styling state of an animation to the element being animated, even after that animation has been removed. It will cause the end styling state to be written to the element being animated, in the form of properties inside a style attribute.</li>
+  <li><code class="language-plaintext highlighter-rouge">animation.onremove</code> — allows you to run an event handler that fires when the animation is removed (i.e., put into an active replace state).</li>
+  <li><code class="language-plaintext highlighter-rouge">animation.persist()</code> — when you explicitly want animations to be retained, then invoke persist().</li>
+  <li><code class="language-plaintext highlighter-rouge">animation.replaceState</code> — returns the replace state of the animation. This will be active if the animation has been removed, or persisted if persist() has been invoked.</li>
+</ul>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/mdn/dom-examples/edit/main/web-animations-api/README.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="../../../cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/dom-examples/web-animations-api/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 14:00:46 GMT --></html>

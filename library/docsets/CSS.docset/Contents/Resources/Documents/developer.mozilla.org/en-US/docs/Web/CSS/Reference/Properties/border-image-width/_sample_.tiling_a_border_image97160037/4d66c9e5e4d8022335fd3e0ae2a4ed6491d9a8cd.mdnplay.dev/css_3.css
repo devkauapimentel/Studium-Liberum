@@ -1,0 +1,4 @@
+
+p { border-width: 20px; border-style: solid; border-color: currentcolor; border-image: url("./en-US/docs/Web/CSS/Reference/Properties/border-image-width/border.png") 30 / 16px round; padding: 40px; }
+
+button.copy {display:none !important}

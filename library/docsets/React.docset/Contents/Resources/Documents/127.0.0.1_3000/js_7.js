@@ -1,0 +1,3 @@
+
+
+self.__BUILD_MANIFEST = (function(a,b){return {__rewrites:{afterFiles:[],beforeFiles:[{has:a,source:"\u002F:path*.md",destination:b},{has:[{type:"header",key:"accept",value:"(.*text\u002Fmarkdown.*)"}],source:"\u002F:path((?!llms\\.txt|api\u002Fmd).*)",destination:b}],fallback:[]},__routerFilterStatic:a,__routerFilterDynamic:a,"/_error":["static\u002Fchunks\u002Fpages\u002F_error.js"],"/[[...markdownPath]]":["static\u002Fchunks\u002Fpages\u002F[[...markdownPath]].js"],sortedPages:["\u002F_app","\u002F_error","\u002F[[...markdownPath]]"]}}(void 0,"\u002Fapi\u002Fmd\u002F:path*"));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

@@ -1,0 +1,5 @@
+
+.box { border: 2px dotted rgb(96, 139, 168); display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); width: 500px; }
+.box > * { border: 2px solid rgb(96, 139, 168); border-radius: 5px; background-color: rgba(96, 139, 168, 0.2); }
+
+button.copy {display:none !important}

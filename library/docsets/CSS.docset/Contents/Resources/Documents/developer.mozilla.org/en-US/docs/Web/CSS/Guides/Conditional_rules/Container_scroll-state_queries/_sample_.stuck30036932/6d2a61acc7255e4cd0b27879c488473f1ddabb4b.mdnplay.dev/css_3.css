@@ -1,0 +1,18 @@
+
+* { box-sizing: border-box; }
+html { font-family: Helvetica, Arial, sans-serif; height: 100%; }
+body { height: inherit; width: 100%; max-width: 540px; padding: 20px; margin: 0px auto; }
+p { line-height: 1.5; }
+img { display: block; width: 90%; margin: 30px auto; padding: 20px; border: 2px solid gray; aspect-ratio: 3 / 2; }
+header { background: white; position: sticky; top: 0px; container-name: sticky-heading; }
+h2, header p { margin: 0px; transition: background 0.4s; }
+h2 { padding: 20px 5px; margin-bottom: 10px; }
+header p { font-style: italic; padding: 10px 5px; }
+@container sticky-heading scroll-state(stuck: top) {
+  h2, p { background: rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.467) 0px 5px 2px; }
+}
+@supports not (container-type: scroll-state) {
+  body::before { content: "Your browser does not support `scroll-state` container queries."; color: black; background-color: wheat; position: fixed; left: 0px; right: 0px; top: 40%; text-align: center; padding: 1rem 0px; z-index: 1; }
+}
+
+button.copy {display:none !important}

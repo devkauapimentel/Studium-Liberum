@@ -1,0 +1,5 @@
+
+div { width: 300px; height: 200px; background-repeat: no-repeat; border: 2px solid black; }
+div { background-image: url("./en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Scaling_SVG_backgrounds/100px-wide-no-height-or-ratio.svg"); background-size: 200px auto; }
+
+button.copy {display:none !important}

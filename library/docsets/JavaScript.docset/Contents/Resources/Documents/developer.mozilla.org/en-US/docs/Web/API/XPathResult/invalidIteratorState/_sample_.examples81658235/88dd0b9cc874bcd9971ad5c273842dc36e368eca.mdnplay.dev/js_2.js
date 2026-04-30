@@ -1,0 +1,16 @@
+
+          const xpath = "//div";
+const result = document.evaluate(
+  xpath,
+  document,
+  null,
+  XPathResult.ANY_TYPE,
+  null,
+);
+// Invalidates the iterator state
+document.querySelector("div").remove();
+document.querySelector("output").textContent = result.invalidIteratorState
+  ? "invalid"
+  : "valid";
+;
+        

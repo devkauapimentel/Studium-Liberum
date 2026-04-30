@@ -1,0 +1,395 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/utility/functional/function.html --><head><meta charset="utf-8"><title>Talk:cpp/utility/functional/function</title><link rel="stylesheet" href="../../../css_1.css" type="text/css"><link rel="stylesheet" href="../../../css_2.css" type="text/css"><link rel="stylesheet" href="../../../css_3.css" type="text/css"><link rel="stylesheet" href="../../../css_4.css" type="text/css"><link rel="stylesheet" href="../../../css_5.css" type="text/css"><script type="text/javascript" src="../../../js_1.js"></script><script type="text/javascript" src="../../../js_2.js"></script><script type="text/javascript" src="../../../js_5245.js"></script><script type="text/javascript" src="../../../js_4.js"></script><script type="text/javascript" src="../../../js_5.js"></script><script type="text/javascript" src="../../../js_6.js"></script><script type="text/javascript" src="../../../js_7.js"></script><script type="text/javascript" src="../../../js_8.js"></script><script type="text/javascript" src="../../../js_9.js"></script><script type="text/javascript" src="../../../js_10.js"></script><script type="text/javascript" src="../../../js_11.js"></script><script type="text/javascript" src="../../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_utility_functional_function skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Futility%2Ffunctional%2Ffunction&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Futility%2Ffunctional%2Ffunction" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../../cpp/utility/functional/function.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./function.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./function.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./function.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/function&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/function&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/function&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./function.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/utility/functional/function</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../../utility.html" title="Talk:cpp/utility">utility</a>‎ | <a href="../functional.html" title="Talk:cpp/utility/functional">functional</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./function.html#Incomplete_Sentence_-_help_needed"><span class="tocnumber">1</span> <span class="toctext">Incomplete Sentence - help needed</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./function.html#std::function_as_function_argument"><span class="tocnumber">2</span> <span class="toctext">std::function as function argument</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./function.html#In_the_section_.22Non_member_functions.22"><span class="tocnumber">3</span> <span class="toctext">In the section "Non member functions"</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./function.html#example_code_compilation_problem"><span class="tocnumber">4</span> <span class="toctext">example code compilation problem</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/function&amp;action=edit&amp;section=1" title="Edit section: Incomplete Sentence - help needed">edit</a>]</span> <span class="mw-headline" id="Incomplete_Sentence_-_help_needed">Incomplete Sentence - help needed</span></h2>
+<p>This sentence is incomplete:
+"Care should be taken when a std::function whose result type is a reference initialized from a lambda expression without a trailing-return-type."
+The entire "whose result is a reference..." clause is just modifying "a std::function", so it reads as "Care should be taken when a std::function whose x is y." I believe there should be an "is" between "reference" and "initialized", like so:
+"Care should be taken when a std::function whose result type is a reference is initialized from a lambda expression without a trailing-return-type."
+Can anyone confirm?
+<a href="https://en.cppreference.com/mwiki/index.php?title=User:Kslattery&amp;action=edit&amp;redlink=1" class="new" title="User:Kslattery (page does not exist)">Kslattery</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Kslattery&amp;action=edit&amp;redlink=1" class="new" title="User talk:Kslattery (page does not exist)">talk</a>) 10:53, 9 June 2022 (PDT)
+</p>
+<dl><dd> OK, <a href="../../../cpp/utility/functional/function.html#Notes" title="cpp/utility/functional/function">updated</a>. Thanks.&nbsp;:) --<a href="../../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 11:42, 9 June 2022 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/function&amp;action=edit&amp;section=2" title="Edit section: std::function as function argument">edit</a>]</span> <span class="mw-headline" id="std::function_as_function_argument"> std::function as function argument </span></h2>
+<p>I think there should also be an example for using a <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../cpp/utility/functional/function.html"><span class="kw1064">std::<span class="me2">function</span></span></a></span></span> as function argument. Especially when using that with a functor (i.e. a class with <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="br0">(</span><span class="br0">)</span></span></span>) with <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../cpp/utility/functional/function.html"><span class="kw1064">std::<span class="me2">function</span></span></a></span></span> where the content of the functor is modified by the function call and should be retrievable later.
+</p><p>As an example:
+</p>
+<pre>#include&lt;functional&gt;
+#include&lt;iostream&gt;
+void pass_on_value(int value, std::function&lt;void(int)&gt; const &amp; func)
+{
+  func(value);
+} 
+
+struct Sum
+{
+  int value = 0;
+  void operator()(int i) { value += i; }
+};
+
+int main()
+{
+std::function&lt;void(int)&gt; sum = Sum;
+pass_on_value(5, sum);
+pass_on_value(3, sum);
+Sum* p = sum.target&lt;Sum&gt;();
+std::cout &lt;&lt; p-&gt;value &lt;&lt; std::endl; // "correctly" gives 8
+
+Sum other;
+pass_on_value(5, other);
+pass_on_value(3, other);
+std::cout &lt;&lt; other.value &lt;&lt; std::endl; // prints 0
+}
+
+</pre>
+<p><a href="https://en.cppreference.com/w/Special:Contributions/188.104.155.126" title="Special:Contributions/188.104.155.126">188.104.155.126</a> 12:24, 2 February 2017 (PST) Michael
+</p>
+<dl><dd> generally top-level pages for classes try to show the most general use cases, if at all. I'd even say the example on std::function's top-level page is more suitable for the constructor  (<span class="t-lc"><a href="../../../cpp/utility/functional/function/function.html" title="cpp/utility/functional/function/function">std::function::function</a></span>, which has no example now), but people have found it useful - I've seen it mentioned on the internet and at work as "look what you can do with std::function", so it seems to be good where it is. I agree that passing an std::function as a function parameter would be a good general use case, if we show where it is better than a directly callable template parameter. A stateful function object, while cool, is a rather specific use of std::function. I think it is actually a good demo of <span class="t-lc"><a href="../../../cpp/utility/functional/function/target.html" title="cpp/utility/functional/function/target">std::function::target</a></span> (current example there compares the target with known targets, but doesn't actually use the target's state). --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 13:04, 2 February 2017 (PST)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/function&amp;action=edit&amp;section=3" title="Edit section: In the section &quot;Non member functions&quot;">edit</a>]</span> <span class="mw-headline" id="In_the_section_.22Non_member_functions.22"> In the section "Non member functions" </span></h2>
+<p>nullptr is not declared in the std namespace.
+</p>
+<dl><dd> you're right, that's a bug. Fixed --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 14:23, 22 April 2015 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/function&amp;action=edit&amp;section=4" title="Edit section: example code compilation problem">edit</a>]</span> <span class="mw-headline" id="example_code_compilation_problem"> example code compilation problem </span></h2>
+<p>While the example code compiles fine using g++ (4.8.0) and clang++ (3.2) on my linux platform, it does not seem to compile using Visual Studio 2012, using either msvc++ or Intel C++ 13.1. The error I get can be found at the end of my post (sorry for the monster I pasted, but template errors often are just that). It seems to be an error related to the 'functional' header on windows.
+</p>
+<pre> 1&gt;  main.cpp
+ 1&gt;c:\program files (x86)\microsoft visual studio 11.0\vc\include\functional(516): error C2664: 'std::_Func_class&lt;_Ret,_V0_t,_V1_t&gt;::_Set'&nbsp;: cannot convert parameter 1 from '_Myimpl *' to 'std::_Func_base&lt;_Rx,_V0_t,_V1_t&gt; *'
+ 1&gt;          with
+ 1&gt;          [
+ 1&gt;              _Ret=void,
+ 1&gt;              _V0_t=const Foo &amp;,
+ 1&gt;              _V1_t=int
+ 1&gt;          ]
+ 1&gt;          and
+ 1&gt;          [
+ 1&gt;              _Rx=void,
+ 1&gt;              _V0_t=const Foo &amp;,
+ 1&gt;              _V1_t=int
+ 1&gt;          ]
+ 1&gt;          Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+ 1&gt;          c:\program files (x86)\microsoft visual studio 11.0\vc\include\functional(516)&nbsp;: see reference to function template instantiation 'void std::_Func_class&lt;_Ret,_V0_t,_V1_t&gt;::_Do_alloc&lt;_Myimpl,_Fret(__thiscall Foo::* const &amp;)(int) const,_Alloc&gt;(_Fty,_Alloc)' being compiled
+ 1&gt;          with
+ 1&gt;          [
+ 1&gt;              _Ret=void,
+ 1&gt;              _V0_t=const Foo &amp;,
+ 1&gt;              _V1_t=int,
+ 1&gt;              _Fret=void,
+ 1&gt;              _Alloc=std::allocator&lt;std::_Func_class&lt;void,const Foo &amp;,int&gt;&gt;,
+ 1&gt;              _Fty=void (__thiscall Foo::* const &amp;)(int) const
+ 1&gt;          ]
+ 1&gt;          c:\program files (x86)\microsoft visual studio 11.0\vc\include\functional(516)&nbsp;: see reference to function template instantiation 'void std::_Func_class&lt;_Ret,_V0_t,_V1_t&gt;::_Do_alloc&lt;_Myimpl,_Fret(__thiscall Foo::* const &amp;)(int) const,_Alloc&gt;(_Fty,_Alloc)' being compiled
+ 1&gt;          with
+ 1&gt;          [
+ 1&gt;              _Ret=void,
+ 1&gt;              _V0_t=const Foo &amp;,
+ 1&gt;              _V1_t=int,
+ 1&gt;              _Fret=void,
+ 1&gt;              _Alloc=std::allocator&lt;std::_Func_class&lt;void,const Foo &amp;,int&gt;&gt;,
+ 1&gt;              _Fty=void (__thiscall Foo::* const &amp;)(int) const
+ 1&gt;          ]
+ 1&gt;          c:\program files (x86)\microsoft visual studio 11.0\vc\include\functional(516)&nbsp;: see reference to function template instantiation 'void std::_Func_class&lt;_Ret,_V0_t,_V1_t&gt;::_Reset_alloc&lt;_Fret,Foo,int,std::allocator&lt;_Ty&gt;&gt;(_Fret (__thiscall Foo::* const )(int) const,_Alloc)' being compiled
+ 1&gt;          with
+ 1&gt;          [
+ 1&gt;              _Ret=void,
+ 1&gt;              _V0_t=const Foo &amp;,
+ 1&gt;              _V1_t=int,
+ 1&gt;              _Fret=void,
+ 1&gt;              _Ty=std::_Func_class&lt;void,const Foo &amp;,int&gt;,
+ 1&gt;              _Alloc=std::allocator&lt;std::_Func_class&lt;void,const Foo &amp;,int&gt;&gt;
+ 1&gt;          ]
+ 1&gt;          c:\program files (x86)\microsoft visual studio 11.0\vc\include\functional(516)&nbsp;: see reference to function template instantiation 'void std::_Func_class&lt;_Ret,_V0_t,_V1_t&gt;::_Reset_alloc&lt;_Fret,Foo,int,std::allocator&lt;_Ty&gt;&gt;(_Fret (__thiscall Foo::* const )(int) const,_Alloc)' being compiled
+ 1&gt;          with
+ 1&gt;          [
+ 1&gt;              _Ret=void,
+ 1&gt;              _V0_t=const Foo &amp;,
+ 1&gt;              _V1_t=int,
+ 1&gt;              _Fret=void,
+ 1&gt;              _Ty=std::_Func_class&lt;void,const Foo &amp;,int&gt;,
+ 1&gt;              _Alloc=std::allocator&lt;std::_Func_class&lt;void,const Foo &amp;,int&gt;&gt;
+ 1&gt;          ]
+ 1&gt;          c:\program files (x86)\microsoft visual studio 11.0\vc\include\functional(675)&nbsp;: see reference to function template instantiation 'void std::_Func_class&lt;_Ret,_V0_t,_V1_t&gt;::_Reset&lt;void,Foo,int&gt;(_Fret (__thiscall Foo::* const )(int) const)' being compiled
+ 1&gt;          with
+ 1&gt;          [
+ 1&gt;              _Ret=void,
+ 1&gt;              _V0_t=const Foo &amp;,
+ 1&gt;              _V1_t=int,
+ 1&gt;              _Fret=void
+ 1&gt;          ]
+ 1&gt;          c:\program files (x86)\microsoft visual studio 11.0\vc\include\functional(675)&nbsp;: see reference to function template instantiation 'void std::_Func_class&lt;_Ret,_V0_t,_V1_t&gt;::_Reset&lt;void,Foo,int&gt;(_Fret (__thiscall Foo::* const )(int) const)' being compiled
+ 1&gt;          with
+ 1&gt;          [
+ 1&gt;              _Ret=void,
+ 1&gt;              _V0_t=const Foo &amp;,
+ 1&gt;              _V1_t=int,
+ 1&gt;              _Fret=void
+ 1&gt;          ]
+ 1&gt;          c:\users\robbe\documents\projects\maxwell\src\scratch\main.cpp(30)&nbsp;: see reference to function template instantiation 'std::function&lt;_Fty&gt;::function&lt;void(__thiscall Foo::* )(int) const&gt;(_Fx &amp;&amp;)' being compiled
+ 1&gt;          with
+ 1&gt;          [
+ 1&gt;              _Fty=void (const Foo &amp;,int),
+ 1&gt;              _Fx=void (__thiscall Foo::* )(int) const
+ 1&gt;          ]
+ 1&gt;          c:\users\robbe\documents\projects\maxwell\src\scratch\main.cpp(30)&nbsp;: see reference to function template instantiation 'std::function&lt;_Fty&gt;::function&lt;void(__thiscall Foo::* )(int) const&gt;(_Fx &amp;&amp;)' being compiled
+ 1&gt;          with
+ 1&gt;          [
+ 1&gt;              _Fty=void (const Foo &amp;,int),
+ 1&gt;              _Fx=void (__thiscall Foo::* )(int) const
+ 1&gt;          ]
+ 1&gt;
+ 1&gt;Build FAILED.
+</pre>
+<dl><dd>Documenting the bugs of individual compilers or libraries is generally beyond the scope of the wiki. Although major deficiencies sometimes appear in the "Notes" sections, it's hard to maintain such lists as compiler vendors keep releasing new versions. If you want to use equivalent functionality on a Windows platform, I recommend the <a rel="nofollow" class="external text" href="http://www.boost.org/doc/libs/1_53_0/doc/html/function.html">boost.Function library</a>]. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 12:16, 7 April 2013 (PDT)
+</dd></dl>
+<dl><dd>Thank you for the clarification. My intent was not to document platform deficiencies but to make sure the problem did not lie with the code.
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 129/1000000
+Preprocessor generated node count: 331/1000000
+Post‐expand include size: 773/4194304 bytes
+Template argument size: 116/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9909-0!*!0!!en!*!* and timestamp 20240518044109 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/function&amp;oldid=140141">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/function&amp;oldid=140141</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./function.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/utility/functional/function" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/utility/functional/function" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/function&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/function&amp;oldid=140141" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/function&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 9 June 2022, at 11:42.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 7,441 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.326 secs. -->
+	
+
+
+</body></html>

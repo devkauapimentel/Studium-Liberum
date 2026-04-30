@@ -1,0 +1,48 @@
+<html>
+  <!-- Online page at https://b25cfc857cf555f9301f43d90a49ccf317205c43.mdnplay.dev/en-US/docs/Web/HTML/Reference/Elements/button/runner.html?uuid=b25cfc857cf555f9301f43d90a49ccf317205c43&state=lVNNj9MwEP0rQ06ttJvct0kRYrkhkOBUEQ6uPW0Mjh1sp1W16n9n%2FJG0RdquOMUzb%2BbNm4%2B8FJ3vVfFU1NvRe6PBnwZs2iJZbQHc9D3TYmcsefuTkEyZ%2FcVPTteZ42NvBFNtsW41wNcBNTynQF1XiYqQOiWDFDdUMYewA3DFnCPsaNkwoM0QgVS9z%2B9gSVTCoZ895FO4Ry3WH5QyR%2FCddJCLeUO0xiEcO1Jl8c%2BIzqN4X1c55YqENFyZ5JB6GP00EsuENNR5lK%2FDS7M%2BAJGfzANTI04Y75D%2FRgHVLaNiW1SQphni1l8MKQnOayHVrZL%2FEXZC97qyBN6RFAPWG3Rviaqrf7ZAjsuSpmN6%2B3jyQh6z0pn%2FW%2FKH9X2MUC4yH1M0h8vJMKulDtydFAL1emNG6Edi4J0J62%2BLTWx%2BvoerIynrakhXmHsM3wDQs3gouHP0g5S5BLyESG6UsU%2FE1jNvVq0%2Bx8hfIZAbTWXz%2BTUgDB971L6khuzpOyrk3thFW0zTWFJ6yomLvJcSRkwJJXkC7n7MK%2F45k0wy79CU87RC7VbnKTAhPh0o%2FrOkP0RjiORMc6T%2F%2BgEWuIRmnZqXO1i8wzKBbKsIsuhHq1cTGjsp49lB0zSQjn2Z0mHSWKZdkdQdUw5XCcRysBh0POOOjcovlhE4A1LMqwzejomANnEOGbQO39GYaCNK7jtfnP8C&code=48560286& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <button type="button" commandfor="mydialog" command="show-modal">
+  Open Dialog
+</button>
+<dialog id="mydialog">
+  <div class="wrapper">
+    <form>
+      <fieldset>
+        <legend>Allow this dialog to close when requested?</legend>
+        <div>
+          <input type="radio" id="no" name="close" value="no" checked="">
+          <label for="no">No</label>
+        </div>
+        <div>
+          <input type="radio" id="yes" name="close" value="yes">
+          <label for="yes">Yes</label>
+        </div>
+      </fieldset>
+    </form>
+    <button commandfor="mydialog" command="request-close">
+      Request to Close
+    </button>
+    <p class="warning" hidden="">You must choose "Yes" to close this dialog.</p>
+  </div>
+</dialog>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../../js_3.js'></script>
+</body>
+</html>

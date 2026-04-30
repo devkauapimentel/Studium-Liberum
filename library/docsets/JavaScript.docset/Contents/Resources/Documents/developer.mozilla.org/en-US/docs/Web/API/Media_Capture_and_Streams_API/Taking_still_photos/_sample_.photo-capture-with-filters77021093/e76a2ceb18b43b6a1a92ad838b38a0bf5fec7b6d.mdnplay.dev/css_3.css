@@ -1,0 +1,12 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1rem; line-height: normal; font-family: "Lucida Grande", Arial, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; padding: 0.8rem; }
+button { display: block; margin-block: 1rem; }
+#start-button { position: relative; margin: auto; bottom: 32px; background-color: rgba(0, 150, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.7); box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 1px 2px; font-size: 14px; color: white; }
+#video, #photo { border: 1px solid black; box-shadow: black 2px 2px 3px; width: 100%; height: auto; }
+#canvas { display: none; }
+.camera, .output { display: inline-block; width: 49%; height: auto; }
+.output { vertical-align: top; }
+code { background-color: lightgrey; }
+#video { filter: grayscale(100%); }
+
+button.copy {display:none !important}

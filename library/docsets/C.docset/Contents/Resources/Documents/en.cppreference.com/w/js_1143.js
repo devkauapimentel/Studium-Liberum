@@ -1,0 +1,3 @@
+if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Talk","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":1,"wgPageName":"Talk:cpp/utility","wgTitle":"cpp/utility","wgCurRevisionId":19152,"wgArticleId":5205,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Talk:cpp/utility","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}

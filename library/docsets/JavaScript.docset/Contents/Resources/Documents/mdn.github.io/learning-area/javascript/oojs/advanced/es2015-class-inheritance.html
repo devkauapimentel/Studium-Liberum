@@ -1,0 +1,70 @@
+<html><!-- Mirrored from mdn.github.io/learning-area/javascript/oojs/advanced/es2015-class-inheritance.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 23:52:31 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Object-oriented JavaScript inheritance</title>
+  </head>
+
+  <body>
+
+  
+
+    <script>
+
+    // Basic Person class
+
+    class Person {
+      constructor(first, last, age, gender, interests) {
+        this.name = {
+          first,
+          last
+        };
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+      }
+
+      greeting() {
+        console.log(`Hi! I'm ${this.name.first}`);
+      };
+
+      farewell() {
+        console.log(`${this.name.first} has left the building. Bye for now!`);
+      };
+    }
+
+    // Instantiate Person
+
+    let han = new Person('Han', 'Solo', 25, 'male', ['Smuggling']);
+    han.greeting();
+    // Hi! I'm Han
+
+    let leia = new Person('Leia', 'Organa', 19, 'female' ['Government']);
+    leia.farewell();
+    // Leia has left the building. Bye for now
+
+    // Extend Person with Teacher
+
+    class Teacher extends Person {
+      constructor(first, last, age, gender, interests, subject, grade) {
+        super(first, last, age, gender, interests);
+
+        // subject and grade are specific to Teacher
+        this.subject = subject;
+        this.grade = grade;
+      }
+    }
+
+    // Instantiate Teacher
+
+    let snape = new Teacher('Severus', 'Snape', 58, 'male', ['Potions'], 'Dark arts', 5);
+    snape.greeting(); // Hi! I'm Severus.
+    snape.farewell(); // Severus has left the building. Bye for now.
+    console.log(snape.age) // 58
+    console.log(snape.subject) // Dark arts
+
+    </script>
+
+<!-- Mirrored from mdn.github.io/learning-area/javascript/oojs/advanced/es2015-class-inheritance.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 23:52:31 GMT -->
+
+</body></html>

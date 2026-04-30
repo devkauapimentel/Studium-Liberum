@@ -1,0 +1,6 @@
+
+html { font-family: sans-serif; }
+[popover] { border: 1px solid grey; padding: 10px 20px; border-radius: 5px; }
+[popover] h3 { margin: 0px 0px 10px; }
+
+button.copy {display:none !important}

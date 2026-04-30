@@ -1,0 +1,271 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/string/byte/memcpy.html --><head><meta charset="utf-8"><title>Talk:cpp/string/byte/memcpy</title><link rel="stylesheet" href="../../../css_1.css" type="text/css"><link rel="stylesheet" href="../../../css_2.css" type="text/css"><link rel="stylesheet" href="../../../css_3.css" type="text/css"><link rel="stylesheet" href="../../../css_5.css" type="text/css"><script type="text/javascript" src="../../../js_1.js"></script><script type="text/javascript" src="../../../js_2.js"></script><script type="text/javascript" src="../../../js_7020.js"></script><script type="text/javascript" src="../../../js_4.js"></script><script type="text/javascript" src="../../../js_5.js"></script><script type="text/javascript" src="../../../js_6.js"></script><script type="text/javascript" src="../../../js_7.js"></script><script type="text/javascript" src="../../../js_8.js"></script><script type="text/javascript" src="../../../js_9.js"></script><script type="text/javascript" src="../../../js_10.js"></script><script type="text/javascript" src="../../../js_11.js"></script><script type="text/javascript" src="../../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_string_byte_memcpy skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fstring%2Fbyte%2Fmemcpy&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fstring%2Fbyte%2Fmemcpy" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../../cpp/string/byte/memcpy.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./memcpy.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./memcpy.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./memcpy.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/string/byte/memcpy&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/string/byte/memcpy&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/string/byte/memcpy&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./memcpy.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/string/byte/memcpy</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../byte.html" title="Talk:cpp/string/byte">string/byte</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>I have some issues with the parts about non-trivially-copyable types. First of all, but maybe that's just me:
+</p>
+<blockquote>If the objects are not <a href="../../../cpp/named_req/TriviallyCopyable.html" title="cpp/named req/TriviallyCopyable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">TriviallyCopyable</span></a> (e.g. scalars, arrays, C-compatible structs)</blockquote>
+<p>it is not obvious to me from the phrasing if "scalars, arrays, .." are trivially copyable or not.
+</p><p>Then, I am rather sure that for certain objects, the invocation of <code>memcpy</code> itself has Undefined Behaviour. Not all C++ objects have memory layouts compatible with the C object model: C++ has noncontiguous objects. See <a rel="nofollow" class="external text" href="http://stackoverflow.com/a/29866102/">my StackOverflow answer</a> for an example. [intro.object]p5 says
+</p>
+<blockquote>An object of trivially copyable or standard-layout type shall occupy contiguous bytes of storage.</blockquote>
+<p>C specifies that objects occupy contiguous bytes in 6.2.6.1p2
+I conclude that C++ objects whose types are neither standard-layout nor trivially copyable are not required to be compatible with the C object model. For C++ objects that are incompatible, I'd guess that the behaviour of <code>memcpy</code> is undefined.
+</p><p>Additionally, it is unclear to me if <code>memcpy</code> has defined behaviour for standard-layout types that are not trivially copyable. For example, can you change the type of an object via <code>memcpy</code>? - e.g. by copying the value of an object into a character array and from there into an object of a different type? This might have implications for aliasing optimizations; see also <a rel="nofollow" class="external text" href="http://www.open-std.org/pipermail/ub/2013-November/000376.html">this discussion</a>.
+</p><p>Until these issues have been resolved unambiguously, I'd suggest either to restrict the description of <code>memcpy</code> to trivially copyable types, or add a warning that the effects on standard-layout types which are not trivially copyable are under discussion + there is no specification for <code>memcpy</code>ing types which are neither standard-layout nor trivially copyable.
+</p><p>dyp --<a href="https://en.cppreference.com/w/Special:Contributions/91.14.125.125" title="Special:Contributions/91.14.125.125">91.14.125.125</a> 18:33, 28 April 2015 (PDT)
+</p>
+<dl><dd> good point about non-contiguous memory layout! Let's just link to SO. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 18:45, 28 April 2015 (PDT)
+</dd></dl>
+<dl><dd> Wow, you're fast. It occurred to me that even trivially copyable is not sufficient to make <code>memcpy</code> well-behaved. [basic.types]p2 specifically excludes base class subobjects, and sure enough, <a rel="nofollow" class="external text" href="http://coliru.stacked-crooked.com/a/b0c7fdbbdfb20bea"><code>memcpy</code>ing an empty base class subobject has inconsistent behaviour</a>. This of course includes my example using virtual inheritance, but I guess the general argument of noncontiguous objects still holds. dyp --<a href="https://en.cppreference.com/w/Special:Contributions/84.171.80.135" title="Special:Contributions/84.171.80.135">84.171.80.135</a> 06:51, 29 April 2015 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> <a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=cpp%2Fstring%2Fbyte%2Fmemcpy&amp;diff=13258&amp;oldid=8146">I wrote</a> this quip about trivially-copiable types on this page, so naturally I am interested in how wrong I was. I think when I put it in, I was looking at basic.types/2 and my reasoning was "what is not defined is undefined". I just overlooked the "other than a base-class subobject" bit. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 07:03, 29 April 2015 (PDT)
+</dd></dl>
+</dd></dl>
+<hr>
+<blockquote>Where strict aliasing prohibits examining the same memory as values of two different types, std::memcpy may be used to convert the values.</blockquote>
+<p>This is subject to <a rel="nofollow" class="external text" href="../../../../../www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3751.pdf">N3751</a> (I'm not sure if there's a DR about it). But that might very well be too far into language-lawyer-land to be of any practical use. That is, even if we follow Dos Reis' interpretation that this is UB, if it's common practice, it might not be worth the trouble pointing out on cppreference that it's currently UB. There's also a <a rel="nofollow" class="external text" href="http://www.open-std.org/pipermail/ub/2013-September/000127.html">related discussion on the UB reflector</a>.
+</p><p>dyp --<a href="https://en.cppreference.com/w/Special:Contributions/84.171.80.135" title="Special:Contributions/84.171.80.135">84.171.80.135</a> 10:22, 29 April 2015 (PDT)
+</p>
+<dl><dd>As someone who brought plenty of objects into being by memcpy'ng their representations from IPC/network, I home Richard Smith is right. Possible weasel wording: s/may be used/is often used --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 10:48, 29 April 2015 (PDT)
+</dd></dl>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/string/byte/memcpy&amp;action=edit&amp;section=1" title="Edit section: round 2">edit</a>]</span> <span class="mw-headline" id="round_2">round 2</span></h3>
+<p>This topic is making <a rel="nofollow" class="external text" href="http://stackoverflow.com/questions/35954909">another round on StackOverflow</a> and more than one person seems to read our "not specified and may be undefined" as "unspecified behavior". --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 05:47, 18 March 2016 (PDT)
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 94/1000000
+Preprocessor generated node count: 413/1000000
+Post‐expand include size: 713/4194304 bytes
+Template argument size: 167/4194304 bytes
+Highest expansion depth: 10/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:14074-0!*!0!*!*!*!* and timestamp 20241022175120 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/string/byte/memcpy&amp;oldid=103499">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/string/byte/memcpy&amp;oldid=103499</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./memcpy.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/string/byte/memcpy" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/string/byte/memcpy" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/string/byte/memcpy&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/string/byte/memcpy&amp;oldid=103499" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/string/byte/memcpy&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 15 June 2018, at 15:49.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.166 secs. -->
+	
+
+
+</body></html>

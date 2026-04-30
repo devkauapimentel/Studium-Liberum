@@ -1,0 +1,4 @@
+
+.box { display: block; height: 5px; margin: 0.5em auto; color: gray; box-sizing: border-box; }
+
+button.copy {display:none !important}

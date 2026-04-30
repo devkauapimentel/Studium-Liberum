@@ -1,0 +1,8 @@
+
+table { border-collapse: collapse; margin-top: 2em; }
+thead { font-weight: bold; }
+td { padding: 2px 10px; }
+.odd { background-color: rgb(239, 223, 239); }
+.even { background-color: white; }
+
+button.copy {display:none !important}

@@ -1,0 +1,123 @@
+<html>
+  <!-- Online page at https://90e074070029001781a2331047645aa3c3d15567.mdnplay.dev/en-US/docs/Web/API/Element/getClientRects/runner.html?uuid=90e074070029001781a2331047645aa3c3d15567&state=3VbBjts2EP2VgVAg3sQrJVvk4sgGNtseChRJUQTIRYfQ4thiS5OCSO%2Fa2ey%2Fd4aUJTlrrTdAe%2BnFlsQ3jzOPj0PeJ5Xf6GSW5NXPi2uoRSPWjagruFO%2BAgGuFgaUcUpinhGkMHlNPwDvLY37CiNCGBle%2BvhK3CLFL20jsQGHPoVPBCi1QuOhwdI7EA0SN7M1KFP4YD0Si%2FCRiigcWKP39IMHoqXdTeGuUhr7yRm32Wqvao1M1kPRpZRwxhnTv1S3IfXc%2Bcaa9eJjo9bKCJ1n7YcwGMtjFHEv%2FugKConxt34y0Mqgo3BGhuAwVZ7FmU5MWb9wofbvpiRZhHPzImHVb4JEf7JCH2%2Bx0WJfJP9lTow8ndZw1rMpRizA89OLESeSjF7Uyvljzx0bpF9mkBadeeHJTKXeymgNs90ssZmCs2CQciaotGEkejDajir4cYtYfVBGq8VvHjfwJs%2Fo8buPV93HPAshTyyC1SeXwOqzuv%2FrqaAoKxJ%2FJJ%2Be%2BXxmp%2FJ5ZtRowtEbXizJS22PKkXtlTXHXrnWvrLbdexRAU4FnbFMSzQduCRahAnJPCewP26ekMtBj5Zlcdg87Xs7mh0P5zSvkB029033HAYXYTzP6KnDZB2Iv%2FfhuV9auR%2FlkoswTjFyhKsLp%2Be2oic8dViAx46KK3nWFP9nvZJpUjpHZ3DUBe4Z5nHnL4VWazODkvTA5l1hHgpDIREglatJmxm5knvq5VLb8u93PHKnpK9m8Obt63rXB9XTwlhNP1HxwBH3A0HrHfVJrSQs9RZjDHdoQmvFIRX%2FyLGgdYNoYhTV8heXstqakpcChJSPF3SC2l9EtuwlXC%2BJZuuRTvraOhXDgHO2BIfQjwa7kTt6OASU73Z0KLkVXrl4NRAbuoDEZw4TZh0sGKBpi%2BUTZRYgNmbG41rDkj5sPdgVkMYl3VJWAbR1NFeDTn1Fupo08NXajUvhZcZ0pTXucLOZA1WYrtEPap9chNVZUdykx%2FIcIabV48ATVonjfiEd5tR9yu2GmNKyQeHxV438NikSkqlIIjMcBaXO7zWmnaJzKBLRKl0k4wGtogzvV5juZ11MzM%2BVjdX6k61hfjB8l%2BPhoc0y7bHfvvUo3hH90Any33Hln80ewCP0PDZe8EY01Kap4FPqkX0VbUlW4%2FVTqnkWAr78dM9rGd5e9RI91Lsv46E6lNnFhtdXAwkG0VkGn%2BnYE%2B1OSIOXwVv26%2BBKFD6Hmw%2FJ6XnfRCDtjCtaUo3OpaPpRGifT3y%2FhKunq6hQrathHe2H48Dj1RF1jUbe0G1eToaU0c4PoaEUZjK5gPmi6xY3gvbnc9oLbzTGYvSJC9eF1k102lBnRRkPHhg%2FeI72NjO54WakDd660L3f3zDVB%2Bo6k3G6Ry2AKbkFBOquBYxVhZtemovQT6jf0sJvkFquZr2Th38A&code=74286980& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <h3>A paragraph with a span inside</h3>
+<p>
+  Both the span and the paragraph have a border set. The client rects are in
+  red. Note that the p has only one border box, while the span has multiple
+  border boxes.
+</p>
+
+<div>
+  <strong>Original</strong>
+  <p>
+    <span>Paragraph that spans multiple lines</span>
+  </p>
+</div>
+
+<div>
+  <strong>p's rect</strong>
+  <p class="withClientRectsOverlay">
+    <span>Paragraph that spans multiple lines</span>
+  </p>
+</div>
+
+<div>
+  <strong>span's rect</strong>
+  <p>
+    <span class="withClientRectsOverlay">Paragraph that spans multiple lines</span>
+  </p>
+</div>
+<h3>A list</h3>
+<p>
+  Note that the border box doesn't include the number, so neither do the client
+  rects.
+</p>
+
+<div>
+  <strong>Original</strong>
+  <ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ol>
+</div>
+
+<div>
+  <strong>ol's rect</strong>
+  <ol class="withClientRectsOverlay">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ol>
+</div>
+
+<div>
+  <strong>each li's rect</strong>
+  <ol>
+    <li class="withClientRectsOverlay">Item 1</li>
+    <li class="withClientRectsOverlay">Item 2</li>
+  </ol>
+</div>
+<h3>A table with a caption</h3>
+<p>
+  Although the table's border box doesn't include the caption, the client rects
+  do include the caption.
+</p>
+
+<div>
+  <strong>Original</strong>
+  <table>
+    <caption>
+      caption
+    </caption>
+    <thead>
+      <tr>
+        <th>thead</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>tbody</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <strong>table's rect</strong>
+  <table class="withClientRectsOverlay">
+    <caption>
+      caption
+    </caption>
+    <thead>
+      <tr>
+        <th>thead</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>tbody</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+        <div style="position: absolute; border: 1px solid red; padding: 0px; margin: 0px; top: 127.4375px; left: 154px; width: 148px; height: 36px;"></div><div style="position: absolute; border: 1px solid red; padding: 0px; margin: 0px; top: 127.4375px; left: 309px; width: 131.40625px; height: 18px;"></div><div style="position: absolute; border: 1px solid red; padding: 0px; margin: 0px; top: 145.4375px; left: 309px; width: 86.546875px; height: 18px;"></div><div style="position: absolute; border: 1px solid red; padding: 0px; margin: 0px; top: 308.875px; left: 154px; width: 148px; height: 40px;"></div><div style="position: absolute; border: 1px solid red; padding: 0px; margin: 0px; top: 309.875px; left: 349px; width: 106px; height: 18px;"></div><div style="position: absolute; border: 1px solid red; padding: 0px; margin: 0px; top: 329.875px; left: 349px; width: 106px; height: 18px;"></div><div style="position: absolute; border: 1px solid red; padding: 0px; margin: 0px; top: 478.3125px; left: 154px; width: 46.234375px; height: 68px;"></div>
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../js_3.js'></script>
+</body>
+</html>

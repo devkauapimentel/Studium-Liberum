@@ -1,0 +1,8 @@
+
+* { box-sizing: border-box; }
+body { width: 500px; margin: 0px auto; }
+p { background: aqua; border: 3px solid blue; padding: 10px; margin: 10px; }
+span { background: red; border: 1px solid black; }
+.positioned { position: absolute; background: yellow; inset-block-start: 30px; inset-inline-start: 30px; }
+
+button.copy {display:none !important}

@@ -1,0 +1,7 @@
+
+q { color: blue; }
+q::before, q::after { font-size: larger; color: red; background: rgb(204, 204, 204); }
+q::before { content: open-quote; }
+q::after { content: close-quote; }
+
+button.copy {display:none !important}

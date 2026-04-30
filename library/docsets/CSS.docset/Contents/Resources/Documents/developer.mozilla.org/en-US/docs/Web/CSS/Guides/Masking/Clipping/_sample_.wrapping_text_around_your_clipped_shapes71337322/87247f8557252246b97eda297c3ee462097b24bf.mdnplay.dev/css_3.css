@@ -1,0 +1,8 @@
+
+:root { --m: 10; font-size: calc(3px * var(--m)); }
+div { width: calc(0.75em * var(--m)); height: calc(0.75em * var(--m)); display: inline-block; background: linear-gradient(rebeccapurple, magenta) blue; }
+cite { display: block; text-align: right; }
+.leftTriangle { clip-path: polygon(0px 0px, 0px 100%, 100% 0px); shape-outside: polygon(0px 0px, 0px 100%, 100% 0px); float: left; }
+.rightTriangle { clip-path: polygon(100% 0px, 100% 100%, 0px 100%); shape-outside: polygon(100% 0px, 100% 100%, 0px 100%); float: right; }
+
+button.copy {display:none !important}

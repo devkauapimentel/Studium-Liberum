@@ -1,0 +1,14 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/css/guides/display/block_and_inline_layout/index.md
+
+# Original Wiki contributors
+mfuji09
+haond10adp
+mikemorr
+segmentationfaulter
+alattalatta
+FranklinYu
+ExE-Boss
+beautifulcoder
+estelle
+rachelandrew

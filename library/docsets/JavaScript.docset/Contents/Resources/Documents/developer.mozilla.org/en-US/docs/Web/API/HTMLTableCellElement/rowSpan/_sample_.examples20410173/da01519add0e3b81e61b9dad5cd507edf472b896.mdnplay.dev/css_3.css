@@ -1,0 +1,6 @@
+
+table { border-collapse: collapse; }
+th, td, table { border: 1px solid black; }
+button { margin: 1em 1em 1em 0px; }
+
+button.copy {display:none !important}

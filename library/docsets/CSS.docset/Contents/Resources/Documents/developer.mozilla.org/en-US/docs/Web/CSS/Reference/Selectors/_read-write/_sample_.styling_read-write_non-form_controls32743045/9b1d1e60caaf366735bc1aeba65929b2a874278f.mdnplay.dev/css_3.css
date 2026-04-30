@@ -1,0 +1,7 @@
+
+body { font-family: sans-serif; }
+p { font-size: 150%; padding: 5px; border-radius: 5px; }
+p:read-only { background-color: red; color: white; }
+p:read-write { background-color: lime; }
+
+button.copy {display:none !important}

@@ -1,0 +1,29 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/css/reference/properties/outline-color/index.md
+
+# Original Wiki contributors
+mfuji09
+wbamberg
+fscholz
+sideshowbarker
+ericwbailey
+chrisdavidmills
+mfluehr
+Sheppy
+rwilson.or
+erikadoyle
+Sebastianz
+LouisLazaris
+mariankh
+winious
+DJH
+kscarfone
+teoli
+ethertank
+FredB
+syssgx
+grendel
+Jürgen Jeka
+j.j.
+BijuGC
+Waldo

@@ -1,0 +1,14 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/webassembly/guides/using_the_javascript_api/index.md
+
+# Original Wiki contributors
+SphinxKnight
+UltimateProGrammer
+chrisdavidmills
+justin.menking
+FarooqAR
+mcopejans
+YuryDelendik
+lukewagner
+chrissantos1995
+Jiang-Xuan

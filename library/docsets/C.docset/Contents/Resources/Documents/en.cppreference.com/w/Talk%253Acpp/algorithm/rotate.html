@@ -1,0 +1,426 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/algorithm/rotate.html --><head><meta charset="utf-8"><title>Talk:cpp/algorithm/rotate</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_6255.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_algorithm_rotate skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Falgorithm%2Frotate&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Falgorithm%2Frotate" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/algorithm/rotate.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./rotate.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./rotate.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./rotate.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./rotate.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/algorithm/rotate</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../algorithm.html" title="Talk:cpp/algorithm">algorithm</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./rotate.html#Order_of_parameters"><span class="tocnumber">1</span> <span class="toctext">Order of parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./rotate.html#Example"><span class="tocnumber">2</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./rotate.html#Weird_example"><span class="tocnumber">3</span> <span class="toctext">Weird example</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./rotate.html#Possible_implementation_seems_wrong_for_C.2B.2B11"><span class="tocnumber">4</span> <span class="toctext">Possible implementation seems wrong for C++11</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="./rotate.html#Possible_implementation_fails_on_corner_case_.28n_first_.3D.3D_last_.26.26_first_.21.3D_n_first.29"><span class="tocnumber">5</span> <span class="toctext">Possible implementation fails on corner case   (n_first == last &amp;&amp; first&nbsp;!= n_first)</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="./rotate.html#Much_better_.28and_correct.29_suggested_implementation"><span class="tocnumber">6</span> <span class="toctext">Much better (and correct) suggested implementation</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="./rotate.html#A_much_better_example"><span class="tocnumber">7</span> <span class="toctext">A much better example</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="./rotate.html#What_about_this_implementation._It.27s_meant_to_be_clear.2C_pedagogical."><span class="tocnumber">8</span> <span class="toctext">What about this implementation. It's meant to be clear, pedagogical.</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="./rotate.html#Return_value"><span class="tocnumber">9</span> <span class="toctext">Return value</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=edit&amp;section=1" title="Edit section: Order of parameters">edit</a>]</span> <span class="mw-headline" id="Order_of_parameters"> Order of parameters </span></h2>
+<p>I'd propose to discuss the parameters in the order in which they are accepted by rotate(): first, n_first, last.  Otherwise the reader may be tricked into thinking that the order of parameters would be first, last, n_first (as has happened to me). --<a href="https://en.cppreference.com/mwiki/index.php?title=User:Extensive&amp;action=edit&amp;redlink=1" class="new" title="User:Extensive (page does not exist)">Extensive</a> 01:30, 25 July 2013 (PDT)
+</p>
+<dl><dd> I agree that the ordering on this particular function is a little tricky, so it's worth being more explicit.  I made the parameter description list match the function-call order. -<a href="../../User%25253ANate.html" title="User:Nate">Nate</a> 07:42, 25 July 2013 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=edit&amp;section=2" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h2>
+<p>Technically, the std:: prefixes weren't needed in those lines where I didn't have them (generate_n(), copy(), etc), due to ADL. Not that I mind. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 15:07, 17 August 2011 (PDT)
+</p>
+<dl><dd> Several reasons:
+<ul><li> Consistency. 
+</li><li> Clearier code as it may not be instantly clear, why std:: is omitted.
+</li><li> It may break code in some circumstances, such as when the type of the argument is changed and ADL no longer applies.
+</li><li> Not usable in templates where the argument is not necessarily from std:: (or any other) namespace.
+</li><li> Probably most important: the code highlighter engine here makes links that point to the description page for most of the functions/classes, but only if <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span></span></span> is prefixed. The list of the identifiers to make links for can unfortunately be updated only manually, so not all links work. A copy of the list resides [removed].
+</li></ul>
+</dd></dl>
+<dl><dd> I think I can be wrong for the ADL as I'm not used to exploit it, but still, other points IMO make a strong case to have std:: everywhere.<a href="../../User%25253AP12.html" title="User:P12">P12</a> 01:36, 18 August 2011 (PDT)
+<dl><dd> OK, I agree, will use them. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 06:57, 18 August 2011 (PDT)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=edit&amp;section=3" title="Edit section: Weird example">edit</a>]</span> <span class="mw-headline" id="Weird_example"> Weird example </span></h2>
+<p>Why the weird example? Can't rotate() be called just once to demonstrate that it is essentially a modulo-shift and leave it at that? The example makes it look like rotate() is something you use in the process of sorting a range...
+</p>
+<dl><dd> The page already says exactly what rotate() does, I believe it is instructive to show how it may be used in programming. Added a trivial call to rotate anyway. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 04:03, 9 March 2012 (PST)
+</dd></dl>
+<dl><dd><dl><dd> Thanks. And... I started replying and it devolved in a longer post with philosophical undertones about where the value of cppreference.com's pages lie.&nbsp;:) Is there a better place than here to post that?
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> Maybe in <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>? This seems the best place for general discussions. -<a href="../../User%25253AP12.html" title="User:P12">P12</a> 16:02, 9 March 2012 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=edit&amp;section=4" title="Edit section: Possible implementation seems wrong for C++11">edit</a>]</span> <span class="mw-headline" id="Possible_implementation_seems_wrong_for_C.2B.2B11"> Possible implementation seems wrong for C++11 </span></h2>
+<p>Example: 
+</p>
+<pre> std::vector&lt;int&gt; v = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }
+ auto iter = std::rotate(v.begin(), v.begin() + 7, v.end());
+ assert(*iter == 0); /* assertion fails*/
+</pre>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=edit&amp;section=5" title="Edit section: Possible implementation fails on corner case (n first == last &amp;&amp; first&nbsp;!= n first)">edit</a>]</span> <span class="mw-headline" id="Possible_implementation_fails_on_corner_case_.28n_first_.3D.3D_last_.26.26_first_.21.3D_n_first.29"> Possible implementation fails on corner case   (n_first == last &amp;&amp; first&nbsp;!= n_first) </span></h2>
+<p>Example: 
+</p>
+<pre> std::vector&lt;int&gt; v = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }
+ auto iter = std::rotate(v.begin(), v.end(), v.end()); // endless loop, Segmentation fault
+</pre>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=edit&amp;section=6" title="Edit section: Much better (and correct) suggested implementation">edit</a>]</span> <span class="mw-headline" id="Much_better_.28and_correct.29_suggested_implementation"> Much better (and correct) suggested implementation </span></h2>
+<pre> template&lt;class ForwardIt&gt;
+ ForwardIt rotate(ForwardIt first, ForwardIt n_first, ForwardIt last)
+ {
+    if(first == n_first) return last;
+    if(n_first == last) return first;
+
+    auto read      = n_first;
+    auto write     = first;
+    auto next_read = first; // read position for when "read" hits "last"
+    auto ret_value = last;
+
+    while(write&nbsp;!= last) {
+       if(write == next_read) next_read = read;
+       iter_swap(write++, read++);
+       if(read == last) {
+          if(ret_value == last)
+             ret_value = write; // The first time wrapping: save the return value
+          read = next_read;     // continue rotate from this position
+          if(read == ret_value) {
+             // no need to continue. We've "wrapped" into the special case
+             // where the remaining elements are already in order
+             break;
+          }
+       }
+    }
+
+    return ret_value;
+ }
+</pre>
+<p>I exhaustively tested the solution on all rotations of all sequences less than 20 in length. The proof for how it works relies on some group theory... proving that when the algorithm "wraps", the remaining sequence just needs another rotate for "next_read". Sounds like a fun math problem, but I've got a day job...
+</p><p><br>
+<a href="https://en.cppreference.com/mwiki/index.php?title=User:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User:Amichaux (page does not exist)">Amichaux</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User talk:Amichaux (page does not exist)">talk</a>) 05:08, 3 December 2018 (PST)
+</p>
+<dl><dd> The "possible implementation" shown on the page is what STL had (we changed names and rewrote swap(*x, *y) as iter_swap(x, y)). Actual production implementations are a lot more complex and it's unclear how useful it is to present original code that is neither trivial nor representative of any popular implementation. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 10:16, 3 December 2018 (PST)
+</dd></dl>
+<dl><dd> Library code is often optimized for the code it generates on a wide variety of compilers. Thus, it has different goals to showing or explaining an algorithm. Clang/trunk has slightly better looking code than the given example, but it still obviates how the algorithm actually works. Notice that the 2nd part of the algorithm is doing the first part over and over again.  Duplicating the code is confusing for someone trying to _understand_ how an implementation works. Also, comments help. -- <a href="https://en.cppreference.com/mwiki/index.php?title=User:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User:Amichaux (page does not exist)">Amichaux</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User talk:Amichaux (page does not exist)">talk</a>) 11:13, 3 December 2018 (PST)
+</dd></dl>
+<dl><dd><dl><dd> I agree about comments, and your impl has the nice property of having one loop and one call to swap, but that loop seems more complex than STL's two loops.. or perhaps I'm used to it? Another vote would be nice. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 12:13, 3 December 2018 (PST)
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> If you didn't care about the return value, then then if condition could simply be  	<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">if</span><span class="br0">(</span>read <span class="sy1">==</span> last<span class="br0">)</span> read <span class="sy1">=</span> next_read<span class="sy4">;</span></span></span>. It would be clearer still to show the recursive nature of the algorithm, and change the while loop to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">while</span><span class="br0">(</span>read <span class="sy3">!</span><span class="sy1">=</span> last<span class="br0">)</span> <span class="br0">{</span></span></span>, and then after the while loop call <span class="t-c"><span class="mw-geshi cpp source-cpp">rotate<span class="br0">(</span>write, next_read, last<span class="br0">)</span><span class="sy4">;</span> <span class="kw1">return</span> write<span class="sy4">;</span></span></span>. I think that clearly shows the structure of the algorithm. -- <a href="https://en.cppreference.com/mwiki/index.php?title=User:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User:Amichaux (page does not exist)">Amichaux</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User talk:Amichaux (page does not exist)">talk</a>) 13:34, 3 December 2018 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=edit&amp;section=7" title="Edit section: A much better example">edit</a>]</span> <span class="mw-headline" id="A_much_better_example"> A much better example </span></h2>
+<p>The example should, as clearly as possible, demonstrate what the algorithm does. For those who find it difficult to parse the text. This is my suggestion:
+</p>
+<pre>int main(int, char **)
+{
+      for(auto i = 0u; i &lt;= 10; ++i) {
+         std::vector&lt;int&gt; v = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+  
+         // Rotate (modulo shift) 'i' to the first position
+         std::rotate(begin(v), std::next(begin(v), i), end(v));
+
+         // Print the resulting vector
+         for(auto x&nbsp;: v) std::cout &lt;&lt; x &lt;&lt; " ";
+         std::cout &lt;&lt; std::endl;
+      }
+}
+</pre>
+<p>And the output:
+</p>
+<pre>0 1 2 3 4 5 6 7 8 9 
+1 2 3 4 5 6 7 8 9 0 
+2 3 4 5 6 7 8 9 0 1 
+3 4 5 6 7 8 9 0 1 2 
+4 5 6 7 8 9 0 1 2 3 
+5 6 7 8 9 0 1 2 3 4 
+6 7 8 9 0 1 2 3 4 5 
+7 8 9 0 1 2 3 4 5 6 
+8 9 0 1 2 3 4 5 6 7 
+9 0 1 2 3 4 5 6 7 8 
+0 1 2 3 4 5 6 7 8 9 
+</pre>
+<p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User:Amichaux (page does not exist)">Amichaux</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User talk:Amichaux (page does not exist)">talk</a>) 05:20, 3 December 2018 (PST)
+</p>
+<dl><dd> current example shows a simple rotation, answers a frequently-asked question (how to rotate right) and demonstrates a simple non-trivial yet idiomatic use. Replacing that with ten simple rotations isn't an improvement. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 10:16, 3 December 2018 (PST)
+</dd></dl>
+<dl><dd> Okay, but it's also _unclear_. You may already know what rotate does, but try to put yourself in the shoes of someone who doesn't. If you want to show insertion sort, then the simple algorithm first. -- <a href="https://en.cppreference.com/mwiki/index.php?title=User:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User:Amichaux (page does not exist)">Amichaux</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User talk:Amichaux (page does not exist)">talk</a>) 11:13, 3 December 2018 (PST)
+<dl><dd> I wouldn't mind reordering the example a little and adding some extra simple rotations for more clarity. <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 16:44, 7 December 2018 (PST)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=edit&amp;section=8" title="Edit section: What about this implementation. It's meant to be clear, pedagogical.">edit</a>]</span> <span class="mw-headline" id="What_about_this_implementation._It.27s_meant_to_be_clear.2C_pedagogical."> What about this implementation. It's meant to be clear, pedagogical. </span></h2>
+<table class="eq-fun-cpp-table">
+
+
+<tbody><tr>
+<td>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> ForwardIt<span class="sy1">&gt;</span>
+ForwardIt rotate<span class="br0">(</span>ForwardIt first, ForwardIt n_first, ForwardIt last<span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="kw1">if</span><span class="br0">(</span>first <span class="sy1">==</span> n_first<span class="br0">)</span> <span class="kw1">return</span> last<span class="sy4">;</span>
+   <span class="kw1">if</span><span class="br0">(</span>n_first <span class="sy1">==</span> last<span class="br0">)</span> <span class="kw1">return</span> first<span class="sy4">;</span>
+&nbsp;
+   ForwardIt read      <span class="sy1">=</span> n_first<span class="sy4">;</span>
+   ForwardIt write     <span class="sy1">=</span> first<span class="sy4">;</span>
+   ForwardIt next_read <span class="sy1">=</span> first<span class="sy4">;</span> <span class="co1">// read position for when "read" hits "last"</span>
+&nbsp;
+   <span class="kw1">while</span><span class="br0">(</span>read <span class="sy3">!</span><span class="sy1">=</span> last<span class="br0">)</span> <span class="br0">{</span>
+      <span class="kw1">if</span><span class="br0">(</span>write <span class="sy1">==</span> next_read<span class="br0">)</span> next_read <span class="sy1">=</span> read<span class="sy4">;</span> <span class="co1">// track where "first" went</span>
+      <a href="../../cpp/algorithm/iter_swap.html"><span class="kw1605">std::<span class="me2">iter_swap</span></span></a><span class="br0">(</span>write<span class="sy2">++</span>, read<span class="sy2">++</span><span class="br0">)</span><span class="sy4">;</span>
+   <span class="br0">}</span>
+&nbsp;
+   <span class="co1">// rotate the remaining sequence into place</span>
+   rotate<span class="br0">(</span>write, next_read, last<span class="br0">)</span><span class="sy4">;</span>
+   <span class="kw1">return</span> write<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+</td></tr></tbody></table>
+<p>-- <a href="https://en.cppreference.com/mwiki/index.php?title=User:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User:Amichaux (page does not exist)">Amichaux</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User talk:Amichaux (page does not exist)">talk</a>) 11:01, 6 December 2018 (PST)
+</p>
+<dl><dd> neat. I'd finish with a tail-rec: <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">return</span> rotate<span class="br0">(</span>...</span></span> (if that would be correct). I won't object to this one (dunno about other editors) --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 12:27, 6 December 2018 (PST)
+<dl><dd> Unfortunately, rotate cannot be tail-recursive, which is why there's two while loops in the clang/gcc implementations. The second while loop is the "recursive" call, and in between, they're saving the return value. I'm going to go ahead and update the main page in a few hours if I don't hear anything back. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User:Amichaux (page does not exist)">Amichaux</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User talk:Amichaux (page does not exist)">talk</a>) 12:36, 10 December 2018 (PST)
+<dl><dd>Let's use <code>ForwardIt</code> instead of <code>auto</code>. LGTM with that change. <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 14:50, 10 December 2018 (PST)
+<dl><dd> Update with <code>ForwardIt</code>. <a href="https://en.cppreference.com/mwiki/index.php?title=User:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User:Amichaux (page does not exist)">Amichaux</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Amichaux&amp;action=edit&amp;redlink=1" class="new" title="User talk:Amichaux (page does not exist)">talk</a>) 15:06, 10 December 2018 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=edit&amp;section=9" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value"> Return value </span></h2>
+<p>The text says the return value is "Iterator to the new location of the element pointed by first. Equal to first + (last - n_first)". The formula seems correct, but the description does not in the special case where `first == n_first`; in that case the return value is `last`. Maybe instead of "new location of the element pointed by first", the description could be "iterator to one-past the new location of the last element in the range"? In most cases, this _is_ the new location of the first element, but not in the case of a "null rotation". --<a href="https://en.cppreference.com/mwiki/index.php?title=User:Itub&amp;action=edit&amp;redlink=1" class="new" title="User:Itub (page does not exist)">Itub</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Itub&amp;action=edit&amp;redlink=1" class="new" title="User talk:Itub (page does not exist)">talk</a>) 14:51, 25 December 2022 (PST)
+</p>
+<dl><dd> ✔ Sounds reasonable, but we also should handle another "null rotation" case – when <span class="t-c"><span class="mw-geshi cpp source-cpp">n_first <span class="sy1">==</span> last</span></span>. So, I've updated the <a href="../../cpp/algorithm/rotate.html#Return_value" title="cpp/algorithm/rotate">Return value</a> in more straightforward way.) --<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 08:05, 26 December 2022 (PST)
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 271/1000000
+Preprocessor generated node count: 844/1000000
+Post‐expand include size: 1304/4194304 bytes
+Template argument size: 1982/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2507-0!*!0!!en!*!* and timestamp 20240518071612 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;oldid=145867">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;oldid=145867</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./rotate.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/algorithm/rotate" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/algorithm/rotate" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;oldid=145867" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/rotate&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 26 December 2022, at 09:05.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 5,858 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.543 secs. -->
+	
+
+
+</body></html>

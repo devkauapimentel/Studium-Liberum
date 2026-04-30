@@ -1,0 +1,6 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 14px; line-height: normal; font-family: "Open Sans", sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; padding: 0.5em; }
+button { display: block; margin-block: 1rem; }
+:picture-in-picture { outline: 5px dashed green; }
+
+button.copy {display:none !important}

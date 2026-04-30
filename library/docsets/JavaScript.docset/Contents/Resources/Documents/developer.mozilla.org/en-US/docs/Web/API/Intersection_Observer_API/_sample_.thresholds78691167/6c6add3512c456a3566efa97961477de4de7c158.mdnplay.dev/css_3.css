@@ -1,0 +1,15 @@
+
+.contents { position: absolute; width: 700px; height: 1725px; }
+.wrapper { position: relative; top: 600px; }
+.sampleBox { position: relative; left: 175px; width: 150px; background-color: rgb(245, 170, 140); border: 2px solid rgb(201, 126, 17); padding: 4px; margin-bottom: 6px; }
+#box1 { height: 200px; }
+#box2 { height: 75px; }
+#box3 { height: 150px; }
+#box4 { height: 100px; }
+.label { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 14px; line-height: normal; font-family: "Open Sans", Arial, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; position: absolute; margin: 0px; background-color: rgba(255, 255, 255, 0.7); border: 1px solid rgba(0, 0, 0, 0.7); width: 3em; height: 18px; padding: 2px; text-align: center; }
+.topLeft { left: 2px; top: 2px; }
+.topRight { right: 2px; top: 2px; }
+.bottomLeft { bottom: 2px; left: 2px; }
+.bottomRight { bottom: 2px; right: 2px; }
+
+button.copy {display:none !important}

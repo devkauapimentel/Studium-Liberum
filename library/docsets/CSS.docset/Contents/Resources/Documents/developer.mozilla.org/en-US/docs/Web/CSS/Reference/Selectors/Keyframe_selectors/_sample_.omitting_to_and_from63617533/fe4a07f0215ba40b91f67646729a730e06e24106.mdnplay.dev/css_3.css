@@ -1,0 +1,9 @@
+
+div { background-color: magenta; outline: 10px dashed black; color: white; width: min-content; padding: 10px; font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 2rem; line-height: normal; font-family: sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; margin: 35px auto; animation: 5s linear infinite changes; }
+div:first-of-type { background-color: blue; outline-width: 0px; }
+div:last-of-type { background-color: green; outline-width: 20px; }
+@keyframes changes { 
+  30%,40% { background-color: black; outline-width: 15px; }
+}
+
+button.copy {display:none !important}

@@ -1,0 +1,10 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/element/beforeinput_event/index.md
+
+# Original Wiki contributors
+Rumyra
+chrisdavidmills
+mfuji09
+Sheppy
+Watilin
+mfluehr

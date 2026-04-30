@@ -1,0 +1,3 @@
+if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Talk","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":1,"wgPageName":"Talk:c/23","wgTitle":"c/23","wgCurRevisionId":183175,"wgArticleId":23450,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Talk:c/23","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}

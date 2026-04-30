@@ -1,0 +1,5 @@
+
+#info { margin: 5px; display: inline-block; font-style: italic; }
+#very-important-read { height: 130px; padding: 5px; border: 2px solid rgb(0, 180, 197); border-radius: 5px; overflow: scroll; }
+
+button.copy {display:none !important}

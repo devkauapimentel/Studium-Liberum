@@ -1,0 +1,7 @@
+
+.sidebar { position: fixed; inset: 20px auto 0px -300px; width: 300px; background-color: lightblue; }
+.main-content { position: fixed; inset: 20px 0px 0px; width: auto; background-color: green; margin-left: 0px; }
+.sidebar.open { left: 0px; transition: left 0.3s ease-in-out; }
+.main-content.open { margin-left: 300px; transition: margin-left 0.3s ease-in-out; background-color: green; }
+
+button.copy {display:none !important}

@@ -1,0 +1,5 @@
+
+body { font-family: sans-serif; }
+#rate-control { display: flex; align-items: center; gap: 1rem; margin: 1rem 0px; }
+
+button.copy {display:none !important}

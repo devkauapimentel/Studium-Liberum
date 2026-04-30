@@ -1,0 +1,10 @@
+
+.container { font-family: sans-serif; display: grid; grid-template-columns: 1fr 3fr; gap: 20px; }
+header, footer { border-radius: 5px; padding: 10px; background-color: rebeccapurple; color: whitesmoke; text-align: center; }
+aside { border-right: 1px solid rebeccapurple; }
+header { grid-column-start: 1; grid-column-end: 3; grid-row-start: 1; grid-row-end: auto; }
+main { grid-column-start: 2; grid-column-end: auto; grid-row-start: 2; grid-row-end: auto; }
+aside { grid-column-start: 1; grid-column-end: auto; grid-row-start: 2; grid-row-end: auto; }
+footer { grid-column-start: 1; grid-column-end: 3; grid-row-start: 3; grid-row-end: auto; }
+
+button.copy {display:none !important}

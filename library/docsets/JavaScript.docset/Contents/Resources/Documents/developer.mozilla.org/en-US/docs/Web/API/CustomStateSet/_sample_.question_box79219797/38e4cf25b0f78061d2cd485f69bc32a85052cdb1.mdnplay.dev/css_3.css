@@ -1,0 +1,5 @@
+
+question-box::part(checkbox) { color: red; }
+question-box::part(checkbox):state(checked) { color: green; outline: 1px dashed green; }
+
+button.copy {display:none !important}

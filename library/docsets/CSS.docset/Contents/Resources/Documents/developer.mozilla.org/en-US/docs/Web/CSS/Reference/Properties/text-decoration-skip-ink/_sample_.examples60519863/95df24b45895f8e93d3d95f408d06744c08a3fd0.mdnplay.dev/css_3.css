@@ -1,0 +1,6 @@
+
+p { font-size: 1.5em; text-decoration: underline blue; text-decoration-skip-ink: auto; }
+.no-skip-ink { text-decoration-skip-ink: none; }
+.skip-ink-all { text-decoration-skip-ink: all; }
+
+button.copy {display:none !important}

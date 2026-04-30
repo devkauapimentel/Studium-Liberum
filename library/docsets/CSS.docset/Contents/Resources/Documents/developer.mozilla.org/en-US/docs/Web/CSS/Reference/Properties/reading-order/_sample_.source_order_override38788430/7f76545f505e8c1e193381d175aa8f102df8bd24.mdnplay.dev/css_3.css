@@ -1,0 +1,6 @@
+
+.wrapper { }
+.wrapper > a { display: block; }
+.wrapper a:nth-child(2n+1) { }
+
+button.copy {display:none !important}

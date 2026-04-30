@@ -1,0 +1,806 @@
+<html><!-- Online page at https://en.cppreference.com/w/cpp/chrono/zoned_time/formatter.html --><head><meta charset="utf-8"><title>std::formatter&lt;std::chrono::zoned_time&gt;, std::chrono::local_time_format</title><link rel="stylesheet" href="../../../css_1.css" type="text/css"><link rel="stylesheet" href="../../../css_2.css" type="text/css"><link rel="stylesheet" href="../../../css_3.css" type="text/css"><link rel="stylesheet" href="../../../css_4.css" type="text/css"><link rel="stylesheet" href="../../../css_5.css" type="text/css"><script type="text/javascript" src="../../../js_1.js"></script><script type="text/javascript" src="../../../js_2.js"></script><script type="text/javascript" src="../../../js_5282.js"></script><script type="text/javascript" src="../../../js_4.js"></script><script type="text/javascript" src="../../../js_5.js"></script><script type="text/javascript" src="../../../js_6.js"></script><script type="text/javascript" src="../../../js_7.js"></script><script type="text/javascript" src="../../../js_8.js"></script><script type="text/javascript" src="../../../js_9.js"></script><script type="text/javascript" src="../../../js_10.js"></script><script type="text/javascript" src="../../../js_11.js"></script><script type="text/javascript" src="../../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_chrono_zoned_time_formatter skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fchrono%2Fzoned+time%2Fformatter&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fchrono%2Fzoned+time%2Fformatter" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="./formatter.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/chrono/zoned_time/formatter&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./formatter.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./formatter.html">View</a></span></li>
+					<li id="ca-edit"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/chrono/zoned_time/formatter&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/chrono/zoned_time/formatter&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./formatter.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">std::</span>formatter<span style="font-size:0.7em; line-height:130%">&lt;std::chrono::zoned_time&gt;</span>, <span style="font-size:0.7em; line-height:130%">std::</span><span style="font-size:0.7em; line-height:130%">chrono::</span>local_time_format</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../chrono.html" title="cpp/chrono">chrono</a>‎ | <a href="../zoned_time.html" title="cpp/chrono/zoned time">zoned time</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp">C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../../compiler_support.html" title="cpp/compiler support">Compiler support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../freestanding.html" title="cpp/freestanding">Freestanding and hosted</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../language.html" title="cpp/language">Language</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../standard_library.html" title="cpp/standard library">Standard library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../headers.html" title="cpp/header">Standard library headers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../iterator/concepts.html" title="cpp/named req">Named requirements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../experimental/feature_test.html" title="cpp/feature test">Feature test macros</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../utility.html#Language_support" title="cpp/utility">Language support library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../concepts.html" title="cpp/concepts">Concepts library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../error.html" title="cpp/error">Diagnostics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../memory.html" title="cpp/memory">Memory management library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../meta.html" title="cpp/meta">Metaprogramming library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../utility.html" title="cpp/utility">General utilities library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../container.html" title="cpp/container">Containers library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../iterator.html" title="cpp/iterator">Iterators library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../ranges.html" title="cpp/ranges">Ranges library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../algorithm.html" title="cpp/algorithm">Algorithms library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../string.html" title="cpp/string">Strings library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../text.html" title="cpp/text">Text processing library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../numeric.html" title="cpp/numeric">Numerics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../chrono.html" title="cpp/chrono">Date and time library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../io.html" title="cpp/io">Input/output library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../filesystem.html" title="cpp/filesystem">Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../atomic.html" title="cpp/thread">Concurrency support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../experimental/execution.html" title="cpp/execution">Execution control library</a> <span class="t-mark-rev t-since-cxx26">(C++26)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../experimental.html" title="cpp/experimental">Technical specifications</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../symbol_index.html" title="cpp/symbol index">Symbols index</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../links/libs.html" title="cpp/links/libs">External libraries</a></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../../chrono.html" title="cpp/chrono">Date and time library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="../../chrono.html#Time_point" title="cpp/chrono">Time point</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../time_point.html" title="cpp/chrono/time point"><span class="t-lines"><span>time_point</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../clock_time_conversion.html" title="cpp/chrono/clock time conversion"><span class="t-lines"><span>clock_time_conversion</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../clock_cast.html" title="cpp/chrono/clock cast"><span class="t-lines"><span>clock_cast</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../../chrono.html#Duration" title="cpp/chrono">Duration</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../duration.html" title="cpp/chrono/duration"><span class="t-lines"><span>duration</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../../chrono.html#Clocks" title="cpp/chrono">Clocks</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../system_clock.html" title="cpp/chrono/system clock"><span class="t-lines"><span>system_clock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../steady_clock.html" title="cpp/chrono/steady clock"><span class="t-lines"><span>steady_clock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../is_clock.html" title="cpp/chrono/is clock"><span class="t-lines"><span>is_clock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../utc_clock.html" title="cpp/chrono/utc clock"><span class="t-lines"><span>utc_clock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../tai_clock.html" title="cpp/chrono/tai clock"><span class="t-lines"><span>tai_clock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../high_resolution_clock.html" title="cpp/chrono/high resolution clock"><span class="t-lines"><span>high_resolution_clock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../gps_clock.html" title="cpp/chrono/gps clock"><span class="t-lines"><span>gps_clock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../file_clock.html" title="cpp/chrono/file clock"><span class="t-lines"><span>file_clock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../local_t.html" title="cpp/chrono/local t"><span class="t-lines"><span>local_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../../chrono.html#Time_of_day" title="cpp/chrono">Time of day</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../hour_fun.html" title="cpp/chrono/hour fun"><span class="t-lines"><span>is_am</span><span>is_pm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../hour_fun.html" title="cpp/chrono/hour fun"><span class="t-lines"><span>make12</span><span>make24</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../hh_mm_ss.html" title="cpp/chrono/hh mm ss"><span class="t-lines"><span>hh_mm_ss</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="../../chrono.html#Calendar" title="cpp/chrono">Calendar</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../day.html" title="cpp/chrono/day"><span class="t-lines"><span>day</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../month.html" title="cpp/chrono/month"><span class="t-lines"><span>month</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../year.html" title="cpp/chrono/year"><span class="t-lines"><span>year</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../weekday.html" title="cpp/chrono/weekday"><span class="t-lines"><span>weekday</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../operator_slash.html" title="cpp/chrono/operator slash"><span class="t-lines"><span>operator/</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../year_month_day.html" title="cpp/chrono/year month day"><span class="t-lines"><span>year_month_day</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../year_month_day_last.html" title="cpp/chrono/year month day last"><span class="t-lines"><span>year_month_day_last</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../year_month_weekday.html" title="cpp/chrono/year month weekday"><span class="t-lines"><span>year_month_weekday</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../year_month_weekday_last.html" title="cpp/chrono/year month weekday last"><span class="t-lines"><span>year_month_weekday_last</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../weekday_indexed.html" title="cpp/chrono/weekday indexed"><span class="t-lines"><span>weekday_indexed</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../weekday_last.html" title="cpp/chrono/weekday last"><span class="t-lines"><span>weekday_last</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../month_day.html" title="cpp/chrono/month day"><span class="t-lines"><span>month_day</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../month_day_last.html" title="cpp/chrono/month day last"><span class="t-lines"><span>month_day_last</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../month_weekday.html" title="cpp/chrono/month weekday"><span class="t-lines"><span>month_weekday</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../month_weekday_last.html" title="cpp/chrono/month weekday last"><span class="t-lines"><span>month_weekday_last</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../year_month.html" title="cpp/chrono/year month"><span class="t-lines"><span>year_month</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../last_spec.html" title="cpp/chrono/last spec"><span class="t-lines"><span>last_spec</span><span>last</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../../chrono.html#chrono_I.2FO" title="cpp/chrono"><code>chrono</code> I/O</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../parse.html" title="cpp/chrono/parse"><span class="t-lines"><span>parse</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="../../chrono.html#Time_zone" title="cpp/chrono">Time zone</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../tzdb.html" title="cpp/chrono/tzdb"><span class="t-lines"><span>tzdb</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../tzdb_list.html" title="cpp/chrono/tzdb list"><span class="t-lines"><span>tzdb_list</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../tzdb_functions.html" title="cpp/chrono/tzdb functions"><span class="t-lines"><span>get_tzdb</span><span>get_tzdb_list</span><span>reload_tzdb</span><span>remote_version</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../sys_info.html" title="cpp/chrono/sys info"><span class="t-lines"><span>sys_info</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../local_info.html" title="cpp/chrono/local info"><span class="t-lines"><span>local_info</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../nonexistent_local_time.html" title="cpp/chrono/nonexistent local time"><span class="t-lines"><span>nonexistent_local_time</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../ambiguous_local_time.html" title="cpp/chrono/ambiguous local time"><span class="t-lines"><span>ambiguous_local_time</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../locate_zone.html" title="cpp/chrono/locate zone"><span class="t-lines"><span>locate_zone</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../current_zone.html" title="cpp/chrono/current zone"><span class="t-lines"><span>current_zone</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../time_zone.html" title="cpp/chrono/time zone"><span class="t-lines"><span>time_zone</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../choose.html" title="cpp/chrono/choose"><span class="t-lines"><span>choose</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../zoned_traits.html" title="cpp/chrono/zoned traits"><span class="t-lines"><span>zoned_traits</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../zoned_time.html" title="cpp/chrono/zoned time"><span class="t-lines"><span>zoned_time</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../time_zone_link.html" title="cpp/chrono/time zone link"><span class="t-lines"><span>time_zone_link</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../leap_second.html" title="cpp/chrono/leap second"><span class="t-lines"><span>leap_second</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../utc_clock/leap_second_info.html" title="cpp/chrono/utc clock/leap second info"><span class="t-lines"><span>leap_second_info</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../utc_clock/get_leap_second_info.html" title="cpp/chrono/utc clock/get leap second info"><span class="t-lines"><span>get_leap_second_info</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../c.html" title="cpp/chrono/c">C-style date and time</a></td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/chrono/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../zoned_time.html" title="cpp/chrono/zoned time"><tt>std::chrono::zoned_time</tt></a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5">Member functions</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./zoned_time.html" title="cpp/chrono/zoned time/zoned time"><span class="t-lines"><span>zoned_time::zoned_time</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./operator=.html" title="cpp/chrono/zoned time/operator="><span class="t-lines"><span>zoned_time::operator=</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./get_time_zone.html" title="cpp/chrono/zoned time/get time zone"><span class="t-lines"><span>zoned_time::get_time_zone</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./get_sys_time.html" title="cpp/chrono/zoned time/get sys time"><span class="t-lines"><span>zoned_time::get_sys_time</span><span>zoned_time::operator sys_time</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./get_local_time.html" title="cpp/chrono/zoned time/get local time"><span class="t-lines"><span>zoned_time::get_local_time</span><span>zoned_time::operator local_time</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./get_info.html" title="cpp/chrono/zoned time/get info"><span class="t-lines"><span>zoned_time::get_info</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Nonmember functions</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./operator_cmp.html" title="cpp/chrono/zoned time/operator cmp"><span class="t-lines"><span>operator==</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./operator_ltlt.html" title="cpp/chrono/zoned time/operator ltlt"><span class="t-lines"><span>operator&lt;&lt;</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Helper classes</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>formatter<span class="t-dsc-small">&lt;std::chrono::zoned_time&gt;</span></span></span></strong></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./hash.html" title="cpp/chrono/zoned time/hash"><span class="t-lines"><span>hash<span class="t-dsc-small">&lt;std::chrono::zoned_time&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./deduction_guides.html" title="cpp/chrono/zoned time/deduction guides">Deduction guides</a></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/chrono/zoned_time/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../header/chrono.html" title="cpp/header/chrono">&lt;chrono&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Duration, <span class="kw1">class</span> TimeZonePtr, <span class="kw1">class</span> CharT <span class="sy1">&gt;</span><br>
+<p><span class="kw1">struct</span> formatter<span class="sy1">&lt;</span><a href="../zoned_time.html"><span class="kw2571">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">zoned_time</span></span></a><span class="sy1">&lt;</span>Duration, TimeZonePtr<span class="sy1">&gt;</span>, CharT<span class="sy1">&gt;</span><br>
+&nbsp; &nbsp; <span class="sy4">:</span> <a href="../../utility/format/formatter.html"><span class="kw3173">std::<span class="me2">formatter</span></span></a><span class="sy1">&lt;</span><span class="coMULTI">/*local-time-format-t*/</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="sy1">&lt;</span><a href="../../types/common_type.html"><span class="kw642">std::<span class="me2">common_type_t</span></span></a><span class="sy1">&lt;</span>Duration,<br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="../duration.html"><span class="kw1002">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="sy1">&gt;&gt;</span>, CharT<span class="sy1">&gt;</span></span></div></td>
+<td> (1) </td>
+<td> <span class="t-mark-rev t-since-cxx20">(since C++20)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Duration <span class="sy1">&gt;</span><br>
+<p><span class="coMULTI">/*local-time-format-t*/</span><span class="sy1">&lt;</span>Duration<span class="sy1">&gt;</span><br>
+&nbsp; &nbsp; local_time_format<span class="br0">(</span> <span class="kw4">const</span> <a href="../local_t.html"><span class="kw2639">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">local_time</span></span></a><span class="sy1">&lt;</span>Duration<span class="sy1">&gt;</span><span class="sy3">&amp;</span> tp,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1239">std::<span class="me2">string</span></span></a><span class="sy2">*</span> abbrev <span class="sy1">=</span> nullptr,<br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw4">const</span> <a href="../duration.html"><span class="kw1002">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="sy2">*</span> offset_sec <span class="sy1">=</span> nullptr <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (2) </td>
+<td> <span class="t-mark-rev t-since-cxx20">(since C++20)</span> </td>
+</tr>
+<tr class="t-dcl-h">
+<td> <div>Helper templates</div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td><div><span id="Version_3"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Duration <span class="sy1">&gt;</span><br>
+<p><span class="kw1">struct</span> <span class="coMULTI">/*local-time-format-t*/</span><br>
+<span class="br0">{</span><br>
+&nbsp; &nbsp; <a href="../local_t.html"><span class="kw2639">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">local_time</span></span></a><span class="sy1">&lt;</span>Duration<span class="sy1">&gt;</span> <span class="coMULTI">/*time*/</span><span class="sy4">;</span><br>
+&nbsp; &nbsp; <span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1239">std::<span class="me2">string</span></span></a><span class="sy2">*</span> <span class="coMULTI">/*abbrev*/</span><span class="sy4">;</span><br>
+&nbsp; &nbsp; <span class="kw4">const</span> <a href="../duration.html"><span class="kw1002">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="sy2">*</span> <span class="coMULTI">/*offset_sec*/</span><span class="sy4">;</span><br>
+</p>
+<span class="br0">}</span><span class="sy4">;</span></span></div></td>
+<td> (3)</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span> <br><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition only*</span>)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Duration, <span class="kw1">class</span> CharT <span class="sy1">&gt;</span><br>
+<span class="kw1">struct</span> formatter<span class="sy1">&lt;</span><span class="coMULTI">/*local-time-format-t*/</span><span class="sy1">&lt;</span>Duration<span class="sy1">&gt;</span>, CharT<span class="sy1">&gt;</span><span class="sy4">;</span></span></div></td>
+<td> (4) </td>
+<td> <span class="t-mark-rev t-since-cxx20">(since C++20)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<div class="t-li1"><span class="t-li">1)</span> Specialization of <span class="t-lc"><a href="../../utility/format/formatter.html" title="cpp/utility/format/formatter">std::formatter</a></span> that defines formatting rules for a <span class="t-lc">std::chrono::zoned_time</span>.
+<ul><li> The <code>parse</code> member is inherited from the base class.
+</li><li> Let <span class="t-c"><span class="mw-geshi cpp source-cpp">tp</span></span> be the formatting argument and <span class="t-c"><span class="mw-geshi cpp source-cpp">ctx</span></span> be the formatting context, the behavior of the <code>format</code> member is equivalent to:
+</li></ul>
+<p><span class="t-c">
+<span class="mw-geshi cpp source-cpp"><span class="kw1">using</span> common_duration_type <span class="sy1">=</span> <a href="../../types/common_type.html"><span class="kw642">std::<span class="me2">common_type_t</span></span></a><span class="sy1">&lt;</span>Duration, <a href="../duration.html"><span class="kw1002">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="sy1">&gt;</span><span class="sy4">;</span></span><br>
+<span class="mw-geshi cpp source-cpp"><span class="kw1">using</span> formatter_type <span class="sy1">=</span> <a href="../../utility/format/formatter.html"><span class="kw3173">std::<span class="me2">formatter</span></span></a><span class="sy1">&lt;</span></span><code><i>local-time-format-t</i></code> ﻿<span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;</span>common_duration_type<span class="sy1">&gt;</span><span class="sy4">;</span></span><br><br>
+<span class="mw-geshi cpp source-cpp"><a href="../sys_info.html"><span class="kw2604">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">sys_info</span></span></a> info <span class="sy1">=</span> tp.<span class="me1">get_info</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></span><br>
+<span class="mw-geshi cpp source-cpp"><span class="kw1">return</span> formatter_type<span class="sy4">::</span><span class="me2">format</span><span class="br0">(</span><span class="br0">{</span>tp.<span class="me1">get_local_time</span><span class="br0">(</span><span class="br0">)</span>, <span class="sy3">&amp;</span>info.<span class="me1">abbrev</span>, <span class="sy3">&amp;</span>info.<span class="me1">offset_sec</span><span class="br0">}</span><span class="br0">)</span>, ctx<span class="br0">)</span><span class="sy4">;</span></span>
+</span></p>
+</div>
+<div class="t-li1"><span class="t-li">2)</span> Creates an object which can be formatted as a <span class="t-lc">std::chrono::zoned_time</span>.</div>
+<div class="t-li1"><span class="t-li"></span> Returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">{</span>time, abbrev, offset_sec<span class="br0">}</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">3)</span> An exposition-only type containing all information needed for formatting a <span class="t-lc">std::chrono::zoned_time</span>:
+<ul><li> <code><i>abbrev</i></code> contains the time zone abbreviation.
+</li><li> <code><i>offset_sec</i></code> contains the offset from UTC.
+</li><li> <code><i>time</i></code> contains all other information needed.</li></ul></div>
+
+<div class="t-li1"><span class="t-li">4)</span> Specialization of <span class="t-lc"><a href="../../utility/format/formatter.html" title="cpp/utility/format/formatter">std::formatter</a></span> that defines underlying formatting rules for a <span class="t-lc">std::chrono::zoned_time</span>.</div>
+<div class="t-li1"><span class="t-li"></span> Let <span class="t-c"><span class="mw-geshi cpp source-cpp">f</span></span> be the formatting argument, the specialization has the following extra formatting rules:
+<ul><li> If <span class="t-spar">chrono-spec</span> is omitted, the result is equivalent to using <code><b>%F&nbsp;%T&nbsp;%Z</b></code> as <span class="t-spar">chrono-spec</span> ﻿.
+</li><li> If <code><b>%Z</b></code> is used, it is replaced with <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>f.<span class="me1">abbrev</span></span></span> if <span class="t-c"><span class="mw-geshi cpp source-cpp">f.<span class="me1">abbrev</span></span></span> is not a null pointer value; otherwise an exception of type <span class="t-lc"><a href="../../utility/format/format_error.html" title="cpp/utility/format/format error">std::format_error</a></span> is thrown.
+</li><li> If <code><b>%z</b></code> or a modified variant of <code><b>%z</b></code> is used, it is replaced with <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>f.<span class="me1">offset_sec</span></span></span> if <span class="t-c"><span class="mw-geshi cpp source-cpp">f.<span class="me1">offset_sec</span></span></span> is not a null pointer value; otherwise an exception of type <span class="t-lc"><a href="../../utility/format/format_error.html" title="cpp/utility/format/format error">std::format_error</a></span> is thrown.</li></ul></div>
+
+<p>The <span class="t-lc"><a href="../../utility/format/formatter.html" title="cpp/utility/format/formatter">std::formatter</a></span> specialization is usually not directly accessed, but is used through <a href="../../utility/format.html" title="cpp/utility/format">formatting functions</a>.
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./formatter.html#Format_specification"><span class="tocnumber">1</span> <span class="toctext">Format specification</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./formatter.html#Example"><span class="tocnumber">2</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./formatter.html#Defect_reports"><span class="tocnumber">3</span> <span class="toctext">Defect reports</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./formatter.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/chrono/zoned_time/formatter&amp;action=edit&amp;section=1" title="Edit section: Format specification">edit</a>]</span> <span class="mw-headline" id="Format_specification">Format specification</span></h3>
+<p>The format specification has the form
+</p>
+<table class="t-sdsc-begin">
+
+<tbody><tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td class="t-sdsc-nopad"> <span class="t-spar">fill-and-align</span> ﻿<span class="t-mark">(optional)</span> <span class="t-spar">width</span> ﻿<span class="t-mark">(optional)</span> <span class="t-spar">precision</span> ﻿<span class="t-mark">(optional)</span> <code><b>L</b></code><span class="t-mark">(optional)</span> <span class="t-spar">chrono-spec</span> ﻿<span class="t-mark">(optional)</span>
+</td>
+<td class="t-sdsc-nopad">
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></tbody></table>
+<p><span class="t-spar">fill-and-align</span>, <span class="t-spar">width</span>, and <span class="t-spar">precision</span> have the same meaning as in <a href="../../utility/format/formatter.html#Standard_format_specification" title="cpp/utility/format/formatter">standard format specification</a>. <span class="t-spar">precision</span> is valid only for <span class="t-lc"><a href="../duration.html" title="cpp/chrono/duration">std::chrono::duration</a></span> types where the representation type <code>Rep</code> is a floating-point type, otherwise <span class="t-lc"><a href="../../utility/format/format_error.html" title="cpp/utility/format/format error">std::format_error</a></span> is thrown.
+</p><p>The locale used for formatting is determined as follows:
+</p>
+<ul><li> the default <span class="mw-geshi cpp source-cpp"><span class="st0">"C"</span></span> locale if <code><b>L</b></code> is not present in the format specification,
+</li><li> otherwise, the locale denoted by the <span class="t-lc"><a href="../../locale/locale.html" title="cpp/locale/locale">std::locale</a></span> passed to the formatting function, if any,
+</li><li> otherwise (<code><b>L</b></code> is present but no <span class="t-lc"><a href="../../locale/locale.html" title="cpp/locale/locale">std::locale</a></span> is passed to the formatting function), the global locale.
+</li></ul>
+<p>If the <a href="../../language/charset.html#Code_unit_and_literal_encoding" title="cpp/language/charset">(ordinary or wide) string literal encoding</a> is a Unicode encoding form and the locale is among an implementation-defined set of locales, each replacement that depends on the locale is performed as if the replacement character sequence is converted to the literal encoding.
+</p><p>The <span class="t-spar">chrono-spec</span> consists of one or more conversion specifiers and ordinary characters (other than <code><b>{</b></code>, <code><b>}</b></code>, and <code><b>%</b></code>). A <span class="t-spar">chrono-spec</span> must start with a conversion specifier. All ordinary characters are written to the output without modification. Each unmodified conversion specifier begins with a <code><b>%</b></code> character followed by a character that determines the behavior of the specifier. Some conversion specifiers have a modified form in which an <code><b>E</b></code> or <code><b>O</b></code> modifier character is inserted after the <code><b>%</b></code> character. Each conversion specifier is replaced by appropriate characters in the output as described below.
+</p><p>Unless otherwise specified, if the <span class="t-spar">chrono-spec</span> is empty, the chrono object is formatted as if by <a href="./operator_ltlt.html" title="cpp/chrono/zoned time/operator ltlt">streaming</a> it to an object <code>os</code> of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../io/basic_ostringstream.html"><span class="kw1740">std::<span class="me2">basic_ostringstream</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span></span></span> with the formatting locale (one of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../locale/locale/classic.html"><span class="kw2701">std::<span class="me2">locale</span><span class="sy4">::</span><span class="me2">classic</span></span></a><span class="br0">(</span><span class="br0">)</span></span></span>, the passed <span class="t-lc"><a href="../../locale/locale.html" title="cpp/locale/locale">std::locale</a></span> object, and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../locale/locale/global.html"><span class="kw2702">std::<span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span></span></a><span class="br0">(</span><span class="br0">)</span></span></span>) <a href="../../io/ios_base/imbue.html" title="cpp/io/ios base/imbue">imbued</a> and copying <span class="t-c"><span class="mw-geshi cpp source-cpp">os.<span class="me1">str</span><span class="br0">(</span><span class="br0">)</span></span></span> to the output buffer with additional padding and adjustments as per format specifiers.
+</p><p>The following format specifiers are available:
+</p>
+<table class="wikitable" style="font-size:85%; max-width:90em;">
+
+<tbody><tr>
+<th> Conversion<br> specifier
+</th>
+<th> Explanation
+</th></tr>
+<tr>
+<th> <code>%%</code>
+</th>
+<td> Writes a literal <code>%</code> character.
+</td></tr>
+<tr>
+<th> <code>%n</code>
+</th>
+<td> Writes a newline character.
+</td></tr>
+<tr>
+<th> <code>%t</code>
+</th>
+<td> Writes a horizontal tab character.
+</td></tr>
+<tr>
+<th colspan="3"> Year
+</th></tr>
+<tr>
+<th> <code>%C</code> <br> <code>%EC</code>
+</th>
+<td> Writes the year divided by 100 using floored division. If the result is a single decimal digit, it is prefixed with 0.
+<p>The modified command <code>%EC</code> writes the locale's alternative representation of the century.
+</p>
+</td></tr>
+<tr>
+<th> <code>%y</code> <br> <code>%Oy</code> <br> <code>%Ey</code>
+</th>
+<td> Writes the last two decimal digits of the year. If the result is a single digit it is prefixed by 0.
+<p>The modified command <code>%Oy</code> writes the locale's alternative representation.
+</p><p>The modified command <code>%Ey</code> writes the locale's alternative representation of offset from <code>%EC</code> (year only).
+</p>
+</td></tr>
+<tr>
+<th> <code>%Y</code> <br> <code>%EY</code>
+</th>
+<td> Writes the year as a decimal number. If the result is less than four digits it is left-padded with 0 to four digits.
+<p>The modified command <code>%EY</code> writes the locale's alternative full year representation.
+</p>
+</td></tr>
+<tr>
+<th colspan="3"> Month
+</th></tr>
+<tr>
+<th> <code>%b</code><br><code>%h</code>
+</th>
+<td> Writes the locale's abbreviated month name.
+</td></tr>
+<tr>
+<th> <code>%B</code>
+</th>
+<td> Writes the locale's full month name.
+</td></tr>
+<tr>
+<th> <code>%m</code><br><code>%Om</code>
+</th>
+<td> Writes the month as a decimal number (January is <code>01</code>). If the result is a single digit, it is prefixed with 0.
+<p>The modified command <code>%Om</code> writes the locale's alternative representation.
+</p>
+</td></tr>
+<tr>
+<th colspan="3"> Day
+</th></tr>
+<tr>
+<th> <code>%d</code><br><code>%Od</code>
+</th>
+<td> Writes the day of month as a decimal number. If the result is a single decimal digit, it is prefixed with 0.
+<p>The modified command <code>%Od</code> writes the locale's alternative representation.
+</p>
+</td></tr>
+<tr>
+<th> <code>%e</code><br><code>%Oe</code>
+</th>
+<td> Writes the day of month as a decimal number. If the result is a single decimal digit, it is prefixed with a space.
+<p>The modified command <code>%Oe</code> writes the locale's alternative representation.
+</p>
+</td></tr>
+<tr>
+<th colspan="3"> Day of the week
+</th></tr>
+<tr>
+<th> <code>%a</code>
+</th>
+<td> Writes the locale's abbreviated weekday name.
+</td></tr>
+<tr>
+<th> <code>%A</code>
+</th>
+<td> Writes the locale's full weekday name.
+</td></tr>
+<tr>
+<th> <code>%u</code><br><code>%Ou</code>
+</th>
+<td> Writes the ISO weekday as a decimal number (1-7), where Monday is <code>1</code>.
+<p>The modified command <code>%Ou</code> writes the locale's alternative representation.
+</p>
+</td></tr>
+<tr>
+<th> <code>%w</code><br><code>%Ow</code>
+</th>
+<td> Writes the weekday as a decimal number (0-6), where Sunday is <code>0</code>.
+<p>The modified command <code>%Ow</code> writes the locale's alternative representation.
+</p>
+</td></tr>
+<tr>
+<th colspan="3"> ISO 8601 week-based year
+</th></tr>
+<tr>
+<td colspan="3">
+<p>In ISO 8601 weeks begin with Monday and the first week of the year must satisfy the following requirements:
+</p>
+<ul><li> Includes January 4
+</li><li> Includes first Thursday of the year
+</li></ul>
+</td></tr>
+<tr>
+<th> <code>%g</code>
+</th>
+<td> Writes the last two decimal digits of the ISO 8601 week-based year. If the result is a single digit it is prefixed by 0.
+</td></tr>
+<tr>
+<th> <code>%G</code>
+</th>
+<td> Writes the ISO 8601 week-based year as a decimal number. If the result is less than four digits it is left-padded with 0 to four digits.
+</td></tr>
+<tr>
+<th> <code>%V</code><br><code>%OV</code>
+</th>
+<td> Writes the ISO 8601 week of the year as a decimal number. If the result is a single digit, it is prefixed with 0.
+<p>The modified command <code>%OV</code> writes the locale's alternative representation.
+</p>
+</td></tr>
+<tr>
+<th colspan="3"> Week/day of the year
+</th></tr>
+<tr>
+<th> <code>%j</code>
+</th>
+<td> Writes the day of the year as a decimal number (January 1 is <code>001</code>). If the result is less than three digits, it is left-padded with 0 to three digits.
+</td></tr>
+<tr>
+<th> <code>%U</code><br><code>%OU</code>
+</th>
+<td> Writes the week number of the year as a decimal number. The first Sunday of the year is the first day of week 01. Days of the same year prior to that are in week 00. If the result is a single digit, it is prefixed with 0.
+<p>The modified command <code>%OU</code> writes the locale's alternative representation.
+</p>
+</td></tr>
+<tr>
+<th> <code>%W</code><br><code>%OW</code>
+</th>
+<td> Writes the week number of the year as a decimal number. The first Monday of the year is the first day of week 01. Days of the same year prior to that are in week 00. If the result is a single digit, it is prefixed with 0.
+<p>The modified command <code>%OW</code> writes the locale's alternative representation.
+</p>
+</td></tr>
+<tr>
+<th colspan="3"> Date
+</th></tr>
+<tr>
+<th> <code>%D</code>
+</th>
+<td> Equivalent to <code><b>"%m/%d/%y"</b></code>.
+</td></tr>
+<tr>
+<th> <code>%F</code>
+</th>
+<td> Equivalent to <code><b>"%Y-%m-%d"</b></code>.
+</td></tr>
+<tr>
+<th> <code>%x</code><br><code>%Ex</code>
+</th>
+<td> Writes the locale's date representation.
+<p>The modified command <code>%Ex</code> produces the locale's alternate date representation.
+</p>
+</td></tr>
+<tr>
+<th colspan="3"> Time of day
+</th></tr>
+<tr>
+<th> <code>%H</code><br><code>%OH</code>
+</th>
+<td> Writes the hour (24-hour clock) as a decimal number. If the result is a single digit, it is prefixed with 0.
+<p>The modified command <code>%OH</code> writes the locale's alternative representation.
+</p>
+</td></tr>
+<tr>
+<th> <code>%I</code><br><code>%OI</code>
+</th>
+<td> Writes the hour (12-hour clock) as a decimal number. If the result is a single digit, it is prefixed with 0.
+<p>The modified command <code>%OI</code> writes the locale's alternative representation.
+</p>
+</td></tr>
+<tr>
+<th> <code>%M</code><br><code>%OM</code>
+</th>
+<td> Writes the minute as a decimal number. If the result is a single digit, it is prefixed with 0.
+<p>The modified command <code>%OM</code> writes the locale's alternative representation.
+</p>
+</td></tr>
+<tr>
+<th> <code>%S</code><br><code>%OS</code>
+</th>
+<td> Writes the second as a decimal number. If the number of seconds is less than 10, the result is prefixed with 0.
+<p>If the precision of the input cannot be exactly represented with seconds, then the format is a decimal floating-point number with a fixed format and a precision matching that of the precision of the input (or to a microseconds precision if the conversion to floating-point decimal seconds cannot be made within 18 fractional digits). The character for the decimal point is localized according to the locale.
+</p><p>The modified command <code>%OS</code> writes the locale's alternative representation.
+</p>
+</td></tr>
+<tr>
+<th> <code>%p</code>
+</th>
+<td> Writes the locale's equivalent of the AM/PM designations associated with a 12-hour clock.
+</td></tr>
+<tr>
+<th> <code>%R</code>
+</th>
+<td> Equivalent to <code><b>"%H:%M"</b></code>.
+</td></tr>
+<tr>
+<th> <code>%T</code>
+</th>
+<td> Equivalent to <code><b>"%H:%M:%S"</b></code>.
+</td></tr>
+<tr>
+<th> <code>%r</code>
+</th>
+<td> Writes the locale's 12-hour clock time.
+</td></tr>
+<tr>
+<th> <code>%X</code><br><code>%EX</code>
+</th>
+<td> Writes the locale's time representation.
+<p>The modified command <code>%EX</code> writes the locale's alternate time representation.
+</p><p><br>
+</p>
+</td></tr>
+<tr>
+<th colspan="3"> Time zone
+</th></tr>
+<tr>
+<th> <code>%z</code><br><code>%Ez</code><br><code>%Oz</code>
+</th>
+<td> Writes the offset from UTC in the ISO 8601 format. For example <code>-0430</code> refers to 4 hours 30 minutes behind UTC. If the offset is zero, <code>+0000</code> is used.
+<p>The modified commands <code>%Ez</code> and <code>%Oz</code> insert a <code>:</code> between the hours and minutes (e.g., <code>-04:30</code>).
+</p>
+</td></tr>
+<tr>
+<th> <code>%Z</code>
+</th>
+<td> Writes the time zone abbreviation.
+</td></tr>
+<tr>
+<th colspan="3"> Miscellaneous
+</th></tr>
+<tr>
+<th> <code>%c</code><br><code>%Ec</code>
+</th>
+<td> Writes the locale's date and time representation.
+<p>The modified command <code>%Ec</code> writes the locale's alternative date and time representation.
+</p>
+</td></tr></tbody></table>
+<p>The following specifiers are recognized, but will cause <span class="t-lc"><a href="../../utility/format/format_error.html" title="cpp/utility/format/format error">std::format_error</a></span> to be thrown:
+</p>
+<table class="wikitable" style="font-size:85%; max-width:90em;">
+
+<tbody><tr>
+<th> Conversion<br> specifier
+</th>
+<th> Explanation
+</th></tr>
+<tr>
+<th colspan="3"> Duration count
+</th></tr>
+<tr>
+<th> <code>%Q</code>
+</th>
+<td> Writes the count of ticks of the duration, i.e. the value obtained via <a href="../duration/count.html" title="cpp/chrono/duration/count"><tt>count()</tt></a>.
+</td></tr>
+<tr>
+<th> <code>%q</code>
+</th>
+<td> Writes the unit suffix of the duration, as specified in <a href="../duration/operator_ltlt.html" title="cpp/chrono/duration/operator ltlt"><tt>operator&lt;&lt;()</tt></a>.
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/chrono/zoned_time/formatter&amp;action=edit&amp;section=2" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br>Reason: no example </td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/chrono/zoned_time/formatter&amp;action=edit&amp;section=3" title="Edit section: Defect reports">edit</a>]</span> <span class="mw-headline" id="Defect_reports">Defect reports</span></h3>
+<p>The following behavior-changing defect reports were applied retroactively to previously published C++ standards.
+</p>
+<table class="dsctable" style="font-size:0.8em">
+<tbody><tr>
+<th>DR
+</th>
+<th>Applied to
+</th>
+<th>Behavior as published
+</th>
+<th>Correct behavior
+</th></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://cplusplus.github.io/LWG/issue4124">LWG 4124</a>
+</td>
+<td>C++20
+</td>
+<td>1. <span class="t-spar">chrono-spec</span> could not be omitted<br>2. <code>zoned_time</code> could not be formatted<br>&nbsp;&nbsp;&nbsp;&nbsp;with resolution coarser than seconds
+</td>
+<td>1. it can be omitted<br>2. can be formatted with<br>&nbsp;&nbsp;&nbsp;&nbsp;those resolutions
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https://wg21.link/P2372R3">P2372R3</a>
+</td>
+<td>C++20
+</td>
+<td><code>formatter</code> used the global locale or passed locale
+</td>
+<td>default <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">"C"</span></span></span> locale is used when <code><b>L</b></code> is absent
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/chrono/zoned_time/formatter&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../utility/format/format.html" title="cpp/utility/format/format"> <span class="t-lines"><span>format</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  stores formatted representation of the arguments in a new string <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/format/dsc_format&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 8182/1000000
+Preprocessor generated node count: 17790/1000000
+Post‐expand include size: 226546/4194304 bytes
+Template argument size: 41512/4194304 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:18756-0!*!0!!en!*!* and timestamp 20250412011139 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/chrono/zoned_time/formatter&amp;oldid=181014">https://en.cppreference.com/mwiki/index.php?title=cpp/chrono/zoned_time/formatter&amp;oldid=181014</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.cppreference.com/w/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../Category%25253ATodo_no_example.html" title="Category:Todo no example">Todo no example</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./formatter.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/chrono/zoned_time/formatter" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/chrono/zoned_time/formatter" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/chrono/zoned_time/formatter&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/chrono/zoned_time/formatter&amp;oldid=181014" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/chrono/zoned_time/formatter&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div id="cpp-languagess" hidden="">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/chrono/zoned_time/formatter" title="cpp/chrono/zoned time/formatter" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/chrono/zoned_time/formatter" title="cpp/chrono/zoned time/formatter" lang="es" hreflang="es">Español</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/chrono/zoned_time/formatter" title="cpp/chrono/zoned time/formatter" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/chrono/zoned_time/formatter" title="cpp/chrono/zoned time/formatter" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/chrono/zoned_time/formatter" title="cpp/chrono/zoned time/formatter" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 21 February 2025, at 14:57.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 2.615 secs. -->
+	
+
+
+</body></html>

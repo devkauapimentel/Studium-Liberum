@@ -1,0 +1,18 @@
+<html><head>    <meta charset="utf-8">    <meta http-equiv="x-ua-compatible" content="ie=edge">    <title>JavaScript Demo: Object initializer</title>    <meta name="viewport" content="width=device-width, initial-scale=1">    <link href="../../../../../../../../interactive_examples/assets/css/codemirror.css" rel="stylesheet">    <link href="../../../../../../../../interactive_examples/assets/css/editor-js.css" rel="stylesheet">  </head>  <body>        <section id="static"><pre><code id="static-js" data-height="">const object1 = { a: "foo", b: 42, c: {} };
+
+console.log(object1.a);
+// Expected output: "foo"
+
+const a = "foo";
+const b = 42;
+const c = {};
+const object2 = { a: a, b: b, c: c };
+
+console.log(object2.b);
+// Expected output: 42
+
+const object3 = { a, b, c };
+
+console.log(object3.a);
+// Expected output: "foo"
+    </code></pre></section>        <section id="live" class="live hidden">          <header class="output-header border-rounded-top-no-bottom">            <h4 class="output-heading">JavaScript Demo: Object initializer</h4>          </header>          <div id="editor" class="editor"></div>          <div class="output-container">            <div class="buttons-container">              <button id="execute" class="button run" type="button">                Run ›              </button>              <button id="reset" type="button" class="button">Reset</button>            </div>            <div id="console" class="output"><code></code></div>          </div>        </section>    <script src="../../../../../../../../interactive_examples/assets/js/codemirror.js"></script>    <script src="../../../../../../../../interactive_examples/assets/js/editor-js.js"></script></body></html>

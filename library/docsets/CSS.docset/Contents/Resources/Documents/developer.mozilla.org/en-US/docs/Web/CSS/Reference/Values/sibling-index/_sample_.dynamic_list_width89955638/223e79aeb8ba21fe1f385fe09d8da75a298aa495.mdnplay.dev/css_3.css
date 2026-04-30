@@ -1,0 +1,4 @@
+
+li { width: calc(50px * sibling-index()); background-color: rgb(255, 170, 170); }
+
+button.copy {display:none !important}

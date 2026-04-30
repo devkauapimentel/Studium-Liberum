@@ -1,0 +1,864 @@
+<html><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 12:39:12 GMT --><head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Using the CSS Typed Object Model</title>
+          
+          <script>try {
+  document.documentElement.dataset.theme =
+    localStorage.getItem("theme") || "light dark";
+} catch (error) {
+  console.warn("Unable to set theme", error);
+}
+
+try {
+  if (localStorage.getItem("nop") === "yes") {
+    document.documentElement.dataset["nop"] = "yes";
+  }
+} catch (error) {
+  console.warn("Unable to set nop", error);
+}
+</script>
+          <link rel="stylesheet" href="../../../../../static/client/styles-global.03146ed4c65bc5ea.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/270.66bae6059a1c23f9.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-layout.632d2f3884f10ca3.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-content-section.2ee991ba88f986cf.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-heading-anchor.0eec5185ab9425b7.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-toc.9b9bd019efd16b86.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-article-footer.81ae18c89fc527dc.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-left-sidebar.6f954e8939555f77.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-page-layout.5a4354f33e894319.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-a11y-menu.5796ee87cb69f93f.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-navigation.3a34ee593a554c40.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-logo.aea5ff6edf1b9cfb.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-menu.3376b3e11656fba0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs-bar.9a51a3c76a6231d0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs.d06ce8d09f42feb8.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-footer.a2850e459e2d290b.css" fetchpriority="high">
+          <link rel="preload" href="../../../../../static/client/jetbrains-mono-latin.119994ed445212c7.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low"><link rel="preload" href="../../../../../static/client/inter-latin.9a3b1bc220d426ef.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+          <script data-cfasync="false" data-report-only="on" data-prompt="0" src="../../../../../../transcend-cdn.com/cm/d556c3a1-e57c-4bdf-a490-390a1aebf6dd/airgap.js"></script>
+          <script src="../../../../../static/client/runtime.c294a6bdc7a42570.js" type="module"></script><script src="../../../../../static/client/1111.53dba753dc3eb961.js" type="module"></script><script src="../../../../../static/client/8903.f870aafb338b203a.js" type="module"></script><script src="../../../../../static/client/index.9a449352d879bbd5.js" type="module"></script>
+          
+    <link rel="icon" sizes="32x32" href="../../../../../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../../../../../favicon.svg">
+   <meta name="description" content="The CSS Typed Object Model API exposes CSS values as typed JavaScript objects to allow their performant manipulation."><meta name="og:url" content="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide"><meta name="og:title" content="Using the CSS Typed Object Model - Web APIs | MDN"><meta name="og:locale" content="en_US"><meta name="og:description" content="The CSS Typed Object Model API exposes CSS values as typed JavaScript objects to allow their performant manipulation."><meta name="og:image" content="https://developer.mozilla.org/mdn-social-image.46ac2375.png"><meta name="og:image:type" content="image/png"><meta name="og:image:height" content="1024"><meta name="og:image:width" content="1024"><meta name="og:image:alt" content="The MDN logo"><meta name="og:site_name" content="MDN Web Docs"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="MozDevNet">
+          <link rel="canonical" href="Guide.html">
+          <link rel="apple-touch-icon" href="../../../../../apple-touch-icon.png">
+          <link rel="manifest" href="../../../../../manifest.json">
+          <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/opensearch.xml" title="MDN Web Docs">
+          <link rel="alternate" type="application/rss+xml" title="MDN Blog RSS Feed" href="https://developer.mozilla.org/en-US/blog/rss.xml">
+        </head>
+        
+      <body class="page-layout">
+        <ul class="a11y-menu">
+      <li>
+        <a href="#content">Skip to main content</a>
+      </li>
+      <li>
+        <a href="#search">Skip to search</a>
+      </li>
+    </ul>
+        <div class="page-layout__banner" data-scheme="">
+          <mdn-placement-top></mdn-placement-top>
+        </div>
+        <header class="page-layout__header">
+          
+      <nav class="navigation" data-scheme="" data-open="false">
+        <div class="navigation__logo">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">
+        <svg class="logo__image" width="83" height="24" viewBox="0 0 83 24" role="img">
+          <title>MDN</title>
+          <path class="logo__letter" d="M9.4 0 2.81 21.17H.12L6.69 0H9.4Zm2.38 0v21.17H9.4V0h2.4Zm9.27 0-6.56 21.17H11.8L18.36 0h2.69Zm2.39 0v21.17h-2.4V0h2.4Z"></path>
+          <path class="logo__text" d="M45.55 16.83h-3.93v-1.27h.87v-3.63c0-.85-.16-1.45-.48-1.82a1.65 1.65 0 0 0-1.3-.52c-.74 0-1.3.25-1.66.78a2.98 2.98 0 0 0-.58 1.58v3.59h1.38v1.26h-3.93v-1.26h.87v-3.6c0-.88-.16-1.48-.48-1.83a1.7 1.7 0 0 0-1.29-.52 1.93 1.93 0 0 0-1.65.75 2.85 2.85 0 0 0-.58 1.6v3.62h1.59v1.27h-4.64v-1.27h1.37V9.75h-1.4V8.46h3.08v1.47c.28-.48.62-.87 1.08-1.2a3 3 0 0 1 1.68-.45c.67 0 1.22.16 1.73.48.5.32.85.8 1.03 1.47.25-.57.62-1.03 1.13-1.4.5-.37 1.1-.55 1.81-.55.8 0 1.5.25 2.05.75.55.51.85 1.3.85 2.35v4.18h1.4v1.27Zm9.77 0H52.3v-1.66c-.27.51-.66.95-1.13 1.29-.56.4-1.23.59-1.9.55-1.11 0-2-.37-2.67-1.12a4.41 4.41 0 0 1-1-3.06c0-1.15.3-2.2.93-3.15.6-.94 1.58-1.43 2.94-1.43 1.36 0 2.25.5 2.83 1.5V5.22h-2V3.93h3.63v11.63h1.38v1.27Zm-3.06-3.86v-1.02a2.28 2.28 0 0 0-.73-1.67 2.4 2.4 0 0 0-1.66-.65 2.18 2.18 0 0 0-1.88.9 3.63 3.63 0 0 0-.65 2.2c0 .95.23 1.68.7 2.19.45.5 1.03.76 1.7.76.73 0 1.33-.3 1.79-.88.48-.6.71-1.21.73-1.83Zm14.14 3.86h-4.43v-1.27h1.37v-3.63c0-.85-.16-1.45-.5-1.82a1.68 1.68 0 0 0-1.31-.52c-.71 0-1.29.23-1.7.69a2.52 2.52 0 0 0-.67 1.6v3.66h1.38v1.26H56.1v-1.26h1.38v-5.8h-1.42V8.47h3.12V9.9c.6-1.06 1.57-1.6 2.92-1.6.83 0 1.54.26 2.12.77.57.5.85 1.28.85 2.34v4.19h1.38v1.24h-.05Z"></path>
+          <path class="logo__cursor" d="M67.71 21.98H83V24H67.71v-2.02Z"></path>
+        </svg>
+      </a>
+    </div>
+        <div class="navigation__search" data-view="mobile">
+          <mdn-search-button></mdn-search-button>
+        </div>
+        <button class="navigation__button" type="button" aria-expanded="false" aria-controls="navigation__popup" aria-label="Toggle navigation"></button>
+        <div class="navigation__popup" id="navigation__popup">
+          <div class="navigation__menu">
+      <nav class="menu">
+        <div class="menu__tab" data-section="html">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">HTML</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" data-glean-id="menu_click_menu: html -&gt; /en-US/docs/Web/HTML">HTML: Markup language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>HTML reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Elements">Elements</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Global_attributes">Global attributes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Attributes">Attributes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference" aria-label="See all HTML references" title="See all HTML references" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>HTML guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Responsive_images">Responsive images</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Cheatsheet" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Cheatsheet">HTML cheatsheet</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Date_and_time_formats" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Date_and_time_formats">Date &amp; time formats</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides" aria-label="See all HTML guides" title="See all HTML guides" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Markup languages</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/SVG">SVG</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/MathML">MathML</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/XML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/XML">XML</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="css">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">CSS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="../../CSS.html" data-glean-id="menu_click_menu: css -&gt; /en-US/docs/Web/CSS">CSS: Styling language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>CSS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../CSS/Reference/Properties.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Properties">Properties</a>
+                              </li><li>
+                                <a href="../../CSS/Reference/Selectors.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Selectors">Selectors</a>
+                              </li><li>
+                                <a href="../../CSS/Reference/At-rules.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/At-rules">At-rules</a>
+                              </li><li>
+                                <a href="../../CSS/Reference/Values.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Values">Values</a>
+                              </li><li>
+                                <a href="../../CSS/Reference.html" aria-label="See all CSS references" title="See all CSS references" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>CSS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../CSS/Guides/Box_model/Introduction.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Box_model/Introduction">Box model</a>
+                              </li><li>
+                                <a href="../../CSS/Guides/Animations/Using.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Animations/Using">Animations</a>
+                              </li><li>
+                                <a href="../../CSS/Guides/Flexible_box_layout/Basic_concepts.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Flexbox</a>
+                              </li><li>
+                                <a href="../../CSS/Guides/Colors/Applying_color.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Colors/Applying_color">Colors</a>
+                              </li><li>
+                                <a href="../../CSS/Guides.html" aria-label="See all CSS guides" title="See all CSS guides" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Layout cookbook</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../CSS/How_to/Layout_cookbook/Column_layouts.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts">Column layouts</a>
+                              </li><li>
+                                <a href="../../CSS/How_to/Layout_cookbook/Center_an_element.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element">Centering an element</a>
+                              </li><li>
+                                <a href="../../CSS/How_to/Layout_cookbook/Card.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Card">Card component</a>
+                              </li><li>
+                                <a href="../../CSS/How_to/Layout_cookbook.html" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="javascript">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label" data-type="long">JavaScript</span><span class="menu__tab-label" data-type="short">JS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" data-glean-id="menu_click_menu: javascript -&gt; /en-US/docs/Web/JavaScript">JavaScript: Scripting language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>JS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Statements">Statements &amp; declarations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Functions">Functions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" aria-label="See all JavaScript references" title="See all JavaScript references" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>JS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow &amp; error handing</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops and iteration</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Working_with_objects">Working with objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Using_classes">Using classes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" aria-label="See all JavaScript guides" title="See all JavaScript guides" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="webapis">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Web APIs</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/API" data-glean-id="menu_click_menu: webapis -&gt; /en-US/docs/Web/API">Web APIs: Programming interfaces</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Web API reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/File_System_API">File system API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API">Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Geolocation_API">Geolocation API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/HTML_DOM_API">HTML DOM API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Push_API">Push API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Service_Worker_API">Service worker API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API" aria-label="See all Web API guides" title="See all Web API guides" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Web API guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API">Using the Web animation API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API/Using_Fetch">Using the Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/History_API/Working_with_the_History_API">Working with the History API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Using the Web speech API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using web workers</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="all">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">All</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web" data-glean-id="menu_click_menu: all -&gt; /en-US/docs/Web">All web technology</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Technologies</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Accessibility">Accessibility</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/HTTP">HTTP</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/URI" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/URI">URI</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Mozilla/Add-ons/WebExtensions">Web extensions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/WebAssembly">WebAssembly</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/WebDriver">WebDriver</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web" aria-label="See all web technology references" title="See all web technology references" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Topics</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Media" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Media">Media</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Performance">Performance</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Privacy" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Privacy">Privacy</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Security">Security</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Progressive_web_apps">Progressive web apps</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="learn">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Learn</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" data-glean-id="menu_click_menu: learn -&gt; /en-US/docs/Learn_web_development">Learn web development</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Frontend developer course</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Getting_started">Getting started modules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core">Core modules</a>
+                              </li><li>
+                                <a class="" href="https://developer.mozilla.org/en-US/curriculum/" data-glean-id="menu_click_submenu: learn -&gt; /en-US/curriculum/">MDN Curriculum</a>
+                              </li><li>
+                                <a class="external" href="https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar" data-glean-id="menu_click_submenu: learn -&gt; https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar">Check out the video course from Scrimba, our partner</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn HTML</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn CSS</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics module</a>
+                              </li><li>
+                                <a href="../../../Learn_web_development/Core/CSS_layout.html" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn JavaScript</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript module</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="tools">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Tools</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Discover our tools
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="circle-play" href="https://developer.mozilla.org/en-US/play" data-glean-id="menu_click_submenu: tools -&gt; /en-US/play">Playground</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="shield-check" href="https://developer.mozilla.org/en-US/observatory" data-glean-id="menu_click_submenu: tools -&gt; /en-US/observatory">HTTP Observatory</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a href="../../CSS/Guides/Backgrounds_and_borders/Border-image_generator.html" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator">Border-image generator</a>
+                              </li><li>
+                                <a href="../../CSS/Guides/Backgrounds_and_borders/Border-radius_generator.html" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator">Border-radius generator</a>
+                              </li><li>
+                                <a href="../../CSS/Guides/Backgrounds_and_borders/Box-shadow_generator.html" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator">Box-shadow generator</a>
+                              </li><li>
+                                <a href="../../CSS/Guides/Colors/Color_format_converter.html" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_format_converter">Color format converter</a>
+                              </li><li>
+                                <a href="../../CSS/Guides/Colors/Color_mixer.html" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_mixer">Color mixer</a>
+                              </li><li>
+                                <a href="../../CSS/Guides/Shapes/Shape_generator.html" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Shapes/Shape_generator">Shape generator</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="about">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">About</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Get to know MDN better
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="mdn-m" href="https://developer.mozilla.org/en-US/about" data-glean-id="menu_click_submenu: about -&gt; /en-US/about">About MDN</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="chart-no-axes-combined" href="https://developer.mozilla.org/en-US/advertising" data-glean-id="menu_click_submenu: about -&gt; /en-US/advertising">Advertise with us</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="users" href="https://developer.mozilla.org/en-US/community" data-glean-id="menu_click_submenu: about -&gt; /en-US/community">Community</a>
+                              </li><li>
+                                <a class="menu__panel-icon external" data-icon="github" href="https://github.com/mdn" data-glean-id="menu_click_submenu: about -&gt; https://github.com/mdn">MDN on GitHub</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="blog">
+            <a class="menu__tab-link" href="https://developer.mozilla.org/en-US/blog/" data-glean-id="menu_click_link: top-level -&gt; /en-US/blog/">Blog</a>
+          </div>
+      </nav>
+    </div>
+          <div class="navigation__search" data-view="desktop">
+            <mdn-search-button></mdn-search-button>
+          </div>
+          <mdn-user-menu></mdn-user-menu>
+        </div>
+      </nav>
+      <mdn-search-modal id="search"></mdn-search-modal>
+     
+      
+    
+        </header>
+        <div class="page-layout__main">
+      <div class="breadcrumbs-bar" data-scheme="">
+        <mdn-toggle-sidebar></mdn-toggle-sidebar> 
+      <ol class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+        
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web" property="item" typeof="WebPage"><span property="name">Web</span></a>
+              <meta property="position" content="1">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API" property="item" typeof="WebPage"><span property="name">Web APIs</span></a>
+              <meta property="position" content="2">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../CSS_Typed_OM_API.html" property="item" typeof="WebPage"><span property="name">CSS Typed Object Model API</span></a>
+              <meta property="position" content="3">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="Guide.html" property="item" typeof="WebPage"><span property="name">Using the CSS Typed Object Model</span></a>
+              <meta property="position" content="4">
+            </li>
+          
+      </ol>
+    
+        <mdn-collection-save-button doc-url="/en-US/docs/Web/API/CSS_Typed_OM_API/Guide" doc-title="Using the CSS Typed Object Model"></mdn-collection-save-button>
+        <mdn-color-theme></mdn-color-theme>
+        <mdn-language-switcher locale="en-US" native="English (US)" translations="[{&quot;locale&quot;:&quot;en-US&quot;,&quot;title&quot;:&quot;Using the CSS Typed Object Model&quot;,&quot;native&quot;:&quot;English (US)&quot;},{&quot;locale&quot;:&quot;de&quot;,&quot;title&quot;:&quot;Verwenden des CSS Typed Object Model&quot;,&quot;native&quot;:&quot;Deutsch&quot;},{&quot;locale&quot;:&quot;ja&quot;,&quot;title&quot;:&quot;CSS 型付きオブジェクトモデルの使用&quot;,&quot;native&quot;:&quot;日本語&quot;}]" url="Guide.html"></mdn-language-switcher>
+      </div><div class="layout__2-sidebars-inline reference-layout">
+        <main id="content" class="layout__content">
+          <div class="layout__header reference-layout__header">
+            
+            
+            <mdn-survey></mdn-survey>
+            <h1>Using the CSS Typed Object Model</h1>
+             <section class="content-section">
+    
+    <p>The <strong><a href="../CSS_Typed_OM_API.html">CSS Typed Object Model API</a></strong> exposes CSS values as typed JavaScript objects to allow their performant manipulation.</p>
+<p>Converting <a href="../CSS_Object_Model.html">CSS Object Model</a> value strings into meaningfully-typed JavaScript representations and back (via <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style"><code>HTMLElement.style</code></a>) can incur a significant performance overhead.</p>
+<p>The CSS Typed OM makes CSS manipulation more logical and performant by providing object features (rather than CSSOM string manipulation), providing access to types, methods, and an object model for CSS values.</p>
+<p>This article provides an introduction to all of its main features.</p>
+  </section>
+          </div>
+          <aside class="layout__right-sidebar reference-layout__toc">
+            <nav class="reference-toc">
+      <h2>In this article</h2>
+      <ul>
+        <li><a href="#computedstylemap">computedStyleMap()</a></li><li><a href="#cssstylevalue">CSSStyleValue</a></li><li><a href="#summary">Summary</a></li><li><a href="#see_also">See also</a></li>
+      </ul>
+    </nav>
+            <mdn-placement-sidebar></mdn-placement-sidebar>
+          </aside>
+          <div class="layout__body reference-layout__body">
+            <section class="content-section" aria-labelledby="computedstylemap">
+    <!--lit-part 2/HuoqNBg0w=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/computedStyleMap%28%29"></a><h2 id="computedstylemap" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#computedstylemap">computedStyleMap()</a></h2><!--/lit-part-->
+    <p>With the CSS Typed OM API, we can access all the CSS properties and values — including custom properties — that are impacting an element. Let's see how this works by creating our first example, which explores <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/computedStyleMap" title="computedStyleMap()"><code>computedStyleMap()</code></a>.</p>
+  </section><section class="content-section" aria-labelledby="getting_all_the_properties_and_values">
+    <!--lit-part u/XmslCHPZI=--><!--lit-node 0--><h3 id="getting_all_the_properties_and_values" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#getting_all_the_properties_and_values">Getting all the properties and values</a></h3><!--/lit-part-->
+    <h4 id="html">HTML</h4>
+<p>We start with some HTML: a paragraph with a link, as well as a definition list to which we will add all the CSS Property / Value pairs.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate live-sample---getting_all_the_properties_and_values"><code>&lt;p&gt;
+  &lt;a href="https://example.com"&gt;Link&lt;/a&gt;
+&lt;/p&gt;
+&lt;dl id="regurgitation"&gt;&lt;/dl&gt;
+</code></pre></div>
+<h4 id="javascript">JavaScript</h4>
+<p>We add JavaScript to grab our unstyled link and return back a definition list of all the default CSS property values impacting the link using <code>computedStyleMap()</code>.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate live-sample---getting_all_the_properties_and_values"><code>// Get the element
+const myElement = document.querySelector("a");
+
+// Get the &lt;dl&gt; we'll be populating
+const stylesList = document.querySelector("#regurgitation");
+
+// Retrieve all computed styles with computedStyleMap()
+const defaultComputedStyles = myElement.computedStyleMap();
+
+// Iterate through the map of all the properties and values, adding a &lt;dt&gt; and &lt;dd&gt; for each
+for (const [prop, val] of defaultComputedStyles) {
+  // properties
+  const cssProperty = document.createElement("dt");
+  cssProperty.appendChild(document.createTextNode(prop));
+  stylesList.appendChild(cssProperty);
+
+  // values
+  const cssValue = document.createElement("dd");
+  cssValue.appendChild(document.createTextNode(val));
+  stylesList.appendChild(cssValue);
+}
+</code></pre></div>
+<p>The <code>computedStyleMap()</code> method returns a <a href="https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMapReadOnly"><code>StylePropertyMapReadOnly</code></a> object containing the <a href="https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMapReadOnly/size"><code>size</code></a> property, which indicates how many properties are in the map. We iterate through the style map, creating a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dt"><code>&lt;dt&gt;</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dd"><code>&lt;dd&gt;</code></a> for each property and value respectively.</p>
+<h4 id="result">Result</h4>
+<p>In <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/computedStyleMap#browser_compatibility">browsers that support <code>computedStyleMap()</code></a>, you'll see a list of all the CSS properties and values. In other browsers, you'll just see a link.</p>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="Getting all the properties and values sample" id="frame_getting_all_the_properties_and_values" width="120" height="300" src="Guide/_sample_.getting_all_the_properties_and_values59453369/5bb8e83fc4ac14c0ecbdcbfa210c43bcdb6948b8.mdnplay.dev/en-US/docs/Web/API/CSS_Typed_OM_API/Guide/runner.html-_-uuid=5bb8e83fc4ac14c0ecbdcbfa210c43bcdb6948b8&amp;state=jVNNT9wwEP0rI3MgK602dwi5IFQh0aoCxAVzMPFsYnBs154AK8R%25252FZ5ywS6AV9BRnPO9jnu1n0VFvxYGoQi0dQKWgi7g%25252BklynkA7KEp9UHyyuGt9LUZ8Zd1%25252BVinur.html" data-live-path="/en-US/docs/Web/API/CSS_Typed_OM_API/Guide/" data-live-id="getting_all_the_properties_and_values" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<p>Did you realize how many default CSS properties a link had? Update the first <code>document.querySelector</code> call to select the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/p"><code>&lt;p&gt;</code></a> rather than the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a"><code>&lt;a&gt;</code></a>. You'll notice a difference in the <a href="../../CSS/Reference/Properties/margin-top.html"><code>margin-top</code></a> and <a href="../../CSS/Reference/Properties/margin-bottom.html"><code>margin-bottom</code></a> default computed values.</p>
+  </section><section class="content-section" aria-labelledby=".get_method_custom_properties">
+    <!--lit-part yNtiaLCrIVI=--><!--lit-node 0--><h3 id=".get_method_custom_properties" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#.get_method_custom_properties">.get() method / custom properties</a></h3><!--/lit-part-->
+    <p>Let's update our example to only retrieve a few properties and values. Let's start by adding some CSS to our example, including a custom property and an inheritable property:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate live-sample---.get_method_custom_properties"><code>p {
+  font-weight: bold;
+}
+
+a {
+  --color: red;
+  color: var(--color);
+}
+</code></pre></div>
+<p>Instead of getting <em>all</em> the properties, we create an array of properties of interest and use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMapReadOnly/get"><code>StylePropertyMapReadOnly.get()</code></a> method to get each of their values:</p>
+<div class="code-example"><pre class="language-html hidden notranslate live-sample---.get_method_custom_properties"><code>&lt;p&gt;
+  &lt;a href="https://example.com"&gt;Link&lt;/a&gt;
+&lt;/p&gt;
+&lt;dl id="regurgitation"&gt;&lt;/dl&gt;
+</code></pre></div>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate live-sample---.get_method_custom_properties"><code>// Get the element
+const myElement = document.querySelector("a");
+
+// Get the &lt;dl&gt; we'll be populating
+const stylesList = document.querySelector("#regurgitation");
+
+// Retrieve all computed styles with computedStyleMap()
+const allComputedStyles = myElement.computedStyleMap();
+
+// Array of properties we're interested in
+const ofInterest = ["font-weight", "border-left-color", "color", "--color"];
+
+// iterate through our properties of interest
+for (const value of ofInterest) {
+  // Properties
+  const cssProperty = document.createElement("dt");
+  cssProperty.appendChild(document.createTextNode(value));
+  stylesList.appendChild(cssProperty);
+
+  // Values
+  const cssValue = document.createElement("dd");
+  cssValue.appendChild(document.createTextNode(allComputedStyles.get(value)));
+  stylesList.appendChild(cssValue);
+}
+</code></pre></div>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title=".get method custom properties sample" id="frame_.get_method_custom_properties" width="120" height="300" src="Guide/_sample_..get_method_custom_properties46967946/9072271a3517e389dac85e44f9992f03e52b1a42.mdnplay.dev/en-US/docs/Web/API/CSS_Typed_OM_API/Guide/runner.html-_-uuid=9072271a3517e389dac85e44f9992f03e52b1a42&amp;state=jVNNb9swDP0rhHaoAzTxPXMDDMUwFOiGYR12mXZQLNrWKkuaTCcNiv73UbGduC3Q7WY%25252F8n1IpB5FQ60Va1GEjXQAhYImYnUlGafQrfMcH1QbLK5K30qxuTXuvsgV9xZ5YhTa.html" data-live-path="/en-US/docs/Web/API/CSS_Typed_OM_API/Guide/" data-live-id=".get_method_custom_properties" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<p>We included <a href="../../CSS/Reference/Properties/border-left-color.html"><code>border-left-color</code></a> to demonstrate that, had we included all the properties, every value that defaults to <a href="../../CSS/Reference/Values/color_value.html"><code>currentColor</code></a> (including <a href="../../CSS/Reference/Properties/caret-color.html"><code>caret-color</code></a>, <a href="../../CSS/Reference/Properties/outline-color.html"><code>outline-color</code></a>, <a href="../../CSS/Reference/Properties/text-decoration-color.html"><code>text-decoration-color</code></a>, <a href="../../CSS/Reference/Properties/column-rule-color.html"><code>column-rule-color</code></a>, etc.) would return <code>rgb(255 0 0)</code>. The link has inherited <code>font-weight: bold;</code> from the paragraph's styles, listing it as <code>font-weight: 700</code>. Custom properties, like our <code>--color: red</code>, are properties. As such, they are accessible via <code>get()</code>.</p>
+<p>You'll note that custom properties retain the value as written in the stylesheet, whereas computed styles will be listed as the computed value — <a href="../../CSS/Reference/Properties/color.html"><code>color</code></a> was listed as an <a href="../../CSS/Reference/Values/color_value.html"><code>rgb()</code></a> value and the <a href="../../CSS/Reference/Properties/font-weight.html"><code>font-weight</code></a> returned was <code>700</code> even though we use a <a href="../../CSS/Reference/Values/named-color.html">named color</a> and the <code>bold</code> keyword.</p>
+  </section><section class="content-section" aria-labelledby="cssunitvalue_and_csskeywordvalue">
+    <!--lit-part jI9avttU/S0=--><!--lit-node 0--><h3 id="cssunitvalue_and_csskeywordvalue" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#cssunitvalue_and_csskeywordvalue">CSSUnitValue and CSSKeywordValue</a></h3><!--/lit-part-->
+    <p>The power of the CSS Typed OM is that values are separate from units; parsing and concatenating string values may become be a thing of the past. Every CSS property in a style map has a value. If the value is a keyword, the object returned is a <a href="../CSSKeywordValue.html"><code>CSSKeywordValue</code></a>. If the value is numeric, a <a href="../CSSUnitValue.html"><code>CSSUnitValue</code></a> is returned.</p>
+<p><code>CSSKeywordValue</code> is a class that defines keywords like <code>inherit</code>, <code>initial</code>, <code>unset</code>, and other strings you don't quote, such as <code>auto</code> and <code>grid</code>. This subclass gives you a <code>value</code> property via <a href="../CSSKeywordValue/value.html"><code>cssKeywordValue.value</code></a>.</p>
+<p><code>CSSUnitValue</code> is returned if the value is a unit type. It is a class that defines numbers with units of measurement like <code>20px</code>, <code>40%</code>, <code>200ms</code>, or <code>7</code>. It is returned with two properties: a <code>value</code> and a <code>unit</code>. With this type we can access the numeric value — <a href="../CSSUnitValue/value.html"><code>cssUnitValue.value</code></a> — and its unit — <a href="../CSSUnitValue/unit.html"><code>cssUnitValue.unit</code></a>.</p>
+<p>Let's write a plain paragraph, apply no styles, and inspect a few of its CSS properties by returning a table with the unit and value:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate live-sample---cssunitvalue_and_csskeywordvalue"><code>&lt;p&gt;
+  This is a paragraph with some content. Open up this example in CodePen or
+  JSFiddle, and change some features. Try adding some CSS, such as a width for
+  this paragraph, or adding a CSS property to the ofInterest array.
+&lt;/p&gt;
+&lt;table id="regurgitation"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Property&lt;/th&gt;
+      &lt;th&gt;Value&lt;/th&gt;
+      &lt;th&gt;Unit&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+&lt;/table&gt;
+</code></pre></div>
+<p>For each property of interest, we list the name of the property, use <code>.get(propertyName).value</code> to return the value, and, if the object returned by the <code>get()</code> is a <code>CSSUnitValue</code>, list the unit type we retrieve with <code>.get(propertyName).unit</code>.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate live-sample---cssunitvalue_and_csskeywordvalue"><code>// Get the element we're inspecting
+const myElement = document.querySelector("p");
+
+// Get the table we'll be populating
+const stylesTable = document.querySelector("#regurgitation");
+
+// Retrieve all computed styles with computedStyleMap()
+const allComputedStyles = myElement.computedStyleMap();
+
+// Array of properties we're interested in
+const ofInterest = [
+  "padding-top",
+  "margin-bottom",
+  "font-size",
+  "font-stretch",
+  "animation-duration",
+  "animation-iteration-count",
+  "width",
+  "height",
+];
+
+// Iterate through our properties of interest
+for (const value of ofInterest) {
+  // Create a row
+  const row = document.createElement("tr");
+
+  // Add the name of the property
+  const cssProperty = document.createElement("td");
+  cssProperty.appendChild(document.createTextNode(value));
+  row.appendChild(cssProperty);
+
+  // Add the unitless value
+  const cssValue = document.createElement("td");
+
+  // Shrink long floats to 1 decimal point
+  let propVal = allComputedStyles.get(value).value;
+  propVal = propVal % 1 ? propVal.toFixed(1) : propVal;
+  cssValue.appendChild(document.createTextNode(propVal));
+  row.appendChild(cssValue);
+
+  // Add the type of unit
+  const cssUnit = document.createElement("td");
+  cssUnit.appendChild(
+    document.createTextNode(allComputedStyles.get(value).unit),
+  );
+  row.appendChild(cssUnit);
+
+  // Add the row to the table
+  stylesTable.appendChild(row);
+}
+</code></pre></div>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="CSSUnitValue and CSSKeywordValue sample" id="frame_cssunitvalue_and_csskeywordvalue" width="120" height="300" src="Guide/_sample_.cssunitvalue_and_csskeywordvalue21719527/5aa924215ba4c2bc79d83a8b8e75fd33fd3f6b65.mdnplay.dev/en-US/docs/Web/API/CSS_Typed_OM_API/Guide/runner.html-_-uuid=5aa924215ba4c2bc79d83a8b8e75fd33fd3f6b65&amp;state=jVXbbtswDP0VwsOwBEgc9LVLOxTBOnTALliyvcx7UC0m1mZLmiy3zYr%25252B%25252B0jJSp2mLQoEMEWKh%25252BQRydxmlW%25252Fq7Dib29NCA6wq1QL9BFjhxMYJW8G18hW0pkEo.html" data-live-path="/en-US/docs/Web/API/CSS_Typed_OM_API/Guide/" data-live-id="cssunitvalue_and_csskeywordvalue" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<p>For those of you using a non-supporting browser, the above output should look something like this:</p>
+<figure class="table-container"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../CSS/Reference/Properties/padding-top.html"><code>padding-top</code></a></td>
+<td>0</td>
+<td><code>px</code></td>
+</tr>
+<tr>
+<td><a href="../../CSS/Reference/Properties/margin-bottom.html"><code>margin-bottom</code></a></td>
+<td>16</td>
+<td><code>px</code></td>
+</tr>
+<tr>
+<td><a href="../../CSS/Reference/Properties/font-size.html"><code>font-size</code></a></td>
+<td>16</td>
+<td><code>px</code></td>
+</tr>
+<tr>
+<td><a href="../../CSS/Reference/Properties/font-stretch.html"><code>font-stretch</code></a></td>
+<td>100</td>
+<td><code>%</code></td>
+</tr>
+<tr>
+<td><a href="../../CSS/Reference/Properties/animation-duration.html"><code>animation-duration</code></a></td>
+<td>0</td>
+<td><code>px</code></td>
+</tr>
+<tr>
+<td><a href="../../CSS/Reference/Properties/animation-iteration-count.html"><code>animation-iteration-count</code></a></td>
+<td>1</td>
+<td><em>number</em></td>
+</tr>
+<tr>
+<td><a href="../../CSS/Reference/Properties/width.html"><code>width</code></a></td>
+<td>auto</td>
+<td><em>undefined</em></td>
+</tr>
+<tr>
+<td><a href="../../CSS/Reference/Properties/height.html"><code>height</code></a></td>
+<td>auto</td>
+<td><em>undefined</em></td>
+</tr>
+</tbody>
+</table></figure>
+<p>You'll note the <a href="../../CSS/Reference/Values/length.html"><code>&lt;length&gt;</code></a> unit returned is <code>px</code>, the <a href="../../CSS/Reference/Values/percentage.html"><code>&lt;percentage&gt;</code></a> unit returned is <code>percent</code>, the <a href="../../CSS/Reference/Values/time.html"><code>&lt;time&gt;</code></a> unit is <code>s</code> for 'seconds', and the unitless <a href="../../CSS/Reference/Values/number.html"><code>&lt;number&gt;</code></a> unit is <code>number</code>.</p>
+<p>We didn't declare a <a href="../../CSS/Reference/Properties/width.html"><code>width</code></a> or a <a href="../../CSS/Reference/Properties/height.html"><code>height</code></a> for the paragraph, both of which default to <code>auto</code> and therefore return a <a href="../CSSKeywordValue.html"><code>CSSKeywordValue</code></a> instead of a <a href="../CSSUnitValue.html"><code>CSSUnitValue</code></a>. <code>CSSKeywordValue</code>s do not have a unit property, so in these cases our <code>get().unit</code> returns <code>undefined</code>.</p>
+<p>Had the <code>width</code> or <code>height</code> been defined in a <code>&lt;length&gt;</code> or <code>&lt;percent&gt;</code>, the <a href="../CSSUnitValue.html"><code>CSSUnitValue</code></a> unit would have been <code>px</code> or <code>percent</code> respectively.</p>
+<p>There are other types available:</p>
+<ul>
+<li>An <a href="../../CSS/Reference/Values/image.html"><code>&lt;image&gt;</code></a> will return a <a href="../CSSImageValue.html"><code>CSSImageValue</code></a>.</li>
+<li>A <a href="../../CSS/Reference/Values/color_value.html"><code>&lt;color&gt;</code></a> would return a <a href="../CSSStyleValue.html"><code>CSSStyleValue</code></a>.</li>
+<li>A <a href="../../CSS/Reference/Properties/transform.html"><code>transform</code></a> returns a <code>CSSTransformValue</code>.</li>
+<li>A <a href="../../CSS/Reference/Properties/--_.html">custom property</a> returns a <a href="../CSSUnparsedValue.html"><code>CSSUnparsedValue</code></a>.</li>
+</ul>
+<p>You can use a <code>CSSUnitValue</code> or <code>CSSKeywordValue</code> to create other objects.</p>
+  </section><section class="content-section" aria-labelledby="cssstylevalue">
+    <!--lit-part 78q0ONNXjks=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/CSSStyleValue"></a><h2 id="cssstylevalue" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#cssstylevalue">CSSStyleValue</a></h2><!--/lit-part-->
+    <p>The <code>CSSStyleValue</code> interface of the <a href="../CSS_Object_Model.html#css_typed_object_model">CSS Typed Object Model API</a> is the base class of all CSS values accessible through the Typed OM API, including <a href="../CSSImageValue.html"><code>CSSImageValue</code></a>, <a href="../CSSKeywordValue.html"><code>CSSKeywordValue</code></a>, <a href="../CSSNumericValue.html"><code>CSSNumericValue</code></a>, <a href="../CSSPositionValue.html"><code>CSSPositionValue</code></a>, <a href="../CSSTransformValue.html"><code>CSSTransformValue</code></a>, and <a href="../CSSUnparsedValue.html"><code>CSSUnparsedValue</code></a>.</p>
+<p>It has two methods:</p>
+<ul>
+<li><a href="../CSSStyleValue/parse_static.html" title="CSSStyleValue.parse()"><code>CSSStyleValue.parse()</code></a></li>
+<li><a href="../CSSStyleValue/parseAll_static.html" title="CSSStyleValue.parseAll()"><code>CSSStyleValue.parseAll()</code></a></li>
+</ul>
+<p>As noted above, <code>StylePropertyMapReadOnly.get('--customProperty')</code> returns a <a href="../CSSUnparsedValue.html"><code>CSSUnparsedValue</code></a>. We can parse <code>CSSUnparsedValue</code> object instances with the inherited <a href="../CSSStyleValue/parse_static.html" title="CSSStyleValue.parse()"><code>CSSStyleValue.parse()</code></a> and <a href="../CSSStyleValue/parseAll_static.html" title="CSSStyleValue.parseAll()"><code>CSSStyleValue.parseAll()</code></a> methods.</p>
+<p>Let's examine a CSS example with several custom properties, transforms, <code>calc()</code>s, and other features. We'll take a look at what their types are by employing short JavaScript snippets outputting to <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static" title="console.log()"><code>console.log()</code></a>:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate live-sample---cssstylevalue"><code>:root {
+  --main-color: hsl(198 43% 42%);
+  --black: hsl(0 0% 16%);
+  --white: hsl(0 0% 97%);
+  --unit: 1.2rem;
+}
+
+button {
+  --main-color: hsl(198 100% 66%);
+  display: inline-block;
+  padding: var(--unit) calc(var(--unit) * 2);
+  width: calc(30% + 20px);
+  background: no-repeat 5% center url("magic-wand.png") var(--main-color);
+  border: 4px solid var(--main-color);
+  border-radius: 2px;
+  font-size: calc(var(--unit) * 2);
+  color: var(--white);
+  cursor: pointer;
+  transform: scale(0.95);
+}
+</code></pre></div>
+<p>Let's add the class to a button (a button which does nothing).</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate live-sample---cssstylevalue"><code>&lt;button&gt;Styled Button&lt;/button&gt;
+</code></pre></div>
+<div class="code-example"><pre class="language-html hidden notranslate live-sample---cssstylevalue"><code>&lt;p&gt;
+  There is nothing to see here. Please open your browser console to see the
+  output!
+&lt;/p&gt;
+</code></pre></div>
+<p>We grab our <code>StylePropertyMapReadOnly</code> with the following JavaScript:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate live-sample---cssstylevalue"><code>const allComputedStyles = document.querySelector("button").computedStyleMap();
+</code></pre></div>
+<p>The following examples reference <code>allComputedStyles</code>:</p>
+  </section><section class="content-section" aria-labelledby="cssunparsedvalue">
+    <!--lit-part npjaHF885fI=--><!--lit-node 0--><h3 id="cssunparsedvalue" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#cssunparsedvalue">CSSUnparsedValue</a></h3><!--/lit-part-->
+    <p>The <a href="../CSSUnparsedValue.html"><code>CSSUnparsedValue</code></a> represents <a href="../../CSS/Guides/Cascading_variables/Using_custom_properties.html">custom properties</a>:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate live-sample---cssstylevalue"><code>// CSSUnparsedValue
+const unit = allComputedStyles.get("--unit");
+
+console.log(unit); // CSSUnparsedValue {0: " 1.2rem", length: 1}
+console.log(unit[0]); // " 1.2rem"
+</code></pre></div>
+<p>When we invoke <code>get()</code>, a custom property of type <code>CSSUnparsedValue</code> is returned. Note the space before the <code>1.2rem</code>. To get a unit and value, we need a <code>CSSUnitValue</code>, which we can retrieve using the <code>CSSStyleValue.parse()</code> method on the <code>CSSUnparsedValue</code>.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate live-sample---cssstylevalue"><code>const parsedUnit = CSSNumericValue.parse(unit);
+console.log(parsedUnit); // CSSUnitValue {value: 1.2, unit: "rem"}
+console.log(parsedUnit.unit); // "rem"
+console.log(parsedUnit.value); // 1.2
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="cssmathsum">
+    <!--lit-part jivm6DV7wEk=--><!--lit-node 0--><h3 id="cssmathsum" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#cssmathsum">CSSMathSum</a></h3><!--/lit-part-->
+    <p>Although the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button"><code>&lt;button&gt;</code></a> element is an inline element by default, we've added <a href="../../CSS/Guides/Display.html"><code>display: inline-block;</code></a> to enable sizing. In our CSS we have <code>width: calc(30% + 20px);</code>, which is a <a href="../../CSS/Reference/Values/calc.html"><code>calc()</code></a> function to define the width.</p>
+<p>When we <code>get()</code> the <code>width</code>, we get a <a href="../CSSMathSum.html"><code>CSSMathSum</code></a> returned. <a href="../CSSMathSum/values.html"><code>CSSMathSum.values</code></a> is a <a href="../CSSNumericArray.html"><code>CSSNumericArray</code></a> with 2 <code>CSSUnitValues</code>.</p>
+<p>The value of <a href="../CSSMathValue/operator.html"><code>CSSMathValue.operator</code></a> is <code>sum</code>:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate live-sample---cssstylevalue"><code>const btnWidth = allComputedStyles.get("width");
+
+console.log(btnWidth); // CSSMathSum
+console.log(btnWidth.values); // CSSNumericArray {0: CSSUnitValue, 1: CSSUnitValue, length: 2}
+console.log(btnWidth.operator); // 'sum'
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="csstransformvalue_with_cssscale">
+    <!--lit-part eImTl+Z1As4=--><!--lit-node 0--><h3 id="csstransformvalue_with_cssscale" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#csstransformvalue_with_cssscale">CSSTransformValue with CSSScale</a></h3><!--/lit-part-->
+    <p>The <a href="../../CSS/Guides/Display.html"><code>display: inline-block;</code></a> also enables transforming. In our CSS we have <code>transform: scale(0.95);</code>, which is a <a href="../../CSS/Reference/Properties/transform.html"><code>transform</code></a> function.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate live-sample---cssstylevalue"><code>const transform = allComputedStyles.get("transform");
+
+console.log(transform); // CSSTransformValue {0: CSSScale, 1: CSSTranslate, length: 2, is2D: true}
+console.log(transform.length); // 1
+console.log(transform[0]); // CSSScale {x: CSSUnitValue, y: CSSUnitValue, z: CSSUnitValue, is2D: true}
+console.log(transform[0].x); // CSSUnitValue {value: 0.95, unit: "number"}
+console.log(transform[0].y); // CSSUnitValue {value: 0.95, unit: "number"}
+console.log(transform[0].z); // CSSUnitValue {value: 1, unit: "number"}
+console.log(transform.is2D); // true
+</code></pre></div>
+<p>When we <code>get()</code> the <code>transform</code> property, we get a <a href="../CSSTransformValue.html"><code>CSSTransformValue</code></a>. We can query the length (or number) of transform functions with the <code>length</code> property.</p>
+<p>Seen as we have a length of <code>1</code>, which represents a single transform function, we log the first object and get a <code>CSSScale</code> object. We get <code>CSSUnitValues</code> when we query the <code>x</code>, <code>y</code>, and <code>z</code> scaling. The readonly <code>CSSScale.is2D</code> property is <code>true</code> in this scenario.</p>
+<p>Had we added <code>translate()</code>, <code>skew()</code>, and <code>rotate()</code> transform functions, the length would have been <code>4</code>, each with their own <code>x</code>, <code>y</code>, <code>z</code> values, and each with an <code>.is2D</code> property. For example, had we included <code>transform: translate3d(1px, 1px, 3px)</code>, the <code>.get('transform')</code> would have returned a <code>CSSTranslate</code> with <code>CSSUnitValues</code> for <code>x</code>, <code>y</code>, and <code>z</code>, and the readonly <code>.is2D</code> property would have been <code>false</code>.</p>
+  </section><section class="content-section" aria-labelledby="cssimagevalue">
+    <!--lit-part fdWUnBFb+g4=--><!--lit-node 0--><h3 id="cssimagevalue" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#cssimagevalue">CSSImageValue</a></h3><!--/lit-part-->
+    <p>Our button has one background image: a magic wand.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate live-sample---cssstylevalue"><code>const bgImage = allComputedStyles.get("background-image");
+
+console.log(bgImage); // CSSImageValue
+console.log(bgImage.toString()); // url("magic-wand.png")
+</code></pre></div>
+<p>When we <code>get()</code> the <code>'background-image'</code>, a <a href="../CSSImageValue.html"><code>CSSImageValue</code></a> is returned. While we used the CSS <a href="../../CSS/Reference/Properties/background.html"><code>background</code></a> shorthand property, the inherited <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString"><code>Object.prototype.toString()</code></a> method, shows we returned only the image, <code>'url("magic-wand.png")'</code>.</p>
+<p>Notice that the value returned is the absolute path to the image — this is returned even if the original <code>url()</code> value was relative. Had the background image been a gradient or multiple background images, <code>.get('background-image')</code> would have returned a <code>CSSStyleValue</code>. The <code>CSSImageValue</code> is returned only if there is a single image, and only if that single image declaration is a URL.</p>
+<p>Finally, we put all this together in one live sample. Remember to use your browser's console to inspect the output.</p>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="CSSStyleValue sample" id="frame_cssstylevalue" width="120" height="300" src="Guide/_sample_.cssstylevalue38066995/c6d008f1c6afb542729be84eca1a34b9b3c74a54.mdnplay.dev/en-US/docs/Web/API/CSS_Typed_OM_API/Guide/runner.html-_-uuid=c6d008f1c6afb542729be84eca1a34b9b3c74a54&amp;state=rVVLc9owEP4rW88wgRYcII82TtqZPi49pNMZkvZQehC2YquRJVeSA4Thv3cl2cYhQHvoBca7n759fSutgszkPIiCq1lpjBTvJmbJaQIf3NfVcWWdiqsCfwBuMqooMA1CmoyJFIwE.html" data-live-path="/en-US/docs/Web/API/CSS_Typed_OM_API/Guide/" data-live-id="cssstylevalue" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+  </section><section class="content-section" aria-labelledby="summary">
+    <!--lit-part ftL4dvEqxtk=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Summary"></a><h2 id="summary" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#summary">Summary</a></h2><!--/lit-part-->
+    <p>This should get you started with understanding the CSS Typed OM. Take a look at all the <a href="../CSS_Typed_OM_API.html">CSS Typed OM</a> interfaces to learn more.</p>
+  </section><section class="content-section" aria-labelledby="see_also">
+    <!--lit-part p88DAUaBJzA=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/See%20also"></a><h2 id="see_also" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#see_also">See also</a></h2><!--/lit-part-->
+    <ul>
+<li><a href="../CSS_Painting_API/Guide.html">Using the CSS Painting API</a></li>
+</ul>
+  </section> 
+      <section class="content-section article-footer" aria-labelledby="feedback">
+        <div class="article-footer__inner">
+          <div class="article-footer__svg-container"><!--lit-part OWLzZqRMsCU=--><svg xmlns="http://www.w3.org/2000/svg" width="162" height="162" fill="none" viewBox="0 0 162 162"><mask id="b" fill="#fff"><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z"></path></mask><path stroke="url(#a)" stroke-dasharray="6, 6" stroke-width="2" d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z" mask="url(#b)" style="stroke:url(#a)" transform="translate(-63.992 -25.587)"></path><ellipse cx="8.066" cy="111.597" fill="currentColor" rx="53.677" ry="53.699" transform="matrix(.71707 -.697 .7243 .6895 0 0)"></ellipse><g clip-path="url(#c)" transform="translate(-63.992 -25.587)"><path fill="#9abff5" d="m144.256 137.379 32.906 12.434a4.41 4.41 0 0 1 2.559 5.667l-9.326 24.679a4.41 4.41 0 0 1-5.667 2.559l-8.226-3.108-2.332 6.17c-.466 1.233-.375 1.883-1.609 1.417l-2.253-.527c-.411-.155-.95-.594-1.206-1.161l-4.734-10.484-12.545-4.741a4.41 4.41 0 0 1-2.559-5.667l9.325-24.679a4.41 4.41 0 0 1 5.667-2.559m9.961 29.617 8.227 3.108 3.264-8.638-.498-6.768-4.113-1.555.548 7.258-4.319-1.632zm-12.339-4.663 8.226 3.108 3.264-8.637-.498-6.769-4.113-1.554.548 7.257-4.319-1.632z"></path></g><g clip-path="url(#d)" transform="translate(-63.992 -25.587)"><path fill="#81b0f3" d="M135.35 60.136 86.67 41.654c-3.346-1.27-7.124.428-8.394 3.775L64.414 81.938c-1.27 3.347.428 7.125 3.774 8.395l12.17 4.62-3.465 9.128c-.693 1.826-1.432 2.457.394 3.15l3.014 1.625c.609.231 1.637.274 2.477-.104l15.53-6.983 18.56 7.047c3.346 1.27 7.124-.428 8.395-3.775l13.862-36.51c1.27-3.346-.428-7.124-3.775-8.395M95.261 83.207l-12.17-4.62 4.852-12.779 7.19-7.017 6.085 2.31-7.725 7.51 6.389 2.426zm18.255 6.93-12.17-4.62 4.852-12.778 7.189-7.017 6.085 2.31-7.725 7.51 6.39 2.426z"></path></g><defs><clipPath id="c"><path fill="#fff" d="m198.638 146.586-65.056-24.583-24.583 65.057 65.056 24.582z"></path></clipPath><clipPath id="d"><path fill="#fff" d="m66.438 14.055 96.242 36.54-36.54 96.243-96.243-36.54z"></path></clipPath><linearGradient id="a" x1="97.203" x2="199.995" y1="47.04" y2="152.793" gradientUnits="userSpaceOnUse"><stop stop-color="#086dfc"></stop><stop offset=".246" stop-color="#2c81fa"></stop><stop offset=".516" stop-color="#5497f8"></stop><stop offset=".821" stop-color="#80b0f6"></stop><stop offset="1" stop-color="#9abff5"></stop></linearGradient></defs></svg><!--/lit-part--></div>
+          <h2 id="feedback">
+            Help improve MDN
+          </h2>
+          <mdn-content-feedback locale="en-US"></mdn-content-feedback>
+          <a class="article-footer__contribute" href="https://developer.mozilla.org/en-US/docs/MDN/Community/Getting_started">Learn how to contribute</a> <p class="article-footer__last-modified">
+    This page was last modified on <time datetime="2025-12-17T16:01:14.000Z">Dec 17, 2025</time> by <a href="Guide/contributors.txt">MDN contributors</a>.
+  </p> <div class="article-footer__links">
+    <a class="external" href="https://github.com/mdn/content/blob/main/files/en-us/web/api/css_typed_om_api/guide/index.md?plain=1" title="Folder: en-us/web/api/css_typed_om_api/guide (Opens in a new tab)" target="_blank" rel="noopener">View this page on GitHub</a> • <a class="external" href="https://github.com/mdn/content/issues/new?template=page-report.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FCSS_Typed_OM_API%2FGuide&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Fweb%2Fapi%2Fcss_typed_om_api%2Fguide%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FCSS_Typed_OM_API%2FGuide%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Fweb%2Fapi%2Fcss_typed_om_api%2Fguide%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2F0c13af55e869cbc54830fd1a601fd05f60717375%0A*+Document+last+modified%3A+2025-12-17T16%3A01%3A14.000Z%0A%0A%3C%2Fdetails%3E" title="This will take you to GitHub to file a new issue." target="_blank" rel="noopener">Report a problem with this content</a>
+  </div>
+        </div>
+      </section>
+    
+          </div>
+        </main>
+        <aside class="layout__left-sidebar" id="main-sidebar">
+          <nav class="left-sidebar">
+      <div class="left-sidebar__header">
+        <mdn-sidebar-filter></mdn-sidebar-filter>
+      </div>
+      <div class="left-sidebar__content"><ol><li class="section"><a href="../CSS_Typed_OM_API.html">CSS Typed Object Model API</a></li><li><details open=""><summary><span>Guides</span></summary><ol><li><em><a href="Guide.html" aria-current="page">Using the CSS Typed Object Model</a></em></li></ol></details></li><li><details open=""><summary><span>Interfaces</span></summary><ol><li><a href="../CSSKeywordValue.html"><code>CSSKeywordValue</code></a></li><li><a href="../CSSImageValue.html"><code>CSSImageValue</code></a></li><li><a href="../CSSNumericValue.html"><code>CSSNumericValue</code></a></li><li><a href="../CSSStyleValue.html"><code>CSSStyleValue</code></a></li><li><a href="../CSSPositionValue.html"><code>CSSPositionValue</code></a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../CSSTransformValue.html"><code>CSSTransformValue</code></a></li><li><a href="../CSSUnparsedValue.html"><code>CSSUnparsedValue</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMap"><code>StylePropertyMap</code></a></li></ol></details></li></ol></div>
+    </nav>
+        </aside>
+      </div>
+    </div>
+        
+      
+    
+      
+
+
+    <div class="page-layout__footer footer"><div><a href="http://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide">Using the CSS Typed Object Model</a> by <a href="http://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide$history">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC-BY-SA 2.5</a>.</div></div></body><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 12:39:12 GMT --></html>

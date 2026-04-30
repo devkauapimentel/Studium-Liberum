@@ -1,0 +1,10 @@
+
+body { display: grid; grid-template-areas: "control log"; }
+.controls { grid-row-start: control; grid-column-start: control; grid-row-end: control; grid-column-end: control; display: flex; align-items: center; justify-content: center; }
+.event-log { grid-row-start: log; grid-column-start: log; grid-row-end: log; grid-column-end: log; }
+.event-log-contents { resize: none; }
+label, button { display: block; }
+button { height: 2rem; margin: 0.5rem; }
+img { width: 0px; height: 0px; }
+
+button.copy {display:none !important}

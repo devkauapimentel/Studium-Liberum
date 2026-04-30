@@ -1,0 +1,4 @@
+
+.star { width: 200px; height: 200px; background: linear-gradient(rebeccapurple, magenta) blue; clip-path: path("M 100 0 L 122 70 L 200 70 L 136 114 L 158 182 L 100 140 L 42 182 L 64 114 L 0 70 L 78 70 L 100 0 Z"); }
+
+button.copy {display:none !important}

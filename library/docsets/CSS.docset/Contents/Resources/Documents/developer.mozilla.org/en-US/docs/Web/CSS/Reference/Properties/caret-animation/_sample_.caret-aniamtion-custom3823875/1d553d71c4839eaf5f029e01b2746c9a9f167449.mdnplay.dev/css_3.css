@@ -1,0 +1,11 @@
+
+@keyframes custom-caret-animation { 
+  0% { caret-color: transparent; }
+  100% { caret-color: darkblue; }
+}
+body { display: flex; flex-direction: column; }
+input { margin-bottom: 20px; }
+.custom-caret { animation: 0.75s linear infinite alternate custom-caret-animation; caret-color: darkblue; }
+p, input { font-size: 1.6rem; }
+
+button.copy {display:none !important}

@@ -1,0 +1,6 @@
+
+@media screen and (width: 600px) {
+  body { color: red; }
+}
+
+button.copy {display:none !important}

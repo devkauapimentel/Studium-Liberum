@@ -1,0 +1,7 @@
+
+ul { font-size: 1.5rem; font-family: Helvetica, Arial, sans-serif; }
+ul::before, ul::after { display: list-item; color: orange; }
+ul::before { content: "Start"; }
+ul::after { content: "End"; }
+
+button.copy {display:none !important}

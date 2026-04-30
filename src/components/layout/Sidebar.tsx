@@ -86,6 +86,7 @@ export default function Sidebar({ tracks }: SidebarProps) {
         <div className="h-px bg-[var(--color-border)] my-3" />
 
         <NavLink href="/library" icon={<Library size={18} />} label="Biblioteca" active={pathname === "/library"} />
+        <NavLink href="/docs" icon={<BookOpen size={18} />} label="Documentação" active={pathname === "/docs"} />
         <NavLink href="/offline" icon={<Shield size={18} />} label="Central Offline" active={pathname === "/offline"} />
         <NavLink href="/settings" icon={<Settings size={18} />} label="Configurações" active={pathname === "/settings"} />
         <NavLink href="/help" icon={<HelpCircle size={18} />} label="Ajuda" active={pathname === "/help"} />

@@ -1,0 +1,87 @@
+<html>
+  <!-- Online page at https://27ae2610aaad6d427d0171745640eb871636f8c9.mdnplay.dev/en-US/docs/Web/API/XSLTProcessor/removeParameter/runner.html?uuid=27ae2610aaad6d427d0171745640eb871636f8c9&state=vVVNj9MwEP0rQ4TUrNTGLJza7VaCXVZaiY8VuwcOOayVTBojx45st6Ug%2FjtjJ3HTIipOXBrHffPmzWd%2BJrVrZLJIlqXYgiiv88Sg3UiXJ6slo7tVrpJpUlhLGDp8889CK%2BvgeyMfnRFqDdfwnKulcNhYggOE4%2BqefuByycLLyfXreN0dvN3zVa5y1XNb6Y7I6WJh3V6irREdbNFYoRWpvcxe5YnXouyCQHRTO9cuGNvtdtnuTabNml3O53P29fEDezJc2UqbhqILijxtyw1vQPEGydjWeucVWiK1KLFwdDnZo53kCTvYEKKV3CE03BU1QVjPSP%2B%2FmM3gvoLIBMJCYJhCKSyZ7cHVCFJQnLqCED7MZoO5pxcVOLTe9csDzTX0OnokYTcynntLCm6GvKgP4gN%2FSPLIMuClWAWbLZcbnJGUaJP5YJeMACN6NuY%2FaGBRRIcQ1dlEKD3KA4cGreVr%2FMf4yXgcvm%2FPTxqoZRwqB04HX0Pb%2FiGpexlKF3rvuK1OmpAaw6Ihvwp3cPv540N4Ty%2BuYpc28lYXBOiQWXjcGd10rZvGCZlCnvC2laLgjtqW0R95MuKhbj9PFMfhr0xjrgejC8qrHrRT6z%2FFu6D%2FCJWJptWGHAx5SHtBHS9j8EgjN4mVmPhM%2B1oAVyW0aPxEhZ6uhCEJbpiyIPHUmUX34CcOHeVSbaT0IY3Gzr8qPU5Pt5BuqMpcqFCQUhebhkqerdG9l%2BiP7%2Fb3ZXpYXt5a4mB7Z%2Fjag8j0WEyU%2BqQHTNpVdRqdeKoTCRmVAFV5UwtZpscuYs7eliX1d62N%2BOHNJJiNxNCj6DcO7Q6fsc7YnvcQwy0MkmEfMUVbG4o0evyCjd52tONitUO2p%2BSNFqfzW1WEcfHQEitOniFsAUjDjrk4LZoJ1GfrdkjTf842fZUojgbpwyTFunbJr98%3D&code=14178851& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;div id="result"&gt;&lt;/div&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code></code></pre>
+
+            <h2>js</h2>
+            <pre><code>const xmlString = `
+&lt;items&gt;
+  &lt;item&gt;Item 1&lt;/item&gt;
+  &lt;item&gt;Item 2&lt;/item&gt;
+&lt;/items&gt;
+`;
+
+const xsltString = `
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+  &lt;xsl:param name="showItems" select="'yes'"/&gt;
+  &lt;xsl:template match="/"&gt;
+    &lt;!-- If showItems is 'yes', display the list of items --&gt;
+    &lt;xsl:if test="$showItems = 'yes'"&gt;
+      &lt;ul&gt;
+        &lt;xsl:for-each select="items/item"&gt;
+          &lt;li&gt;&lt;xsl:value-of select="."/&gt;&lt;/li&gt;
+        &lt;/xsl:for-each&gt;
+      &lt;/ul&gt;
+    &lt;/xsl:if&gt;
+    &lt;!-- If showItems is 'no', display a message --&gt;
+    &lt;xsl:if test="$showItems = 'no'"&gt;
+      &lt;div&gt;No content to show&lt;/div&gt;
+    &lt;/xsl:if&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+`;
+
+const parser = new DOMParser();
+const xmlDoc = parser.parseFromString(xmlString, "application/xml");
+const xsltDoc = parser.parseFromString(xsltString, "application/xml");
+
+const xsltProcessor = new XSLTProcessor();
+xsltProcessor.importStylesheet(xsltDoc);
+
+// Set 'showItems' to 'no' and perform the first transformation
+xsltProcessor.setParameter(null, "showItems", "no");
+const resultContainer = document.getElementById("result");
+let resultFragment = xsltProcessor.transformToFragment(xmlDoc, document);
+resultContainer.appendChild(resultFragment);
+
+// Add a horizontal rule to separate the results
+resultContainer.appendChild(document.createElement("hr"));
+
+// Remove the 'showItems' parameter, reverting it to the default value ('yes')
+xsltProcessor.removeParameter(null, "showItems");
+resultFragment = xsltProcessor.transformToFragment(xmlDoc, document);
+resultContainer.appendChild(resultFragment);</code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=27ae2610aaad6d427d0171745640eb871636f8c9&amp;state=vVVNj9MwEP0rQ4TUrNTGLJza7VaCXVZaiY8VuwcOOayVTBojx45st6Ug%2FjtjJ3HTIipOXBrHffPmzWd%2BJrVrZLJIlqXYgiiv88Sg3UiXJ6slo7tVrpJpUlhLGDp8889CK%2BvgeyMfnRFqDdfwnKulcNhYggOE4%2BqefuByycLLyfXreN0dvN3zVa5y1XNb6Y7I6WJh3V6irREdbNFYoRWpvcxe5YnXouyCQHRTO9cuGNvtdtnuTabNml3O53P29fEDezJc2UqbhqILijxtyw1vQPEGydjWeucVWiK1KLFwdDnZo53kCTvYEKKV3CE03BU1QVjPSP%2B%2FmM3gvoLIBMJCYJhCKSyZ7cHVCFJQnLqCED7MZoO5pxcVOLTe9csDzTX0OnokYTcynntLCm6GvKgP4gN%2FSPLIMuClWAWbLZcbnJGUaJP5YJeMACN6NuY%2FaGBRRIcQ1dlEKD3KA4cGreVr%2FMf4yXgcvm%2FPTxqoZRwqB04HX0Pb%2FiGpexlKF3rvuK1OmpAaw6Ihvwp3cPv540N4Ty%2BuYpc28lYXBOiQWXjcGd10rZvGCZlCnvC2laLgjtqW0R95MuKhbj9PFMfhr0xjrgejC8qrHrRT6z%2FFu6D%2FCJWJptWGHAx5SHtBHS9j8EgjN4mVmPhM%2B1oAVyW0aPxEhZ6uhCEJbpiyIPHUmUX34CcOHeVSbaT0IY3Gzr8qPU5Pt5BuqMpcqFCQUhebhkqerdG9l%2BiP7%2Fb3ZXpYXt5a4mB7Z%2Fjag8j0WEyU%2BqQHTNpVdRqdeKoTCRmVAFV5UwtZpscuYs7eliX1d62N%2BOHNJJiNxNCj6DcO7Q6fsc7YnvcQwy0MkmEfMUVbG4o0evyCjd52tONitUO2p%2BSNFqfzW1WEcfHQEitOniFsAUjDjrk4LZoJ1GfrdkjTf842fZUojgbpwyTFunbJr98%3D&amp;code=14178851&amp;" class="leave">Open in Playground</a>
+          <a href="https://27ae2610aaad6d427d0171745640eb871636f8c9.mdnplay.dev/en-US/docs/Web/API/XSLTProcessor/removeParameter/runner.html?state=vVVNj9MwEP0rQ4TUrNTGLJza7VaCXVZaiY8VuwcOOayVTBojx45st6Ug%2FjtjJ3HTIipOXBrHffPmzWd%2BJrVrZLJIlqXYgiiv88Sg3UiXJ6slo7tVrpJpUlhLGDp8889CK%2BvgeyMfnRFqDdfwnKulcNhYggOE4%2BqefuByycLLyfXreN0dvN3zVa5y1XNb6Y7I6WJh3V6irREdbNFYoRWpvcxe5YnXouyCQHRTO9cuGNvtdtnuTabNml3O53P29fEDezJc2UqbhqILijxtyw1vQPEGydjWeucVWiK1KLFwdDnZo53kCTvYEKKV3CE03BU1QVjPSP%2B%2FmM3gvoLIBMJCYJhCKSyZ7cHVCFJQnLqCED7MZoO5pxcVOLTe9csDzTX0OnokYTcynntLCm6GvKgP4gN%2FSPLIMuClWAWbLZcbnJGUaJP5YJeMACN6NuY%2FaGBRRIcQ1dlEKD3KA4cGreVr%2FMf4yXgcvm%2FPTxqoZRwqB04HX0Pb%2FiGpexlKF3rvuK1OmpAaw6Ihvwp3cPv540N4Ty%2BuYpc28lYXBOiQWXjcGd10rZvGCZlCnvC2laLgjtqW0R95MuKhbj9PFMfhr0xjrgejC8qrHrRT6z%2FFu6D%2FCJWJptWGHAx5SHtBHS9j8EgjN4mVmPhM%2B1oAVyW0aPxEhZ6uhCEJbpiyIPHUmUX34CcOHeVSbaT0IY3Gzr8qPU5Pt5BuqMpcqFCQUhebhkqerdG9l%2BiP7%2Fb3ZXpYXt5a4mB7Z%2Fjag8j0WEyU%2BqQHTNpVdRqdeKoTCRmVAFV5UwtZpscuYs7eliX1d62N%2BOHNJJiNxNCj6DcO7Q6fsc7YnvcQwy0MkmEfMUVbG4o0evyCjd52tONitUO2p%2BSNFqfzW1WEcfHQEitOniFsAUjDjrk4LZoJ1GfrdkjTf842fZUojgbpwyTFunbJr98%3D&amp;code=c98e7538-f75c-459d-96ca-8789359ab3b2" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

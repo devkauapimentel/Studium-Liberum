@@ -1,0 +1,712 @@
+<html><!-- Online page at https://en.cppreference.com/w/cpp/language/transactional_memory.html --><head><meta charset="utf-8"><title>Transactional memory (TM TS)</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_7.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_319.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_transactional_memory skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Flanguage%2Ftransactional+memory&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Flanguage%2Ftransactional+memory" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="./transactional_memory.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/transactional_memory&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./transactional_memory.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./transactional_memory.html">View</a></span></li>
+					<li id="ca-edit"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./transactional_memory.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Transactional memory <span class="t-mark-rev t-since-tm-ts t-mark-ts">(TM TS)</span></h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp">C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../compiler_support.html" title="cpp/compiler support">Compiler support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../freestanding.html" title="cpp/freestanding">Freestanding and hosted</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../language.html" title="cpp/language">Language</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../standard_library.html" title="cpp/standard library">Standard library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../headers.html" title="cpp/header">Standard library headers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../iterator/concepts.html" title="cpp/named req">Named requirements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../experimental/feature_test.html" title="cpp/feature test">Feature test macros</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../utility.html#Language_support" title="cpp/utility">Language support library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../concepts.html" title="cpp/concepts">Concepts library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../error.html" title="cpp/error">Diagnostics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../memory.html" title="cpp/memory">Memory management library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../meta.html" title="cpp/meta">Metaprogramming library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../utility.html" title="cpp/utility">General utilities library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../container.html" title="cpp/container">Containers library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../iterator.html" title="cpp/iterator">Iterators library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../ranges.html" title="cpp/ranges">Ranges library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../algorithm.html" title="cpp/algorithm">Algorithms library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../string.html" title="cpp/string">Strings library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../text.html" title="cpp/text">Text processing library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../numeric.html" title="cpp/numeric">Numerics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../chrono.html" title="cpp/chrono">Date and time library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../io.html" title="cpp/io">Input/output library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../filesystem.html" title="cpp/filesystem">Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../atomic.html" title="cpp/thread">Concurrency support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../experimental/execution.html" title="cpp/execution">Execution control library</a> <span class="t-mark-rev t-since-cxx26">(C++26)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../experimental.html" title="cpp/experimental">Technical specifications</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../symbol_index.html" title="cpp/symbol index">Symbols index</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../links/libs.html" title="cpp/links/libs">External libraries</a></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ language</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5">General topics</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../preprocessor.html" title="cpp/preprocessor">Preprocessor</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../comments.html" title="cpp/comment">Comments</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../keywords.html" title="cpp/keyword">Keywords</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./escape.html" title="cpp/language/escape">Escape sequences</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./statements.html" title="cpp/language/statements">Flow control</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Conditional execution statements</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./if.html" title="cpp/language/if"><tt>if</tt></a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./switch.html" title="cpp/language/switch"><tt>switch</tt></a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Iteration statements (loops)</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./for.html" title="cpp/language/for"><tt>for</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./range-for.html" title="cpp/language/range-for">range-<code>for</code></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./while.html" title="cpp/language/while"><tt>while</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./do.html" title="cpp/language/do"><code>do-while</code></a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Jump statements</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./continue.html" title="cpp/language/continue"><tt>continue</tt></a> - <a href="./break.html" title="cpp/language/break"><tt>break</tt></a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./goto.html" title="cpp/language/goto"><tt>goto</tt></a> - <a href="./return.html" title="cpp/language/return"><tt>return</tt></a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./functions.html" title="cpp/language/functions">Functions</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./function.html" title="cpp/language/function">Function declaration</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./lambda.html" title="cpp/language/lambda">Lambda function expression</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./inline.html" title="cpp/language/inline"><code>inline</code> specifier</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./except_spec.html" title="cpp/language/except spec">Dynamic exception specifications</a> <span class="t-mark">(<span title="deprecated in C++11">until C++17*</span>)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./noexcept_spec.html" title="cpp/language/noexcept spec"><code>noexcept</code> specifier</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Exceptions</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./throw.html" title="cpp/language/throw"><code>throw</code>-expression</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./try.html" title="cpp/language/try"><code>try</code> block</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./catch.html" title="cpp/language/catch"><code>catch</code> handler</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Namespaces</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./namespace.html" title="cpp/language/namespace">Namespace declaration</a><code>&nbsp;&nbsp;</code></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./namespace_alias.html" title="cpp/language/namespace alias">Namespace aliases</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Types</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./types.html" title="cpp/language/types">Fundamental types</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./enum.html" title="cpp/language/enum">Enumeration types</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./function.html" title="cpp/language/function">Function types</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./class.html" title="cpp/language/class">Class/struct types</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./union.html" title="cpp/language/union">Union types</a></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Specifiers</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./cv.html" title="cpp/language/cv"><code>const</code>/<code>volatile</code></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./decltype.html" title="cpp/language/decltype"><tt>decltype</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./auto.html" title="cpp/language/auto"><tt>auto</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./constexpr.html" title="cpp/language/constexpr"><tt>constexpr</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./consteval.html" title="cpp/language/consteval"><tt>consteval</tt></a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./constinit.html" title="cpp/language/constinit"><tt>constinit</tt></a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./storage_duration.html" title="cpp/language/storage duration">Storage duration specifiers</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./initialization.html" title="cpp/language/initialization">Initialization</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./default_initialization.html" title="cpp/language/default initialization">Default-initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./value_initialization.html" title="cpp/language/value initialization">Value-initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./zero_initialization.html" title="cpp/language/zero initialization">Zero-initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./copy_initialization.html" title="cpp/language/copy initialization">Copy-initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./direct_initialization.html" title="cpp/language/direct initialization">Direct-initialization</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./aggregate_initialization.html" title="cpp/language/aggregate initialization">Aggregate initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./list_initialization.html" title="cpp/language/list initialization">List-initialization</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span><code>&nbsp;&nbsp;</code></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./constant_initialization.html" title="cpp/language/constant initialization">Constant initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./reference_initialization.html" title="cpp/language/reference initialization">Reference initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div>
+</div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5"><a href="./expressions.html" title="cpp/language/expressions">Expressions</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./value_category.html" title="cpp/language/value category">Value categories</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./eval_order.html" title="cpp/language/eval order">Order of evaluation</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./operators.html" title="cpp/language/operators">Operators</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./operator_precedence.html" title="cpp/language/operator precedence">Operator precedence</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./operator_alternative.html" title="cpp/language/operator alternative">Alternative representations</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./expressions.html#Literals" title="cpp/language/expressions">Literals</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./bool_literal.html" title="cpp/language/bool literal">Boolean</a> - <a href="./integer_literal.html" title="cpp/language/integer literal">Integer</a> - <a href="./floating_literal.html" title="cpp/language/floating literal">Floating-point</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./character_literal.html" title="cpp/language/character literal">Character</a> - <a href="./string_literal.html" title="cpp/language/string literal">String</a> - <a href="./nullptr.html" title="cpp/language/nullptr"><tt>nullptr</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./user_literal.html" title="cpp/language/user literal">User-defined</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Utilities</td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./attributes.html" title="cpp/language/attributes">Attributes</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Types</td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./typedef.html" title="cpp/language/typedef"><code>typedef</code> declaration</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./type_alias.html" title="cpp/language/type alias">Type alias declaration</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Casts</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./implicit_cast.html" title="cpp/language/implicit conversion">Implicit conversions</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./static_cast.html" title="cpp/language/static cast"><tt>static_cast</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./const_cast.html" title="cpp/language/const cast"><tt>const_cast</tt></a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./explicit_cast.html" title="cpp/language/explicit cast">Explicit conversions</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./dynamic_cast.html" title="cpp/language/dynamic cast"><tt>dynamic_cast</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./reinterpret_cast.html" title="cpp/language/reinterpret cast"><tt>reinterpret_cast</tt></a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Memory allocation</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./new.html" title="cpp/language/new"><code>new</code> expression</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./delete.html" title="cpp/language/delete"><code>delete</code> expression</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./classes.html" title="cpp/language/classes">Classes</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./class.html" title="cpp/language/class">Class declaration</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./initializer_list.html" title="cpp/language/constructor">Constructors</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./this.html" title="cpp/language/this"><code>this</code> pointer</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./access.html" title="cpp/language/access">Access specifiers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./friend.html" title="cpp/language/friend"><code>friend</code> specifier</a></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Class-specific function properties</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./virtual.html" title="cpp/language/virtual">Virtual function</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./override.html" title="cpp/language/override"><code>override</code> specifier</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span><code>&nbsp;&nbsp;</code></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./final.html" title="cpp/language/final"><code>final</code> specifier</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./explicit.html" title="cpp/language/explicit"><tt>explicit</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./static.html" title="cpp/language/static"><tt>static</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Special member functions</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./default_constructor.html" title="cpp/language/default constructor">Default constructor</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./copy_constructor.html" title="cpp/language/copy constructor">Copy constructor</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./move_constructor.html" title="cpp/language/move constructor">Move constructor</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./as_operator.html" title="cpp/language/as operator" class="mw-redirect">Copy assignment</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./move_operator.html" title="cpp/language/move operator" class="mw-redirect">Move assignment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./destructor.html" title="cpp/language/destructor">Destructor</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./templates.html" title="cpp/language/templates">Templates</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./class_template.html" title="cpp/language/class template">Class template</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./function_template.html" title="cpp/language/function template">Function template</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./template_specialization.html" title="cpp/language/template specialization">Template specialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./parameter_pack.html" title="cpp/language/pack">Parameter packs</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Miscellaneous</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./asm.html" title="cpp/language/asm">Inline assembly</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./history.html" title="cpp/language/history">History of C++</a></td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/language/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="./statements.html" title="cpp/language/statements"> Statements</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"><a href="./statements.html#Labeled_statements" title="cpp/language/statements">Labels</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./statements.html#Labeled_statements" title="cpp/language/statements"><span class="t-spar">label</span> : <span class="t-spar">statement</span></a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./statements.html#Expression_statements" title="cpp/language/statements">Expression statements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./statements.html#Expression_statements" title="cpp/language/statements"><span class="t-spar">expression</span> ; </a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./statements.html#Compound_statements" title="cpp/language/statements">Compound statements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./statements.html#Compound_statements" title="cpp/language/statements"><code>{</code> <span class="t-spar">statement</span>... <code>}</code></a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./statements.html#Selection_statements" title="cpp/language/statements">Selection statements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./if.html" title="cpp/language/if"><tt>if</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./switch.html" title="cpp/language/switch"><tt>switch</tt></a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./statements.html#Iteration_statements" title="cpp/language/statements">Iteration statements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./while.html" title="cpp/language/while"><tt>while</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./do.html" title="cpp/language/do"><tt>do while</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./for.html" title="cpp/language/for"><tt>for</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./range-for.html" title="cpp/language/range-for">range <span class="mw-geshi cpp source-cpp"><span class="kw1">for</span></span></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./statements.html#Jump_statements" title="cpp/language/statements">Jump statements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./break.html" title="cpp/language/break"><tt>break</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./continue.html" title="cpp/language/continue"><tt>continue</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./return.html" title="cpp/language/return"><tt>return</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./goto.html" title="cpp/language/goto"><tt>goto</tt></a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./statements.html#Assertion_statements" title="cpp/language/statements">Assertions</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./contract_assert.html" title="cpp/language/contract assert"><tt>contract_assert</tt></a> <span class="t-mark-rev t-since-cxx26">(C++26)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./statements.html#Declaration_statements" title="cpp/language/statements">Declaration statements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./declarations.html" title="cpp/language/declarations"><span class="t-spar">declaration</span> ; </a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./statements.html#Try_blocks" title="cpp/language/statements">Try blocks</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./try.html" title="cpp/language/try"><span class="mw-geshi cpp source-cpp"><span class="kw1">try</span></span> block</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><strong class="selflink">Transactional memory</strong></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./transactional_memory.html#Synchronized_blocks" title="cpp/language/transactional memory"><code>synchronized</code></a>, <a href="./transactional_memory.html#Atomic_blocks" title="cpp/language/transactional memory"><code>atomic_commit</code></a>, etc <span class="t-mark-rev t-since-tm-ts t-mark-ts">(TM TS)</span></td></tr>
+</tbody></table></div>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/language/statements/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div></div>
+<table class="plainlinks fmbox fmbox-system noprint" style="font-size: 0.8em">
+<tbody><tr>
+<td class="mbox-image">
+  <img alt="" src="../../../../upload.cppreference.com/mwiki/images/3/31/Imbox_notice.png" width="40" height="40"></td>
+<td class="mbox-text" style=""> <b>Work in progress</b> This page is under construction </td>
+</tr>
+</tbody></table>
+<table class="plainlinks fmbox fmbox-system noprint" style="font-size: 0.8em">
+<tbody><tr>
+<td class="mbox-image">
+  <img alt="" src="../../../../upload.cppreference.com/mwiki/images/3/31/Imbox_notice.png" width="40" height="40"></td>
+<td class="mbox-text" style=""> <b>Experimental Feature</b> The functionality described on this page is part of the Transactional Memory Technical Specification ISO/IEC TS 19841:2015 <span class="t-mark-rev t-since-tm-ts t-mark-ts">(TM TS)</span> </td>
+</tr>
+</tbody></table>
+<p>Transactional memory is a concurrency synchronization mechanism that combines groups of statements in transactions, that are
+</p>
+<ul><li> atomic (either all statements occur, or nothing occurs)
+</li><li> isolated (statements in a transaction may not observe half-written writes made by another transaction, even if they execute in parallel)
+</li></ul>
+<p>Typical implementations use hardware transactional memory where supported and to the limits that it is available (e.g. until the changeset is saturated) and fall back to software transactional memory, usually implemented with optimistic concurrency: if another transaction updated some of the variables used by a transaction, it is silently retried. For that reason, retriable transactions ("atomic blocks") can only call transaction-safe functions.
+</p><p>Note that accessing a variable in a transaction and out of a transaction without other external synchronization is a data race.
+</p><p>If feature testing is supported, the features described here are indicated by the macro constant <span class="t-c"><span class="mw-geshi cpp source-cpp">__cpp_transactional_memory</span></span> with a value equal or greater <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">201505</span></span></span>.
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./transactional_memory.html#Synchronized_blocks"><span class="tocnumber">1</span> <span class="toctext">Synchronized blocks</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./transactional_memory.html#Atomic_blocks"><span class="tocnumber">2</span> <span class="toctext">Atomic blocks</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./transactional_memory.html#Transaction-safe_functions"><span class="tocnumber">3</span> <span class="toctext">Transaction-safe functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="./transactional_memory.html#Transaction-safe_virtual_functions"><span class="tocnumber">3.1</span> <span class="toctext">Transaction-safe virtual functions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="./transactional_memory.html#Standard_library"><span class="tocnumber">4</span> <span class="toctext">Standard library</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="./transactional_memory.html#Attributes"><span class="tocnumber">5</span> <span class="toctext">Attributes</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="./transactional_memory.html#Notes"><span class="tocnumber">6</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="./transactional_memory.html#Keywords"><span class="tocnumber">7</span> <span class="toctext">Keywords</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="./transactional_memory.html#Compiler_support"><span class="tocnumber">8</span> <span class="toctext">Compiler support</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;action=edit&amp;section=1" title="Edit section: Synchronized blocks">edit</a>]</span> <span class="mw-headline" id="Synchronized_blocks">Synchronized blocks</span></h3>
+<p><code><b>synchronized</b></code> <span class="t-spar">compound-statement</span>
+</p><p>Executes the <a href="./statements.html#Compound_statements" title="cpp/language/statements">compound statement</a> as if under a global lock: all outermost synchronized blocks in the program execute in a single total order. The end of each synchronized block synchronizes with the beginning of the next synchronized block in that order. Synchronized blocks that are nested within other synchronized blocks have no special semantics.
+</p><p>Synchronized blocks are not transactions (unlike the atomic blocks below) and may call transaction-unsafe functions.
+</p>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;thread&gt;</span>
+<span class="co2">#include &lt;vector&gt;</span>
+&nbsp;
+<span class="kw4">int</span> f<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+    synchronized <span class="br0">{</span> <span class="co1">// begin synchronized block</span>
+        <a href="../io/cout.html"><span class="kw1775">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">" -&gt; "</span><span class="sy4">;</span>
+        <span class="sy2">++</span>i<span class="sy4">;</span>       <span class="co1">// each call to f() obtains a unique value of i</span>
+        <a href="../io/cout.html"><span class="kw1775">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <span class="kw1">return</span> i<span class="sy4">;</span>  <span class="co1">// end synchronized block</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../container/vector.html"><span class="kw1277">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><a href="../thread/thread.html"><span class="kw2167">std::<span class="me2">thread</span></span></a><span class="sy1">&gt;</span> v<span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">auto</span><span class="sy3">&amp;</span> t <span class="sy4">:</span> v<span class="br0">)</span>
+        t <span class="sy1">=</span> <a href="../thread/thread.html"><span class="kw2167">std::<span class="me2">thread</span></span></a><span class="br0">(</span><span class="br0">[</span><span class="br0">]</span> <span class="br0">{</span> <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> n <span class="sy1">&lt;</span> <span class="nu0">10</span><span class="sy4">;</span> <span class="sy2">++</span>n<span class="br0">)</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">auto</span><span class="sy3">&amp;</span> t <span class="sy4">:</span> v<span class="br0">)</span>
+        t.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">0 -&gt; 1
+1 -&gt; 2
+2 -&gt; 3
+...
+99 -&gt; 100</pre></div></div> 
+</div>
+<p>Leaving a synchronized block by any means (reaching the end, executing goto, break, continue, or return, or throwing an exception) exits the block and synchronizes-with the next block in the single total order if the exited block was an outer block. The behavior is undefined if <span class="t-lc"><a href="../utility/program/longjmp.html" title="cpp/utility/program/longjmp">std::longjmp</a></span> is used to exit a synchronized block.
+</p><p>Entering a synchronized block by goto or switch is not allowed. 
+</p><p>Although synchronized blocks execute as-if under a global lock, the implementations are expected to examine the code within each block and use optimistic concurrency (backed up by hardware transactional memory where available) for transaction-safe code and minimal locking for non-transaction safe code. When a synchronized block makes a call to a non-inlined function, the compiler may have to drop out of speculative execution and hold a lock around the entire call unless the function is declared <code>transaction_safe</code> (see below) or the attribute <code>[[optimize_for_synchronized]]</code> (see below) is used.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;action=edit&amp;section=2" title="Edit section: Atomic blocks">edit</a>]</span> <span class="mw-headline" id="Atomic_blocks">Atomic blocks</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete </td></tr></tbody></table>
+<p><code><b>atomic_noexcept</b></code> <span class="t-spar">compound-statement</span>
+</p><p><code><b>atomic_cancel</b></code> <span class="t-spar">compound-statement</span>
+</p><p><code><b>atomic_commit</b></code> <span class="t-spar">compound-statement</span>
+</p>
+<div class="t-li1"><span class="t-li">1)</span> If an exception is thrown, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/program/abort.html"><span class="kw970">std::<span class="me2">abort</span></span></a></span></span> is called.</div>
+<div class="t-li1"><span class="t-li">2)</span> If an exception is thrown, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/program/abort.html"><span class="kw970">std::<span class="me2">abort</span></span></a></span></span> is called, unless the exception is one of the exceptions used for transaction cancellation (see below) in which case the transaction is <i>cancelled</i>: the values of all memory locations in the program that were modified by side effects of the operations of the atomic block are restored to the values they had at the time the start of the atomic block was executed, and the exception continues stack unwinding as usual.</div>
+<div class="t-li1"><span class="t-li">3)</span> If an exception is thrown, the transaction is committed normally.</div>
+<p>The exceptions used for transaction cancellation in <code>atomic_cancel</code> blocks are <span class="t-lc"><a href="../memory/new/bad_alloc.html" title="cpp/memory/new/bad alloc">std::bad_alloc</a></span>, <span class="t-lc"><a href="../memory/new/bad_array_new_length.html" title="cpp/memory/new/bad array new length">std::bad_array_new_length</a></span>, <span class="t-lc"><a href="../types/bad_cast.html" title="cpp/types/bad cast">std::bad_cast</a></span>, <span class="t-lc"><a href="../types/bad_typeid.html" title="cpp/types/bad typeid">std::bad_typeid</a></span>, <span class="t-lc"><a href="../error/bad_exception.html" title="cpp/error/bad exception">std::bad_exception</a></span>, <span class="t-lc"><a href="../error/exception.html" title="cpp/error/exception">std::exception</a></span> and all standard library exceptions derived from it, and the special exception type <a href="../error/tx_exception.html" title="cpp/error/tx exception"><tt>std::tx_exception&lt;T&gt;</tt></a>.
+</p><p>The <span class="t-spar">compound-statement</span> in an atomic block is not allowed to execute any expression or statement or call any function that isn't <code>transaction_safe</code> (this is a compile time error).
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// each call to f() retrieves a unique value of i, even when done in parallel</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+    atomic_noexcept <span class="br0">{</span> <span class="co1">// begin transaction</span>
+<span class="co1">//  printf("before&nbsp;%d\n", i); // error: cannot call a non transaction-safe function</span>
+        <span class="sy2">++</span>i<span class="sy4">;</span>
+        <span class="kw1">return</span> i<span class="sy4">;</span> <span class="co1">// commit transaction</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p>Leaving an atomic block by any means other than exception (reaching the end, goto, break, continue, return) commits the transaction. The behavior is undefined if <span class="t-lc"><a href="../utility/program/longjmp.html" title="cpp/utility/program/longjmp">std::longjmp</a></span> is used to exit an atomic block.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;action=edit&amp;section=3" title="Edit section: Transaction-safe functions">edit</a>]</span> <span class="mw-headline" id="Transaction-safe_functions">Transaction-safe functions</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete </td></tr></tbody></table>
+<p>A function can be explicitly declared to be transaction-safe by using the keyword <span class="t-c"><span class="mw-geshi cpp source-cpp">transaction_safe</span></span> in its declaration.
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete </td></tr></tbody></table>
+<p>In a <a href="./lambda.html" title="cpp/language/lambda">lambda</a> declaration, it appears either immediately after the capture list, or immediately after the (keyword <code>mutable</code> (if one is used).
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete </td></tr></tbody></table>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">extern</span> <span class="kw4">volatile</span> <span class="kw4">int</span> <span class="sy2">*</span> p <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw1">struct</span> S
+<span class="br0">{</span>
+    <span class="kw1">virtual</span> ~S<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="br0">)</span> transaction_safe
+<span class="br0">{</span>
+    <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>  <span class="co1">// ok: not volatile</span>
+    p <span class="sy1">=</span> <span class="sy3">&amp;</span>x<span class="sy4">;</span>     <span class="co1">// ok: the pointer is not volatile</span>
+    <span class="kw4">int</span> i <span class="sy1">=</span> <span class="sy2">*</span>p<span class="sy4">;</span> <span class="co1">// error: read through volatile glvalue</span>
+    S s<span class="sy4">;</span>        <span class="co1">// error: invocation of unsafe destructor</span>
+<span class="br0">}</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> x<span class="br0">)</span> <span class="br0">{</span> <span class="co1">// implicitly transaction-safe</span>
+    <span class="kw1">if</span> <span class="br0">(</span>x <span class="sy1">&lt;=</span> <span class="nu0">0</span><span class="br0">)</span>
+        <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+    <span class="kw1">return</span> x <span class="sy2">+</span> f<span class="br0">(</span>x <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>If a function that is not transaction-safe is called through a reference or pointer to a transaction-safe function, the behavior is undefined.
+</p><p><br>
+Pointers to transaction-safe functions and pointers to transaction-safe member functions are implicitly convertible to pointers to functions and pointers to member functions respectively. It is unspecified if the resulting pointer compares equal to the original.
+</p>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;action=edit&amp;section=4" title="Edit section: Transaction-safe virtual functions">edit</a>]</span> <span class="mw-headline" id="Transaction-safe_virtual_functions">Transaction-safe virtual functions</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete </td></tr></tbody></table>
+<p>If the final overrider of a <code>transaction_safe_dynamic</code> function is not declared <code>transaction_safe</code>, calling it in an atomic block is undefined behavior.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;action=edit&amp;section=5" title="Edit section: Standard library">edit</a>]</span> <span class="mw-headline" id="Standard_library">Standard library</span></h3>
+<p>Besides introducing the new exception template <a href="../error/tx_exception.html" title="cpp/error/tx exception"><tt>std::tx_exception</tt></a>, the transactional memory technical specification makes the following changes to the standard library:
+</p>
+<ul><li> makes the following functions explicitly <code>transaction_safe</code>:
+</li></ul>
+<dl><dd><ul><li> <span class="t-lc"><a href="../utility/forward.html" title="cpp/utility/forward">std::forward</a></span>, <span class="t-lc">std::move</span>, <span class="t-lc"><a href="../utility/move_if_noexcept.html" title="cpp/utility/move if noexcept">std::move_if_noexcept</a></span>, <span class="t-lc"><a href="../memory/align.html" title="cpp/memory/align">std::align</a></span>, <span class="t-lc"><a href="../utility/program/abort.html" title="cpp/utility/program/abort">std::abort</a></span>, global default <span class="t-lc"><a href="../memory/new/operator_new.html" title="cpp/memory/new/operator new">operator new</a></span>, global default <span class="t-lc"><a href="../memory/new/operator_delete.html" title="cpp/memory/new/operator delete">operator delete</a></span>, <span class="t-lc"><a href="../memory/allocator/construct.html" title="cpp/memory/allocator/construct">std::allocator::construct</a></span> if the invoked constructor is transaction-safe, <span class="t-lc"><a href="../memory/allocator/destroy.html" title="cpp/memory/allocator/destroy">std::allocator::destroy</a></span> if the invoked destructor is transaction-safe, <span class="t-lc"><a href="../memory/get_temporary_buffer.html" title="cpp/memory/get temporary buffer">std::get_temporary_buffer</a></span>, <span class="t-lc"><a href="../memory/return_temporary_buffer.html" title="cpp/memory/return temporary buffer">std::return_temporary_buffer</a></span>, <span class="t-lc"><a href="../memory/addressof.html" title="cpp/memory/addressof">std::addressof</a></span>,  <span class="t-lc"><a href="../memory/pointer_traits/pointer_to.html" title="cpp/memory/pointer traits/pointer to">std::pointer_traits::pointer_to</a></span>, each non-virtual member function of all exception types that support transaction cancellation (see <code>atomic_cancel</code> above) <table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br>Reason: there's more </td></tr></tbody></table>
+</li></ul>
+</dd></dl>
+<ul><li> makes the following functions explicitly <code>transaction_safe_dynamic</code> 
+</li></ul>
+<dl><dd><ul><li> each virtual member function of all exception types that support transaction cancellation (see <code>atomic_cancel</code> above)
+</li></ul>
+</dd></dl>
+<ul><li> requires that all operations that are transaction-safe on an <a href="../named_req/Allocator.html" title="cpp/named req/Allocator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Allocator</span></a> X are transaction-safe on <code>X::rebind&lt;&gt;::other</code>
+</li></ul>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;action=edit&amp;section=6" title="Edit section: Attributes">edit</a>]</span> <span class="mw-headline" id="Attributes">Attributes</span></h3>
+<p>The attribute <code>[[<a href="./attributes/optimize_for_synchronized.html" title="cpp/language/attributes/optimize for synchronized">optimize_for_synchronized</a>]]</code> may be applied to a declarator in a function declaration and must appear on the first declaration of the function.
+</p><p>If a function is declared <code>[[optimize_for_synchronized]]</code> in one translation unit and the same function is declared without <code>[[optimize_for_synchronized]]</code> in another translation unit, the program is ill-formed; no diagnostic required.
+</p><p>It indicates that a the function definition should be optimized for invocation from a <span class="t-c"><span class="mw-geshi cpp source-cpp">synchronized</span></span> statement. In particular, it avoids serializing synchronized blocks that make a call to a function that is transaction-safe for the majority of calls, but not for all calls (e.g. hash table insertion that may have to rehash, allocator that may have to request a new block, a simple function that may rarely log).
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../atomic/atomic.html"><span class="kw2083">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span> rehash<span class="br0">{</span><span class="kw2">false</span><span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<span class="co1">// maintenance thread runs this loop</span>
+<span class="kw4">void</span> maintenance_thread<span class="br0">(</span><span class="kw4">void</span><span class="sy2">*</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">while</span> <span class="br0">(</span><span class="sy3">!</span>shutdown<span class="br0">)</span>
+    <span class="br0">{</span>
+        synchronized
+        <span class="br0">{</span>
+            <span class="kw1">if</span> <span class="br0">(</span>rehash<span class="br0">)</span>
+            <span class="br0">{</span>
+                hash.<span class="me1">rehash</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+                rehash <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+            <span class="br0">}</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="co1">// worker threads execute hundreds of thousands of calls to this function </span>
+<span class="co1">// every second. Calls to insert_key() from synchronized blocks in other</span>
+<span class="co1">// translation units will cause those blocks to serialize, unless insert_key()</span>
+<span class="co1">// is marked [[optimize_for_synchronized]]</span>
+<span class="br0">[</span><span class="br0">[</span>optimize_for_synchronized<span class="br0">]</span><span class="br0">]</span> <span class="kw4">void</span> insert_key<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> key, <span class="kw4">char</span><span class="sy2">*</span> value<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">bool</span> concern <span class="sy1">=</span> hash.<span class="me1">insert</span><span class="br0">(</span>key, value<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>concern<span class="br0">)</span>
+        rehash <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>GCC assembly without the attribute: the entire function is serialized
+</p>
+<pre>insert_key(char*, char*):
+	subq	$8,&nbsp;%rsp
+	movq	%rsi,&nbsp;%rdx
+	movq	%rdi,&nbsp;%rsi
+	movl	$hash,&nbsp;%edi
+	call	Hash::insert(char*, char*)
+	testb	%al,&nbsp;%al
+	je	.L20
+	movb	$1, rehash(%rip)
+	mfence
+.L20:
+	addq	$8,&nbsp;%rsp
+	ret
+</pre>
+<p>GCC assembly with the attribute:
+</p>
+<pre>transaction clone for insert_key(char*, char*):
+	subq	$8,&nbsp;%rsp
+	movq	%rsi,&nbsp;%rdx
+	movq	%rdi,&nbsp;%rsi
+	movl	$hash,&nbsp;%edi
+	call	transaction clone for Hash::insert(char*, char*)
+	testb	%al,&nbsp;%al
+	je	.L27
+	xorl	%edi,&nbsp;%edi
+	call	_ITM_changeTransactionMode # Note: this is the serialization point
+	movb	$1, rehash(%rip)
+	mfence
+.L27:
+	addq	$8,&nbsp;%rsp
+	ret
+</pre>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br>Reason: check assembly with trunk, also show caller-side changes </td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;action=edit&amp;section=7" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br>Reason: experience notes from Wyatt paper/talk </td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;action=edit&amp;section=8" title="Edit section: Keywords">edit</a>]</span> <span class="mw-headline" id="Keywords">Keywords</span></h3>
+<p><a href="../keyword/atomic_cancel.html" title="cpp/keyword/atomic cancel"><tt>atomic_cancel</tt></a>,
+<a href="../keyword/atomic_commit.html" title="cpp/keyword/atomic commit"><tt>atomic_commit</tt></a>,
+<a href="../keyword/atomic_noexcept.html" title="cpp/keyword/atomic noexcept"><tt>atomic_noexcept</tt></a>,
+<a href="../keyword/synchronized.html" title="cpp/keyword/synchronized"><tt>synchronized</tt></a>,
+<a href="../keyword/transaction_safe.html" title="cpp/keyword/transaction safe"><tt>transaction_safe</tt></a>,
+<a href="../keyword/transaction_safe_dynamic.html" title="cpp/keyword/transaction safe dynamic"><tt>transaction_safe_dynamic</tt></a>
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;action=edit&amp;section=9" title="Edit section: Compiler support">edit</a>]</span> <span class="mw-headline" id="Compiler_support">Compiler support</span></h3>
+<p>This technical specification is supported by GCC as of version 6.1 (requires <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">-</span>fgnu<span class="sy2">-</span>tm</span></span> to enable). An older variant of this specification was <a rel="nofollow" class="external text" href="http://www-users.cs.umn.edu/~boutcher/stm/">supported in GCC</a> as of 4.7.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 5001/1000000
+Preprocessor generated node count: 11106/1000000
+Post‐expand include size: 154198/4194304 bytes
+Template argument size: 21917/4194304 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:14480-0!*!0!!en!2!* and timestamp 20250225020624 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;oldid=174915">https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;oldid=174915</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.cppreference.com/w/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="../../Category%25253ATodo_without_reason.html" title="Category:Todo without reason">Todo without reason</a></li><li><a href="../../Category%25253ATodo_with_reason.html" title="Category:Todo with reason">Todo with reason</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./transactional_memory.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/transactional_memory" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/transactional_memory" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;oldid=174915" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/transactional_memory&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div id="cpp-languagess" hidden="">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/language/transactional_memory" title="cpp/language/transactional memory" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/language/transactional_memory" title="cpp/language/transactional memory" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/language/transactional_memory" title="cpp/language/transactional memory" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 13 August 2024, at 20:32.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 3.004 secs. -->
+	
+
+
+</body></html>

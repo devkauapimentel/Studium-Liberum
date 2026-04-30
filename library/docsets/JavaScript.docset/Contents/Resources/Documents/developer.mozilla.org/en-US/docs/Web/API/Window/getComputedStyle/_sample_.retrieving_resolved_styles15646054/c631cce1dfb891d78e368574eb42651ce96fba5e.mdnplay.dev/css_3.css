@@ -1,0 +1,4 @@
+
+p { width: 400px; margin: 0px auto; padding: 20px; font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 2rem; line-height: 2; font-family: sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; text-align: center; background: purple; color: white; }
+
+button.copy {display:none !important}

@@ -1,0 +1,7 @@
+
+.parent { color: blue; }
+.parent::selection { background-color: yellow; color: red; }
+.child { color: green; }
+.child::selection { background-color: orange; }
+
+button.copy {display:none !important}

@@ -1,0 +1,8 @@
+
+p:nth-of-type(2) {
+  & a { text-decoration: inherit; color: inherit; }
+  & em { font-style: inherit; }
+  & strong { font-weight: inherit; }
+}
+
+button.copy {display:none !important}

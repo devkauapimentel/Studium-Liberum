@@ -1,0 +1,6 @@
+
+svg { border: 1px solid; }
+path { fill: rgba(255, 51, 51, 0.533); stroke: black; }
+path:last-of-type { }
+
+button.copy {display:none !important}

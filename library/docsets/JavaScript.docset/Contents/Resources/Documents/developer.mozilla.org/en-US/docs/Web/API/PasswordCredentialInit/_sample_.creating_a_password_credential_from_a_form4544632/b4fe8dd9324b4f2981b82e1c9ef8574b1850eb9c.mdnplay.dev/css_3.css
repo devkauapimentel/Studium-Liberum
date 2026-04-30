@@ -1,0 +1,8 @@
+
+form { display: table; }
+div { display: table-row; }
+label, input { display: table-cell; margin-bottom: 10px; }
+label { padding-right: 10px; }
+#log { height: 60px; padding: 0.5rem; border: 1px solid black; }
+
+button.copy {display:none !important}

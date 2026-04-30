@@ -1,0 +1,5 @@
+
+:root, body { margin: 0px; padding: 0px; height: 100%; }
+button { margin: 0.5rem 0px; }
+
+button.copy {display:none !important}

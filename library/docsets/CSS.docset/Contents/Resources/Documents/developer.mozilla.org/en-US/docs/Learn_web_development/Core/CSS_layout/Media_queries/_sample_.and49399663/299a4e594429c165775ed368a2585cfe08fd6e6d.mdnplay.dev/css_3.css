@@ -1,0 +1,6 @@
+
+@media screen and (width >= 600px) and (orientation: landscape) {
+  body { color: blue; }
+}
+
+button.copy {display:none !important}

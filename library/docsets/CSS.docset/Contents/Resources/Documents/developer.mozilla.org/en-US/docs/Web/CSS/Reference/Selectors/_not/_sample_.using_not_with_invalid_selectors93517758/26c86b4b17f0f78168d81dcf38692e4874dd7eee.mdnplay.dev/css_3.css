@@ -1,0 +1,6 @@
+
+p:not(:is(.foo, :invalid-pseudo-class)) { color: green; border-top: thin dotted; }
+div:not(.foo, .bar) { color: red; font-style: italic; }
+div:not(:is(.foo, .bar)) { border-bottom: thin dotted; }
+
+button.copy {display:none !important}

@@ -1,0 +1,4 @@
+
+button { display: inline-block; min-height: 100px; min-width: 100px; background: url("./en-US/docs/Web/API/CSSImageValue/magic-wand.png") 5% center no-repeat aqua; }
+
+button.copy {display:none !important}

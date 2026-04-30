@@ -1,0 +1,6 @@
+
+img, div { border: 20px dashed rebeccapurple; box-sizing: content-box; padding: 20px; height: 220px; width: 220px; }
+img { mask: repeating-radial-gradient(circle, transparent 0px, transparent 5px, lightgreen 15px, lightgreen 20px) 0% 0% / 100px 100px repeat content-box border-box; mask-size: 100px 100px; mask-composite: add; mask-mode: match-source; }
+div { background: repeating-radial-gradient(circle, transparent 0px, transparent 5px, lightgreen 15px, lightgreen 20px) 0% 0% / 100px 100px repeat content-box border-box; }
+
+button.copy {display:none !important}

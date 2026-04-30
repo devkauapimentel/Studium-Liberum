@@ -1,0 +1,41 @@
+<html><!-- Mirrored from mdn.github.io/dom-examples/fetch/basic-fetch/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:20:08 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Fetch basic example</title>
+
+    <link rel="stylesheet" href="#">
+  </head>
+
+  <body>
+    <h1>Fetch basic example</h1>
+
+    <img src="#" class="my-image">
+
+    <script>
+      const myImage = document.querySelector(".my-image");
+
+      fetch("flowers.jpg")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error, status = ${response.status}`);
+          }
+          return response.blob();
+        })
+        .then((myBlob) => {
+          const objectURL = URL.createObjectURL(myBlob);
+          myImage.src = objectURL;
+        })
+        .catch((error) => {
+          const p = document.createElement("p");
+          p.appendChild(document.createTextNode(`Error: ${error.message}`));
+          document.body.insertBefore(p, myImage);
+        });
+    </script>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/dom-examples/fetch/basic-fetch/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:20:08 GMT --></html>

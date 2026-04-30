@@ -1,0 +1,4 @@
+
+textarea { max-height: 130px; max-width: 500px; }
+
+button.copy {display:none !important}

@@ -1,0 +1,9 @@
+
+.event-log-contents { width: 18rem; height: 5rem; border: 1px solid black; margin: 0.2rem; padding: 0.2rem; }
+.example { display: grid; grid-template-areas: "button log" "video log"; }
+button { grid-row-start: button; grid-column-start: button; grid-row-end: button; grid-column-end: button; width: 10rem; margin: 0.5rem 0px; }
+video { grid-row-start: video; grid-column-start: video; grid-row-end: video; grid-column-end: video; }
+.event-log { grid-row-start: log; grid-column-start: log; grid-row-end: log; grid-column-end: log; }
+.event-log > label { display: block; }
+
+button.copy {display:none !important}

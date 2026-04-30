@@ -1,0 +1,404 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/language/move_operator.html --><head><meta charset="utf-8"><title>Talk:cpp/language/move assignment</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_5456.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_language_move_assignment skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Fmove+assignment&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Fmove+assignment" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/language/move_operator.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./move_operator.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./move_operator.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./move_operator.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/move_assignment&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/move_assignment&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/move_assignment&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./move_operator.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/language/move assignment</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../language.html" title="Talk:cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>So I'll start from beginning (:
+On <a rel="nofollow" class="external text" href="../../cpp/algorithm/remove.html">this</a> page there is possible implementation of std::remove algorithm, which works incorrectly with T = std::vector&lt;int&gt; from libc++ and libstdc++.
+(works correctly with msvc)
+</p><p>Test, for prove:
+</p>
+<pre>#include &lt;iostream&gt; // std::cout
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+namespace my {
+
+template&lt;class ForwardIt, class T&gt;
+ForwardIt remove(
+    ForwardIt first,
+    ForwardIt last,
+    const T&amp; value) {
+  ForwardIt result = first;
+  for (; first&nbsp;!= last; ++first) {
+    if (!(*first == value)) {
+      *result = std::move(*first);
+      ++result;
+    }
+  }
+  return result;
+}
+
+}
+
+inline void fundamental_test() {
+  std::cout &lt;&lt; "fundamental test:" &lt;&lt; std::endl;
+  const int val_to_remove = 4;
+
+  std::vector&lt;int&gt; int_vec;
+
+  int_vec.push_back(1);
+  int_vec.push_back(2);
+  int_vec.push_back(3);
+
+  std::cout &lt;&lt; "size = " &lt;&lt; int_vec.size() &lt;&lt; std::endl;
+
+  int_vec.erase(
+      my::remove(int_vec.begin(), int_vec.end(), val_to_remove), // test
+      int_vec.end()
+  );
+
+  std::cout &lt;&lt; "size = " &lt;&lt; int_vec.size() &lt;&lt; std::endl;
+
+  for(const auto&amp; i: int_vec) {
+    std::cout &lt;&lt; i &lt;&lt; std::endl;
+  }
+}
+
+inline void container_test() {
+  std::cout &lt;&lt; "stl container test" &lt;&lt; std::endl;
+  typedef std::vector&lt;int&gt; Element;
+  typedef std::vector&lt;Element&gt; Container;
+
+  Element val_to_remove;
+  val_to_remove.push_back(1);
+  val_to_remove.push_back(2);
+  val_to_remove.push_back(3);
+  val_to_remove.push_back(4);
+
+  Element val_other;
+  val_other.push_back(1);
+  val_other.push_back(4);
+  val_other.push_back(5);
+
+  Container container;
+
+  container.push_back(val_other);
+  container.push_back(val_other);
+  container.push_back(val_other);
+
+  container.erase(
+      my::remove(container.begin(), container.end(), val_to_remove), // test
+      container.end()
+  );
+
+  std::cout &lt;&lt; "size = " &lt;&lt; container.size() &lt;&lt; std::endl;
+  for (const auto&amp; i: container) {
+    if (i.empty()) {
+      std::cout &lt;&lt; "empty";
+    }
+    else {
+      for (const auto&amp; j: i) {
+        std::cout &lt;&lt; j &lt;&lt; " ";
+      }
+    }
+    std::cout &lt;&lt; std::endl;
+  }
+}
+
+int main() {
+  fundamental_test();
+  container_test();
+
+  return EXIT_SUCCESS;
+}
+</pre>
+<p>If you use std::remove from library:
+</p>
+<pre> fundamental test:
+ size = 3
+ size = 3
+ 1
+ 2
+ 3
+ stl container test
+ size = 3
+ 1 4 5 
+ 1 4 5 
+ 1 4 5 
+</pre>
+<p>but if you use my::remove:
+</p>
+<pre> fundamental test:
+ size = 3
+ size = 3
+ 1
+ 2
+ 3
+ stl container test
+ size = 3
+ empty
+ empty
+ empty
+</pre>
+<p>The problem is in line:
+</p>
+<pre>   *result = std::move(*first);
+   when result is equal to first it self-move-assigning =&gt; cleared.
+</pre>
+<p>What I'm trying to say (:&nbsp;?
+If you want to write algorithm that works with all implementation of stl,
+you need to remember that self-move-assign clear you container.
+And important notes about this implementaion, that implementation is correct
+and fit c++ standard.
+</p><p>Environment: g++ 4.7 ubuntu, macos clang 5.0, msvc 2012
+<a href="https://en.cppreference.com/mwiki/index.php?title=User:Ruslo&amp;action=edit&amp;redlink=1" class="new" title="User:Ruslo (page does not exist)">Ruslo</a> 13:55, 25 August 2013 (PDT)
+</p>
+<dl><dd> Okay, I think I'm starting to understand.  17.6.4.9/1 of n3690 ("Function arguments") says "Each of the following applies to all arguments to functions defined in the C++ standard library...If a function argument binds to an rvalue reference parameter, the implementation may assume that this parameter is a unique reference to this argument."
+</dd><dd> So that basically means that containers like std::vector don't need to check for self-assignment in their operator=, because they can assume that they'll never encounter self assignment.
+</dd><dd> Does that sound right?  If so, I wonder if this is something that would be useful to have on the various container operator= pages.  (Although it would be kind of repetitive, which is an argument for just saying it once e.g. here.) --<a href="../../User%25253ANate.html" title="User:Nate">Nate</a> 18:28, 25 August 2013 (PDT)
+</dd><dd> I think any page you can refer to will be fine. But I can't image how to do it without std::move function (of course if you don't create your own). My point is, you just need to remember easy pattern: when you see 'x = std::move(y)' can you guarantee, that x is not y? <a href="https://en.cppreference.com/mwiki/index.php?title=User:Ruslo&amp;action=edit&amp;redlink=1" class="new" title="User:Ruslo (page does not exist)">Ruslo</a> 20:56, 25 August 2013 (PDT)
+<dl><dd> This looks like the "possible implementation" of <span class="t-lc"><a href="../../cpp/algorithm/remove.html" title="cpp/algorithm/remove">std::remove_if</a></span> that was posted on this wiki, which is simply invalid. I'll fix it. As for library self-moves, there aren't too many move assignment operators in the standard library, no harm mentioning in every container::operator= that self-move-assignment is not necessarily tested...   on second thought, there are plenty more resource-owning classes in the library. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 02:59, 26 August 2013 (PDT)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/move_assignment&amp;action=edit&amp;section=1" title="Edit section: Move assignment operator taking arguments passed by value??">edit</a>]</span> <span class="mw-headline" id="Move_assignment_operator_taking_arguments_passed_by_value.3F.3F"> Move assignment operator taking arguments passed by value?? </span></h2>
+<p>In the Copy-and-Swap idiom section. You provide example like this:
+</p>
+<pre>T&amp; T::operator=(T arg)
+{
+    swap(arg);
+    return *this;
+}
+</pre>
+<p>This is hardly a move assignment operator; it's a copy assignment operator!
+</p>
+<dl><dd> Nothing is copied if the argument is a movable rvalue. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 16:07, 30 December 2015 (PST)
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 36/1000000
+Preprocessor generated node count: 153/1000000
+Post‐expand include size: 141/4194304 bytes
+Template argument size: 14/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12915-0!*!0!*!*!*!* and timestamp 20240518055913 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/move_assignment&amp;oldid=82717">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/move_assignment&amp;oldid=82717</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./move_operator.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/language/move_assignment" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/language/move_assignment" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/move_assignment&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/move_assignment&amp;oldid=82717" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/move_assignment&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 30 December 2015, at 17:07.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,502 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.080 secs. -->
+	
+
+
+</body></html>

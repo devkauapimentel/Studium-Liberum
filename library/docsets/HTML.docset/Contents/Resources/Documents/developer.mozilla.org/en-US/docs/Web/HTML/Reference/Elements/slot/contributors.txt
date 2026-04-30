@@ -1,0 +1,15 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/elements/slot/index.md
+
+# Original Wiki contributors
+JamesCatt
+mfuji09
+justinfagnani
+Sirko
+Tigt
+chrisdavidmills
+Brettz9
+teoli
+sideshowbarker
+Sheppy
+Hfmanson

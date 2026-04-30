@@ -1,0 +1,277 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/utility/functional/invoke.html --><head><meta charset="utf-8"><title>Talk:cpp/utility/functional/invoke</title><link rel="stylesheet" href="../../../css_1.css" type="text/css"><link rel="stylesheet" href="../../../css_2.css" type="text/css"><link rel="stylesheet" href="../../../css_3.css" type="text/css"><link rel="stylesheet" href="../../../css_4.css" type="text/css"><link rel="stylesheet" href="../../../css_5.css" type="text/css"><script type="text/javascript" src="../../../js_1.js"></script><script type="text/javascript" src="../../../js_2.js"></script><script type="text/javascript" src="../../../js_4814.js"></script><script type="text/javascript" src="../../../js_4.js"></script><script type="text/javascript" src="../../../js_5.js"></script><script type="text/javascript" src="../../../js_6.js"></script><script type="text/javascript" src="../../../js_7.js"></script><script type="text/javascript" src="../../../js_8.js"></script><script type="text/javascript" src="../../../js_9.js"></script><script type="text/javascript" src="../../../js_10.js"></script><script type="text/javascript" src="../../../js_11.js"></script><script type="text/javascript" src="../../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_utility_functional_invoke skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Futility%2Ffunctional%2Finvoke&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Futility%2Ffunctional%2Finvoke" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../../cpp/utility/functional/invoke.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./invoke.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./invoke.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./invoke.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/invoke&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/invoke&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/invoke&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./invoke.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/utility/functional/invoke</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../../utility.html" title="Talk:cpp/utility">utility</a>‎ | <a href="../functional.html" title="Talk:cpp/utility/functional">functional</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/invoke&amp;action=edit&amp;section=1" title="Edit section: Problems with the possible implementation">edit</a>]</span> <span class="mw-headline" id="Problems_with_the_possible_implementation"> Problems with the possible implementation </span></h2>
+<p>First, it doesn't SFINAE, while the standard signature is SFINAE-friendly (due to the use of <span class="t-lc"><a href="../../../cpp/types/result_of.html" title="cpp/types/result of">std::result_of_t</a></span>).
+</p><p>Second, expression SFINAE is applied too liberally. For example, the following should hit the first bullet point and be ill-formed, but in the implementation hit the second bullet point instead.
+</p><p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span> Bar <span class="br0">{</span> <span class="kw4">void</span> bar<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span><br>
+<span class="kw1">struct</span> Foo <span class="sy4">:</span> <span class="kw1">private</span> Bar <span class="br0">{</span> Bar<span class="sy3">&amp;</span> operator <span class="sy2">*</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span><br>
+invoke<span class="br0">(</span><span class="sy3">&amp;</span>Bar<span class="sy4">::</span><span class="me2">bar</span>, Foo<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span></span></span>
+</p><p>Similarly, <span class="t-c"><span class="mw-geshi cpp source-cpp">invoke<span class="br0">(</span>PMD_that_is_a_function_object, Class, Arguments<span class="br0">)</span></span></span> should be ill-formed but isn't. <a href="../../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 02:32, 23 September 2015 (PDT)
+</p>
+<dl><dd> My bad. I did notice the accept-invalid problem when I ported the implementation of <code>INVOKE</code> from <a href="../../../cpp/types/result_of.html" title="cpp/types/result of">cpp/types/result_of</a>, but I thought the solution using <code>std::enable_if</code> would make the possible implementation longer and uglier (it is already quite long), so I did not attempt to solve this problem. After all, this should be solvable. --<a href="https://en.cppreference.com/mwiki/index.php?title=User:D41D8CD98F&amp;action=edit&amp;redlink=1" class="new" title="User:D41D8CD98F (page does not exist)">D41D8CD98F</a> (<a href="../../../User_talk%25253AD41D8CD98F.html" title="User talk:D41D8CD98F">talk</a>) 05:32, 23 September 2015 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/invoke&amp;action=edit&amp;section=2" title="Edit section: Redundant trailing return types">edit</a>]</span> <span class="mw-headline" id="Redundant_trailing_return_types"> Redundant trailing return types </span></h2>
+<p>Maybe it is more desirable to remove trailing return types from <code>INVOKE</code>-helpers due to redundancy? Secondly, what is a reason of duplicating these quite complicated lines of code? <small><span class="autosigned">—&nbsp;Preceding unsigned comment added by <a href="https://en.cppreference.com/mwiki/index.php?title=User:I7achi&amp;action=edit&amp;redlink=1" class="new" title="User:I7achi (page does not exist)">I7achi </a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:I7achi&amp;action=edit&amp;redlink=1" class="new" title="User talk:I7achi (page does not exist)">talk</a> • <a href="https://en.cppreference.com/w/Special:Contributions/I7achi" title="Special:Contributions/I7achi">contribs</a>) </span></small>
+</p>
+<dl><dd>They are absolutely required for expression SFINAE. Without them the call will be a completely ambiguous mess. <a href="../../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 10:19, 1 November 2015 (PST)
+<dl><dd>What about return type deduction (<a href="../../../cpp/language/function.html" title="cpp/language/function">cpp/language/function</a>) which was introduced since C++14? I could be wrong, of course, but can you provide short SFINAE example where omitting trailing return type results in ambiguity? Thank you in advance --<a href="https://en.cppreference.com/mwiki/index.php?title=User:I7achi&amp;action=edit&amp;redlink=1" class="new" title="User:I7achi (page does not exist)">I7achi</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:I7achi&amp;action=edit&amp;redlink=1" class="new" title="User talk:I7achi (page does not exist)">talk</a>) 12:46, 1 November 2015 (PST)
+<dl><dd>Deduced return types do not SFINAE; an invalid expression results in a hard error. <a href="../../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 13:03, 1 November 2015 (PST)
+<dl><dd> Ok, I got it. --<a href="https://en.cppreference.com/mwiki/index.php?title=User:I7achi&amp;action=edit&amp;redlink=1" class="new" title="User:I7achi (page does not exist)">I7achi</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:I7achi&amp;action=edit&amp;redlink=1" class="new" title="User talk:I7achi (page does not exist)">talk</a>) 13:44, 1 November 2015 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/invoke&amp;action=edit&amp;section=3" title="Edit section: What is the reason of specifying noexcept twice?">edit</a>]</span> <span class="mw-headline" id="What_is_the_reason_of_specifying_noexcept_twice.3F"> What is the reason of specifying noexcept twice? </span></h2>
+<p>Why in the possible implementation the noexcept operator specified two times? For example:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">constexpr</span> <span class="kw4">auto</span> INVOKE<span class="br0">(</span>T Base<span class="sy4">::</span><span class="sy2">*</span>pmf, Derived<span class="sy3">&amp;&amp;</span> ref, Args<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span><span class="br0">)</span>
+   <span class="coMULTI">/* --&gt; */</span> <span class="kw1">noexcept</span><span class="br0">(</span><span class="kw1">noexcept</span><span class="br0">(</span> <span class="coMULTI">/* &lt;-- */</span>
+<span class="br0">(</span><a href="../../../cpp/utility/forward.html"><span class="kw1120">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Derived<span class="sy1">&gt;</span><span class="br0">(</span>ref<span class="br0">)</span>.<span class="sy2">*</span>pmf<span class="br0">)</span><span class="br0">(</span><a href="../../../cpp/utility/forward.html"><span class="kw1120">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Args<span class="sy1">&gt;</span><span class="br0">(</span>args<span class="br0">)</span>...<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span></pre></div></div>
+<p>Thanks in advance for any informative reply!
+</p><p>And it will be very useful for newbies (and for me, too&nbsp;:D) to add short comments, that describe the purpose of each specialization of the INVOKE. Because, IMHO this is quite untrivial template, doesn't it? <a href="https://en.cppreference.com/mwiki/index.php?title=User:I7achi&amp;action=edit&amp;redlink=1" class="new" title="User:I7achi (page does not exist)">I7achi</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:I7achi&amp;action=edit&amp;redlink=1" class="new" title="User talk:I7achi (page does not exist)">talk</a>) 15:30, 15 March 2016 (PDT)
+</p>
+<dl><dd> The first one introduces a <a href="../../../cpp/language/noexcept_spec.html" title="cpp/language/noexcept spec"><i>noexcept-specification</i></a>; the second one is the <a href="../../../cpp/language/noexcept.html" title="cpp/language/noexcept">noexcept operator</a>. <a href="../../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 17:41, 15 March 2016 (PDT)
+<dl><dd> Thank you very much! This brings me clarity in the question. <a href="https://en.cppreference.com/mwiki/index.php?title=User:I7achi&amp;action=edit&amp;redlink=1" class="new" title="User:I7achi (page does not exist)">I7achi</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:I7achi&amp;action=edit&amp;redlink=1" class="new" title="User talk:I7achi (page does not exist)">talk</a>) 19:00, 15 March 2016 (PDT)
+</dd></dl>
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 95/1000000
+Preprocessor generated node count: 342/1000000
+Post‐expand include size: 775/4194304 bytes
+Template argument size: 503/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:14472-0!*!0!!*!*!* and timestamp 20240518061906 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/invoke&amp;oldid=84151">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/invoke&amp;oldid=84151</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./invoke.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/utility/functional/invoke" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/utility/functional/invoke" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/invoke&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/invoke&amp;oldid=84151" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/functional/invoke&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 15 March 2016, at 19:00.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,468 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.454 secs. -->
+	
+
+
+</body></html>

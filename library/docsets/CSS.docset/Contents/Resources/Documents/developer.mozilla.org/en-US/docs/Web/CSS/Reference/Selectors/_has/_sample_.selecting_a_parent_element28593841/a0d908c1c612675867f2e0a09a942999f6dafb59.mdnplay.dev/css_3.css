@@ -1,0 +1,4 @@
+
+section:has(.featured) { border: 2px solid blue; }
+
+button.copy {display:none !important}

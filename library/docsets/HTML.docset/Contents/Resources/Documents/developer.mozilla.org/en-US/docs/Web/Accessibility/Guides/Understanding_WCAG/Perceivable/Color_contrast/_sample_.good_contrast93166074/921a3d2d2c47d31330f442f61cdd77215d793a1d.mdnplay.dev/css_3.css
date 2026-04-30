@@ -1,0 +1,5 @@
+
+div { font-family: sans-serif; text-align: center; font-size: 2rem; font-weight: bold; width: 250px; padding: 30px; border-radius: 20px; box-shadow: black 4px 4px 4px; }
+.good { background-color: rgb(90, 128, 169); }
+
+button.copy {display:none !important}

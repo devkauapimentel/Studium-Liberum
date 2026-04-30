@@ -1,0 +1,7 @@
+
+#log { border: 1px dotted black; padding: 0.5rem; }
+#red-div { border: 1px solid red; margin-top: 0.5rem; margin-right: 0.5rem; padding: 0.5rem; overflow: auto; }
+#blue-div { border: 1px solid blue; margin-top: 0.5rem; margin-left: 0.5rem; padding: 0.5rem; overflow: auto; }
+#container { display: grid; grid-template-columns: 50% auto; }
+
+button.copy {display:none !important}

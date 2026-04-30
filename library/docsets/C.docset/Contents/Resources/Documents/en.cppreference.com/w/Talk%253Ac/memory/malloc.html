@@ -1,0 +1,290 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Ac/memory/malloc.html --><head><meta charset="utf-8"><title>Talk:c/memory/malloc</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_7418.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_c_memory_malloc skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Ac%2Fmemory%2Fmalloc&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Ac%2Fmemory%2Fmalloc" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../c/memory/malloc.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./malloc.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./malloc.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./malloc.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/memory/malloc&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/memory/malloc&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/memory/malloc&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./malloc.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:c/memory/malloc</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Ac.html" title="Talk:c">Talk:c</a>‎ | <a href="../memory.html" title="Talk:c/memory">memory</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h1><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/memory/malloc&amp;action=edit&amp;section=1" title="Edit section: alignment&nbsp;?">edit</a>]</span> <span class="mw-headline" id="alignment_.3F"> alignment&nbsp;? </span></h1>
+<p>"If allocation succeeds, returns a pointer to the lowest (first) byte in the allocated memory block that is suitably aligned for any object type."
+</p><p>For C11, where does the standard claim any alignment requirements for the malloc - function? <a href="https://en.cppreference.com/w/Special:Contributions/129.247.31.224" title="Special:Contributions/129.247.31.224">129.247.31.224</a> 06:23, 22 August 2018 (PDT)
+</p>
+<dl><dd> <a rel="nofollow" class="external free" href="http://port70.net/~nsz/c/c11/n1570.html#7.22.3p1">http://port70.net/~nsz/c/c11/n1570.html#7.22.3p1</a> --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:34, 22 August 2018 (PDT)
+</dd></dl>
+<p><br>
+Yes, well, if you refer to section "7.22.3.4 The malloc function", all it says is
+</p><p>"Description
+</p><p>2 The malloc function allocates space for an object whose size is specified by size and whose value is indeterminate.
+</p><p>Returns
+</p><p>3 The malloc function returns either a null pointer or a pointer to the allocated space. "
+</p><p>No statement that the memory returned has to be aligned in any way, is there? Do I get something wrong? <a href="https://en.cppreference.com/mwiki/index.php?title=User:Widarr&amp;action=edit&amp;redlink=1" class="new" title="User:Widarr (page does not exist)">Widarr</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Widarr&amp;action=edit&amp;redlink=1" class="new" title="User talk:Widarr (page does not exist)">talk</a>) 07:00, 22 August 2018 (PDT)
+</p><p>Ah, I see, should have read the introduction to that section as well ... Thanks for clarification! <a href="https://en.cppreference.com/mwiki/index.php?title=User:Widarr&amp;action=edit&amp;redlink=1" class="new" title="User:Widarr (page does not exist)">Widarr</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Widarr&amp;action=edit&amp;redlink=1" class="new" title="User talk:Widarr (page does not exist)">talk</a>) 07:02, 22 August 2018 (PDT)
+</p>
+<dl><dd> right, that's one of the reasons this reference exists - specifications that apply simultaneously may be a hundred pages apart in the text of the standard. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 07:22, 22 August 2018 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/memory/malloc&amp;action=edit&amp;section=2" title="Edit section: Question">edit</a>]</span> <span class="mw-headline" id="Question"> Question </span></h2>
+<p>According to C standard malloc returns a pointer which is suitably aligned for any object with fundamental alignment. This means that the returned pointer has alignment of at least alignof(max_align_t).
+</p><p>But is it possible for malloc to return a pointer with alignment greater than alignof(max_align_t)? <strike>If we assume that caller is allowed to use the returned pointer in all contexts then that should not be possible as alignments greater than alignof(max_align_t) are only supported in some specific contexts.</strike>
+--<a href="https://en.cppreference.com/mwiki/index.php?title=User:PersianCat&amp;action=edit&amp;redlink=1" class="new" title="User:PersianCat (page does not exist)">PersianCat</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:PersianCat&amp;action=edit&amp;redlink=1" class="new" title="User talk:PersianCat (page does not exist)">talk</a>) 02:21, 23 June 2022 (PDT)
+</p>
+<dl><dd> Sounds like you're concerned about the complexities of over-aligned types? <code>malloc</code> doesn't deal in types, so the possibly-greater-than-strictly-necessary alignment of the address returned by <code>malloc</code> is inconsequential --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 03:17, 23 June 2022 (PDT)
+<dl><dd>My mistake was that I misinterpreted 6.2.8.3 in the <a rel="nofollow" class="external text" href="../../../../open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf">standard</a> to mean that it is implementation-defined where the <b>objects with extended alignments</b> can be used. The statement means that it is implementation-defined where the <b>extended alignments themselves</b> can be used. For example an implementation may support an specific extended alignment only in aligned_alloc and not in _Alignas.
+</dd><dd>So malloc may actually return a pointer with alignment more than alignof(max_align_t)? For example if alignof(max_align_t) equals 8 then is it possible for the returned pointer to be multiple of 16?
+</dd><dd>Also I just saw that <a rel="nofollow" class="external text" href="../../cpp/memory/c/aligned_alloc.html">aligned_alloc</a> page states:
+<dl><dd><i>"Regular malloc aligns memory suitable for any object type (which, in practice, means that it is aligned to alignof(max_align_t))."</i>
+</dd></dl>
+</dd><dd>--<a href="https://en.cppreference.com/mwiki/index.php?title=User:PersianCat&amp;action=edit&amp;redlink=1" class="new" title="User:PersianCat (page does not exist)">PersianCat</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:PersianCat&amp;action=edit&amp;redlink=1" class="new" title="User talk:PersianCat (page does not exist)">talk</a>) 06:50, 23 June 2022 (PDT)
+<dl><dd> Yeah I don't see any reason why <code>malloc</code> wouldn't be aligned to a multiple of 16 or some such. If <code>malloc</code> only ever returned address 0x10000000 and nullptr on all other calls, that would be a valid implementation that's 0x10000000-aligned --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 08:34, 23 June 2022 (PDT)
+<dl><dd> Thank you for clarifying. That makes sense. --<a href="https://en.cppreference.com/mwiki/index.php?title=User:PersianCat&amp;action=edit&amp;redlink=1" class="new" title="User:PersianCat (page does not exist)">PersianCat</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:PersianCat&amp;action=edit&amp;redlink=1" class="new" title="User talk:PersianCat (page does not exist)">talk</a>) 09:02, 23 June 2022 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/memory/malloc&amp;action=edit&amp;section=3" title="Edit section: Uninitialized or indeterminate">edit</a>]</span> <span class="mw-headline" id="Uninitialized_or_indeterminate"> Uninitialized or indeterminate </span></h2>
+<p>Does C standard mandates that malloc should not initialize allocated memory? 
+</p><p>According to clause 7.22.3.4 of the <a rel="nofollow" class="external text" href="../../../../open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf">standard</a>, the content of allocated memory is Indeterminate. According to clause 3.19.2 Indeterminate either means unspecified or trap representation. Many implementations don't have trap representation and thus the content of allocated memory would be unspecified in such implementations. An implementation might actually choose and document unspecified values. So an implementation should be able to initialize malloced memory and document it.
+</p><p>The second answer of <a rel="nofollow" class="external text" href="https://stackoverflow.com/questions/4428048/what-could-cause-malloc-to-initialise-memory">this Stackoverflow question</a>, also says that it is implementation-defined whether malloc initializes allocated memory or not.
+</p><p>Thus I believe "uninitialized" should be changed to "indeterminate".
+--<a href="https://en.cppreference.com/mwiki/index.php?title=User:PersianCat&amp;action=edit&amp;redlink=1" class="new" title="User:PersianCat (page does not exist)">PersianCat</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:PersianCat&amp;action=edit&amp;redlink=1" class="new" title="User talk:PersianCat (page does not exist)">talk</a>) 15:31, 23 June 2022 (PDT)
+</p>
+<dl><dd> yes the value of the allocated object is indeterminate in the spec, as you quoted, with the primary consequence that reading that value is undefined behavior J.2, where the C standard enumerates undefined behaviors, "The value of the object allocated by the malloc function is used"). Although <a rel="nofollow" class="external text" href="https://stackoverflow.com/a/66840190/273767">analysis on this SO answer</a> disagrees that it is actually undefined (unlike reading an uninitialized automatic variable whose address was never taken, which is undefined in the main text of the standard, not in the J appendix). Yes, a libc runtime can document that e.g. in debug mode, MSVC malloc fills the pages with 0xCDCDCDCD, but a C program that reads that value is still (maybe?) undefined. We can definitely add a note mentioning 0xCDCDCDCD, come to think of it - it's something programmers actually encounter and we want to serve programmers more than language lawyers. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 17:32, 23 June 2022 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> Well I first saw this possibility in page 152 of 2nd Edition of Secure Coding in C and C++. But after seeing that <a rel="nofollow" class="external text" href="https://wiki.sei.cmu.edu/confluence/display/c/EXP33-C.+Do+not+read+uninitialized+memory">rule EXP33-C of SEI CERT C Coding Standard</a> also assumes that indeterminate in this context also means uninitialized I think there is no need for change.--<a href="https://en.cppreference.com/mwiki/index.php?title=User:PersianCat&amp;action=edit&amp;redlink=1" class="new" title="User:PersianCat (page does not exist)">PersianCat</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:PersianCat&amp;action=edit&amp;redlink=1" class="new" title="User talk:PersianCat (page does not exist)">talk</a>) 23:12, 23 June 2022 (PDT)
+</dd></dl>
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 34/1000000
+Preprocessor generated node count: 101/1000000
+Post‐expand include size: 76/4194304 bytes
+Template argument size: 24/4194304 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:17901-0!*!0!!*!*!* and timestamp 20240518080031 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/memory/malloc&amp;oldid=140540">https://en.cppreference.com/mwiki/index.php?title=Talk:c/memory/malloc&amp;oldid=140540</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./malloc.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:c/memory/malloc" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:c/memory/malloc" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/memory/malloc&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/memory/malloc&amp;oldid=140540" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:c/memory/malloc&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 23 June 2022, at 23:12.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 2,881 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.055 secs. -->
+	
+
+
+</body></html>

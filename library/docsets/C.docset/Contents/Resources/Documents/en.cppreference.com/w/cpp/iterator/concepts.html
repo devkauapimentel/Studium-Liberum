@@ -1,0 +1,1043 @@
+<html><!-- Online page at https://en.cppreference.com/w/cpp/iterator/concepts.html --><head><meta charset="utf-8"><title>Named Requirements</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_22.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_named_req skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fnamed+req&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fnamed+req" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="./concepts.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk"><span><a href="../../Talk%25253Acpp/named_req.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./concepts.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./concepts.html">View</a></span></li>
+					<li id="ca-edit"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/named_req&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/named_req&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./concepts.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Named Requirements</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp">C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../compiler_support.html" title="cpp/compiler support">Compiler support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../freestanding.html" title="cpp/freestanding">Freestanding and hosted</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../language.html" title="cpp/language">Language</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../standard_library.html" title="cpp/standard library">Standard library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../headers.html" title="cpp/header">Standard library headers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><strong class="selflink">Named requirements</strong></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../experimental/feature_test.html" title="cpp/feature test">Feature test macros</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../utility.html#Language_support" title="cpp/utility">Language support library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../concepts.html" title="cpp/concepts">Concepts library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../error.html" title="cpp/error">Diagnostics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../memory.html" title="cpp/memory">Memory management library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../meta.html" title="cpp/meta">Metaprogramming library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../utility.html" title="cpp/utility">General utilities library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../container.html" title="cpp/container">Containers library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../iterator.html" title="cpp/iterator">Iterators library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../ranges.html" title="cpp/ranges">Ranges library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../algorithm.html" title="cpp/algorithm">Algorithms library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../string.html" title="cpp/string">Strings library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../text.html" title="cpp/text">Text processing library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../numeric.html" title="cpp/numeric">Numerics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../chrono.html" title="cpp/chrono">Date and time library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../io.html" title="cpp/io">Input/output library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../filesystem.html" title="cpp/filesystem">Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../atomic.html" title="cpp/thread">Concurrency support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../experimental/execution.html" title="cpp/execution">Execution control library</a> <span class="t-mark-rev t-since-cxx26">(C++26)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../experimental.html" title="cpp/experimental">Technical specifications</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../symbol_index.html" title="cpp/symbol index">Symbols index</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../links/libs.html" title="cpp/links/libs">External libraries</a></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><strong class="selflink">C++ named requirements</strong><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5"><a href="./concepts.html#Basic" title="cpp/named req">Basic</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/DefaultConstructible.html" title="cpp/named req/DefaultConstructible"><span class="t-lines"><span>DefaultConstructible</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/MoveConstructible.html" title="cpp/named req/MoveConstructible"><span class="t-lines"><span>MoveConstructible</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/CopyConstructible.html" title="cpp/named req/CopyConstructible"><span class="t-lines"><span>CopyConstructible</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/CopyAssignable.html" title="cpp/named req/CopyAssignable"><span class="t-lines"><span>CopyAssignable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/MoveAssignable.html" title="cpp/named req/MoveAssignable"><span class="t-lines"><span>MoveAssignable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Destructible.html" title="cpp/named req/Destructible"><span class="t-lines"><span>Destructible</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./concepts.html#Type_properties" title="cpp/named req">Type properties</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/ScalarType.html" title="cpp/named req/ScalarType"><span class="t-lines"><span>ScalarType</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/PODType.html" title="cpp/named req/PODType"><span class="t-lines"><span>PODType</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/TriviallyCopyable.html" title="cpp/named req/TriviallyCopyable"><span class="t-lines"><span>TriviallyCopyable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/TrivialType.html" title="cpp/named req/TrivialType"><span class="t-lines"><span>TrivialType</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/StandardLayoutType.html" title="cpp/named req/StandardLayoutType"><span class="t-lines"><span>StandardLayoutType</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/ImplicitLifetimeType.html" title="cpp/named req/ImplicitLifetimeType"><span class="t-lines"><span>ImplicitLifetimeType</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./concepts.html#Library-wide" title="cpp/named req">Library-wide</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/BooleanTestable.html" title="cpp/named req/BooleanTestable"><span class="t-lines"><span>BooleanTestable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/EqualityComparable.html" title="cpp/named req/EqualityComparable"><span class="t-lines"><span>EqualityComparable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/LessThanComparable.html" title="cpp/named req/LessThanComparable"><span class="t-lines"><span>LessThanComparable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Swappable.html" title="cpp/named req/Swappable"><span class="t-lines"><span>Swappable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/ValueSwappable.html" title="cpp/named req/ValueSwappable"><span class="t-lines"><span>ValueSwappable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/NullablePointer.html" title="cpp/named req/NullablePointer"><span class="t-lines"><span>NullablePointer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Hash.html" title="cpp/named req/Hash"><span class="t-lines"><span>Hash</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Allocator.html" title="cpp/named req/Allocator"><span class="t-lines"><span>Allocator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/FunctionObject.html" title="cpp/named req/FunctionObject"><span class="t-lines"><span>FunctionObject</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Callable.html" title="cpp/named req/Callable"><span class="t-lines"><span>Callable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Predicate.html" title="cpp/named req/Predicate"><span class="t-lines"><span>Predicate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/BinaryPredicate.html" title="cpp/named req/BinaryPredicate"><span class="t-lines"><span>BinaryPredicate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Compare.html" title="cpp/named req/Compare"><span class="t-lines"><span>Compare</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5"><a href="./concepts.html#Container" title="cpp/named req">Container</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Container.html" title="cpp/named req/Container"><span class="t-lines"><span>Container</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/ReversibleContainer.html" title="cpp/named req/ReversibleContainer"><span class="t-lines"><span>ReversibleContainer</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/AllocatorAwareContainer.html" title="cpp/named req/AllocatorAwareContainer"><span class="t-lines"><span>AllocatorAwareContainer</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/SequenceContainer.html" title="cpp/named req/SequenceContainer"><span class="t-lines"><span>SequenceContainer</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/ContiguousContainer.html" title="cpp/named req/ContiguousContainer"><span class="t-lines"><span>ContiguousContainer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/AssociativeContainer.html" title="cpp/named req/AssociativeContainer"><span class="t-lines"><span>AssociativeContainer</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/UnorderedAssociativeContainer.html" title="cpp/named req/UnorderedAssociativeContainer"><span class="t-lines"><span>UnorderedAssociativeContainer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./concepts.html#Container_element" title="cpp/named req">Container element</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/DefaultInsertable.html" title="cpp/named req/DefaultInsertable"><span class="t-lines"><span>DefaultInsertable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/CopyInsertable.html" title="cpp/named req/CopyInsertable"><span class="t-lines"><span>CopyInsertable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/MoveInsertable.html" title="cpp/named req/MoveInsertable"><span class="t-lines"><span>MoveInsertable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/EmplaceConstructible.html" title="cpp/named req/EmplaceConstructible"><span class="t-lines"><span>EmplaceConstructible</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Erasable.html" title="cpp/named req/Erasable"><span class="t-lines"><span>Erasable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./concepts.html#Iterator" title="cpp/named req">Iterator</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Iterator.html" title="cpp/named req/Iterator"><span class="t-lines"><span>LegacyIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/InputIterator.html" title="cpp/named req/InputIterator"><span class="t-lines"><span>LegacyInputIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/OutputIterator.html" title="cpp/named req/OutputIterator"><span class="t-lines"><span>LegacyOutputIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/ForwardIterator.html" title="cpp/named req/ForwardIterator"><span class="t-lines"><span>LegacyForwardIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/BidirectionalIterator.html" title="cpp/named req/BidirectionalIterator"><span class="t-lines"><span>LegacyBidirectionalIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator"><span class="t-lines"><span>LegacyRandomAccessIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/ContiguousIterator.html" title="cpp/named req/ContiguousIterator"><span class="t-lines"><span>LegacyContiguousIterator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/ConstexprIterator.html" title="cpp/named req/ConstexprIterator"><span class="t-lines"><span>ConstexprIterator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./concepts.html#Stream_I.2FO_functions" title="cpp/named req">Stream I/O</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/FormattedInputFunction.html" title="cpp/named req/FormattedInputFunction"><span class="t-lines"><span>FormattedInputFunction</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/UnformattedInputFunction.html" title="cpp/named req/UnformattedInputFunction"><span class="t-lines"><span>UnformattedInputFunction</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/FormattedOutputFunction.html" title="cpp/named req/FormattedOutputFunction"><span class="t-lines"><span>FormattedOutputFunction</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/UnformattedOutputFunction.html" title="cpp/named req/UnformattedOutputFunction"><span class="t-lines"><span>UnformattedOutputFunction</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./concepts.html#Formatters" title="cpp/named req">Formatters</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/BasicFormatter.html" title="cpp/named req/BasicFormatter"><span class="t-lines"><span>BasicFormatter</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Formatter.html" title="cpp/named req/Formatter"><span class="t-lines"><span>Formatter</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5"><a href="./concepts.html#Random_Number_Generation" title="cpp/named req">Random Numbers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/SeedSequence.html" title="cpp/named req/SeedSequence"><span class="t-lines"><span>SeedSequence</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/RandomNumberEngine.html" title="cpp/named req/RandomNumberEngine"><span class="t-lines"><span>RandomNumberEngine</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/RandomNumberDistribution.html" title="cpp/named req/RandomNumberDistribution"><span class="t-lines"><span>RandomNumberDistribution</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/UniformRandomBitGenerator.html" title="cpp/named req/UniformRandomBitGenerator"><span class="t-lines"><span>UniformRandomBitGenerator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/RandomNumberEngineAdaptor.html" title="cpp/named req/RandomNumberEngineAdaptor"><span class="t-lines"><span>RandomNumberEngineAdaptor</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./concepts.html#Concurrency" title="cpp/named req">Concurrency</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/BasicLockable.html" title="cpp/named req/BasicLockable"><span class="t-lines"><span>BasicLockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Lockable.html" title="cpp/named req/Lockable"><span class="t-lines"><span>Lockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/TimedLockable.html" title="cpp/named req/TimedLockable"><span class="t-lines"><span>TimedLockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/SharedLockable.html" title="cpp/named req/SharedLockable"><span class="t-lines"><span>SharedLockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/SharedTimedLockable.html" title="cpp/named req/SharedTimedLockable"><span class="t-lines"><span>SharedTimedLockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Mutex.html" title="cpp/named req/Mutex"><span class="t-lines"><span>Mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/TimedMutex.html" title="cpp/named req/TimedMutex"><span class="t-lines"><span>TimedMutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/SharedMutex.html" title="cpp/named req/SharedMutex"><span class="t-lines"><span>SharedMutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/SharedTimedMutex.html" title="cpp/named req/SharedTimedMutex"><span class="t-lines"><span>SharedTimedMutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./concepts.html#Ranges" title="cpp/named req">Ranges</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/RangeAdaptorObject.html" title="cpp/named req/RangeAdaptorObject"><span class="t-lines"><span>RangeAdaptorObject</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/RangeAdaptorClosureObject.html" title="cpp/named req/RangeAdaptorClosureObject"><span class="t-lines"><span>RangeAdaptorClosureObject</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./concepts.html#Multidimensional_View_Customization" title="cpp/named req">Multidimensional View</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/LayoutMapping.html" title="cpp/named req/LayoutMapping"><span class="t-lines"><span>LayoutMapping</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/LayoutMappingPolicy.html" title="cpp/named req/LayoutMappingPolicy"><span class="t-lines"><span>LayoutMappingPolicy</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/AccessorPolicy.html" title="cpp/named req/AccessorPolicy"><span class="t-lines"><span>AccessorPolicy</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./concepts.html#Other" title="cpp/named req">Other</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/CharTraits.html" title="cpp/named req/CharTraits"><span class="t-lines"><span>CharTraits</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/RegexTraits.html" title="cpp/named req/RegexTraits"><span class="t-lines"><span>RegexTraits</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/BitmaskType.html" title="cpp/named req/BitmaskType"><span class="t-lines"><span>BitmaskType</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/LiteralType.html" title="cpp/named req/LiteralType"><span class="t-lines"><span>LiteralType</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/NumericType.html" title="cpp/named req/NumericType"><span class="t-lines"><span>NumericType</span></span></a></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/UnaryTypeTrait.html" title="cpp/named req/UnaryTypeTrait"><span class="t-lines"><span>UnaryTypeTrait</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/BinaryTypeTrait.html" title="cpp/named req/BinaryTypeTrait"><span class="t-lines"><span>BinaryTypeTrait</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/TransformationTrait.html" title="cpp/named req/TransformationTrait"><span class="t-lines"><span>TransformationTrait</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/Clock.html" title="cpp/named req/Clock"><span class="t-lines"><span>Clock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-named-req-table"><div><a href="../named_req/TrivialClock.html" title="cpp/named req/TrivialClock"><span class="t-lines"><span>TrivialClock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/named_req/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div></div>
+<p>The <i>named requirements</i> listed on this page are the named requirements used in the normative text of the C++ standard to define the expectations of the standard library.
+</p><p>The burden to ensure that library templates are instantiated with template arguments that satisfy these requirements is on the programmer. Failure to do so may result in very complex compiler diagnostics.
+</p><p>Some of these requirements are formalized in C++20 using the <a href="../language/constraints.html" title="cpp/language/constraints">concepts</a> language feature.
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr>
+<td colspan="2"> <table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="./concepts.html#Basic"><span class="tocnumber">1</span> <span class="toctext">Basic</span></a></li>
+<li class="toclevel-1"><a href="./concepts.html#Type_properties"><span class="tocnumber">2</span> <span class="toctext">Type properties</span></a></li>
+<li class="toclevel-1"><a href="./concepts.html#Library-wide"><span class="tocnumber">3</span> <span class="toctext">Library-wide</span></a></li>
+<li class="toclevel-1"><a href="./concepts.html#Container"><span class="tocnumber">4</span> <span class="toctext">Container</span></a>
+<ul>
+<li class="toclevel-2"><a href="./concepts.html#Container_element"><span class="tocnumber">4.1</span> <span class="toctext">Container element</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="./concepts.html#Iterator"><span class="tocnumber">5</span> <span class="toctext">Iterator</span></a></li>
+<li class="toclevel-1"><a href="./concepts.html#Stream_I.2FO_functions"><span class="tocnumber">6</span> <span class="toctext">Stream I/O functions</span></a></li>
+<li class="toclevel-1"><a href="./concepts.html#Formatters"><span class="tocnumber">7</span> <span class="toctext">Formatters</span></a></li>
+<li class="toclevel-1"><a href="./concepts.html#Random_Number_Generation"><span class="tocnumber">8</span> <span class="toctext">Random Number Generation</span></a></li>
+<li class="toclevel-1"><a href="./concepts.html#Concurrency"><span class="tocnumber">9</span> <span class="toctext">Concurrency</span></a></li>
+<li class="toclevel-1"><a href="./concepts.html#Ranges"><span class="tocnumber">10</span> <span class="toctext">Ranges</span></a></li>
+<li class="toclevel-1"><a href="./concepts.html#Multidimensional_View_Customization"><span class="tocnumber">11</span> <span class="toctext">Multidimensional View Customization</span></a></li>
+<li class="toclevel-1"><a href="./concepts.html#Other"><span class="tocnumber">12</span> <span class="toctext">Other</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3> <span class="mw-headline" id="Basic">Basic</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/DefaultConstructible.html" title="cpp/named req/DefaultConstructible"><span class="t-lines"><span>DefaultConstructible</span></span></a></div></div>
+</td>
+<td> specifies that an object of the type can be default constructed<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/MoveConstructible.html" title="cpp/named req/MoveConstructible"><span class="t-lines"><span>MoveConstructible</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> specifies that an object of the type can be constructed from rvalue<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/CopyConstructible.html" title="cpp/named req/CopyConstructible"><span class="t-lines"><span>CopyConstructible</span></span></a></div></div>
+</td>
+<td> specifies that an object of the type can be constructed from lvalue<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/MoveAssignable.html" title="cpp/named req/MoveAssignable"><span class="t-lines"><span>MoveAssignable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> specifies that an object of the type can be assigned from rvalue<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/CopyAssignable.html" title="cpp/named req/CopyAssignable"><span class="t-lines"><span>CopyAssignable</span></span></a></div></div>
+</td>
+<td> specifies that an object of the type can be assigned from lvalue<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Destructible.html" title="cpp/named req/Destructible"><span class="t-lines"><span>Destructible</span></span></a></div></div>
+</td>
+<td> specifies that an object of the type can be destroyed<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Type_properties">Type properties</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td colspan="2"> Note: the standard does not define named requirements with names specified in this subcategory. <br>These are type categories defined by the core language. They are included here as named requirements only for consistency.
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/ScalarType.html" title="cpp/named req/ScalarType"><span class="t-lines"><span>ScalarType</span></span></a></div></div>
+</td>
+<td> object types that are not array types or class types<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/PODType.html" title="cpp/named req/PODType"><span class="t-lines"><span>PODType</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-deprecated-cxx20">(deprecated in C++20)</span></span></span></div></div>
+</td>
+<td> POD (Plain Old Data) types, compatible with C <span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span></span><br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/TriviallyCopyable.html" title="cpp/named req/TriviallyCopyable"><span class="t-lines"><span>TriviallyCopyable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> objects of these types can maintain their values after copying their underlying bytes<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/TrivialType.html" title="cpp/named req/TrivialType"><span class="t-lines"><span>TrivialType</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span><span class="t-mark-rev t-deprecated-cxx26">(deprecated in C++26)</span></span></span></div></div>
+</td>
+<td> objects of these types can be trivially constructed and copied<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/StandardLayoutType.html" title="cpp/named req/StandardLayoutType"><span class="t-lines"><span>StandardLayoutType</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> these types are useful for communicating with code written in other programming languages<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/ImplicitLifetimeType.html" title="cpp/named req/ImplicitLifetimeType"><span class="t-lines"><span>ImplicitLifetimeType</span></span></a></div></div>
+</td>
+<td> objects of these types can be implicitly created, and their lifetimes can be implicitly started<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Library-wide">Library-wide</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/BooleanTestable.html" title="cpp/named req/BooleanTestable"><span class="t-lines"><span>BooleanTestable</span></span></a></div></div>
+</td>
+<td> boolean operations (<span class="mw-geshi cpp source-cpp">operator<span class="sy3">&amp;&amp;</span></span>, <span class="mw-geshi cpp source-cpp">operator<span class="sy3">||</span></span>, and <span class="mw-geshi cpp source-cpp">operator<span class="sy3">!</span></span>) have usual semantics<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/EqualityComparable.html" title="cpp/named req/EqualityComparable"><span class="t-lines"><span>EqualityComparable</span></span></a></div></div>
+</td>
+<td> <code>operator==</code> is an equivalence relation<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/LessThanComparable.html" title="cpp/named req/LessThanComparable"><span class="t-lines"><span>LessThanComparable</span></span></a></div></div>
+</td>
+<td> <code>operator&lt;</code> is a strict weak ordering relation<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Swappable.html" title="cpp/named req/Swappable"><span class="t-lines"><span>Swappable</span></span></a></div></div>
+</td>
+<td> can be swapped with an unqualified non-member function call <span class="t-c"><span class="mw-geshi cpp source-cpp">swap<span class="br0">(</span><span class="br0">)</span></span></span><br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/ValueSwappable.html" title="cpp/named req/ValueSwappable"><span class="t-lines"><span>ValueSwappable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/Iterator.html" title="cpp/named req/Iterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyIterator</span></a> that dereferences to a <a href="../named_req/Swappable.html" title="cpp/named req/Swappable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Swappable</span></a> type<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/NullablePointer.html" title="cpp/named req/NullablePointer"><span class="t-lines"><span>NullablePointer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> a pointer-like type supporting a null value<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Hash.html" title="cpp/named req/Hash"><span class="t-lines"><span>Hash</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/FunctionObject.html" title="cpp/named req/FunctionObject"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">FunctionObject</span></a> that for inputs with different values has a low probability of giving the same output<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Allocator.html" title="cpp/named req/Allocator"><span class="t-lines"><span>Allocator</span></span></a></div></div>
+</td>
+<td> a class type that contains allocation information<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/FunctionObject.html" title="cpp/named req/FunctionObject"><span class="t-lines"><span>FunctionObject</span></span></a></div></div>
+</td>
+<td> an object that can be called with the function call syntax<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Callable.html" title="cpp/named req/Callable"><span class="t-lines"><span>Callable</span></span></a></div></div>
+</td>
+<td> a type for which the invoke operation is defined<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Predicate.html" title="cpp/named req/Predicate"><span class="t-lines"><span>Predicate</span></span></a></div></div>
+</td>
+<td> a <a href="../named_req/FunctionObject.html" title="cpp/named req/FunctionObject"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">FunctionObject</span></a> that returns a value convertible to <span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span> for one argument without modifying it<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/BinaryPredicate.html" title="cpp/named req/BinaryPredicate"><span class="t-lines"><span>BinaryPredicate</span></span></a></div></div>
+</td>
+<td> a <a href="../named_req/FunctionObject.html" title="cpp/named req/FunctionObject"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">FunctionObject</span></a> that returns a value convertible to <span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span> for two arguments without modifying them<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Compare.html" title="cpp/named req/Compare"><span class="t-lines"><span>Compare</span></span></a></div></div>
+</td>
+<td> a <a href="../named_req/BinaryPredicate.html" title="cpp/named req/BinaryPredicate"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">BinaryPredicate</span></a> that establishes an ordering relation<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+</tbody></table>
+<table class="t-dsc-begin">
+
+<tbody><tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Container">Container</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Container.html" title="cpp/named req/Container"><span class="t-lines"><span>Container</span></span></a></div></div>
+</td>
+<td> data structure that allows element access using iterators<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/ReversibleContainer.html" title="cpp/named req/ReversibleContainer"><span class="t-lines"><span>ReversibleContainer</span></span></a></div></div>
+</td>
+<td> container using bidirectional iterators<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/AllocatorAwareContainer.html" title="cpp/named req/AllocatorAwareContainer"><span class="t-lines"><span>AllocatorAwareContainer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> container using an allocator<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/SequenceContainer.html" title="cpp/named req/SequenceContainer"><span class="t-lines"><span>SequenceContainer</span></span></a></div></div>
+</td>
+<td> container with elements stored linearly<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/ContiguousContainer.html" title="cpp/named req/ContiguousContainer"><span class="t-lines"><span>ContiguousContainer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td> container with elements stored at adjacent memory addresses<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/AssociativeContainer.html" title="cpp/named req/AssociativeContainer"><span class="t-lines"><span>AssociativeContainer</span></span></a></div></div>
+</td>
+<td> container that stores elements by associating them to keys<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/UnorderedAssociativeContainer.html" title="cpp/named req/UnorderedAssociativeContainer"><span class="t-lines"><span>UnorderedAssociativeContainer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> container that stores elements stored in buckets by associating them to keys<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Container_element"> Container element </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/DefaultInsertable.html" title="cpp/named req/DefaultInsertable"><span class="t-lines"><span>DefaultInsertable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> element can be default-constructed in uninitialized storage<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/CopyInsertable.html" title="cpp/named req/CopyInsertable"><span class="t-lines"><span>CopyInsertable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> element can be copy-constructed in uninitialized storage<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/MoveInsertable.html" title="cpp/named req/MoveInsertable"><span class="t-lines"><span>MoveInsertable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> element can be move-constructed in uninitialized storage<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/EmplaceConstructible.html" title="cpp/named req/EmplaceConstructible"><span class="t-lines"><span>EmplaceConstructible</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> element can be constructed in uninitialized storage<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Erasable.html" title="cpp/named req/Erasable"><span class="t-lines"><span>Erasable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> element can be destroyed using an allocator<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Iterator">Iterator</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Iterator.html" title="cpp/named req/Iterator"><span class="t-lines"><span>LegacyIterator</span></span></a></div></div>
+</td>
+<td> general concept to access data within some data structure<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/InputIterator.html" title="cpp/named req/InputIterator"><span class="t-lines"><span>LegacyInputIterator</span></span></a></div></div>
+</td>
+<td> iterator that can be used to read data<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/OutputIterator.html" title="cpp/named req/OutputIterator"><span class="t-lines"><span>LegacyOutputIterator</span></span></a></div></div>
+</td>
+<td> iterator that can be used to write data<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/ForwardIterator.html" title="cpp/named req/ForwardIterator"><span class="t-lines"><span>LegacyForwardIterator</span></span></a></div></div>
+</td>
+<td> iterator that can be used to read data multiple times<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/BidirectionalIterator.html" title="cpp/named req/BidirectionalIterator"><span class="t-lines"><span>LegacyBidirectionalIterator</span></span></a></div></div>
+</td>
+<td> iterator that can be both incremented and decremented<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator"><span class="t-lines"><span>LegacyRandomAccessIterator</span></span></a></div></div>
+</td>
+<td> iterator that can be advanced in constant time<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/ContiguousIterator.html" title="cpp/named req/ContiguousIterator"><span class="t-lines"><span>LegacyContiguousIterator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td> iterator to contiguously-allocated elements<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/ConstexprIterator.html" title="cpp/named req/ConstexprIterator"><span class="t-lines"><span>ConstexprIterator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> iterator that can be used during constant expression evaluation<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Stream_I.2FO_functions">Stream I/O functions</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/UnformattedInputFunction.html" title="cpp/named req/UnformattedInputFunction"><span class="t-lines"><span>UnformattedInputFunction</span></span></a></div></div>
+</td>
+<td> a stream input function that does not skip leading whitespace and counts the processed characters<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/FormattedInputFunction.html" title="cpp/named req/FormattedInputFunction"><span class="t-lines"><span>FormattedInputFunction</span></span></a></div></div>
+</td>
+<td> a stream input function that skips leading whitespace<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/UnformattedOutputFunction.html" title="cpp/named req/UnformattedOutputFunction"><span class="t-lines"><span>UnformattedOutputFunction</span></span></a></div></div>
+</td>
+<td> a basic stream output function<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/FormattedOutputFunction.html" title="cpp/named req/FormattedOutputFunction"><span class="t-lines"><span>FormattedOutputFunction</span></span></a></div></div>
+</td>
+<td> a stream output function that sets failbit on errors and returns a reference to the stream<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Formatters">Formatters</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/BasicFormatter.html" title="cpp/named req/BasicFormatter"><span class="t-lines"><span>BasicFormatter</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> abstracts formatting operations for a given formatting argument type and character type<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Formatter.html" title="cpp/named req/Formatter"><span class="t-lines"><span>Formatter</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> defines functions used by the <a href="../utility/format.html" title="cpp/utility/format">formatting library</a><br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Random_Number_Generation">Random Number Generation</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/SeedSequence.html" title="cpp/named req/SeedSequence"><span class="t-lines"><span>SeedSequence</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> consumes a sequence of integers and produces a sequence of 32-bit unsigned values<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/UniformRandomBitGenerator.html" title="cpp/named req/UniformRandomBitGenerator"><span class="t-lines"><span>UniformRandomBitGenerator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> returns uniformly distributed random unsigned integers<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/RandomNumberEngine.html" title="cpp/named req/RandomNumberEngine"><span class="t-lines"><span>RandomNumberEngine</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> a deterministic <a href="../named_req/UniformRandomBitGenerator.html" title="cpp/named req/UniformRandomBitGenerator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">UniformRandomBitGenerator</span></a>, defined by the seed<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/RandomNumberEngineAdaptor.html" title="cpp/named req/RandomNumberEngineAdaptor"><span class="t-lines"><span>RandomNumberEngineAdaptor</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/RandomNumberEngine.html" title="cpp/named req/RandomNumberEngine"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">RandomNumberEngine</span></a> that transforms the output of another <a href="../named_req/RandomNumberEngine.html" title="cpp/named req/RandomNumberEngine"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">RandomNumberEngine</span></a><br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/RandomNumberDistribution.html" title="cpp/named req/RandomNumberDistribution"><span class="t-lines"><span>RandomNumberDistribution</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> returns random numbers distributed according to a given mathematical probability density function<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Concurrency">Concurrency</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/BasicLockable.html" title="cpp/named req/BasicLockable"><span class="t-lines"><span>BasicLockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> provides exclusive ownership semantics for execution agents (i.e. threads)<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Lockable.html" title="cpp/named req/Lockable"><span class="t-lines"><span>Lockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/BasicLockable.html" title="cpp/named req/BasicLockable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">BasicLockable</span></a> that supports attempted lock acquisition<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/TimedLockable.html" title="cpp/named req/TimedLockable"><span class="t-lines"><span>TimedLockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/Lockable.html" title="cpp/named req/Lockable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Lockable</span></a> that supports timed lock acquisition<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/SharedLockable.html" title="cpp/named req/SharedLockable"><span class="t-lines"><span>SharedLockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div>
+</td>
+<td> provides shared ownership semantics for execution agents (i.e. threads)<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/SharedTimedLockable.html" title="cpp/named req/SharedTimedLockable"><span class="t-lines"><span>SharedTimedLockable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/SharedLockable.html" title="cpp/named req/SharedLockable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">SharedLockable</span></a> that supports timed lock acquisition<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Mutex.html" title="cpp/named req/Mutex"><span class="t-lines"><span>Mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/Lockable.html" title="cpp/named req/Lockable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Lockable</span></a> that protects against data races and sequentially consistent synchronization<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/TimedMutex.html" title="cpp/named req/TimedMutex"><span class="t-lines"><span>TimedMutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/TimedLockable.html" title="cpp/named req/TimedLockable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">TimedLockable</span></a> that protects against data races and sequentially consistent synchronization<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/SharedMutex.html" title="cpp/named req/SharedMutex"><span class="t-lines"><span>SharedMutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/Mutex.html" title="cpp/named req/Mutex"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Mutex</span></a> that supports shared ownership semantics<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/SharedTimedMutex.html" title="cpp/named req/SharedTimedMutex"><span class="t-lines"><span>SharedTimedMutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/TimedMutex.html" title="cpp/named req/TimedMutex"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">TimedMutex</span></a> that supports shared ownership semantics<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Ranges">Ranges</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/RangeAdaptorObject.html" title="cpp/named req/RangeAdaptorObject"><span class="t-lines"><span>RangeAdaptorObject</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/FunctionObject.html" title="cpp/named req/FunctionObject"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">FunctionObject</span></a> that creates a <a href="../ranges.html#Range_adaptors" title="cpp/ranges">range adaptor</a> from a <a href="../ranges/viewable_range.html" title="cpp/ranges/viewable range"><code>viewable_range</code></a> and additional arguments<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/RangeAdaptorClosureObject.html" title="cpp/named req/RangeAdaptorClosureObject"><span class="t-lines"><span>RangeAdaptorClosureObject</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/FunctionObject.html" title="cpp/named req/FunctionObject"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">FunctionObject</span></a> that supports the pipe operator<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Multidimensional_View_Customization">Multidimensional View Customization</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/LayoutMapping.html" title="cpp/named req/LayoutMapping"><span class="t-lines"><span>LayoutMapping</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> controls the mapping of multidimensional index in <span class="t-lc">mdspan</span><br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/LayoutMappingPolicy.html" title="cpp/named req/LayoutMappingPolicy"><span class="t-lines"><span>LayoutMappingPolicy</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a policy that holds <a href="../named_req/LayoutMapping.html" title="cpp/named req/LayoutMapping"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LayoutMapping</span></a> requirements<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/AccessorPolicy.html" title="cpp/named req/AccessorPolicy"><span class="t-lines"><span>AccessorPolicy</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td> a policy that controls access to data handle in <span class="t-lc">mdspan</span><br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Other">Other</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/UnaryTypeTrait.html" title="cpp/named req/UnaryTypeTrait"><span class="t-lines"><span>UnaryTypeTrait</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> describes a property of a type<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/BinaryTypeTrait.html" title="cpp/named req/BinaryTypeTrait"><span class="t-lines"><span>BinaryTypeTrait</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> describes a relationship between two types<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/TransformationTrait.html" title="cpp/named req/TransformationTrait"><span class="t-lines"><span>TransformationTrait</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> modifies a property of a type<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/Clock.html" title="cpp/named req/Clock"><span class="t-lines"><span>Clock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> aggregates a duration, a time point, and a function to get the current time point<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/TrivialClock.html" title="cpp/named req/TrivialClock"><span class="t-lines"><span>TrivialClock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> a <a href="../named_req/Clock.html" title="cpp/named req/Clock"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Clock</span></a> that does not throw exceptions<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/CharTraits.html" title="cpp/named req/CharTraits"><span class="t-lines"><span>CharTraits</span></span></a></div></div>
+</td>
+<td> defines types and functions for a character type<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/BitmaskType.html" title="cpp/named req/BitmaskType"><span class="t-lines"><span>BitmaskType</span></span></a></div></div>
+</td>
+<td> bitset, integer, or enumeration<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/NumericType.html" title="cpp/named req/NumericType"><span class="t-lines"><span>NumericType</span></span></a></div></div>
+</td>
+<td> a type for which initialization is effectively equal to assignment<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/RegexTraits.html" title="cpp/named req/RegexTraits"><span class="t-lines"><span>RegexTraits</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> defines types and functions used by the <a href="../regex.html" title="cpp/regex">regular expressions library</a><br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-named-req-div"><div><a href="../named_req/LiteralType.html" title="cpp/named req/LiteralType"><span class="t-lines"><span>LiteralType</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> a type with constexpr constructor<br><span class="t-mark">(named requirement)</span>
+</td></tr>
+
+</tbody></table>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br>Reason: Any other missing requirement? </td></tr></tbody></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 13752/1000000
+Preprocessor generated node count: 14849/1000000
+Post‐expand include size: 345338/4194304 bytes
+Template argument size: 100720/4194304 bytes
+Highest expansion depth: 18/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2427-0!*!0!!en!*!* and timestamp 20250225080241 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/named_req&amp;oldid=178049">https://en.cppreference.com/mwiki/index.php?title=cpp/named_req&amp;oldid=178049</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.cppreference.com/w/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../Category%25253ATodo_with_reason.html" title="Category:Todo with reason">Todo with reason</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./concepts.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/named_req" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/named_req" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/named_req&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/named_req&amp;oldid=178049" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/named_req&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div id="cpp-languagess" hidden="">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-ar"><a href="http://ar.cppreference.com/w/cpp/named_req" title="cpp/named req" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/named_req" title="cpp/named req" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/named_req" title="cpp/named req" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/named_req" title="cpp/named req" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/named_req" title="cpp/named req" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/named_req" title="cpp/named req" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/named_req" title="cpp/named req" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/named_req" title="cpp/named req" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/named_req" title="cpp/named req" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 26 November 2024, at 21:46.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 2.102 secs. -->
+	
+
+
+</body></html>

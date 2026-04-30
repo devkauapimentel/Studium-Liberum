@@ -1,0 +1,5 @@
+
+div { width: 100px; height: 100px; background: red; margin: 10px; font-size: 20px; }
+.contain-paint { contain: paint; }
+
+button.copy {display:none !important}

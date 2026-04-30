@@ -1,0 +1,10 @@
+
+* { box-sizing: border-box; }
+html { font-family: Helvetica, Arial, sans-serif; }
+body { max-width: 600px; margin: 0px auto; }
+form div { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+select, textarea, .summary-output { padding: 5px; }
+.summary-output { min-height: 150px; border: 1px solid black; width: 100%; display: block; }
+.error { color: red; }
+
+button.copy {display:none !important}

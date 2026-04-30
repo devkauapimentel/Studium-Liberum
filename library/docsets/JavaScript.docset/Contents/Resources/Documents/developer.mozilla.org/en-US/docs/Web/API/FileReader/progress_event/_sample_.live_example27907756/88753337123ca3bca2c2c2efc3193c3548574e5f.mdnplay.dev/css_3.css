@@ -1,0 +1,10 @@
+
+img.preview { margin: 1rem 0px; }
+.event-log-contents { width: 18rem; height: 5rem; border: 1px solid black; margin: 0.2rem; padding: 0.2rem; resize: none; }
+.example { display: grid; grid-template-areas: "select log" "preview log"; }
+.file-select { grid-row-start: select; grid-column-start: select; grid-row-end: select; grid-column-end: select; }
+.preview { grid-row-start: preview; grid-column-start: preview; grid-row-end: preview; grid-column-end: preview; }
+.event-log { grid-row-start: log; grid-column-start: log; grid-row-end: log; grid-column-end: log; }
+.event-log > label { display: block; }
+
+button.copy {display:none !important}

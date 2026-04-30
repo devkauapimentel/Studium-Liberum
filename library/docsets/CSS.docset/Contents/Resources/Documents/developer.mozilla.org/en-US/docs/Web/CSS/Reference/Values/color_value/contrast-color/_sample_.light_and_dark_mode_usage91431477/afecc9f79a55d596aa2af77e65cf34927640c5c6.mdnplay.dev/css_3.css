@@ -1,0 +1,15 @@
+
+:root { --background-color: navy; }
+@media (prefers-color-scheme: light) {
+  :root { --background-color: wheat; }
+}
+body, a { background-color: var(--background-color); color: contrast-color(var(--background-color)); }
+body { padding: 2rem; font-size: 1.2rem; }
+pre { margin-top: 3rem; }
+@supports not (color: contrast-color(red)) {
+  body::before { content: "Your browser doesn't support the contrast-color() function."; background-color: wheat; display: block; width: 100%; text-align: center; }
+  body { background-color: white; }
+  body > * { display: none; }
+}
+
+button.copy {display:none !important}

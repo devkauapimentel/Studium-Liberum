@@ -1,0 +1,5 @@
+
+table { background: black; }
+table td { background: white; }
+
+button.copy {display:none !important}

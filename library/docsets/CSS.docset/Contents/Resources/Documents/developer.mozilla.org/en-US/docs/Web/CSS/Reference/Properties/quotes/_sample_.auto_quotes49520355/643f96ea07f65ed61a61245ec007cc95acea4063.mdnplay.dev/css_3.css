@@ -1,0 +1,6 @@
+
+q { quotes: auto; }
+li:not(:last-of-type) { border-bottom: 1px solid; }
+li { padding: 0.5em 0px; }
+
+button.copy {display:none !important}

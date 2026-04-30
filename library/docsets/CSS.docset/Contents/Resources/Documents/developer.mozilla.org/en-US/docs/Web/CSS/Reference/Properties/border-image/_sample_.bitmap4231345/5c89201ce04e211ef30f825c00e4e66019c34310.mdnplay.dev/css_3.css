@@ -1,0 +1,4 @@
+
+#bitmap { width: 200px; background-color: rgb(255, 255, 170); border-width: 36px; border-style: solid; border-color: orange; margin: 30px; padding: 10px; border-image: url("./en-US/docs/Web/CSS/Reference/Properties/border-image/border.png") 27 / 36px 28px 18px 8px / 18px 14px 9px 4px round; }
+
+button.copy {display:none !important}

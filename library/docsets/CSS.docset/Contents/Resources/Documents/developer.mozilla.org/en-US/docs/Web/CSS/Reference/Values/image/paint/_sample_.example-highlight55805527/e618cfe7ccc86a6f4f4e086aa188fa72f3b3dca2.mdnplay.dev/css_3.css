@@ -1,0 +1,7 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: 1.2; font-family: sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+li { --box-color: hsl(55 90% 60% / 100%); }
+li:nth-of-type(3n) { --box-color: hsl(155 90% 60% / 100%); }
+li:nth-of-type(3n+1) { --box-color: hsl(255 90% 60% / 100%); }
+
+button.copy {display:none !important}

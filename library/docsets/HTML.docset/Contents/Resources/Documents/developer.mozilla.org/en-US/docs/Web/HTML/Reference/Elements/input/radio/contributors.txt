@@ -1,0 +1,25 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/elements/input/radio/index.md
+
+# Original Wiki contributors
+brianjenkins94
+MendyBerger
+mfuji09
+estelle
+rscharfer
+imchriskitchens
+SphinxKnight
+georgeawg
+wbamberg
+Sheppy
+prsdta
+fscholz
+irenesmith
+sideshowbarker
+MMarinero
+sskogen
+mfluehr
+chrisdavidmills
+Shidigital
+eystein
+ku3nsting

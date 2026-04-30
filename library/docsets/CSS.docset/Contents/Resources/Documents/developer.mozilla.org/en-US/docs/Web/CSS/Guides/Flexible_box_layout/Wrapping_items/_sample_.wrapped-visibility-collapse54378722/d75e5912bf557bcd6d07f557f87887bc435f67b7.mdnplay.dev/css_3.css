@@ -1,0 +1,7 @@
+
+.box { border: 2px dotted rgb(96, 139, 168); width: 500px; display: flex; flex-wrap: wrap; }
+.box > * { padding: 10px; border: 2px solid rgb(96, 139, 168); border-radius: 5px; background-color: rgba(96, 139, 168, 0.2); flex: 1 1 auto; min-width: 50px; }
+.collapse { visibility: collapse; }
+p:has(:checked) + div .collapse { visibility: visible; }
+
+button.copy {display:none !important}

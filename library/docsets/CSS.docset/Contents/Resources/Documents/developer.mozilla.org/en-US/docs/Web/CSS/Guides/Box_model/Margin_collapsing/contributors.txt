@@ -1,0 +1,21 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/css/guides/box_model/margin_collapsing/index.md
+
+# Original Wiki contributors
+jonsanders101
+mfluehr
+BarryLiu1995
+mustafasalah
+gcyrillus
+BychekRU
+Sebastianz
+fscholz
+teoli
+idbentley
+kscarfone
+Sheppy
+ethertank
+Jürgen Jeka
+natbob
+DBaron
+Fredchat

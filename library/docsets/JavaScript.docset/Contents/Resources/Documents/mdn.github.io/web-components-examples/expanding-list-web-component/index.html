@@ -1,0 +1,91 @@
+<html><!-- Mirrored from mdn.github.io/web-components-examples/expanding-list-web-component/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:46:07 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="UTF-8">
+    <title>Expanding list web component</title>
+    <style>
+      ul {
+        list-style-type: none;
+      }
+
+      li::before {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.25rem;
+        content: "";
+      }
+
+      .open::before,
+      .closed::before {
+        background-size: 1rem 1rem;
+        position: relative;
+        top: 0.25rem;
+        opacity: 0.3;
+      }
+
+      .open::before {
+        background-image: url(img/down.png);
+      }
+
+      .closed::before {
+        background-image: url(img/right.png);
+      }
+
+      .closed .closed::before,
+      .closed .open::before {
+        display: none;
+      }
+    </style>
+    <script src="main.js" defer=""></script>
+  </head>
+  <body>
+    <h1>Expanding list web component</h1>
+    <ul is="expanding-list">
+      <li>
+        UK
+        <ul>
+          <li>
+            Yorkshire
+            <ul>
+              <li>
+                Leeds
+                <ul>
+                  <li>Train station</li>
+                  <li>Town hall</li>
+                  <li>Headrow</li>
+                </ul>
+              </li>
+              <li>Bradford</li>
+              <li>Hull</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        USA
+        <ul>
+          <li>
+            California
+            <ul>
+              <li>Los Angeles</li>
+              <li>San Francisco</li>
+              <li>Berkeley</li>
+            </ul>
+          </li>
+          <li>Nevada</li>
+          <li>Oregon</li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul>
+      <li>Not</li>
+      <li>an</li>
+      <li>expanding</li>
+      <li>list</li>
+    </ul>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/web-components-examples/expanding-list-web-component/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:46:07 GMT --></html>

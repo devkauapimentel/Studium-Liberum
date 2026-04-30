@@ -1,0 +1,5 @@
+
+body { padding: 20px; background-color: rgb(255, 255, 201); }
+button { margin: 0.5rem 0px; }
+
+button.copy {display:none !important}

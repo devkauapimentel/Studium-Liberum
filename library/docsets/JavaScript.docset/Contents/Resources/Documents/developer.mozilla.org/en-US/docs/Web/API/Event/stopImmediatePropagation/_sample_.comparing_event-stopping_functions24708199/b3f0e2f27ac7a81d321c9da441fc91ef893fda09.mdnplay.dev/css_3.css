@@ -1,0 +1,5 @@
+
+div { display: inline-block; padding: 10px; background-color: white; border: 2px solid black; margin: 10px; }
+button { width: 100px; color: rgb(0, 0, 136); padding: 5px; background-color: white; border: 2px solid black; border-radius: 30px; margin: 5px; }
+
+button.copy {display:none !important}

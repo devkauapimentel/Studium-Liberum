@@ -1,0 +1,7 @@
+
+.css-filter { filter: hue-rotate(90deg); }
+.svg-filter { filter: url("./en-US/docs/Web/CSS/Reference/Values/filter-function/hue-rotate/runner.html-_-uuid=8f1e4691801fe8934847ce473691485a2f51af64&state=3VTBbpwwEP0Vi16yUsBoqx5CyR6SQ09Vq5y5eNcT48jYyJ5dWEX5944xuxC1kXrqoUjAeOZ5%25252FIY3w2vWYmeyKqvDSTWWsbEzNtw35Ma%25252B4nwYhmL4XDiv%25252BLYsSx5R.html-_-uuid=8f1e4691801fe8934847ce473691485a2f51af64&state=3VTBbpwwEP0Vi16yUsBoqx5CyR6SQ09Vq5y5eNcT48jYyJ5dWEX5944xuxC1kXrqoUjAeOZ5%252FIY3w2vWYmeyKqvDSTWWsbEzNtw35Ma%252B4nwYhmL4XDiv%252BLYsSx5RWcSdNAwPbiRkyUq23U53Ch2ccT7XFsH3zgjUzubP2tAyJg5P3x4SrgWtWiTXdeegJbYXxy566rSRaRk5HSH3DgXCHI1xeIzHfRfo9cjw3EMCPs04dhLmCPHgO8rJeMrKU1pa1LGk%252BEaxN5Ci2IKQlwPQz9YU2NUHJ2G3MLnZ1Hxy1ZyivyOP3nwM%252BeG10lYYpjuhYBUm089MFzI17p08%252F5GXvNq00p1aViSHESHWfwhhliF97MsV%252FGHWO5DgnbSF0tge94V2PLTCg8wpAWDgE8vAYRRdb8jovVMeKG3vtYT82QhVvPTqfXphosQ%252FI4JFBImMLUsfT6ZeCVdhJv58Vc7flUYS%252Fm%252Bl%252FWPqH9FcN%252BLcfWTNo5Ldxqain0ex9BZ7jehkV2w1J3elBLX52ti3xhaLYO%252FxcVqa7NN60OctjcX2lh4ybeiFlNqqin3pxwSglJV1eFN553CTUFKH3ohzxayzkGDE%252BSVSpjdNVgdkmvgbyt5%252BAQ%253D%253D&code=34543785&%23hue-rotate"); }
+th, td { padding: 5px; }
+svg:not(:root) { display: none; }
+
+button.copy {display:none !important}

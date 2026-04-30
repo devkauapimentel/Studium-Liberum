@@ -1,0 +1,760 @@
+<html><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Kanban_board by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:50:29 GMT --><head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Kanban board with drag and drop</title>
+          
+          <script>try {
+  document.documentElement.dataset.theme =
+    localStorage.getItem("theme") || "light dark";
+} catch (error) {
+  console.warn("Unable to set theme", error);
+}
+
+try {
+  if (localStorage.getItem("nop") === "yes") {
+    document.documentElement.dataset["nop"] = "yes";
+  }
+} catch (error) {
+  console.warn("Unable to set nop", error);
+}
+</script>
+          <link rel="stylesheet" href="../../../../../static/client/styles-global.03146ed4c65bc5ea.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/270.66bae6059a1c23f9.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-layout.632d2f3884f10ca3.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-content-section.2ee991ba88f986cf.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-heading-anchor.0eec5185ab9425b7.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-toc.9b9bd019efd16b86.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-article-footer.81ae18c89fc527dc.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-left-sidebar.6f954e8939555f77.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-page-layout.5a4354f33e894319.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-a11y-menu.5796ee87cb69f93f.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-navigation.3a34ee593a554c40.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-logo.aea5ff6edf1b9cfb.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-menu.3376b3e11656fba0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs-bar.9a51a3c76a6231d0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs.d06ce8d09f42feb8.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-footer.a2850e459e2d290b.css" fetchpriority="high">
+          <link rel="preload" href="../../../../../static/client/jetbrains-mono-latin.119994ed445212c7.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low"><link rel="preload" href="../../../../../static/client/inter-latin.9a3b1bc220d426ef.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+          <script data-cfasync="false" data-report-only="on" data-prompt="0" src="../../../../../../transcend-cdn.com/cm/d556c3a1-e57c-4bdf-a490-390a1aebf6dd/airgap.js"></script>
+          <script src="../../../../../static/client/runtime.c294a6bdc7a42570.js" type="module"></script><script src="../../../../../static/client/1111.53dba753dc3eb961.js" type="module"></script><script src="../../../../../static/client/8903.f870aafb338b203a.js" type="module"></script><script src="../../../../../static/client/index.9a449352d879bbd5.js" type="module"></script>
+          
+    <link rel="icon" sizes="32x32" href="../../../../../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../../../../../favicon.svg">
+   <meta name="description" content="As mentioned on the landing page, the Drag and Drop API simultaneously models three use cases: dragging elements within a page, dragging data out of a page, and dragging data into a page. This tutorial demonstrates the first use case: dragging elements within a page. We will be implementing a Kanban application, similar to the functionality provided by GitHub projects or Trello."><meta name="og:url" content="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Kanban_board"><meta name="og:title" content="Kanban board with drag and drop - Web APIs | MDN"><meta name="og:locale" content="en_US"><meta name="og:description" content="As mentioned on the landing page, the Drag and Drop API simultaneously models three use cases: dragging elements within a page, dragging data out of a page, and dragging data into a page. This tutorial demonstrates the first use case: dragging elements within a page. We will be implementing a Kanban application, similar to the functionality provided by GitHub projects or Trello."><meta name="og:image" content="https://developer.mozilla.org/mdn-social-image.46ac2375.png"><meta name="og:image:type" content="image/png"><meta name="og:image:height" content="1024"><meta name="og:image:width" content="1024"><meta name="og:image:alt" content="The MDN logo"><meta name="og:site_name" content="MDN Web Docs"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="MozDevNet">
+          <link rel="canonical" href="Kanban_board.html">
+          <link rel="apple-touch-icon" href="../../../../../apple-touch-icon.png">
+          <link rel="manifest" href="../../../../../manifest.json">
+          <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/opensearch.xml" title="MDN Web Docs">
+          <link rel="alternate" type="application/rss+xml" title="MDN Blog RSS Feed" href="https://developer.mozilla.org/en-US/blog/rss.xml">
+        </head>
+        
+      <body class="page-layout">
+        <ul class="a11y-menu">
+      <li>
+        <a href="#content">Skip to main content</a>
+      </li>
+      <li>
+        <a href="#search">Skip to search</a>
+      </li>
+    </ul>
+        <div class="page-layout__banner" data-scheme="">
+          <mdn-placement-top></mdn-placement-top>
+        </div>
+        <header class="page-layout__header">
+          
+      <nav class="navigation" data-scheme="" data-open="false">
+        <div class="navigation__logo">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">
+        <svg class="logo__image" width="83" height="24" viewBox="0 0 83 24" role="img">
+          <title>MDN</title>
+          <path class="logo__letter" d="M9.4 0 2.81 21.17H.12L6.69 0H9.4Zm2.38 0v21.17H9.4V0h2.4Zm9.27 0-6.56 21.17H11.8L18.36 0h2.69Zm2.39 0v21.17h-2.4V0h2.4Z"></path>
+          <path class="logo__text" d="M45.55 16.83h-3.93v-1.27h.87v-3.63c0-.85-.16-1.45-.48-1.82a1.65 1.65 0 0 0-1.3-.52c-.74 0-1.3.25-1.66.78a2.98 2.98 0 0 0-.58 1.58v3.59h1.38v1.26h-3.93v-1.26h.87v-3.6c0-.88-.16-1.48-.48-1.83a1.7 1.7 0 0 0-1.29-.52 1.93 1.93 0 0 0-1.65.75 2.85 2.85 0 0 0-.58 1.6v3.62h1.59v1.27h-4.64v-1.27h1.37V9.75h-1.4V8.46h3.08v1.47c.28-.48.62-.87 1.08-1.2a3 3 0 0 1 1.68-.45c.67 0 1.22.16 1.73.48.5.32.85.8 1.03 1.47.25-.57.62-1.03 1.13-1.4.5-.37 1.1-.55 1.81-.55.8 0 1.5.25 2.05.75.55.51.85 1.3.85 2.35v4.18h1.4v1.27Zm9.77 0H52.3v-1.66c-.27.51-.66.95-1.13 1.29-.56.4-1.23.59-1.9.55-1.11 0-2-.37-2.67-1.12a4.41 4.41 0 0 1-1-3.06c0-1.15.3-2.2.93-3.15.6-.94 1.58-1.43 2.94-1.43 1.36 0 2.25.5 2.83 1.5V5.22h-2V3.93h3.63v11.63h1.38v1.27Zm-3.06-3.86v-1.02a2.28 2.28 0 0 0-.73-1.67 2.4 2.4 0 0 0-1.66-.65 2.18 2.18 0 0 0-1.88.9 3.63 3.63 0 0 0-.65 2.2c0 .95.23 1.68.7 2.19.45.5 1.03.76 1.7.76.73 0 1.33-.3 1.79-.88.48-.6.71-1.21.73-1.83Zm14.14 3.86h-4.43v-1.27h1.37v-3.63c0-.85-.16-1.45-.5-1.82a1.68 1.68 0 0 0-1.31-.52c-.71 0-1.29.23-1.7.69a2.52 2.52 0 0 0-.67 1.6v3.66h1.38v1.26H56.1v-1.26h1.38v-5.8h-1.42V8.47h3.12V9.9c.6-1.06 1.57-1.6 2.92-1.6.83 0 1.54.26 2.12.77.57.5.85 1.28.85 2.34v4.19h1.38v1.24h-.05Z"></path>
+          <path class="logo__cursor" d="M67.71 21.98H83V24H67.71v-2.02Z"></path>
+        </svg>
+      </a>
+    </div>
+        <div class="navigation__search" data-view="mobile">
+          <mdn-search-button></mdn-search-button>
+        </div>
+        <button class="navigation__button" type="button" aria-expanded="false" aria-controls="navigation__popup" aria-label="Toggle navigation"></button>
+        <div class="navigation__popup" id="navigation__popup">
+          <div class="navigation__menu">
+      <nav class="menu">
+        <div class="menu__tab" data-section="html">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">HTML</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="../../HTML.html" data-glean-id="menu_click_menu: html -&gt; /en-US/docs/Web/HTML">HTML: Markup language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>HTML reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../HTML/Reference/Elements.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Elements">Elements</a>
+                              </li><li>
+                                <a href="../../HTML/Reference/Global_attributes.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Global_attributes">Global attributes</a>
+                              </li><li>
+                                <a href="../../HTML/Reference/Attributes.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Attributes">Attributes</a>
+                              </li><li>
+                                <a href="../../HTML/Reference.html" aria-label="See all HTML references" title="See all HTML references" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>HTML guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../HTML/Guides/Responsive_images.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Responsive_images">Responsive images</a>
+                              </li><li>
+                                <a href="../../HTML/Guides/Cheatsheet.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Cheatsheet">HTML cheatsheet</a>
+                              </li><li>
+                                <a href="../../HTML/Guides/Date_and_time_formats.html" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Date_and_time_formats">Date &amp; time formats</a>
+                              </li><li>
+                                <a href="../../HTML/Guides.html" aria-label="See all HTML guides" title="See all HTML guides" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Markup languages</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/SVG">SVG</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/MathML">MathML</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/XML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/XML">XML</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="css">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">CSS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" data-glean-id="menu_click_menu: css -&gt; /en-US/docs/Web/CSS">CSS: Styling language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>CSS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Properties">Properties</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Selectors">Selectors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/At-rules">At-rules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Values">Values</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" aria-label="See all CSS references" title="See all CSS references" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>CSS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Box_model/Introduction">Box model</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Animations/Using">Animations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Flexbox</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Applying_color" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Colors/Applying_color">Colors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides" aria-label="See all CSS guides" title="See all CSS guides" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Layout cookbook</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts">Column layouts</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element">Centering an element</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Card" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Card">Card component</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="javascript">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label" data-type="long">JavaScript</span><span class="menu__tab-label" data-type="short">JS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" data-glean-id="menu_click_menu: javascript -&gt; /en-US/docs/Web/JavaScript">JavaScript: Scripting language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>JS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Statements">Statements &amp; declarations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Functions">Functions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" aria-label="See all JavaScript references" title="See all JavaScript references" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>JS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow &amp; error handing</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops and iteration</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Working_with_objects">Working with objects</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Using_classes">Using classes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" aria-label="See all JavaScript guides" title="See all JavaScript guides" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="webapis">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Web APIs</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/API" data-glean-id="menu_click_menu: webapis -&gt; /en-US/docs/Web/API">Web APIs: Programming interfaces</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Web API reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/File_System_API">File system API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API">Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Geolocation_API">Geolocation API</a>
+                              </li><li>
+                                <a href="../HTML_DOM_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/HTML_DOM_API">HTML DOM API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Push_API">Push API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Service_Worker_API">Service worker API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API" aria-label="See all Web API guides" title="See all Web API guides" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Web API guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API">Using the Web animation API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API/Using_Fetch">Using the Fetch API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/History_API/Working_with_the_History_API">Working with the History API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Using the Web speech API</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using web workers</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="all">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">All</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web" data-glean-id="menu_click_menu: all -&gt; /en-US/docs/Web">All web technology</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Technologies</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../Accessibility.html" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Accessibility">Accessibility</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/HTTP">HTTP</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/URI" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/URI">URI</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Mozilla/Add-ons/WebExtensions">Web extensions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/WebAssembly">WebAssembly</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/WebDriver">WebDriver</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web" aria-label="See all web technology references" title="See all web technology references" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Topics</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Media" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Media">Media</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Performance">Performance</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Privacy" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Privacy">Privacy</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Security">Security</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Progressive_web_apps">Progressive web apps</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="learn">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Learn</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" data-glean-id="menu_click_menu: learn -&gt; /en-US/docs/Learn_web_development">Learn web development</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Frontend developer course</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Getting_started">Getting started modules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core">Core modules</a>
+                              </li><li>
+                                <a class="" href="https://developer.mozilla.org/en-US/curriculum/" data-glean-id="menu_click_submenu: learn -&gt; /en-US/curriculum/">MDN Curriculum</a>
+                              </li><li>
+                                <a class="external" href="https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar" data-glean-id="menu_click_submenu: learn -&gt; https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar">Check out the video course from Scrimba, our partner</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn HTML</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn CSS</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics module</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn JavaScript</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript module</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="tools">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Tools</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Discover our tools
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="circle-play" href="https://developer.mozilla.org/en-US/play" data-glean-id="menu_click_submenu: tools -&gt; /en-US/play">Playground</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="shield-check" href="https://developer.mozilla.org/en-US/observatory" data-glean-id="menu_click_submenu: tools -&gt; /en-US/observatory">HTTP Observatory</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator">Border-image generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator">Border-radius generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator">Box-shadow generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_format_converter" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_format_converter">Color format converter</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_mixer" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_mixer">Color mixer</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes/Shape_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Shapes/Shape_generator">Shape generator</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="about">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">About</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Get to know MDN better
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="mdn-m" href="https://developer.mozilla.org/en-US/about" data-glean-id="menu_click_submenu: about -&gt; /en-US/about">About MDN</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="chart-no-axes-combined" href="https://developer.mozilla.org/en-US/advertising" data-glean-id="menu_click_submenu: about -&gt; /en-US/advertising">Advertise with us</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="users" href="https://developer.mozilla.org/en-US/community" data-glean-id="menu_click_submenu: about -&gt; /en-US/community">Community</a>
+                              </li><li>
+                                <a class="menu__panel-icon external" data-icon="github" href="https://github.com/mdn" data-glean-id="menu_click_submenu: about -&gt; https://github.com/mdn">MDN on GitHub</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="blog">
+            <a class="menu__tab-link" href="https://developer.mozilla.org/en-US/blog/" data-glean-id="menu_click_link: top-level -&gt; /en-US/blog/">Blog</a>
+          </div>
+      </nav>
+    </div>
+          <div class="navigation__search" data-view="desktop">
+            <mdn-search-button></mdn-search-button>
+          </div>
+          <mdn-user-menu></mdn-user-menu>
+        </div>
+      </nav>
+      <mdn-search-modal id="search"></mdn-search-modal>
+     
+      
+    
+        </header>
+        <div class="page-layout__main">
+      <div class="breadcrumbs-bar" data-scheme="">
+        <mdn-toggle-sidebar></mdn-toggle-sidebar> 
+      <ol class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+        
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web" property="item" typeof="WebPage"><span property="name">Web</span></a>
+              <meta property="position" content="1">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API" property="item" typeof="WebPage"><span property="name">Web APIs</span></a>
+              <meta property="position" content="2">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../HTML_Drag_and_Drop_API.html" property="item" typeof="WebPage"><span property="name">HTML Drag and Drop API</span></a>
+              <meta property="position" content="3">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="Kanban_board.html" property="item" typeof="WebPage"><span property="name">Kanban board with drag and drop</span></a>
+              <meta property="position" content="4">
+            </li>
+          
+      </ol>
+    
+        <mdn-collection-save-button doc-url="/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Kanban_board" doc-title="Kanban board with drag and drop"></mdn-collection-save-button>
+        <mdn-color-theme></mdn-color-theme>
+        <mdn-language-switcher locale="en-US" native="English (US)" translations="[{&quot;locale&quot;:&quot;en-US&quot;,&quot;title&quot;:&quot;Kanban board with drag and drop&quot;,&quot;native&quot;:&quot;English (US)&quot;},{&quot;locale&quot;:&quot;de&quot;,&quot;title&quot;:&quot;Kanban-Board mit Drag and Drop&quot;,&quot;native&quot;:&quot;Deutsch&quot;},{&quot;locale&quot;:&quot;fr&quot;,&quot;title&quot;:&quot;Tableau Kanban avec glisser-déposer&quot;,&quot;native&quot;:&quot;Français&quot;},{&quot;locale&quot;:&quot;ja&quot;,&quot;title&quot;:&quot;ドラッグ＆ドロップ付きのカンバンボード&quot;,&quot;native&quot;:&quot;日本語&quot;}]" url="Kanban_board.html"></mdn-language-switcher>
+      </div><div class="layout__2-sidebars-inline reference-layout">
+        <main id="content" class="layout__content">
+          <div class="layout__header reference-layout__header">
+            
+            
+            <mdn-survey></mdn-survey>
+            <h1>Kanban board with drag and drop</h1>
+             <section class="content-section">
+    
+    <p>As mentioned on <a href="../HTML_Drag_and_Drop_API.html#concepts_and_usage">the landing page</a>, the Drag and Drop API simultaneously models three use cases: dragging elements within a page, dragging data out of a page, and dragging data into a page. This tutorial demonstrates the first use case: dragging elements within a page. We will be implementing a Kanban application, similar to the functionality provided by <a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects" class="external" target="_blank">GitHub projects</a> or <a href="https://trello.com/" class="external" target="_blank">Trello</a>.</p>
+  </section>
+          </div>
+          <aside class="layout__right-sidebar reference-layout__toc">
+            <nav class="reference-toc">
+      <h2>In this article</h2>
+      <ul>
+        <li><a href="#basic_page_layout">Basic page layout</a></li><li><a href="#declaring_drop_targets">Declaring drop targets</a></li><li><a href="#moving_elements">Moving elements</a></li><li><a href="#inserting_at_a_particular_location">Inserting at a particular location</a></li><li><a href="#graying_out_the_original_task">Graying out the original task</a></li><li><a href="#result">Result</a></li><li><a href="#see_also">See also</a></li>
+      </ul>
+    </nav>
+            <mdn-placement-sidebar></mdn-placement-sidebar>
+          </aside>
+          <div class="layout__body reference-layout__body">
+            <section class="content-section" aria-labelledby="basic_page_layout">
+    <!--lit-part B0/oyNd9MVw=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Basic%20page%20layout"></a><h2 id="basic_page_layout" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#basic_page_layout">Basic page layout</a></h2><!--/lit-part-->
+    <p>Because we are mainly demonstrating dragging and reordering here, we will omit some dynamic aspects of a real Kanban board, such as adding and removing tasks. Instead, all our columns and tasks will be hardcoded in the HTML.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html live-sample___kanban notranslate live-sample---kanban"><code>&lt;div class="container"&gt;
+  &lt;div class="task-column"&gt;
+    &lt;h2&gt;To Do&lt;/h2&gt;
+    &lt;ul class="tasks"&gt;
+      &lt;li class="task" draggable="true"&gt;Find out where Soul Stone is&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="task-column"&gt;
+    &lt;h2&gt;In Progress&lt;/h2&gt;
+    &lt;ul class="tasks"&gt;
+      &lt;li class="task" draggable="true"&gt;Collect Time Stone from Dr. Strange&lt;/li&gt;
+      &lt;li class="task" draggable="true"&gt;Collect Mind Stone from Vision&lt;/li&gt;
+      &lt;li class="task" draggable="true"&gt;
+        Collect Reality Stone from the Collector
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="task-column"&gt;
+    &lt;h2&gt;Done&lt;/h2&gt;
+    &lt;ul class="tasks"&gt;
+      &lt;li class="task" draggable="true"&gt;Collect Power Stone from Xandar&lt;/li&gt;
+      &lt;li class="task" draggable="true"&gt;Collect Space Stone from Asgard&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css live-sample___kanban notranslate live-sample---kanban"><code>body {
+  font-family: "Arial", sans-serif;
+}
+
+.container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.task-column {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  flex: 1;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.task-column h2 {
+  text-align: center;
+}
+
+.task {
+  background-color: #f9f9f9;
+  border: 1px solid #eeeeee;
+  border-radius: 3px;
+  padding: 8px;
+  cursor: grab;
+}
+
+.task:active {
+  cursor: grabbing;
+}
+
+@media (width &lt; 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
+</code></pre></div>
+<p>This defines the basic structure and styles for our application. The tasks are each made <a href="../HTML_Drag_and_Drop_API.html#draggable_items">draggable</a>, but they don't do anything when dragged yet.</p>
+  </section><section class="content-section" aria-labelledby="declaring_drop_targets">
+    <!--lit-part 0mvYICct59c=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Declaring%20drop%20targets"></a><h2 id="declaring_drop_targets" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#declaring_drop_targets">Declaring drop targets</a></h2><!--/lit-part-->
+    <p>We want to make the task columns into valid <a href="../HTML_Drag_and_Drop_API.html#drop_target">drop targets</a> for the dragged tasks. As a baseline, we need to listen for <a href="../HTMLElement/dragover_event.html" title="dragover"><code>dragover</code></a> and cancel it. However, we take care and only cancel the event if the drag event is dragging a task—if we are trying to drop anything else, the column should not be a drop target.</p>
+<p>First, save all columns in a global variable.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___kanban notranslate live-sample---kanban"><code>const columns = document.querySelectorAll(".task-column");
+</code></pre></div>
+<p>Then, declare a <code>dragover</code> event handler for each column—this event handler will be expanded later.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>columns.forEach((column) =&gt; {
+  column.addEventListener("dragover", (event) =&gt; {
+    // Test a custom type we will set later
+    if (event.dataTransfer.types.includes("task")) {
+      event.preventDefault();
+    }
+  });
+});
+</code></pre></div>
+<p>Now, when a task is dragged over a column, you may see a <a href="Drag_operations.html#drop_effects">cursor effect</a> such as a plus sign indicating that the task will be copied when dropped, because copying is the default action. Later, we will change this indicator because the task will actually be moved.</p>
+  </section><section class="content-section" aria-labelledby="moving_elements">
+    <!--lit-part EQeDy2vcmEA=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Moving%20elements"></a><h2 id="moving_elements" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#moving_elements">Moving elements</a></h2><!--/lit-part-->
+    <p>Now we implement the core functionality: the ability to move tasks between columns. It consists of two steps: add the dragged element to the target column and remove it from the source column.</p>
+<p>We track the dragged element and the source column this way: on <code>dragstart</code>, we mark the dragged task with an <code>id</code>. Then on <code>drop</code>, we can use this ID to identify the task and remove it from the source column. Finally we remember to remove the ID on <code>dragend</code> so we don't create duplicate IDs on a later drag.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___kanban notranslate live-sample---kanban"><code>const tasks = document.querySelectorAll(".task");
+
+tasks.forEach((task) =&gt; {
+  task.addEventListener("dragstart", (event) =&gt; {
+    task.id = "dragged-task";
+    event.dataTransfer.effectAllowed = "move";
+    // Custom type to identify a task drag
+    event.dataTransfer.setData("task", "");
+  });
+
+  task.addEventListener("dragend", (event) =&gt; {
+    task.removeAttribute("id");
+  });
+});
+</code></pre></div>
+<p>There are other options, such as giving each item a unique ID and then storing this ID inside the <a href="Drag_data_store.html"><code>dataTransfer</code></a>, or storing a reference to the DOM element in a global variable. All these approaches have roughly the same effect.</p>
+<p>Because tasks are always supposed to be moved and never copied or linked, we also set the <a href="https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/effectAllowed"><code>DataTransfer.effectAllowed</code></a> property to <code>"move"</code> so that it is the only effect allowed. This change updates the cursor effect to indicate a move operation. Furthermore we set a <code>dataTransfer</code> item of type <code>task</code> which is used to identify the dragged task as shown earlier.</p>
+<p>As mentioned in <a href="Drag_operations.html#drop_effects">drop effects</a>, you may only set <code>effectAllowed</code> in the <code>dragstart</code> handler for the draggable element.</p>
+<p>Now, we can actually trigger the move action inside the <a href="../HTMLElement/drop_event.html" title="drop"><code>drop</code></a> handler on the target column. We can identify the dragged task by its ID, remove it from the DOM tree using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/remove"><code>Element.remove()</code></a>, and then reinsert it at the target column. Because we only allow dropping if the drag is actually dropping a task, we can proceed with confidence that <code>draggedTask</code> must exist.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>columns.forEach((column) =&gt; {
+  column.addEventListener("drop", (event) =&gt; {
+    event.preventDefault();
+
+    const draggedTask = document.getElementById("dragged-task");
+    draggedTask.remove();
+    column.children[1].appendChild(draggedTask);
+  });
+});
+</code></pre></div>
+<p>At this point, the core UX is already there, and you can drag tasks between columns.</p>
+  </section><section class="content-section" aria-labelledby="inserting_at_a_particular_location">
+    <!--lit-part WOsYZjLYwI0=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Inserting%20at%20a%20particular%20location"></a><h2 id="inserting_at_a_particular_location" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#inserting_at_a_particular_location">Inserting at a particular location</a></h2><!--/lit-part-->
+    <p>Currently, the dropped task is always inserted at the end of the column regardless of where we dropped it. We now improve the dropping logic so it's inserted at the drop location instead. But how should we map the drop location to an insertion index in the target column? This is a judgment call, but we will use the following heuristic (feel free to pick your own): the item will be inserted at the index of the item that the cursor is hovering over. If the cursor is above the first item or below the last item, it will be inserted at the beginning or end of the column, respectively. If the cursor is between two items, it will be inserted at the index of the item below the cursor.</p>
+<p>In order to make the drop location obvious, we will add a <a href="Drag_operations.html#custom_drop_feedback">visual indicator</a> for the drop location. This can be done by inserting a placeholder element at the drop location, which will be replaced by the dragged task when the drop occurs. First define the creator function for the placeholder:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css live-sample___kanban notranslate live-sample---kanban"><code>.placeholder {
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+}
+</code></pre></div>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___kanban notranslate live-sample---kanban"><code>function makePlaceholder(draggedTask) {
+  const placeholder = document.createElement("li");
+  placeholder.classList.add("placeholder");
+  placeholder.style.height = `${draggedTask.offsetHeight}px`;
+  return placeholder;
+}
+</code></pre></div>
+<p>This indicator will be moved around on <a href="../HTMLElement/dragover_event.html" title="dragover"><code>dragover</code></a>. This is the most complex of all, so we've extracted it into a separate function. The previous code for the <code>dragover</code> event has been moved to this function. We first get the elements we need, safely aborting if the drag is not a task:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___kanban notranslate live-sample---kanban"><code>function movePlaceholder(event) {
+  if (!event.dataTransfer.types.includes("task")) {
+    return;
+  }
+  event.preventDefault();
+  // Must exist because the ID is added for all drag events with a "task" data entry
+  const draggedTask = document.getElementById("dragged-task");
+  const column = event.currentTarget;
+  const tasks = column.children[1];
+  const existingPlaceholder = column.querySelector(".placeholder");
+</code></pre></div>
+<p>If there's already a placeholder, and the cursor is still inside it, we don't need to change anything. Note that we don't remove the existing placeholder at this point, because that would change the page's layout and potentially cause a flicker. We only change the layout once we've fully determined the new position.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___kanban notranslate live-sample---kanban"><code>if (existingPlaceholder) {
+  const placeholderRect = existingPlaceholder.getBoundingClientRect();
+  if (
+    placeholderRect.top &lt;= event.clientY &amp;&amp;
+    placeholderRect.bottom &gt;= event.clientY
+  ) {
+    return;
+  }
+}
+</code></pre></div>
+<p>Otherwise, we search for the first task that is not fully above the cursor. This task may either be the very first task if the cursor is above all items, the task that's containing the cursor, or the task below the cursor if the cursor is between two items. Our placeholder should be placed at the location of this task. Note that we only compare the Y coordinates: even if the cursor is in left or right margins, it should still be considered as being over the task. After finding the appropriate insertion point, we decide a few things:</p>
+<ul>
+<li>If the insertion point is already the placeholder, then we don't need to change anything. Note that this is not entirely the same as the condition above: this one might be true if the cursor is immediately above the placeholder between two items.</li>
+<li>If, when the drop happens, the dragged item will be placed exactly where it started, we shouldn't indicate a placeholder at all. This happens when the placeholder is to be placed immediately next to the dragged task, so we check if either we are inserting immediately before <code>draggedTask</code> (<code>task === draggedTask</code>) or after it (<code>task.previousElementSibling === draggedTask</code>). In this case, we still remove the existing placeholder, if there's any.</li>
+<li>Finally, we insert the placeholder at the determined position.</li>
+</ul>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___kanban notranslate live-sample---kanban"><code>for (const task of tasks.children) {
+  if (task.getBoundingClientRect().bottom &gt;= event.clientY) {
+    if (task === existingPlaceholder) return;
+    existingPlaceholder?.remove();
+    if (task === draggedTask || task.previousElementSibling === draggedTask)
+      return;
+    tasks.insertBefore(
+      existingPlaceholder ?? makePlaceholder(draggedTask),
+      task,
+    );
+    return;
+  }
+}
+</code></pre></div>
+<p>If the above loop did not find a suitable task, it means all existing tasks are above the cursor, and we need to insert the placeholder at the end. Again, we don't add the placeholder if the dragged task is already the last item.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___kanban notranslate live-sample---kanban"><code>  existingPlaceholder?.remove();
+  if (tasks.lastElementChild === draggedTask) return;
+  tasks.append(existingPlaceholder ?? makePlaceholder(draggedTask));
+}
+</code></pre></div>
+<p>Finally, the placeholder is removed on <a href="../HTMLElement/dragleave_event.html" title="dragleave"><code>dragleave</code></a> or <a href="../HTMLElement/drop_event.html" title="drop"><code>drop</code></a>. Note that the <code>dragleave</code> is fired when the cursor leaves the column to enter its child element. Because we only want to remove the placeholder when the cursor leaves the column entirely, we need to check if the <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/relatedTarget" title="relatedTarget"><code>relatedTarget</code></a>, which is the element we are moving into, is a child of the column.</p>
+<p>The <code>drop</code> handler modifies what we implemented in <a href="#moving_elements">Moving elements</a>. Instead of appending the task at the end, we need to insert it in the middle, and we leverage the placeholder's position to do that.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js live-sample___kanban notranslate live-sample---kanban"><code>columns.forEach((column) =&gt; {
+  column.addEventListener("dragover", movePlaceholder);
+  column.addEventListener("dragleave", (event) =&gt; {
+    // If we are moving into a child element,
+    // we aren't actually leaving the column
+    if (column.contains(event.relatedTarget)) return;
+    const placeholder = column.querySelector(".placeholder");
+    placeholder?.remove();
+  });
+  column.addEventListener("drop", (event) =&gt; {
+    event.preventDefault();
+
+    const draggedTask = document.getElementById("dragged-task");
+    const placeholder = column.querySelector(".placeholder");
+    if (!placeholder) return;
+    draggedTask.remove();
+    column.children[1].insertBefore(draggedTask, placeholder);
+    placeholder.remove();
+  });
+});
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="graying_out_the_original_task">
+    <!--lit-part npoYpZMncYc=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Graying%20out%20the%20original%20task"></a><h2 id="graying_out_the_original_task" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#graying_out_the_original_task">Graying out the original task</a></h2><!--/lit-part-->
+    <p>During the course of the drag, it may appear that the original task is still in its place. To give a visual indication that the task is being moved, we can apply a "grayed out" effect. It's also common to just remove it from the DOM, but that might mess with all the other DOM measurement logic we've set up, so we can use CSS to achieve the desired effect. This is straightforward because we already have a stable ID for the dragged task.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css live-sample___kanban notranslate live-sample---kanban"><code>#dragged-task {
+  opacity: 0.2;
+}
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="result">
+    <!--lit-part DijSZeS6FNs=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Result"></a><h2 id="result" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#result">Result</a></h2><!--/lit-part-->
+    <div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="kanban sample" id="frame_kanban" height="400" src="Kanban_board/_sample_.kanban78743185/84ee5f3b1f5747b87acb1dda99eaa7deff3aa52e.mdnplay.dev/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Kanban_board/runner.html-_-uuid=84ee5f3b1f5747b87acb1dda99eaa7deff3aa52e&amp;state=tVcNb9s2EP0rN2XobCBW0g4dNidOliYZFmAFgiYYNswDSosnmStNaiSVxGjz33cUJZty5DT9WALEFnl3vHv3%25252BE55n8zdQibj5JCLG8gks3YyTTKtHBMKzTQ5miqAzqZj9t0o.html" data-live-path="/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Kanban_board/" data-live-id="kanban" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+  </section><section class="content-section" aria-labelledby="see_also">
+    <!--lit-part p88DAUaBJzA=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/See%20also"></a><h2 id="see_also" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#see_also">See also</a></h2><!--/lit-part-->
+    <ul>
+<li><a href="../HTML_Drag_and_Drop_API.html">HTML Drag and Drop API</a></li>
+<li><a href="Drag_operations.html">Drag Operations</a></li>
+</ul>
+  </section> 
+      <section class="content-section article-footer" aria-labelledby="feedback">
+        <div class="article-footer__inner">
+          <div class="article-footer__svg-container"><!--lit-part OWLzZqRMsCU=--><svg xmlns="http://www.w3.org/2000/svg" width="162" height="162" fill="none" viewBox="0 0 162 162"><mask id="b" fill="#fff"><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z"></path></mask><path stroke="url(#a)" stroke-dasharray="6, 6" stroke-width="2" d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z" mask="url(#b)" style="stroke:url(#a)" transform="translate(-63.992 -25.587)"></path><ellipse cx="8.066" cy="111.597" fill="currentColor" rx="53.677" ry="53.699" transform="matrix(.71707 -.697 .7243 .6895 0 0)"></ellipse><g clip-path="url(#c)" transform="translate(-63.992 -25.587)"><path fill="#9abff5" d="m144.256 137.379 32.906 12.434a4.41 4.41 0 0 1 2.559 5.667l-9.326 24.679a4.41 4.41 0 0 1-5.667 2.559l-8.226-3.108-2.332 6.17c-.466 1.233-.375 1.883-1.609 1.417l-2.253-.527c-.411-.155-.95-.594-1.206-1.161l-4.734-10.484-12.545-4.741a4.41 4.41 0 0 1-2.559-5.667l9.325-24.679a4.41 4.41 0 0 1 5.667-2.559m9.961 29.617 8.227 3.108 3.264-8.638-.498-6.768-4.113-1.555.548 7.258-4.319-1.632zm-12.339-4.663 8.226 3.108 3.264-8.637-.498-6.769-4.113-1.554.548 7.257-4.319-1.632z"></path></g><g clip-path="url(#d)" transform="translate(-63.992 -25.587)"><path fill="#81b0f3" d="M135.35 60.136 86.67 41.654c-3.346-1.27-7.124.428-8.394 3.775L64.414 81.938c-1.27 3.347.428 7.125 3.774 8.395l12.17 4.62-3.465 9.128c-.693 1.826-1.432 2.457.394 3.15l3.014 1.625c.609.231 1.637.274 2.477-.104l15.53-6.983 18.56 7.047c3.346 1.27 7.124-.428 8.395-3.775l13.862-36.51c1.27-3.346-.428-7.124-3.775-8.395M95.261 83.207l-12.17-4.62 4.852-12.779 7.19-7.017 6.085 2.31-7.725 7.51 6.389 2.426zm18.255 6.93-12.17-4.62 4.852-12.778 7.189-7.017 6.085 2.31-7.725 7.51 6.39 2.426z"></path></g><defs><clipPath id="c"><path fill="#fff" d="m198.638 146.586-65.056-24.583-24.583 65.057 65.056 24.582z"></path></clipPath><clipPath id="d"><path fill="#fff" d="m66.438 14.055 96.242 36.54-36.54 96.243-96.243-36.54z"></path></clipPath><linearGradient id="a" x1="97.203" x2="199.995" y1="47.04" y2="152.793" gradientUnits="userSpaceOnUse"><stop stop-color="#086dfc"></stop><stop offset=".246" stop-color="#2c81fa"></stop><stop offset=".516" stop-color="#5497f8"></stop><stop offset=".821" stop-color="#80b0f6"></stop><stop offset="1" stop-color="#9abff5"></stop></linearGradient></defs></svg><!--/lit-part--></div>
+          <h2 id="feedback">
+            Help improve MDN
+          </h2>
+          <mdn-content-feedback locale="en-US"></mdn-content-feedback>
+          <a class="article-footer__contribute" href="https://developer.mozilla.org/en-US/docs/MDN/Community/Getting_started">Learn how to contribute</a> <p class="article-footer__last-modified">
+    This page was last modified on <time datetime="2025-11-09T21:48:13.000Z">Nov 9, 2025</time> by <a href="Kanban_board/contributors.txt">MDN contributors</a>.
+  </p> <div class="article-footer__links">
+    <a class="external" href="https://github.com/mdn/content/blob/main/files/en-us/web/api/html_drag_and_drop_api/kanban_board/index.md?plain=1" title="Folder: en-us/web/api/html_drag_and_drop_api/kanban_board (Opens in a new tab)" target="_blank" rel="noopener">View this page on GitHub</a> • <a class="external" href="https://github.com/mdn/content/issues/new?template=page-report.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FHTML_Drag_and_Drop_API%2FKanban_board&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Fweb%2Fapi%2Fhtml_drag_and_drop_api%2Fkanban_board%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FHTML_Drag_and_Drop_API%2FKanban_board%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Fweb%2Fapi%2Fhtml_drag_and_drop_api%2Fkanban_board%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2F8432c4ca716350c34d197c130e6fe93de5c8250c%0A*+Document+last+modified%3A+2025-11-09T21%3A48%3A13.000Z%0A%0A%3C%2Fdetails%3E" title="This will take you to GitHub to file a new issue." target="_blank" rel="noopener">Report a problem with this content</a>
+  </div>
+        </div>
+      </section>
+    
+          </div>
+        </main>
+        <aside class="layout__left-sidebar" id="main-sidebar">
+          <nav class="left-sidebar">
+      <div class="left-sidebar__header">
+        <mdn-sidebar-filter></mdn-sidebar-filter>
+      </div>
+      <div class="left-sidebar__content"><ol><li class="section"><a href="../HTML_Drag_and_Drop_API.html">HTML Drag and Drop API</a></li><li><details open=""><summary><span>Guides</span></summary><ol><li><a href="Drag_operations.html">Drag operations</a></li><li><a href="Drag_data_store.html">Working with the drag data store</a></li><li><a href="File_drag_and_drop.html">File drag and drop</a></li><li><em><a href="Kanban_board.html" aria-current="page">Kanban board with drag and drop</a></em></li></ol></details></li><li><details open=""><summary><span>Interfaces</span></summary><ol><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer"><code>DataTransfer</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem"><code>DataTransferItem</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList"><code>DataTransferItemList</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DragEvent"><code>DragEvent</code></a></li></ol></details></li><li><details open=""><summary><span>Events</span></summary><ol><li><a href="../HTMLElement/drag_event.html"><code>HTMLElement: drag</code></a></li><li><a href="../HTMLElement/dragend_event.html"><code>HTMLElement: dragend</code></a></li><li><a href="../HTMLElement/dragenter_event.html"><code>HTMLElement: dragenter</code></a></li><li><a href="../HTMLElement/dragleave_event.html"><code>HTMLElement: dragleave</code></a></li><li><a href="../HTMLElement/dragover_event.html"><code>HTMLElement: dragover</code></a></li><li><a href="../HTMLElement/dragstart_event.html"><code>HTMLElement: dragstart</code></a></li><li><a href="../HTMLElement/drop_event.html"><code>HTMLElement: drop</code></a></li></ol></details></li></ol></div>
+    </nav>
+        </aside>
+      </div>
+    </div>
+        
+      
+    
+      
+
+
+    <div class="page-layout__footer footer"><div><a href="http://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Kanban_board">Kanban board with drag and drop</a> by <a href="http://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Kanban_board$history">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC-BY-SA 2.5</a>.</div></div></body><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Kanban_board by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 13:50:29 GMT --></html>

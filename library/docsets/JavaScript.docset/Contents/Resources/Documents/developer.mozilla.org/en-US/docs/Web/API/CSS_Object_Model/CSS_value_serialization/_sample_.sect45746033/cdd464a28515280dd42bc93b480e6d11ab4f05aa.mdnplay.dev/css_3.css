@@ -1,0 +1,4 @@
+
+div { position: absolute; rotate: 1rad; color: rgb(0, 0, 255); background-color: rgba(64, 191, 64, 0.3); border-color: lab(10 -120 -120); margin: 2em; padding: 2cm; font-size: calc(1em + 2px); left: 50%; animation-duration: 500ms; }
+
+button.copy {display:none !important}

@@ -1,0 +1,5 @@
+
+body { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+textarea { grid-column-start: 1; grid-column-end: span 3; }
+
+button.copy {display:none !important}

@@ -1,0 +1,8 @@
+
+html { font-family: sans-serif; height: 100%; }
+button { width: 150px; margin: auto; line-height: 2; font-size: 1.1rem; text-align: center; color: white; text-shadow: black 1px 1px 1px; border-radius: 20px / 15px; border: medium; cursor: pointer; background-color: rgba(255, 0, 0, 0.9); box-shadow: rgba(255, 255, 255, 0.4) 3px 3px 3px inset, rgba(0, 0, 0, 0.4) -3px -3px 3px inset; }
+button:hover, button:focus { background-color: rgba(255, 0, 0, 0.5); }
+button:active { box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px inset, rgba(255, 255, 255, 0.4) -3px -3px 3px inset; }
+body { height: inherit; display: flex; align-items: center; }
+
+button.copy {display:none !important}

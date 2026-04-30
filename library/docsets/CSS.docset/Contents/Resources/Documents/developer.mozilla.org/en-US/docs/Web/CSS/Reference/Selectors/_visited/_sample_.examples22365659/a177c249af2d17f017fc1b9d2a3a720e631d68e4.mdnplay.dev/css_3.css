@@ -1,0 +1,5 @@
+
+a { background-color: white; border: 1px solid white; }
+a:visited { background-color: yellow; border-color: hotpink; color: hotpink; }
+
+button.copy {display:none !important}

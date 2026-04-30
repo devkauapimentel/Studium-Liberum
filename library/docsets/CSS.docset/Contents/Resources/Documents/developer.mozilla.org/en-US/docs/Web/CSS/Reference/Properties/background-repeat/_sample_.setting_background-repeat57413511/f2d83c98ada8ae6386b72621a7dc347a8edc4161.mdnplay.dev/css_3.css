@@ -1,0 +1,13 @@
+
+ol, li { margin: 0px; padding: 0px; }
+li { margin-bottom: 12px; }
+div { background-image: url("./en-US/docs/Web/CSS/Reference/Properties/background-repeat/star-solid.gif"); width: 160px; height: 70px; }
+.one { background-repeat: no-repeat; }
+.two { background-repeat: repeat; }
+.three { background-repeat: repeat-x; }
+.four { background-repeat: repeat-y; }
+.five { background-repeat: space; }
+.six { background-repeat: round; }
+.seven { background-image: url("./en-US/docs/Web/CSS/Reference/Properties/background-repeat/star-solid.gif"), url("./shared-assets/images/examples/favicon32.png"); background-repeat: repeat-x, repeat-y; height: 144px; }
+
+button.copy {display:none !important}

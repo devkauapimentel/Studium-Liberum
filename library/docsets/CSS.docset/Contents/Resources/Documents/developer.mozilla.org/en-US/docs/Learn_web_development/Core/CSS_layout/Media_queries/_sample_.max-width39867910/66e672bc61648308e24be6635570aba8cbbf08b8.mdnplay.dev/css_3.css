@@ -1,0 +1,6 @@
+
+@media screen and (max-width: 600px) {
+  body { color: blue; }
+}
+
+button.copy {display:none !important}

@@ -1,0 +1,4 @@
+
+iframe { display: block; border: 1px dashed black; }
+
+button.copy {display:none !important}

@@ -1,0 +1,16 @@
+
+.unsupported { color: red; }
+@supports (text-emphasis-position: auto) {
+  .unsupported { display: none; }
+}
+.horizontal { writing-mode: horizontal-tb; }
+.vertical { writing-mode: vertical-rl; }
+section { display: flex; justify-content: space-around; }
+section p { text-emphasis-style: filled circle; text-emphasis-color: tomato; }
+.over-right p, .preferred p [lang="ja"] { text-emphasis-position: over right; }
+.over-left p { text-emphasis-position: over left; }
+.under-right p, .preferred p [lang="zh"] { text-emphasis-position: under right; }
+.under-left p { text-emphasis-position: under left; }
+.preferred p [lang="ja"] { }
+
+button.copy {display:none !important}

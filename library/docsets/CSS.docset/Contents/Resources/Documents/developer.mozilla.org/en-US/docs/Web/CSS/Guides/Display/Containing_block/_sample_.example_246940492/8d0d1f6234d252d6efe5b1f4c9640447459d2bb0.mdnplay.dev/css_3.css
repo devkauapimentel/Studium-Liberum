@@ -1,0 +1,6 @@
+
+body { background: beige; }
+section { display: inline; background: lightgray; }
+p { width: 50%; height: 200px; background: cyan; }
+
+button.copy {display:none !important}

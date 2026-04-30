@@ -1,0 +1,6 @@
+
+html, body { height: 100%; }
+body { display: flex; justify-content: center; align-items: center; background-color: black; }
+.newspaper { padding: 0.5rem; text-transform: uppercase; text-align: center; background-color: white; cursor: pointer; }
+
+button.copy {display:none !important}

@@ -1,0 +1,5 @@
+
+div { margin: 0.5rem; padding: 0.5rem; border: 3px solid lightseagreen; border-radius: 5px; font-family: monospace; }
+pre, button { margin: 0.5rem; padding: 0.5rem; }
+
+button.copy {display:none !important}

@@ -1,0 +1,11 @@
+
+* { box-sizing: border-box; }
+.grid { border: 2px solid rgb(247, 103, 7); border-radius: 5px; background-color: rgb(255, 244, 230); }
+.item { border: 2px solid rgb(255, 169, 77); border-radius: 5px; background-color: rgb(255, 216, 168); color: rgb(217, 72, 15); }
+.subitem { background-color: rgb(40, 240, 83); }
+.grid { display: grid; grid-template-columns: 1fr 1fr 1fr [col-start] 1fr 1fr 1fr [col-end] 1fr 1fr 1fr; grid-template-rows: repeat(4, minmax(100px, auto)); gap: 20px; }
+.item { display: grid; grid-column-start: 2; grid-column-end: 7; grid-row-start: 2; grid-row-end: 4; grid-template-columns: subgrid [sub-a] [sub-b] [sub-c] [sub-d] [sub-e] [sub-f]; grid-template-rows: subgrid; }
+.subitem { grid-column-start: col-start; grid-column-end: col-end; grid-row-start: 1; grid-row-end: 3; }
+.subitem2 { background-color: rgba(0, 0, 0, 0.5); grid-column-start: sub-b; grid-column-end: sub-d; grid-row-start: 1; grid-row-end: auto; }
+
+button.copy {display:none !important}

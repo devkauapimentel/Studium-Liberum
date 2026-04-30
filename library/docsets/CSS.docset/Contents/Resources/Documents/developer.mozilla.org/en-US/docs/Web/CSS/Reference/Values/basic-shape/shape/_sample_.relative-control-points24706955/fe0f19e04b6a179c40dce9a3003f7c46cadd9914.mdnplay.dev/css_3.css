@@ -1,0 +1,11 @@
+
+.container { display: flex; justify-content: center; gap: 20px; }
+@supports not (  clip-path: shape(  from center left,  curve by 200px 0 with 50% -50% from start / 50% 0 from origin,  curve by -200px 0 with 50% 100% from origin / -50% 50% from start,  close  ) ) {
+  .container { display: none; }
+  body::after { content: "Your browser doesn't support `shape()` relative control points."; }
+}
+#shape1 { width: 200px; height: 200px; background: green; clip-path: shape(from left center, curve by 200px 0px with 50% -50% from start / 50% 0px from origin, curve by -200px 0px with 50% 100% from origin / -50% 50% from start, close); }
+#shape2 { width: 200px; height: 200px; background: purple; clip-path: shape(from left center, curve to 200px 100px with 50% -80% from start, curve to left center with 0% 70% from start / 20% 0% from end, close); }
+#shape3 { width: 200px; height: 200px; background: orangered; clip-path: shape(from left center, curve by 200px 0px with 50% -80% from start, smooth to center center with 50% 100% from origin, close); }
+
+button.copy {display:none !important}

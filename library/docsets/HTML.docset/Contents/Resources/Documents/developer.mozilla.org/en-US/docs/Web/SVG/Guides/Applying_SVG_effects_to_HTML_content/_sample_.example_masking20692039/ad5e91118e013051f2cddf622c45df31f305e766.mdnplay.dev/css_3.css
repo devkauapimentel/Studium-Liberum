@@ -1,0 +1,6 @@
+
+.target { mask: url("./en-US/docs/Web/SVG/Guides/Applying_SVG_effects_to_HTML_content/runner.html-_-uuid=ad5e91118e013051f2cddf622c45df31f305e766&state=nVNNT%25252BMwEP0ro3ABiTYUtJeQ5bqXvXLLxbWnySz%25252BwnagFeK%25252FM5OEFlZIaPeSzNd782Zsv1RDcbZqqjY%25252F9TAg9UP52VVXXXXXeYDWqfwAZDgk1mqzxDljyaNK.html-_-uuid=ad5e91118e013051f2cddf622c45df31f305e766&state=nVNNT%252BMwEP0ro3ABiTYUtJeQ5bqXvXLLxbWnySz%252BwnagFeK%252FM5OEFlZIaPeSzNd782Zsv1RDcbZqqjY%252F9TAg9UP52VVXXXXXeYDWqfwAZDgk1mqzxDljyaNKv5IyhL7MNf3iSR0crjlyAjAklxBBPisdbEicfh6oINeG3S7j0hjqrxAhKk3lsJQc6zcf6tv6s6b3sKakLYLeC3h9%252FYMh%252BnCy08mchpjL2duRtR80Htsk1AVmMgEtVGw9kykDezdXovG4zM3kLmxjsudnpz1dHInbWjbMZlvzUcg%252FgrYqZwYVlXosyyp%252Fh4QOKObRgZE9QqYCymG5BB18ZnVYxgTcIlImTb4HtMTZjIYRgDRmF4xwFXSRCchrMmRGPsexgFVbbgFYZnoEp3qvQFl6HNUa7gugJ8f84EiMJ3aVW4vyOOn%252BX5nTGhj099jz3u%252B%252BGuJfJphpljHaGp0EJq3fjVRdVjpnfiXrWRK8CErOqwE50K46e38eF7edf%252B18nEumG9EAX4i4v5UA6zKYGtjEPeRgycDWKv0w5QzlaNWh4WHkIq%252B2NkwZofvUeMuIPoXRmwYsOZxrWOQf0cj%252FMqBDNq3cwOr1DQ%253D%253D&code=20692039&%23mask-1"); mask-size: auto; mask-composite: add; mask-mode: match-source; }
+p { width: 300px; border: 1px solid black; display: inline-block; }
+p.target { background: lime; }
+
+button.copy {display:none !important}

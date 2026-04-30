@@ -1,0 +1,8 @@
+
+div { width: 100%; height: 512px; background-image: url("../mdn.github.io/shared-assets/images/examples/fx-nightly-512.png"); background-repeat: no-repeat; background-position: center center; }
+li { display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+input { width: 60%; }
+output { width: 5%; text-align: center; }
+select { width: 40%; margin-left: 2px; }
+
+button.copy {display:none !important}

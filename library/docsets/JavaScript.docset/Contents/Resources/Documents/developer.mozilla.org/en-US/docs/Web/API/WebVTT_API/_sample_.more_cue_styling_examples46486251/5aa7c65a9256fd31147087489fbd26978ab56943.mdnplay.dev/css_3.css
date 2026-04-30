@@ -1,0 +1,15 @@
+
+video { width: 420px; height: 300px; }
+video::cue { font-size: 1.2rem; }
+video::cue(u) { color: green; }
+video::cue(b) { color: purple; }
+video::cue(i) { color: red; }
+video::cue(c) { color: lavender; }
+video::cue(.myclass) { color: lightblue; }
+video::cue(c.myclass) { color: blue; }
+video::cue([lang="en"]) { color: lightgreen; }
+video::cue([lang="en-GB"]) { color: darkgreen; }
+video::cue(:lang(en-US)) { color: rgb(96, 130, 182); }
+video::cue(v[voice="Bob"]) { color: orange; }
+
+button.copy {display:none !important}

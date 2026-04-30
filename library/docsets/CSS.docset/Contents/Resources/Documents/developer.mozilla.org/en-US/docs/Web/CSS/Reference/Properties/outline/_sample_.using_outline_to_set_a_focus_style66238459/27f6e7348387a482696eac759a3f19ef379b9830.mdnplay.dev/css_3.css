@@ -1,0 +1,5 @@
+
+a { border: 1px solid; border-radius: 3px; display: inline-block; margin: 10px; padding: 5px; }
+a:focus { outline: 4px dotted rgb(238, 119, 51); outline-offset: 4px; background: rgb(255, 255, 170); }
+
+button.copy {display:none !important}

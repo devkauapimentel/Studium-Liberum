@@ -1,0 +1,1030 @@
+<html><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API/Inputs by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:05:00 GMT --><head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Inputs and input sources</title>
+          
+          <script>try {
+  document.documentElement.dataset.theme =
+    localStorage.getItem("theme") || "light dark";
+} catch (error) {
+  console.warn("Unable to set theme", error);
+}
+
+try {
+  if (localStorage.getItem("nop") === "yes") {
+    document.documentElement.dataset["nop"] = "yes";
+  }
+} catch (error) {
+  console.warn("Unable to set nop", error);
+}
+</script>
+          <link rel="stylesheet" href="../../../../../static/client/styles-global.03146ed4c65bc5ea.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/270.66bae6059a1c23f9.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-layout.632d2f3884f10ca3.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-content-section.2ee991ba88f986cf.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-heading-anchor.0eec5185ab9425b7.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-toc.9b9bd019efd16b86.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-article-footer.81ae18c89fc527dc.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-left-sidebar.6f954e8939555f77.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-page-layout.5a4354f33e894319.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-a11y-menu.5796ee87cb69f93f.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-navigation.3a34ee593a554c40.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-logo.aea5ff6edf1b9cfb.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-menu.3376b3e11656fba0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs-bar.9a51a3c76a6231d0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs.d06ce8d09f42feb8.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-footer.a2850e459e2d290b.css" fetchpriority="high">
+          <link rel="preload" href="../../../../../static/client/jetbrains-mono-latin.119994ed445212c7.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low"><link rel="preload" href="../../../../../static/client/inter-latin.9a3b1bc220d426ef.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+          <script data-cfasync="false" data-report-only="on" data-prompt="0" src="../../../../../../transcend-cdn.com/cm/d556c3a1-e57c-4bdf-a490-390a1aebf6dd/airgap.js"></script>
+          <script src="../../../../../static/client/runtime.c294a6bdc7a42570.js" type="module"></script><script src="../../../../../static/client/1111.53dba753dc3eb961.js" type="module"></script><script src="../../../../../static/client/8903.f870aafb338b203a.js" type="module"></script><script src="../../../../../static/client/index.9a449352d879bbd5.js" type="module"></script>
+          
+    <link rel="icon" sizes="32x32" href="../../../../../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../../../../../favicon.svg">
+   <meta name="description" content="A full WebXR experience isn't just about showing the user a wholly virtual scene or augmenting reality by adding to or altering the world around them. In order to make an experience that's fulfilling and engaging, the user needs to be able to interact with it. To that end, WebXR provides support for a variety of kinds of input devices."><meta name="og:url" content="https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API/Inputs"><meta name="og:title" content="Inputs and input sources - Web APIs | MDN"><meta name="og:locale" content="en_US"><meta name="og:description" content="A full WebXR experience isn't just about showing the user a wholly virtual scene or augmenting reality by adding to or altering the world around them. In order to make an experience that's fulfilling and engaging, the user needs to be able to interact with it. To that end, WebXR provides support for a variety of kinds of input devices."><meta name="og:image" content="https://developer.mozilla.org/mdn-social-image.46ac2375.png"><meta name="og:image:type" content="image/png"><meta name="og:image:height" content="1024"><meta name="og:image:width" content="1024"><meta name="og:image:alt" content="The MDN logo"><meta name="og:site_name" content="MDN Web Docs"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="MozDevNet">
+          <link rel="canonical" href="Inputs.html">
+          <link rel="apple-touch-icon" href="../../../../../apple-touch-icon.png">
+          <link rel="manifest" href="../../../../../manifest.json">
+          <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/opensearch.xml" title="MDN Web Docs">
+          <link rel="alternate" type="application/rss+xml" title="MDN Blog RSS Feed" href="https://developer.mozilla.org/en-US/blog/rss.xml">
+        </head>
+        
+      <body class="page-layout">
+        <ul class="a11y-menu">
+      <li>
+        <a href="#content">Skip to main content</a>
+      </li>
+      <li>
+        <a href="#search">Skip to search</a>
+      </li>
+    </ul>
+        <div class="page-layout__banner" data-scheme="">
+          <mdn-placement-top></mdn-placement-top>
+        </div>
+        <header class="page-layout__header">
+          
+      <nav class="navigation" data-scheme="" data-open="false">
+        <div class="navigation__logo">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">
+        <svg class="logo__image" width="83" height="24" viewBox="0 0 83 24" role="img">
+          <title>MDN</title>
+          <path class="logo__letter" d="M9.4 0 2.81 21.17H.12L6.69 0H9.4Zm2.38 0v21.17H9.4V0h2.4Zm9.27 0-6.56 21.17H11.8L18.36 0h2.69Zm2.39 0v21.17h-2.4V0h2.4Z"></path>
+          <path class="logo__text" d="M45.55 16.83h-3.93v-1.27h.87v-3.63c0-.85-.16-1.45-.48-1.82a1.65 1.65 0 0 0-1.3-.52c-.74 0-1.3.25-1.66.78a2.98 2.98 0 0 0-.58 1.58v3.59h1.38v1.26h-3.93v-1.26h.87v-3.6c0-.88-.16-1.48-.48-1.83a1.7 1.7 0 0 0-1.29-.52 1.93 1.93 0 0 0-1.65.75 2.85 2.85 0 0 0-.58 1.6v3.62h1.59v1.27h-4.64v-1.27h1.37V9.75h-1.4V8.46h3.08v1.47c.28-.48.62-.87 1.08-1.2a3 3 0 0 1 1.68-.45c.67 0 1.22.16 1.73.48.5.32.85.8 1.03 1.47.25-.57.62-1.03 1.13-1.4.5-.37 1.1-.55 1.81-.55.8 0 1.5.25 2.05.75.55.51.85 1.3.85 2.35v4.18h1.4v1.27Zm9.77 0H52.3v-1.66c-.27.51-.66.95-1.13 1.29-.56.4-1.23.59-1.9.55-1.11 0-2-.37-2.67-1.12a4.41 4.41 0 0 1-1-3.06c0-1.15.3-2.2.93-3.15.6-.94 1.58-1.43 2.94-1.43 1.36 0 2.25.5 2.83 1.5V5.22h-2V3.93h3.63v11.63h1.38v1.27Zm-3.06-3.86v-1.02a2.28 2.28 0 0 0-.73-1.67 2.4 2.4 0 0 0-1.66-.65 2.18 2.18 0 0 0-1.88.9 3.63 3.63 0 0 0-.65 2.2c0 .95.23 1.68.7 2.19.45.5 1.03.76 1.7.76.73 0 1.33-.3 1.79-.88.48-.6.71-1.21.73-1.83Zm14.14 3.86h-4.43v-1.27h1.37v-3.63c0-.85-.16-1.45-.5-1.82a1.68 1.68 0 0 0-1.31-.52c-.71 0-1.29.23-1.7.69a2.52 2.52 0 0 0-.67 1.6v3.66h1.38v1.26H56.1v-1.26h1.38v-5.8h-1.42V8.47h3.12V9.9c.6-1.06 1.57-1.6 2.92-1.6.83 0 1.54.26 2.12.77.57.5.85 1.28.85 2.34v4.19h1.38v1.24h-.05Z"></path>
+          <path class="logo__cursor" d="M67.71 21.98H83V24H67.71v-2.02Z"></path>
+        </svg>
+      </a>
+    </div>
+        <div class="navigation__search" data-view="mobile">
+          <mdn-search-button></mdn-search-button>
+        </div>
+        <button class="navigation__button" type="button" aria-expanded="false" aria-controls="navigation__popup" aria-label="Toggle navigation"></button>
+        <div class="navigation__popup" id="navigation__popup">
+          <div class="navigation__menu">
+      <nav class="menu">
+        <div class="menu__tab" data-section="html">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">HTML</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" data-glean-id="menu_click_menu: html -&gt; /en-US/docs/Web/HTML">HTML: Markup language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>HTML reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Elements">Elements</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Global_attributes">Global attributes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Attributes">Attributes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference" aria-label="See all HTML references" title="See all HTML references" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>HTML guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Responsive_images">Responsive images</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Cheatsheet" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Cheatsheet">HTML cheatsheet</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Date_and_time_formats" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Date_and_time_formats">Date &amp; time formats</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides" aria-label="See all HTML guides" title="See all HTML guides" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Markup languages</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/SVG">SVG</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/MathML">MathML</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/XML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/XML">XML</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="css">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">CSS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" data-glean-id="menu_click_menu: css -&gt; /en-US/docs/Web/CSS">CSS: Styling language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>CSS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Properties">Properties</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Selectors">Selectors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/At-rules">At-rules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Values">Values</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" aria-label="See all CSS references" title="See all CSS references" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>CSS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Box_model/Introduction">Box model</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Animations/Using">Animations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Flexbox</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Applying_color" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Colors/Applying_color">Colors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides" aria-label="See all CSS guides" title="See all CSS guides" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Layout cookbook</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts">Column layouts</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element">Centering an element</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Card" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Card">Card component</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="javascript">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label" data-type="long">JavaScript</span><span class="menu__tab-label" data-type="short">JS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" data-glean-id="menu_click_menu: javascript -&gt; /en-US/docs/Web/JavaScript">JavaScript: Scripting language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>JS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../JavaScript/Reference/Global_Objects.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects</a>
+                              </li><li>
+                                <a href="../../JavaScript/Reference/Operators.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a>
+                              </li><li>
+                                <a href="../../JavaScript/Reference/Statements.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Statements">Statements &amp; declarations</a>
+                              </li><li>
+                                <a href="../../JavaScript/Reference/Functions.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Functions">Functions</a>
+                              </li><li>
+                                <a href="../../JavaScript/Reference.html" aria-label="See all JavaScript references" title="See all JavaScript references" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>JS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../JavaScript/Guide/Control_flow_and_error_handling.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow &amp; error handing</a>
+                              </li><li>
+                                <a href="../../JavaScript/Guide/Loops_and_iteration.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops and iteration</a>
+                              </li><li>
+                                <a href="../../JavaScript/Guide/Working_with_objects.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Working_with_objects">Working with objects</a>
+                              </li><li>
+                                <a href="../../JavaScript/Guide/Using_classes.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Using_classes">Using classes</a>
+                              </li><li>
+                                <a href="../../JavaScript/Guide.html" aria-label="See all JavaScript guides" title="See all JavaScript guides" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="webapis">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Web APIs</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="../../API.html" data-glean-id="menu_click_menu: webapis -&gt; /en-US/docs/Web/API">Web APIs: Programming interfaces</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Web API reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../File_System_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/File_System_API">File system API</a>
+                              </li><li>
+                                <a href="../Fetch_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API">Fetch API</a>
+                              </li><li>
+                                <a href="../Geolocation_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Geolocation_API">Geolocation API</a>
+                              </li><li>
+                                <a href="../HTML_DOM_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/HTML_DOM_API">HTML DOM API</a>
+                              </li><li>
+                                <a href="../Push_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Push_API">Push API</a>
+                              </li><li>
+                                <a href="../Service_Worker_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Service_Worker_API">Service worker API</a>
+                              </li><li>
+                                <a href="../../API.html" aria-label="See all Web API guides" title="See all Web API guides" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Web API guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../Web_Animations_API/Using_the_Web_Animations_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API">Using the Web animation API</a>
+                              </li><li>
+                                <a href="../Fetch_API/Using_Fetch.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API/Using_Fetch">Using the Fetch API</a>
+                              </li><li>
+                                <a href="../History_API/Working_with_the_History_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/History_API/Working_with_the_History_API">Working with the History API</a>
+                              </li><li>
+                                <a href="../Web_Speech_API/Using_the_Web_Speech_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Using the Web speech API</a>
+                              </li><li>
+                                <a href="../Web_Workers_API/Using_web_workers.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using web workers</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="all">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">All</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web" data-glean-id="menu_click_menu: all -&gt; /en-US/docs/Web">All web technology</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Technologies</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Accessibility">Accessibility</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/HTTP">HTTP</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/URI" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/URI">URI</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Mozilla/Add-ons/WebExtensions">Web extensions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/WebAssembly">WebAssembly</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/WebDriver">WebDriver</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web" aria-label="See all web technology references" title="See all web technology references" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Topics</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Media" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Media">Media</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Performance">Performance</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Privacy" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Privacy">Privacy</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Security">Security</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Progressive_web_apps">Progressive web apps</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="learn">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Learn</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" data-glean-id="menu_click_menu: learn -&gt; /en-US/docs/Learn_web_development">Learn web development</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Frontend developer course</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Getting_started">Getting started modules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core">Core modules</a>
+                              </li><li>
+                                <a class="" href="https://developer.mozilla.org/en-US/curriculum/" data-glean-id="menu_click_submenu: learn -&gt; /en-US/curriculum/">MDN Curriculum</a>
+                              </li><li>
+                                <a class="external" href="https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar" data-glean-id="menu_click_submenu: learn -&gt; https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar">Check out the video course from Scrimba, our partner</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn HTML</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn CSS</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics module</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn JavaScript</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript module</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="tools">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Tools</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Discover our tools
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="circle-play" href="https://developer.mozilla.org/en-US/play" data-glean-id="menu_click_submenu: tools -&gt; /en-US/play">Playground</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="shield-check" href="https://developer.mozilla.org/en-US/observatory" data-glean-id="menu_click_submenu: tools -&gt; /en-US/observatory">HTTP Observatory</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator">Border-image generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator">Border-radius generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator">Box-shadow generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_format_converter" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_format_converter">Color format converter</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_mixer" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_mixer">Color mixer</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes/Shape_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Shapes/Shape_generator">Shape generator</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="about">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">About</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Get to know MDN better
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="mdn-m" href="https://developer.mozilla.org/en-US/about" data-glean-id="menu_click_submenu: about -&gt; /en-US/about">About MDN</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="chart-no-axes-combined" href="https://developer.mozilla.org/en-US/advertising" data-glean-id="menu_click_submenu: about -&gt; /en-US/advertising">Advertise with us</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="users" href="https://developer.mozilla.org/en-US/community" data-glean-id="menu_click_submenu: about -&gt; /en-US/community">Community</a>
+                              </li><li>
+                                <a class="menu__panel-icon external" data-icon="github" href="https://github.com/mdn" data-glean-id="menu_click_submenu: about -&gt; https://github.com/mdn">MDN on GitHub</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="blog">
+            <a class="menu__tab-link" href="https://developer.mozilla.org/en-US/blog/" data-glean-id="menu_click_link: top-level -&gt; /en-US/blog/">Blog</a>
+          </div>
+      </nav>
+    </div>
+          <div class="navigation__search" data-view="desktop">
+            <mdn-search-button></mdn-search-button>
+          </div>
+          <mdn-user-menu></mdn-user-menu>
+        </div>
+      </nav>
+      <mdn-search-modal id="search"></mdn-search-modal>
+     
+      
+    
+        </header>
+        <div class="page-layout__main">
+      <div class="breadcrumbs-bar" data-scheme="">
+        <mdn-toggle-sidebar></mdn-toggle-sidebar> 
+      <ol class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+        
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web" property="item" typeof="WebPage"><span property="name">Web</span></a>
+              <meta property="position" content="1">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../../API.html" property="item" typeof="WebPage"><span property="name">Web APIs</span></a>
+              <meta property="position" content="2">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../WebXR_Device_API.html" property="item" typeof="WebPage"><span property="name">WebXR Device API</span></a>
+              <meta property="position" content="3">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="Inputs.html" property="item" typeof="WebPage"><span property="name">Inputs and input sources</span></a>
+              <meta property="position" content="4">
+            </li>
+          
+      </ol>
+    
+        <mdn-collection-save-button doc-url="/en-US/docs/Web/API/WebXR_Device_API/Inputs" doc-title="Inputs and input sources"></mdn-collection-save-button>
+        <mdn-color-theme></mdn-color-theme>
+        <mdn-language-switcher locale="en-US" native="English (US)" translations="[{&quot;locale&quot;:&quot;en-US&quot;,&quot;title&quot;:&quot;Inputs and input sources&quot;,&quot;native&quot;:&quot;English (US)&quot;},{&quot;locale&quot;:&quot;de&quot;,&quot;title&quot;:&quot;Eingaben und Eingabequellen&quot;,&quot;native&quot;:&quot;Deutsch&quot;}]" url="Inputs.html"></mdn-language-switcher>
+      </div><div class="layout__2-sidebars-inline reference-layout">
+        <main id="content" class="layout__content">
+          <div class="layout__header reference-layout__header">
+            
+            
+            <mdn-survey></mdn-survey>
+            <h1>Inputs and input sources</h1>
+             <section class="content-section">
+    
+    <p>A full WebXR experience isn't just about showing the user a wholly virtual scene or augmenting reality by adding to or altering the world around them. In order to make an experience that's fulfilling and engaging, the user needs to be able to interact with it. To that end, WebXR provides support for a variety of kinds of input devices.</p>
+<p>In this guide, we'll look at how to use WebXR's input device management features to determine what input sources are available and how to then monitor those sources for inputs in order to handle user interactivity with your virtual or augmented environment.</p>
+  </section>
+          </div>
+          <aside class="layout__right-sidebar reference-layout__toc">
+            <nav class="reference-toc">
+      <h2>In this article</h2>
+      <ul>
+        <li><a href="#inputs_in_webxr">Inputs in WebXR</a></li><li><a href="#managing_input_sources">Managing input sources</a></li><li><a href="#input_profiles">Input profiles</a></li><li><a href="#actions">Actions</a></li><li><a href="#facing_and_targeting">Facing and targeting</a></li><li><a href="#advanced_controllers_using_the_gamepad_object">Advanced controllers using the gamepad object</a></li><li><a href="#incorporating_input_from_non-webxr_sources">Incorporating input from non-WebXR sources</a></li><li><a href="#see_also">See also</a></li>
+      </ul>
+    </nav>
+            <mdn-placement-sidebar></mdn-placement-sidebar>
+          </aside>
+          <div class="layout__body reference-layout__body">
+            <section class="content-section" aria-labelledby="inputs_in_webxr">
+    <!--lit-part nFXa9sdYMlM=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Inputs%20in%20WebXR"></a><h2 id="inputs_in_webxr" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#inputs_in_webxr">Inputs in WebXR</a></h2><!--/lit-part-->
+    <p>Fundamentally, inputs in WebXR fall into two basic categories: targeting and actions. Targeting is the specification of a point in space by the user's input. This may involve the user tapping on a spot on the screen, tracking their eyes, or the use of a joystick or motion-sensing controller to move a cursor.</p>
+<p>Actions include both selection actions, such as clicking on a button, and squeeze actions, such as pulling a trigger or tightening your grip while wearing haptic gloves.</p>
+<p>By combining these two types of input with the changing of viewing position and/or orientation through the headset or other mechanisms, you can create an interactive simulated environment.</p>
+  </section><section class="content-section" aria-labelledby="input_device_types">
+    <!--lit-part gui/CqSZ4tQ=--><!--lit-node 0--><h3 id="input_device_types" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#input_device_types">Input device types</a></h3><!--/lit-part-->
+    <p>WebXR supports a variety of different types of devices to handle targeting and action inputs. These devices include but aren't limited to:</p>
+<ul>
+<li>Screen taps (particularly but not necessarily only on phones or tablets) can be used to simultaneously perform both targeting and selection.</li>
+<li>Motion-sensing controllers, which use accelerometers, magnetometers, and other sensors for motion tracking and targeting and may additionally include any number of buttons, joysticks, thumbpads, touchpads, force sensors, and so on to provide additional input sources for both targeting and selection.</li>
+<li>Squeezable triggers or glove grip pads to provide squeeze actions.</li>
+<li>Voice commands using speech recognition.</li>
+<li>Spatially-tracked articulated hands, such as <a href="https://en.wikipedia.org/wiki/Wired_glove" class="external" target="_blank">wired gloves</a> can provide both targeting and squeeze actions, as well as selection if outfitted with buttons or other sources of selection actions.</li>
+<li>Single-button click devices.</li>
+<li>Gaze tracking (following the movements of the eye to choose targets).</li>
+</ul>
+  </section><section class="content-section" aria-labelledby="input_sources">
+    <!--lit-part Yxq+AxhzmZY=--><!--lit-node 0--><h3 id="input_sources" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#input_sources">Input sources</a></h3><!--/lit-part-->
+    <p>Each source of WebXR input data is represented by an <a href="../XRInputSource.html"><code>XRInputSource</code></a> object which describes the input source and its current state. The information for each input source includes which hand it's held in (if applicable), what targeting method it uses, <a href="../XRSpace.html"><code>XRSpace</code></a>s that can be used to draw the targeting ray and to find the targeted object or location as well as to draw objects in the user's hands, and profile strings specifying the preferred way to represent the controller in the user's viewing area as well as how the input operates.</p>
+<p>The fundamental capabilities of an input source are:</p>
+<dl>
+<dt id="targeting"><a href="#targeting">Targeting</a></dt>
+<dd>
+<p>Monitoring directional controls (either a motion-sensing pointer or a joystick or trackpad, for example) to aim in a direction, possibly at a target, though targeting is left to you to implement yourself. See <a href="#facing_and_targeting">Facing and targeting</a> for further information.</p>
+</dd>
+<dt id="selecting"><a href="#selecting">Selecting</a></dt>
+<dd>
+<p>Using the main "select" button or other input on the controller to choose the targeted direction (or the object at which it points), or to otherwise engage an action. For details on the primary action, see <a href="#primary_action">Primary action</a>.</p>
+</dd>
+<dt id="squeezing"><a href="#squeezing">Squeezing</a></dt>
+<dd>
+<p>Squeezing the controller or a mechanism on the controller to engage a secondary action. The section <a href="#primary_squeeze_action">Primary squeeze action</a> describes this in more detail.</p>
+</dd>
+</dl>
+<p>Any additional capabilities a WebXR controller may have are accessed through the input source's <a href="../XRInputSource/gamepad.html" title="gamepad"><code>gamepad</code></a> object. This object provides access to all of the buttons, axes, trackpads, and so forth that may be a part of the controller. See <a href="#advanced_controllers_using_the_gamepad_object">Advanced controllers using the gamepad object</a> to learn how to use these controllers.</p>
+  </section><section class="content-section" aria-labelledby="instance_properties_of_input_sources">
+    <!--lit-part XNKJ0GafGrY=--><!--lit-node 0--><h3 id="instance_properties_of_input_sources" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#instance_properties_of_input_sources">Instance properties of input sources</a></h3><!--/lit-part-->
+    <p>Each individual <code>XRInputSource</code> has a set of properties that describe the input's available axes and buttons, which hand the user's holding it in, and how the input source is used to handle targeting within the 3D space.</p>
+<h4 id="handedness">Handedness</h4>
+<p><strong>Handedness</strong>, indicated by the <code>XRInputSource</code> property <a href="../XRInputSource/handedness.html" title="handedness"><code>handedness</code></a>, is a string which indicates which of the viewer's hands the controller is in: <code>left</code> or <code>right</code>. It can also be set to <code>none</code> if the controller isn't hand-held, or if it's unknown which hand the controller is in.</p>
+<p>Handedness can be used for various things, including selecting an appropriate mesh to use to represent the controller in the view and to help present it in the correct hand if drawing hands on the display. It can also be useful if your app uses the notion of "main hand" and "off hand" for determining the functionality of a controller; in a game, for example, the main hand controller may be the player's weapon while the off hand controller might be used to control the positioning of a shield.</p>
+<h4 id="targeting_ray_mode">Targeting ray mode</h4>
+<p>The targeting ray mode is a string found in the <a href="../XRInputSource/targetRayMode.html" title="targetRayMode"><code>targetRayMode</code></a> property. It describes the technique used to determine the targeting ray and how it should be shown to the user if presented visually.</p>
+<p>When the targeting ray mode is <code>gaze</code>, the ray's origin is at the viewer and aims in the direction the user is facing. This gaze input method is fairly simple, and doesn't need any special controls, as it will be based on the facing direction reported by the headset or whatever device is used to determine what direction the viewer's face is pointing in. The target ray should extend outward from between the eyes in a direction perpendicular to the viewer's face.</p>
+<p>More flexible is the <code>tracked-pointer</code> mode, in which the ray's origin is at a handheld controller or hand tracking system's origin and extends outward in the direction in which the controller is pointing. The ray extends outward in a direction defined by whatever platform and controller are being used, if that's defined; otherwise, the ray extends in the same direction the user is pointing in with their index finger, if it were currently outstretched.</p>
+<p>The third and final target ray mode is most commonly found on mobile devices like smartphones and tablets. The <code>screen</code> mode indicates that the target ray is determined based on the user interacting with the WebXR context by engaging with the screen in some way—most likely by the viewer tapping the screen or dragging the target ray around with their fingers.</p>
+<h4 id="target_ray_space">Target ray space</h4>
+<p>The <a href="../XRSpace.html"><code>XRSpace</code></a> used to describe the position and orientation of the target ray is found in the <a href="../XRInputSource/targetRaySpace.html" title="targetRaySpace"><code>targetRaySpace</code></a> property. This space's native origin is located at the point from which the target ray is emitted (such as the front tip of the controller, or the end of a gun barrel if the controller is being rendered as a gun, for example), and the space's orientation vector extends outward along the path of the target ray.</p>
+<p>You can easily obtain the target ray corresponding to the <code>targetRaySpace</code> from within the drawing handler for a given frame using <a href="../XRFrame.html"><code>XRFrame</code></a>'s <a href="../XRFrame/getPose.html" title="getPose()"><code>getPose()</code></a> method. The returned <a href="../XRPose.html"><code>XRPose</code></a>'s <a href="../XRPose/transform.html" title="transform"><code>transform</code></a> is the transform corresponding to the target ray. Thus, for an input controller <code>primaryInput</code>:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>let targetRayPose = frame.getPose(primaryInput.targetRaySpace, viewerRefSpace);
+let targetRayOrigin = targetRayPose.transform.position;
+let targetRayVector = targetRayPose.transform.orientation;
+</code></pre></div>
+<p>With this, you now have the point from which the targeting ray is emitted (<code>targetRayOrigin</code>) and the direction in which it's pointing (<code>targetRayVector</code>), given in the viewer's reference space (<code>viewerRefSpace</code>). That's everything you need to be able to draw the targeting ray, determine what's being pointed at, do hit testing, and so forth.</p>
+<h4 id="grip_space">Grip space</h4>
+<p>The input source's <a href="../XRInputSource/gripSpace.html" title="gripSpace"><code>gripSpace</code></a> property is an <code>XRSpace</code> you can use to render objects so they appear to be held in the viewer's hand.</p>
+<p><strong>Figure: The coordinate system for the left hand's grip space.</strong>
+<img src="Inputs/dark_left.svg" alt="A diagram showing how the grip space indicates the local coordinate system for the player's hand relative to the world." width="630" height="630" loading="lazy">
+<strong>Figure: The coordinate system for the right hand's grip space.</strong>
+<img src="Inputs/dark_right.svg" alt="A diagram showing how the grip space indicates the local coordinate system for the player's hand relative to the world." width="630" height="630" loading="lazy"></p>
+<p>The grip space's native origin, located around the center of the player's fist, is (0, 0, 0) within the input source's local coordinate system, while the <a href="../XRSpace.html"><code>XRSpace</code></a> specified by <code>gripSpace</code> can be used at any time to convert coordinates or vectors from the input source's space into world coordinates (or vice versa).</p>
+<p>This means that if you use a 3D model to represent your controller, your player's avatar's hands, or anything else representative of the controller's position in space, the <code>gripSpace</code> can be used as the transform matrix that correctly positions and orients the object's model for rendering. To do this, it's necessary to use the transform to convert the grip space to the world coordinate system used by WebGL for rendering purposes.</p>
+<p><strong>Figure: Mapping the grip space to the world coordinate system. The distances <em>x</em>, <em>y</em>, and <em>z</em> together make up the world coordinates (<em>x</em>, <em>y</em>, z) corresponding to the origin of the grip space <em>G</em>.</strong>
+<img src="Inputs/gripspace-on-worldspace.svg" alt="A diagram showing the relationship between the grip space and the world space" width="587" height="473" loading="lazy"></p>
+<p>In the diagram above, we see the grip space, whose origin is located at <em>G</em>, at the midpoint of the user's grip on the controller, which is pointing directly away from the user, parallel to the <em>z</em> axis. Relative to the origin of the world space, <em>W</em>, the grip space's origin is located <em>x</em> units to the right, <em>y</em> units above, and <em>z</em> units farther away. Given the directionality of the axes, the coordinates of the grip space can be expressed in world coordinates as (<em>x</em>, <em>y</em>, -<em>z</em>); <em>z</em> is negative since the grip space is farther away along the <em>z</em> axis, and is thus in the negative direction.</p>
+<p>If the controller were instead positioned to the left of and closer to the user than the world space origin (or possibly behind the user, if the user is located at the origin, although that's an uncomfortable way to hold a controller), the coordinates would have a negative value for <em>x</em>, but a positive value for <em>z</em>. The value of <em>y</em> would still be positive unless the controller was moved below the world space origin.</p>
+<p>This is shown in the diagram below, in which the controller is located down and to the left of the world space's origin, with the controller also moved to be closer to us than the origin. As a result, the values of <em>x</em> and <em>y</em> are both negative, while <em>z</em> is positive.</p>
+<p><strong>Figure Mapping a grip space to the world origin when the controller is positioned below and to the left of the world origin, and closer to us than the world origin is.</strong>
+<img src="Inputs/gripspace-on-worldspace-diag.svg" alt="The relationship between another grip space and the world space" width="403" height="472" loading="lazy"></p>
+<h4 id="gamepad_record">Gamepad record</h4>
+<p>Each input source has a <a href="../XRInputSource/gamepad.html" title="gamepad"><code>gamepad</code></a> property which, if not <code>NULL</code>, is a <a href="../Gamepad.html"><code>Gamepad</code></a> object describing the various controls and widgets available on the controller. If the input device only has the primary movement sensors, a squeeze control, and a button, it may not have a <code>Gamepad</code> record. If, however, the <code>gamepad</code> is present, you can use it to identify and poll the buttons and axes available on the controller.</p>
+<p>While the <code>Gamepad</code> record is defined by the <a href="../Gamepad_API.html">Gamepad API</a> specification, it's not actually managed by the Gamepad API, and doesn't function exactly the same way. See <a href="#advanced_controllers_using_the_gamepad_object">Advanced controllers using the gamepad object</a> for more detailed information.</p>
+<h4 id="profile_strings">Profile strings</h4>
+<p>Each input source can have zero or more <strong>input profile name</strong> strings, found in the array <a href="../XRInputSource/profiles.html" title="profiles"><code>profiles</code></a>, each of which describes a preferred visual representation of the input source within the 3D world as well as how the input source functions. The use of these profiles is briefly described under <a href="#input_profiles">Input profiles</a> below.</p>
+  </section><section class="content-section" aria-labelledby="transient_input_sources">
+    <!--lit-part FAs32MMPoko=--><!--lit-node 0--><h3 id="transient_input_sources" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#transient_input_sources">Transient input sources</a></h3><!--/lit-part-->
+    <p>Some devices may create <strong>transient input sources</strong> to be used in tandem with an action which doesn't really come from that device, but is being presented as if it is. For example, if an XR device provides a mode in which the mouse is used to simulate events on the device, a new <a href="../XRInputSource.html"><code>XRInputSource</code></a> object might be created to represent the simulated input source for the duration of handling the action.</p>
+<p>This is necessary because of the separation that's maintained between standard input devices and XR input sources. An artificial source is used to represent the external source for the duration of each <a href="#transient_actions">transient action</a>.</p>
+  </section><section class="content-section" aria-labelledby="managing_input_sources">
+    <!--lit-part KuCcqxVnlng=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Managing%20input%20sources"></a><h2 id="managing_input_sources" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#managing_input_sources">Managing input sources</a></h2><!--/lit-part-->
+    <p>When multiple input sources are available, you need to be able to obtain information about each one, including its position and orientation, its targeting ray (if applicable to your needs), and details that can help you decide how to present the input source visually, if at all. You also need to be able to determine which input source to use for what activities; for example, if the user has two controllers, which one will be tracked for manipulating UI elements, or will both?</p>
+<p>To manage input sources, then, you need to be able to enumerate input sources, examine profile information about each input source, and decide how to use each input controller.</p>
+  </section><section class="content-section" aria-labelledby="enumerating_input_sources">
+    <!--lit-part WYHZrrPkmYo=--><!--lit-node 0--><h3 id="enumerating_input_sources" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#enumerating_input_sources">Enumerating input sources</a></h3><!--/lit-part-->
+    <p>The WebXR session represented by the <a href="../XRSession.html"><code>XRSession</code></a> object has an <a href="../XRSession/inputSources.html" title="inputSources"><code>inputSources</code></a> property which is a <em>live</em> list of the WebXR input devices currently connected to the XR system.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>let inputSourceList = xrSession.inputSources;
+</code></pre></div>
+<p>Due to the fact that the contents of the <a href="../XRInputSource.html"><code>XRInputSource</code></a> objects representing each input source in the list are read-only, changes to these inputs are made by the WebXR system by deleting the source's record and adding a new one to replace it. An <a href="../XRSession/inputsourceschange_event.html" title="inputsourceschange"><code>inputsourceschange</code></a> event is sent to your <code>XRSession</code> whenever one or more of the input sources change, or when an input source is added to or removed from the list.</p>
+<p>For example, if you need to keep up with which controller is held in each of the player's hands, you might do something like this:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>let inputSourceList = NULL;
+let leftHandSource = NULL;
+let rightHandSource = NULL;
+
+xrSession.addEventListener("inputsourceschange", (event) =&gt; {
+  inputSourceList = event.session.inputSources;
+
+  inputSourceList.forEach((source) =&gt; {
+    switch (source.handedness) {
+      case "left":
+        leftHandSource = source;
+        break;
+      case "right":
+        rightHandSource = source;
+        break;
+    }
+  });
+});
+</code></pre></div>
+<p>The <code>inputsourceschange</code> event is also fired once when the session's creation callback first completes execution, so you can use it to fetch the input source list as soon as it's available at startup time. The event is delivered as an <a href="../XRInputSourcesChangeEvent.html"><code>XRInputSourcesChangeEvent</code></a>, which includes three properties of interest:</p>
+<dl>
+<dt id="session"><a href="../XRInputSourcesChangeEvent/session.html" title="session"><code>session</code></a></dt>
+<dd>
+<p>The <code>XRSession</code> for which the input sources have changed.</p>
+</dd>
+<dt id="added"><a href="../XRInputSourcesChangeEvent/added.html" title="added"><code>added</code></a></dt>
+<dd>
+<p>An array of zero or more <a href="../XRInputSource.html"><code>XRInputSource</code></a> objects indicating the input sources that have been newly added to the XR system.</p>
+</dd>
+<dt id="removed"><a href="../XRInputSourcesChangeEvent/removed.html" title="removed"><code>removed</code></a></dt>
+<dd>
+<p>An array of zero or more <a href="../XRInputSource.html"><code>XRInputSource</code></a> objects indicating any input sources that have been removed from the XR system.</p>
+</dd>
+</dl>
+  </section><section class="content-section" aria-labelledby="identifying_the_inputs_profile">
+    <!--lit-part dNTwqsMmd8g=--><!--lit-node 0--><h3 id="identifying_the_inputs_profile" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#identifying_the_inputs_profile">Identifying the input's profile</a></h3><!--/lit-part-->
+    <p>Each input source has a <a href="../XRInputSource/profiles.html" title="profiles"><code>profiles</code></a> property, which contains a live list of the WebXR input profiles which apply to the input source, in order of specificity from most-specific to least.</p>
+<p>In order to do anything meaningful involving scanning of profiles beyond basic identification of features, you may need to import the JSON profile database from the <a href="https://github.com/immersive-web/webxr-input-profiles/tree/main/packages/registry" class="external" target="_blank">WebXR Input Profiles Registry</a>.</p>
+<p>See <a href="#input_profiles">Input profiles</a> for more specific details on working with input profiles.</p>
+  </section><section class="content-section" aria-labelledby="choosing_the_primary_controller">
+    <!--lit-part BrwIJtQhTdc=--><!--lit-node 0--><h3 id="choosing_the_primary_controller" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#choosing_the_primary_controller">Choosing the primary controller</a></h3><!--/lit-part-->
+    <p>In order to avoid having problems introduced by multiple controllers trying to inadvertently manipulate the UI at the same time, your app may need to have a "primary" controller. Not only would this controller then take the responsibility of clicking through the user interface of your app, but it would also be considered the "main hand," while other controllers would then be off-hand or additional controllers.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+This doesn't mean your app <em>needs</em> to decide upon a primary controller. But if it does, these strategies may help.</p>
+</div>
+<p>There are a few ways you can decide upon a primary controller. We'll look at three.</p>
+<h4 id="handedness_2">Handedness</h4>
+<p>The most direct way to decide which controller is primary is to have a user-definable "Handedness" preference that the user sets to indicate which of their hands is dominant. You would then look at each input source and find one matching this, if available, falling back to another controller if no controller is in that hand.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const primaryInputSource =
+  xrSession.inputSources.find((src) =&gt; src.handedness === user.handedness) ??
+  xrSession.inputSources[0];
+</code></pre></div>
+<p>This snippet of code starts by assuming that the first input source is the primary, but then looks for one whose <a href="../XRInputSource/handedness.html" title="handedness"><code>handedness</code></a> matches the one specified in the <code>user</code> object. If it matches, that input source is selected as the primary.</p>
+<h4 id="first-used">First-used</h4>
+<p>Another option is to use the first input the user triggers the select action on. The code below starts by assuming the first input source is the primary, then establishes a handler for the <a href="../XRSession/select_event.html" title="select"><code>select</code></a> event that records the event's source as the primary input source. Then the <code>select</code> event handler is replaced with the function <code>realSelectHandler()</code>, which will be used for handling all future <code>select</code> events. Then we pass the event through to <code>realSelectHandler()</code> to allow the event to be processed as normal.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>let primaryInputSource = xrSession.inputSources[0];
+
+xrSession.onselect = (event) =&gt; {
+  primaryInputSource = event.inputSource;
+  xrSession.onselect = realSelectHandler;
+  return realSelectHandler(event);
+};
+</code></pre></div>
+<p>The effect is that we set the primary input source the first time a <code>select</code> event is received, regardless of which input source it comes from, handle the event as normal from there, and from then on handle the events as usual without any further worries about which input source is primary.</p>
+<h4 id="user-selected">User-selected</h4>
+<p>The most complex way to determine a primary input source is highly flexible but can require a great deal of work to implement. In this scenario, you iterate over the list of input sources and their profiles to gather information about each input source, then present a user interface describing each input, allowing the user to assign uses to each of them. Doing this well could be a big job, but it might be useful for complex apps that may involve several user inputs.</p>
+<p>Much of the information you need in order to implement this can be found in the section on <a href="#input_profiles">Input profiles</a>, below. Details are beyond the scope of this article, however.</p>
+  </section><section class="content-section" aria-labelledby="input_profiles">
+    <!--lit-part fdjyM7CrTnc=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Input%20profiles"></a><h2 id="input_profiles" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#input_profiles">Input profiles</a></h2><!--/lit-part-->
+    <p>As mentioned above, each input source has a list of input profile names that correspond to a set of information describing that input source and how it can be used. Those names are found in the input source's <a href="../XRInputSource/profiles.html" title="profiles"><code>profiles</code></a> property, and the official registry of these profile strings is maintained in the <a href="https://github.com/immersive-web/webxr-input-profiles" class="external" target="_blank">WebXR Input Profiles Registry</a> on GitHub.</p>
+<p>For example, the <code>generic-trigger-squeeze-touchpad</code> profile name can be used to locate the following JSON profile data by locating the <code>profileId</code> field that has the value <code>generic-trigger-squeeze-touchpad</code>.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">json</span></div><pre class="language-json notranslate"><code>{
+  "profileId": "generic-trigger-squeeze-touchpad",
+  "fallbackProfileIds": [],
+  "layouts": {
+    "left-right-none": {
+      "selectComponentId": "xr-standard-trigger",
+      "components": {
+        "xr-standard-trigger": { "type": "trigger" },
+        "xr-standard-squeeze": { "type": "squeeze" },
+        "xr-standard-touchpad": { "type": "touchpad" }
+      },
+      "gamepad": {
+        "mapping": "xr-standard",
+        "buttons": [
+          "xr-standard-trigger",
+          "xr-standard-squeeze",
+          "xr-standard-touchpad"
+        ],
+        "axes": [
+          { "componentId": "xr-standard-touchpad", "axis": "x-axis" },
+          { "componentId": "xr-standard-touchpad", "axis": "y-axis" }
+        ]
+      }
+    }
+  }
+}
+</code></pre></div>
+<p>This is a controller which regardless of which hand it's in (and even if it's not currently associated with a specific hand) has three components: a standard trigger, a standard squeeze input, and a touchpad. According to the <code>selectComponentId</code> property, the <code>xr-standard-trigger</code> component is the one used to perform a primary action.</p>
+<p>Additionally, the <code>gamepad</code> object maps those inputs to the gamepad, assigning the trigger, squeeze, and touchpad tap to the input source's button list and the touchpad's "axes" to the axis list.</p>
+<p>The list in <code>profiles</code> is in order of reverse specificity; that is, the most precise description is first, and the least precise description is last. The first entry in the list is typically indicative of the precise model of the controller, or of a model with which the controller is compatible.</p>
+<p>For example, entry 0 in <code>profiles</code> for an Oculus Touch controller is <code>oculus-touch</code>. The next entry is <code>generic-trigger-squeeze-thumbstick</code>, indicating a generic device with a trigger, a squeeze control, and a thumbstick. While the Oculus Touch controller actually has a thumbpad rather than a thumbstick, the overall description is "close enough" that the details within the profile matching the name will let the controller be interpreted usefully.</p>
+  </section><section class="content-section" aria-labelledby="actions">
+    <!--lit-part sQeFc78tKw0=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Actions"></a><h2 id="actions" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#actions">Actions</a></h2><!--/lit-part-->
+    <p>In WebXR, an <strong>action</strong> is a special type of event that's triggered by the user activating a special button on the controller. Any additional buttons (as well as things like axis controllers—joysticks, for example—and the like) are managed solely through the <a href="../XRInputSource.html"><code>XRInputSource</code></a> property <a href="../XRInputSource/gamepad.html" title="gamepad"><code>gamepad</code></a>. See <a href="#advanced_controllers_using_the_gamepad_object">Advanced controllers using the gamepad object</a> below for further details on supporting these extra controls and buttons.</p>
+<p>The <strong>primary action</strong> is the action that is triggered when the user engages the main control element that serves a special purpose. There are currently two types of primary action:</p>
+<ul>
+<li>The <strong>primary action</strong> is the action which is activated when the user activates the primary or "select" input on their controller. This input may be a button, trigger, trackpad tap or click, a voice command, or special hand gesture, or possibly some other form of input. For example, on a hand controller with a trackpad that can be clicked on, a trigger control, as well as back and "menu" buttons, clicking the trackpad is likely to be the primary action. Some controllers might have a button labeled "select." On a gamepad-style controller, the "A" button is likely to be the primary action.</li>
+<li>The <strong>primary squeeze action</strong> is the action which is engaged when the user squeezes the controller. This "squeezing" may be detected by literally using a pressure sensor in the controller, or may be simulated using a trigger, hand gesture, or other mechanism. For example, if the input controller is a haptic glove, it might report that the primary squeeze action has occurred when the user makes and clenches their fist.</li>
+</ul>
+<p>While a given input source can have only one primary action and one primary squeeze action, there may be more than one control on the input device configured to trigger each primary action. For example, the user might have their controller set up so that both tapping and clicking the trackpad generate a primary action.</p>
+<p>These types of input actions are described in more detail below.</p>
+  </section><section class="content-section" aria-labelledby="primary_action">
+    <!--lit-part eYwya0gfVbQ=--><!--lit-node 0--><h3 id="primary_action" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#primary_action">Primary action</a></h3><!--/lit-part-->
+    <p>Each input source should define a <strong>primary action</strong>. A primary action (which will sometimes be shortened to "select action") is a platform-specific action which responds to the user manipulating it by delivering, in order, the events <a href="../XRSession/selectstart_event.html" title="selectstart"><code>selectstart</code></a>, <a href="../XRSession/select_event.html" title="select"><code>select</code></a>, and <a href="../XRSession/selectend_event.html" title="selectend"><code>selectend</code></a>. Each of these events is of type <a href="../XRInputSourceEvent.html"><code>XRInputSourceEvent</code></a>.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+If an input source doesn't have a primary action, the input source is considered to be an <strong>auxiliary input source</strong>.</p>
+</div>
+<p>When the user points a device along a target ray in your 3D space and then triggers a select action, the following events are sent to the active <a href="../XRSession.html"><code>XRSession</code></a>:</p>
+<ol>
+<li>A <a href="../XRSession/selectstart_event.html" title="selectstart"><code>selectstart</code></a> event, indicating that the user has performed the activity that begins the primary action. This may be a gesture, pressing a button, or the like.</li>
+<li>If the primary action ends successfully (for example, due to the user releasing the button or trigger), rather than because of an error, the <a href="../XRSession/select_event.html" title="select"><code>select</code></a> event is sent.</li>
+<li>After the <code>select</code> event is sent <em>or</em> if the controller on which the action is being performed is disconnected or otherwise becomes unavailable, the <a href="../XRSession/selectend_event.html" title="selectend"><code>selectend</code></a> event is sent.</li>
+</ol>
+<p>Generally speaking, the <code>selectstart</code> and <code>selectend</code> events tell you when you might want to display something to the user indicating that the primary action is going on. This might be drawing a controller with the activated button in a new color, or showing the targeted object being grabbed and moved around, starting when <code>selectstart</code> arrives and stopping when <code>selectend</code> is received.</p>
+<p>The <code>select</code> event, on the other hand, is the event that tells your code that the user has completed the action they want to complete. This might be as simple as throwing an object or pulling the trigger of a gun in a game, or as involved as placing an object that they were dragging around the world back down again in a new location.</p>
+<p>If your primary action is a simple trigger action and you don't need to animate anything while the trigger is engaged, you can ignore the <code>selectstart</code> and <code>selectend</code> events and act on the <code>select</code> event.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>xrSession.addEventListener("select", (event) =&gt; {
+  let inputSource = event.inputSource;
+  let frame = event.frame;
+
+  /* handle the event */
+});
+</code></pre></div>
+<p>Some actions may send these events very quickly, one after the other. The time that elapses between these events depends on both the hardware apparatus that causes the action as well as the software drivers that interpret the hardware action and turn it into a series of events. Do not presume these events will happen with any particular amount of time between them.</p>
+<p>For example, if the hardware that causes the primary action to occur is a button, you would receive <code>selectstart</code> when the user presses the button, then <code>select</code> and <code>selectend</code> when the user releases it.</p>
+<p>There are a number of examples showing how to handle <code>select</code> events throughout the documentation, such as in the section on <a href="#targeting_and_the_targeting_ray">Targeting and the targeting ray</a> elsewhere in this article.</p>
+  </section><section class="content-section" aria-labelledby="primary_squeeze_action">
+    <!--lit-part //FiyWZEMFQ=--><!--lit-node 0--><h3 id="primary_squeeze_action" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#primary_squeeze_action">Primary squeeze action</a></h3><!--/lit-part-->
+    <p>A <strong>primary squeeze action</strong> is a platform-specific action which sends the <a href="../XRSession.html"><code>XRSession</code></a> <a href="../XRSession/squeezestart_event.html" title="squeezestart"><code>squeezestart</code></a>, <a href="../XRSession/squeezeend_event.html" title="squeezeend"><code>squeezeend</code></a>, and <a href="../XRSession/squeeze_event.html" title="squeeze"><code>squeeze</code></a> events. This is typically generated by the user squeezing the controller, making a hand gesture that mimes grabbing something, or using (squeezing) a trigger.</p>
+<p>The sequence of events is identical to those sent by the primary action, save for the name of each event:</p>
+<ol>
+<li>A <a href="../XRSession/squeezestart_event.html" title="squeezestart"><code>squeezestart</code></a> event is sent to the <a href="../XRSession.html"><code>XRSession</code></a>, indicating that the user has begun a squeeze action.</li>
+<li>If the primary squeeze action ends successfully, the session is sent a <a href="../XRSession/squeeze_event.html" title="squeeze"><code>squeeze</code></a> event.</li>
+<li>Then, a <a href="../XRSession/squeezeend_event.html" title="squeezeend"><code>squeezeend</code></a> event is sent to indicate that the squeeze action is no longer underway. This is sent whether the squeeze action succeeded or not.</li>
+</ol>
+<p>Two common uses for the primary squeeze action are to grasp and/or pick up objects in the 3D world and to squeeze a trigger to fire a weapon in a game or simulation.</p>
+<h4 id="example">Example</h4>
+<p>This sample code shows a set of squeeze event handlers that implement these events to manage picking up and holding objects from the scene. The code presumes the existence of an <code>avatar</code> object representing the character, as used in several other examples on this page, as well as the <code>pickUpObject()</code> and <code>dropObject()</code> functions, which handle transferring an object from the world to a particular hand and releasing an object from the hand and placing it back into the world.</p>
+<h5 id="picking_up_an_object_handling_squeezestart_events">Picking up an object: handling squeezestart events</h5>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>xrSession.addEventListener("squeezestart", (event) =&gt; {
+  const targetRaySpace = event.inputSource.targetRaySpace;
+  const hand = event.inputSource.handedness;
+
+  let targetRayPose = event.frame.getPose(targetRaySpace, viewerRefSpace);
+  if (!targetRayPose) {
+    return;
+  }
+
+  let targetRayTransform = targetRayPose.transform;
+  let targetObject = findTargetObject(targetRayTransform);
+
+  if (targetObject) {
+    if (avatar.heldObject[hand]) {
+      dropObject(hand);
+    }
+    pickUpObject(targetObject, hand);
+  }
+});
+</code></pre></div>
+<p>The <a href="../XRSession/squeezestart_event.html" title="squeezestart"><code>squeezestart</code></a> event is handled by getting those pose and transform as usual, and getting the input source's <a href="../XRInputSource/handedness.html" title="handedness"><code>handedness</code></a> into the local constant <code>hand</code>. We'll use that to map the hand to the object held in that hand.</p>
+<p>The code then identifies the targeted object, then, if an object is found along the targeting ray, picks it up. Picking up an object involves first looking to see if the hand represented by dropping any object already being held in the hand represented by <code>avatar.heldObject[hand]</code>. If an object is already held in that hand, it's dropped by calling the <code>dropObject()</code> function.</p>
+<p>Then <code>pickUpObject()</code> is called, specifying the targeted object as the object to remove from the scene and place into the specified <code>hand</code>. <code>pickUpObject()</code> also records the original position of the object so it can be returned to that spot if the squeeze is canceled or aborted.</p>
+<h5 id="dropping_the_object_the_squeeze_event_handler">Dropping the object: the squeeze event handler</h5>
+<p>The <a href="../XRSession/squeeze_event.html" title="squeeze"><code>squeeze</code></a> event is received when the user ends the squeeze action by releasing their grip. In this example, we interpret that as releasing the currently-held object, dropping it into the scene at the targeted location.</p>
+<p>This code presumes the existence of additional functions <code>findTargetPosition()</code>, which follows the target ray until it collides with something, then returns the coordinates at which the collision occurred, and <code>putObject()</code>, which places the object held in the specified <code>hand</code> at the given position, removing it from the hand.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>xrSession.addEventListener("squeeze", (event) =&gt; {
+  const targetRaySpace = event.inputSource.targetRaySpace;
+  const hand = event.inputSource.handedness;
+
+  let targetRayPose = event.frame.getPose(targetRaySpace, viewerRefSpace);
+  if (!targetRayPose) {
+    return;
+  }
+
+  let targetRayTransform = targetRayPose.transform;
+  let targetPosition = findTargetPosition(targetRayTransform);
+
+  if (targetPosition) {
+    if (avatar.heldObject[hand]) {
+      putObject(hand, targetPosition);
+      avatar.heldObject[hand] = null;
+    }
+  }
+});
+</code></pre></div>
+<p>As in the <code>squeezestart</code> handler, this begins by collecting information needed about the event, including the hand that's dropping an object and the target ray's transform. The target ray transform is passed into the presumed <code>findTargetPosition()</code> function to get the coordinates at which to position the dropped object.</p>
+<p>With the position in hand, we can then drop the object by calling the <code>putObject()</code> function, which takes as its inputs the <code>hand</code> and the destination position. This function's job is to remove the object from the specified hand and add it back to the scene, with its position set to place it atop the coordinates returned by <code>findTargetPosition()</code>.</p>
+<h5 id="canceling_the_squeeze_in_the_squeezeend_handler">Canceling the squeeze in the squeezeend handler</h5>
+<p>The <a href="../XRSession/squeezeend_event.html" title="squeezeend"><code>squeezeend</code></a> event is received after the squeeze is complete, even if it fails. We handle it by returning the currently-held object to where it was when it was picked up.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>xrSession.addEventListener("squeezeend", (event) =&gt; {
+  const targetRaySpace = event.inputSource.targetRaySpace;
+  const hand = event.inputSource.handedness;
+
+  if (avatar.heldObject[hand]) {
+    returnObject(hand);
+    avatar.heldObject[hand] = null;
+  }
+});
+</code></pre></div>
+<p>Here, the <code>returnObject()</code> function is assumed to be one which knows how to return the object held in the specified <code>hand</code> to its initial position, as it was recorded by <code>pickUpObject()</code> in the <code>squeezestart</code> event handler.</p>
+<p>Here, the <code>returnObject()</code> function is assumed to be one which knows how to return the object held in the specified <code>hand</code> to its initial position, as it was recorded by <code>pickUpObject()</code> in the <code>squeezestart</code> event handler.</p>
+  </section><section class="content-section" aria-labelledby="transient_actions">
+    <!--lit-part ppVejoSr3R0=--><!--lit-node 0--><h3 id="transient_actions" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#transient_actions">Transient actions</a></h3><!--/lit-part-->
+    <p>If an XR device uses the mouse to simulate a controller when in the <code>inline</code> mode, the approximate sequence of things takes place:</p>
+<ol>
+<li>The user presses the mouse button while inside the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas"><code>&lt;canvas&gt;</code></a> presenting the WebXR scene.</li>
+<li>The mouse event is captured by the XR device's driver.</li>
+<li>The device creates a new <code>XRInputSource</code> to represent the simulated XR input source. The <a href="../XRInputSource/targetRayMode.html" title="targetRayMode"><code>targetRayMode</code></a> is set to <code>screen</code>, and the other information is filled out as appropriate. This new input source is temporarily added to the list that's returned by the <a href="../XRSession.html"><code>XRSession</code></a> property <a href="../XRSession/inputSources.html" title="inputSources"><code>inputSources</code></a>.</li>
+<li>The browser delivers <a href="../Element/pointerdown_event.html" title="pointerdown"><code>pointerdown</code></a> events corresponding to the action.</li>
+<li>A primary action is generated and sent to the app in the form of a <a href="../XRSession/selectstart_event.html" title="selectstart"><code>selectstart</code></a> event, with its source set to the new <code>XRInputSource</code>. Or, if the mouse is being used as an off-hand or secondary controller, an auxiliary action is sent instead.</li>
+<li>When the user releases the mouse button, the <a href="../XRSession/select_event.html" title="select"><code>select</code></a> event is sent to the <code>XRSession</code>, then the DOM receives a <a href="../Element/click_event.html" title="click"><code>click</code></a> event. The session then receives the <a href="../XRSession/selectend_event.html" title="selectend"><code>selectend</code></a> event indicating the completion of the action.</li>
+<li>When the action is completed, the browser deletes the transient input source, and any appropriate <a href="../Element/pointerup_event.html" title="pointerup"><code>pointerup</code></a> events are sent.</li>
+</ol>
+<p>Thus, the transient input source is indeed transient—it exists only for the duration of handling the input and will as such not be listed in the input source list.</p>
+  </section><section class="content-section" aria-labelledby="facing_and_targeting">
+    <!--lit-part eqlK8IdZwvs=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Facing%20and%20targeting"></a><h2 id="facing_and_targeting" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#facing_and_targeting">Facing and targeting</a></h2><!--/lit-part-->
+    <p><strong>Facing</strong> is the direction in which the viewer is looking. This isn't provided using an input source. Instead, it's obtained using the <a href="../XRPose.html"><code>XRPose</code></a> obtained from the current animation frame's <a href="../XRFrame/getViewerPose.html"><code>XRFrame.getViewerPose()</code></a> method. The rotation component of the viewer pose's transform matrix is the viewer's facing direction.</p>
+<p>You can learn more about how to use this the viewer pose to determine the facing direction in the article <a href="Cameras.html">Viewpoints and viewers</a>.</p>
+<p><strong>Targeting</strong> is the act of the user pointing in a particular direction using an input source. The input source's <a href="../XRInputSource/targetRaySpace.html" title="targetRaySpace"><code>targetRaySpace</code></a> is an <a href="../XRSpace.html"><code>XRSpace</code></a> (and actually probably an <a href="../XRReferenceSpace.html"><code>XRReferenceSpace</code></a>) which can be used to determine the orientation of the target ray relative to the viewer's facing direction.</p>
+<p>This may or may not involve actually pointing at a particular object within the 3D world; you have to determine this yourself using hit testing—that is, checking to see if the target ray intersects with any objects in your scene.</p>
+  </section><section class="content-section" aria-labelledby="targeting_and_the_targeting_ray">
+    <!--lit-part 51K4cvyFhu0=--><!--lit-node 0--><h3 id="targeting_and_the_targeting_ray" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#targeting_and_the_targeting_ray">Targeting and the targeting ray</a></h3><!--/lit-part-->
+    <p>The targeting ray, which is a ray whose origin is located at the origin of the targeting ray space and points in the direction that the user is pointing the controller device. The targeting ray is defined using an <a href="../XRSpace.html"><code>XRSpace</code></a> whose origin is located at the targeting ray's source (typically the outward-facing end of the controller or its representation in the 3D world), and whose orientation has -Z extending outward from the controller in the same direction as the <a href="../XRInputSource.html"><code>XRInputSource</code></a>'s <a href="../XRInputSource/gripSpace.html" title="gripSpace"><code>gripSpace</code></a>.</p>
+<p>This space is found in the input source's <a href="../XRInputSource/targetRaySpace.html" title="targetRaySpace"><code>targetRaySpace</code></a> property. It can be used to determine the direction the controller is pointing and to determine the origin and orientation of the target ray. That can be accomplished by doing something like the following example, which implements a <a href="../XRSession/select_event.html" title="select"><code>select</code></a> event handler that needs this information. As usual, this code is assuming the use of <a href="https://glmatrix.net/" class="external" target="_blank">glMatrix</a> to perform the matrix and vector math:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>xrSession.addEventListener("select", (event) =&gt; {
+  const targetRaySpace = event.inputSource.targetRaySpace;
+
+  let targetRayPose = event.frame.getPose(targetRaySpace, viewerRefSpace);
+  if (!targetRayPose) {
+    return;
+  }
+
+  let targetRayTransform = targetRayPose.transform;
+  let targetObject = findTargetObject(targetRayTransform);
+
+  if (targetObject) {
+    /* do stuff with the targeted object */
+  }
+});
+</code></pre></div>
+<p>This obtains the origin of the targeting ray in the vector <code>targetSourcePoint</code> and the ray's orientation in the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Quaternion">quaternion</a> <code>targetDirection</code>. With either the</p>
+<p>This starts by fetching the target ray's space into the local constant <code>targetRaySpace</code>. This is in turn used when calling the <a href="../XRFrame.html"><code>XRFrame</code></a> method <a href="../XRFrame/getPose.html" title="getPose()"><code>getPose()</code></a> to create an <a href="../XRPose.html"><code>XRPose</code></a> object representing the position and orientation of the target ray in the viewer's reference space, <code>viewerRefSpace</code>. If this is <code>null</code>, the event handler returns without doing anything further.</p>
+<p>The target ray's transform is obtained from the pose's <a href="../XRPose/transform.html" title="transform"><code>transform</code></a> property and stored in the local <code>targetRayTransform</code>. This is in turn used (in this case through a function called <code>findTargetObject()</code>) to find the first object the ray intersects with. If the targeting ray does intersect with an object in the scene, we can do whatever we need to with it.</p>
+<p>If you need to peel out the actual position of the target ray's origin and the ray's directionality, you can do so like this:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const targetRayOrigin = vec3.create();
+const targetRayDirection = quat.create();
+mat4.getTranslation(targetRayOrigin, viewerRefSpace);
+mat4.getRotation(targetRayDirection, viewerRefSpace);
+</code></pre></div>
+<p>To determine what object is targeted, follow the targeting ray until it intersects an object. This process is called <strong>hit testing</strong> or <strong>collision detection</strong>. The approach you take to hit testing depends very much on the specific needs of your app. The first question is: are you detecting collisions with virtual objects or terrain, real-world objects or terrain, or both?</p>
+<p>In any case, to identify the targeted object, you need to determine if the ray specified by the <a href="../XRInputSource.html"><code>XRInputSource</code></a> property <a href="../XRInputSource/targetRaySpace.html" title="targetRaySpace"><code>targetRaySpace</code></a> intersects any objects in the scene, whether they're virtual or real-world.</p>
+<p>See <a href="Targeting.html">Targeting and hit detection</a> for a more detailed look at what's involved.</p>
+  </section><section class="content-section" aria-labelledby="presenting_hand-held_objects">
+    <!--lit-part +pm9XD8ARGg=--><!--lit-node 0--><h3 id="presenting_hand-held_objects" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#presenting_hand-held_objects">Presenting hand-held objects</a></h3><!--/lit-part-->
+    <p>An input source's <a href="../XRInputSource/gripSpace.html" title="gripSpace"><code>gripSpace</code></a> property identifies an <a href="../XRSpace.html"><code>XRSpace</code></a> describing the origin and orientation to use when rendering an object so that it appears to be held in the same hand as its input source. This space is intended to be used when drawing a model of the handheld WebXR input controller represented by the object <a href="../XRInputSource.html"><code>XRInputSource</code></a>, but can just as well be used to draw any object, such as a ball, a tool, or a weapon. We covered the <a href="#grip_space">grip space</a> above, but let's see how it can be used to draw objects representative of the hand or in the hand.</p>
+<p>Since the origin of the grip space is located at the center of the hand's grip, you can use it as a starting point for rendering your object. Apply any needed offset transform to shift the origin to the start point for rendering your object as you apply any rotation needed to orient your model correctly to align with the grip space's orientation.</p>
+  </section><section class="content-section" aria-labelledby="advanced_controllers_using_the_gamepad_object">
+    <!--lit-part zfDEfC5h3s8=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Advanced%20controllers%20using%20the%20gamepad%20object"></a><h2 id="advanced_controllers_using_the_gamepad_object" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#advanced_controllers_using_the_gamepad_object">Advanced controllers using the gamepad object</a></h2><!--/lit-part-->
+    <p>An <a href="../XRInputSource.html"><code>XRInputSource</code></a> has a <a href="../XRInputSource/gamepad.html" title="gamepad"><code>gamepad</code></a> property whose value, if not <code>null</code>, is a <a href="../Gamepad.html"><code>Gamepad</code></a> object which provides access to gamepad-style buttons, axis controllers (such as joysticks or thumbpads), and so forth. This may include the same buttons that trigger the standard <a href="../XRInputSource.html"><code>XRInputSource</code></a> actions, but may include any number of additional buttons and controls.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+While <code>Gamepad</code> is defined by the <a href="../Gamepad_API.html">Gamepad API</a>, it is not managed by the Gamepad API, so you must not attempt to use any Gamepad API methods with it. The object type is reused as a convenience.</p>
+</div>
+<p>If the value of <code>gamepad</code> is <code>null</code>, the input source doesn't define any controls using the <code>Gamepad</code> record, either because it doesn't support it or because it doesn't have any added controls on it.</p>
+<p>This <code>gamepad</code> object is not only used to obtain access to specialty buttons, trackpads, and so forth, but also provides a way to more directly access and monitor the controls that serve as the primary select and squeeze inputs, since these are included in its <a href="../Gamepad/buttons.html" title="buttons"><code>buttons</code></a> list.</p>
+<p>Because this use of the <code>Gamepad</code> interface is a convenience rather than a true application of the Gamepad API, there are several differences between how it's used with WebXR and how it's used in Gamepad API applications. The most notable—but not the only—difference is that WebXR adds the <code>xr-standard</code> gamepad mapping, see the <a href="../XRInputSource/gamepad.html"><code>XRInputSource.gamepad</code></a> property for additional differences. This gamepad mapping defines how the controls on a typical one-hand handheld VR controller are mapped to gamepad controls.</p>
+  </section><section class="content-section" aria-labelledby="incorporating_input_from_non-webxr_sources">
+    <!--lit-part +HudJEzbu3M=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Incorporating%20input%20from%20non%2DWebXR%20sources"></a><h2 id="incorporating_input_from_non-webxr_sources" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#incorporating_input_from_non-webxr_sources">Incorporating input from non-WebXR sources</a></h2><!--/lit-part-->
+    <p>Sometimes, you need to have a way to let the user provide input using controllers which are external to WebXR. Most commonly, these inputs are from keyboards and mice, but you could also use non-XR gamepad devices, network inputs, or other sources of data to simulate user controls. While WebXR offers no support for directly interfacing these input devices with the XR scene, you can collect the input data yourself and apply it yourself.</p>
+<p>Assuming inputs are used to control an avatar within the simulation, which is the most common use case, WebXR inputs are used to affect the avatar in the following ways, using data collected from the non-XR input device:</p>
+<dl>
+<dt id="position"><a href="#position">Position</a></dt>
+<dd>
+<p>The avatar's position is changed by applying a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Delta">delta</a> to the previously known position, then replacing the avatar's reference space with a new one whose transform reflects the new position.</p>
+</dd>
+<dt id="orientation"><a href="#orientation">Orientation</a></dt>
+<dd>
+<p>The avatar's orientation or facing direction is changed by applying a delta to its rotation around the three axes, updating its orientation vector, then recomputing its reference space.</p>
+</dd>
+<dt id="action"><a href="#action">Action</a></dt>
+<dd>
+<p>The avatar performs an action, such as using an object or weapon, jumping, or any other activity not related to basic movement and rotation.</p>
+</dd>
+</dl>
+<p>Some inputs are instead used to control the application rather than the avatar. For example, a button might open an options menu used to configure the application. While that menu is open, inputs that would otherwise control the avatar might be instead applied to controlling the menu's interface.</p>
+  </section><section class="content-section" aria-labelledby="using_keyboard_and_mouse_events">
+    <!--lit-part tbyApmjrrVA=--><!--lit-node 0--><h3 id="using_keyboard_and_mouse_events" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#using_keyboard_and_mouse_events">Using keyboard and mouse events</a></h3><!--/lit-part-->
+    <p>Capturing input from the keyboard and mouse is done just like it is in any web application. Set up handlers for the events that you need to handle in order to obtain the inputs you want. It's what you do with those inputs that's interesting.</p>
+<p>Imagine an <code>avatar</code> object which we'll use to track information about the avatar and its worldview. We want the player to be able to use the <kbd>W</kbd>, <kbd>A</kbd>, <kbd>S</kbd>, and <kbd>D</kbd> keys to move forward, left, backward, and right. Because we are managing the avatar's position as defined by the keyboard and mouse in addition to anything the XR hardware might be doing, we need to maintain that information separately and apply it as a transform before rendering the avatar (or the world from the avatar's point of view).</p>
+<p>To accomplish that, we include in the <code>avatar</code> object a <code>posDelta</code> property, of type <a href="../DOMPoint.html"><code>DOMPoint</code></a>, which includes the offsets to apply to all three axes in order to adjust the avatar's position (the viewer pose's reference space's origin) to include movement and rotation from the keyboard and mouse.</p>
+<p>The corresponding code for keyboard input might look something like this:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>document.addEventListener("keydown", (event) =&gt; {
+  switch (event.key) {
+    case "a":
+    case "A":
+      avatar.posDelta.x -= ACCEL_X;
+      break;
+    case "d":
+    case "D":
+      avatar.posDelta.x += ACCEL_X;
+      break;
+    case "w":
+    case "W":
+      avatar.posDelta.y += ACCEL_Y;
+      break;
+    case "s":
+    case "S":
+      avatar.posDelta.y -= ACCEL_Y;
+      break;
+    default:
+      break;
+  }
+});
+</code></pre></div>
+<p>This is a simple example, where acceleration is constant and not particularly realistic. You can enhance this greatly by applying some knowledge of physics to have the acceleration change over time based on how long the key is held down and other factors.</p>
+  </section><section class="content-section" aria-labelledby="applying_inputs_to_the_scene">
+    <!--lit-part fbPX89MprQE=--><!--lit-node 0--><h3 id="applying_inputs_to_the_scene" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#applying_inputs_to_the_scene">Applying inputs to the scene</a></h3><!--/lit-part-->
+    <p>Now that we have the deltas that need to be applied to the position and orientation—in our example, in the <code>posDelta</code> and <code>orientDelta</code> properties of our <code>avatar</code> object—we can write code to apply those changes. Since we're already rendering the scene on a schedule, we can just add the code to apply these changes there, along with preparing and drawing the scene.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>function drawFrame(time, frame) {
+  applyExternalInputs(avatar);
+  let pose = frame.getViewerPose(avatar.referenceSpace);
+
+  animationFrameRequest = session.requestAnimationFrame(drawFrame);
+
+  /* draw the frame here */
+}
+</code></pre></div>
+<p>The <code>drawFrame()</code> function shown here is the callback invoked when it's time to draw the frame, as established by calling the <a href="../XRSession.html"><code>XRSession</code></a> method <a href="../XRSession/requestAnimationFrame.html" title="requestAnimationFrame()"><code>requestAnimationFrame()</code></a>. It calls a function <code>applyExternalInputs()</code> which we'll define momentarily; it takes the <code>avatar</code> object and uses its information to update the avatar's reference frame.</p>
+<p>After that, everything proceeds as usual, getting the viewer's pose from the updated reference frame, requesting the next frame callback through <code>requestAnimationFrame()</code>, and then continuing to set up WebGL and draw the scene. The drawing and other related code can be found in the example <a href="Movement_and_motion.html">Movement, orientation, and motion</a>.</p>
+<p>The <code>applyExternalInputs()</code> method takes the <code>avatar</code> object replaces its <code>referenceSpace</code> property with a new reference space that incorporates the updated deltas.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>function applyExternalInputs(avatar) {
+  if (!avatar.posDelta.x &amp;&amp; !avatar.posDelta.y &amp;&amp; !avatar.posDelta.z) {
+    return; // Player hasn't moved with keyboard
+  }
+
+  let newTransform = new XRRigidTransform({
+    x: avatar.posDelta.x,
+    y: avatar.posDelta.y,
+    z: avatar.posDelta.z,
+  });
+  avatar.referenceSpace =
+    avatar.referenceSpace.getOffsetReferenceSpace(newTransform);
+}
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="see_also">
+    <!--lit-part p88DAUaBJzA=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/See%20also"></a><h2 id="see_also" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#see_also">See also</a></h2><!--/lit-part-->
+    <ul>
+<li><a href="Targeting.html">Targeting and hit detection</a></li>
+<li><a href="Geometry.html">Geometry and reference spaces in WebXR</a></li>
+<li><a href="Spatial_tracking.html">Spatial tracking in WebXR</a></li>
+<li><a href="Rendering.html">Rendering and the WebXR frame animation callback</a></li>
+<li><a href="Cameras.html">Viewpoints and viewers: Simulating cameras in WebXR</a></li>
+<li><a href="Movement_and_motion.html">Movement, orientation, and motion: A WebXR example</a></li>
+</ul>
+  </section> 
+      <section class="content-section article-footer" aria-labelledby="feedback">
+        <div class="article-footer__inner">
+          <div class="article-footer__svg-container"><!--lit-part OWLzZqRMsCU=--><svg xmlns="http://www.w3.org/2000/svg" width="162" height="162" fill="none" viewBox="0 0 162 162"><mask id="b" fill="#fff"><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z"></path></mask><path stroke="url(#a)" stroke-dasharray="6, 6" stroke-width="2" d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z" mask="url(#b)" style="stroke:url(#a)" transform="translate(-63.992 -25.587)"></path><ellipse cx="8.066" cy="111.597" fill="currentColor" rx="53.677" ry="53.699" transform="matrix(.71707 -.697 .7243 .6895 0 0)"></ellipse><g clip-path="url(#c)" transform="translate(-63.992 -25.587)"><path fill="#9abff5" d="m144.256 137.379 32.906 12.434a4.41 4.41 0 0 1 2.559 5.667l-9.326 24.679a4.41 4.41 0 0 1-5.667 2.559l-8.226-3.108-2.332 6.17c-.466 1.233-.375 1.883-1.609 1.417l-2.253-.527c-.411-.155-.95-.594-1.206-1.161l-4.734-10.484-12.545-4.741a4.41 4.41 0 0 1-2.559-5.667l9.325-24.679a4.41 4.41 0 0 1 5.667-2.559m9.961 29.617 8.227 3.108 3.264-8.638-.498-6.768-4.113-1.555.548 7.258-4.319-1.632zm-12.339-4.663 8.226 3.108 3.264-8.637-.498-6.769-4.113-1.554.548 7.257-4.319-1.632z"></path></g><g clip-path="url(#d)" transform="translate(-63.992 -25.587)"><path fill="#81b0f3" d="M135.35 60.136 86.67 41.654c-3.346-1.27-7.124.428-8.394 3.775L64.414 81.938c-1.27 3.347.428 7.125 3.774 8.395l12.17 4.62-3.465 9.128c-.693 1.826-1.432 2.457.394 3.15l3.014 1.625c.609.231 1.637.274 2.477-.104l15.53-6.983 18.56 7.047c3.346 1.27 7.124-.428 8.395-3.775l13.862-36.51c1.27-3.346-.428-7.124-3.775-8.395M95.261 83.207l-12.17-4.62 4.852-12.779 7.19-7.017 6.085 2.31-7.725 7.51 6.389 2.426zm18.255 6.93-12.17-4.62 4.852-12.778 7.189-7.017 6.085 2.31-7.725 7.51 6.39 2.426z"></path></g><defs><clipPath id="c"><path fill="#fff" d="m198.638 146.586-65.056-24.583-24.583 65.057 65.056 24.582z"></path></clipPath><clipPath id="d"><path fill="#fff" d="m66.438 14.055 96.242 36.54-36.54 96.243-96.243-36.54z"></path></clipPath><linearGradient id="a" x1="97.203" x2="199.995" y1="47.04" y2="152.793" gradientUnits="userSpaceOnUse"><stop stop-color="#086dfc"></stop><stop offset=".246" stop-color="#2c81fa"></stop><stop offset=".516" stop-color="#5497f8"></stop><stop offset=".821" stop-color="#80b0f6"></stop><stop offset="1" stop-color="#9abff5"></stop></linearGradient></defs></svg><!--/lit-part--></div>
+          <h2 id="feedback">
+            Help improve MDN
+          </h2>
+          <mdn-content-feedback locale="en-US"></mdn-content-feedback>
+          <a class="article-footer__contribute" href="https://developer.mozilla.org/en-US/docs/MDN/Community/Getting_started">Learn how to contribute</a> <p class="article-footer__last-modified">
+    This page was last modified on <time datetime="2025-10-30T21:49:49.000Z">Oct 30, 2025</time> by <a href="Inputs/contributors.txt">MDN contributors</a>.
+  </p> <div class="article-footer__links">
+    <a class="external" href="https://github.com/mdn/content/blob/main/files/en-us/web/api/webxr_device_api/inputs/index.md?plain=1" title="Folder: en-us/web/api/webxr_device_api/inputs (Opens in a new tab)" target="_blank" rel="noopener">View this page on GitHub</a> • <a class="external" href="https://github.com/mdn/content/issues/new?template=page-report.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FWebXR_Device_API%2FInputs&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Fweb%2Fapi%2Fwebxr_device_api%2Finputs%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FWebXR_Device_API%2FInputs%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Fweb%2Fapi%2Fwebxr_device_api%2Finputs%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2Fa4fcf79b60471db6f148fa4ba36f2cdeafbbeb70%0A*+Document+last+modified%3A+2025-10-30T21%3A49%3A49.000Z%0A%0A%3C%2Fdetails%3E" title="This will take you to GitHub to file a new issue." target="_blank" rel="noopener">Report a problem with this content</a>
+  </div>
+        </div>
+      </section>
+    
+          </div>
+        </main>
+        <aside class="layout__left-sidebar" id="main-sidebar">
+          <nav class="left-sidebar">
+      <div class="left-sidebar__header">
+        <mdn-sidebar-filter></mdn-sidebar-filter>
+      </div>
+      <div class="left-sidebar__content"><ol><li class="section"><a href="../WebXR_Device_API.html">WebXR Device API</a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><details open=""><summary><span>Guides</span></summary><ol><li><a href="Fundamentals.html">Fundamentals of WebXR</a></li><li><a href="Lifecycle.html">WebXR application life cycle</a></li><li><a href="Startup_and_shutdown.html">Starting up and shutting down a WebXR session</a></li><li><a href="Geometry.html">Geometry and reference spaces in WebXR</a></li><li><a href="Spatial_tracking.html">Spaces and reference spaces: Spatial tracking in WebXR</a></li><li><a href="Rendering.html">Rendering and the WebXR frame animation callback</a></li><li><a href="Cameras.html">Viewpoints and viewers: Simulating cameras in WebXR</a></li><li><a href="Perspective.html">A perspective retrospective for WebXR developers</a></li><li><a href="Lighting.html">Lighting a WebXR setting</a></li><li><a href="Bounded_reference_spaces.html">Using bounded reference spaces</a></li><li><a href="Movement_and_motion.html">Movement, orientation, and motion: A WebXR example</a></li><li><em><a href="Inputs.html" aria-current="page">Inputs and input sources</a></em></li><li><a href="Targeting.html">Targeting and hit detection</a></li><li><a href="Performance.html">WebXR performance guide</a></li><li><a href="Permissions_and_security.html">WebXR permissions and security</a></li></ol></details></li><li><details open=""><summary><span>Interfaces</span></summary><ol><li><a href="../XRAnchor.html"><code>XRAnchor</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRBoundedReferenceSpace.html"><code>XRBoundedReferenceSpace</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRCPUDepthInformation.html"><code>XRCPUDepthInformation</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRDepthInformation.html"><code>XRDepthInformation</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRFrame.html"><code>XRFrame</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRInputSource.html"><code>XRInputSource</code></a></li><li><a href="../XRInputSourceArray.html"><code>XRInputSourceArray</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRInputSourceEvent.html"><code>XRInputSourceEvent</code></a></li><li><a href="../XRInputSourcesChangeEvent.html"><code>XRInputSourcesChangeEvent</code></a></li><li><a href="../XRPose.html"><code>XRPose</code></a></li><li><a href="../XRReferenceSpace.html"><code>XRReferenceSpace</code></a></li><li><a href="../XRReferenceSpaceEvent.html"><code>XRReferenceSpaceEvent</code></a></li><li><a href="../XRRenderState.html"><code>XRRenderState</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRRigidTransform.html"><code>XRRigidTransform</code></a></li><li><a href="../XRSession.html"><code>XRSession</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRSessionEvent.html"><code>XRSessionEvent</code></a></li><li><a href="../XRSpace.html"><code>XRSpace</code></a></li><li><a href="../XRSystem.html"><code>XRSystem</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRView.html"><code>XRView</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRViewerPose.html"><code>XRViewerPose</code></a></li><li><a href="../XRViewport.html"><code>XRViewport</code></a></li><li><a href="../XRWebGLBinding.html"><code>XRWebGLBinding</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRWebGLDepthInformation.html"><code>XRWebGLDepthInformation</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRWebGLLayer.html"><code>XRWebGLLayer</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><details open=""><summary><span>Properties</span></summary><ol><li><a href="../Navigator/xr.html"><code>Navigator<wbr>.xr</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li><li><details open=""><summary><span>Methods</span></summary><ol><li><a href="../WebGLRenderingContext/makeXRCompatible.html"><code>WebGLRenderingContext<wbr>.makeXRCompatible()</code></a></li></ol></details></li><li><details open=""><summary><span>Events</span></summary><ol><li><a href="../XRSystem/devicechange_event.html"><code>XRSystem: devicechange</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRSession/end_event.html"><code>XRSession: end</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRSession/inputsourceschange_event.html"><code>XRSession: inputsourceschange</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRReferenceSpace/reset_event.html"><code>XRReferenceSpace: reset</code></a></li><li><a href="../XRSession/select_event.html"><code>XRSession: select</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRSession/selectend_event.html"><code>XRSession: selectend</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRSession/selectstart_event.html"><code>XRSession: selectstart</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li><li><a href="../XRSession/visibilitychange_event.html"><code>XRSession: visibilitychange</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr></li></ol></details></li></ol></div>
+    </nav>
+        </aside>
+      </div>
+    </div>
+        
+      
+    
+      
+
+
+    <div class="page-layout__footer footer"><div><a href="http://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API/Inputs">Inputs and input sources</a> by <a href="http://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API/Inputs$history">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC-BY-SA 2.5</a>.</div></div></body><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API/Inputs by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:05:00 GMT --></html>

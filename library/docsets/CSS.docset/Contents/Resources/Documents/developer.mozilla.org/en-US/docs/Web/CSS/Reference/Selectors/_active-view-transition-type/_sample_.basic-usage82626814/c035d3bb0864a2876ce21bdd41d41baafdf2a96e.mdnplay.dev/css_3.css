@@ -1,0 +1,31 @@
+
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+div { display: flex; width: 60%; justify-content: space-between; }
+p { font-size: 1.7em; width: 60%; color: blue; margin-top: 0px; }
+html:active-view-transition {
+  & :root { view-transition-name: none; }
+  & p { view-transition-name: slide; }
+}
+html:active-view-transition-type(forwards) {
+  &::view-transition-old(slide) { animation-name: slide-out-to-left; }
+  &::view-transition-new(slide) { animation-name: slide-in-from-right; }
+}
+html:active-view-transition-type(backwards) {
+  &::view-transition-old(slide) { animation-name: slide-out-to-right; }
+  &::view-transition-new(slide) { animation-name: slide-in-from-left; }
+}
+@keyframes slide-in-from-left { 
+  0% { translate: -100vw; }
+}
+@keyframes slide-in-from-right { 
+  0% { translate: 100vw; }
+}
+@keyframes slide-out-to-left { 
+  100% { translate: -100vw; }
+}
+@keyframes slide-out-to-right { 
+  100% { translate: 100vw; }
+}
+
+button.copy {display:none !important}

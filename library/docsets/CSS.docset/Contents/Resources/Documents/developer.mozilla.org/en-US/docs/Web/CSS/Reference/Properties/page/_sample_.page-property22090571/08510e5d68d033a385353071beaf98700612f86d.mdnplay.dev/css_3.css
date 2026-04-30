@@ -1,0 +1,22 @@
+
+@page toc { size: a4 portrait; }
+@page foreword { size: a4 portrait; }
+@page introduction { size: a4 portrait; }
+@page conclusion { size: a4 portrait; }
+@page chapter { size: a4 landscape; }
+fieldset { display: flex; flex-direction: row; justify-content: space-between; gap: 1rem; width: fit-content; }
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.1em; line-height: normal; font-family: sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+@media print {
+  fieldset { display: none; }
+  section { font-size: 2rem; font-family: Roboto, sans-serif; }
+  .chapter { border: 2px solid tomato; }
+  [data-print="grouped"] > #toc, [data-print="paged"] > #toc { page: toc; font-family: "Courier New"; }
+  [data-print="grouped"] > #foreword, [data-print="paged"] > #foreword { page: foreword; font-family: "Courier New"; }
+  [data-print="grouped"] > #introduction, [data-print="paged"] > #introduction { page: introduction; font-family: "Courier New"; }
+  [data-print="grouped"] > #conclusion, [data-print="paged"] > #conclusion { page: conclusion; font-family: "Courier New"; }
+  [data-print="grouped"] > .chapter, [data-print="paged"] > .chapter { page: chapter; }
+  [data-print="paged"] > .chapter { border: medium; break-after: page; }
+  .chapter > ul { column-width: auto; column-count: 2; }
+}
+
+button.copy {display:none !important}

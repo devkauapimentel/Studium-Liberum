@@ -1,0 +1,72 @@
+
+.css-sfbnep.css-sfbnep.css-sfbnep { z-index: 2147483647; position: fixed; left: 0px; right: 0px; }
+@media print {
+  .css-sfbnep.css-sfbnep.css-sfbnep { display: none !important; }
+}
+.css-u2agci.css-u2agci.css-u2agci { z-index: calc(2147483547); width: 100vw; height: 100vh; position: fixed; bottom: 0px; left: 0px; background: rgba(26, 25, 25, 0.7); pointer-events: none; opacity: 0; transition: opacity 0.3s ease-in-out; }
+.css-1gi4xhw.css-1gi4xhw { position: fixed; width: fit-content; pointer-events: none; z-index: 2147483647; max-width: 100%; bottom: 0px; animation: auto; }
+@media screen and (min-width: 650px) {
+  .css-1gi4xhw.css-1gi4xhw { display: flex; padding: 0px 24px; transform: translateY(100%); animation: auto; right: 0px; }
+}
+.css-1fe2utv.css-1fe2utv { display: flex; width: fit-content; height: 38px; padding: 0px 20px; white-space: nowrap; -webkit-box-pack: center; justify-content: center; -webkit-box-align: center; align-items: center; border-radius: 6px 6px 0px 0px; border: 0px; cursor: pointer; font-size: 1em; gap: 10px; transform-origin: center bottom; pointer-events: all; position: fixed; inset: auto 24px 0px auto; background: rgb(8, 109, 215) !important; color: rgb(253, 254, 255) !important; fill: rgb(253, 254, 255) !important; }
+.css-1fe2utv.css-1fe2utv:focus-visible { box-shadow: rgb(253, 254, 255) 0px 0px 0px 1px, rgb(8, 109, 215) 0px 0px 0px 3px !important; outline: medium !important; }
+@media screen and (min-width: 650px) {
+  .css-1fe2utv.css-1fe2utv { position: absolute; top: -38px; margin-right: 16px; }
+}
+.css-12cbx5s.css-12cbx5s { display: flex; width: 1em; height: 1em; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; }
+.css-z3t8vw.css-z3t8vw { color: rgb(253, 254, 255); font-size: 1em; font-family: Ambit, Arial, sans-serif !important; }
+.css-zzxk3g.css-zzxk3g { display: flex; flex-direction: column; background: rgb(255, 255, 255); padding: 16px 20px; overflow: auto; right: 24px; width: 100vw; border-radius: 8px 8px 0px 0px; min-height: 32px; max-width: 100%; opacity: 0; max-height: 100vh !important; }
+.css-zzxk3g.css-zzxk3g * { font-family: Roboto, Arial, sans-serif !important; }
+@media screen and (min-width: 650px) {
+  .css-zzxk3g.css-zzxk3g { width: 344px; border-radius: 8px 8px 0px 0px; min-height: 32px; }
+}
+@media screen and (min-width: 650px) {
+  .css-zzxk3g.css-zzxk3g { animation: auto; opacity: 1; }
+}
+.css-desq4a.css-desq4a { -webkit-box-pack: end; justify-content: flex-end; margin: 16px 0px -8px; display: flex; }
+@media screen and (min-width: 650px) {
+  .css-desq4a.css-desq4a { display: none; }
+}
+.css-zzqb0h.css-zzqb0h { display: flex; background-color: transparent; border: 0px; cursor: pointer; }
+.css-dptyls.css-dptyls { overflow: hidden; display: flex; flex-direction: column; position: relative; padding: 0px 20px; margin: 0px -20px; -webkit-box-pack: center; justify-content: center; -webkit-box-flex: 1; flex-grow: 1; }
+.css-jr2rfv.css-jr2rfv { display: flex; flex-direction: column; gap: 8px; overflow: hidden auto; padding: 4px 12px; margin: -4px -12px; background-color: rgb(255, 255, 255); }
+.css-1siax6e.css-1siax6e { top: 0px; z-index: 2; display: block; text-align: left; font-size: 1em; line-height: 1.5em; margin: 0px; color: rgb(0, 1, 2); overflow-wrap: break-word; white-space: pre-wrap; background-color: rgb(255, 255, 255); font-weight: 500 !important; }
+[dir="rtl"] .css-1siax6e.css-1siax6e { text-align: right; }
+.css-1pi8oih.css-1pi8oih { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 304px; margin: 0px auto; }
+.css-1u0ka8c { display: flex; -webkit-box-pack: justify; justify-content: space-between; padding: 8px 0px; }
+.css-aqntsj.css-aqntsj.css-aqntsj { border: medium; cursor: pointer; outline: medium; box-shadow: none; display: flex; -webkit-box-pack: center; justify-content: center; width: 56px; height: 56px; background: none !important; }
+.css-bxb3m6.css-bxb3m6.css-bxb3m6 { position: absolute; opacity: 0; width: 0px; height: 0px; }
+.css-bxb3m6.css-bxb3m6.css-bxb3m6:focus-visible + div svg, .css-bxb3m6.css-bxb3m6.css-bxb3m6:checked + div svg { overflow: visible; }
+.css-bxb3m6.css-bxb3m6.css-bxb3m6:focus-visible + div svg path:first-child, .css-bxb3m6.css-bxb3m6.css-bxb3m6:checked + div svg path:first-child, .css-bxb3m6.css-bxb3m6.css-bxb3m6:focus-visible + div svg circle:first-child, .css-bxb3m6.css-bxb3m6.css-bxb3m6:checked + div svg circle:first-child { paint-order: stroke; stroke: rgb(10, 17, 46); stroke-width: 3px; }
+.css-bxb3m6.css-bxb3m6.css-bxb3m6:not(:focus-visible):not(:checked):not(:hover) + div { transform: scale(1); }
+.css-1eb42c9.css-1eb42c9.css-1eb42c9 { display: flex; -webkit-box-align: center; align-items: center; pointer-events: none; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.35); transform: scale(1); }
+.css-1eb42c9.css-1eb42c9.css-1eb42c9 svg > * { transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.35); }
+.css-10fm8f7.css-10fm8f7.css-10fm8f7 { display: flex; -webkit-box-pack: justify; justify-content: space-between; }
+.css-wg0tbm.css-wg0tbm.css-wg0tbm { font-size: 0.875em; line-height: 1.25em; color: rgba(0, 0, 0, 0.7); max-width: 45%; text-align: left; }
+.css-tcbgst.css-tcbgst.css-tcbgst { font-size: 0.875em; line-height: 1.25em; color: rgba(0, 0, 0, 0.7); max-width: 45%; text-align: right; }
+.css-iqp8dm.css-iqp8dm { display: flex; -webkit-box-align: center; align-items: center; flex-direction: row-reverse; padding-block: 4px; -webkit-box-pack: end; justify-content: flex-end; margin-top: 12px; }
+.css-36amt5.css-36amt5 { width: 100%; display: flex; flex-direction: row-reverse; -webkit-box-pack: start; justify-content: flex-start; -webkit-box-align: center; align-items: center; gap: 16px; }
+.css-36amt5.css-36amt5 button { width: 100%; }
+@media screen and (min-width: 650px) {
+  .css-36amt5.css-36amt5 button { width: auto; }
+}
+.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z { border-radius: 4px; border: medium; transition: 0.2s ease-in-out; cursor: pointer; line-height: 20px; text-align: center; padding: 6px 16px; font-family: Roboto, Arial, sans-serif !important; font-weight: 500 !important; font-size: 0.875em !important; background-color: rgb(8, 109, 215) !important; color: rgb(253, 254, 255) !important; }
+.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z:focus-visible { box-shadow: rgb(255, 255, 255) 0px 0px 0px 1px, rgb(7, 98, 194) 0px 0px 0px 3px; outline: medium; }
+.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z:active { box-shadow: rgba(45, 54, 66, 0.07) 0px 2px 4px inset, rgba(45, 54, 66, 0.07) 0px 1px 2px inset; }
+.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z:disabled { cursor: not-allowed; color: rgb(173, 183, 194) !important; }
+.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z:hover, .css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z:hover:enabled { background-color: rgb(5, 65, 129) !important; color: rgb(253, 254, 255) !important; }
+.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z:focus-visible { background-color: rgb(8, 109, 215); }
+.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z.css-1aj5u7z:disabled { background-color: rgb(239, 241, 243) !important; color: rgb(173, 183, 194) !important; }
+.css-b2busz.css-b2busz { display: flex; flex-direction: column; background: rgb(255, 255, 255); padding: 16px 20px; overflow: auto; right: 24px; width: 100vw; border-radius: 8px 8px 0px 0px; min-height: 70px; max-width: 100%; opacity: 0; max-height: 100vh !important; }
+.css-b2busz.css-b2busz * { font-family: Roboto, Arial, sans-serif !important; }
+@media screen and (min-width: 650px) {
+  .css-b2busz.css-b2busz { width: 344px; border-radius: 8px 8px 0px 0px; min-height: 70px; }
+}
+@media screen and (min-width: 650px) {
+  .css-b2busz.css-b2busz { animation: auto; opacity: 1; }
+}
+
+footer {
+    display: none !important;
+}
+.main-header, .large-3.columns, .left-off-canvas-menu, .get-started-cta, .main-footer, .left-off-canvas-toggle {display:none !important} .large-9 {width:100% !important} .toggle-mode {display:none !important} .main-header, .anchorLink, .left-off-canvas-menu, .left-off-canvas-toggle, .main_footer .container, .title_section, .docsidebarnav_section {display:none !important} .col-md-10 {width:100% !important} aside.sticky {display:none !important} #docs {margin-bottom:40px !important} header, footer, #pd_rating_holder_8453675, .col-nav, .col-toc {display:none !important} .content {padding:0px 26px 30px !important} section.section {max-width:none !important} @media only screen and (max-width: 1024px) { main.content {padding: 0px 13px 30px !important}} .tableofcontents_section, .docsidebarnav_section {display:none !important} .col-md-8 {width:100% !important} #_hj_feedback_container {display:none !important} .reading-time {display:none !important} .search-form {display:none !important} #onetrust-consent-sdk {display:none !important} .large-6 {width:100% !important} #DocumentationText {padding:0px !important} .advisory {padding:40px 20px 20px 20px !important} blockquote p::before {content:none !important} button.copy {display:none !important} #announcement-bar, #sidebar, body main.flex div.sticky {display:none !important} #docker-announcement-bar {display:none !important} ._hj-widget-container {display:none !important} body main.flex {display:block !important} body main.flex div.flex.lg\:w-full { width:auto !important} main, ._hj_feedback_container {border:none !important} h1 span.invisible, h2 span.invisible, h3 span.invisible, h4 span.invisible {display:none !important} [aria-role=tablist] {display:none !important} [aria-role=tab] {display:block !important} a.relative.-top-16 {top:0 !important} #TableOfContents, nav#sectiontree, #kapa-widget-container {display:none !important} .md-dropdown {display:none !important} #markdownDropdown {display:none !important} main.grid {display:block !important} main > div.sticky {display:none !important} nav.text-sm {display:none !important}

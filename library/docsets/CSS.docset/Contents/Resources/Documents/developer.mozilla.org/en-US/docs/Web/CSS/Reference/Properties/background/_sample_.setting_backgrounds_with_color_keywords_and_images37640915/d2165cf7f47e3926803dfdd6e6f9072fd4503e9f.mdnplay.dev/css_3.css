@@ -1,0 +1,5 @@
+
+.warning { background: pink; }
+.top-banner { background: url("./en-US/docs/Web/CSS/Reference/Properties/background/star-solid.gif") repeat-y fixed rgb(153, 153, 255); }
+
+button.copy {display:none !important}

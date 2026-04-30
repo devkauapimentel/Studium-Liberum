@@ -1,0 +1,11 @@
+
+.cat { background: url("./shared-assets/images/examples/web-animations/cat_sprite.png") -600px 0px no-repeat; height: 150px; width: 100%; }
+.cat.with-css { animation: 0.75s steps(13) infinite run-cycle; }
+@keyframes run-cycle { 
+  0% { background-position: -600px 0px; }
+  100% { background-position: -600px -1950px; }
+}
+#css-cats, #waapi-cats { text-align: center; vertical-align: top; min-width: 300px; }
+body { background: rgb(229, 230, 233); color: rgb(7, 25, 51); font-family: sans-serif; display: flex; flex-wrap: wrap; }
+
+button.copy {display:none !important}

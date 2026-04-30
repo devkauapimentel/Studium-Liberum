@@ -1,0 +1,7 @@
+
+@font-feature-values "Font One" { @styleset { nice-style: 12; } }
+@font-feature-values "Font Two" { @styleset { nice-style: 4; } }
+.nice-look { font-variant-alternates: styleset(nice-style); }
+#log { height: 40px; overflow: scroll; padding: 0.5rem; border: 1px solid black; }
+
+button.copy {display:none !important}

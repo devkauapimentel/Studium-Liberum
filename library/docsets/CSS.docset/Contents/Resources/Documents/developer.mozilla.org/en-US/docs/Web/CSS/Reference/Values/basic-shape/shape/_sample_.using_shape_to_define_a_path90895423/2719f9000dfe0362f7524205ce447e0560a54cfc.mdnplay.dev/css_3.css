@@ -1,0 +1,16 @@
+
+body { align-items: center; justify-content: center; display: flex; }
+.container { position: relative; display: inline-block; width: 250px; height: 250px; border: 2px dotted green; margin: 20px; }
+@supports not (offset-path: shape(from 0 0, move to 0 0)) {
+  .container { display: none; }
+  body::after { content: "Your browser doesn't support the `shape()` function yet."; }
+}
+.shape { width: 50px; height: 50px; background: rgb(43, 196, 162); position: absolute; text-align: center; line-height: 50px; animation: 6s linear infinite move; }
+.shape1 { offset-path: shape(from 30% 60px, curve to 180px 180px with 90px 190px, close, move by 0px 150px, hline by 40%); }
+.shape2 { offset-path: shape(from 50px 90px, hline to 8em, move to 50px 90px, vline by 20%, close); }
+@keyframes move { 
+  0% { offset-distance: 0%; }
+  100% { offset-distance: 100%; background-color: hotpink; }
+}
+
+button.copy {display:none !important}

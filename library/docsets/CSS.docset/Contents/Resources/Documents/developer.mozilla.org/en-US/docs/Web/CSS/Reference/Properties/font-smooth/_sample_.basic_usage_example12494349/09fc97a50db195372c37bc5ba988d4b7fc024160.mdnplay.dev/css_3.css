@@ -1,0 +1,6 @@
+
+html { background-color: black; color: white; font-size: 3rem; }
+p { text-align: center; }
+.smoothed { -webkit-font-smoothing: antialiased; }
+
+button.copy {display:none !important}

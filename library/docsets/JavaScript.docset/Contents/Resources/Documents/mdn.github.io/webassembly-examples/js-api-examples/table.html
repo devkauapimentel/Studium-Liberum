@@ -1,0 +1,29 @@
+<html><!-- Mirrored from mdn.github.io/webassembly-examples/js-api-examples/table.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 23:51:31 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <title>WASM table example</title>
+  </head>
+
+  <body>
+    <script>
+      const table = new WebAssembly.Table({
+        element: "anyfunc",
+        initial: 1,
+        maximum: 10
+      });
+      table.grow(1);
+      console.log(table.length);  // 2
+
+      WebAssembly.instantiateStreaming(fetch("table.wasm"))
+      .then(obj => {
+        const tbl = obj.instance.exports.tbl;
+        console.log(tbl.get(0)());  // 13
+        console.log(tbl.get(1)());  // 42
+      });
+    </script>
+  
+
+
+
+
+</body><!-- Mirrored from mdn.github.io/webassembly-examples/js-api-examples/table.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 23:51:31 GMT --></html>

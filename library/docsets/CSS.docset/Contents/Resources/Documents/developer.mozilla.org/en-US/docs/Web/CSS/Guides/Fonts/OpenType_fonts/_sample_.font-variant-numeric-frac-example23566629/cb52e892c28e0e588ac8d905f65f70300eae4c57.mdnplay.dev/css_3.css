@@ -1,0 +1,16 @@
+
+@font-face { font-family: "Source Serif"; font-weight: normal; font-style: normal; font-width: normal; src: url("../mdn.github.io/shared-assets/fonts/source-serif/SourceSerifPro-Regular.ttf.woff") format("woff"), url("../mdn.github.io/shared-assets/fonts/source-serif/SourceSerifPro-Regular.ttf.woff2") format("woff2"); }
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: normal; font-family: "Source Serif", "Times New Roman", serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; margin: 20px; padding: 0px; }
+fieldset { margin-bottom: 1rem; }
+label { }
+.container > p { font-size: 4rem; margin: 1.5rem 0px; }
+.container1 .diagonal-fractions { font-variant-numeric: diagonal-fractions; }
+.container1 .ordinal { font-variant-numeric: ordinal; }
+.container1 .zero { font-variant-numeric: slashed-zero; }
+.inactive.container1 * { font-variant-numeric: normal; }
+.container2 .diagonal-fractions { font-feature-settings: "frac"; }
+.container2 .ordinal { font-feature-settings: "ordn"; }
+.container2 .zero { font-feature-settings: "zero"; }
+.inactive.container2 * { font-feature-settings: "frac" 0, "ordn" 0, "zero" 0; }
+
+button.copy {display:none !important}

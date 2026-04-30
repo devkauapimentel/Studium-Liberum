@@ -1,0 +1,10 @@
+
+body { font-family: sans-serif; margin: 0px; }
+header { background: purple; height: 100px; }
+h1 { text-align: center; color: white; line-height: 100px; margin: 0px; }
+article { padding: 10px; margin: 10px; background: aqua; }
+section { zoom: 0.8; display: flex; }
+article { flex: 1 1 0%; }
+article:nth-of-type(3) { flex: 2 1 0%; }
+
+button.copy {display:none !important}

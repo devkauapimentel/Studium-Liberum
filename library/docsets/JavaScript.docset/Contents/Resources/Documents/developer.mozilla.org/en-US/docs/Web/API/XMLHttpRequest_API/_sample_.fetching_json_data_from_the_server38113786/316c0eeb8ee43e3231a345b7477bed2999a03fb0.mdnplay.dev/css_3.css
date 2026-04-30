@@ -1,0 +1,5 @@
+
+.event-log { width: 25rem; height: 5rem; border: 1px solid black; margin: 0.5rem; padding: 0.2rem; }
+button { width: 12rem; margin: 0.5rem; }
+
+button.copy {display:none !important}

@@ -1,0 +1,5 @@
+
+.light { color-scheme: light; }
+.dark { color-scheme: dark; }
+
+button.copy {display:none !important}

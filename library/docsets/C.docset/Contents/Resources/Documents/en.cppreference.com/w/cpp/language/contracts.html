@@ -1,0 +1,733 @@
+<html><!-- Online page at https://en.cppreference.com/w/cpp/language/contracts.html --><head><meta charset="utf-8"><title>Contract assertions (since C++26)</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_209.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_contracts skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Flanguage%2Fcontracts&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Flanguage%2Fcontracts" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="./contracts.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk"><span><a href="../../Talk%25253Acpp/language/contracts.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./contracts.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./contracts.html">View</a></span></li>
+					<li id="ca-edit"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./contracts.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Contract assertions <span class="t-mark-rev t-since-cxx26">(since C++26)</span></h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp">C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../compiler_support.html" title="cpp/compiler support">Compiler support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../freestanding.html" title="cpp/freestanding">Freestanding and hosted</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../language.html" title="cpp/language">Language</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../standard_library.html" title="cpp/standard library">Standard library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../headers.html" title="cpp/header">Standard library headers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../iterator/concepts.html" title="cpp/named req">Named requirements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../experimental/feature_test.html" title="cpp/feature test">Feature test macros</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../utility.html#Language_support" title="cpp/utility">Language support library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../concepts.html" title="cpp/concepts">Concepts library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../error.html" title="cpp/error">Diagnostics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../memory.html" title="cpp/memory">Memory management library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../meta.html" title="cpp/meta">Metaprogramming library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../utility.html" title="cpp/utility">General utilities library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../container.html" title="cpp/container">Containers library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../iterator.html" title="cpp/iterator">Iterators library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../ranges.html" title="cpp/ranges">Ranges library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../algorithm.html" title="cpp/algorithm">Algorithms library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../string.html" title="cpp/string">Strings library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../text.html" title="cpp/text">Text processing library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../numeric.html" title="cpp/numeric">Numerics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../chrono.html" title="cpp/chrono">Date and time library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../io.html" title="cpp/io">Input/output library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../filesystem.html" title="cpp/filesystem">Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../atomic.html" title="cpp/thread">Concurrency support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../experimental/execution.html" title="cpp/execution">Execution control library</a> <span class="t-mark-rev t-since-cxx26">(C++26)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../experimental.html" title="cpp/experimental">Technical specifications</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../symbol_index.html" title="cpp/symbol index">Symbols index</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../links/libs.html" title="cpp/links/libs">External libraries</a></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../language.html" title="cpp/language">C++ language</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5">General topics</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../preprocessor.html" title="cpp/preprocessor">Preprocessor</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../comments.html" title="cpp/comment">Comments</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../keywords.html" title="cpp/keyword">Keywords</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./escape.html" title="cpp/language/escape">Escape sequences</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./statements.html" title="cpp/language/statements">Flow control</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Conditional execution statements</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./if.html" title="cpp/language/if"><tt>if</tt></a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./switch.html" title="cpp/language/switch"><tt>switch</tt></a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Iteration statements (loops)</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./for.html" title="cpp/language/for"><tt>for</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./range-for.html" title="cpp/language/range-for">range-<code>for</code></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./while.html" title="cpp/language/while"><tt>while</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./do.html" title="cpp/language/do"><code>do-while</code></a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Jump statements</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./continue.html" title="cpp/language/continue"><tt>continue</tt></a> - <a href="./break.html" title="cpp/language/break"><tt>break</tt></a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./goto.html" title="cpp/language/goto"><tt>goto</tt></a> - <a href="./return.html" title="cpp/language/return"><tt>return</tt></a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./functions.html" title="cpp/language/functions">Functions</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./function.html" title="cpp/language/function">Function declaration</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./lambda.html" title="cpp/language/lambda">Lambda function expression</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./inline.html" title="cpp/language/inline"><code>inline</code> specifier</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./except_spec.html" title="cpp/language/except spec">Dynamic exception specifications</a> <span class="t-mark">(<span title="deprecated in C++11">until C++17*</span>)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./noexcept_spec.html" title="cpp/language/noexcept spec"><code>noexcept</code> specifier</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Exceptions</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./throw.html" title="cpp/language/throw"><code>throw</code>-expression</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./try.html" title="cpp/language/try"><code>try</code> block</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./catch.html" title="cpp/language/catch"><code>catch</code> handler</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Namespaces</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./namespace.html" title="cpp/language/namespace">Namespace declaration</a><code>&nbsp;&nbsp;</code></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./namespace_alias.html" title="cpp/language/namespace alias">Namespace aliases</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Types</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./types.html" title="cpp/language/types">Fundamental types</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./enum.html" title="cpp/language/enum">Enumeration types</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./function.html" title="cpp/language/function">Function types</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./class.html" title="cpp/language/class">Class/struct types</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./union.html" title="cpp/language/union">Union types</a></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Specifiers</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./cv.html" title="cpp/language/cv"><code>const</code>/<code>volatile</code></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./decltype.html" title="cpp/language/decltype"><tt>decltype</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./auto.html" title="cpp/language/auto"><tt>auto</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./constexpr.html" title="cpp/language/constexpr"><tt>constexpr</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./consteval.html" title="cpp/language/consteval"><tt>consteval</tt></a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./constinit.html" title="cpp/language/constinit"><tt>constinit</tt></a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./storage_duration.html" title="cpp/language/storage duration">Storage duration specifiers</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./initialization.html" title="cpp/language/initialization">Initialization</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./default_initialization.html" title="cpp/language/default initialization">Default-initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./value_initialization.html" title="cpp/language/value initialization">Value-initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./zero_initialization.html" title="cpp/language/zero initialization">Zero-initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./copy_initialization.html" title="cpp/language/copy initialization">Copy-initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./direct_initialization.html" title="cpp/language/direct initialization">Direct-initialization</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./aggregate_initialization.html" title="cpp/language/aggregate initialization">Aggregate initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./list_initialization.html" title="cpp/language/list initialization">List-initialization</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span><code>&nbsp;&nbsp;</code></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./constant_initialization.html" title="cpp/language/constant initialization">Constant initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./reference_initialization.html" title="cpp/language/reference initialization">Reference initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div>
+</div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5"><a href="./expressions.html" title="cpp/language/expressions">Expressions</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./value_category.html" title="cpp/language/value category">Value categories</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./eval_order.html" title="cpp/language/eval order">Order of evaluation</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./operators.html" title="cpp/language/operators">Operators</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./operator_precedence.html" title="cpp/language/operator precedence">Operator precedence</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./operator_alternative.html" title="cpp/language/operator alternative">Alternative representations</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./expressions.html#Literals" title="cpp/language/expressions">Literals</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./bool_literal.html" title="cpp/language/bool literal">Boolean</a> - <a href="./integer_literal.html" title="cpp/language/integer literal">Integer</a> - <a href="./floating_literal.html" title="cpp/language/floating literal">Floating-point</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./character_literal.html" title="cpp/language/character literal">Character</a> - <a href="./string_literal.html" title="cpp/language/string literal">String</a> - <a href="./nullptr.html" title="cpp/language/nullptr"><tt>nullptr</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./user_literal.html" title="cpp/language/user literal">User-defined</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Utilities</td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./attributes.html" title="cpp/language/attributes">Attributes</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Types</td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./typedef.html" title="cpp/language/typedef"><code>typedef</code> declaration</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./type_alias.html" title="cpp/language/type alias">Type alias declaration</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Casts</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./implicit_cast.html" title="cpp/language/implicit conversion">Implicit conversions</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./static_cast.html" title="cpp/language/static cast"><tt>static_cast</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./const_cast.html" title="cpp/language/const cast"><tt>const_cast</tt></a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./explicit_cast.html" title="cpp/language/explicit cast">Explicit conversions</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./dynamic_cast.html" title="cpp/language/dynamic cast"><tt>dynamic_cast</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./reinterpret_cast.html" title="cpp/language/reinterpret cast"><tt>reinterpret_cast</tt></a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Memory allocation</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./new.html" title="cpp/language/new"><code>new</code> expression</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./delete.html" title="cpp/language/delete"><code>delete</code> expression</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./classes.html" title="cpp/language/classes">Classes</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./class.html" title="cpp/language/class">Class declaration</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./initializer_list.html" title="cpp/language/constructor">Constructors</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./this.html" title="cpp/language/this"><code>this</code> pointer</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./access.html" title="cpp/language/access">Access specifiers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./friend.html" title="cpp/language/friend"><code>friend</code> specifier</a></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Class-specific function properties</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./virtual.html" title="cpp/language/virtual">Virtual function</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./override.html" title="cpp/language/override"><code>override</code> specifier</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span><code>&nbsp;&nbsp;</code></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./final.html" title="cpp/language/final"><code>final</code> specifier</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./explicit.html" title="cpp/language/explicit"><tt>explicit</tt></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./static.html" title="cpp/language/static"><tt>static</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"><br>
+</td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5">Special member functions</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./default_constructor.html" title="cpp/language/default constructor">Default constructor</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./copy_constructor.html" title="cpp/language/copy constructor">Copy constructor</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./move_constructor.html" title="cpp/language/move constructor">Move constructor</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./as_operator.html" title="cpp/language/as operator" class="mw-redirect">Copy assignment</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./move_operator.html" title="cpp/language/move operator" class="mw-redirect">Move assignment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./destructor.html" title="cpp/language/destructor">Destructor</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./templates.html" title="cpp/language/templates">Templates</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./class_template.html" title="cpp/language/class template">Class template</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./function_template.html" title="cpp/language/function template">Function template</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./template_specialization.html" title="cpp/language/template specialization">Template specialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./parameter_pack.html" title="cpp/language/pack">Parameter packs</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Miscellaneous</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./asm.html" title="cpp/language/asm">Inline assembly</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./history.html" title="cpp/language/history">History of C++</a></td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/language/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="./basics.html" title="cpp/language/basic concepts"> Basic Concepts</a><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../comments.html" title="cpp/comment">Comments</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./ascii.html" title="cpp/language/ascii">ASCII</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./punctuators.html" title="cpp/language/punctuators">Punctuation</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./name.html" title="cpp/language/identifiers">Names and identifiers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./type-id.html" title="cpp/language/type">Types</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./types.html" title="cpp/language/types">Fundamental types</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./objects.html" title="cpp/language/object">Objects</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./scope.html" title="cpp/language/scope">Scope</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./lifetime.html" title="cpp/language/lifetime">Object lifetime</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./storage_duration.html" title="cpp/language/storage duration">Storage duration and linkage</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./definition.html" title="cpp/language/definition">Definitions and ODR</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./lookup.html" title="cpp/language/lookup">Name lookup</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./qualified_lookup.html" title="cpp/language/qualified lookup"> Qualified name lookup</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./unqualified_lookup.html" title="cpp/language/unqualified lookup"> Unqualified name lookup</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./as_if.html" title="cpp/language/as if">The as-if rule</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./ub.html" title="cpp/language/ub">Undefined behavior</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./memory_model.html" title="cpp/language/memory model">Memory model</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./multithread.html" title="cpp/language/multithread">Multi-threaded executions and data races</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./charset.html" title="cpp/language/charset">Character sets and encodings</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./translation_phases.html" title="cpp/language/translation phases">Phases of translation</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./main_function.html" title="cpp/language/main function">The <code>main</code> function</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./modules.html" title="cpp/language/modules">Modules</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><strong class="selflink">Contracts</strong> <span class="t-mark-rev t-since-cxx26">(C++26)</span></td></tr>
+</tbody></table></div>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/language/basics/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div></div>
+<p>Contract assertions allow the programmer to specify properties of the state of the program
+that are expected to hold at certain points during execution.
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./contracts.html#Explanation"><span class="tocnumber">1</span> <span class="toctext">Explanation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./contracts.html#Evaluating_contract_assertions"><span class="tocnumber">2</span> <span class="toctext">Evaluating contract assertions</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./contracts.html#Handling_contract_violations"><span class="tocnumber">3</span> <span class="toctext">Handling contract violations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="./contracts.html#Contract-terminated_programs"><span class="tocnumber">3.1</span> <span class="toctext">Contract-terminated programs</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="./contracts.html#Contract-violation_handler"><span class="tocnumber">3.2</span> <span class="toctext">Contract-violation handler</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="./contracts.html#Handling_exceptions_from_assertions"><span class="tocnumber">3.3</span> <span class="toctext">Handling exceptions from assertions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="./contracts.html#Evaluate_in_sequence"><span class="tocnumber">4</span> <span class="toctext">Evaluate in sequence</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="./contracts.html#Notes"><span class="tocnumber">5</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="./contracts.html#Keywords"><span class="tocnumber">6</span> <span class="toctext">Keywords</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="./contracts.html#Support_status"><span class="tocnumber">7</span> <span class="toctext">Support status</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="./contracts.html#See_also"><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=edit&amp;section=1" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span></h3>
+<p><i>Contract assertions</i> are introduced by <a href="./function.html#Function_contract_specifiers" title="cpp/language/function">function contract specifiers</a> and <a href="./contract_assert.html" title="cpp/language/contract assert"><code>contract_assert</code></a> statements. Each contract assertion has a <i>predicate ﻿</i>, which is an expression of type <span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span>.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=edit&amp;section=2" title="Edit section: Evaluating contract assertions">edit</a>]</span> <span class="mw-headline" id="Evaluating_contract_assertions">Evaluating contract assertions</span></h3>
+<p>An evaluation of a contract assertion uses one of the following evaluation semantics:
+</p>
+<table class="wikitable" style="text-align: center;">
+<tbody><tr>
+<th>&nbsp;Evaluation semantic&nbsp;
+</th>
+<th>&nbsp;Is a checking semantic&nbsp;
+</th>
+<th>&nbsp;Is a terminating semantic&nbsp;
+</th></tr>
+<tr>
+<td>ignore
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>observe
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td>
+</td></tr>
+<tr>
+<td>enforce
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td></tr>
+<tr>
+<td>quick-enforce
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td></tr></tbody></table>
+<p>It is implementation-defined which evaluation semantic is used for any given evaluation
+of a contract assertion. The evaluation semantics can differ for different evaluations of the same
+contract assertion, including evaluations during constant evaluation.
+</p><p>If the “ignore” semantic is used, the evaluation of a contract assertion has no effect.
+</p><p>If a checking semantic is used, the evaluation <code>E</code> of a contract assertion determines the value of the predicate. It is unspecified whether the predicate is evaluated. If any of the following conditions is satisfied, a <i>contract violation</i> occurs:
+</p>
+<ul><li> The value that would result from evaluating the predicate is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>.
+</li><li> The evaluation of the predicate exits via an exception.
+</li><li> The evaluation of the predicate is performed in a context that is <a href="./constant_expression.html#Manifestly_constant-evaluated_expressions" title="cpp/language/constant expression">manifestly constant-evaluated</a> and the predicate is not a <a href="./constant_expression.html#Core_constant_expression" title="cpp/language/constant expression">core constant expression</a>.
+</li></ul>
+<p>There is an <a href="./as_if.html" title="cpp/language/as if">observable checkpoint</a> <code>CP</code> that happens before <code>E</code> such that
+any other operation <code>OP</code> that happens before <code>A</code> also happens before <code>CP</code>.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> num <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> pre<span class="br0">(</span><span class="br0">(</span>num<span class="sy2">++</span>, <span class="kw2">false</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Increment of “num” might not occur, even if a checking semantic is used</span></pre></div></div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=edit&amp;section=3" title="Edit section: Handling contract violations">edit</a>]</span> <span class="mw-headline" id="Handling_contract_violations">Handling contract violations</span></h3>
+<p>If a contract violation occurs in a context that is manifestly constant-evaluated:
+</p>
+<ul><li> If the evaluation semantic is “observe”, a diagnostic is produced.
+</li><li> If the evaluation semantic is a terminating semantic, the program is ill-formed.
+</li></ul>
+<p>If a contract violation occurs in a context that is not manifestly constant-evaluated:
+</p>
+<ul><li> If the evaluation semantic is “quick-enforce”, the program is contract-terminated.
+</li><li> If the evaluation semantic is “enforce” or “observe”, the contract-violation handler is invoked with an lvalue referring to an object <span class="t-c"><span class="mw-geshi cpp source-cpp">obj</span></span> of type <span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> std<span class="sy4">::</span><span class="me2">contracts</span><span class="sy4">::</span><span class="me2">contract_violation</span></span> containing information about the contract violation.
+<ul><li> Storage for <span class="t-c"><span class="mw-geshi cpp source-cpp">obj</span></span> is allocated in an unspecified manner, but no global <a href="../memory/new/operator_new.html" title="cpp/memory/new/operator new">allocation function</a> will be invoked.
+</li><li> The lifetime of <span class="t-c"><span class="mw-geshi cpp source-cpp">obj</span></span> persists for the duration of the invocation of the contract-violation handler.
+</li></ul>
+</li></ul>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=edit&amp;section=4" title="Edit section: Contract-terminated programs">edit</a>]</span> <span class="mw-headline" id="Contract-terminated_programs">Contract-terminated programs</span></h4>
+<p>When the program is <i>contract-terminated ﻿</i>, it is implementation-defined (depending on
+context) whether
+</p>
+<ul><li> <span class="t-lc"><a href="../error/terminate.html" title="cpp/error/terminate">std::terminate</a></span> is called,
+</li><li> <span class="t-lc"><a href="../utility/program/abort.html" title="cpp/utility/program/abort">std::abort</a></span> is called, or
+</li><li> execution is terminated (no further <a href="./multithread.html#Progress_guarantee" title="cpp/language/multithread">execution steps</a> occur).
+</li></ul>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=edit&amp;section=5" title="Edit section: Contract-violation handler">edit</a>]</span> <span class="mw-headline" id="Contract-violation_handler">Contract-violation handler</span></h4>
+<p>The <i>contract-violation handler</i> of a program is a function named <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy4">::</span><span class="me2">handle_contract_violation</span></span></span>:
+</p>
+<table class="t-dcl-begin"><tbody>
+
+<tr class="t-dcl t-since-cxx26">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> handle_contract_violation<span class="br0">(</span> std<span class="sy4">::</span><span class="me2">contracts</span><span class="sy4">::</span><span class="me2">contract_violation</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx26">(since C++26)</span> <br><span class="t-mark">(optionally noexcept)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>A definition of the contract-violation handler, called the <i>default contract-violation handler ﻿</i>, is provided by the implemenation (instead of a standard library header).
+</p><p>It is implementation-defined whether the contract-violation handler is <a href="./replacement_function.html" title="cpp/language/replacement function">replaceable</a>. If the contract-violation handler is not replaceable, a declaration of a replacement function for the contract-violation handler is ill-formed, no diagnostic required.
+</p><p>When the contract-violation handler returns normally:
+</p>
+<ul><li> If the evaluation semantic is “observe”, control flow continues normally after the point of evaluation of the contract assertion.
+</li><li> If the evaluation semantic is “enforce”, the program is contract-terminated.
+</li></ul>
+<p>There is an <a href="./as_if.html" title="cpp/language/as if">observable checkpoint</a> <code>CP</code> that happens after the contract-violation handler returns normally such that any other operation <code>OP</code> that happens after
+the contract-violation handler returns also happens after <code>CP</code>.
+</p>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=edit&amp;section=6" title="Edit section: Handling exceptions from assertions">edit</a>]</span> <span class="mw-headline" id="Handling_exceptions_from_assertions">Handling exceptions from assertions</span></h4>
+<p>If the contract violation occurred because the evaluation of the predicate exited via an
+exception and the evaluation semantic is “observe” or “enforce”, the contract-violation handler is invoked from within an active implicit <a href="./catch.html" title="cpp/language/catch">handler</a> for that exception.
+</p><p>When the contract-violation handler returns normally:
+</p>
+<ul><li> If the evaluation semantic is “observe”, the implicit handler is no longer considered active.
+</li><li> If the evaluation semantic is “enforce”, the implicit handler remains active when contract termination occurs.
+</li></ul>
+<p>The current exception can be inspected or rethrown within the contract-violation handler using <span class="t-lc"><a href="../error/current_exception.html" title="cpp/error/current exception">std::current_exception()</a></span>.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=edit&amp;section=7" title="Edit section: Evaluate in sequence">edit</a>]</span> <span class="mw-headline" id="Evaluate_in_sequence">Evaluate in sequence</span></h3>
+<p>To <i>evaluate in sequence</i> a list <code>R</code> of contract assertions:
+</p>
+<div class="t-li1"><span class="t-li">1)</span> Construct a list of contract assertions <code>S</code> such that all following conditions are satisfied:
+<ul><li> All elements of <code>R</code> are in <code>S</code>.
+</li><li> Each element of <code>R</code> may be repeated an implementation-defined number of times within <code>S</code>.
+</li><li> If a contract assertion <code>A</code> precedes another contract assertion <code>B</code> in <code>R</code>, then the first occurrence of <code>A</code> precedes the first occurrence of <code>B</code> in <code>S</code>.</li></ul></div>
+
+<div class="t-li1"><span class="t-li">2)</span> Evaluate each element of <code>S</code> such that, if a contract assertion <code>A</code> precedes a contract assertion <code>B</code> in <code>S</code>, then the evaluation of <code>A</code> is <a href="./eval_order.html" title="cpp/language/eval order">sequenced before</a> the evaluation of <code>B</code>.</div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span> i<span class="br0">)</span>
+<span class="br0">{</span>
+    contract_assert<span class="br0">(</span>i <span class="sy1">&gt;</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// #1</span>
+    contract_assert<span class="br0">(</span>i <span class="sy1">&lt;</span> <span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// #2</span>
+    <span class="co1">// valid sequence of evaluations:   #1 #2       (no repeat)</span>
+    <span class="co1">// valid sequence of evaluations:   #1 #1 #2 #2 (repeat in sequence)</span>
+    <span class="co1">// valid sequence of evaluations:   #1 #2 #1 #2 (repeat alternatively)</span>
+    <span class="co1">// valid sequence of evaluations:   #1 #2 #2 #1 (second occurences can switch order)</span>
+    <span class="co1">// invalid sequence of evaluations: #2 #1       (first occurences cannot switch)</span>
+<span class="br0">}</span></pre></div></div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=edit&amp;section=8" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p>The range and flexibility of available choices of evaluation semantics depends on the implementation, and need not allow all four evaluation semantics as possibilities.
+</p><p>Different evaluation semantics chosen for the same contract assertion in different translation units can result in violations of the <a href="./definition.html#ODR" title="cpp/language/definition">one-definition rule</a> when a contract assertion has side effects that alter the value produced by a constant expression:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">constexpr</span> <span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> i<span class="br0">)</span>
+<span class="br0">{</span>
+    contract_assert<span class="br0">(</span><span class="br0">(</span><span class="sy2">++</span><span class="kw1">const_cast</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="br0">(</span>i<span class="br0">)</span>, <span class="kw2">true</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">return</span> i<span class="sy4">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw1">inline</span> <span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> a<span class="br0">[</span>f<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// size dependent on the evaluation semantic of contract_assert above</span>
+<span class="br0">}</span></pre></div></div>
+<p>If the value that would result from evaluating the predicate is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>, no contract violation occurs and control flow continues normally after the point of evaluation of the contract assertion.
+</p><p>If the evaluation of the predicate exits by means of <a href="../utility/program.html#Non-local_jumps" title="cpp/utility/program">non-local jumps</a> or terminating the program, no contract violation occurs either.
+</p><p>It is recommended by the C++ standard that the default contract-violation handler should produce diagnostic output that suitably formats the most relevant contents of the argument (rate-limited for potentially repeated violations of observed contract assertions), and then return normally.
+</p>
+<table class="wikitable ftm-begin">
+
+<tbody><tr>
+<th>Feature-test macro</th>
+<th><abbr title="The year/month in which the feature was adopted. The hyperlink under each value opens a compiler support page with entry for given feature.">Value</abbr></th>
+<th><abbr title="Standard in which the feature is introduced; DR means defect report against that revision">Std</abbr></th>
+<th>Feature
+</th></tr>
+<tr>
+<td><a href="../experimental/feature_test.html#cpp_contracts" title="cpp/feature test"><code>__cpp_contracts</code></a></td>
+<td><a href="../compiler_support/26.html#cpp_contracts_202502L" title="cpp/compiler support/26"><code>202502L</code></a></td>
+<td><span class="t-mark">(C++26)</span></td>
+<td>Contracts
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=edit&amp;section=9" title="Edit section: Keywords">edit</a>]</span> <span class="mw-headline" id="Keywords">Keywords</span></h3>
+<p><a href="../keyword/contract_assert.html" title="cpp/keyword/contract assert"><tt>contract_assert</tt></a>,
+<a href="../identifier_with_special_meaning/pre.html" title="cpp/identifier with special meaning/pre"><tt>pre</tt></a>,
+<a href="../identifier_with_special_meaning/post.html" title="cpp/identifier with special meaning/post"><tt>post</tt></a>
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=edit&amp;section=10" title="Edit section: Support status">edit</a>]</span> <span class="mw-headline" id="Support_status">Support status</span></h3>
+<table class="wikitable tbody-scroll t-compiler-support-top" style="font-size:0.8em; width:100%">
+
+<tbody><tr style="height:15em">
+<th style="vertical-align:bottom;">C++26 feature<br><br>&nbsp;
+</th>
+<th style="vertical-align:bottom;">Paper(s)<br><br>&nbsp;
+</th>
+<th style="width:40pt;"><div class="t-vertical"><div>GCC</div></div>
+</th>
+<th style="width:40pt;"><div class="t-vertical"><div>Clang</div></div>
+</th>
+<th style="width:40pt;"><div class="t-vertical"><div>MSVC</div></div>
+</th>
+<th style="width:40pt;"><div class="t-vertical"><div>Apple Clang</div></div>
+</th>
+<th style="width:40pt;"><div class="t-vertical"><div>EDG eccp</div></div>
+</th>
+<th style="width:40pt;"><div class="t-vertical"><div>Intel C++</div></div>
+</th>
+<th style="width:40pt;"><div class="t-vertical"><div><span title="ex Portland Group/PGI">Nvidia HPC C++ (ex PGI)*</span></div></div>
+</th>
+<th style="width:40pt;"><div class="t-vertical"><div>Nvidia nvcc</div></div>
+</th>
+<th style="width:40pt;"><div class="t-vertical"><div>Cray</div></div>
+<p><br>
+</p>
+</th></tr>
+<tr>
+<td><span id="cpp_contracts_202502L"></span><strong class="selflink">Contracts</strong>&nbsp; (<a href="../experimental/feature_test.html#cpp_contracts" title="cpp/feature test">FTM</a>)<span title="Feature-testing macro:
+__cpp_contracts = 202502L">*</span>
+</td>
+<td><a rel="nofollow" class="external text" href="https://wg21.link/P2900R14">P2900R14</a>
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=edit&amp;section=11" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td> <a href="./contract_assert.html" title="cpp/language/contract assert"><code>contract_assert</code> statement</a> <span class="t-mark-rev t-since-cxx26">(C++26)</span>
+</td>
+<td> verifies an internal condition during execution<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/language/dsc_contract_assert&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <a href="./functions.html#Function_contract_specifiers" title="cpp/language/functions">function contract specifiers</a> <span class="t-mark-rev t-since-cxx26">(C++26)</span>
+</td>
+<td> specifies preconditions (<span class="mw-geshi cpp source-cpp">pre</span>) and postconditions (<span class="mw-geshi cpp source-cpp">post</span>)<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/language/functions/dsc_function_contract_specifiers&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 3961/1000000
+Preprocessor generated node count: 12514/1000000
+Post‐expand include size: 150811/4194304 bytes
+Template argument size: 18308/4194304 bytes
+Highest expansion depth: 16/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:23282-0!*!0!!en!*!* and timestamp 20250323052654 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;oldid=182019">https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;oldid=182019</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./contracts.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/contracts" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/contracts" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;oldid=182019" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/language/contracts&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div id="cpp-languagess" hidden="">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/language/contracts" title="cpp/language/contracts" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/language/contracts" title="cpp/language/contracts" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/language/contracts" title="cpp/language/contracts" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/language/contracts" title="cpp/language/contracts" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/language/contracts" title="cpp/language/contracts" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/language/contracts" title="cpp/language/contracts" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/language/contracts" title="cpp/language/contracts" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/language/contracts" title="cpp/language/contracts" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 18 March 2025, at 19:22.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 1.569 secs. -->
+	
+
+
+</body></html>

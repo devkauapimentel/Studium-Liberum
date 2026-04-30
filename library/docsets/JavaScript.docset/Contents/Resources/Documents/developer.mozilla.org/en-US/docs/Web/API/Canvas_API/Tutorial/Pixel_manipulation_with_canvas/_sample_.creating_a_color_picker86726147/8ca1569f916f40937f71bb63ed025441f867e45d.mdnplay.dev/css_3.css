@@ -1,0 +1,7 @@
+
+body { font-family: sans-serif; }
+.color-cell { color: white; }
+th { width: 30%; }
+td { font-family: monospace; font-weight: bold; padding-left: 1rem; }
+
+button.copy {display:none !important}

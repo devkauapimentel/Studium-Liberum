@@ -1,0 +1,4 @@
+
+.heart { width: 200px; height: 200px; background: linear-gradient(rebeccapurple, magenta) blue; clip-path: url("./en-US/docs/Web/CSS/Guides/Masking/Clipping/runner.html-_-uuid=46d468457bde2e4d29d07c7371c63b7579f2b88d&state=bZDBSsQwEIZfZYiXXcjatAqutS74AIJepZc0CU00rSVJV2HZd3cmUdiDJDCT%25252F58ZvsmJ2TR51rJOuyMoL2N87Jk1MqSeHboK1UM%25252Fd%25252FE4gjVutAld0TP4cjrZkqMP.html-_-uuid=46d468457bde2e4d29d07c7371c63b7579f2b88d&state=bZDBSsQwEIZfZYiXXcjatAqutS74AIJepZc0CU00rSVJV2HZd3cmUdiDJDCT%252F58ZvsmJ2TR51rJOuyMoL2N87Jk1MqSeHboK1UM%252Fd%252FE4gjVutAld0TP4cjrZkqMP0CnvlheZLDh9MYAsNBc0SgpA9nMj%252BJ2Ap1vB8dKpeS3%252B0fZZe6VY34hcU9%252Bj0JR3GfOGPFWhqP4wCLpCaoyMMxUjrnidqeBElZm%252FhUaI5fuBhLLdpTJI9TGGz3XWLXg3Y%252B9uDFI7M6dNMINRSi5rWLzhMMkRVbmFwa8mNxPHjtZuYQ1%252B07Or3y%252FZon3OUO%252FEhDFZMxlMPQGw8w8%253D&code=94271454&%23heart"); }
+
+button.copy {display:none !important}

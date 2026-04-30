@@ -1,0 +1,11 @@
+
+#root-container { height: 250px; overflow-y: auto; border: solid blue; }
+.controls { margin-top: 10px; }
+p { height: 50vh; }
+.flex-container { display: flex; }
+#margin-indicator { position: relative; height: 100px; width: 1px; background-color: red; opacity: 0.5; display: flex; }
+.carousel { width: 300px; overflow-x: auto; scroll-snap-type: x mandatory; display: flex; border: solid; }
+.carousel img { scroll-snap-stop: always; scroll-snap-align: start; display: block; width: 195px; height: 99px; min-width: 195px; min-height: 99px; margin-right: 10px; background-color: rgb(238, 238, 238); }
+#log { height: 100px; overflow: scroll; padding: 0.5rem; border: 1px solid black; }
+
+button.copy {display:none !important}

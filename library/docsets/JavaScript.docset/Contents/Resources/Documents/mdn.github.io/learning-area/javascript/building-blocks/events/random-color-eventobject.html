@@ -1,0 +1,35 @@
+<html><!-- Mirrored from mdn.github.io/learning-area/javascript/building-blocks/events/random-color-eventobject.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 22:12:13 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Random color event object example</title>
+    <style>
+      button {
+        margin: 10px;
+        font-size: 300%;
+        padding: 30px;
+      };
+    </style>
+  </head>
+  <body>
+    <button>Change color</button>
+    <script>
+      const btn = document.querySelector('button');
+
+      function random(number) {
+        return Math.floor(Math.random() * (number+1));
+      }
+
+      function bgChange(e) {
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        e.target.style.backgroundColor = rndCol;
+        console.log(e);
+      }
+
+      btn.addEventListener('click', bgChange);
+    </script>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/learning-area/javascript/building-blocks/events/random-color-eventobject.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 22:12:13 GMT --></html>

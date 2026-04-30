@@ -1,0 +1,88 @@
+<html>
+  <!-- Online page at https://1bfe86cba8bebce1ba20f721b6e76c4c570af079.mdnplay.dev/en-US/docs/Web/API/CSSFontFeatureValuesMap/runner.html?uuid=1bfe86cba8bebce1ba20f721b6e76c4c570af079&state=xVRNaxsxEP0rwyaHdYjXbqEXOw5JS0IvpdCEXqqCldWsdxtZUiVt7MX4v3ckee20SXoJpWDw6uO9efNmRpus9kuZTbIzYxEaMWOZ1AuWnZ%2BNaOOcqew0K52jC6MTuPRD20qESltgmWpKHDrfSWTZKa21EIclV4K23KpxdccyaBRca%2BXhs0I4GTF1UdFqWCH3rcXhA5ctusONDVMAF5HLoU9LgEO8Cbx5OwUSpPgSoXUowGuwSIodEoevEbj0aBX3CIFCV7CQnakdcE9iBK6JIioJzHvlRDx%2BPfF4R7xNaay4q%2FsckiEU5vVRDkHox1QojzGyS%2BhUKBd449oYq41tEp%2FE0mvrIkERXZVa3yeJsS4PnK7S%2F16Em0BfjfxQhsE0xi7cSus%2BxZfxwYY85b8DHlGnJVSNzaL2wf2xWU%2FDjn5AW0m9ImBptZRx03AhGrWYwLh4Z3EZ9%2B60FWgJatbgtGwE3Ele3qcI1Lw%2FQu%2BWWjkPFO5K4jJYPAOhyzZ8Fj9btN3NzpScZUex%2F4PEqlWlb7QKwNzj2g%2BS2gNP0SiF9paOiHF%2BvHnuZHu8CdgtY2o%2B%2FQOecrvVhuBPtj9GU1IiKYFU079pp1Ed6tab1lMKhasRfUF7XwJw2tOEGoUxmyXCb%2BPv1I0juIQPNzdhBq%2FTWH6NUxmgTDUV5DtY0XfCzg1C7ic1dBla30HjwLXGaOtR7HLO0wSw7LaOTW%2Bh5g4EVo0KA1CHZ0VSxanAcTByNxjFVqeP%2BOK8pG4vaEIPTwgymPad%2BFhuQRxXvKzzPD43p3CP3QBm51HbHI43tN7ChD7i%2BXY%2BiG0KKB3u604ev7d6FdQLTbVQ2veJPqvvEzfFE3eK1F5xbH8zNozI4FGsf2ZYCPSCW%2BHo%2F1kV38qnPtEcU75LpFGWYSiy7S8%3D&code=47409515& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;pre id="log"&gt;&lt;/pre&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>/* At-rule for "nice-style", "odd-style", and "swishy" in Font One */
+@font-feature-values Font One {
+  @styleset {
+    nice-style: 12; /* name used to represent the alternate set of glyphs at index 12 */
+    odd-style: 10; /* name used to represent the alternate set of glyphs at index 10 */
+  }
+  @swash {
+    swishy: 1; /* name used to represent the alternate set of glyphs at index 1 */
+  }
+}
+
+/* Apply the at-rules to the appropriate selectors */
+.nice-look {
+  font-variant-alternates: styleset(nice-style);
+}
+.swoosh {
+  font-variant-alternates: swash(swishy);
+}
+#log {
+  height: 100px;
+  overflow: scroll;
+  padding: 0.5rem;
+  border: 1px solid black;
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code>const logElement = document.querySelector("#log");
+function log(text) {
+  logElement.innerText = `${logElement.innerText}${text}\n`;
+  logElement.scrollTop = logElement.scrollHeight;
+}
+const rules = document.querySelector("#css-output").sheet.cssRules;
+const fontOne = rules[0]; // A CSSFontFeatureValuesRule
+if (fontOne.styleset) {
+  // styleset property is supported
+  log(
+    "The user has defined the following name(s)/index(s) for CSSFontFeatureValuesRule.styleset:",
+  );
+  fontOne.styleset.forEach((value, key) =&gt; log(` ${key} : ${value}`));
+} else {
+  log("Browser does not support CSSFontFeatureValuesMap.styleset property.");
+}
+
+if (fontOne.swash) {
+  log(
+    "The user has defined the following name(s)/index(s) for CSSFontFeatureValuesRule.swash:",
+  );
+  fontOne.swash.forEach((value, key) =&gt; log(` ${key} : ${value}`));
+} else {
+  log("Browser does not support CSSFontFeatureValuesMap.swash property.");
+}</code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=1bfe86cba8bebce1ba20f721b6e76c4c570af079&amp;state=xVRNaxsxEP0rwyaHdYjXbqEXOw5JS0IvpdCEXqqCldWsdxtZUiVt7MX4v3ckee20SXoJpWDw6uO9efNmRpus9kuZTbIzYxEaMWOZ1AuWnZ%2BNaOOcqew0K52jC6MTuPRD20qESltgmWpKHDrfSWTZKa21EIclV4K23KpxdccyaBRca%2BXhs0I4GTF1UdFqWCH3rcXhA5ctusONDVMAF5HLoU9LgEO8Cbx5OwUSpPgSoXUowGuwSIodEoevEbj0aBX3CIFCV7CQnakdcE9iBK6JIioJzHvlRDx%2BPfF4R7xNaay4q%2FsckiEU5vVRDkHox1QojzGyS%2BhUKBd449oYq41tEp%2FE0mvrIkERXZVa3yeJsS4PnK7S%2F16Em0BfjfxQhsE0xi7cSus%2BxZfxwYY85b8DHlGnJVSNzaL2wf2xWU%2FDjn5AW0m9ImBptZRx03AhGrWYwLh4Z3EZ9%2B60FWgJatbgtGwE3Ele3qcI1Lw%2FQu%2BWWjkPFO5K4jJYPAOhyzZ8Fj9btN3NzpScZUex%2F4PEqlWlb7QKwNzj2g%2BS2gNP0SiF9paOiHF%2BvHnuZHu8CdgtY2o%2B%2FQOecrvVhuBPtj9GU1IiKYFU079pp1Ed6tab1lMKhasRfUF7XwJw2tOEGoUxmyXCb%2BPv1I0juIQPNzdhBq%2FTWH6NUxmgTDUV5DtY0XfCzg1C7ic1dBla30HjwLXGaOtR7HLO0wSw7LaOTW%2Bh5g4EVo0KA1CHZ0VSxanAcTByNxjFVqeP%2BOK8pG4vaEIPTwgymPad%2BFhuQRxXvKzzPD43p3CP3QBm51HbHI43tN7ChD7i%2BXY%2BiG0KKB3u604ev7d6FdQLTbVQ2veJPqvvEzfFE3eK1F5xbH8zNozI4FGsf2ZYCPSCW%2BHo%2F1kV38qnPtEcU75LpFGWYSiy7S8%3D&amp;code=47409515&amp;" class="leave">Open in Playground</a>
+          <a href="https://1bfe86cba8bebce1ba20f721b6e76c4c570af079.mdnplay.dev/en-US/docs/Web/API/CSSFontFeatureValuesMap/runner.html?state=xVRNaxsxEP0rwyaHdYjXbqEXOw5JS0IvpdCEXqqCldWsdxtZUiVt7MX4v3ckee20SXoJpWDw6uO9efNmRpus9kuZTbIzYxEaMWOZ1AuWnZ%2BNaOOcqew0K52jC6MTuPRD20qESltgmWpKHDrfSWTZKa21EIclV4K23KpxdccyaBRca%2BXhs0I4GTF1UdFqWCH3rcXhA5ctusONDVMAF5HLoU9LgEO8Cbx5OwUSpPgSoXUowGuwSIodEoevEbj0aBX3CIFCV7CQnakdcE9iBK6JIioJzHvlRDx%2BPfF4R7xNaay4q%2FsckiEU5vVRDkHox1QojzGyS%2BhUKBd449oYq41tEp%2FE0mvrIkERXZVa3yeJsS4PnK7S%2F16Em0BfjfxQhsE0xi7cSus%2BxZfxwYY85b8DHlGnJVSNzaL2wf2xWU%2FDjn5AW0m9ImBptZRx03AhGrWYwLh4Z3EZ9%2B60FWgJatbgtGwE3Ele3qcI1Lw%2FQu%2BWWjkPFO5K4jJYPAOhyzZ8Fj9btN3NzpScZUex%2F4PEqlWlb7QKwNzj2g%2BS2gNP0SiF9paOiHF%2BvHnuZHu8CdgtY2o%2B%2FQOecrvVhuBPtj9GU1IiKYFU079pp1Ed6tab1lMKhasRfUF7XwJw2tOEGoUxmyXCb%2BPv1I0juIQPNzdhBq%2FTWH6NUxmgTDUV5DtY0XfCzg1C7ic1dBla30HjwLXGaOtR7HLO0wSw7LaOTW%2Bh5g4EVo0KA1CHZ0VSxanAcTByNxjFVqeP%2BOK8pG4vaEIPTwgymPad%2BFhuQRxXvKzzPD43p3CP3QBm51HbHI43tN7ChD7i%2BXY%2BiG0KKB3u604ev7d6FdQLTbVQ2veJPqvvEzfFE3eK1F5xbH8zNozI4FGsf2ZYCPSCW%2BHo%2F1kV38qnPtEcU75LpFGWYSiy7S8%3D&amp;code=cad796fb-ecd8-4dc6-92b6-4c388102cdda" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

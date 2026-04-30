@@ -1,0 +1,10 @@
+
+.anchor { font-size: 2rem; color: white; text-shadow: black 1px 1px 1px; background-color: rgb(128, 128, 255); text-align: center; align-content: center; outline: 1px solid black; }
+body { width: 80%; margin: 0px auto; }
+.infobox { align-content: center; color: darkblue; background-color: azure; outline: 1px solid rgb(221, 221, 221); font-size: 1rem; text-align: center; }
+.anchor { anchor-name: --my-anchor; width: 100px; height: 50px; }
+.infobox { position-anchor: --my-anchor; position: fixed; }
+#infobox1 { position-area: right; height: anchor-size(height); width: calc(2 * anchor-size(width)); margin-left: 5px; }
+#infobox2 { position-area: span-right top; height: calc(0.8 * anchor-size(height)); margin-bottom: 5px; }
+
+button.copy {display:none !important}

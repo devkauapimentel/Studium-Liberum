@@ -1,0 +1,5 @@
+
+.spelling { text-decoration-line: spelling-error; }
+.grammar { text-decoration-line: grammar-error; }
+
+button.copy {display:none !important}

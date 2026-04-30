@@ -1,0 +1,5 @@
+
+.red-input:focus { background: yellow; color: red; }
+.blue-input:focus { background: yellow; color: blue; }
+
+button.copy {display:none !important}

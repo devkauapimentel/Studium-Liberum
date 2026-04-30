@@ -1,0 +1,8 @@
+
+.fx { display: flex; margin-left: -20px; margin-right: -20px; }
+.fx > div { padding-left: 20px; padding-right: 20px; }
+.fx > div:first-child { width: 30%; }
+.flex { flex: 1 1 0%; }
+#test-target { display: block; width: 100%; margin-bottom: 10px; }
+
+button.copy {display:none !important}

@@ -1,0 +1,19 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/javascript/guide/enumerability_and_ownership_of_properties/index.md
+
+# Original Wiki contributors
+fscholz
+Nozomi3
+NoInkling
+Jannaee
+robinpokorny
+Ende93
+nmve
+whinc
+amZotti
+leobalter
+tjcrowder
+stiliyan
+manish.jethani
+Shhac
+Brettz9

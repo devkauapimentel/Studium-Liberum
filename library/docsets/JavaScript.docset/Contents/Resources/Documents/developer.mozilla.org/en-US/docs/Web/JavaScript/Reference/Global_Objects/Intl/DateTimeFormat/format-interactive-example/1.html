@@ -1,0 +1,20 @@
+<html><head>    <meta charset="utf-8">    <meta http-equiv="x-ua-compatible" content="ie=edge">    <title>JavaScript Demo: Intl.DateTimeFormat.prototype.format()</title>    <meta name="viewport" content="width=device-width, initial-scale=1">    <link href="../../../../../../../../../../interactive_examples/assets/css/codemirror.css" rel="stylesheet">    <link href="../../../../../../../../../../interactive_examples/assets/css/editor-js.css" rel="stylesheet">  </head>  <body>        <section id="static"><pre><code id="static-js" data-height="">const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+const date = new Date(2012, 5);
+
+const dateTimeFormat1 = new Intl.DateTimeFormat("sr-RS", options);
+console.log(dateTimeFormat1.format(date));
+// Expected output: "петак, 1. јун 2012."
+
+const dateTimeFormat2 = new Intl.DateTimeFormat("en-GB", options);
+console.log(dateTimeFormat2.format(date));
+// Expected output: "Friday, 1 June 2012"
+
+const dateTimeFormat3 = new Intl.DateTimeFormat("en-US", options);
+console.log(dateTimeFormat3.format(date));
+// Expected output: "Friday, June 1, 2012"
+    </code></pre></section>        <section id="live" class="live hidden">          <header class="output-header border-rounded-top-no-bottom">            <h4 class="output-heading">JavaScript Demo: Intl.DateTimeFormat.prototype.format()</h4>          </header>          <div id="editor" class="editor"></div>          <div class="output-container">            <div class="buttons-container">              <button id="execute" class="button run" type="button">                Run ›              </button>              <button id="reset" type="button" class="button">Reset</button>            </div>            <div id="console" class="output"><code></code></div>          </div>        </section>    <script src="../../../../../../../../../../interactive_examples/assets/js/codemirror.js"></script>    <script src="../../../../../../../../../../interactive_examples/assets/js/editor-js.js"></script></body></html>

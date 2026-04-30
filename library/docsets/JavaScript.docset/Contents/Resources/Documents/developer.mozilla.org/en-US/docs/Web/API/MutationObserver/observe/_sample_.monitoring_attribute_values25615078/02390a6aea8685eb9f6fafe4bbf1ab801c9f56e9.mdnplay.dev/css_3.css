@@ -1,0 +1,5 @@
+
+body { background-color: paleturquoise; }
+button, input, pre { margin: 0.5rem; }
+
+button.copy {display:none !important}

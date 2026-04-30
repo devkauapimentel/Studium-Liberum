@@ -1,0 +1,12 @@
+
+body { font-family: "Open Sans", "Lucida Grande", Arial, sans-serif; font-size: 16px; }
+#logBox { margin-top: 16px; width: 400px; height: 500px; border-radius: 6px; border: 1px solid black; box-shadow: black 4px 4px 2px; }
+.logHeader { margin: 0px; padding: 0px 6px 4px; height: 22px; background-color: lightblue; border-bottom: 1px solid black; border-radius: 6px 6px 0px 0px; }
+#log { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 12px; line-height: normal; font-family: Courier, monospace; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; padding: 6px; overflow: auto scroll; width: 388px; height: 460px; }
+#container { width: 400px; padding: 6px; border-radius: 6px; border: 1px solid black; box-shadow: black 4px 4px 2px; display: block; overflow: auto; }
+.label { display: inline-block; }
+.counter { text-align: right; padding-top: 4px; float: right; }
+.button { padding-top: 2px; padding-bottom: 4px; width: 100px; display: inline-block; float: left; border: 1px solid black; cursor: pointer; text-align: center; margin-top: 0px; color: white; background-color: darkgreen; }
+#progress { width: 100%; padding-top: 6px; }
+
+button.copy {display:none !important}

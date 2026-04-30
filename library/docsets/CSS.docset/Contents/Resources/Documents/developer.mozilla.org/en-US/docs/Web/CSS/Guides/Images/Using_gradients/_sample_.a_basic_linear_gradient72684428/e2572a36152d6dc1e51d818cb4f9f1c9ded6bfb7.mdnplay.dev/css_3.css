@@ -1,0 +1,5 @@
+
+div { width: 120px; height: 120px; }
+.simple-linear { background: linear-gradient(blue, pink); }
+
+button.copy {display:none !important}

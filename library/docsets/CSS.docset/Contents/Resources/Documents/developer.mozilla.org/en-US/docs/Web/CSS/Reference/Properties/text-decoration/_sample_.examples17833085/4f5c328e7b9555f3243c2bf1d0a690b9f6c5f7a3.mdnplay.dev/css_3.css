@@ -1,0 +1,10 @@
+
+.under { text-decoration: underline red; }
+.over { text-decoration: overline wavy lime; }
+.line { text-decoration: line-through; }
+.plain { text-decoration: none; }
+.underover { text-decoration: underline overline dashed; }
+.thick { text-decoration: underline 4px purple; }
+.blink { text-decoration: blink; }
+
+button.copy {display:none !important}

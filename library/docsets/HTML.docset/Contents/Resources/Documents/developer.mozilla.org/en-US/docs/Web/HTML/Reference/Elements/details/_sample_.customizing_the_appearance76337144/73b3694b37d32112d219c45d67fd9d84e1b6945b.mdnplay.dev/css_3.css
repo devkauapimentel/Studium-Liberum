@@ -1,0 +1,6 @@
+
+details { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 16px; line-height: normal; font-family: "Open Sans", Calibri, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; width: 620px; }
+details > summary { padding: 2px 6px; width: 15em; background-color: rgb(221, 221, 221); border: medium; box-shadow: black 3px 3px 4px; cursor: pointer; }
+details > p { border-radius: 0px 0px 10px 10px; background-color: rgb(221, 221, 221); padding: 2px 6px; margin: 0px; box-shadow: black 3px 3px 4px; }
+
+button.copy {display:none !important}

@@ -1,0 +1,5 @@
+
+.container { display: grid; font-family: sans-serif; font-size: 14px; color: white; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+.container div { border-radius: 8px; padding: 8px 4px; }
+
+button.copy {display:none !important}

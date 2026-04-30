@@ -1,0 +1,28 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/learn_web_development/extensions/client-side_apis/introduction/index.md
+
+# Original Wiki contributors
+chrisdavidmills
+A.Faturechi
+ckashby
+CodeDotJS
+kruschk
+syntaxval
+MariCastell
+agnelvishal
+pontusdevelopment
+sideshowbarker
+DToDelete
+peterschussheim
+thenoelman
+McFarJ
+rmorabia
+Serioth
+utkarshbhatt12
+RayannTedds
+stephaniehobson
+Sheppy
+BrunkBeard
+psy054duck
+vaibhav.vgc
+sngv

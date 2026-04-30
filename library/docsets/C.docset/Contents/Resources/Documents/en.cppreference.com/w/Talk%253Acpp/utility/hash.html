@@ -1,0 +1,306 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/utility/hash.html --><head><meta charset="utf-8"><title>Talk:cpp/utility/hash</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_3772.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_utility_hash skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Futility%2Fhash&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Futility%2Fhash" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/utility/hash.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./hash.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./hash.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./hash.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./hash.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/utility/hash</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../utility.html" title="Talk:cpp/utility">utility</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./hash.html#Misleading_examples"><span class="tocnumber">1</span> <span class="toctext">Misleading examples</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./hash.html#Why_no_need_for_separate_pages_for_the_specializations.3F"><span class="tocnumber">2</span> <span class="toctext">Why no need for separate pages for the specializations?</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./hash.html#Hash_for_enums"><span class="tocnumber">3</span> <span class="toctext">Hash for enums</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./hash.html#boost::hash_combine"><span class="tocnumber">4</span> <span class="toctext">boost::hash_combine</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="./hash.html#noexcept"><span class="tocnumber">5</span> <span class="toctext">noexcept</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;action=edit&amp;section=1" title="Edit section: Misleading examples">edit</a>]</span> <span class="mw-headline" id="Misleading_examples">Misleading examples</span></h2>
+<p>The examples suggest to combine hashes by just doing h1 ^ (h2 &lt;&lt; 1).
+This works fine, but in case a loop is done to combine several values, I've found that consecutive identical hashes delete each other effects.
+As example, let h1 = XX, h2 = 42 and h3 = 42. We do this:
+</p><p>h0 = h1
+</p><p>h0 = h0 ^ (h2&lt;&lt;1)
+</p><p>h0 = h0 ^ (h3&lt;&lt;1)
+</p><p>In the end, h0 will still have value XX.
+</p>
+<dl><dd> That's because you're missing the essential point. The last line should be `h0 = h0 ^ (h3 &lt;&lt; 2)` and the next would be `h0 ^= h4 &lt;&lt; 3` and so on. Of course there is a chance one value can cancel another out, but that's how hashes work. I more serious problem when combining hashes like this is that bits get removed. I.e. if `size_t` is 64-bit and you're up to the 64th item, `h65 &lt;&lt; 64`will always produce 0. I.e. shift is not really the best solution. <a href="https://en.cppreference.com/mwiki/index.php?title=User:JHBonarius&amp;action=edit&amp;redlink=1" class="new" title="User:JHBonarius (page does not exist)">JHBonarius</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:JHBonarius&amp;action=edit&amp;redlink=1" class="new" title="User talk:JHBonarius (page does not exist)">talk</a>) 03:51, 17 May 2021 (PDT)
+</dd></dl>
+<p><br>
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;action=edit&amp;section=2" title="Edit section: Why no need for separate pages for the specializations?">edit</a>]</span> <span class="mw-headline" id="Why_no_need_for_separate_pages_for_the_specializations.3F">Why no need for separate pages for the specializations?</span></h2>
+<p>There are separate pages (or, mostly, placeholder dcl list entries) for the specializations of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/algorithm/swap.html"><span class="kw1603">std::<span class="me2">swap</span></span></a></span></span> for various types. If all specializations of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/utility/hash.html"><span class="kw1127">std::<span class="me2">hash</span></span></a></span></span> should be listed here, then all specializations of swap should be listed in std::swap? --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 13:17, 4 October 2011 (PDT)
+</p>
+<dl><dd> btw, I missed <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/memory/shared_ptr.html"><span class="kw736">std::<span class="me2">shared_ptr</span></span></a></span></span>, but other than that, what's present on this page and in the commented-out section is the complete list of standard specializations of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/utility/hash.html"><span class="kw1127">std::<span class="me2">hash</span></span></a></span></span>. There isn't really a lot of substance to each specialization (what could the examples be, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/container/unordered_set.html"><span class="kw1292">std::<span class="me2">unordered_set</span></span></a></span></span> of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/thread/thread/id.html"><span class="kw2151">std::<span class="me2">thread</span><span class="sy4">::</span><span class="me2">id</span></span></a></span></span>'s, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/container/unordered_set.html"><span class="kw1292">std::<span class="me2">unordered_set</span></span></a></span></span> of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/error/error_code.html"><span class="kw879">std::<span class="me2">error_code</span></span></a></span></span>'s, etc?). Perhaps a sensible consistent approach for such function template specializations would be to list each standard specialization as a tdcl list item twice: once in the class page and once in the function template page? The way <span class="t-c"><span class="mw-geshi cpp source-cpp">hash<span class="sy1">&lt;</span>string<span class="sy1">&gt;</span></span></span> is done now? 
+</dd><dd> On the other hand, there are *special* specializations, such as <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/container/vector.html"><span class="kw1272">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/locale/ctype.html"><span class="kw1942">std::<span class="me2">ctype</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">uses_alocator</span><span class="sy1">&lt;</span>tuple<span class="sy1">&gt;</span></span></span>, whose semantics, not just implementation, are significantly different from the general template - those, I think, deserve their own pages. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 13:54, 4 October 2011 (PDT)
+<dl><dd> ... although perhaps they don't deserve frontpage mention as I placed ctype&lt;char&gt;, I think I'll move the link to it inside cpp/locale/ctype --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 13:56, 4 October 2011 (PDT)
+</dd></dl>
+</dd></dl>
+<dl><dd> I've noticed this talk only now. I agree with everything - this is the only possible way to consistently represent various specializations/overloads. I've proved that using the trial and error approach. LOL. <a href="../../User%25253AP12.html" title="User:P12">P12</a> 14:35, 4 October 2011 (PDT)
+</dd><dd> BTW I think we need a separate page for <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/container/vector.html"><span class="kw1272">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span></span></span>, since its interface is different from the <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/container/vector.html"><span class="kw1272">std::<span class="me2">vector</span></span></a></span></span>. Mixing these two pages would result in a lot of confusion. Still, there's not much work to be done as we could use already existing templates.<a href="../../User%25253AP12.html" title="User:P12">P12</a> 14:40, 4 October 2011 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;action=edit&amp;section=3" title="Edit section: Hash for enums">edit</a>]</span> <span class="mw-headline" id="Hash_for_enums">Hash for enums</span></h2>
+<p>I misunderstood the section about enum specializations in C++14 so I have re-worded it slightly. It's quite surprising that libstdc++ (as of gcc 5.3) still doesn't implement hash for enums. Seems to be fixed but not released: <a rel="nofollow" class="external free" href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=60970">https://gcc.gnu.org/bugzilla/show_bug.cgi?id=60970</a> <a href="https://en.cppreference.com/mwiki/index.php?title=User:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User:Gubbins (page does not exist)">gubbins</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Gubbins&amp;action=edit&amp;redlink=1" class="new" title="User talk:Gubbins (page does not exist)">talk</a>) 16:58, 18 July 2016 (PDT)
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;action=edit&amp;section=4" title="Edit section: boost::hash combine">edit</a>]</span> <span class="mw-headline" id="boost::hash_combine"> boost::hash_combine </span></h2>
+<p>There is this in the examples:
+or use boost::hash_combine (see Discussion)
+</p><p>But nothing in discussion, just remove "(see Discussion)"?
+</p>
+<dl><dd> Removed --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 04:54, 20 July 2021 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> The complete history:
+<ul><li> <a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;diff=prev&amp;oldid=90033">happened</a>
+</li><li> <a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;diff=next&amp;oldid=116280">fix 1</a>
+</li><li> <a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;curid=2990&amp;diff=131659&amp;oldid=128466">fix 2</a>
+</li></ul>
+</dd><dd>--<a href="../../User%25253ASpace_Mission.html" title="User:Space Mission">Space Mission</a> (<a href="../../User_talk%25253ASpace_Mission.html" title="User talk:Space Mission">talk</a>) 05:14, 20 July 2021 (PDT)
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> Guess I was wrong about it being a copy+paste error. Is it worth pointing out the "Misleading examples" comment on the page somehow? --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 06:29, 20 July 2021 (PDT)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;action=edit&amp;section=5" title="Edit section: noexcept">edit</a>]</span> <span class="mw-headline" id="noexcept"> noexcept </span></h2>
+<p>Is it really true that hash functions should not throw? I don't see it on the latest draft [1] nor is it on cppreference's own page on the Hash named requirement [2].
+</p><p>[1] [hash.requirements] <a rel="nofollow" class="external free" href="http://eel.is/c++draft/hash.requirements">http://eel.is/c++draft/hash.requirements</a>
+</p><p>[2] <a rel="nofollow" class="external free" href="../../cpp/named_req/Hash.html">https://en.cppreference.com/w/cpp/named_req/Hash</a>
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Gracefu&amp;action=edit&amp;redlink=1" class="new" title="User:Gracefu (page does not exist)">Gracefu</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Gracefu&amp;action=edit&amp;redlink=1" class="new" title="User talk:Gracefu (page does not exist)">talk</a>) 08:02, 31 August 2021 (PDT)
+</p>
+<dl><dd> the standard only promises that all library hashes (with three exceptions, noted on this page) are noexcept. The wording is in <a rel="nofollow" class="external text" href="http://eel.is/c++draft/unord.hash#3">unord.hash</a>, it was introduced in <a rel="nofollow" class="external text" href="http://wg21.link/p0599r1">p0599</a> --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 12:30, 31 August 2021 (PDT)
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 363/1000000
+Preprocessor generated node count: 455/1000000
+Post‐expand include size: 2030/4194304 bytes
+Template argument size: 412/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2999-0!*!0!!en!*!* and timestamp 20240517222322 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;oldid=133095">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;oldid=133095</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./hash.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/utility/hash" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/utility/hash" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;oldid=133095" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/utility/hash&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 August 2021, at 12:30.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 12,575 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.035 secs. -->
+	
+
+
+</body></html>

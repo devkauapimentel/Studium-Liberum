@@ -1,0 +1,4 @@
+
+div.example { display: -webkit-box; -webkit-box-orient: horizontal; }
+
+button.copy {display:none !important}

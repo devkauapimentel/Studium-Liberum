@@ -1,0 +1,9 @@
+
+@property --item-size { syntax: "<percentage>"; inherits: true; initial-value: 40%; }
+.container { --item-size: 20%; --item-color: orange; }
+.two { --item-size: initial; --item-color: inherit; }
+.three { --item-size: 1000px; --item-color: xyz; }
+.item { width: var(--item-size); height: var(--item-size); background-color: var(--item-color); }
+.container { display: flex; height: 200px; border: 1px dashed black; }
+
+button.copy {display:none !important}

@@ -1,0 +1,14 @@
+
+.no-interest-invokers body::before { content: "Your browser doesn't support interest invokers."; background-color: wheat; display: block; padding: 10px 0px; width: 100%; text-align: center; }
+html { font-family: sans-serif; }
+* { box-sizing: border-box; }
+a[interestfor] { }
+#user-info { position-area: right bottom; }
+#user-info { border: 1px solid lightgray; border-radius: 5px; padding: 0px 10px; margin: 5px; background-color: white; font-size: 0.8rem; }
+#user-info .wrapper { display: flex; align-items: center; gap: 20px; width: 480px; font-size: 0.8rem; }
+#user-info img { margin: 10px 0px; border: 1px solid lightgray; border-radius: 5px; }
+[popover] { opacity: 0; transition: opacity 0.7s, overlay 0.7s allow-discrete, display 0.7s allow-discrete; }
+@starting-style {
+}
+
+button.copy {display:none !important}

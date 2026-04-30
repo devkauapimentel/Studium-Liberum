@@ -1,0 +1,87 @@
+<html>
+  <!-- Online page at https://79c0762599fbde38c6077acb66dc6dc4bdeae56b.mdnplay.dev/en-US/docs/Web/API/Web_components/Using_templates_and_slots/runner.html?uuid=79c0762599fbde38c6077acb66dc6dc4bdeae56b&state=nVbbbuM2EP2VgRZdOIAvcRDsNrYiIE0MbIrEKTZ59AtNji12KVElqThukH%2FvUHfZLhbtkyTO8MzhmeGM3oPYJSqYBaHDJFPMIUhxvQpQYYKpGwl0TCo7qq2rIFqlAKF1e4XFK0DlA%2B%2FlJ8BG084NS6Taz2AVPGWYwjNLLTzIbexWwZAWv6F6RSc5Kz9vjGRqFcxLiI%2FyMU5ZggewO%2FQYM1hrJea1hWulzQw%2BXUy%2FMn4%2B722w8m%2BcwfTi%2FJc%2BeHzZIifMbGVKXufZG5zD6Ff%2FOHK3GUvbPWvGf2yNzlNxHDhjQsh0O4MLAvqSvf0MShuBxH9K3lYrKeATR7zaXM37HiPDhMztDC5%2FClkpsoulwwNRmXNGrnOH9lCAkcINSXtx0cD3NLw6lLALlf0L2PTLEZgvnRlIx5TkXcBw0lZVWBVVVWKhzROC3Uc1UuiP23zRN9cCgStmLVWvr5tV0FoBos%2FKzUOrtANv7FR46RstF4s7WN48LogFeUWft%2BQ%2F8agtTDdeIXcdT6DlB%2FF6sbzdyMxJndah7hbPt9%2Fv%2F3i5f1pWEelBmCeilYZaiUlfilDI14ZHm4%2FqnhYe8WVUynXTmCvIcEK2VtIO4x5SmEVLnWI4yaKKa82FgpfpmnTzFcYGJvQWTuq24T8OWkrVR7yMHvI4I361c%2FSea0%2FQkkx0AxSKY0yNAQ3I1EqqCAY7XNNtSDI6QOrAxcxBbtFY4AS3kUrBTrqYDCgN6F2VAFL4R54NGxvgZoPcgd6UYJauNwhJi8bD3j09gjNI98DpLZK%2FGbfprApa1eRPZCkULvLHJh0bcYWIXihw0QMprCfhAQiYLJXoqlD5WNn%2FIXedqv8meYI8Zqm0Cd1tA157LwxX0iNDkQJOl76RXlpIqcqchjUCSUepQlGi7WIaE4x65xa9m9JMoADSiZKxB5uvLf6VE5Da%2B72UX8dSJ4mxAJEbH9bktJBUFzYvUvQ7e2XPBe9%2BQk6JFgwDbi3NQkpV0cx6jazsY9SohCutJ4bOweC71Sm1c2bLEfcg12iY1w8edarLxVtN1Klcl7irpl93aE2rjntq8nkm4gTPaUN0rcW%2B5%2BB0RrPja22n8%2F7pj8tz63SyKPWwY4EbmeLA7zv6DyDSxdF9vwF8o7wKC99eHh%2Bq3fUQoJxbZ3LutBmctZPB5hnSQmdukxs0fx7XIDTPPc6YLlEF%2Bdv%2BXgzqDScodX5NhrXb2bgquoNINmZC775rqsBrqkdp%2FQRjPH4u1gfvkFC%2F95nT9MuyCuCjpdpuHbOMrOI2lkoMGsKSmoJxS9o%2FqAkNqSXkeFZjFDPugzj6BdKeLnSCJL%2FyaQ0%2B%2FgE%3D&code=67621766& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <template id="element-details-template">
+  <style>
+    details {
+      font-family: "Open Sans Light", "Helvetica", "Arial";
+    }
+    .name {
+      font-weight: bold;
+      color: #217ac0;
+      font-size: 120%;
+    }
+    h4 {
+      margin: 10px 0 -8px 0;
+    }
+    h4 span {
+      background: #217ac0;
+      padding: 2px 6px;
+    }
+    h4 span {
+      border: 1px solid #cee9f9;
+      border-radius: 4px;
+    }
+    h4 span {
+      color: white;
+    }
+    .attributes {
+      margin-left: 22px;
+      font-size: 90%;
+    }
+    .attributes p {
+      margin-left: 16px;
+      font-style: italic;
+    }
+  </style>
+  <details>
+    <summary>
+      <span>
+        <code class="name">&lt;<slot name="element-name">NEED NAME</slot>&gt;</code>
+        <span class="desc"><slot name="description">NEED DESCRIPTION</slot></span>
+      </span>
+    </summary>
+    <div class="attributes">
+      <h4><span>Attributes</span></h4>
+      <slot name="attributes"><p>None</p></slot>
+    </div>
+  </details>
+  <hr>
+</template>
+<element-details>
+  <span slot="element-name">slot</span>
+  <span slot="description">A placeholder inside a web component that users can fill with their own
+    markup, with the effect of composing different DOM trees together.</span>
+  <dl slot="attributes">
+    <dt>name</dt>
+    <dd>The name of the slot.</dd>
+  </dl>
+</element-details>
+
+<element-details>
+  <span slot="element-name">template</span>
+  <span slot="description">A mechanism for holding client- side content that is not to be rendered
+    when a page is loaded but may subsequently be instantiated during runtime
+    using JavaScript.</span>
+</element-details>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../js_3.js'></script>
+</body>
+</html>

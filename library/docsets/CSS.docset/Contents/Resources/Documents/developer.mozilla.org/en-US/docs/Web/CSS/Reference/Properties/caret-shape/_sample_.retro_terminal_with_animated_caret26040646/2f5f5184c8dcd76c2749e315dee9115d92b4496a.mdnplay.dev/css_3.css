@@ -1,0 +1,12 @@
+
+label { background: rgb(9, 33, 4); display: block; padding: 10px 20px; color: rgb(0, 173, 0); font-weight: bold; font-family: monospace; }
+.old-screen { background: repeating-linear-gradient(rgb(9, 33, 4), rgb(9, 33, 4) 2px, rgb(18, 50, 8) 2px, rgb(18, 50, 8) 4px); height: 140px; display: flex; align-items: flex-start; padding: 20px; font-family: monospace; }
+span { display: inline-block; padding: 2px 5px; color: rgb(0, 173, 0); font-weight: bold; margin-right: 8px; }
+.terminal-input { background: none; height: 100%; border: medium; color: rgb(0, 173, 0); font-family: inherit; font-size: 1rem; outline: medium; flex: 1 1 0%; resize: none; }
+.terminal-input { animation: 2s infinite old-caret; }
+@keyframes old-caret { 
+  0%,50% { caret-color: rgb(0, 173, 0); }
+  75%,100% { caret-color: transparent; }
+}
+
+button.copy {display:none !important}

@@ -1,0 +1,15 @@
+<html><head>    <meta charset="utf-8">    <meta http-equiv="x-ua-compatible" content="ie=edge">    <title>JavaScript Demo: Object.create()</title>    <meta name="viewport" content="width=device-width, initial-scale=1">    <link href="../../../../../../../../../interactive_examples/assets/css/codemirror.css" rel="stylesheet">    <link href="../../../../../../../../../interactive_examples/assets/css/editor-js.css" rel="stylesheet">  </head>  <body>        <section id="static"><pre><code id="static-js" data-height="">const person = {
+  isHuman: false,
+  printIntroduction() {
+    console.log(\`My name is $\{this.name}. Am I human? $\{this.isHuman}\`);
+  },
+};
+
+const me = Object.create(person);
+
+me.name = "Matthew"; // "name" is a property set on "me", but not on "person"
+me.isHuman = true; // Inherited properties can be overwritten
+
+me.printIntroduction();
+// Expected output: "My name is Matthew. Am I human? true"
+    </code></pre></section>        <section id="live" class="live hidden">          <header class="output-header border-rounded-top-no-bottom">            <h4 class="output-heading">JavaScript Demo: Object.create()</h4>          </header>          <div id="editor" class="editor"></div>          <div class="output-container">            <div class="buttons-container">              <button id="execute" class="button run" type="button">                Run ›              </button>              <button id="reset" type="button" class="button">Reset</button>            </div>            <div id="console" class="output"><code></code></div>          </div>        </section>    <script src="../../../../../../../../../interactive_examples/assets/js/codemirror.js"></script>    <script src="../../../../../../../../../interactive_examples/assets/js/editor-js.js"></script></body></html>

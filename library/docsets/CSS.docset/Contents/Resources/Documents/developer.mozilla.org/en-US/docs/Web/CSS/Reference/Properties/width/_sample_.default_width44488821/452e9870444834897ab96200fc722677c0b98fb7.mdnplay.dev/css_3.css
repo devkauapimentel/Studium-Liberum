@@ -1,0 +1,5 @@
+
+p { background: gold; }
+p.has-width { width: auto; }
+
+button.copy {display:none !important}

@@ -1,0 +1,6 @@
+
+.input { float: left; width: 50%; }
+.output { float: right; width: 50%; overflow-wrap: break-word; }
+button { display: block; }
+
+button.copy {display:none !important}

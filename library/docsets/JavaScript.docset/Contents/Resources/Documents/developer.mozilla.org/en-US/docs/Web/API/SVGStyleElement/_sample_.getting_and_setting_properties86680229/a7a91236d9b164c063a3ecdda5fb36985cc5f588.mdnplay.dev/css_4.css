@@ -1,0 +1,7 @@
+
+@media (width >= 600px) {
+circle { fill: gold; stroke: green; stroke-width: 3px; }
+}
+
+
+button.copy {display:none !important}

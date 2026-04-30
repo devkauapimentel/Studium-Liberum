@@ -1,0 +1,5 @@
+
+.small-caps { font-variant-caps: small-caps; font-style: italic; }
+.normal { font-variant-caps: normal; font-style: italic; }
+
+button.copy {display:none !important}

@@ -1,0 +1,6 @@
+
+#dropzone { text-align: center; width: 300px; height: 100px; margin: 10px; padding: 10px; border: 4px dashed red; border-radius: 10px; }
+#boxtitle { display: table-cell; vertical-align: middle; text-align: center; color: black; font-style: normal; font-variant-caps: normal; font-weight: bold; font-width: normal; font-size: 2em; line-height: normal; font-family: Arial, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; width: 300px; height: 100px; }
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 14px; line-height: normal; font-family: Arial, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+
+button.copy {display:none !important}

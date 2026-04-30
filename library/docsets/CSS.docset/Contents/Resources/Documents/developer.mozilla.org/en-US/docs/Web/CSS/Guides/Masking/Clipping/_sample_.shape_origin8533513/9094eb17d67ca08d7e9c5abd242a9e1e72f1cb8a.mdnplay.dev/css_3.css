@@ -1,0 +1,11 @@
+
+blockquote { width: 210px; padding: 20px; margin: 20px; border: 20px dashed rgb(222, 222, 222); background-color: rgb(237, 237, 237); background-image: linear-gradient(rebeccapurple, magenta); background-repeat: no-repeat; background-origin: border-box; clip-path: var(--value) polygon(0 50%, 50% 100%, 100% 50%, 50% 0); }
+blockquote { font-size: 1.2rem; }
+q { color: white; font-family: sans-serif; display: block; margin-bottom: 0.5em; }
+p { margin: 0px; line-height: 1.6; }
+body { --value: ""; }
+body:has([value="border-box"]:checked) { --value: border-box; }
+body:has([value="padding-box"]:checked) { --value: padding-box; }
+body:has([value="content-box"]:checked) { --value: content-box; }
+
+button.copy {display:none !important}

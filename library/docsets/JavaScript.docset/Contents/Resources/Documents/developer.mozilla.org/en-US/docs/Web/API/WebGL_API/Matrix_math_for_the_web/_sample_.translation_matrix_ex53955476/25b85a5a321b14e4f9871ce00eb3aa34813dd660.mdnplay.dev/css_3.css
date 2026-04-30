@@ -1,0 +1,6 @@
+
+.transformable { width: 200px; height: 200px; overflow-y: scroll; background: rgb(68, 204, 204); padding: 10px; border: 2px solid rgb(51, 51, 51); position: absolute; top: 50%; left: 50%; margin-left: -100px; margin-top: -100px; transition: transform 500ms; }
+.transformable h2 { margin-top: 0px; }
+.ghost { opacity: 0.1; pointer-events: none; }
+
+button.copy {display:none !important}

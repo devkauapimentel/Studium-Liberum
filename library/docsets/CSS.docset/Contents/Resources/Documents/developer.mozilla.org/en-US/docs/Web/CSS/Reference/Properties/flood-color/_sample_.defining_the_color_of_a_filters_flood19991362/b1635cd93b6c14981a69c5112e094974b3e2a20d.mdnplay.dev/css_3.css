@@ -1,0 +1,7 @@
+
+rect { width: 100px; height: 100px; x: 10px; y: 10px; }
+#r2 { x: 150px; }
+#flood1 feFlood { flood-color: rebeccapurple; }
+#flood2 feFlood { flood-color: rgb(255, 51, 102); }
+
+button.copy {display:none !important}

@@ -1,0 +1,8 @@
+
+input { border-radius: 0px; }
+input:autofill { border-radius: 0.5lh; outline: 5px dashed magenta; border-color: yellow; }
+@supports not selector(:autofill) {
+  body::before { content: "Your browser doesn't support the :autofill selector."; background-color: wheat; display: block; width: 100%; text-align: center; padding: 5px; }
+}
+
+button.copy {display:none !important}

@@ -1,0 +1,7 @@
+
+@font-face { font-family: LeagueMono; src: url("../mdn.github.io/shared-assets/fonts/LeagueMono-VF.ttf"); font-weight: 300 700; }
+p { font-family: LeagueMono, serif; font-size: 1.5rem; }
+p:first-of-type { font-weight: 300; }
+p:last-of-type { font-weight: 700; }
+
+button.copy {display:none !important}

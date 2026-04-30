@@ -1,0 +1,5 @@
+
+.exciting-text::after { content: " <- EXCITING!"; color: darkgreen; font-weight: bolder; }
+.boring-text::after { content: " <- BORING"; color: darkviolet; font-weight: bolder; }
+
+button.copy {display:none !important}

@@ -1,0 +1,11 @@
+
+body { font-family: sans-serif; font-size: 1.25rem; }
+[contenteditable] { cursor: copy; caret-color: magenta; border: 1px solid rgb(204, 204, 204); }
+:focus { outline: 3px dashed magenta; outline-offset: 10px; }
+* { accent-color: magenta; }
+div, fieldset { margin: 20px; }
+textarea:nth-of-type(1) { cursor: wait; }
+textarea:nth-of-type(2) { resize: none; }
+textarea:nth-of-type(3) { pointer-events: none; }
+
+button.copy {display:none !important}

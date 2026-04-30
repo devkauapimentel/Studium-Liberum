@@ -1,0 +1,16 @@
+
+body { width: 200px; margin: 20px auto; }
+div { width: 100%; height: 200px; background-color: green; background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5)); box-shadow: gray 1px 1px 3px; border-radius: 50%; outline: medium; }
+@supports not (corner-shape: square) {
+  body { all: unset !important; }
+  body::before { content: "Your browser does not support the 'corner-shape' property."; color: black; background-color: rgb(255, 205, 51); display: block; width: 100%; text-align: center; padding: 1rem 0px; }
+  body > * { display: none; }
+}
+@keyframes corner-pulse { 
+  0% { }
+  20% { }
+  100% { }
+}
+div { animation: 4s linear infinite alternate corner-pulse; }
+
+button.copy {display:none !important}

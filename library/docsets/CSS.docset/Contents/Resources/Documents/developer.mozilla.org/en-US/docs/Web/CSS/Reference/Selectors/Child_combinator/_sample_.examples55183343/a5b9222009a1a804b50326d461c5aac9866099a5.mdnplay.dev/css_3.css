@@ -1,0 +1,5 @@
+
+span { background-color: aqua; }
+div > span { background-color: yellow; }
+
+button.copy {display:none !important}

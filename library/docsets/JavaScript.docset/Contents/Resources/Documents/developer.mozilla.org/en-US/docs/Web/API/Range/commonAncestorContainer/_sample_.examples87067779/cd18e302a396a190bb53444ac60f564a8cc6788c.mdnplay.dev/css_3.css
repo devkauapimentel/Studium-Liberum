@@ -1,0 +1,9 @@
+
+.highlight { animation: 1s linear highlight; }
+@keyframes highlight { 
+  0% { outline: 1px solid red; }
+  100% { outline: 1px solid transparent; }
+}
+body { padding: 1px; }
+
+button.copy {display:none !important}

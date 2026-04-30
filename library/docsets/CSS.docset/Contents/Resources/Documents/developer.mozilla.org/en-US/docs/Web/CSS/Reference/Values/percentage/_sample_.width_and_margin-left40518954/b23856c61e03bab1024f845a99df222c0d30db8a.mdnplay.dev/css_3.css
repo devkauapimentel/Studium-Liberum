@@ -1,0 +1,6 @@
+
+.container { background-color: navy; }
+.box1 { width: 50%; margin-left: 20%; background-color: chartreuse; }
+.box2 { width: 30%; margin-left: 60%; background-color: pink; }
+
+button.copy {display:none !important}

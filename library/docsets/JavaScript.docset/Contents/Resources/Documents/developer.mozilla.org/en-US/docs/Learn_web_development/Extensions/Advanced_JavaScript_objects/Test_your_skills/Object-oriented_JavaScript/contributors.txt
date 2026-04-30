@@ -1,0 +1,7 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/learn_web_development/extensions/advanced_javascript_objects/test_your_skills/object-oriented_javascript/index.md
+
+# Original Wiki contributors
+A.Faturechi
+abinashLin
+chrisdavidmills

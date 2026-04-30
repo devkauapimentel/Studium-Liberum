@@ -1,0 +1,13 @@
+
+body { column-width: 150px; column-rule-width: 2px; column-rule-style: solid; column-rule-color: red; gap: 3em 2em; padding: 0px 2em; }
+h1 { column-span: all; }
+p:first-of-type { margin-top: 0px; }
+html { scroll-snap-type: y mandatory; }
+* { box-sizing: border-box; }
+html { font-family: Arial, sans-serif; }
+p { line-height: 1.5; }
+@supports not (column-height: 15em) {
+  body::before { content: "Your browser does not support the 'column-height' property."; background-color: wheat; position: fixed; inset: 40% 0px; height: fit-content; text-align: center; padding: 1rem 0px; }
+}
+
+button.copy {display:none !important}

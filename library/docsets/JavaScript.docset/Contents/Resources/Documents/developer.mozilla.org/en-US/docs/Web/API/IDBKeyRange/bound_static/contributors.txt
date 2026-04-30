@@ -1,0 +1,14 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/idbkeyrange/bound_static/index.md
+
+# Original Wiki contributors
+sideshowbarker
+sarojsasmal
+bryangingechen
+fscholz
+jpmedley
+arronei
+libbymc
+inexorabletash
+chrisdavidmills
+trevorh

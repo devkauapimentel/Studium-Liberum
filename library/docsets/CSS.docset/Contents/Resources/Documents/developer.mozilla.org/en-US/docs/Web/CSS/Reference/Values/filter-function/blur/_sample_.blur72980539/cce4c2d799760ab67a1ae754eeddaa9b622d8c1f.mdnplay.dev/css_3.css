@@ -1,0 +1,6 @@
+
+.filter { filter: blur(3.5px); }
+svg:not([height]) { display: none; }
+th, td { padding: 5px; }
+
+button.copy {display:none !important}

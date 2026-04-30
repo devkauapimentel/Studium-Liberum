@@ -1,0 +1,9 @@
+
+.container { display: flex; }
+.inner { width: 200px; height: 200px; position: relative; border: 2px dotted grey; }
+.box { border: 2px solid rgb(96, 139, 168); border-radius: 5px; background-color: rgba(96, 139, 168, 0.2); padding: 10px; width: 100px; height: 100px; }
+.inner { writing-mode: horizontal-tb; }
+.physical { position: absolute; top: 20px; right: 0px; }
+.logical { position: absolute; inset-block-start: 20px; inset-inline-end: 0px; }
+
+button.copy {display:none !important}

@@ -1,0 +1,9 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/attributes/step/index.md
+
+# Original Wiki contributors
+mfuji09
+sideshowbarker
+dominicegginton
+cadorej
+estelle

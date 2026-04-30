@@ -1,0 +1,6 @@
+
+.background { height: 100vh; }
+.background { background-color: red; }
+.background[data-background] { }
+
+button.copy {display:none !important}

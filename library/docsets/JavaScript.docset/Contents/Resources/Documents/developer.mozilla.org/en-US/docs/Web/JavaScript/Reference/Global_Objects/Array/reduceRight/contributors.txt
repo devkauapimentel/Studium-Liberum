@@ -1,0 +1,47 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/javascript/reference/global_objects/array/reduceright/index.md
+
+# Original Wiki contributors
+mfuji09
+wbamberg
+fscholz
+mandeldl
+SphinxKnight
+I_m_back_now
+pgmreddy
+SandipNirmal
+zpagg
+revelt
+aonghusonia
+janderson215
+dlhart
+charlesbodman
+erikadoyle
+david-davidson
+nmve
+kdex
+Juanjofp
+eduardoboucas
+bearkat2173
+rictorres
+Mingun
+Sheepy
+main2fr
+zizon
+leungwensen
+BrianDiPalma
+Brettz9
+Sheppy
+YevhenPavliuk
+ethertank
+trevorh
+jdalton
+dhodder
+berkerpeksag
+evilpie
+Waldo
+cwest
+inimino
+Mgjbot
+Paul visco
+Jresig

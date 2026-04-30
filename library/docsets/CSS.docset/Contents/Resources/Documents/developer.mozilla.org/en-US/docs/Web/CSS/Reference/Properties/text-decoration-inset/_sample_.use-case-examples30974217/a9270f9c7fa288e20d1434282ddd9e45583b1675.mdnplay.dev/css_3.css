@@ -1,0 +1,10 @@
+
+li { font-family: sans-serif; font-size: 2em; margin-bottom: 20px; }
+@supports not (text-decoration-inset: auto) {
+  body::before { content: "Your browser doesn't support the text-decoration-inset property."; background-color: wheat; display: block; padding: 10px 0px; width: 100%; text-align: center; }
+}
+#one { text-decoration: underline 0.3em limegreen; }
+#two { text-decoration: line-through 5px white; }
+#three { text-decoration: underline 2px wavy blue; }
+
+button.copy {display:none !important}

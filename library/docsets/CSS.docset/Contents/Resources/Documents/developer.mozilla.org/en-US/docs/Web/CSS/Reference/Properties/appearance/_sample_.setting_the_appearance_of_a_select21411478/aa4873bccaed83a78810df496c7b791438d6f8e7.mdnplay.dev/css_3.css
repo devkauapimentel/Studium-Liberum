@@ -1,0 +1,6 @@
+
+.menulistButton { appearance: menulist-button; }
+label { display: block; }
+select { border: 1px solid red; background-color: orange; }
+
+button.copy {display:none !important}

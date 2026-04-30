@@ -1,0 +1,43 @@
+<html>
+  <!-- Online page at https://b07925dfe48ba4595496f1b91a83e54bd2c98d6e.mdnplay.dev/en-US/docs/Web/API/OscillatorNode/runner.html?uuid=b07925dfe48ba4595496f1b91a83e54bd2c98d6e&state=zVbbbttGEP2VgfpC17rQjgMYimTAdpKiQJAajts%2B1H1YkSNxY3KX2V3q0sD%2F3pld3iw5bgP0oYBhkbMzZ25nZ%2Fh1kLkiH0wHs1SuIcmFtfP7QaKVMzq394OLewUwy8UCc1hqQ2duV%2BLIYo6Jq48BfrGJzHPhtAE%2BDsJZUAKZfsOKVHTppFYXViqcTeqXg8MvlTDfPnZGCrXKX7AXG6e1y%2FYUZpMQTshw4lOk54N8lwa%2FjAy5wDbw9ySqUCW7GkmqsnKNW86UzGqLRlpIRcKTOO6JxJZE532RdVh6tU60FnnFeKeve0Jf0n5gMNlLg54XlXNaQSqcGJW52Em1IiupJHUgILB0FNQotxt6m03CKyHMJsQIX5BZItRa2GCzEWscrYwoMzKZTcIRqQ2Gg8RaItK4IQ985TBSadnNFJY5bt%2BwZCXKKZwYLPxbIcxKqiCA2ItELldqJB0WdgoJKoeG5I8cyg%2Bd%2BwC%2FkanLpvA6jsuAnqFcZW4Kr1rJQpsUzRTOyi1YncuUamqi0aiU6uEoAFPwnzl2Ct0638FPgbtzSHVSFRTDeIXuXY78eLX7OY32KM1AwXrZkOM61OFFjH4POwgu2FXo3kvGT9rH1o29qFKpr92WrBVu4NK%2FUjS4dVHnRdukVuiu70edYtSYD0OJOc9pryhjT8khH7W5Tg%2FSDlqX9mNVLNCQ9iN7nkzgVrgMaU5kQkFiUDjiJQgfh%2B7GCN09wDWaHd0JYSglldKTLj3EJpNJBjtdwUZXeUolAqlIJSQOoixzmQi%2B60PYIND0gM8VZbzS5MsjOA1F5XBSqRH%2FencpFhrKypTaooURRSgtFCiUZRCFmFKYK0GeFFWpqaIXhDL%2BRI9PCtjVWiiR7yylXXekfn2u3Mul%2ByT%2FooqfxKdnvsq24PFFod%2FJAq8ZTyhieDw%2Bb8pKheNrp6g7EQd01L41jnuS2t04RUu192UK5Om1WKTpuzUx7YOkkaTQENuSLNB0CNERzC9CsOyYzSivfYK8qWO7VwfUeAY9jNBD8NY2gJKfl4nWee0u0bPZEEMe9vzJJXTVoSITL%2BbzOdwPbGVLVCmmdM2CKrR3bGzQ0v309wrgMSwQRur55xFs0Y3rKVyjhkncAnK2nutdDEllDIXNbQ%2FwAC%2BhEqYzFbXoUFdS780d3X%2BvdSMq26g9AuYW%2F13ES5GzXRsyU23s%2F%2BW0wIW5FUV5p3%2Fz%2FfBRRydDeC4bOCb2nv4vcgro35FSPI7j%2BL%2FIq67mPyZGB01eNbnDTElLHicbqVK9ocu8lgneyC3mt3ylW60N6dB2hB9Zv5VmJH11IA3L%2FN3LK6v%2FAeCDqY3GfhVzRH1hWMckzfa8hPXU6pGbZkPRt076dJ8tquUSzQdUK%2B%2BgmWndcLiS6lpXynW1oXpfGiN29cD9VSp37gVRH4ydtGgUwtXOIffxrS6IAm8JJGqRQkC0O1IjNrxswrai%2F5rmn17SvkCoudDbZDT%2BKpXwkPWGUc207%2FMKXdHGSwL%2B5HY5enbQKnQNiZ7q3PKwj4dAf5shZIdATPDf656djeM9CEuz9QE7R4tc8MDc01ogfbzd0EaPWnxff0vjtQWPNsSzk3F8BJMnrfRYOTpgJsS1PW%2FiiIXSC%2Bln9tQI5PFxe12DtzUTtqnYH%2FJP8nNyel6n1CgxFaI1RZJxHKf1Gc8I6UdB3IL2Eyz0Gu90RMt511zrero8o8wV3VcOP1s4nveK0tzmw4aQOXeLIzx6tiNtoT33rbtUsvA7%2FL0RNJ2YY%2FVH7b0KhHvjv2%2BJnQXSJ27O93Hw%2BDc%3D&code=21224494& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <div class="controls">
+  <label for="type-select">
+    Oscillator type
+    <select id="type-select">
+      <option>sine</option>
+      <option>square</option>
+      <option>triangle</option>
+      <option>sawtooth</option>
+    </select>
+  </label>
+
+  <label for="freq-range">
+    Frequency
+    <input type="range" min="100" max="800" step="10" value="250" id="freq-range">
+  </label>
+  <button data-playing="init" id="play-button">Play</button>
+</div>
+
+<canvas id="wave-graph" width="1000" height="600"></canvas>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../js_3.js'></script>
+</body>
+</html>

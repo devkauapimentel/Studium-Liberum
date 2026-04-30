@@ -1,0 +1,6 @@
+
+* { font-family: monospace; }
+th, td { padding: 0px 10px; text-align: center; border: 1px solid; }
+table { border-collapse: collapse; margin-top: 10px; }
+
+button.copy {display:none !important}

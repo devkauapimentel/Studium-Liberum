@@ -1,0 +1,5 @@
+
+p { color: red; font-size: 2rem; }
+em { color: initial; font-size: initial; }
+
+button.copy {display:none !important}

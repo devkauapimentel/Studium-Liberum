@@ -1,0 +1,5 @@
+
+svg { display: block; }
+#linearRGB { color-interpolation: linearrgb; }
+
+button.copy {display:none !important}

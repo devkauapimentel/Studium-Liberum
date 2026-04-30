@@ -1,0 +1,43 @@
+<html>
+  <!-- Online page at https://62b35b24f4cae381a2db11fe05a5913c3dbf908d.mdnplay.dev/en-US/docs/Web/API/SVGMaskElement/width/runner.html?uuid=62b35b24f4cae381a2db11fe05a5913c3dbf908d&state=hVNtb9NADP4rJoDWijRtxoq0NUPa0CYhARIS8AHlwy6Jl9x2vYTLpV009b9jX9I0gwnUlzv77Mf2Y%2FvRK%2BxaeWdelMnN%2B1gDRPUmh43E7WX5cB57s3AB%2FAuP3S%2F2YCszW9BLuGCpQJkXdi86BMJYi%2FoeZEZqvpEZQ7E5i9%2B1tDXJZXKHqb0sG51JnVO4wZ8QXsxmcLVB09qCHoFs0ICAbSEtQiUfUFEiSkGClGwtE4Uwmx3cDSEPQdv%2B%2FFfmcEtoJLgAJM4J63%2FJJEqk938kI%2FVz6VTCFnsBgHn5HC78t0u4OF749OVP6C%2F%2FVp061Vc63i35%2FZSE0Amd%2F8%2FYO%2BD2Jbi0%2BhL6%2BELLtaC6BlNhrZFJY%2FGLWCOXzdSMsTZCNchdCk9OVosV%2FY9fs8bQ07Ie6wxWKOwHaieTKomjW6kPZLo85tz%2FgdmoKlWblxqqUmo3EjRpfsjTNjpJd2hPaYTOn%2FbHdWcrbQHUndpNGIiqUhIzH7YIsVc1OqXiqGMFCmOhLkSFUJSK22VL8kNIpUnHTYt6RcpDtOQM0nZ%2FM%2FsLx6J7Y9TkJd%2BnQ63RnNaIbtG826uoMtgthCpzmvNoTgrSe76X1jXtH6%2BhH%2BukzFo6eAcfGacb0jOgGX29ivXOedyxQ1rq2nbVnkNWps0atQ1ytFcK%2BXrZfswm%2B%2F2brpitW%2BLBSuI7k3WlRPupzCfTLk6HxmPygxtPkOwYuLEIenXgZmJ1ME9Ejc%2BY9%2BqROdUcWHyg4dCWUiPzm2%2FE%2BdET%2BCOg7r16HHLYBXGsb571f%2FMUoA%2FYAwxZ7YLO2%2BAvGmV74XaAyr82NPOTAwfTjtgxKSvHM83FGolqxT3wdr8B&code=44218065& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <div>
+  <svg viewBox="-10 -10 120 120" width="100" height="100">
+    <mask id="mask" x="0" maskUnits="objectBoundingBox">
+      <!-- Everything under a white pixel will be visible -->
+      <rect x="0" y="0" width="100" height="100" fill="white"></rect>
+
+      <!-- Everything under a black pixel will be invisible -->
+      <path d="M10,35 A20,20,0,0,1,50,35 A20,20,0,0,1,90,35 Q90,65,50,95 Q10,65,10,35 Z" fill="black"></path>
+      <animate attributeName="width" values="144;0;144" dur="5s" repeatCount="indefinite"></animate>
+    </mask>
+
+    <polygon points="-10,110 110,110 110,-10" fill="orange"></polygon>
+
+    <!-- with this mask applied, we "punch" a heart shape hole into the circle -->
+    <circle cx="50" cy="50" r="50" mask="url(#mask)"></circle>
+  </svg>
+</div>
+<pre id="log">The 'width.animVal' is 144.
+The 'width.baseVal' is 144.</pre>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../js_3.js'></script>
+</body>
+</html>

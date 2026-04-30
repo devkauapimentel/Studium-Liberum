@@ -1,0 +1,40 @@
+<html><!-- Mirrored from mdn.github.io/dom-examples/channel-messaging-multimessage/page2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 14:01:12 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+    
+  <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>My page title</title>
+    <link href="../../../fonts.googleapis.com/css9575.css?family=Open+Sans+Condensed:300|Lobster+Two" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <ul></ul>
+    <script>
+      const list = document.querySelector("ul");
+      let port2;
+
+      // Listen for the intial port transfer message
+      window.addEventListener("message", initPort);
+
+      // Setup the transfered port
+      function initPort(e) {
+        if (e.ports[0]) {
+          port2 = e.ports[0];
+          port2.onmessage = onMessage;
+        }
+      }
+
+      // Handle messages received on port2
+      function onMessage(e) {
+        const listItem = document.createElement("li");
+        listItem.textContent = e.data;
+        list.appendChild(listItem);
+        port2.postMessage('Message received by IFrame: "' + e.data + '"');
+      }
+    </script>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/dom-examples/channel-messaging-multimessage/page2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 14:01:12 GMT --></html>

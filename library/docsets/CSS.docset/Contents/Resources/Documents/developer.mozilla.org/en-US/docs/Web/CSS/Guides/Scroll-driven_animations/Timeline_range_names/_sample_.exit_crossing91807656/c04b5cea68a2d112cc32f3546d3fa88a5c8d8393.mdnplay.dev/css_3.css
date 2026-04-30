@@ -1,0 +1,36 @@
+
+:root { --animElHeight: 50px; --animElHeightWord: "50px"; }
+body:has(input[value="250"]:checked) { --animElHeight: 250px; --animElHeightWord: "250px"; }
+body:has(input[value="500"]:checked) { --animElHeight: 500px; --animElHeightWord: "500px"; }
+main { padding: 20px 0px 0px 20px; margin-bottom: 2em; }
+article { outline: 3px dashed; width: 500px; margin: auto; overflow: scroll; position: relative; height: 250px; box-sizing: content-box; }
+p { padding: 10px; margin: 10px; }
+section { --clr: yellow; --words: "Animation not started"; position: relative; margin: 20px; text-align: center; }
+.one, .double i { animation-duration: auto; animation-timing-function: steps(1); animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: forwards; animation-play-state: running; animation-name: showAnim; animation-range: initial; animation-timeline: view(); }
+i { background-color: hsl(from var(--clr) h s calc(l * 1.4)); display: block; height: var(--animElHeight); line-height: var(--animElHeight); }
+span { background-color: hsl(from var(--clr) h s 90%); border: 5px solid hsl(from var(--clr) h s 20%); min-width: 250px; height: 30px; line-height: 30px; }
+span, i { font-family: sans-serif; font-size: 1.5rem; }
+span::before { content: var(--words); }
+span { position: fixed; top: 10px; left: 10px; padding: 10px; }
+i::after { content: " ( " var(--animElHeightWord) " )"; }
+label { padding-right: 2em; }
+legend { margin-top: 2em; }
+@keyframes showAnim { 
+  0% { --clr: green; --words: "Currently animating"; }
+  100% { --clr: red; --words: "Animation complete"; }
+}
+body::before { display: block; text-align: center; font-family: sans-serif; font-size: 1.5rem; }
+@layer no-support {
+  @supports not (animation-timeline: view()) {
+  body::before { content: "Your browser doesn't support view progress scrolling."; background-color: wheat; display: block; text-align: center; }
+}
+}
+.one { display: none; }
+.double div { display: flex; gap: 10px; }
+#A { animation-range: exit; }
+#B { animation-range: exit-crossing; }
+body::before { content: "exit vs. exit-crossing"; }
+#A::after { content: " ( exit )"; }
+#B::after { content: " ( exit-crossing ) "; }
+
+button.copy {display:none !important}

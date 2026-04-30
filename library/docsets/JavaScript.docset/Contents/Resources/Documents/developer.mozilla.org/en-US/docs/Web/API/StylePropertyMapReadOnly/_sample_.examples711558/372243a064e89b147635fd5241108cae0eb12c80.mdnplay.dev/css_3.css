@@ -1,0 +1,4 @@
+
+p { --some-variable: 1.6em; --some-other-variable: translateX(33vw); --another-variable: 42; line-height: var(--some-variable); }
+
+button.copy {display:none !important}

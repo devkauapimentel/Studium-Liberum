@@ -1,0 +1,75 @@
+<html>
+  <!-- Online page at https://fb49c22925899a72dc6bf23999601fcd3e0b5a9a.mdnplay.dev/en-US/docs/Web/HTML/Reference/Elements/button/runner.html?uuid=fb49c22925899a72dc6bf23999601fcd3e0b5a9a&state=rVLBbhshEP2VEb2spcTb9uisHTVpDpV6aqOe9oJh7KVhwYUhjhX53zss69hJfWilcoJheG%2FeezyLjnorZqJZJiLvQPm%2Bl06vfJi3Qnm3MqG%2F1EZav27F4ZavYue3l73X0rZi8RktEsI3VD7opi5Qi9Y15SEYfQaM7wGaDqXGMOzz6cNrrOum5tLQWJ90NpvFp4Cw8wliCngN952JIBWZrEA65wmWCMlp77CpN%2BXRyns6Uv2jXmV9RK48Spswn6VTaEcVed2WQgE%2FWvA%2FuPRgyQlX8egMV1O%2FiGzqgpy3GzZryKAYz44E5Lq4ECpGDv9dDuk5A3Ro1h3N4OP7zdNV6%2FZD08%2Fcw%2FNGAm68s9ijI5iD9irl7fRXwrD7zkMp8qFqB7xWTBhglVxJhSsV4RNNCs8RZ2qcw3DPV4yYOwptoRv%2FzwnVGml8eLP7oqs%2FfcysrSunqdT67pF7v5pIyDTVi7kXUE1gvijTxK0h1UE1vgpIKbgf2f1xXOBfFRGOsc8OUWRdrSjhw1ZGUNaoB9RlkNKzDCgfrl7hHCJ9gzN%2B%2Fr%2FA0biSydLbObI4DSynK79nlpWekTWgsM37vOOIqWNPOWWb4xf73w%3D%3D&code=70289433& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;button commandfor="confirm-dialog" command="show-modal"&gt;Delete Record&lt;/button&gt;
+&lt;dialog id="confirm-dialog"&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Delete Record?&lt;/h1&gt;
+  &lt;/header&gt;
+  &lt;p&gt;Are you sure? This action cannot be undone&lt;/p&gt;
+  &lt;footer&gt;
+    &lt;button commandfor="confirm-dialog" command="close" value="cancel"&gt;
+      Cancel
+    &lt;/button&gt;
+    &lt;button commandfor="confirm-dialog" command="close" value="delete"&gt;
+      Delete
+    &lt;/button&gt;
+  &lt;/footer&gt;
+&lt;/dialog&gt;
+&lt;pre id="log"&gt;&lt;/pre&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>#log {
+  height: 20px;
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code>const logElement = document.querySelector("#log");
+function log(text) {
+  logElement.innerText = text;
+}
+const dialog = document.getElementById("confirm-dialog");
+
+dialog.addEventListener("close", () =&gt; {
+  switch (dialog.returnValue) {
+    case "cancel":
+      log("Cancel was clicked");
+      break;
+    case "delete":
+      log("Delete was clicked");
+      break;
+    default:
+      log("Closed with value:", dialog.returnValue);
+  }
+});</code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=fb49c22925899a72dc6bf23999601fcd3e0b5a9a&amp;state=rVLBbhshEP2VEb2spcTb9uisHTVpDpV6aqOe9oJh7KVhwYUhjhX53zss69hJfWilcoJheG%2FeezyLjnorZqJZJiLvQPm%2Bl06vfJi3Qnm3MqG%2F1EZav27F4ZavYue3l73X0rZi8RktEsI3VD7opi5Qi9Y15SEYfQaM7wGaDqXGMOzz6cNrrOum5tLQWJ90NpvFp4Cw8wliCngN952JIBWZrEA65wmWCMlp77CpN%2BXRyns6Uv2jXmV9RK48Spswn6VTaEcVed2WQgE%2FWvA%2FuPRgyQlX8egMV1O%2FiGzqgpy3GzZryKAYz44E5Lq4ECpGDv9dDuk5A3Ro1h3N4OP7zdNV6%2FZD08%2Fcw%2FNGAm68s9ijI5iD9irl7fRXwrD7zkMp8qFqB7xWTBhglVxJhSsV4RNNCs8RZ2qcw3DPV4yYOwptoRv%2FzwnVGml8eLP7oqs%2FfcysrSunqdT67pF7v5pIyDTVi7kXUE1gvijTxK0h1UE1vgpIKbgf2f1xXOBfFRGOsc8OUWRdrSjhw1ZGUNaoB9RlkNKzDCgfrl7hHCJ9gzN%2B%2Fr%2FA0biSydLbObI4DSynK79nlpWekTWgsM37vOOIqWNPOWWb4xf73w%3D%3D&amp;code=70289433&amp;" class="leave">Open in Playground</a>
+          <a href="https://fb49c22925899a72dc6bf23999601fcd3e0b5a9a.mdnplay.dev/en-US/docs/Web/HTML/Reference/Elements/button/runner.html?state=rVLBbhshEP2VEb2spcTb9uisHTVpDpV6aqOe9oJh7KVhwYUhjhX53zss69hJfWilcoJheG%2FeezyLjnorZqJZJiLvQPm%2Bl06vfJi3Qnm3MqG%2F1EZav27F4ZavYue3l73X0rZi8RktEsI3VD7opi5Qi9Y15SEYfQaM7wGaDqXGMOzz6cNrrOum5tLQWJ90NpvFp4Cw8wliCngN952JIBWZrEA65wmWCMlp77CpN%2BXRyns6Uv2jXmV9RK48Spswn6VTaEcVed2WQgE%2FWvA%2FuPRgyQlX8egMV1O%2FiGzqgpy3GzZryKAYz44E5Lq4ECpGDv9dDuk5A3Ro1h3N4OP7zdNV6%2FZD08%2Fcw%2FNGAm68s9ijI5iD9irl7fRXwrD7zkMp8qFqB7xWTBhglVxJhSsV4RNNCs8RZ2qcw3DPV4yYOwptoRv%2FzwnVGml8eLP7oqs%2FfcysrSunqdT67pF7v5pIyDTVi7kXUE1gvijTxK0h1UE1vgpIKbgf2f1xXOBfFRGOsc8OUWRdrSjhw1ZGUNaoB9RlkNKzDCgfrl7hHCJ9gzN%2B%2Fr%2FA0biSydLbObI4DSynK79nlpWekTWgsM37vOOIqWNPOWWb4xf73w%3D%3D&amp;code=3ed142df-9902-4a2e-89cc-b81297698748" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

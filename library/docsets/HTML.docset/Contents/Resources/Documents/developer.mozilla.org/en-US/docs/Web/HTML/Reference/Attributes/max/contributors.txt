@@ -1,0 +1,9 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/attributes/max/index.md
+
+# Original Wiki contributors
+chrisdavidmills
+faiz555c2
+mfuji09
+pans9
+estelle

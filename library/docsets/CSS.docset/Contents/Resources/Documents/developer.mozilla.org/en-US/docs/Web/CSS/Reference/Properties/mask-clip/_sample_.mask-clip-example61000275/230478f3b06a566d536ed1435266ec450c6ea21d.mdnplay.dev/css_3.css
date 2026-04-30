@@ -1,0 +1,9 @@
+
+div { width: 100px; height: 100px; background-color: rgb(140, 255, 160); margin: 10px; border: 20px solid rgb(140, 160, 255); padding: 20px; mask-image: url("../mdn.github.io/shared-assets/images/examples/mdn.svg"); mask-size: 100% 100%; }
+.content-box { mask-clip: content-box; }
+.border-box { mask-clip: border-box; }
+.padding-box { mask-clip: padding-box; }
+div::before { content: attr(class); position: relative; top: -10px; }
+body { display: flex; flex-flow: wrap; }
+
+button.copy {display:none !important}

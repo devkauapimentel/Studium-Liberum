@@ -1,0 +1,14 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/xmlhttprequesteventtarget/loadstart_event/index.md
+
+# Original Wiki contributors
+mfuji09
+wbamberg
+mfluehr
+fscholz
+Sebastianz
+chrisdavidmills
+teoli
+Sheppy
+ethertank
+louisremi

@@ -1,0 +1,5 @@
+
+input:invalid + span::after { content: " ✖"; }
+input:valid + span::after { content: " ✓"; }
+
+button.copy {display:none !important}

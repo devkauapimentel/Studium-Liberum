@@ -1,0 +1,7 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/mozilla/add-ons/webextensions/api/webrequest/onresponsestarted/index.md
+
+# Original Wiki contributors
+rebloor
+wbamberg
+Makyen

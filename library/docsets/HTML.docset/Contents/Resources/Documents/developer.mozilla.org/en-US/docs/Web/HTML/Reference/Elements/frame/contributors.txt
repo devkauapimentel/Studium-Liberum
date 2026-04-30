@@ -1,0 +1,16 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/elements/frame/index.md
+
+# Original Wiki contributors
+mfuji09
+247flashgames
+teoli
+mfluehr
+Jeremie
+kscarfone
+alispivak
+tregagnon
+Sheppy
+ethertank
+avsaro
+jswisher

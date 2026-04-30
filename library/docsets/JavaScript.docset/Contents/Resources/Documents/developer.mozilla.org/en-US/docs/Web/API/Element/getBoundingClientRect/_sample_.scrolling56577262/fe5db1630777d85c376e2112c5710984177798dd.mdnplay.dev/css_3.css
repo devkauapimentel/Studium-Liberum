@@ -1,0 +1,6 @@
+
+div#example { width: 400px; height: 200px; padding: 20px; margin: 50px auto; background: purple; }
+body { padding-bottom: 1000px; }
+p { margin: 0px; }
+
+button.copy {display:none !important}

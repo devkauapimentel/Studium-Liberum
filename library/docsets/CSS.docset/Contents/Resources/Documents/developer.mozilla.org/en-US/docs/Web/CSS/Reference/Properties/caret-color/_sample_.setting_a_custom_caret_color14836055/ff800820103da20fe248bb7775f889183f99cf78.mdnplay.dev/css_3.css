@@ -1,0 +1,6 @@
+
+input { caret-color: auto; display: block; margin-bottom: 0.5em; }
+input.custom { caret-color: orange; }
+p.custom { caret-color: green; }
+
+button.copy {display:none !important}

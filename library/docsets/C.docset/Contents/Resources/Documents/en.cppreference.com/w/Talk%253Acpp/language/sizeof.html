@@ -1,0 +1,292 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/language/sizeof.html --><head><meta charset="utf-8"><title>Talk:cpp/language/sizeof</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_4677.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_language_sizeof skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Fsizeof&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Fsizeof" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/language/sizeof.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./sizeof.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./sizeof.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./sizeof.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/sizeof&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/sizeof&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/sizeof&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./sizeof.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/language/sizeof</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../language.html" title="Talk:cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/sizeof&amp;action=edit&amp;section=1" title="Edit section: No architecture requirement for sizeof to be multiple of alignment">edit</a>]</span> <span class="mw-headline" id="No_architecture_requirement_for_sizeof_to_be_multiple_of_alignment">No architecture requirement for sizeof to be multiple of alignment</span></h2>
+<p>I would like to point out that the alignment of a C++ type is only necessary for the memory location, the so called numeric value of the pointer but not the size of the object itself. It just so happens to occur that many native types of many CPU architectures (int, long, short) have the same sizeof as their alignof. Back in the C++0x days we devs actually required this for proper size calculation of arrays. Now it is a misconception. My statement is related to the following paragraph (10.02.2022):
+</p><p>QUOTE START:
+</p><p>When applied to a class type, the result is the number of bytes occupied by a complete object of that class, <b>including any additional padding required to place such object in an array</b>. The number of bytes occupied by a potentially-overlapping subobject may be less than the size of that object.
+</p><p>QOUTE END.
+</p><p>Consider an array of 5 type with data-size of 5 and alignas 2. Under the current C++ standard the size of type has to equal 6, the array size being a total of 30 bytes. But by relaxing the requirement of sizeof to <b>neglect the padding at the end</b>, the first four item of the array should have a size of 6 * 4 == 24 bytes, the last item a byte size of 5, resulting in an actually-required array data size of just 29 bytes. I believe this to be a good change to the C++ standard that would lead to decreased memory footprints and increased performance on all target architectures! <a href="https://en.cppreference.com/mwiki/index.php?title=User:Quiret&amp;action=edit&amp;redlink=1" class="new" title="User:Quiret (page does not exist)">Quiret</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Quiret&amp;action=edit&amp;redlink=1" class="new" title="User talk:Quiret (page does not exist)">talk</a>) 08:04, 10 February 2022 (PST)
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/sizeof&amp;action=edit&amp;section=2" title="Edit section: Packed Structures">edit</a>]</span> <span class="mw-headline" id="Packed_Structures"> Packed Structures </span></h2>
+<p>It would be nice to have some examples and explanation on this page of the behaviour of sizeof with packed and default alignment structures.
+</p><p>For example, recently I have encountered something like the following:
+</p>
+<pre>   struct A
+   {
+       uint32_t a;
+       int8_t b;
+   }
+</pre>
+<pre>   A* p = new A[3];
+</pre>
+<pre>   bzero(p, sizeof(A[3]);
+</pre>
+<p><br>
+I am reasonably confident that I know how the compiler interprets this, but not 100&nbsp;% sure. Hence I found this page - but without relevant examples.
+</p><p><a href="https://en.cppreference.com/w/Special:Contributions/62.128.218.68" title="Special:Contributions/62.128.218.68">62.128.218.68</a> 04:59, 31 May 2022 (PDT) Fin
+</p>
+<dl><dd> It's not clear to me what the confusion is, could you be more specific? As an aside, I recommend <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/container/vector.html"><span class="kw1272">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span>A<span class="sy1">&gt;</span> p<span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../cpp/memory/unique_ptr.html"><span class="kw735">std::<span class="me2">unique_ptr</span></span></a> p <span class="sy1">=</span> <a href="../../cpp/memory/unique_ptr/make_unique.html"><span class="kw737">std::<span class="me2">make_unique</span></span></a><span class="sy1">&lt;</span>A<span class="br0">[</span><span class="br0">]</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span></span></span>, or <span class="t-c"><span class="mw-geshi cpp source-cpp">A<span class="sy2">*</span> p <span class="sy1">=</span> new A<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="br0">{</span><span class="br0">}</span></span></span> in decreasing order of preference, there's no reason to spare mental energy for <code>bzero</code>. --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 06:11, 31 May 2022 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> perhaps "packed and default alignment structures" refers to structs defined with and without <a href="../../cpp/preprocessor/impl.html#.23pragma_pack" title="cpp/preprocessor/impl">cpp/preprocessor/impl#.23pragma_pack</a>? --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 11:45, 31 May 2022 (PDT)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/sizeof&amp;action=edit&amp;section=3" title="Edit section: Clarification on &quot;Both versions are constant expressions of type std::size t&quot;">edit</a>]</span> <span class="mw-headline" id="Clarification_on_.22Both_versions_are_constant_expressions_of_type_std::size_t.22"> Clarification on "Both versions are constant expressions of type std::size_t" </span></h2>
+<p>The way this is worded implies std::size_t is part of the core language and causes confusion (source: <a rel="nofollow" class="external free" href="https://stackoverflow.com/questions/237370/does-stdsize-t-make-sense-in-c">https://stackoverflow.com/questions/237370/does-stdsize-t-make-sense-in-c</a>).
+</p><p>Although the type "decltype(sizeof(int))" is guaranteed to match the type of std::size_t, I'd argue it is not correct to say that "sizeof" is of type std::size_t because std::size_t is not part of the core language.
+</p><p>My suggestion is to change the sentence
+</p>
+<pre>  Both versions are constant expressions of type std::size_t
+</pre>
+<p>to
+</p>
+<pre>  Both versions are constant expressions of <b>a type equivalent to</b> std::size_t
+</pre>
+<p>My exact wording of "a type equivalent to" might not be language used across cppreference. If that is the case, instead I'd argue it should be changed to something with equivalent meaning.
+<a href="https://en.cppreference.com/w/Special:Contributions/213.55.224.72" title="Special:Contributions/213.55.224.72">213.55.224.72</a> 07:29, 18 October 2022 (PDT)
+</p>
+<dl><dd> There is no "type equivalent to". The type of sizeof is std::size_t: <a rel="nofollow" class="external free" href="https://eel.is/c++draft/expr.sizeof#5.sentence-1">https://eel.is/c++draft/expr.sizeof#5.sentence-1</a> (it is defined that way in C, too: <a rel="nofollow" class="external free" href="https://port70.net/~nsz/c/c11/n1570.html#6.5.3.4p5">https://port70.net/~nsz/c/c11/n1570.html#6.5.3.4p5</a>) --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 09:59, 18 October 2022 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> FWIW, a lot of core C++ is expressed through the library. Initialiser lists, three-way comparison, placement new... --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 14:18, 18 October 2022 (PDT)
+</dd></dl>
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 99/1000000
+Preprocessor generated node count: 262/1000000
+Post‐expand include size: 547/4194304 bytes
+Template argument size: 167/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:20850-0!*!0!!*!*!* and timestamp 20240518063227 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/sizeof&amp;oldid=144437">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/sizeof&amp;oldid=144437</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./sizeof.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/language/sizeof" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/language/sizeof" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/sizeof&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/sizeof&amp;oldid=144437" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/sizeof&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 18 October 2022, at 14:18.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 1,591 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.256 secs. -->
+	
+
+
+</body></html>

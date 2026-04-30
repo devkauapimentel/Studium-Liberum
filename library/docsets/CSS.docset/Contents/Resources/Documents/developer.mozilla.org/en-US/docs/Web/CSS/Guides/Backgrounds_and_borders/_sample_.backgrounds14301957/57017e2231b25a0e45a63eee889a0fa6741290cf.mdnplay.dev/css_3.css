@@ -1,0 +1,6 @@
+
+article { display: flex; gap: 10px; }
+div { color: rgb(88, 173, 227); height: 320px; width: 240px; padding: 20px; margin: 10px; border: 15px dotted; border-radius: 100px 0px; background-image: radial-gradient(circle, transparent 60%, currentcolor 60%, currentcolor 70%, transparent 70%), linear-gradient(45deg, currentcolor, white), linear-gradient(transparent, transparent); background-color: currentcolor; background-position: center center; background-size: 60px 60px, 120px 120px; background-clip: content-box, content-box, padding-box; box-shadow: rgba(0, 0, 0, 0.4) 5px 5px 5px inset, rgba(0, 0, 0, 0.4) -5px -5px 5px inset, rgba(0, 0, 0, 0.4) 5px 5px 5px, rgba(0, 0, 0, 0.4) -5px -5px 5px; }
+div:first-of-type { border-radius: 0px; border-image-source: repeating-conic-gradient(from 3deg at 25% 25%, currentcolor 0deg, currentcolor 3deg, transparent 3deg, transparent 6deg); border-image-slice: 30; }
+
+button.copy {display:none !important}

@@ -1,0 +1,24 @@
+
+* { box-sizing: border-box; }
+html { font-family: sans-serif; height: 100%; }
+body { height: inherit; }
+p { font-size: 1.4em; line-height: 1.5; }
+.anchor { font-size: 2em; color: white; text-shadow: black 1px 1px 1px; background-color: blue; width: fit-content; padding: 5px 10px; }
+@supports not (container-type: anchored) {
+  body::before { content: "Your browser does not support anchored container queries."; color: black; background-color: rgb(255, 205, 51); display: block; width: 100%; text-align: center; padding: 1rem 0px; }
+  body > * { display: none; }
+}
+.anchor { anchor-name: --my-anchor; position: absolute; }
+.infobox { position: absolute; position-anchor: --my-anchor; position-area: left top; position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline; }
+.infobox div { color: white; background-color: black; font-size: 1.4em; padding: 10px; margin: 1px; border-radius: 10px 10px 0px; }
+@container anchored(fallback: flip-block) {
+  .infobox div { border-radius: 10px 0px 10px 10px; }
+}
+@container anchored(fallback: flip-inline) {
+  .infobox div { border-radius: 10px 10px 10px 0px; }
+}
+@container anchored(fallback: flip-block flip-inline) {
+  .infobox div { border-radius: 0px 10px 10px; }
+}
+
+button.copy {display:none !important}

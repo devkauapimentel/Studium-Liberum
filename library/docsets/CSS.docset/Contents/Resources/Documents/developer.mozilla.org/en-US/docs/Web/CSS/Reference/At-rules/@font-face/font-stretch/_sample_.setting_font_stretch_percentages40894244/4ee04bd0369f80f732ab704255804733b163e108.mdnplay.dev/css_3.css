@@ -1,0 +1,9 @@
+
+@font-face { font-family: "League Mono Ultra Condensed"; src: url("./shared-assets/fonts/LeagueMono-VF.ttf") format("truetype"); font-width: ultra-condensed; }
+@font-face { font-family: "League Mono Normal"; src: url("./shared-assets/fonts/LeagueMono-VF.ttf") format("truetype"); font-width: 100%; }
+@font-face { font-family: "League Mono Ultra Expanded"; src: url("./shared-assets/fonts/LeagueMono-VF.ttf") format("truetype"); font-width: ultra-expanded; }
+p:nth-child(1) { font-family: "League Mono Ultra Condensed", sans-serif; }
+p:nth-child(2) { font-family: "League Mono Normal", sans-serif; }
+p:nth-child(3) { font-family: "League Mono Ultra Expanded", sans-serif; }
+
+button.copy {display:none !important}

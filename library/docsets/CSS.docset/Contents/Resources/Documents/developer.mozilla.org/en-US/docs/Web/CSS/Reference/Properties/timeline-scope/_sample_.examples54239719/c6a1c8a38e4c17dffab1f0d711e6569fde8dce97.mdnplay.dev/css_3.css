@@ -1,0 +1,18 @@
+
+body { margin: 0px; height: 100vh; display: flex; timeline-scope: --my-scroller; }
+.content, .scroller { flex: 1 1 0%; }
+.scroller { overflow: scroll; scroll-timeline-name: --my-scroller; background: deeppink; }
+.long-element { height: 2000px; }
+.box { width: 100px; height: 100px; border-radius: 10px; background-color: rebeccapurple; }
+.animation { animation-duration: 1ms; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: rotate-appear; animation-range: initial; animation-timeline: --my-scroller; }
+@keyframes rotate-appear { 
+  0% { rotate: 0deg; translate: 0px; }
+  100% { rotate: 720deg; translate: 100%; }
+}
+@layer supports {
+  @supports not (timeline-scope: none) {
+  body::before { content: "Your browser does not support the 'timeline-scope' property."; background-color: wheat; display: block; text-align: center; padding: 1rem; }
+}
+}
+
+button.copy {display:none !important}

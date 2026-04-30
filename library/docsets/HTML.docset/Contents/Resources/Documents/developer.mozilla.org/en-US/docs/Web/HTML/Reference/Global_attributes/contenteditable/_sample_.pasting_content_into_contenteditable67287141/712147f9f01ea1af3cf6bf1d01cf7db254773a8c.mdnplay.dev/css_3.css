@@ -1,0 +1,14 @@
+
+h2 { margin-bottom: 0px; }
+.copying { font-family: Georgia, serif; margin: 1rem; padding: 1rem; border: 1px solid black; }
+.red { color: red; }
+.pasting {
+  display: flex; flex-direction: row; gap: 1rem; width: 100%;
+  & .wrapper { flex: 1 1 0%; margin: 0px; padding: 0px; }
+  & h3 { font-family: monospace; }
+  & [contenteditable] { min-height: 3rem; border: 1px solid; padding: 0.5rem; background-color: whitesmoke; }
+  & [contenteditable="true"] { caret-color: blue; }
+  & [contenteditable="plaintext-only"] { caret-color: red; }
+}
+
+button.copy {display:none !important}

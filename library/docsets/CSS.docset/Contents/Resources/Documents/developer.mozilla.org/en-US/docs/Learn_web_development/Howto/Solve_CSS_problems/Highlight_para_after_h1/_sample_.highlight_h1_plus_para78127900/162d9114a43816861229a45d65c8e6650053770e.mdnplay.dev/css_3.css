@@ -1,0 +1,4 @@
+
+.wrapper h1 + p { font-weight: bold; font-size: 130%; color: rebeccapurple; }
+
+button.copy {display:none !important}

@@ -1,0 +1,8 @@
+
+body { display: flex; gap: 20px; }
+svg { width: 110px; height: 110px; }
+#star1 path { clip-rule: evenodd; }
+#star2 path { clip-rule: nonzero; }
+#star3 path { fill: none; stroke: black; stroke-width: 1; }
+
+button.copy {display:none !important}

@@ -1,0 +1,7 @@
+
+[role="checkbox"] { padding: 5px; }
+[role="checkbox"]:focus { border: 2px solid rgb(1, 152, 225); }
+[aria-checked="true"]::before { content: "[x]"; }
+[aria-checked="false"]::before { content: "[ ]"; }
+
+button.copy {display:none !important}

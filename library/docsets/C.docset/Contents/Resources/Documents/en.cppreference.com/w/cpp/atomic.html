@@ -1,0 +1,1249 @@
+<html><!-- Online page at https://en.cppreference.com/w/cpp/atomic.html --><head><meta charset="utf-8"><title>Concurrency support library (since C++11)</title><link rel="stylesheet" href="../css_1.css" type="text/css"><link rel="stylesheet" href="../css_2.css" type="text/css"><link rel="stylesheet" href="../css_3.css" type="text/css"><link rel="stylesheet" href="../css_4.css" type="text/css"><link rel="stylesheet" href="../css_5.css" type="text/css"><script type="text/javascript" src="../js_1.js"></script><script type="text/javascript" src="../js_2.js"></script><script type="text/javascript" src="../js_39.js"></script><script type="text/javascript" src="../js_4.js"></script><script type="text/javascript" src="../js_5.js"></script><script type="text/javascript" src="../js_6.js"></script><script type="text/javascript" src="../js_7.js"></script><script type="text/javascript" src="../js_8.js"></script><script type="text/javascript" src="../js_9.js"></script><script type="text/javascript" src="../js_10.js"></script><script type="text/javascript" src="../js_11.js"></script><script type="text/javascript" src="../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_thread skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fthread&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fthread" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="./atomic.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk"><span><a href="../Talk%25253Acpp/thread.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./atomic.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./atomic.html">View</a></span></li>
+					<li id="ca-edit"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./atomic.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Concurrency support library <span class="t-mark-rev t-since-cxx11">(since C++11)</span></h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../cpp.html" title="cpp">C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tbody><tr class="t-nv"><td colspan="5"><a href="./compiler_support.html" title="cpp/compiler support">Compiler support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./freestanding.html" title="cpp/freestanding">Freestanding and hosted</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./language.html" title="cpp/language">Language</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./standard_library.html" title="cpp/standard library">Standard library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./headers.html" title="cpp/header">Standard library headers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./iterator/concepts.html" title="cpp/named req">Named requirements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./experimental/feature_test.html" title="cpp/feature test">Feature test macros</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./utility.html#Language_support" title="cpp/utility">Language support library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./concepts.html" title="cpp/concepts">Concepts library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./error.html" title="cpp/error">Diagnostics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./memory.html" title="cpp/memory">Memory management library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./meta.html" title="cpp/meta">Metaprogramming library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./utility.html" title="cpp/utility">General utilities library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./container.html" title="cpp/container">Containers library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./iterator.html" title="cpp/iterator">Iterators library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./ranges.html" title="cpp/ranges">Ranges library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./algorithm.html" title="cpp/algorithm">Algorithms library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./string.html" title="cpp/string">Strings library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./text.html" title="cpp/text">Text processing library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./numeric.html" title="cpp/numeric">Numerics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./chrono.html" title="cpp/chrono">Date and time library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./io.html" title="cpp/io">Input/output library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./filesystem.html" title="cpp/filesystem">Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><strong class="selflink">Concurrency support library</strong> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./experimental/execution.html" title="cpp/execution">Execution control library</a> <span class="t-mark-rev t-since-cxx26">(C++26)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./experimental.html" title="cpp/experimental">Technical specifications</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./symbol_index.html" title="cpp/symbol index">Symbols index</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="./links/libs.html" title="cpp/links/libs">External libraries</a></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><strong class="selflink">Concurrency support library</strong><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5"><a href="./atomic.html#Threads" title="cpp/thread">Threads</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/thread.html" title="cpp/thread/thread"><span class="t-lines"><span>thread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/jthread.html" title="cpp/thread/jthread"><span class="t-lines"><span>jthread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/hardware_destructive_interference_size.html" title="cpp/thread/hardware destructive interference size"><span class="t-lines"><span>hardware_destructive_interference_size</span><span>hardware_constructive_interference_size</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./atomic.html#Functions_managing_the_current_thread" title="cpp/thread"><code>this_thread</code> namespace</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/get_id.html" title="cpp/thread/get id"><span class="t-lines"><span>get_id</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/yield.html" title="cpp/thread/yield"><span class="t-lines"><span>yield</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/sleep_for.html" title="cpp/thread/sleep for"><span class="t-lines"><span>sleep_for</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/sleep_until.html" title="cpp/thread/sleep until"><span class="t-lines"><span>sleep_until</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./atomic.html#Cooperative_cancellation" title="cpp/thread">Cooperative cancellation</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/stop_token.html" title="cpp/thread/stop token"><span class="t-lines"><span>stop_token</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/inplace_stop_token&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/inplace stop token (page does not exist)"><span class="t-lines"><span>inplace_stop_token</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/never_stop_token.html" title="cpp/thread/never stop token"><span class="t-lines"><span>never_stop_token</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/stop_source.html" title="cpp/thread/stop source"><span class="t-lines"><span>stop_source</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/inplace_stop_source&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/inplace stop source (page does not exist)"><span class="t-lines"><span>inplace_stop_source</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/stop_callback.html" title="cpp/thread/stop callback"><span class="t-lines"><span>stop_callback</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/inplace_stop_callback&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/inplace stop callback (page does not exist)"><span class="t-lines"><span>inplace_stop_callback</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/stop_callback_for_t.html" title="cpp/thread/stop callback for t"><span class="t-lines"><span>stop_callback_for_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/stoppable_token.html" title="cpp/thread/stoppable token"><span class="t-lines"><span>stoppable_token</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/unstoppable_token.html" title="cpp/thread/unstoppable token"><span class="t-lines"><span>unstoppable_token</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/stoppable_source&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/stoppable source (page does not exist)"><span class="t-lines"><span><i>stoppable-source</i></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/stoppable_callback_for&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/stoppable callback for (page does not exist)"><span class="t-lines"><span><i>stoppable-callback-for</i></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span><code>&nbsp;&nbsp;</code></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./atomic.html#Mutual_exclusion" title="cpp/thread">Mutual exclusion</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/mutex.html" title="cpp/thread/mutex"><span class="t-lines"><span>mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/recursive_mutex.html" title="cpp/thread/recursive mutex"><span class="t-lines"><span>recursive_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/shared_mutex.html" title="cpp/thread/shared mutex"><span class="t-lines"><span>shared_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/timed_mutex.html" title="cpp/thread/timed mutex"><span class="t-lines"><span>timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/recursive_timed_mutex.html" title="cpp/thread/recursive timed mutex"><span class="t-lines"><span>recursive_timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/shared_timed_mutex.html" title="cpp/thread/shared timed mutex"><span class="t-lines"><span>shared_timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./atomic.html#Generic_mutex_management" title="cpp/thread">Generic lock management</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/lock.html" title="cpp/thread/lock"><span class="t-lines"><span>lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/lock_guard.html" title="cpp/thread/lock guard"><span class="t-lines"><span>lock_guard</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/scoped_lock.html" title="cpp/thread/scoped lock"><span class="t-lines"><span>scoped_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/unique_lock.html" title="cpp/thread/unique lock"><span class="t-lines"><span>unique_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/shared_lock.html" title="cpp/thread/shared lock"><span class="t-lines"><span>shared_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/once_flag.html" title="cpp/thread/once flag"><span class="t-lines"><span>once_flag</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/call_once.html" title="cpp/thread/call once"><span class="t-lines"><span>call_once</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/try_lock.html" title="cpp/thread/try lock"><span class="t-lines"><span>try_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/lock_tag_t.html" title="cpp/thread/lock tag"><span class="t-lines"><span>defer_lock</span><span>try_to_lock</span><span>adopt_lock</span><span>defer_lock_t</span><span>try_to_lock_t</span><span>adopt_lock_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./atomic.html#Condition_variables" title="cpp/thread">Condition variables</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/condition_variable.html" title="cpp/thread/condition variable"><span class="t-lines"><span>condition_variable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/condition_variable_any.html" title="cpp/thread/condition variable any"><span class="t-lines"><span>condition_variable_any</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/notify_all_at_thread_exit.html" title="cpp/thread/notify all at thread exit"><span class="t-lines"><span>notify_all_at_thread_exit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/cv_status.html" title="cpp/thread/cv status"><span class="t-lines"><span>cv_status</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./atomic.html#Semaphores" title="cpp/thread">Semaphores</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/counting_semaphore.html" title="cpp/thread/counting semaphore"><span class="t-lines"><span>counting_semaphore</span><span>binary_semaphore</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./atomic.html#Latches_and_Barriers" title="cpp/thread">Latches and Barriers</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/latch.html" title="cpp/thread/latch"><span class="t-lines"><span>latch</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/barrier.html" title="cpp/thread/barrier"><span class="t-lines"><span>barrier</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./atomic.html#Futures" title="cpp/thread">Futures</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/promise.html" title="cpp/thread/promise"><span class="t-lines"><span>promise</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/future.html" title="cpp/thread/future"><span class="t-lines"><span>future</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/shared_future.html" title="cpp/thread/shared future"><span class="t-lines"><span>shared_future</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/packaged_task.html" title="cpp/thread/packaged task"><span class="t-lines"><span>packaged_task</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/async.html" title="cpp/thread/async"><span class="t-lines"><span>async</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/launch.html" title="cpp/thread/launch"><span class="t-lines"><span>launch</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/future_status.html" title="cpp/thread/future status"><span class="t-lines"><span>future_status</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/future_error.html" title="cpp/thread/future error"><span class="t-lines"><span>future_error</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/future_category.html" title="cpp/thread/future category"><span class="t-lines"><span>future_category</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./thread/future_errc.html" title="cpp/thread/future errc"><span class="t-lines"><span>future_errc</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./atomic.html#Safe_reclamation" title="cpp/thread">Safe reclamation</a></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_obj_base&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/rcu obj base (page does not exist)"><span class="t-lines"><span>rcu_obj_base</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_domain&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/rcu domain (page does not exist)"><span class="t-lines"><span>rcu_domain</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_default_domain&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/rcu default domain (page does not exist)"><span class="t-lines"><span>rcu_default_domain</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_synchronize&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/rcu synchronize (page does not exist)"><span class="t-lines"><span>rcu_synchronize</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_barrier&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/rcu barrier (page does not exist)"><span class="t-lines"><span>rcu_barrier</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_retire&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/rcu retire (page does not exist)"><span class="t-lines"><span>rcu_retire</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./atomic.html#Hazard_pointers" title="cpp/thread">Hazard pointers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/hazard_pointer_obj_base&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/hazard pointer obj base (page does not exist)"><span class="t-lines"><span>hazard_pointer_obj_base</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/hazard_pointer&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/hazard pointer (page does not exist)"><span class="t-lines"><span>hazard_pointer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/make_hazard_pointer&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/make hazard pointer (page does not exist)"><span class="t-lines"><span>make_hazard_pointer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5"><a href="./atomic.html#Atomic_types" title="cpp/thread">Atomic types</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic.html" title="cpp/atomic/atomic"><span class="t-lines"><span>atomic</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_ref.html" title="cpp/atomic/atomic ref"><span class="t-lines"><span>atomic_ref</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_flag.html" title="cpp/atomic/atomic flag"><span class="t-lines"><span>atomic_flag</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="./atomic.html#Initialization" title="cpp/thread">Initialization of atomic types</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_init.html" title="cpp/atomic/atomic init"><span class="t-lines"><span>atomic_init</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span><span class="t-mark-rev t-deprecated-cxx20">(deprecated in C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/ATOMIC_VAR_INIT.html" title="cpp/atomic/ATOMIC VAR INIT"><span class="t-lines"><span>ATOMIC_VAR_INIT</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span><span class="t-mark-rev t-deprecated-cxx20">(deprecated in C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/ATOMIC_FLAG_INIT.html" title="cpp/atomic/ATOMIC FLAG INIT"><span class="t-lines"><span>ATOMIC_FLAG_INIT</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./atomic.html#Memory_synchronization_ordering" title="cpp/thread">Memory ordering</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/memory_order.html" title="cpp/atomic/memory order"><span class="t-lines"><span>memory_order</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/kill_dependency.html" title="cpp/atomic/kill dependency"><span class="t-lines"><span>kill_dependency</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span><span class="t-mark-rev t-deprecated-cxx26">(deprecated in C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_thread_fence.html" title="cpp/atomic/atomic thread fence"><span class="t-lines"><span>atomic_thread_fence</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_signal_fence.html" title="cpp/atomic/atomic signal fence"><span class="t-lines"><span>atomic_signal_fence</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./atomic.html#Operations_on_atomic_types" title="cpp/thread">Free functions for atomic operations</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_store.html" title="cpp/atomic/atomic store"><span class="t-lines"><span>atomic_store</span><span>atomic_store_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_load.html" title="cpp/atomic/atomic load"><span class="t-lines"><span>atomic_load</span><span>atomic_load_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_exchange.html" title="cpp/atomic/atomic exchange"><span class="t-lines"><span>atomic_exchange</span><span>atomic_exchange_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_compare_exchange.html" title="cpp/atomic/atomic compare exchange"><span class="t-lines"><span>atomic_compare_exchange_weak</span><span>atomic_compare_exchange_weak_explicit</span><span>atomic_compare_exchange_strong</span><span>atomic_compare_exchange_strong_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_fetch_add.html" title="cpp/atomic/atomic fetch add"><span class="t-lines"><span>atomic_fetch_add</span><span>atomic_fetch_add_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_fetch_sub.html" title="cpp/atomic/atomic fetch sub"><span class="t-lines"><span>atomic_fetch_sub</span><span>atomic_fetch_sub_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_fetch_and.html" title="cpp/atomic/atomic fetch and"><span class="t-lines"><span>atomic_fetch_and</span><span>atomic_fetch_and_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_fetch_or.html" title="cpp/atomic/atomic fetch or"><span class="t-lines"><span>atomic_fetch_or</span><span>atomic_fetch_or_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_fetch_xor.html" title="cpp/atomic/atomic fetch xor"><span class="t-lines"><span>atomic_fetch_xor</span><span>atomic_fetch_xor_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_fetch_max.html" title="cpp/atomic/atomic fetch max"><span class="t-lines"><span>atomic_fetch_max</span><span>atomic_fetch_max_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_fetch_min.html" title="cpp/atomic/atomic fetch min"><span class="t-lines"><span>atomic_fetch_min</span><span>atomic_fetch_min_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_is_lock_free.html" title="cpp/atomic/atomic is lock free"><span class="t-lines"><span>atomic_is_lock_free</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_wait.html" title="cpp/atomic/atomic wait"><span class="t-lines"><span>atomic_wait</span><span>atomic_wait_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_notify_one.html" title="cpp/atomic/atomic notify one"><span class="t-lines"><span>atomic_notify_one</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_notify_all.html" title="cpp/atomic/atomic notify all"><span class="t-lines"><span>atomic_notify_all</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./atomic.html#Flag_type_and_operations" title="cpp/thread">Free functions for atomic flags</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_flag_test_and_set.html" title="cpp/atomic/atomic flag test and set"><span class="t-lines"><span>atomic_flag_test_and_set</span><span>atomic_flag_test_and_set_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_flag_clear.html" title="cpp/atomic/atomic flag clear"><span class="t-lines"><span>atomic_flag_clear</span><span>atomic_flag_clear_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_flag_test.html" title="cpp/atomic/atomic flag test"><span class="t-lines"><span>atomic_flag_test</span><span>atomic_flag_test_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_flag_wait.html" title="cpp/atomic/atomic flag wait"><span class="t-lines"><span>atomic_flag_wait</span><span>atomic_flag_wait_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_flag_notify_one.html" title="cpp/atomic/atomic flag notify one"><span class="t-lines"><span>atomic_flag_notify_one</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./atomic/atomic_flag_notify_all.html" title="cpp/atomic/atomic flag notify all"><span class="t-lines"><span>atomic_flag_notify_all</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div></div>
+<p>C++ includes built-in support for threads, atomic operations, mutual exclusion, condition variables, and futures.
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./atomic.html#Threads"><span class="tocnumber">1</span> <span class="toctext">Threads</span></a>
+<ul>
+<li class="toclevel-2"><a href="./atomic.html#Functions_managing_the_current_thread"><span class="tocnumber">1.1</span> <span class="toctext">Functions managing the current thread</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-2"><a href="./atomic.html#Cooperative_cancellation_.28since_C.2B.2B20.29"><span class="tocnumber">2</span> <span class="toctext">Cooperative cancellation <span>(since C++20)</span></span></a>
+<ul>
+<li class="toclevel-2"><a href="./atomic.html#Stop_token_types"><span class="tocnumber">2.1</span> <span class="toctext">Stop token types</span></a></li>
+<li class="toclevel-2"><a href="./atomic.html#Stop_source_types"><span class="tocnumber">2.2</span> <span class="toctext">Stop source types</span></a></li>
+<li class="toclevel-2"><a href="./atomic.html#Stop_callback_types"><span class="tocnumber">2.3</span> <span class="toctext">Stop callback types</span></a></li>
+<li class="toclevel-2"><a href="./atomic.html#Concepts_.28since_C.2B.2B20.29"><span class="tocnumber">2.4</span> <span class="toctext">Concepts <span>(since C++20)</span></span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="./atomic.html#Cache_size_access_.28since_C.2B.2B17.29"><span class="tocnumber">3</span> <span class="toctext">Cache size access <span>(since C++17)</span></span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./atomic.html#Atomic_operations"><span class="tocnumber">4</span> <span class="toctext">Atomic operations</span></a>
+<ul>
+<li class="toclevel-2"><a href="./atomic.html#Atomic_types"><span class="tocnumber">4.1</span> <span class="toctext">Atomic types</span></a></li>
+<li class="toclevel-2"><a href="./atomic.html#Operations_on_atomic_types"><span class="tocnumber">4.2</span> <span class="toctext">Operations on atomic types</span></a></li>
+<li class="toclevel-2"><a href="./atomic.html#Flag_type_and_operations"><span class="tocnumber">4.3</span> <span class="toctext">Flag type and operations</span></a></li>
+<li class="toclevel-2"><a href="./atomic.html#Initialization"><span class="tocnumber">4.4</span> <span class="toctext">Initialization</span></a></li>
+<li class="toclevel-2"><a href="./atomic.html#Memory_synchronization_ordering"><span class="tocnumber">4.5</span> <span class="toctext">Memory synchronization ordering</span></a></li>
+<li class="toclevel-2"><a href="./atomic.html#C_compatibility_macros_.28since_C.2B.2B23.29"><span class="tocnumber">4.6</span> <span class="toctext">C compatibility macros <span>(since C++23)</span></span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="./atomic.html#Mutual_exclusion"><span class="tocnumber">5</span> <span class="toctext">Mutual exclusion</span></a>
+<ul>
+<li class="toclevel-2"><a href="./atomic.html#Generic_mutex_management"><span class="tocnumber">5.1</span> <span class="toctext">Generic mutex management</span></a></li>
+<li class="toclevel-2"><a href="./atomic.html#Generic_locking_algorithms"><span class="tocnumber">5.2</span> <span class="toctext">Generic locking algorithms</span></a></li>
+<li class="toclevel-2"><a href="./atomic.html#Call_once"><span class="tocnumber">5.3</span> <span class="toctext">Call once</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="./atomic.html#Condition_variables"><span class="tocnumber">6</span> <span class="toctext">Condition variables</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="./atomic.html#Semaphores_.28since_C.2B.2B20.29"><span class="tocnumber">7</span> <span class="toctext">Semaphores <span>(since C++20)</span></span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="./atomic.html#Latches_and_Barriers_.28since_C.2B.2B20.29"><span class="tocnumber">8</span> <span class="toctext">Latches and Barriers <span>(since C++20)</span></span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="./atomic.html#Futures"><span class="tocnumber">9</span> <span class="toctext">Futures</span></a>
+<ul>
+<li class="toclevel-2"><a href="./atomic.html#Future_errors"><span class="tocnumber">9.1</span> <span class="toctext">Future errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="./atomic.html#Safe_reclamation_.28since_C.2B.2B26.29"><span class="tocnumber">10</span> <span class="toctext">Safe reclamation <span>(since C++26)</span></span></a>
+<ul>
+<li class="toclevel-2"><a href="./atomic.html#Read-Copy-Update_mechanism"><span class="tocnumber">10.1</span> <span class="toctext">Read-Copy-Update mechanism</span></a></li>
+<li class="toclevel-2"><a href="./atomic.html#Hazard_pointers"><span class="tocnumber">10.2</span> <span class="toctext">Hazard pointers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="./atomic.html#See_also"><span class="tocnumber">11</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=1" title="Edit section: Threads">edit</a>]</span> <span class="mw-headline" id="Threads">Threads</span></h3>
+<p>Threads enable programs to execute across several processor cores.
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/thread.html" title="cpp/header/thread">&lt;thread&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/thread.html" title="cpp/thread/thread"> <span class="t-lines"><span>thread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  manages a separate thread <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_thread&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/jthread.html" title="cpp/thread/jthread"> <span class="t-lines"><span>jthread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  <span class="t-lc"><a href="./thread/thread.html" title="cpp/thread/thread">std::thread</a></span> with support for auto-joining and cancellation <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_jthread&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Functions_managing_the_current_thread"> Functions managing the current thread </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>this_thread</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/yield.html" title="cpp/thread/yield"> <span class="t-lines"><span>yield</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  suggests that the implementation reschedule execution of threads <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_yield&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/get_id.html" title="cpp/thread/get id"> <span class="t-lines"><span>get_id</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  returns the thread id of the current thread <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_get_id&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/sleep_for.html" title="cpp/thread/sleep for"> <span class="t-lines"><span>sleep_for</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  stops the execution of the current thread for a specified time duration <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_sleep_for&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/sleep_until.html" title="cpp/thread/sleep until"> <span class="t-lines"><span>sleep_until</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  stops the execution of the current thread until a specified time point <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_sleep_until&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<p><span id="Cooperative_cancellation"></span>
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=2" title="Edit section: Cooperative cancellation (since C++20)">edit</a>]</span> <span class="mw-headline" id="Cooperative_cancellation_.28since_C.2B.2B20.29">Cooperative cancellation <span class="t-mark-rev t-since-cxx20">(since C++20)</span></span></h3>
+<p>The components <i>stop source</i>, <i>stop token</i>, and <i>stop callback</i> can be used to asynchronously request that an operation stops execution in a timely manner, typically because the result is no longer required. Such a request is called a <i>stop request</i>.
+</p><p>These components specify the semantics of shared access to a <i>stop state</i>. Any object modeling any of these components that refer to the same stop state is an associated stop source, stop token, or stop callback, respectively.
+</p>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-cxx26"><td>
+<p>The concepts <a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/stoppable-source&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/stoppable-source (page does not exist)"><code><i>stoppable-source</i></code></a>, <a href="./thread/stoppable_token.html" title="cpp/thread/stoppable token"><code>stoppable_token</code></a>, and <a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/stoppable-callback-for&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/stoppable-callback-for (page does not exist)"><code><i>stoppable-callback-for</i></code></a> specify the required syntax and model semantics of stop source, stop token, and stop callback, respectively.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx26">(since C++26)</span></td></tr>
+</tbody></table>
+<p>They are designed:
+</p>
+<ul><li> to cooperatively cancel the execution such as for <span class="t-lc"><a href="./thread/jthread.html" title="cpp/thread/jthread">std::jthread</a></span>, 
+</li><li> to interrupt <span class="t-lc"><a href="./thread/condition_variable_any.html" title="cpp/thread/condition variable any">std::condition_variable_any</a></span> waiting functions, 
+</li></ul>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-cxx26"><td>
+<ul><li> to perform stopped completion of an asynchronous operation created by <span class="t-lc">execution::connect</span>,
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx26">(since C++26)</span></td></tr>
+</tbody></table> 
+<ul><li> or for a custom execution management implementation. 
+</li></ul>
+<p>In fact, they do not even need to be used to "stop" anything, but can instead be used for a thread-safe one-time function(s) invocation trigger, for example.
+</p>
+<span id="Concepts"></span><table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/stop_token.html" title="cpp/header/stop token">&lt;stop_token&gt;</a></code> </div>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Stop_token_types"> Stop token types </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/stop_token.html" title="cpp/thread/stop token"> <span class="t-lines"><span>stop_token</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  an interface for querying if a <span class="t-lc"><a href="./thread/jthread.html" title="cpp/thread/jthread">std::jthread</a></span> cancellation request has been made <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_stop_token&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/never_stop_token.html" title="cpp/thread/never stop token"> <span class="t-lines"><span>never_stop_token</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  provides a stop token interface that a stop is never possible nor requested <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_never_stop_token&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/inplace_stop_token&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/inplace stop token (page does not exist)"> <span class="t-lines"><span>inplace_stop_token</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  a stop token that references stop state of its associated <code>std::inplace_stop_source</code> object <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_inplace_stop_token&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Stop_source_types"> Stop source types </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/stop_source.html" title="cpp/thread/stop source"> <span class="t-lines"><span>stop_source</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  class representing a request to stop one or more <span class="t-lc"><a href="./thread/jthread.html" title="cpp/thread/jthread">std::jthread</a></span>s <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_stop_source&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/inplace_stop_source&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/inplace stop source (page does not exist)"> <span class="t-lines"><span>inplace_stop_source</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  a <code><i>stoppable-source</i></code> that is the sole owner of the stop state <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_inplace_stop_source&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Stop_callback_types"> Stop callback types </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/stop_callback.html" title="cpp/thread/stop callback"> <span class="t-lines"><span>stop_callback</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  an interface for registering callbacks on <span class="t-lc"><a href="./thread/jthread.html" title="cpp/thread/jthread">std::jthread</a></span> cancellation <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_stop_callback&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/inplace_stop_callback&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/inplace stop callback (page does not exist)"> <span class="t-lines"><span>inplace_stop_callback</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  a stop callback for <code>std::inplace_stop_token</code> <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_inplace_stop_callback&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./thread/stop_callback_for_t.html" title="cpp/thread/stop callback for t"> <span class="t-lines"><span>stop_callback_for_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td> obtains the callback type for a given stop token type<br><span class="t-mark">(alias template)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_stop_callback_for_t&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Concepts_.28since_C.2B.2B20.29"> Concepts <span class="t-mark-rev t-since-cxx20">(since C++20)</span> </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/stoppable_token.html" title="cpp/thread/stoppable token"> <span class="t-lines"><span>stoppable_token</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  specifies the basic interface of stop tokens which allows queries for stop requests and whether the stop request is possible <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_stoppable_token&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/unstoppable_token.html" title="cpp/thread/unstoppable token"> <span class="t-lines"><span>unstoppable_token</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  specifies a stop token that does not allow stopping <br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_unstoppable_token&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/stoppable-source&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/stoppable-source (page does not exist)"><i><span class="t-lines"><span><i>stoppable-source</i></span></span></i></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td> specifies that a type is a factory for associated stop tokens and a stop request can be made upon it<br><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition-only concept*</span>)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_stoppable_source&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/stoppable-callback-for&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/stoppable-callback-for (page does not exist)"><i><span class="t-lines"><span><i>stoppable-callback-for</i></span></span></i></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td> specifies an interface for registering callbacks with a given stop token type<br><span class="t-mark t-mark-expos">(<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">exposition-only concept*</span>)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_stoppable_callback_for&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<p><span id="Cache_size_access"></span>
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=3" title="Edit section: Cache size access (since C++17)">edit</a>]</span> <span class="mw-headline" id="Cache_size_access_.28since_C.2B.2B17.29">Cache size access <span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/new.html" title="cpp/header/new">&lt;new&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/hardware_destructive_interference_size.html" title="cpp/thread/hardware destructive interference size"> <span class="t-lines"><span>hardware_destructive_interference_size</span><span>hardware_constructive_interference_size</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  min offset to avoid false sharing<br>max offset to promote true sharing <br> <span class="t-mark">(constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_hardware_destructive_interference_size&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=4" title="Edit section: Atomic operations">edit</a>]</span> <span class="mw-headline" id="Atomic_operations">Atomic operations</span></h3>
+<p>These components are provided for fine-grained atomic operations allowing for lockless concurrent programming. Each atomic operation is indivisible with regards to any other atomic operation that involves the same object. Atomic objects are <a href="./language/memory_model.html#Threads_and_data_races" title="cpp/language/memory model">free of data races</a>.
+</p>
+<span id="C_compatibility_macros"></span><table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/atomic.html" title="cpp/header/atomic">&lt;atomic&gt;</a></code> </div>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Atomic_types"> Atomic types </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic.html" title="cpp/atomic/atomic"> <span class="t-lines"><span>atomic</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  atomic class template and specializations for bool, integral,<span class="t-rev-inl t-since-cxx20"><span> floating-point,</span><span><span class="t-mark-rev t-since-cxx20">(since C++20)</span></span></span> and pointer types <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_ref.html" title="cpp/atomic/atomic ref"> <span class="t-lines"><span>atomic_ref</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  provides atomic operations on non-atomic objects <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_ref&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Operations_on_atomic_types"> Operations on atomic types </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_is_lock_free.html" title="cpp/atomic/atomic is lock free"> <span class="t-lines"><span>atomic_is_lock_free</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  checks if the atomic type's operations are lock-free <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_is_lock_free&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_store.html" title="cpp/atomic/atomic store"> <span class="t-lines"><span>atomic_store</span><span>atomic_store_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  atomically replaces the value of the atomic object with a non-atomic argument <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_store&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_load.html" title="cpp/atomic/atomic load"> <span class="t-lines"><span>atomic_load</span><span>atomic_load_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  atomically obtains the value stored in an atomic object <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_load&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_exchange.html" title="cpp/atomic/atomic exchange"> <span class="t-lines"><span>atomic_exchange</span><span>atomic_exchange_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  atomically replaces the value of the atomic object with non-atomic argument and returns the old value of the atomic <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_exchange&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_compare_exchange.html" title="cpp/atomic/atomic compare exchange"> <span class="t-lines"><span>atomic_compare_exchange_weak</span><span>atomic_compare_exchange_weak_explicit</span><span>atomic_compare_exchange_strong</span><span>atomic_compare_exchange_strong_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  atomically compares the value of the atomic object with non-atomic argument and performs atomic exchange if equal or atomic load if not <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_compare_exchange&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_fetch_add.html" title="cpp/atomic/atomic fetch add"> <span class="t-lines"><span>atomic_fetch_add</span><span>atomic_fetch_add_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  adds a non-atomic value to an atomic object and obtains the previous value of the atomic <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_fetch_add&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_fetch_sub.html" title="cpp/atomic/atomic fetch sub"> <span class="t-lines"><span>atomic_fetch_sub</span><span>atomic_fetch_sub_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  subtracts a non-atomic value from an atomic object and obtains the previous value of the atomic <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_fetch_sub&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_fetch_and.html" title="cpp/atomic/atomic fetch and"> <span class="t-lines"><span>atomic_fetch_and</span><span>atomic_fetch_and_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  replaces the atomic object with the result of bitwise AND with a non-atomic argument and obtains the previous value of the atomic <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_fetch_and&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_fetch_or.html" title="cpp/atomic/atomic fetch or"> <span class="t-lines"><span>atomic_fetch_or</span><span>atomic_fetch_or_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  replaces the atomic object with the result of bitwise OR with a non-atomic argument and obtains the previous value of the atomic <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_fetch_or&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_fetch_xor.html" title="cpp/atomic/atomic fetch xor"> <span class="t-lines"><span>atomic_fetch_xor</span><span>atomic_fetch_xor_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  replaces the atomic object with the result of bitwise XOR with a non-atomic argument and obtains the previous value of the atomic <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_fetch_xor&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_fetch_max.html" title="cpp/atomic/atomic fetch max"> <span class="t-lines"><span>atomic_fetch_max</span><span>atomic_fetch_max_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  replaces the atomic object with the result of <span class="t-lc"><a href="./algorithm/max.html" title="cpp/algorithm/max">std::max</a></span> with a non-atomic argument and obtains the previous value of the atomic <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_fetch_max&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_fetch_min.html" title="cpp/atomic/atomic fetch min"> <span class="t-lines"><span>atomic_fetch_min</span><span>atomic_fetch_min_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  replaces the atomic object with the result of <span class="t-lc"><a href="./algorithm/min.html" title="cpp/algorithm/min">std::min</a></span> with a non-atomic argument and obtains the previous value of the atomic <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_fetch_min&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_wait.html" title="cpp/atomic/atomic wait"> <span class="t-lines"><span>atomic_wait</span><span>atomic_wait_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  blocks the thread until notified and the atomic value changes <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_wait&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_notify_one.html" title="cpp/atomic/atomic notify one"> <span class="t-lines"><span>atomic_notify_one</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  notifies a thread blocked in atomic_wait <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_notify_one&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_notify_all.html" title="cpp/atomic/atomic notify all"> <span class="t-lines"><span>atomic_notify_all</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  notifies all threads blocked in atomic_wait <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_notify_all&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Flag_type_and_operations"> Flag type and operations </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_flag.html" title="cpp/atomic/atomic flag"> <span class="t-lines"><span>atomic_flag</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  the lock-free boolean atomic type <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_flag&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_flag_test_and_set.html" title="cpp/atomic/atomic flag test and set"> <span class="t-lines"><span>atomic_flag_test_and_set</span><span>atomic_flag_test_and_set_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  atomically sets the flag to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> and returns its previous value <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_flag_test_and_set&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_flag_clear.html" title="cpp/atomic/atomic flag clear"> <span class="t-lines"><span>atomic_flag_clear</span><span>atomic_flag_clear_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  atomically sets the value of the flag to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_flag_clear&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_flag_test.html" title="cpp/atomic/atomic flag test"> <span class="t-lines"><span>atomic_flag_test</span><span>atomic_flag_test_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  atomically returns the value of the flag <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_flag_test&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_flag_wait.html" title="cpp/atomic/atomic flag wait"> <span class="t-lines"><span>atomic_flag_wait</span><span>atomic_flag_wait_explicit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  blocks the thread until notified and the flag changes <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_flag_wait&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_flag_notify_one.html" title="cpp/atomic/atomic flag notify one"> <span class="t-lines"><span>atomic_flag_notify_one</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  notifies a thread blocked in atomic_flag_wait <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_flag_notify_one&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_flag_notify_all.html" title="cpp/atomic/atomic flag notify all"> <span class="t-lines"><span>atomic_flag_notify_all</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  notifies all threads blocked in atomic_flag_wait <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_flag_notify_all&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Initialization"> Initialization </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_init.html" title="cpp/atomic/atomic init"> <span class="t-lines"><span>atomic_init</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span><span class="t-mark-rev t-deprecated-cxx20">(deprecated in C++20)</span></span></span></div></div>
+</td>
+<td>  non-atomic initialization of a default-constructed atomic object <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_init&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/ATOMIC_VAR_INIT.html" title="cpp/atomic/ATOMIC VAR INIT"> <span class="t-lines"><span>ATOMIC_VAR_INIT</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span><span class="t-mark-rev t-deprecated-cxx20">(deprecated in C++20)</span></span></span></div></div>
+</td>
+<td>  constant initialization of an atomic variable of static storage duration <br> <span class="t-mark">(function macro)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_ATOMIC_VAR_INIT&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/ATOMIC_FLAG_INIT.html" title="cpp/atomic/ATOMIC FLAG INIT"> <span class="t-lines"><span>ATOMIC_FLAG_INIT</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  initializes an <span class="t-lc"><a href="./atomic/atomic_flag.html" title="cpp/atomic/atomic flag">std::atomic_flag</a></span> to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> <br> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_ATOMIC_FLAG_INIT&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Memory_synchronization_ordering"> Memory synchronization ordering </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/memory_order.html" title="cpp/atomic/memory order"> <span class="t-lines"><span>memory_order</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  defines memory ordering constraints for the given atomic operation <br> <span class="t-mark">(enum)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_memory_order&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/kill_dependency.html" title="cpp/atomic/kill dependency"> <span class="t-lines"><span>kill_dependency</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-deprecated-cxx26">(deprecated in C++26)</span></span></span></div></div>
+</td>
+<td>  removes the specified object from the <span class="t-lc"><a href="./atomic/memory_order.html" title="cpp/atomic/memory order">std::memory_order_consume</a></span> dependency tree <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_kill_dependency&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_thread_fence.html" title="cpp/atomic/atomic thread fence"> <span class="t-lines"><span>atomic_thread_fence</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  generic memory order-dependent fence synchronization primitive <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_thread_fence&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic_signal_fence.html" title="cpp/atomic/atomic signal fence"> <span class="t-lines"><span>atomic_signal_fence</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  fence between a thread and a signal handler executed in the same thread <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_signal_fence&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/stdatomic.h.html" title="cpp/header/stdatomic.h">&lt;stdatomic.h&gt;</a></code> </div>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="C_compatibility_macros_.28since_C.2B.2B23.29"> C compatibility macros <span class="t-mark-rev t-since-cxx23">(since C++23)</span> </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./atomic/atomic.html" title="cpp/atomic/atomic"> <span class="t-lines"><span>_Atomic</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div>
+</td>
+<td>  compatibility macro such that <span class="t-c"><span class="mw-geshi cpp source-cpp">_Atomic<span class="br0">(</span>T<span class="br0">)</span></span></span> is identical to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="./atomic/atomic.html"><span class="kw2084">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span></span> <br> <span class="t-mark">(function macro)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_Atomic&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<p>Neither the <code>_Atomic</code> macro, nor any of the non-macro global namespace declarations are provided by any C++ standard library header other than <a href="./header/stdatomic.h.html" title="cpp/header/stdatomic.h"><tt>&lt;stdatomic.h&gt;</tt></a>.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=5" title="Edit section: Mutual exclusion">edit</a>]</span> <span class="mw-headline" id="Mutual_exclusion">Mutual exclusion</span></h3>
+<p>Mutual exclusion algorithms prevent multiple threads from simultaneously accessing shared resources. This prevents data races and provides support for synchronization between threads.
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/mutex.html" title="cpp/header/mutex">&lt;mutex&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/mutex.html" title="cpp/thread/mutex"> <span class="t-lines"><span>mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  provides basic mutual exclusion facility <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_mutex&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/timed_mutex.html" title="cpp/thread/timed mutex"> <span class="t-lines"><span>timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  provides mutual exclusion facility which implements locking with a timeout <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_timed_mutex&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/recursive_mutex.html" title="cpp/thread/recursive mutex"> <span class="t-lines"><span>recursive_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  provides mutual exclusion facility which can be locked recursively by the same thread <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_recursive_mutex&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/recursive_timed_mutex.html" title="cpp/thread/recursive timed mutex"> <span class="t-lines"><span>recursive_timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  provides mutual exclusion facility which can be locked recursively<br>by the same thread and implements locking with a timeout <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_recursive_timed_mutex&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/shared_mutex.html" title="cpp/header/shared mutex">&lt;shared_mutex&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/shared_mutex.html" title="cpp/thread/shared mutex"> <span class="t-lines"><span>shared_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  provides shared mutual exclusion facility <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_shared_mutex&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/shared_timed_mutex.html" title="cpp/thread/shared timed mutex"> <span class="t-lines"><span>shared_timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div>
+</td>
+<td>  provides shared mutual exclusion facility and implements locking with a timeout <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_shared_timed_mutex&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Generic_mutex_management"> Generic mutex management </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/mutex.html" title="cpp/header/mutex">&lt;mutex&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/lock_guard.html" title="cpp/thread/lock guard"> <span class="t-lines"><span>lock_guard</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  implements a strictly scope-based mutex ownership wrapper <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_lock_guard&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/scoped_lock.html" title="cpp/thread/scoped lock"> <span class="t-lines"><span>scoped_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  deadlock-avoiding RAII wrapper for multiple mutexes <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_scoped_lock&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/unique_lock.html" title="cpp/thread/unique lock"> <span class="t-lines"><span>unique_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  implements movable mutex ownership wrapper <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_unique_lock&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/shared_lock.html" title="cpp/thread/shared lock"> <span class="t-lines"><span>shared_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div>
+</td>
+<td>  implements movable shared mutex ownership wrapper <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_shared_lock&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="./thread/lock_tag_t.html" title="cpp/thread/lock tag"> <span class="t-lines"><span>defer_lock</span><span>try_to_lock</span><span>adopt_lock</span><span>defer_lock_t</span><span>try_to_lock_t</span><span>adopt_lock_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td> tags used to specify locking strategy<br><span class="t-mark">(tag)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_lock_tag&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Generic_locking_algorithms"> Generic locking algorithms </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/try_lock.html" title="cpp/thread/try lock"> <span class="t-lines"><span>try_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  attempts to obtain ownership of mutexes via repeated calls to <code>try_lock</code> <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_try_lock&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/lock.html" title="cpp/thread/lock"> <span class="t-lines"><span>lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  locks specified mutexes, blocks if any are unavailable <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_lock&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Call_once"> Call once </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/once_flag.html" title="cpp/thread/once flag"> <span class="t-lines"><span>once_flag</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  helper object to ensure that <a href="./thread/call_once.html" title="cpp/thread/call once"><tt>call_once</tt></a> invokes the function only once <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_once_flag&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/call_once.html" title="cpp/thread/call once"> <span class="t-lines"><span>call_once</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  invokes a function only once even if called from multiple threads <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_call_once&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=6" title="Edit section: Condition variables">edit</a>]</span> <span class="mw-headline" id="Condition_variables">Condition variables</span></h3>
+<p>A condition variable is a synchronization primitive that allows multiple threads to communicate with each other.  It allows some number of threads to wait (possibly with a timeout) for notification from another thread that they may proceed. A condition variable is always associated with a mutex. 
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/condition_variable.html" title="cpp/header/condition variable">&lt;condition_variable&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/condition_variable.html" title="cpp/thread/condition variable"> <span class="t-lines"><span>condition_variable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  provides a condition variable associated with a <span class="t-lc"><a href="./thread/unique_lock.html" title="cpp/thread/unique lock">std::unique_lock</a></span> <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_condition_variable&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/condition_variable_any.html" title="cpp/thread/condition variable any"> <span class="t-lines"><span>condition_variable_any</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  provides a condition variable associated with any lock type <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_condition_variable_any&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/notify_all_at_thread_exit.html" title="cpp/thread/notify all at thread exit"> <span class="t-lines"><span>notify_all_at_thread_exit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  schedules a call to <code>notify_all</code> to be invoked when this thread is completely finished <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_notify_all_at_thread_exit&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/cv_status.html" title="cpp/thread/cv status"> <span class="t-lines"><span>cv_status</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  lists the possible results of timed waits on condition variables <br> <span class="t-mark">(enum)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_cv_status&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<p><span id="Semaphores"></span>
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=7" title="Edit section: Semaphores (since C++20)">edit</a>]</span> <span class="mw-headline" id="Semaphores_.28since_C.2B.2B20.29">Semaphores <span class="t-mark-rev t-since-cxx20">(since C++20)</span></span></h3>
+<p>A semaphore is a lightweight synchronization primitive used to constrain concurrent access to a shared resource. When either would suffice, a semaphore can be more efficient than a condition variable.
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/semaphore.html" title="cpp/header/semaphore">&lt;semaphore&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/counting_semaphore.html" title="cpp/thread/counting semaphore"> <span class="t-lines"><span>counting_semaphore</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  semaphore that models a non-negative resource count <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_counting_semaphore&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/counting_semaphore.html" title="cpp/thread/counting semaphore"> <span class="t-lines"><span>binary_semaphore</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  semaphore that has only two states <br> <span class="t-mark">(typedef)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_binary_semaphore&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<p><span id="Latches_and_Barriers"></span>
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=8" title="Edit section: Latches and Barriers (since C++20)">edit</a>]</span> <span class="mw-headline" id="Latches_and_Barriers_.28since_C.2B.2B20.29">Latches and Barriers <span class="t-mark-rev t-since-cxx20">(since C++20)</span></span></h3>
+<p>Latches and barriers are thread coordination mechanisms that allow any number of threads to block until an expected number of threads arrive. A latch cannot be reused, while a barrier can be used repeatedly.
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/latch.html" title="cpp/header/latch">&lt;latch&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/latch.html" title="cpp/thread/latch"> <span class="t-lines"><span>latch</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  single-use thread barrier <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_latch&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/barrier.html" title="cpp/header/barrier">&lt;barrier&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/barrier.html" title="cpp/thread/barrier"> <span class="t-lines"><span>barrier</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  reusable thread barrier <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_barrier&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=9" title="Edit section: Futures">edit</a>]</span> <span class="mw-headline" id="Futures">Futures</span></h3>
+<p>The standard library provides facilities to obtain values that are returned and to catch exceptions that are thrown by asynchronous tasks (i.e. functions launched in separate threads). These values are communicated in a <i>shared state</i>, in which the asynchronous task may write its return value or store an exception, and which may be examined, waited for, and otherwise manipulated by other threads that hold instances of <span class="t-lc"><a href="./thread/future.html" title="cpp/thread/future">std::future</a></span> or <span class="t-lc"><a href="./thread/shared_future.html" title="cpp/thread/shared future">std::shared_future</a></span> that reference that shared state.
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/future.html" title="cpp/header/future">&lt;future&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/promise.html" title="cpp/thread/promise"> <span class="t-lines"><span>promise</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  stores a value for asynchronous retrieval <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_promise&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/packaged_task.html" title="cpp/thread/packaged task"> <span class="t-lines"><span>packaged_task</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  packages a function to store its return value for asynchronous retrieval <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_packaged_task&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/future.html" title="cpp/thread/future"> <span class="t-lines"><span>future</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  waits for a value that is set asynchronously <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_future&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/shared_future.html" title="cpp/thread/shared future"> <span class="t-lines"><span>shared_future</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  waits for a value (possibly referenced by other futures) that is set asynchronously <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_shared_future&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/async.html" title="cpp/thread/async"> <span class="t-lines"><span>async</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  runs a function asynchronously (potentially in a new thread) and returns a <span class="t-lc"><a href="./thread/future.html" title="cpp/thread/future">std::future</a></span> that will hold the result <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_async&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/launch.html" title="cpp/thread/launch"> <span class="t-lines"><span>launch</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  specifies the launch policy for <span class="t-lc"><a href="./thread/async.html" title="cpp/thread/async">std::async</a></span> <br> <span class="t-mark">(enum)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_launch&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/future_status.html" title="cpp/thread/future status"> <span class="t-lines"><span>future_status</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  specifies the results of timed waits performed on <span class="t-lc"><a href="./thread/future.html" title="cpp/thread/future">std::future</a></span> and <span class="t-lc"><a href="./thread/shared_future.html" title="cpp/thread/shared future">std::shared_future</a></span> <br> <span class="t-mark">(enum)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_future_status&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Future_errors"> Future errors </span></h5>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/future_error.html" title="cpp/thread/future error"> <span class="t-lines"><span>future_error</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  reports an error related to futures or promises <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_future_error&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/future_category.html" title="cpp/thread/future category"> <span class="t-lines"><span>future_category</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  identifies the future error category <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_future_category&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./thread/future_errc.html" title="cpp/thread/future errc"> <span class="t-lines"><span>future_errc</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  identifies the future error codes <br> <span class="t-mark">(enum)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_future_errc&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<p><span id="Safe_reclamation"></span>
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=10" title="Edit section: Safe reclamation (since C++26)">edit</a>]</span> <span class="mw-headline" id="Safe_reclamation_.28since_C.2B.2B26.29">Safe reclamation <span class="t-mark-rev t-since-cxx26">(since C++26)</span></span></h3>
+<p>Safe-reclamation techniques are most frequently used to straightforwardly resolve access-deletion races.
+</p>
+<table class="t-dsc-begin">
+
+<tbody><tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Read-Copy-Update_mechanism"> Read-Copy-Update mechanism </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/rcu.html" title="cpp/header/rcu">&lt;rcu&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_obj_base&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/rcu obj base (page does not exist)"> <span class="t-lines"><span>rcu_obj_base</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  allows an object to be protected by RCU <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_rcu_obj_base&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_domain&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/rcu domain (page does not exist)"> <span class="t-lines"><span>rcu_domain</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  provides regions of RCU protection <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_rcu_domain&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_default_domain&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/rcu default domain (page does not exist)"> <span class="t-lines"><span>rcu_default_domain</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  returns a reference to a static-duration object of type <code>std::rcu_domain</code> <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_rcu_default_domain&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_synchronize&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/rcu synchronize (page does not exist)"> <span class="t-lines"><span>rcu_synchronize</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  blocks until a protection region unlocks on a RCU domain <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_rcu_synchronize&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_barrier&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/rcu barrier (page does not exist)"> <span class="t-lines"><span>rcu_barrier</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  may evaluate scheduled operations on a RCU domain and blocks until all preceding evaluations are complete <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_rcu_barrier&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_retire&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/rcu retire (page does not exist)"> <span class="t-lines"><span>rcu_retire</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  schedules the evaluation of a specified function on a RCU domain, potentially allocating memory, and invoking scheduled evaluations <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_rcu_retire&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Hazard_pointers"> Hazard pointers </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code><a href="./header/hazard_pointer.html" title="cpp/header/hazard pointer">&lt;hazard_pointer&gt;</a></code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/hazard_pointer_obj_base&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/hazard pointer obj base (page does not exist)"> <span class="t-lines"><span>hazard_pointer_obj_base</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  allows an object to be hazard-protectable <br> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_hazard_pointer_obj_base&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/hazard_pointer&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/hazard pointer (page does not exist)"> <span class="t-lines"><span>hazard_pointer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  single-writer multi-reader pointer that can be owned by at most one thread at any point of time <br> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_hazard_pointer&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/make_hazard_pointer&amp;action=edit&amp;redlink=1" class="new" title="cpp/thread/make hazard pointer (page does not exist)"> <span class="t-lines"><span>make_hazard_pointer</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div>
+</td>
+<td>  constructs a hazard pointer <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_make_hazard_pointer&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=11" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see"><span><a href="../c/thread.html" title="c/thread">C documentation</a></span> for <span class=""><span>Concurrency support library</span></span></div>
+</td></tr>
+
+</tbody></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 21519/1000000
+Preprocessor generated node count: 19518/1000000
+Post‐expand include size: 841337/4194304 bytes
+Template argument size: 170209/4194304 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1774-0!*!0!!en!*!* and timestamp 20250429093103 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;oldid=182908">https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;oldid=182908</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./atomic.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/thread" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/thread" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;oldid=182908" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div id="cpp-languagess" hidden="">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-ar"><a href="http://ar.cppreference.com/w/cpp/thread" title="cpp/thread" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/thread" title="cpp/thread" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/thread" title="cpp/thread" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/thread" title="cpp/thread" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/thread" title="cpp/thread" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/thread" title="cpp/thread" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/thread" title="cpp/thread" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/thread" title="cpp/thread" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/thread" title="cpp/thread" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 29 April 2025, at 02:25.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 2.501 secs. -->
+	
+
+
+</body></html>

@@ -1,0 +1,5 @@
+
+.anchor { anchor-name: --infobox; background: palegoldenrod; font-size: 3em; width: fit-content; border: 1px solid goldenrod; }
+.positionedElement { position: absolute; position-anchor: --infobox; margin: 0px; top: anchor(top); left: calc(10px + anchor(right)); bottom: anchor(bottom); background-color: olive; border: 1px solid darkolivegreen; }
+
+button.copy {display:none !important}

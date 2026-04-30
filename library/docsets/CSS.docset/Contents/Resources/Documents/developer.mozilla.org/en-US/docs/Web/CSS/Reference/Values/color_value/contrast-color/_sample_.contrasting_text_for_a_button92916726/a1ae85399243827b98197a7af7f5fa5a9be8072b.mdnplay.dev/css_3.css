@@ -1,0 +1,11 @@
+
+:root { --button-color: lightblue; }
+button { background-color: var(--button-color); color: contrast-color(var(--button-color)); }
+body { padding: 1rem; }
+button { margin: 3rem; padding: 1rem; width: 150px; font-size: 2rem; border-radius: 1rem; }
+@supports not (color: contrast-color(red)) {
+  body::before { content: "Your browser doesn't support the contrast-color() function."; background-color: wheat; display: block; width: 100%; text-align: center; }
+  body > * { display: none; }
+}
+
+button.copy {display:none !important}

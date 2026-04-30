@@ -1,0 +1,10 @@
+
+blockquote { border: 3px dotted rgb(204, 204, 204); padding: 0px 3px; margin: 20px 0px; font-size: 1.25rem; line-height: 1.5; }
+body:has(:checked) blockquote { overflow: auto; }
+:checked + code, :not(:checked) + code + code { outline: 1px solid green; }
+p:nth-last-of-type(n+2) { font-weight: bold; }
+blockquote { width: 200px; }
+blockquote:nth-of-type(2) { width: 600px; }
+blockquote:nth-of-type(3) { height: 200px; }
+
+button.copy {display:none !important}

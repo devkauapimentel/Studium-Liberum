@@ -1,0 +1,4 @@
+
+div { background-color: lime; position: fixed; top: 1rem; left: 1rem; }
+
+button.copy {display:none !important}

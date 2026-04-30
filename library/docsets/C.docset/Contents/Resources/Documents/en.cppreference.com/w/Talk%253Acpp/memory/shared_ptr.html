@@ -1,0 +1,290 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/memory/shared_ptr.html --><head><meta charset="utf-8"><title>Talk:cpp/memory/shared ptr</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_4729.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_memory_shared_ptr skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fmemory%2Fshared+ptr&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fmemory%2Fshared+ptr" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/memory/shared_ptr.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./shared_ptr.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./shared_ptr.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./shared_ptr.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/memory/shared_ptr&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/memory/shared_ptr&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/memory/shared_ptr&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./shared_ptr.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/memory/shared ptr</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>For some reason, in the "Implementation Notes" section, the link to "allocate_shared" links to "<a rel="nofollow" class="external free" href="../../cpp/memory/shared_ptr/allocate_sharod.html">http://en.cppreference.com/w/cpp/memory/shared_ptr/allocate_sharod</a>", both on hover, copy, and click.  Looking at the markup, the referred-to page-name looks correctly spelt... I don't get it.  Manually going to <a rel="nofollow" class="external free" href="../../cpp/memory/shared_ptr/allocate_shared.html">http://en.cppreference.com/w/cpp/memory/shared_ptr/allocate_shared</a> works.
+</p>
+<dl><dd> It's a typo in <a href="https://en.cppreference.com/mwiki/index.php?title=MediaWiki:Simple-search-list&amp;action=edit&amp;redlink=1" class="new" title="MediaWiki:Simple-search-list (page does not exist)">MediaWiki:Simple-search-list</a> and <a href="../../MediaWiki%25253AGeshi-keyword-list-cpp.html" title="MediaWiki:Geshi-keyword-list-cpp">MediaWiki:Geshi-keyword-list-cpp</a>, <a href="../../User%25253AP12.html" title="User:P12">User:P12</a> can fix that. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 11:45, 6 June 2012 (PDT)
+</dd><dd> Fixed. Thanks. -- <a href="../../User%25253AP12.html" title="User:P12">P12</a> 13:01, 6 June 2012 (PDT)
+</dd></dl>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./shared_ptr.html#missing_operator-.3E.2A"><span class="tocnumber">1</span> <span class="toctext">missing operator-&gt;*</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./shared_ptr.html#shared_ptr_for_arrays_wasn.27t_applied_to_WP"><span class="tocnumber">2</span> <span class="toctext">shared_ptr for arrays wasn't applied to WP</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./shared_ptr.html#Inconsistency_about_empty_shared_pointer"><span class="tocnumber">3</span> <span class="toctext">Inconsistency about empty shared pointer</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="./shared_ptr.html#Is_aliasing_constructor_limited_to_shared_ptr.3F"><span class="tocnumber">3.1</span> <span class="toctext">Is aliasing constructor limited to shared_ptr?</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/memory/shared_ptr&amp;action=edit&amp;section=1" title="Edit section: missing operator-&gt;*">edit</a>]</span> <span class="mw-headline" id="missing_operator-.3E.2A"> missing operator-&gt;* </span></h2>
+<p>Is there a reason why <tt>shared_ptr</tt> does not overload <code>operator-&gt;*</code>?  That operator would ease the access of the pointee's member via "pointer to member":
+</p><p>I'd like to access them via <i><code>shp-&gt;*member</code></i> but that does not work, and I have to write <i><code>(*shp).*member</code></i> which looks awkward and unnaturally to me.  --<a href="https://en.cppreference.com/w/Special:Contributions/31.18.70.70" title="Special:Contributions/31.18.70.70">31.18.70.70</a> 06:37, 15 December 2014 (PST)
+</p>
+<dl><dd> You could also write <span class="t-c"><span class="mw-geshi cpp source-cpp">shp.<span class="me1">get</span><span class="br0">(</span><span class="br0">)</span><span class="sy2">-</span><span class="sy1">&gt;</span><span class="sy2">*</span>member</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span><span class="sy3">&amp;</span><span class="sy2">*</span>shp<span class="br0">)</span><span class="sy2">-</span><span class="sy1">&gt;</span><span class="sy2">*</span>member</span></span> if you want the correct operator to be called. Some early smart pointers overloaded <code>-&gt;*</code>, but the boost implementation of shared_ptr, on which C++ is based, didn't. I see it was <a rel="nofollow" class="external text" href="http://stackoverflow.com/questions/17696664/about-shared-ptr-and-pointer-to-member-operator-and-stdbind">recently brought up on stackoverflow</a> with no conclusive answer. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:50, 15 December 2014 (PST)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/memory/shared_ptr&amp;action=edit&amp;section=2" title="Edit section: shared ptr for arrays wasn't applied to WP">edit</a>]</span> <span class="mw-headline" id="shared_ptr_for_arrays_wasn.27t_applied_to_WP"> shared_ptr for arrays wasn't applied to WP </span></h2>
+<p><span class="t-lc"><a href="../../cpp/memory/shared_ptr.html" title="cpp/memory/shared ptr">std::shared_ptr</a></span> for arrays from libfun1 was approved by LWG to merge into C++17, but the wording didn't match up and the editor bumped this part back to LWG for a more precise wording.. Should we undo the changes here? It's pretty certain it will be part of C++17 since it passed all approvers, it was just a merge conflict. (note; the changes were <a rel="nofollow" class="external autonumber" href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;diff=prev&amp;oldid=84024">[1]</a> <a rel="nofollow" class="external autonumber" href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr/shared_ptr&amp;diff=prev&amp;oldid=84025">[2]</a> <a rel="nofollow" class="external autonumber" href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr/get&amp;diff=prev&amp;oldid=84026">[3]</a> <a rel="nofollow" class="external autonumber" href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr/operator*&amp;diff=prev&amp;oldid=84027">[4]</a> <a rel="nofollow" class="external autonumber" href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;diff=prev&amp;oldid=84028">[5]</a>, <a rel="nofollow" class="external autonumber" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/navbar_content&amp;diff=prev&amp;oldid=84031">[6]</a>, <a rel="nofollow" class="external autonumber" href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr/pointer_cast&amp;diff=prev&amp;oldid=84032">[7]</a>, <a rel="nofollow" class="external autonumber" href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr/pointer_cast&amp;diff=prev&amp;oldid=84033">[8]</a>, <a rel="nofollow" class="external autonumber" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/navbar_content&amp;diff=prev&amp;oldid=84034">[9]</a>, <a rel="nofollow" class="external autonumber" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dsc_pointer_cast&amp;diff=prev&amp;oldid=84035">[10]</a>, <a rel="nofollow" class="external autonumber" href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/weak_ptr&amp;diff=prev&amp;oldid=84036">[11]</a>, <a rel="nofollow" class="external autonumber" href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/weak_ptr/weak_ptr&amp;diff=prev&amp;oldid=84037">[12]</a>, and new pages <a href="../../cpp/memory/shared_ptr/operator_at.html" title="cpp/memory/shared ptr/operator at">cpp/memory/shared_ptr/operator_at</a> and <a href="https://en.cppreference.com/w/Template:cpp/memory/shared_ptr/dsc_operator_at" title="Template:cpp/memory/shared ptr/dsc operator at">Template:cpp/memory/shared ptr/dsc operator at</a>
+) --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>)
+</p>
+<dl><dd> Oh hm. I'm okay with leaving it here. Implementations have been running so far ahead of the standard lately that it seems like doing so will be pretty harmless. --<a href="../../User%25253ANate.html" title="User:Nate">Nate</a> (<a href="../../User_talk%25253ANate.html" title="User talk:Nate">talk</a>) 19:44, 3 April 2016 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> looks like it's going to be applied after all (as an NB comment, I guess?): <a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0414r0.html">p0414r0</a> has the new wording. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 20:08, 15 July 2016 (PDT)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/memory/shared_ptr&amp;action=edit&amp;section=3" title="Edit section: Inconsistency about empty shared pointer">edit</a>]</span> <span class="mw-headline" id="Inconsistency_about_empty_shared_pointer"> Inconsistency about empty shared pointer </span></h2>
+<p>In the main page it written that "A shared_ptr may also own no objects, in which case it is called empty (an empty shared_ptr may have a non-null stored pointer if the aliasing constructor was used to create it)". and also that "The stored pointer is the one accessed by get()"
+So, checking if a shared pointer is empty is not equivalent to "get()&nbsp;!= nullptr".
+Continued to read the documentation I found that operator bool "checks if there is associated <b>managed</b> object".
+But then, the page about operator bool says the opposite: "Checks if *this <b>stores</b> a non-null pointer, i.e. whether get()&nbsp;!= nullptr".
+</p><p>Can one explain what I'm missing here?
+</p><p>Ronen
+--<a href="https://en.cppreference.com/w/Special:Contributions/31.168.225.1" title="Special:Contributions/31.168.225.1">31.168.225.1</a> 03:11, 1 December 2016 (PST)
+</p>
+<dl><dd> looks like the one-liner description of operator bool should have said "stored" rather than "managed", updated. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:09, 1 December 2016 (PST)
+</dd></dl>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/memory/shared_ptr&amp;action=edit&amp;section=4" title="Edit section: Is aliasing constructor limited to shared ptr?">edit</a>]</span> <span class="mw-headline" id="Is_aliasing_constructor_limited_to_shared_ptr.3F"> Is aliasing constructor limited to shared_ptr? </span></h3>
+<p>I see that the aliasing ctor is defined in the constructor (option 8), but is this concept applicable to things other than shared_ptr?  Should it be its own term and defined similarly to move constructor, etc.? <br><a href="https://en.cppreference.com/mwiki/index.php?title=User:Ljestrada&amp;action=edit&amp;redlink=1" class="new" title="User:Ljestrada (page does not exist)">ticotico</a> (<a href="../../User_talk%25253ALjestrada.html" title="User talk:Ljestrada">talk</a>) 11:48, 1 November 2021 (PDT)
+</p>
+<dl><dd> the only other things with aliasing constructors are things that are very much like std::shared_ptr. Besides the obvious boost::shared_ptr, first hit in my search was this <a rel="nofollow" class="external text" href="https://meixnergc.sourceforge.io/classgc__ptr.html">gc_ptr</a>. So it's a term, but far less notable compared to <a href="../../cpp/language/move_constructor.html" title="cpp/language/move constructor">move</a> or even <a href="../../cpp/language/converting_constructor.html" title="cpp/language/converting constructor">converting</a> constructors: it gets no special language treatment. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 13:46, 1 November 2021 (PDT)
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 90/1000000
+Preprocessor generated node count: 302/1000000
+Post‐expand include size: 450/4194304 bytes
+Template argument size: 86/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8554-0!*!0!!en!*!* and timestamp 20240517220840 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/memory/shared_ptr&amp;oldid=135016">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/memory/shared_ptr&amp;oldid=135016</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./shared_ptr.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/memory/shared_ptr" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/memory/shared_ptr" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/memory/shared_ptr&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/memory/shared_ptr&amp;oldid=135016" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/memory/shared_ptr&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 1 November 2021, at 13:46.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,863 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.032 secs. -->
+	
+
+
+</body></html>

@@ -1,0 +1,8 @@
+
+div { padding: 0.15em; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+button { margin: 0.15em 0px 0.5em; }
+pre { margin: 0.5em 0px; }
+#div1 { width: 100px; }
+#log1 { margin-bottom: 2em; }
+
+button.copy {display:none !important}

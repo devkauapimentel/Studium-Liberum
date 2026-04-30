@@ -1,0 +1,4 @@
+
+a[href="http://example.com"] { pointer-events: none; }
+
+button.copy {display:none !important}

@@ -1,0 +1,17 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+nvlpubs.nist.gov	TRUE	/	FALSE	1999999999	_cfuvid	PeHht8ZaRg07uCTaKU3XaUiUsdNx6HUW5KJwuoM90yg-1776442366.4619427-1.0.1.1-GgsRe9vjbPLcfAKHaMFC4yhr797TtgJYPw54x.FC.10
+nist.gov	TRUE	/	FALSE	1999999999	SameSite	None
+github.com	TRUE	/	FALSE	1999999999	_gh_sess	pz9F6HwGL0CNy3h5oVc5AbMbnNFC5HhKoPVLW7p61R%2FRCAZ5eEiSnXOLjnUySeIYVjf6BoUH8HWACudv98u7n5jtCVGqG%2FyvM6QISSv0nW2eaCo2SzWnxna30eElUWZi%2FKA2pCswpKzu8aCWj%2BSv3tqoAKVTk%2Fczp91XY2YpbMaP%2FIA6i2Iyc82l9V8qAXapx%2BU7QN1cUNf75wlmsxyBl6qDm09675nKdF0f1VdACiuf9Fkw%2B9TeggPaJZpd68fW0yqbWzEmBcoFCvEbN6QKBw%3D%3D--OW4ZnswpoIPxntfJ--UbMtQo71ryn5ULlrf9RLmQ%3D%3D
+www.dspguide.com	TRUE	/	FALSE	1999999999	request_id	42d767cc-e189-4ff0-baa2-5a5556eb4c16
+www.ecma-international.org	TRUE	/	FALSE	1999999999	PHPSESSID	8ce08ac0f0fbe9fcc47bcfc92014dffa
+ecma-international.org	TRUE	/	FALSE	1999999999	PHPSESSID	4eff17d91d9ba85fd1eb3cf8d88eb7bf
+developer.nytimes.com	TRUE	/	FALSE	1999999999	x-liveportal-env	general
+developer.nytimes.com	TRUE	/	FALSE	1999999999	SameSite	Strict
+nist.gov	TRUE	/	FALSE	1999999999	__cf_bm	KA7YRhRlQCBMj5PLbg.Q3LNFEnEXDndX9YgE_01as_k-1776462943.9929607-1.0.1.1-t2Z2IBY1Ias08ACfdX5Od7ufZuhcMOjtFMX31knnxWQhKHvlCECZKjlN.V3QyJKuapkGu.4IqF0b4nTnSyAdNbOK6AuQr0daEjJ9wOnuj30X7WBKEXTPXAPKvmxLw6Xz
+.www.cablelabs.com	TRUE	/	FALSE	1999999999	__cf_bm	vfnRm7ojnP9eX8mFQ6eKwtkHsWw8VTYWhsv_X0qmT7Y-1776463011-1.0.1.1-xaQz8NfUbmCF12q7psgUfmEWjoYoOtpstd695LLHkkNLvqC1bblG3UOEZyL6OIv3EeRIRZao3GRldnCx586wKa0G84x6eQOCcAy.j0Wcf7w
+www.cablelabs.com	TRUE	/	FALSE	1999999999	SameSite	None
+.github.com	TRUE	/	FALSE	1999999999	_octo	GH1.1.1742429621.1776471011
+.github.com	TRUE	/	FALSE	1999999999	logged_in	no
+github.com	TRUE	/	FALSE	1999999999	SameSite	Lax
+

@@ -1,0 +1,30 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/elements/footer/index.md
+
+# Original Wiki contributors
+mfuji09
+scottaohara
+JamesCatt
+sideshowbarker
+JCodeg
+jswisher
+jaspald
+jonasraoni
+ericwbailey
+SphinxKnight
+teoli
+erikadoyle
+Sebastianz
+Jeremie
+kscarfone
+ethertank
+pwdst
+Sheppy
+allergic
+medicdude
+cers
+dhodder
+nyc212
+fscholz
+McGurk
+serator+

@@ -1,0 +1,21 @@
+
+.cards { display: flex; flex-direction: row; gap: 1em; padding: 1em; }
+:root { view-transition-name: none; }
+::view-transition { pointer-events: none; }
+@supports (x: attr(x type(*))) {
+  .warning { display: none; }
+}
+@layer layout {
+  .card { border-radius: 0.25em; width: 20vw; max-width: 5em; aspect-ratio: 1 / 1.6; background: lightgrey; display: grid; place-content: center; font-size: 2em; }
+  * { box-sizing: border-box; }
+  body { min-height: 100svh; display: grid; place-content: center; }
+  button { justify-self: center; }
+}
+@layer warning {
+  .warning { padding: 1em; border: 1px solid rgb(204, 204, 204); background: rgba(255, 255, 205, 0.8); text-align: center; order: -1; margin: 1em; }
+  .warning > :first-child { margin-top: 0px; }
+  .warning > :last-child { margin-bottom: 0px; }
+}
+.card { view-transition-class: card; }
+
+button.copy {display:none !important}

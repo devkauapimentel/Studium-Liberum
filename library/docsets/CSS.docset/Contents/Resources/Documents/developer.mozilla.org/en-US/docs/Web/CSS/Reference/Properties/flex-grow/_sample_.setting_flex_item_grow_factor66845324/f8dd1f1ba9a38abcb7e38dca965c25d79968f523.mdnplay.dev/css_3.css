@@ -1,0 +1,13 @@
+
+#content { display: flex; }
+div > div { border: 3px solid rgba(0, 0, 0, 0.2); }
+.box1, .box2, .box3, .box6 { flex-grow: 1; }
+.box4, .box5 { flex-grow: 2; border: 3px solid rgba(0, 0, 0, 0.2); }
+.box1 { background-color: red; }
+.box2 { background-color: lightblue; }
+.box3 { background-color: yellow; }
+.box4 { background-color: brown; }
+.box5 { background-color: lightgreen; }
+.box6 { background-color: brown; }
+
+button.copy {display:none !important}

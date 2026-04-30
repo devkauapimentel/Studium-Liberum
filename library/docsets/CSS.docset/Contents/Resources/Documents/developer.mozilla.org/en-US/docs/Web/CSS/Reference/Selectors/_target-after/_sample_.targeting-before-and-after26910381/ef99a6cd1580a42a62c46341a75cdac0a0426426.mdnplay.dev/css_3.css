@@ -1,0 +1,13 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: 1.5; font-family: system-ui; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; width: 50%; max-width: 700px; margin: 0px auto; }
+nav { position: fixed; top: 0px; left: 0px; right: 0px; display: flex; justify-content: center; }
+section { padding-top: 60px; }
+a { color: black; text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+ol { display: flex; width: 100%; justify-content: space-around; list-style-type: none; padding: 20px 0px; margin: 0px; background: white; }
+@supports not selector(:target-after) {
+  body::before { content: "Your browser does not support the :target-before and :target-after pseudo-classes."; color: black; background-color: rgb(255, 205, 51); text-align: center; padding: 1rem; position: fixed; bottom: 0px; left: 0px; right: 0px; z-index: 1; }
+}
+ol { }
+
+button.copy {display:none !important}

@@ -1,0 +1,7 @@
+
+body { display: flex; gap: 1rem; }
+#outer { height: 200px; width: 200px; display: flex; justify-content: center; align-items: center; background-color: yellow; }
+#inner { height: 100px; width: 100px; background-color: red; }
+#contents { height: 150px; width: 250px; border: 1px solid black; padding: 0.5rem; overflow: scroll; }
+
+button.copy {display:none !important}

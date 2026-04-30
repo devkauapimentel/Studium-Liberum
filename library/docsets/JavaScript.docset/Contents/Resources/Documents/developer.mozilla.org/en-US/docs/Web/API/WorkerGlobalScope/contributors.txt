@@ -1,0 +1,14 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/workerglobalscope/index.md
+
+# Original Wiki contributors
+anubhavsrivastava
+fscholz
+chrisdavidmills
+connorshea
+DomenicDenicola
+Sheppy
+AFBarstow
+jpmedley
+Sebastianz
+teoli

@@ -1,0 +1,6 @@
+
+img { width: 55px; margin-right: 5px; }
+img + img { width: 110px; }
+img + img + img { width: auto; }
+
+button.copy {display:none !important}

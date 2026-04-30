@@ -1,0 +1,4 @@
+
+div { width: calc(30% - 20px); }
+
+button.copy {display:none !important}

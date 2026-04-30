@@ -1,0 +1,5 @@
+
+svg { width: 500px; }
+svg rect.thinned { vector-effect: non-scaling-stroke; }
+
+button.copy {display:none !important}

@@ -1,0 +1,6 @@
+
+input { display: block; margin: 5px 0px; }
+#results { margin-top: 20px; }
+#log { height: 150px; width: 90%; white-space: pre-wrap; overflow-wrap: break-word; overflow-y: auto; padding: 0.5rem; border: 1px solid black; margin-top: 20px; }
+
+button.copy {display:none !important}

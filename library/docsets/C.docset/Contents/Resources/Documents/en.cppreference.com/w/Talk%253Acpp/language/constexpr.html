@@ -1,0 +1,376 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/language/constexpr.html --><head><meta charset="utf-8"><title>Talk:cpp/language/constexpr</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_4.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_4780.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_language_constexpr skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Fconstexpr&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Fconstexpr" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/language/constexpr.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./constexpr.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./constexpr.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./constexpr.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./constexpr.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/language/constexpr</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../language.html" title="Talk:cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Maybe it is useful to say "pointer addresses" are known no sooner than at "linker time".
+Regardless, there is possible to use "poniters" indirectly in "constexpr", where "constexpr" are values known at "compile time".
+See Stroustrup's book "The C++ Programming language 4th edition" page 267.
+</p>
+<pre> constexpr const char *p1 = "asdf";
+ constexpr char c = p1[2];  // c=='d', the compiler knows the value pointed to by "p1"
+</pre>
+<p>I saw these lines on the web publicly available. --vlakov 08:00, 4 May 2014 (PDT)
+</p><p><br>
+</p>
+<dl><dd>that chapter in the book talks about <i>address constant expressions</i>, they are mentioned on this wiki at the bottom of <a href="../../cpp/language/constant_expression.html" title="cpp/language/constant expression">cpp/language/constant_expression</a>. I agree that the constexpr page here needs some careful attention, though. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 12:25, 4 May 2014 (PDT)
+</dd></dl>
+<dl><dd><dl><dd>Sorry, I didn't see it. It is too formal for me (I am a mere mortal). I confess without an example I wouldn't know what it is&nbsp;:-). --vlakov <a href="https://en.cppreference.com/w/Special:Contributions/193.58.194.195" title="Special:Contributions/193.58.194.195">193.58.194.195</a> 02:45, 5 May 2014 (PDT)
+</dd></dl>
+</dd></dl>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./constexpr.html#constexpr_function_part_.3E_C.2B.2B14_is_missing_function_call_restriction"><span class="tocnumber">1</span> <span class="toctext">constexpr function part &gt; C++14 is missing function call restriction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./constexpr.html#constexpr_function_part_.3E_C.2B.2B14_is_missing_function_call_restriction_2"><span class="tocnumber">2</span> <span class="toctext">constexpr function part &gt; C++14 is missing function call restriction</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./constexpr.html#Using_the_Standard_Library_in_constexpr_Functions"><span class="tocnumber">3</span> <span class="toctext">Using the Standard Library in constexpr Functions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./constexpr.html#noexcept_-.3E_constant_expression_is_not_true_always.21"><span class="tocnumber">4</span> <span class="toctext">noexcept -&gt; constant expression is not true always!</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="./constexpr.html#.22.28for_constructors.2C_use_in_a_constant_initializer_is_sufficient.29_.28since_C.2B.2B14.29.22_is_misplaced_within_.22constexpr_function.22"><span class="tocnumber">5</span> <span class="toctext">"(for constructors, use in a constant initializer is sufficient) (since C++14)" is misplaced within "constexpr function"</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="./constexpr.html#Non_Literal_.28but_unused.29_parameters_to_constexpr_functions"><span class="tocnumber">6</span> <span class="toctext">Non Literal (but unused) parameters to constexpr functions</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="./constexpr.html#Proposal:_constexpr-deduction"><span class="tocnumber">7</span> <span class="toctext">Proposal: constexpr-deduction</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;action=edit&amp;section=1" title="Edit section: constexpr function part &gt; C++14 is missing function call restriction">edit</a>]</span> <span class="mw-headline" id="constexpr_function_part_.3E_C.2B.2B14_is_missing_function_call_restriction"> constexpr function part &gt; C++14 is missing function call restriction </span></h2>
+<p>I don't know where the information on C++14 come from and if you have to use the wordings from the standard when editing the site, so I didn't do that directly. I hope someone reads this and corrects the page.
+</p><p>What I mean with "missing function call restriction" in the title is that in the box describing which restrictions constexpr functions have since C++14, there is no word about the fact that constexpr functions can not call non-constexpr functions (which must stay true in every subsequent C++ standard if I understand this stuff correctly). This should probably be added above the "until C++14" and "since C++14" boxes, although – strictly speaking – the information is only missing for the "since C++14" part, because in the other one it is part of the last statement ("exactly one return statement that contains only literal values, constexpr variables and functions.").
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;action=edit&amp;section=2" title="Edit section: constexpr function part &gt; C++14 is missing function call restriction">edit</a>]</span> <span class="mw-headline" id="constexpr_function_part_.3E_C.2B.2B14_is_missing_function_call_restriction_2"> constexpr function part &gt; C++14 is missing function call restriction </span></h2>
+<p>Sorry, forgot to sign my post&nbsp;:S
+</p><p>Here is my signature:
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:JP_wanN&amp;action=edit&amp;redlink=1" class="new" title="User:JP wanN (page does not exist)">JP wanN</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:JP_wanN&amp;action=edit&amp;redlink=1" class="new" title="User talk:JP wanN (page does not exist)">talk</a>) 18:38, 16 July 2014 (PDT)
+</p>
+<dl><dd>Actually constexpr functions don't need to produce constant experssions for all possible arguments, as long as it can do so for at least one possible input. For example, the following function definition is legal, even though it will call the non-constexpr constructor of <span class="t-lc"><a href="../../cpp/error/range_error.html" title="cpp/error/range error">std::range_error</a></span> when the argument is negative.
+</dd></dl>
+<p><span class="t-cc"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span> <span class="kw4">int</span> factorial<span class="br0">(</span><span class="kw4">int</span> n<span class="br0">)</span><br>
+<span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">return</span> n <span class="sy1">&lt;</span> <span class="nu0">0</span> <span class="sy4">?</span> <span class="kw1">throw</span> <a href="../../cpp/error/range_error.html"><span class="kw773">std::<span class="me2">range_error</span></span></a><span class="br0">(</span><span class="st0">""</span><span class="br0">)</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy4">:</span> n <span class="sy1">==</span> <span class="nu0">0</span> <span class="sy4">?</span> <span class="nu0">1</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="sy4">:</span> <span class="br0">(</span>n <span class="sy2">*</span> factorial<span class="br0">(</span>n<span class="sy2">-</span><span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span><br>
+<span class="br0">}</span></span></span>
+</p>
+<dl><dd>Anyway, this page does need some notes for that. Thank you. --<a href="https://en.cppreference.com/mwiki/index.php?title=User:D41D8CD98F&amp;action=edit&amp;redlink=1" class="new" title="User:D41D8CD98F (page does not exist)">D41D8CD98F</a> (<a href="../../User_talk%25253AD41D8CD98F.html" title="User talk:D41D8CD98F">talk</a>) 07:58, 17 July 2014 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;action=edit&amp;section=3" title="Edit section: Using the Standard Library in constexpr Functions">edit</a>]</span> <span class="mw-headline" id="Using_the_Standard_Library_in_constexpr_Functions"> Using the Standard Library in constexpr Functions </span></h2>
+<p>IMHO it could be helpful to add some guidance which part(s) of the stdlib may be used in constexpr functions, especially if this could be done in a brief way, based on header files. (Or have I missed a hint on that on my cursory glance over the page?)
+</p><p>AFAIK all mathemathical functions (from &lt;cmath&gt;) are OK, but what else? Surely nothing from &lt;iostream&gt;, &lt;thread&gt;, but &lt;array&gt; looks as if it should cause no problems. What about &lt;algorithm&gt;s (eg. sort on an array) ...
+</p><p><a href="../../User%25253AMwe.html" title="User:Mwe">Mwe</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Mwe&amp;action=edit&amp;redlink=1" class="new" title="User talk:Mwe (page does not exist)">talk</a>) 11:20, 29 June 2015 (PDT)
+</p>
+<dl><dd> Functions in the standard library are either constexpr (like <span class="t-lc"><a href="../../cpp/container/array/operator_at.html" title="cpp/container/array/operator at">std::array::operator[]</a></span>) or they aren't (like <span class="t-lc"><a href="../../cpp/numeric/math/sqrt.html" title="cpp/numeric/math/sqrt">std::sqrt</a></span>). It is specified on each function's own page. Non-constexpr functions can't be called on the constexpr path <a rel="nofollow" class="external text" href="http://coliru.stacked-crooked.com/a/fd22b4513d019123">example</a> --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 12:07, 29 June 2015 (PDT)
+</dd></dl>
+<p>OK ... I see, so it's not that simple that it can be decided by header file.
+</p><p>Related (2nd) question: is there (maybe) an easy way to extract all constexpr functions from the C++11/14 standard? I remember that after C89 was published, on my request in comp.lang.c someone[*] provided me with a machine readable list of all library functions including the signature (agreed: C89 had a MUCH small stdlib than C++14).
+</p><p>[*: to give credit where credit due: that helpful someone about a quarter century ago was Chris Torek ... no idea what he is doing today]
+</p><p><a href="../../User%25253AMwe.html" title="User:Mwe">Mwe</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Mwe&amp;action=edit&amp;redlink=1" class="new" title="User talk:Mwe (page does not exist)">talk</a>) 13:46, 29 June 2015 (PDT)
+</p>
+<dl><dd> I suppose you could try parsing the source text of the standard, e.g. above-mentioned <span class="t-lc"><a href="../../cpp/container/array/operator_at.html" title="cpp/container/array/operator at">std::array::operator[]</a></span> is found in <a rel="nofollow" class="external text" href="https://github.com/cplusplus/draft/blob/master/source/containers.tex#L2649">containers.tex line 2649</a>. I don't know of a better way. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 14:17, 29 June 2015 (PDT)
+</dd></dl>
+<p>Thank you - I did a short research too but nothing really (and immediately) useful turned up, like e.g. a CSV file (or maybe even XML to be easily parsed with XSLT). As such a machine readable list might be useful to do many sorts of things (not only wrt constexpr) I wonder why there is none somewhere in the internet.
+</p><p>Anyway thanks.
+<a href="../../User%25253AMwe.html" title="User:Mwe">Mwe</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Mwe&amp;action=edit&amp;redlink=1" class="new" title="User talk:Mwe (page does not exist)">talk</a>) 22:58, 29 June 2015 (PDT)
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;action=edit&amp;section=4" title="Edit section: noexcept -&gt; constant expression is not true always!">edit</a>]</span> <span class="mw-headline" id="noexcept_-.3E_constant_expression_is_not_true_always.21"> noexcept -&gt; constant expression is not true always! </span></h2>
+<p>The following note is not completely correct, IIRC: "Because the noexcept operator always returns true for a constant expression, it can be used to check if a particular invocation of a constexpr function takes the constant expression branch:". As noted in "Limitations" here: <a rel="nofollow" class="external free" href="http://stackoverflow.com/a/13305072">http://stackoverflow.com/a/13305072</a> , noexcept returns false for things like "(0&nbsp;? throw "fooled!"&nbsp;: 42)" <a href="https://en.cppreference.com/w/Special:Contributions/91.2.77.198" title="Special:Contributions/91.2.77.198">91.2.77.198</a> 08:57, 1 January 2016 (PST)
+</p>
+<dl><dd>Hmm, <a rel="nofollow" class="external text" href="http://wg21.link/CWG1351">CWG 1351</a> changed the rules, and this should now return <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>, making the statement correct as written. We haven't merged it as a DR yet elsewhere, though. <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 10:15, 1 January 2016 (PST)
+<dl><dd> Thanks for the reference to the DR. That's a lot to read today&nbsp;:) Please feel free to fix the referenced answer if you like. <a href="https://en.cppreference.com/w/Special:Contributions/91.2.65.242" title="Special:Contributions/91.2.65.242">91.2.65.242</a> 00:38, 4 January 2016 (PST)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;action=edit&amp;section=5" title="Edit section: &quot;(for constructors, use in a constant initializer is sufficient) (since C++14)&quot; is misplaced within &quot;constexpr function&quot;">edit</a>]</span> <span class="mw-headline" id=".22.28for_constructors.2C_use_in_a_constant_initializer_is_sufficient.29_.28since_C.2B.2B14.29.22_is_misplaced_within_.22constexpr_function.22"> "(for constructors, use in a constant initializer is sufficient) (since C++14)" is misplaced within "constexpr function" </span></h2>
+<p>The note "(for constructors, use in a constant initializer is sufficient) (since C++14)" and associated text that applies to constructors should be put within "constexpr constructor". A constexpr function is never a constructor, so the statement "for constructors, ..." within the clarification of term "constexpr function" is incorrect, as it makes the readers think all the other bullets within there also apply to constexpr constructors, which is not true. <a href="https://en.cppreference.com/w/Special:Contributions/79.218.74.61" title="Special:Contributions/79.218.74.61">79.218.74.61</a> 08:43, 29 July 2017 (PDT)
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;action=edit&amp;section=6" title="Edit section: Non Literal (but unused) parameters to constexpr functions">edit</a>]</span> <span class="mw-headline" id="Non_Literal_.28but_unused.29_parameters_to_constexpr_functions"> Non Literal (but unused) parameters to constexpr functions </span></h2>
+<p>At the current time, all parameters to constexpr functions must be <i>Literal</i>.  It seems to me that parameters that are not used by the function body should not have to meet this restriction.  Unused parameters can be included for a number of reasons, including differentiation between function overloads.  Ignoring things like promotion of short to int, here are examples, very much simplified:
+</p>
+<pre>   (1) constexpr std::string_view type_name(bool value) { return "bool" }
+   (2) constexpr std::string_view type_name(int value) { return "int" }
+   (3) constexpr std::string_view type_name(double value) { return "double" }
+   (4) constexpr std::string_view type_name(long double value) { return "long double" }
+</pre>
+<p>One might expect to be able to extend this further:
+</p>
+<pre>   (5) constexpr std::string_view type_name(std::string value) { return "string" }
+</pre>
+<p>but that fails because std::string can't be a <i>Literal</i> value.  Luckily, references are <i>Literal</i> so the following does work:
+</p>
+<pre>   (6) constexpr std::string_view type_name(std::string &amp;value) { return "string" }
+</pre>
+<p>Add a template and things get more complicated:
+</p>
+<pre>   (7) constexpr std::string_view type_name(T value) {
+           if std::is_enum_v&lt;T&gt; return "enum"sv;
+           if std::is_integral_v&lt;T&gt; return "some other integral type"sv;
+           if std::is_floating_point_v&lt;T&gt; return "some other floating type"sv;
+           return "something else not yet implemented"
+       }
+</pre>
+<p>The template CAN be used with a what appears to be non-<i>Literal</i> type because it actually matches with T being a reference (such as "std::map&lt;...&gt; &amp;").
+</p><p>Anyway, my suggestion for improvement is that if the parameter is anonymous (e.g., "std:string" instead of "std:string value") then that parameter should not keep the function from being declared constexpr.  Anonymous parameters don't prevent a function from being executed at compile time!
+</p><p>(If you wanted to take this reasoning further, then any parameters that are not used anywhere inside a function's body, anonymous or named, should not keep that function from being declared constexpr.)
+</p><p>Having laid this long groundwork, does my reasoning make sense to others?  Should a change be proposed the C++ standard committee for some future revision?
+</p><p><a href="https://en.cppreference.com/w/Special:Contributions/172.88.122.95" title="Special:Contributions/172.88.122.95">172.88.122.95</a> 16:21, 10 January 2022 (PST)
+</p>
+<dl><dd> That non-trivial <code>std::string</code> (which is actually allowed in C++20) still needs its destructor executed, so it doesn't quite have no effect on the function, and I would generally advise that you don't add useless parameters to your functions if they really are useless --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 04:41, 11 January 2022 (PST)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;action=edit&amp;section=7" title="Edit section: Proposal: constexpr-deduction">edit</a>]</span> <span class="mw-headline" id="Proposal:_constexpr-deduction"> Proposal: constexpr-deduction </span></h2>
+<p>If you want a big performance boost for C++ applications then please consider supporting my proposal for constexpr-deducibility.
+</p>
+<ul><li> ammend variable statements with constexpr-specification if their initialization is constexpr!
+</li><li> turn whole structs into constexpr if their initialization is constexpr
+</li><li> turn single struct members constexpr with special "constexpr(auto)" specifier
+</li><li> manual constexpr speicification based on compile-time boolean condition "constexpr(enable)"
+</li><li> code-gen of functions specialized for constexpr-profiles, improving performance based on the special circumstance of each function-invocation!
+</li><li> save program memory by removing variables from program memory by turning them constexpr, purely automatic!
+</li><li> improve performance of legacy applications by enabling constexpr-deducibility at language-design-time, shifting a lot of program code-graphs into compile-time!
+</li></ul>
+<p><a rel="nofollow" class="external free" href="https://osdn.net/projects/magic-txd/forums/33389/44440/#forum-message-93256">https://osdn.net/projects/magic-txd/forums/33389/44440/#forum-message-93256</a>
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Quiret&amp;action=edit&amp;redlink=1" class="new" title="User:Quiret (page does not exist)">Quiret</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Quiret&amp;action=edit&amp;redlink=1" class="new" title="User talk:Quiret (page does not exist)">talk</a>) 04:42, 6 January 2023 (PST)
+</p>
+<dl><dd> It's been <a rel="nofollow" class="external text" href="https://github.com/cplusplus/papers/issues/292">proposed and rejected</a> before. One the big points of specifying constexpr is precisely that it's not deduced, it's enforced, and the compiler will helpfully tell you that you've violated constexpr eligibility if you haven't met the requirements; and if you don't specify constexpr, then users of your API won't rely on being able to write constexpr code that uses that API, if constexpr was deduced, then an update to your code that causes constexpr to not be deduced will break users of the API's code that relied on that (for example, if I wrote <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span> uint32_t new_val <span class="sy1">=</span> ROL<span class="br0">(</span>val, cnt<span class="br0">)</span><span class="sy4">;</span></span></span> and used that as the size of an array, then later I needed to change <span class="t-c"><span class="mw-geshi cpp source-cpp">val</span></span> to be read from argv, then damn my code explodes, I sure wish I didn't rely on that constexprness when I wrote that array...). This is the main reason why stdlib vendors <a rel="nofollow" class="external text" href="https://eel.is/c++draft/constexpr.functions">can't arbitrarily add constexpr</a> to stdlib functions; P1235 does actually address this, but was considered unstomachable (for reasons known only to those with access to the clandestine EDG wiki). There's also the issue that constexpr implies inline, which is often not desirable (increased build times, can't separate declaration and definition into header and source files). --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 08:34, 6 January 2023 (PST)
+<dl><dd> You are trying to use <b>bad software design decisions</b> as argument against implicit-constexpr while completely ignoring the benefits. Sorry, but I disagree with you on every point. Don't be held back by bad examples: lead the charge into a good future with good examples! Of course bad software developers exist! But they don't exist because of constexpr-misuse! When this was voted upon in 2019, compiler vendors had an incomplete idea about what constexpr meant for C++ development. The benefit of allowing constexpr functions to be tied into the compiler's optimization strategy is a key benefit of implicit constexpr. Implicit constexpr is unit-testable if the compiler vendors have a good compiler implementation. Just be honest: the true reason of rejection is risk-scare on the compiler vendor's side. Every reasonable dev would love to have the ability for constexpr-deduction! Here is an example of valor by the GCC compiler: <a rel="nofollow" class="external free" href="https://gcc.gnu.org/git/?p=gcc.git;a=commitdiff;h=87c2080b">https://gcc.gnu.org/git/?p=gcc.git;a=commitdiff;h=87c2080b</a> <a href="https://en.cppreference.com/mwiki/index.php?title=User:Quiret&amp;action=edit&amp;redlink=1" class="new" title="User:Quiret (page does not exist)">Quiret</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Quiret&amp;action=edit&amp;redlink=1" class="new" title="User talk:Quiret (page does not exist)">talk</a>) 00:30, 8 January 2023 (PST)
+<dl><dd> Here is some more food for thought to interested and optimistic people. The nitty gritty will be getting every compiler vendor onto the same boat, to make them throw away their bad implementations in favor of more generic code-graph evaluators.
+<ul><li> C++20 modules are a great opportunity for constexpr-deduction!
+</li><li> the compiler vendor standpoint is wrong that their inlining optimizations beat constexpr-deduction; the increased control over evaluation by the program developer will increase optimization even further!
+</li><li> the always-constexpr-guy as the most negative example of C++ developer - expectation to evaluate everything at compile-time, coincidence with the skript kiddy, stark difference between full-possibility-value-set of dynamic user input against strictly-compiletime-evaluated interim-results, where the realization is key to become a great software developer thus introduction of constexpr-deduction improves the development debate
+</li><li> it should still be taught that not every function can be constexpr, but people can expect better code-gen if they find ways to define constexpr functions using the already existing C++ framework
+</li></ul>
+</dd><dd><a href="https://en.cppreference.com/mwiki/index.php?title=User:Quiret&amp;action=edit&amp;redlink=1" class="new" title="User:Quiret (page does not exist)">Quiret</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Quiret&amp;action=edit&amp;redlink=1" class="new" title="User talk:Quiret (page does not exist)">talk</a>) 07:15, 9 January 2023 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 177/1000000
+Preprocessor generated node count: 480/1000000
+Post‐expand include size: 1111/4194304 bytes
+Template argument size: 322/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13517-0!*!0!!en!*!* and timestamp 20240518003342 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;oldid=146207">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;oldid=146207</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./constexpr.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/language/constexpr" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/language/constexpr" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;oldid=146207" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 9 January 2023, at 08:15.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 16,603 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.031 secs. -->
+	
+
+
+</body></html>

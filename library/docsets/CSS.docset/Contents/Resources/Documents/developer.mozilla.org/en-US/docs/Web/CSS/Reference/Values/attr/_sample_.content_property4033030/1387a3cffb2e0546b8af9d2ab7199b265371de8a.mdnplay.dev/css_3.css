@@ -1,0 +1,4 @@
+
+[data-foo]::before { content: attr(data-foo) " "; }
+
+button.copy {display:none !important}

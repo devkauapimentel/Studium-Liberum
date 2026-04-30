@@ -1,0 +1,20 @@
+
+.scissor-half { offset-path: path("M 900 190 L 993 245 V 201 A 11 11 0 0 1 1004 190 H 1075 A 11 11 0 0 1 1086 201 V 300 L 1294 423 H 1216 A 11 11 0 0 0 1205 434 V 789 A 11 11 0 0 1 1194 800 H 606 A 11 11 0 0 1 595 789 V 434 A 11 11 0 0 0 584 423 H 506 L 900 190"); transform: translate(0px); fill: green; stroke: black; stroke-width: 5px; stroke-linejoin: round; stroke-linecap: round; fill-rule: evenodd; offset-anchor: 0px 0px; }
+#first-scissor-half { animation: 12s linear infinite move, 1s infinite rotate-left; }
+#second-scissor-half { animation: 12s linear infinite move, 1s infinite rotate-right; }
+@keyframes move { 
+  0% { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+@keyframes rotate-left { 
+  0% { offset-rotate: auto 0deg; }
+  50% { offset-rotate: auto -45deg; }
+  100% { offset-rotate: auto 0deg; }
+}
+@keyframes rotate-right { 
+  0% { offset-rotate: auto 0deg; }
+  50% { offset-rotate: auto 45deg; }
+  100% { offset-rotate: auto 0deg; }
+}
+
+button.copy {display:none !important}

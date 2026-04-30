@@ -1,0 +1,4 @@
+
+#map { height: 150vh; width: 70vw; background: linear-gradient(blue, green); touch-action: none; }
+
+button.copy {display:none !important}

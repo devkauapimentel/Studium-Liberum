@@ -1,0 +1,76 @@
+<html><!-- Mirrored from mdn.github.io/webaudio-examples/output-timestamp/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:58:49 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Web Audio API examples: Output timestamp</title>
+  </head>
+
+  <body>
+    <h1>Web Audio API examples: Output timestamp</h1>
+    <button id="play">Play</button>
+    <button id="stop" disabled="true">Stop</button>
+    <output></output>
+  
+  <script>
+    // Define global variables
+    let audioCtx; // It can *only* be created after a user action.
+    let source; // We need the audio context to create it
+    let rAF; // Id of the current requestAnimationFrame() to remove it
+
+    // UI elements that we want to access
+    const playBtn = document.querySelector("#play");
+    const stopBtn = document.querySelector("#stop");
+    const output = document.querySelector("output");
+
+    // Fetch the audio track, then decode it into a buffer.
+    // Finally, use this buffer as the source of audio.
+    function getData() {
+      console.log("Fetch the audio file…");
+      fetch("outfoxing.mp3")
+        .then((response) => response.arrayBuffer())
+        .then((downloadedBuffer) => audioCtx.decodeAudioData(downloadedBuffer))
+        .then((decodedBuffer) => {
+          source.buffer = decodedBuffer;
+          source.connect(audioCtx.destination);
+          source.loop = true;
+          playBtn.disabled = true; // We are ready.
+          console.log("Audio ready.");
+        })
+        .catch((e) => {
+          console.error(`Error while reading the audio data: ${e.error}`);
+        });
+    }
+
+    // Press the play button
+    playBtn.addEventListener("click", () => {
+      // We can create the audioCtx as there has been some user action
+      if (!audioCtx) {
+        audioCtx = new AudioContext();
+      }
+      source = new AudioBufferSourceNode(audioCtx);
+      getData();
+      source.start(0);
+      playBtn.disabled = true;
+      stopBtn.disabled = false;
+      rAF = requestAnimationFrame(outputTimestamps);
+    });
+
+    // Press the stop button
+    stopBtn.addEventListener("click", () => {
+      source.stop(0);
+      playBtn.disabled = false;
+      stopBtn.disabled = true;
+      cancelAnimationFrame(rAF);
+    });
+
+    // Helper function to output timestamps
+    function outputTimestamps() {
+      const ts = audioCtx.getOutputTimestamp();
+      output.textContent = `Context time: ${ts.contextTime} | Performance time: ${ts.performanceTime}`;
+      rAF = requestAnimationFrame(outputTimestamps); // Reregister itself
+    }
+  </script>
+
+<!-- Mirrored from mdn.github.io/webaudio-examples/output-timestamp/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:58:49 GMT -->
+
+</body></html>

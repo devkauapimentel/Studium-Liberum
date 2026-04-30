@@ -1,0 +1,13 @@
+
+.container { border: 1px solid black; width: 80vw; height: 80vh; position: relative; left: 10vw; top: 10vh; }
+.mover { width: 100px; height: 80px; border-radius: 50%; line-height: 80px; text-indent: 10px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='e644da42-a34e-4ceb-a89a-89a4eb6dcc51' data-name='Layer 1' viewBox='0 0 71.08 54.62'%3E%3Ctitle%3Epointer-hand%3C/title%3E%3Cpath d='M43.56,49.35a5.24,5.24,0,0,0-1.27-3.43,5.26,5.26,0,0,0,1.86-9,5.26,5.26,0,0,0-.5-9.53L66.12,27c2.28-.07,5-1.57,5-4.58a5.06,5.06,0,0,0-4.58-4.83L34.08,17c3.48-2.89,6.26-6.55,6.73-11.08C41.45-.14,36.07-1.15,35,1.09,32,7.11,23,12.75,17.42,15.52,8.64,19.08,0,19.77,0,34.56,0,42.7,2.7,47.94,9.42,51c5.51,2.52,13.71,3.59,25.36,3.59H38.3A5.27,5.27,0,0,0,43.56,49.35Z'/%3E%3C/svg%3E") 0% 0% / cover no-repeat; color: white; animation: 10s linear infinite move; font-family: monospace; position: absolute; left: 50%; transform: translateX(-50%); transform-origin: center center; }
+.mover-path { top: 50px; offset-path: path("M 18.45 58.46 s 52.87 -70.07 101.25 -0.75 s 101.75 -6.23 101.75 -6.23 S 246.38 5.59 165.33 9.08 s -15 71.57 -94.51 74.56 S 18.45 58.46 18.45 58.46 Z"); }
+.mover-circle { top: 150px; offset-path: circle(100px at 50px 50px); }
+.mover-ellipse { top: 250px; offset-path: ellipse(25% 40% at 50% 50%); }
+.mover-inset { top: 350px; offset-path: inset(5% 20% 15% 10%); }
+.mover-polygon { top: 450px; offset-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%); }
+@keyframes move { 
+  100% { offset-distance: 100%; }
+}
+
+button.copy {display:none !important}

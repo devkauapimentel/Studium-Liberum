@@ -1,0 +1,5 @@
+
+div { margin-bottom: 10px; }
+label { display: inline-block; width: 70px; text-align: right; padding-right: 10px; }
+
+button.copy {display:none !important}

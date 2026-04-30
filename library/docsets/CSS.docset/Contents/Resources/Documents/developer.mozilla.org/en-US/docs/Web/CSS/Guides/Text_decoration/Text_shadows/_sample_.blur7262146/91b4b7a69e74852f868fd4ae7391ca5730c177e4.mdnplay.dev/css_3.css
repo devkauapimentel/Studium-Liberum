@@ -1,0 +1,7 @@
+
+p { border: 1px solid; padding: 20px; font-family: sans-serif; font-size: 1.25rem; }
+.negative { }
+.positive { text-shadow: red 30px 30px 5px; }
+.zero { text-shadow: red 30px 30px 0px; }
+
+button.copy {display:none !important}

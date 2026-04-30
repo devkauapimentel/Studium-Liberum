@@ -1,0 +1,5 @@
+
+#clipper1 { clip-rule: nonzero; }
+#clipper2 { clip-rule: evenodd; }
+
+button.copy {display:none !important}

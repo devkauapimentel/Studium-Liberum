@@ -1,0 +1,8 @@
+
+body { font-family: sans-serif; margin: 0px; }
+header { background: purple; height: 100px; }
+h1 { text-align: center; color: white; line-height: 100px; margin: 0px; }
+section { zoom: 0.8; }
+article { padding: 10px; margin: 10px; background: aqua; }
+
+button.copy {display:none !important}

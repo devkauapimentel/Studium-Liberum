@@ -1,0 +1,6 @@
+
+#grid { display: grid; height: 100px; grid-template-rows: 30px 1fr; }
+#areaA { background-color: lime; }
+#areaB { background-color: yellow; }
+
+button.copy {display:none !important}

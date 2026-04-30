@@ -1,0 +1,51 @@
+<html>
+  <!-- Online page at https://66e8e8a73d3721c95407b7994393d3bc60047b40.mdnplay.dev/en-US/docs/Web/CSS/Reference/Properties/math-depth/runner.html?uuid=66e8e8a73d3721c95407b7994393d3bc60047b40&state=pVLLbsMgEPyVLadGCrJJb66TL%2FEFmXVwxcMym6ZtlH8vOM6jieNLTwyzwzALe2CarGEFK7tN5QBKK0kPKGHCL9rkZXYClRv5F85B7shzqRR8SrND0DKA84BNgzXBXqOD5MQDfRuENhV7Kw1wfjHv%2FR6G8rpiV20xKis2CielCjvSxSXEjXgq9shnyed8%2FXlz0xLpmNRp7FtCdRe%2F9raTNS0heLgmSJWABORBzLb2PO%2BYVvxNex%2FvuaNSr6vFo9%2FqoftZCy4WU28oZt9wzjT%2Fx5cM8DSGZZbGki1ZHUIc0g4Oqdx4Rzy0P3FY3nq074mzst%2B2rgARCcgjdRzOfaRjcY1%2FazFC0241seMv&code=78802591& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <p>
+  <math>
+    <mtext>0</mtext>
+
+    <!-- auto-add value has no effect when math-style is normal -->
+    <mrow style="math-style: normal">
+      <mrow style="math-depth: auto-add">
+        <mtext>0</mtext>
+      </mrow>
+    </mrow>
+
+    <!-- the inherited math-style is compact, so math-depth is set to 1 -->
+    <mrow style="math-depth: auto-add">
+      <mtext>1</mtext>
+    </mrow>
+
+    <mrow style="math-depth: add(2)">
+      <mtext>2</mtext>
+      <mrow style="math-depth: add(-1)">
+        <mtext>1</mtext>
+      </mrow>
+      <mrow style="math-depth: 0">
+        <mtext>0</mtext>
+      </mrow>
+    </mrow>
+  </math>
+</p>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../../js_3.js'></script>
+</body>
+</html>

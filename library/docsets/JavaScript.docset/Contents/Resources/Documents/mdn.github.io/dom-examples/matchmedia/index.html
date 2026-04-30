@@ -1,0 +1,61 @@
+<html><!-- Mirrored from mdn.github.io/dom-examples/matchmedia/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 23:20:39 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <title>matchMedia test file</title>
+    <style>
+      html {
+        font-family: sans-serif;
+        background-color: white;
+      }
+
+      body {
+        padding: 20px;
+        margin: 10px;
+        background-color: blue;
+        border: 10px solid black;
+      }
+
+      h1,
+      p {
+        text-align: center;
+      }
+
+      p {
+        font-size: 1.3rem;
+      }
+    </style>
+  </head>
+  <body style="background-color: blue;">
+    <h1>matchMedia test</h1>
+
+    <p>This is a wide screen; 642px wide.</p>
+
+    <script>
+      var para = document.querySelector("p");
+      function screenTest() {
+        if (window.matchMedia("(max-width: 600px)").matches) {
+          /* the viewport is 600 pixels wide or less */
+          para.textContent =
+            "This is a narrow screen; " + window.innerWidth + "px wide.";
+          document.body.style.backgroundColor = "red";
+        } else if (window.matchMedia("(min-width: 1400px)").matches) {
+          /* the viewport is more than than 1400 pixels wide */
+          para.textContent =
+            "This is a REALLY wide screen; " + window.innerWidth + "px wide.";
+          document.body.style.backgroundColor = "green";
+        } else {
+          /* the viewport is more than than 400 pixels wide */
+          para.textContent =
+            "This is a wide screen; " + window.innerWidth + "px wide.";
+          document.body.style.backgroundColor = "blue";
+        }
+      }
+
+      screenTest();
+
+      document.body.onresize = screenTest;
+    </script>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/dom-examples/matchmedia/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 23:20:39 GMT --></html>

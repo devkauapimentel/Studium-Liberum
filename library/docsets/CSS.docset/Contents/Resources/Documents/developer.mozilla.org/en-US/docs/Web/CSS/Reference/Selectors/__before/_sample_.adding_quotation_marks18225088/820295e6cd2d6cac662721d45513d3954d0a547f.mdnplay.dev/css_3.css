@@ -1,0 +1,5 @@
+
+q::before { content: "«"; color: blue; }
+q::after { content: "»"; color: red; }
+
+button.copy {display:none !important}

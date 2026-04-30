@@ -1,0 +1,8 @@
+
+article { display: grid; grid-template-columns: minmax(200px, 800px) 15em; gap: 1rem; max-width: 100%; }
+label { display: block; font-family: sans-serif; }
+input { vertical-align: middle; margin-right: 0.25em; max-width: 50%; }
+output { white-space: normal; overflow-wrap: break-word; display: block; width: 100%; }
+img { margin: 1rem; width: 100%; object-fit: cover; overflow: hidden; }
+
+button.copy {display:none !important}

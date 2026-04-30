@@ -1,0 +1,6 @@
+
+input, button { margin: 10px; }
+.focus-only:focus { outline: 2px solid black; }
+.focus-visible-only:focus-visible { outline: 4px dashed darkorange; }
+
+button.copy {display:none !important}

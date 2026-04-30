@@ -1,0 +1,4 @@
+
+p::after { content: " " attr(data-browser, "Unknown"); color: tomato; }
+
+button.copy {display:none !important}

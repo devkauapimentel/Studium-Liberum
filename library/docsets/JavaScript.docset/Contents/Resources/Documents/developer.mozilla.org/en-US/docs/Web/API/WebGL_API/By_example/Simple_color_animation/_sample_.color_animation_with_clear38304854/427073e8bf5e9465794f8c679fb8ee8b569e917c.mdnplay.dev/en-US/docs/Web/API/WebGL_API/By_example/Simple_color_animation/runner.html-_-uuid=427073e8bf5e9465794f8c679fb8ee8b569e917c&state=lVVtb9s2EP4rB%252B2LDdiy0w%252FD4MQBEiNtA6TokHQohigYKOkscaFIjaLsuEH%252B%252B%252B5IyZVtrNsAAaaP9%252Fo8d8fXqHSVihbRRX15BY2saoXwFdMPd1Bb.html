@@ -1,0 +1,110 @@
+<html>
+  <!-- Online page at https://427073e8bf5e9465794f8c679fb8ee8b569e917c.mdnplay.dev/en-US/docs/Web/API/WebGL_API/By_example/Simple_color_animation/runner.html?uuid=427073e8bf5e9465794f8c679fb8ee8b569e917c&state=lVVtb9s2EP4rB%2B2LDdiy0w%2FD4MQBEiNtA6TokHQohigYKOkscaFIjaLsuEH%2B%2B%2B5IyZVtrNsAAaaP9%2Fo8d8fXqHSVihbRRX15BY2saoXwFdMPd1BbU1hRgSuFg6Y02wYyo4wFoWUlnDQ6vpjVl4km099NC5nQkCmZPZMFQto6ZzSkqMwWnKGvKMg1Xx15Af4smPW690eeNqIBmS%2BTKJynG4nbJKJLAIplIbWUD1rIDTagDSWIWHGcpq1rYx18%2FPLpDoJxTC5n4cjeu8y8930SU6MpgS7CrxabBkq0lK9hwUXjrNHF5eMGbQoFx%2BTbp4tZd8FKXNreH4cMgegumkRZ0xDIqcl38OqV8cVNhZKFXkCG2qE9T%2FRborvSvU4um1qJ3QJSZbLncxZtZe7KBbz7ZV6%2FeEGJsigdSc56SSVsIcmraJ3xglrkudTFAub%2Bb2psjnZBoGkMApE9F9a0Op96Zjie8PEonw6sw3ykVlLj9Htaa6PdtJHfkO8IGen%2BLZX4Z6xCBALnT8ZmNoMr2AgrRcp9YqA0KgcBTlbEs2%2FC3MoNQX8ANJGr0AUtcpho8rPyXYgbwhVKoXOFlpsgM7pxfWMuqXWytiKV%2BK8W7e4BFWbO2FES%2FXTSFePz3to3wA9sQz8MLTpGBzYFuhuFfLze3eajox5ny3WrMz8ajRPWXfXpjHDjxoGLUEVssTIbvOFK72TjUKNlpdjtapwcWY%2FPB4ZExKEVZcGoJRGbmfrIisuOuWdXxDTDugSu1dRJ5O8J9Ad0bT2YamVMDekOLOZWbIl1JsTuaFAJlzz2Q%2BCpXZLI3fIIbIQasfI%2B%2BATO5vP5uA%2FxgegHWVWYS%2BEQ1og5Ny83S8vLQKzJSdhBFG9C0TvDPgNq%2BUGGa9pu6BM5CDoah8YckDDA4%2F9zcALmf6LglLl%2F4IAUByRQtEGFBH%2BmkGaKauep8YD7ir14D7qXd2Xz%2FAiljqoeE3aZH0siC4hodie1dFKoMGnesp822gi273wS9SUn%2BtDrKzBIC9hXDm9jP8RhdApFNXY7nIbG1%2F3iCKctpoUKo1KomOeGd%2F5oPgH6SNLxfd2u12i%2F8s48FX%2F0m%2FNg2o7aILDMfUclC7BUiKm614tQa5G6jpEVtIVVTZ3XOwoIh%2Bn32kug9O%2B9%2FYoFo31LP%2FDuKrsn9x41rWZy2VUaWOp88BtaYmc2zMVHo%2Bq8cnDv5Y%2Fzp0nQeDzbn97R6Sz%2BPlIrHyG8yiHmVrrSCzRu1c7TfRpmRIfV57vP939c%2F%2Fb%2B%2FQ393H7p%2Bsf3wf0Qq1N09ogfwxIgt7RKrIbHT8KVcSh1NJ7Aj%2F4%2B7R8TSr1Cek8U0xu9%2FQ0%3D&code=38304854& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;p&gt;A simple WebGL program that shows color animation.&lt;/p&gt;
+&lt;p&gt;You can click the button below to toggle the color animation on or off.&lt;/p&gt;
+&lt;canvas id="canvas-view"&gt;
+  Your browser does not seem to support HTML canvas.
+&lt;/canvas&gt;
+&lt;button id="animation-onoff"&gt;
+  Press here to
+  &lt;strong&gt;[verb goes here]&lt;/strong&gt;
+  the animation
+&lt;/button&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>body {
+  text-align: center;
+}
+canvas {
+  display: block;
+  width: 280px;
+  height: 210px;
+  margin: auto;
+  padding: 0;
+  border: none;
+  background-color: black;
+}
+button {
+  display: inline-block;
+  font-size: inherit;
+  margin: auto;
+  padding: 0.6em;
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code>// A variable to hold a timer that drives the animation.
+let timer;
+
+// Click event handlers.
+const button = document.querySelector("#animation-onoff");
+const verb = document.querySelector("strong");
+const canvas = document.getElementById("canvas-view");
+function startAnimation(evt) {
+  button.removeEventListener(evt.type, startAnimation);
+  button.addEventListener("click", stopAnimation);
+  verb.textContent = "stop";
+  // Setup animation loop by redrawing every second.
+  timer = setInterval(drawAnimation, 1000);
+  // Give immediate feedback to user after clicking, by
+  // drawing one animation frame.
+  drawAnimation();
+}
+function stopAnimation(evt) {
+  button.removeEventListener(evt.type, stopAnimation);
+  button.addEventListener("click", startAnimation);
+  verb.textContent = "start";
+  // Stop animation by clearing the timer.
+  clearInterval(timer);
+}
+// Call stopAnimation() once to set up the initial event
+// handlers for canvas and button.
+stopAnimation({ type: "click" });
+
+const gl = canvas.getContext("webgl");
+gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+function drawAnimation() {
+  // Get a random color value using a helper function.
+  const color = getRandomColor();
+  // Set the WebGLRenderingContext clear color to the
+  // random color.
+  gl.clearColor(color[0], color[1], color[2], 1.0);
+  // Clear the context with the newly set color.
+  gl.clear(gl.COLOR_BUFFER_BIT);
+}
+
+// Random color helper function.
+function getRandomColor() {
+  return [Math.random(), Math.random(), Math.random()];
+}</code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=427073e8bf5e9465794f8c679fb8ee8b569e917c&amp;state=lVVtb9s2EP4rB%2B2LDdiy0w%2FD4MQBEiNtA6TokHQohigYKOkscaFIjaLsuEH%2B%2B%2B5IyZVtrNsAAaaP9%2Fo8d8fXqHSVihbRRX15BY2saoXwFdMPd1BbU1hRgSuFg6Y02wYyo4wFoWUlnDQ6vpjVl4km099NC5nQkCmZPZMFQto6ZzSkqMwWnKGvKMg1Xx15Af4smPW690eeNqIBmS%2BTKJynG4nbJKJLAIplIbWUD1rIDTagDSWIWHGcpq1rYx18%2FPLpDoJxTC5n4cjeu8y8930SU6MpgS7CrxabBkq0lK9hwUXjrNHF5eMGbQoFx%2BTbp4tZd8FKXNreH4cMgegumkRZ0xDIqcl38OqV8cVNhZKFXkCG2qE9T%2FRborvSvU4um1qJ3QJSZbLncxZtZe7KBbz7ZV6%2FeEGJsigdSc56SSVsIcmraJ3xglrkudTFAub%2Bb2psjnZBoGkMApE9F9a0Op96Zjie8PEonw6sw3ykVlLj9Htaa6PdtJHfkO8IGen%2BLZX4Z6xCBALnT8ZmNoMr2AgrRcp9YqA0KgcBTlbEs2%2FC3MoNQX8ANJGr0AUtcpho8rPyXYgbwhVKoXOFlpsgM7pxfWMuqXWytiKV%2BK8W7e4BFWbO2FES%2FXTSFePz3to3wA9sQz8MLTpGBzYFuhuFfLze3eajox5ny3WrMz8ajRPWXfXpjHDjxoGLUEVssTIbvOFK72TjUKNlpdjtapwcWY%2FPB4ZExKEVZcGoJRGbmfrIisuOuWdXxDTDugSu1dRJ5O8J9Ad0bT2YamVMDekOLOZWbIl1JsTuaFAJlzz2Q%2BCpXZLI3fIIbIQasfI%2B%2BATO5vP5uA%2FxgegHWVWYS%2BEQ1og5Ny83S8vLQKzJSdhBFG9C0TvDPgNq%2BUGGa9pu6BM5CDoah8YckDDA4%2F9zcALmf6LglLl%2F4IAUByRQtEGFBH%2BmkGaKauep8YD7ir14D7qXd2Xz%2FAiljqoeE3aZH0siC4hodie1dFKoMGnesp822gi273wS9SUn%2BtDrKzBIC9hXDm9jP8RhdApFNXY7nIbG1%2F3iCKctpoUKo1KomOeGd%2F5oPgH6SNLxfd2u12i%2F8s48FX%2F0m%2FNg2o7aILDMfUclC7BUiKm614tQa5G6jpEVtIVVTZ3XOwoIh%2Bn32kug9O%2B9%2FYoFo31LP%2FDuKrsn9x41rWZy2VUaWOp88BtaYmc2zMVHo%2Bq8cnDv5Y%2Fzp0nQeDzbn97R6Sz%2BPlIrHyG8yiHmVrrSCzRu1c7TfRpmRIfV57vP939c%2F%2Fb%2B%2FQ393H7p%2Bsf3wf0Qq1N09ogfwxIgt7RKrIbHT8KVcSh1NJ7Aj%2F4%2B7R8TSr1Cek8U0xu9%2FQ0%3D&amp;code=38304854&amp;" class="leave">Open in Playground</a>
+          <a href="https://427073e8bf5e9465794f8c679fb8ee8b569e917c.mdnplay.dev/en-US/docs/Web/API/WebGL_API/By_example/Simple_color_animation/runner.html?state=lVVtb9s2EP4rB%2B2LDdiy0w%2FD4MQBEiNtA6TokHQohigYKOkscaFIjaLsuEH%2B%2B%2B5IyZVtrNsAAaaP9%2Fo8d8fXqHSVihbRRX15BY2saoXwFdMPd1BbU1hRgSuFg6Y02wYyo4wFoWUlnDQ6vpjVl4km099NC5nQkCmZPZMFQto6ZzSkqMwWnKGvKMg1Xx15Af4smPW690eeNqIBmS%2BTKJynG4nbJKJLAIplIbWUD1rIDTagDSWIWHGcpq1rYx18%2FPLpDoJxTC5n4cjeu8y8930SU6MpgS7CrxabBkq0lK9hwUXjrNHF5eMGbQoFx%2BTbp4tZd8FKXNreH4cMgegumkRZ0xDIqcl38OqV8cVNhZKFXkCG2qE9T%2FRborvSvU4um1qJ3QJSZbLncxZtZe7KBbz7ZV6%2FeEGJsigdSc56SSVsIcmraJ3xglrkudTFAub%2Bb2psjnZBoGkMApE9F9a0Op96Zjie8PEonw6sw3ykVlLj9Htaa6PdtJHfkO8IGen%2BLZX4Z6xCBALnT8ZmNoMr2AgrRcp9YqA0KgcBTlbEs2%2FC3MoNQX8ANJGr0AUtcpho8rPyXYgbwhVKoXOFlpsgM7pxfWMuqXWytiKV%2BK8W7e4BFWbO2FES%2FXTSFePz3to3wA9sQz8MLTpGBzYFuhuFfLze3eajox5ny3WrMz8ajRPWXfXpjHDjxoGLUEVssTIbvOFK72TjUKNlpdjtapwcWY%2FPB4ZExKEVZcGoJRGbmfrIisuOuWdXxDTDugSu1dRJ5O8J9Ad0bT2YamVMDekOLOZWbIl1JsTuaFAJlzz2Q%2BCpXZLI3fIIbIQasfI%2B%2BATO5vP5uA%2FxgegHWVWYS%2BEQ1og5Ny83S8vLQKzJSdhBFG9C0TvDPgNq%2BUGGa9pu6BM5CDoah8YckDDA4%2F9zcALmf6LglLl%2F4IAUByRQtEGFBH%2BmkGaKauep8YD7ir14D7qXd2Xz%2FAiljqoeE3aZH0siC4hodie1dFKoMGnesp822gi273wS9SUn%2BtDrKzBIC9hXDm9jP8RhdApFNXY7nIbG1%2F3iCKctpoUKo1KomOeGd%2F5oPgH6SNLxfd2u12i%2F8s48FX%2F0m%2FNg2o7aILDMfUclC7BUiKm614tQa5G6jpEVtIVVTZ3XOwoIh%2Bn32kug9O%2B9%2FYoFo31LP%2FDuKrsn9x41rWZy2VUaWOp88BtaYmc2zMVHo%2Bq8cnDv5Y%2Fzp0nQeDzbn97R6Sz%2BPlIrHyG8yiHmVrrSCzRu1c7TfRpmRIfV57vP939c%2F%2Fb%2B%2FQ393H7p%2Bsf3wf0Qq1N09ogfwxIgt7RKrIbHT8KVcSh1NJ7Aj%2F4%2B7R8TSr1Cek8U0xu9%2FQ0%3D&amp;code=a38d3bff-2bb5-440a-bf47-aa0fd08737d8" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

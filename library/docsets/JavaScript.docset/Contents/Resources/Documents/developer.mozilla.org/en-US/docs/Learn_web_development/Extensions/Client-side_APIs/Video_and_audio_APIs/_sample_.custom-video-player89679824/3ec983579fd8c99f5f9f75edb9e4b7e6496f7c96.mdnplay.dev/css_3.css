@@ -1,0 +1,23 @@
+
+body { overflow: hidden; }
+@font-face { font-family: HeydingsControlsRegular; src: url("../mdn.github.io/learning-area/javascript/apis/video-audio/finished/fonts/heydings_controls-webfont.eot-_-%2523iefix.eot-_-%23iefix") format("embedded-opentype"), url("../mdn.github.io/learning-area/javascript/apis/video-audio/finished/fonts/heydings_controls-webfont.woff") format("woff"), url("../mdn.github.io/learning-area/javascript/apis/video-audio/finished/fonts/heydings_controls-webfont.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+video { border: 1px solid black; }
+p { position: absolute; top: 310px; }
+.player { position: absolute; }
+.controls { visibility: hidden; opacity: 0.5; width: 400px; border-radius: 10px; position: absolute; bottom: 20px; left: 50%; margin-left: -200px; background-color: black; box-shadow: black 3px 3px 5px; transition: 1s; display: flex; }
+.player:hover .controls, .player:focus-within .controls { opacity: 1; }
+button, .controls { background: linear-gradient(rgb(34, 34, 34), rgb(102, 102, 102)); }
+button::before { font-family: HeydingsControlsRegular; font-size: 20px; position: relative; content: attr(data-icon); color: rgb(170, 170, 170); text-shadow: black 1px 1px 0px; }
+.play::before { font-size: 22px; }
+button, .timer { height: 38px; line-height: 19px; box-shadow: rgba(0, 0, 0, 0.3) 0px -5px 25px inset; border-right: 1px solid rgb(51, 51, 51); }
+button { position: relative; border: 0px; flex: 1 1 0%; outline: medium; }
+.play { border-radius: 10px 0px 0px 10px; }
+.fwd { border-radius: 0px 10px 10px 0px; }
+.timer { line-height: 38px; font-size: 10px; font-family: monospace; text-shadow: black 1px 1px 0px; color: white; flex: 5 1 0%; position: relative; }
+.timer div { position: absolute; background-color: rgba(255, 255, 255, 0.2); left: 0px; top: 0px; width: 0px; height: 38px; z-index: 2; }
+.timer span { position: absolute; z-index: 3; left: 19px; }
+button:hover, button:focus { box-shadow: black 1px 1px 2px inset; }
+button:active { box-shadow: black 3px 3px 2px inset; }
+.active::before { color: red; }
+
+button.copy {display:none !important}

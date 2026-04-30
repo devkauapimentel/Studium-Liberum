@@ -1,0 +1,10 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 14px; line-height: normal; font-family: "Open Sans", Arial, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+video { margin-top: 20px; border: 1px solid black; }
+.button { cursor: pointer; width: 160px; border: 1px solid black; font-size: 16px; text-align: center; padding-top: 2px; padding-bottom: 4px; color: white; background-color: darkgreen; }
+h2 { margin-bottom: 4px; }
+.left { float: left; width: 48%; margin-right: 2%; }
+.right { float: right; width: 48%; margin-left: 2%; }
+.deviceList { border: 1px solid black; list-style-type: none; margin-top: 2px; padding: 6px; }
+
+button.copy {display:none !important}

@@ -1,0 +1,58 @@
+<html>
+  <!-- Online page at https://2f752a5b22a254fadc3128a62f57ddc3599aa5dc.mdnplay.dev/en-US/docs/Web/HTML/Reference/Elements/output/runner.html?uuid=2f752a5b22a254fadc3128a62f57ddc3599aa5dc&state=bZExT8MwEIX%2FiuWpVUtaBhhoUgmkDkiIgYEFMzjJNQ1KnCg%2BV1RV%2Fzt3dkJbyJSL73vnd89HucO6kg8y3jZdLco8URK%2Bdd1WcMMnSq6VESIuTetQ4KEFAjptClAy0CkVRtfQl3tdOa7vlvSzWIvZf7lxdQrdoNdnvb7Q3%2Fb6xOsbhzyg5zqwrkLqk0OWCbp4fb%2BMFwEjx%2FGCzVMh5zKzlvaj4ou%2FWWMsCr9sIvImczUYjArATQVcPh2e88nfDKYrZYJQk4rPIgi4%2FfC2P3%2BBdARIL4FgfoQatmJUma0zGZaNEa7NNcKbb06m4sh59F7eOSuapCOf2qN99cmuzkg6IOkIEi4MDZ4S2FkvIuTkjbBNneebPfl8KS2CgY4S8k%2Bq5PzK4NR7v7a88q%2BAO1qU8q%2FKYofy9AM%3D&code=82282936& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;form id="example-form"&gt;
+  &lt;input type="range" id="b" name="b" value="50" /&gt; +
+  &lt;input type="number" id="a" name="a" value="10" /&gt; =
+  &lt;output name="result" for="a b"&gt;60&lt;/output&gt;
+&lt;/form&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code></code></pre>
+
+            <h2>js</h2>
+            <pre><code>const form = document.getElementById("example-form");
+const a = form.elements["a"];
+const b = form.elements["b"];
+const result = form.elements["result"];
+
+function updateResult() {
+  const aValue = a.valueAsNumber;
+  const bValue = b.valueAsNumber;
+  result.value = aValue + bValue;
+}
+
+form.addEventListener("input", updateResult);
+
+updateResult();</code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=2f752a5b22a254fadc3128a62f57ddc3599aa5dc&amp;state=bZExT8MwEIX%2FiuWpVUtaBhhoUgmkDkiIgYEFMzjJNQ1KnCg%2BV1RV%2Fzt3dkJbyJSL73vnd89HucO6kg8y3jZdLco8URK%2Bdd1WcMMnSq6VESIuTetQ4KEFAjptClAy0CkVRtfQl3tdOa7vlvSzWIvZf7lxdQrdoNdnvb7Q3%2Fb6xOsbhzyg5zqwrkLqk0OWCbp4fb%2BMFwEjx%2FGCzVMh5zKzlvaj4ou%2FWWMsCr9sIvImczUYjArATQVcPh2e88nfDKYrZYJQk4rPIgi4%2FfC2P3%2BBdARIL4FgfoQatmJUma0zGZaNEa7NNcKbb06m4sh59F7eOSuapCOf2qN99cmuzkg6IOkIEi4MDZ4S2FkvIuTkjbBNneebPfl8KS2CgY4S8k%2Bq5PzK4NR7v7a88q%2BAO1qU8q%2FKYofy9AM%3D&amp;code=82282936&amp;" class="leave">Open in Playground</a>
+          <a href="https://2f752a5b22a254fadc3128a62f57ddc3599aa5dc.mdnplay.dev/en-US/docs/Web/HTML/Reference/Elements/output/runner.html?state=bZExT8MwEIX%2FiuWpVUtaBhhoUgmkDkiIgYEFMzjJNQ1KnCg%2BV1RV%2Fzt3dkJbyJSL73vnd89HucO6kg8y3jZdLco8URK%2Bdd1WcMMnSq6VESIuTetQ4KEFAjptClAy0CkVRtfQl3tdOa7vlvSzWIvZf7lxdQrdoNdnvb7Q3%2Fb6xOsbhzyg5zqwrkLqk0OWCbp4fb%2BMFwEjx%2FGCzVMh5zKzlvaj4ou%2FWWMsCr9sIvImczUYjArATQVcPh2e88nfDKYrZYJQk4rPIgi4%2FfC2P3%2BBdARIL4FgfoQatmJUma0zGZaNEa7NNcKbb06m4sh59F7eOSuapCOf2qN99cmuzkg6IOkIEi4MDZ4S2FkvIuTkjbBNneebPfl8KS2CgY4S8k%2Bq5PzK4NR7v7a88q%2BAO1qU8q%2FKYofy9AM%3D&amp;code=5b07cdad-88c2-4b15-ac13-3eed5d5b78db" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

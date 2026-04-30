@@ -1,0 +1,6 @@
+
+p { contain-intrinsic-size: 0px 1.1em; border: 2px dotted; }
+.hidden > p { content-visibility: hidden; }
+.visible > p { content-visibility: visible; }
+
+button.copy {display:none !important}

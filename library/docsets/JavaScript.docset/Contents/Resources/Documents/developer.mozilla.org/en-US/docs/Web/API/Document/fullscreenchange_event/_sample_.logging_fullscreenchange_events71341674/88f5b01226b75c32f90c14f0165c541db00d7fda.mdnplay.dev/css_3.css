@@ -1,0 +1,6 @@
+
+* { box-sizing: border-box; }
+#fullscreen-div { height: 150px; padding: 1rem; background-color: pink; }
+#logger { height: 80px; padding: 0px 0.5rem; background-color: white; overflow: scroll; }
+
+button.copy {display:none !important}

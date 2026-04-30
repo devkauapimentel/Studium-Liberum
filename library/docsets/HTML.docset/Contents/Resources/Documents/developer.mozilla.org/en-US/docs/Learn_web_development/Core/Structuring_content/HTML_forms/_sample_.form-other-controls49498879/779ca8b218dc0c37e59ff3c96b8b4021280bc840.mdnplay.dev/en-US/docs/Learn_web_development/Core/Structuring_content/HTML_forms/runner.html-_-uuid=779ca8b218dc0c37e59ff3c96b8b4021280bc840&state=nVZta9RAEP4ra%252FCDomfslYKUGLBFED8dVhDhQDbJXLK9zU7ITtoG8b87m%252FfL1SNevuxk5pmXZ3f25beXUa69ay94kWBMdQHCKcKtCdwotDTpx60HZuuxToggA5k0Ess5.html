@@ -1,0 +1,81 @@
+<html>
+  <!-- Online page at https://779ca8b218dc0c37e59ff3c96b8b4021280bc840.mdnplay.dev/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms/runner.html?uuid=779ca8b218dc0c37e59ff3c96b8b4021280bc840&state=nVZta9RAEP4ra%2FCDomfslYKUGLBFED8dVhDhQDbJXLK9zU7ITtoG8b87m%2FfL1SNevuxk5pmXZ3f25beXUa69ay94kWBMdQHCKcKtCdwotDTpx60HZuuxToggA5k0Ess5kBRxJksLxKCKdqsPW0%2F4vZ0UaQjvIEaTiB2WeeC3qiaSP4QKIkzq3snhhIxJoeGY7%2FxC1jkY%2BlXIFDg458wwYUsK1NXUuGXr8BukyhKULpWgDBgLVBWcaD3idgp0wvUOGtZpSMEk4W2GaJk%2FEmhRIubCzcd14Hf2iUeiHia%2FrFCmqGiqEY0z11nKROHWO7Qpx6BJxElVDBdzgJE59JC57UHqyhndvGJez81xBvEekmEZ2i%2FQMmJaPDVHmcPPbSDx6s3L96%2BZrkOy8zHBGacjGmvWHVY%2BFGurAkqF5aQ%2FThfGscK7zslVdnW6tPPn%2FvKcuS%2B4JTOsLMwBibIy0ounn5OHmz6Wo3lxwHNw96cdF%2FhHXbygr2MtrQUrCIUkYsN%2FdHY%2FoU1vRfjUr32NqRzXvPs7wbxFhD95aMgua7d51hh3O4Ax7%2FB%2FInOPCW8bgfe3tKRM6spYn1dGJLVGNGMdo%2BJEIQMovGklIY3KpRaypKbPz1r%2B4mDdJ%2BmolMYWWLrD8gs%2BchYQNVaCj8%2BGfgZlc8TNM1rQEFPPbBKl5T4Ne0AVC3dyD%2FuEzavVRoN0Ddj2oTSiBa1Wgd9KJ0MUfAe5hdu4cZFHpPbO4YaHRfhHqfeM%2F8HDInxUWRe%2BsovQPFXKLfd3Ny7yuAfayNiV9BVIFCw%2B4xb47RJN2mJsgn%2F3Q4y5u04dgU%2BmFsj3ZCl65XONQPBE3DSy33q9%2B7j5Bk2Jj5Y1VyzGqJ146c43vvW7GAtqjSoi5nmLhtuzAndadS%2BAwO9sx0F4R%2FCroflhVPuY4Gu%2Ffch4b73YWn7isHDfjcw6Bxa1SjPy%2FvwF&code=49498879& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Second form</title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        
+
+  
+    <meta charset="utf-8">
+    <title>Second form</title>
+  
+  
+    <form action="./payment_page" method="get">
+      <h2>Register for the meetup</h2>
+      <fieldset>
+        <legend>Choose hotel room type:</legend>
+        <div>
+          <input type="radio" id="hotelChoice1" name="hotel" value="economy" checked="">
+          <label for="hotelChoice1">Economy (+$0)</label>
+
+          <input type="radio" id="hotelChoice2" name="hotel" value="superior">
+          <label for="hotelChoice2">Superior (+$50)</label>
+
+          <input type="radio" id="hotelChoice3" name="hotel" value="penthouse" disabled="">
+          <label for="hotelChoice3">Penthouse (+$150)</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Choose classes to attend:</legend>
+        <div>
+          <input type="checkbox" id="yoga" name="yoga">
+          <label for="yoga">Yoga (+$10)</label>
+
+          <input type="checkbox" id="coffee" name="coffee">
+          <label for="coffee">Coffee roasting (+$20)</label>
+
+          <input type="checkbox" id="balloon" name="balloon">
+          <label for="balloon">Balloon animal art (+$5)</label>
+        </div>
+      </fieldset>
+      <p>
+        <label for="transport">How are you getting here:</label>
+        <select name="transport" id="transport">
+          <option value="">--Please choose an option--</option>
+          <option value="plane">Plane</option>
+          <option value="bike">Bike</option>
+          <option value="walk">Walk</option>
+          <option value="bus">Bus</option>
+          <option value="train">Train</option>
+          <option value="jetPack">Jet pack</option>
+        </select>
+      </p>
+      <p>
+        <label for="comments">Any other comments:</label>
+        <textarea id="comments" name="comments" rows="5" cols="33"></textarea>
+      </p>
+      <p>
+        <button>Continue to payment</button>
+      </p>
+    </form>
+  
+
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../js_3.js'></script>
+</body>
+</html>

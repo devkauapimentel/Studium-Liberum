@@ -1,0 +1,4 @@
+
+.shadowbox { width: 15em; border: 1px solid rgb(51, 51, 51); box-shadow: rgb(68, 68, 68) 8px 8px 5px; padding: 8px 12px; background-image: linear-gradient(white, rgb(221, 221, 221) 40%, rgb(204, 204, 204)); }
+
+button.copy {display:none !important}

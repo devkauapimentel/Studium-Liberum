@@ -1,0 +1,5 @@
+
+body { max-width: 640px; margin: 0px auto; }
+video { max-width: 100%; }
+
+button.copy {display:none !important}

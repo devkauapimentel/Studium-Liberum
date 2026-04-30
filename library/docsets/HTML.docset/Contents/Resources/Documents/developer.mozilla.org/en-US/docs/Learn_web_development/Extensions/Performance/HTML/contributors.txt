@@ -1,0 +1,10 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/learn_web_development/extensions/performance/html/index.md
+
+# Original Wiki contributors
+mfranzke
+arjenlgill
+estelle
+chrisdavidmills
+mikeblume
+ElliotHawkins

@@ -1,0 +1,6 @@
+
+.content { height: 2000px; }
+.box { width: 100px; height: 100px; border-radius: 10px; background-color: rebeccapurple; position: fixed; top: 20px; left: 0%; }
+.output { font-family: Helvetica, Arial, sans-serif; position: fixed; top: 5px; right: 5px; }
+
+button.copy {display:none !important}

@@ -1,0 +1,10 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/attributes/pattern/index.md
+
+# Original Wiki contributors
+mfuji09
+masitito
+mattd
+pieterdd
+chrisdavidmills
+estelle

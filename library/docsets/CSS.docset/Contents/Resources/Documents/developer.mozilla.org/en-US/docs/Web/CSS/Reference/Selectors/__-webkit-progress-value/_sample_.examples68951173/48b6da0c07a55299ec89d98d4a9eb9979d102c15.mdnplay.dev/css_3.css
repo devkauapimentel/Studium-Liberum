@@ -1,0 +1,5 @@
+
+progress { appearance: none; }
+::-webkit-progress-value { background-color: orange; }
+
+button.copy {display:none !important}

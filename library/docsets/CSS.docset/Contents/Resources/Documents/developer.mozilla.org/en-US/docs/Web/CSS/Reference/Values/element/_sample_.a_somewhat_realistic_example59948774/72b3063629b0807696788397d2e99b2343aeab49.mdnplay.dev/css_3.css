@@ -1,0 +1,7 @@
+
+#target-box { width: 400px; height: 400px; }
+#background-container { overflow: hidden; height: 0px; }
+#my-background { width: 1024px; height: 1024px; background-image: linear-gradient(to right, red, orange, yellow, white); }
+#my-background p { transform-origin: 0px 0px; rotate: 45deg; color: white; }
+
+button.copy {display:none !important}

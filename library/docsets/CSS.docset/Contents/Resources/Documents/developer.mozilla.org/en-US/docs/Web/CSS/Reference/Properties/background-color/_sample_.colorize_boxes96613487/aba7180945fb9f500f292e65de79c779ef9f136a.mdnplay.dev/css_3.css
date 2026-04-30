@@ -1,0 +1,6 @@
+
+.example-one { background-color: transparent; }
+.example-two { background-color: rgb(153, 102, 153); color: rgb(255, 255, 204); }
+.example-three { background-color: rgb(119, 119, 153); color: white; }
+
+button.copy {display:none !important}

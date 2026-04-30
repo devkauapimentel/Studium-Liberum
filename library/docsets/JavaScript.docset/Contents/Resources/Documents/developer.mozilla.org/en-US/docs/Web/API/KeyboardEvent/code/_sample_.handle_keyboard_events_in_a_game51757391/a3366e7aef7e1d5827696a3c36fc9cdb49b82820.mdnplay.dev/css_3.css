@@ -1,0 +1,6 @@
+
+.world { margin: 0px; padding: 0px; background-color: black; width: 400px; height: 400px; }
+.world:focus-visible { outline: 5px solid dodgerblue; }
+#spaceship { fill: orange; stroke: red; stroke-width: 2px; }
+
+button.copy {display:none !important}

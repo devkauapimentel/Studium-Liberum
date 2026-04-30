@@ -1,0 +1,6 @@
+
+body { font-family: system-ui; }
+input { width: 3rem; font-size: inherit; }
+p { padding: 0.25rem; background-color: rgb(255, 242, 204); }
+
+button.copy {display:none !important}

@@ -1,0 +1,13 @@
+
+          const secret = document.getElementById("secret");
+const win = document.getElementById("win");
+
+// Listen for selection changes
+document.addEventListener("selectionchange", () => {
+  const selection = window.getSelection();
+  const found = selection.containsNode(secret);
+
+  win.toggleAttribute("hidden", !found);
+});
+;
+        

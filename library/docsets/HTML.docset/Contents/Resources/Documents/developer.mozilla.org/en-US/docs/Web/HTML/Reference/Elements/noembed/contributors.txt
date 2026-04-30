@@ -1,0 +1,17 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/elements/noembed/index.md
+
+# Original Wiki contributors
+alattalatta
+sideshowbarker
+nakhodkiin
+Sheppy
+teoli
+mfluehr
+cvrebert
+slimsag
+Jeremie
+fscholz
+J-Mackerel
+jswisher
+amylynn

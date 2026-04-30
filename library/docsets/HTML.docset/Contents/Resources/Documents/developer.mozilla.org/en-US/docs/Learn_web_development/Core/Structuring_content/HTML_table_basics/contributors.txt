@@ -1,0 +1,22 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/learn_web_development/core/structuring_content/html_table_basics/index.md
+
+# Original Wiki contributors
+avivmu
+chrisdavidmills
+radiocane
+Sichen-Wang
+choudh70
+tayyabalishan
+santiago-rodrig
+Octopinky
+ratbeard
+irenesmith
+Sheppy
+nrebhun
+surigangula
+stephaniehobson
+yanlee26
+qdirks
+Sebastianz
+mientje

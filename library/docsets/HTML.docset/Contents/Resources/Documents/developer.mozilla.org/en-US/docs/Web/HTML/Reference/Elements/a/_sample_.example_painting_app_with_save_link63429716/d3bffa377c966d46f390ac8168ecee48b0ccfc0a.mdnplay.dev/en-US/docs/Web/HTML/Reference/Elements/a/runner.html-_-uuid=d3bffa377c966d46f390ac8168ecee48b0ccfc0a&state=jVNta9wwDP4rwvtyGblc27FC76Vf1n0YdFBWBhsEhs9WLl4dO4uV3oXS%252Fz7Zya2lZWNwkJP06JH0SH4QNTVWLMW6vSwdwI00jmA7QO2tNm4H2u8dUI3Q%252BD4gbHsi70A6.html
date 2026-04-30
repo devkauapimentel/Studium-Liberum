@@ -1,0 +1,83 @@
+<html>
+  <!-- Online page at https://d3bffa377c966d46f390ac8168ecee48b0ccfc0a.mdnplay.dev/en-US/docs/Web/HTML/Reference/Elements/a/runner.html?uuid=d3bffa377c966d46f390ac8168ecee48b0ccfc0a&state=jVNta9wwDP4rwvtyGblc27FC76Vf1n0YdFBWBhsEhs9WLl4dO4uV3oXS%2Fz7Zya2lZWNwkJP06JH0SH4QNTVWLMW6vSwdwI00jmA7QO2tNm4H2u8dUI3Q%2BD4gbHsi70A6zY77CDBUxMS1hLrDalOKUqQk66Vmqxl%2BtJGToUXrdqW4vJqC0AxwDK0XksuvF7EJ%2Firp7mWAvdFUM8e7kxMmrdHsajqal%2BvFiOIMkQsVAg8RZ4GH2E7lHc0r2Rg7LCFIF%2BYBO1OtSvdYuok%2BAbdS3e063zu9hH1tCFfJ6zuN3RJO2wNoGWrUY6Yck7QJrZXMbJw1Dudb69Xd6iXdm%2FPziwulkl9567vnFVqpo75LeM8lTk%2Faw1iAR%2FkZJ1HeBYKp0Q0LqvoGHRW%2FeuyGW7SoyHezUoyIUmScPuUwfPQWO6QPrAMeiJFnekIVlbH2lgaLjCxF7ak17q4UHLNIYMJVJ%2Ffc2iquouqdIsMb1%2BycHXIYslECU8HsD3Ty8ZjFFnfG3UiqZ9nq6JOdSqk5D5oD%2Fz5zvLj5BG%2Fh7AmlrA%2F4IjO2OpmPSZ%2Fj8gqW7%2BM9K3JtAqHDqEW6UL5KLEUOM4zRDDbprFP3yVP4qgpI33J4bn7P8tIldf7NHg87sUfiZwKwktT1mP0HRd%2F%2BhaCSNowMpTvuO%2Fb%2BaueSF5kCr0sk2fgqrFG80Xy0n6SY%2FhYkO76NIj7Yp2shfyVJfv1yPcuylBlb4Xvkx98gn6SNz088%2FgY%3D&code=63429716& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;p&gt;
+  Paint by holding down the mouse button and moving it.
+  &lt;a href="" download="my_painting.png"&gt;Download my painting&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;canvas width="300" height="300"&gt;&lt;/canvas&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>html {
+  font-family: sans-serif;
+}
+canvas {
+  background: white;
+  border: 1px dashed;
+}
+a {
+  display: inline-block;
+  background: #6699cc;
+  color: white;
+  padding: 5px 10px;
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code>const canvas = document.querySelector("canvas");
+const c = canvas.getContext("2d");
+c.fillStyle = "hotpink";
+let isDrawing;
+
+function draw(x, y) {
+  if (isDrawing) {
+    c.beginPath();
+    c.arc(x, y, 10, 0, Math.PI * 2);
+    c.closePath();
+    c.fill();
+  }
+}
+
+canvas.addEventListener("mousemove", (event) =&gt;
+  draw(event.offsetX, event.offsetY),
+);
+canvas.addEventListener("mousedown", () =&gt; (isDrawing = true));
+canvas.addEventListener("mouseup", () =&gt; (isDrawing = false));
+
+document
+  .querySelector("a")
+  .addEventListener(
+    "click",
+    (event) =&gt; (event.target.href = canvas.toDataURL()),
+  );</code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=d3bffa377c966d46f390ac8168ecee48b0ccfc0a&amp;state=jVNta9wwDP4rwvtyGblc27FC76Vf1n0YdFBWBhsEhs9WLl4dO4uV3oXS%2Fz7Zya2lZWNwkJP06JH0SH4QNTVWLMW6vSwdwI00jmA7QO2tNm4H2u8dUI3Q%2BD4gbHsi70A6zY77CDBUxMS1hLrDalOKUqQk66Vmqxl%2BtJGToUXrdqW4vJqC0AxwDK0XksuvF7EJ%2Firp7mWAvdFUM8e7kxMmrdHsajqal%2BvFiOIMkQsVAg8RZ4GH2E7lHc0r2Rg7LCFIF%2BYBO1OtSvdYuok%2BAbdS3e063zu9hH1tCFfJ6zuN3RJO2wNoGWrUY6Yck7QJrZXMbJw1Dudb69Xd6iXdm%2FPziwulkl9567vnFVqpo75LeM8lTk%2Faw1iAR%2FkZJ1HeBYKp0Q0LqvoGHRW%2FeuyGW7SoyHezUoyIUmScPuUwfPQWO6QPrAMeiJFnekIVlbH2lgaLjCxF7ak17q4UHLNIYMJVJ%2Ffc2iquouqdIsMb1%2BycHXIYslECU8HsD3Ty8ZjFFnfG3UiqZ9nq6JOdSqk5D5oD%2Fz5zvLj5BG%2Fh7AmlrA%2F4IjO2OpmPSZ%2Fj8gqW7%2BM9K3JtAqHDqEW6UL5KLEUOM4zRDDbprFP3yVP4qgpI33J4bn7P8tIldf7NHg87sUfiZwKwktT1mP0HRd%2F%2BhaCSNowMpTvuO%2Fb%2BaueSF5kCr0sk2fgqrFG80Xy0n6SY%2FhYkO76NIj7Yp2shfyVJfv1yPcuylBlb4Xvkx98gn6SNz088%2FgY%3D&amp;code=63429716&amp;" class="leave">Open in Playground</a>
+          <a href="https://d3bffa377c966d46f390ac8168ecee48b0ccfc0a.mdnplay.dev/en-US/docs/Web/HTML/Reference/Elements/a/runner.html?state=jVNta9wwDP4rwvtyGblc27FC76Vf1n0YdFBWBhsEhs9WLl4dO4uV3oXS%2Fz7Zya2lZWNwkJP06JH0SH4QNTVWLMW6vSwdwI00jmA7QO2tNm4H2u8dUI3Q%2BD4gbHsi70A6zY77CDBUxMS1hLrDalOKUqQk66Vmqxl%2BtJGToUXrdqW4vJqC0AxwDK0XksuvF7EJ%2Firp7mWAvdFUM8e7kxMmrdHsajqal%2BvFiOIMkQsVAg8RZ4GH2E7lHc0r2Rg7LCFIF%2BYBO1OtSvdYuok%2BAbdS3e063zu9hH1tCFfJ6zuN3RJO2wNoGWrUY6Yck7QJrZXMbJw1Dudb69Xd6iXdm%2FPziwulkl9567vnFVqpo75LeM8lTk%2Faw1iAR%2FkZJ1HeBYKp0Q0LqvoGHRW%2FeuyGW7SoyHezUoyIUmScPuUwfPQWO6QPrAMeiJFnekIVlbH2lgaLjCxF7ak17q4UHLNIYMJVJ%2Ffc2iquouqdIsMb1%2BycHXIYslECU8HsD3Ty8ZjFFnfG3UiqZ9nq6JOdSqk5D5oD%2Fz5zvLj5BG%2Fh7AmlrA%2F4IjO2OpmPSZ%2Fj8gqW7%2BM9K3JtAqHDqEW6UL5KLEUOM4zRDDbprFP3yVP4qgpI33J4bn7P8tIldf7NHg87sUfiZwKwktT1mP0HRd%2F%2BhaCSNowMpTvuO%2Fb%2BaueSF5kCr0sk2fgqrFG80Xy0n6SY%2FhYkO76NIj7Yp2shfyVJfv1yPcuylBlb4Xvkx98gn6SNz088%2FgY%3D&amp;code=2348419c-40cf-45ef-8548-a19fe7173fbd" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

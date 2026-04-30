@@ -1,0 +1,6 @@
+
+img { width: 55px; height: 110px; }
+img + img { width: 110px; }
+img + img + img { width: 220px; }
+
+button.copy {display:none !important}

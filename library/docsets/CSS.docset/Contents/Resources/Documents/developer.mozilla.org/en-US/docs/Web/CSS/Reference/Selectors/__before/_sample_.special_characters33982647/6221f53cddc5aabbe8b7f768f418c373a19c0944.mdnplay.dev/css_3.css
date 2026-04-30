@@ -1,0 +1,6 @@
+
+li { padding: 0.5em; }
+li[aria-current="step"] { font-weight: bold; }
+li[aria-current="step"]::before { content: "⇨"; display: inline; }
+
+button.copy {display:none !important}

@@ -1,0 +1,92 @@
+<html>
+  <!-- Online page at https://413a6fc579c3c59caf05450b503cc25f7f383222.mdnplay.dev/en-US/docs/Web/CSS/Reference/Values/filter-function/brightness/runner.html?uuid=413a6fc579c3c59caf05450b503cc25f7f383222&state=3VRNb9QwEP0rlrlspW6MkCqkEHoogr0ggQri5Is39jouztjYs6uuqv53xknaZPkQ5cKBSzz2ezPzJjP2He%2Bw97zmTT5YloI3ryWHAEbySwmMNTvn0STmNJ1rlb4aeHEhOWuDD2ntgLAYvEIXYD1SMxHz9eZqClBCmDehjxQT8HNSkHcmTdAAvttDe83wGEtq78CoRAmyD8PB8%2BplySd%2B9Nj8tcfVUz0a8TvFhAw10qYR9MPKimrrzYhiZ5R%2BCIKLIrG7fO8Ohplb1UdvGkEHS%2FDTlw17%2B23vDspTyp%2FgD8lZB8oz1yu79CbzQdicu8Ft0MdfytCPNu1cb%2BcdY61XufSuzXnqpORLPKeW0A4x5lqIXkNlHXb7beWCyJ1KRq8pgMEsBpVZTMVmEVOwyVDYmJw2651XtrqJ9jS88vg4YUazgcoK9bSVYlHD0%2BqhNv0X9fwTvR%2F%2FKHM5ctOckTXdAX5exodek2qeInZX2KNdsy2NcodAalbl1p29knAvoZqbdErfJ7%2BS%2FNn88EwOErA7p48e6VFp7cDW7CLejgQKWEPAVZ1CwLORpV2OXh1rVt63kUaCb4peWukC9YZMXwTy%2B%2B8%3D&code=1672792& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;svg role="none"&gt;
+  &lt;filter id="darken25" color-interpolation-filters="sRGB"&gt;
+    &lt;feComponentTransfer&gt;
+      &lt;feFuncR type="linear" slope="0.75" /&gt;
+      &lt;feFuncG type="linear" slope="0.75" /&gt;
+      &lt;feFuncB type="linear" slope="0.75" /&gt;
+    &lt;/feComponentTransfer&gt;
+  &lt;/filter&gt;
+&lt;/svg&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Live example&lt;/th&gt;
+      &lt;th&gt;SVG Equivalent&lt;/th&gt;
+      &lt;th&gt;Original image&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;img
+          class="css-filter"
+          src="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"
+          alt="darkened pride flag" /&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;img
+          class="svg-filter"
+          src="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"
+          alt="darkened pride flag" /&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;img
+          src="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"
+          alt="Pride flag" /&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>.css-filter {
+  filter: brightness(0.75);
+}
+.svg-filter {
+  filter: url("#darken25");
+}
+
+th,
+td {
+  padding: 5px;
+}
+svg:not(:root) {
+  display: none;
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code></code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=413a6fc579c3c59caf05450b503cc25f7f383222&amp;state=3VRNb9QwEP0rlrlspW6MkCqkEHoogr0ggQri5Is39jouztjYs6uuqv53xknaZPkQ5cKBSzz2ezPzJjP2He%2Bw97zmTT5YloI3ryWHAEbySwmMNTvn0STmNJ1rlb4aeHEhOWuDD2ntgLAYvEIXYD1SMxHz9eZqClBCmDehjxQT8HNSkHcmTdAAvttDe83wGEtq78CoRAmyD8PB8%2BplySd%2B9Nj8tcfVUz0a8TvFhAw10qYR9MPKimrrzYhiZ5R%2BCIKLIrG7fO8Ohplb1UdvGkEHS%2FDTlw17%2B23vDspTyp%2FgD8lZB8oz1yu79CbzQdicu8Ft0MdfytCPNu1cb%2BcdY61XufSuzXnqpORLPKeW0A4x5lqIXkNlHXb7beWCyJ1KRq8pgMEsBpVZTMVmEVOwyVDYmJw2651XtrqJ9jS88vg4YUazgcoK9bSVYlHD0%2BqhNv0X9fwTvR%2F%2FKHM5ctOckTXdAX5exodek2qeInZX2KNdsy2NcodAalbl1p29knAvoZqbdErfJ7%2BS%2FNn88EwOErA7p48e6VFp7cDW7CLejgQKWEPAVZ1CwLORpV2OXh1rVt63kUaCb4peWukC9YZMXwTy%2B%2B8%3D&amp;code=1672792&amp;" class="leave">Open in Playground</a>
+          <a href="https://413a6fc579c3c59caf05450b503cc25f7f383222.mdnplay.dev/en-US/docs/Web/CSS/Reference/Values/filter-function/brightness/runner.html?state=3VRNb9QwEP0rlrlspW6MkCqkEHoogr0ggQri5Is39jouztjYs6uuqv53xknaZPkQ5cKBSzz2ezPzJjP2He%2Bw97zmTT5YloI3ryWHAEbySwmMNTvn0STmNJ1rlb4aeHEhOWuDD2ntgLAYvEIXYD1SMxHz9eZqClBCmDehjxQT8HNSkHcmTdAAvttDe83wGEtq78CoRAmyD8PB8%2BplySd%2B9Nj8tcfVUz0a8TvFhAw10qYR9MPKimrrzYhiZ5R%2BCIKLIrG7fO8Ohplb1UdvGkEHS%2FDTlw17%2B23vDspTyp%2FgD8lZB8oz1yu79CbzQdicu8Ft0MdfytCPNu1cb%2BcdY61XufSuzXnqpORLPKeW0A4x5lqIXkNlHXb7beWCyJ1KRq8pgMEsBpVZTMVmEVOwyVDYmJw2651XtrqJ9jS88vg4YUazgcoK9bSVYlHD0%2BqhNv0X9fwTvR%2F%2FKHM5ctOckTXdAX5exodek2qeInZX2KNdsy2NcodAalbl1p29knAvoZqbdErfJ7%2BS%2FNn88EwOErA7p48e6VFp7cDW7CLejgQKWEPAVZ1CwLORpV2OXh1rVt63kUaCb4peWukC9YZMXwTy%2B%2B8%3D&amp;code=c4adffd4-cee6-43ca-b038-a5d1365f27d0" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

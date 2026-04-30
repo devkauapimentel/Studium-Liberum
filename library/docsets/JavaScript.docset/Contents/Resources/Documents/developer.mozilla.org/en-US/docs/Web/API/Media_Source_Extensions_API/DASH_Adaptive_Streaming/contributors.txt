@@ -1,0 +1,21 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/media_source_extensions_api/dash_adaptive_streaming/index.md
+
+# Original Wiki contributors
+mfuji09
+Sidewinder53
+DeividasBakanas
+formatkaka
+chrysn
+LeroyScandal
+wbamberg
+jswisher
+wyrewolwerowany
+anotherkabab
+rogerxas
+teoli
+gmarty
+Kinetik
+kscarfone
+sworkman
+joshmoz

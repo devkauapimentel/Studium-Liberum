@@ -1,0 +1,10 @@
+
+@keyframes action { 
+  0%,20% { rotate: 45deg; }
+  80%,100% { rotate: 720deg; }
+}
+.scroller { width: 400px; height: 200px; line-height: 2; overflow: scroll; border: 1px solid; background-color: palegoldenrod; }
+.item { --size: 50px; height: var(--size); width: var(--size); background-color: magenta; border: 1px solid; left: calc(50% - (var(--size) / 2)); top: calc(50% - (var(--size) / 2)); }
+.item { animation-duration: 1ms; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: action; animation-range: initial; animation-timeline: view(); }
+
+button.copy {display:none !important}

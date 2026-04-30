@@ -1,0 +1,6 @@
+
+datalist { display: flex; flex-direction: column; justify-content: space-between; writing-mode: vertical-lr; width: 200px; }
+option { padding: 0px; }
+input[type="range"] { width: 200px; margin: 0px; }
+
+button.copy {display:none !important}

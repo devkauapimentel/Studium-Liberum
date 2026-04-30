@@ -1,0 +1,5 @@
+
+ol.normal { list-style-type: upper-alpha; }
+ol.shortcut { list-style: upper-alpha; }
+
+button.copy {display:none !important}

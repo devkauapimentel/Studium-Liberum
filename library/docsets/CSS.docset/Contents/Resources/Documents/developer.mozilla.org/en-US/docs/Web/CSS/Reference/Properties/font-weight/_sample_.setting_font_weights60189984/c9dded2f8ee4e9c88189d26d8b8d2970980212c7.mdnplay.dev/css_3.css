@@ -1,0 +1,6 @@
+
+p { font-weight: bold; }
+div { font-weight: 600; }
+span { font-weight: lighter; }
+
+button.copy {display:none !important}

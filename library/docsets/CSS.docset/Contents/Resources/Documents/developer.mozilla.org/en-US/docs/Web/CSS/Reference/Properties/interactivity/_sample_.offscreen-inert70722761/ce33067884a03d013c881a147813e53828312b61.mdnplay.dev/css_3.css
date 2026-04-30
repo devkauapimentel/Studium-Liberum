@@ -1,0 +1,13 @@
+
+* { box-sizing: border-box; }
+body { margin: 0px; font-family: Helvetica, Arial, sans-serif; }
+h1 { text-align: center; margin: 0px; }
+button { background-color: white; }
+ul { width: 100vw; height: 250px; padding: 1vw; overflow-x: scroll; display: flex; gap: 1vw; scroll-snap-type: x mandatory; }
+li { list-style-type: none; background-color: rgb(238, 238, 238); border: 1px solid rgb(221, 221, 221); padding: 20px; flex: 0 0 98vw; scroll-snap-align: center; view-timeline: --inner-change inline; animation-timeline: --inner-change; animation-name: inert-change; animation-fill-mode: both; }
+@keyframes inert-change { 
+  entry 0%,exit 100% { }
+  entry 1%,exit 99% { }
+}
+
+button.copy {display:none !important}

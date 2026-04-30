@@ -1,0 +1,6 @@
+
+@layer base {
+  .item { color: revert-layer; }
+}
+
+button.copy {display:none !important}

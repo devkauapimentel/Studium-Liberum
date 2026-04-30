@@ -1,0 +1,310 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/thread/async.html --><head><meta charset="utf-8"><title>Talk:cpp/thread/async</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_6625.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_thread_async skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fthread%2Fasync&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fthread%2Fasync" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/thread/async.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./async.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./async.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./async.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./async.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/thread/async</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../thread.html" title="Talk:cpp/thread">thread</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./async.html#Spawning_new_thread"><span class="tocnumber">1</span> <span class="toctext">Spawning new thread</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./async.html#It_looks_like_std::async_will_be_deprecated."><span class="tocnumber">2</span> <span class="toctext">It looks like std::async will be deprecated.</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./async.html#Requirements_on_arguments_to_async"><span class="tocnumber">3</span> <span class="toctext">Requirements on arguments to async</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./async.html#Deferred_destructor"><span class="tocnumber">4</span> <span class="toctext">Deferred destructor</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="./async.html#The_documentation_seems_self-contradictory_about_async.7Cdeferred"><span class="tocnumber">5</span> <span class="toctext">The documentation seems self-contradictory about async|deferred</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="./async.html#UB_in_future"><span class="tocnumber">6</span> <span class="toctext">UB in future</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;action=edit&amp;section=1" title="Edit section: Spawning new thread">edit</a>]</span> <span class="mw-headline" id="Spawning_new_thread"> Spawning new thread </span></h2>
+<p>I think it's wrong to say "async spawns a new thread" with std::launch::async. The specification doesn't mandate it:
+</p><p>"if policy &amp; launch::async is non-zero — calls ... <i>as if</i> in a new thread of execution represented by a thread object with the calls to DECAY_COPY() being evaluated in the
+thread that called async."
+</p><p>Weasel words mean function may run on a thread pool.
+</p><p>--<a href="https://en.cppreference.com/w/Special:Contributions/95.76.33.69" title="Special:Contributions/95.76.33.69">95.76.33.69</a> 02:10, 29 May 2013 (PDT)
+</p>
+<dl><dd> Good point, someone even implemented launch::async as a pool, as far as I remember. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> 05:59, 29 May 2013 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;action=edit&amp;section=2" title="Edit section: It looks like std::async will be deprecated.">edit</a>]</span> <span class="mw-headline" id="It_looks_like_std::async_will_be_deprecated."> It looks like std::async will be deprecated. </span></h2>
+<p>It looks like async is being deprecated according to this <a rel="nofollow" class="external text" href="http://isocpp.org/blog/2013/10/n3777">link</a>.  Maybe should mention it in the documentation.
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Mikehcox&amp;action=edit&amp;redlink=1" class="new" title="User:Mikehcox (page does not exist)">Mikehcox</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Mikehcox&amp;action=edit&amp;redlink=1" class="new" title="User talk:Mikehcox (page does not exist)">talk</a>) 16:31, 17 October 2013 (PDT)
+</p>
+<dl><dd>the link itself says it didn't pass. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 16:40, 17 October 2013 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;action=edit&amp;section=3" title="Edit section: Requirements on arguments to async">edit</a>]</span> <span class="mw-headline" id="Requirements_on_arguments_to_async"> Requirements on arguments to async </span></h2>
+<p>Per [futures.async] para 2, F and each Ti in Args shall satisfy MoveConstructible, which was not obvious to me from the semantics of async.
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Ruds&amp;action=edit&amp;redlink=1" class="new" title="User:Ruds (page does not exist)">Ruds</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Ruds&amp;action=edit&amp;redlink=1" class="new" title="User talk:Ruds (page does not exist)">talk</a>) 13:48, 11 May 2016 (PDT)
+</p>
+<dl><dd> Good catch, I've added type requirements for those types. --<a href="../../User%25253ANate.html" title="User:Nate">Nate</a> (<a href="../../User_talk%25253ANate.html" title="User talk:Nate">talk</a>) 19:55, 12 May 2016 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;action=edit&amp;section=4" title="Edit section: Deferred destructor">edit</a>]</span> <span class="mw-headline" id="Deferred_destructor"> Deferred destructor </span></h2>
+<p>Currently the description of the deferred flag says "the first call to a non-timed wait function on the <span class="t-lc"><a href="../../cpp/thread/future.html" title="cpp/thread/future">std::future</a></span> that <code>async</code> returned to the caller will cause the copy of <code>f</code> to be invoked". <a href="../../cpp/thread/future/~future.html" title="cpp/thread/future/~future"><code>~future</code></a> says that the destructor will block until the shared state becomes ready. Is there a defined behaviour for when a <span class="t-lc">future</span> is returned by <code>async</code> and destructed without <code>wait</code> being called? --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 06:51, 17 August 2017 (PDT)
+</p>
+<dl><dd> I believe the task just gets canceled (<a rel="nofollow" class="external text" href="http://sean-parent.stlab.cc/2017/07/10/future-ruminations.html#cancellation">Sean Parent mentions that here</a> too). Not sure how to derived it from the standard wording (the shared state is not ready when that destructor runs.. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 08:14, 17 August 2017 (PDT)
+<dl><dd> The blocking behavior is specified by [futures.async]/5.4, which doesn't apply to deferred. <a href="../../User%25253AT._Canens.html" title="User:T. Canens">T. Canens</a> (<a href="../../User_talk%25253AT._Canens.html" title="User talk:T. Canens">talk</a>) 09:29, 17 August 2017 (PDT)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;action=edit&amp;section=5" title="Edit section: The documentation seems self-contradictory about async|deferred">edit</a>]</span> <span class="mw-headline" id="The_documentation_seems_self-contradictory_about_async.7Cdeferred"> The documentation seems self-contradictory about async|deferred </span></h2>
+<p>It says:
+</p>
+<dl><dd> "If the async flag is set (i.e. (policy &amp; std::launch::async)&nbsp;!= 0), then async executes the callable object f on a new thread"
+</dd></dl>
+<p>That means that if both async and deferred are set then the "if" condition in the above sentence is true (async is set).  That means the docs say it will use a new thread.  There is no mention of the possibility of using deferred in this case.
+</p><p>The docs also say:
+</p>
+<dl><dd> "If both the std::launch::async and std::launch::deferred flags are set in policy, it is up to the implementation whether to perform asynchronous execution or lazy evaluation."
+</dd></dl>
+<p>That is saying that if both are set, it might not use async.  But the first sentence I quote says it will definitely use async in this case.
+</p><p>Which part of the documentation is incorrect?
+</p><p><a href="https://en.cppreference.com/mwiki/index.php?title=User:JacobBurckhardt&amp;action=edit&amp;redlink=1" class="new" title="User:JacobBurckhardt (page does not exist)">JacobBurckhardt</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:JacobBurckhardt&amp;action=edit&amp;redlink=1" class="new" title="User talk:JacobBurckhardt (page does not exist)">talk</a>) 17:13, 9 February 2022 (PST)
+</p>
+<dl><dd><dl><dd> comparing with the standard <a rel="nofollow" class="external free" href="https://eel.is/c++draft/futures.async#3">https://eel.is/c++draft/futures.async#3</a> , they say at first "if more than one of these conditions applies, the implementation may choose any of the corresponding policies", and then lists the three conditions: async set, deferred set, neither set. Let's see if I can reword it a bit (and add the new detail about the "both" case)  --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 19:51, 9 February 2022 (PST)
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> It seems like the standard has the same contradiction that cppreference.com has.  I.e. the standard says "If launch​::​async is set in policy" which applies even when deferred is also set.  I recommend changing that to say "if the launch policy equals std::launch::async" since that phrase means that deferred is not set.  My suggested change is consistent with both <a rel="nofollow" class="external free" href="https://www.cplusplus.com/reference/future/async/">https://www.cplusplus.com/reference/future/async/</a> and the exceptions section of <a rel="nofollow" class="external free" href="../../cpp/thread/async.html">https://en.cppreference.com/w/cpp/thread/async</a> which uses the phrase "equals" instead of something like "flag is set". <a href="https://en.cppreference.com/mwiki/index.php?title=User:JacobBurckhardt&amp;action=edit&amp;redlink=1" class="new" title="User:JacobBurckhardt (page does not exist)">JacobBurckhardt</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:JacobBurckhardt&amp;action=edit&amp;redlink=1" class="new" title="User talk:JacobBurckhardt (page does not exist)">talk</a>) 13:25, 10 February 2022 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<p><br>
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;action=edit&amp;section=6" title="Edit section: UB in future">edit</a>]</span> <span class="mw-headline" id="UB_in_future"> UB in future </span></h2>
+<p>Could anyone add statements about what Stroustrup wrote: "It is undefined what happens if you try to get() twice. In fact, it is undefined what happens if you try to do any operation except a first get(), a valid(), or a destructor on a future that is not valid(). "&nbsp;?
+November 2022
+</p>
+<dl><dd> Those details should be - and are - mentioned in the subpages of <span class="t-lc"><a href="../../cpp/thread/future.html" title="cpp/thread/future">std::future</a></span> --<a href="../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 13:27, 17 November 2022 (PST)
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 95/1000000
+Preprocessor generated node count: 276/1000000
+Post‐expand include size: 340/4194304 bytes
+Template argument size: 50/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:10136-0!*!0!!en!*!* and timestamp 20240518074241 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;oldid=145127">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;oldid=145127</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./async.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/thread/async" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/thread/async" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;oldid=145127" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/thread/async&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 17 November 2022, at 14:27.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 9,962 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.090 secs. -->
+	
+
+
+</body></html>

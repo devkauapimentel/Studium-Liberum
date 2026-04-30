@@ -1,0 +1,12 @@
+
+@font-face { font-family: "Plex Serif"; font-weight: normal; font-style: normal; font-width: normal; src: url("../mdn.github.io/shared-assets/fonts/plex/IBMPlexSerif-Regular.woff") format("woff"), url("../mdn.github.io/shared-assets/fonts/plex/IBMPlexSerif-Regular.woff2") format("woff2"); }
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: normal; font-family: "Plex Serif", "Times New Roman", serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; margin: 1rem; }
+fieldset { margin-bottom: 1rem; }
+label { }
+.container > p { font-size: 4rem; margin: 1.5rem 0px; }
+.container1 * { font-kerning: normal; }
+.inactive.container1 * { font-kerning: none; }
+.container2 * { font-feature-settings: "kern"; }
+.inactive.container2 * { font-feature-settings: "kern" 0; }
+
+button.copy {display:none !important}

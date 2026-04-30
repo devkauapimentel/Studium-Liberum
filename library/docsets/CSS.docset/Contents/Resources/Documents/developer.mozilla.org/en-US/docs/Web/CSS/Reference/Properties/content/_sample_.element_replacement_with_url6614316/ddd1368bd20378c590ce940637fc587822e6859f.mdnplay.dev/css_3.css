@@ -1,0 +1,5 @@
+
+#replaced { content: url("./en-US/docs/Web/CSS/Reference/Properties/content/mdn.svg"); }
+div::after { content: " (" attr(id) ")"; }
+
+button.copy {display:none !important}

@@ -1,0 +1,13 @@
+
+div { width: 180px; height: 180px; background-image: linear-gradient(red, blue); mask-image: url("./shared-assets/images/examples/mask-star.svg"); mask-size: 50px 50px; -webkit-mask-position-x: right; -webkit-mask-position-y: bottom; }
+.repeat div { mask-repeat: repeat; }
+.space div { mask-repeat: space; }
+.round div { mask-repeat: round; }
+.no-repeat div { mask-repeat: no-repeat; }
+.repeat-x div { mask-repeat: repeat-x; }
+.repeat-y div { mask-repeat: repeat-y; }
+section::before { content: attr(class); display: block; text-align: center; border-bottom: 1px solid; }
+body { display: flex; flex-flow: wrap; gap: 10px; }
+section { border: 1px solid; }
+
+button.copy {display:none !important}

@@ -1,0 +1,9 @@
+
+html { font-family: sans-serif; height: 100%; }
+body { height: inherit; display: flex; flex-direction: column; justify-content: center; gap: 100px; }
+p { margin: 0px; font-size: 6rem; font-weight: bold; }
+p { text-box-trim: trim-both; border-top: 5px solid magenta; border-bottom: 5px solid magenta; }
+.one { text-box-edge: cap alphabetic; }
+.two { text-box-edge: ex alphabetic; }
+
+button.copy {display:none !important}

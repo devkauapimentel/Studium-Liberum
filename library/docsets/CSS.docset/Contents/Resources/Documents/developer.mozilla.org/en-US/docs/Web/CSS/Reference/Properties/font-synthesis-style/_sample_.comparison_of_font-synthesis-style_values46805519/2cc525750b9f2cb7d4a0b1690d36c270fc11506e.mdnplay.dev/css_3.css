@@ -1,0 +1,22 @@
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf") format('truetype');
+}
+
+p { font-family: Montserrat, sans-serif; font-size: 1.2rem; }
+@supports not (font-synthesis-style: oblique-only) {
+  body::before { content: "Your browser doesn't support the 'oblique-only' value."; background-color: rgb(255, 205, 51); display: block; width: 100%; text-align: center; }
+}
+.fss-none { font-synthesis-style: none; }
+.fss-auto { font-synthesis-style: auto; }
+.fss-oblique-only { }
+.oblique { font-style: oblique; }
+.italic { font-style: italic; }
+.oblique::after { content: " (font-style: oblique)"; font-size: 0.8rem; vertical-align: sub; }
+.italic::after { content: " (font-style: italic)"; font-size: 0.8rem; vertical-align: sub; }
+
+button.copy {display:none !important}

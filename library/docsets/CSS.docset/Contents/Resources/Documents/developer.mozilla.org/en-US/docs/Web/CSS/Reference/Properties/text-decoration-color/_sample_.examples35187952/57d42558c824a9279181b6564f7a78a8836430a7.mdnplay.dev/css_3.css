@@ -1,0 +1,5 @@
+
+p { text-decoration-line: underline; text-decoration-color: cyan; }
+s { text-decoration-line: line-through; text-decoration-color: red; text-decoration-style: wavy; }
+
+button.copy {display:none !important}

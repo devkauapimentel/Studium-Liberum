@@ -1,0 +1,6 @@
+
+table { border-collapse: collapse; border: 1px solid black; width: 250px; height: 150px; }
+td { border: 1px solid black; text-align: center; }
+.nw { white-space: nowrap; }
+
+button.copy {display:none !important}

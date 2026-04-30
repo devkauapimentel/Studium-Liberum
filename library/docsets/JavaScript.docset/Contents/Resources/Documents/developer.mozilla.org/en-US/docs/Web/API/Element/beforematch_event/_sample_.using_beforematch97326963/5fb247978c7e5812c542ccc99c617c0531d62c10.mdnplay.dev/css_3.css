@@ -1,0 +1,5 @@
+
+div { height: 40px; width: 300px; border: 5px dashed black; margin: 1rem 0px; padding: 1rem; font-size: 2rem; }
+div#until-found-box { color: red; border: 5px dotted red; background-color: lightgray; }
+
+button.copy {display:none !important}

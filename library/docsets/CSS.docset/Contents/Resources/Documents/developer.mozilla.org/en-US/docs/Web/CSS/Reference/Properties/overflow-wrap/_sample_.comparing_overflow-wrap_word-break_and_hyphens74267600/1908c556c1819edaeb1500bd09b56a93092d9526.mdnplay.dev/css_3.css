@@ -1,0 +1,8 @@
+
+p { width: 13em; margin: 2px; background: gold; }
+.ow-anywhere { overflow-wrap: anywhere; }
+.ow-break-word { overflow-wrap: break-word; }
+.word-break { word-break: break-all; }
+.hyphens { hyphens: auto; }
+
+button.copy {display:none !important}

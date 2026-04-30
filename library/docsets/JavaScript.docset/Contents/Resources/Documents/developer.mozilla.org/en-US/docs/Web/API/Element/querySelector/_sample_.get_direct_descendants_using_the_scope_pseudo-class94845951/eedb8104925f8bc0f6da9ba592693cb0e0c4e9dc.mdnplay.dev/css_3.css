@@ -1,0 +1,5 @@
+
+span { display: block; margin-bottom: 5px; }
+.red span { background-color: red; padding: 5px; }
+
+button.copy {display:none !important}

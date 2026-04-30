@@ -1,0 +1,6 @@
+
+.prompt { color: rgb(187, 0, 0); }
+samp > kbd { font-weight: bold; }
+.cursor { color: rgb(0, 0, 187); }
+
+button.copy {display:none !important}

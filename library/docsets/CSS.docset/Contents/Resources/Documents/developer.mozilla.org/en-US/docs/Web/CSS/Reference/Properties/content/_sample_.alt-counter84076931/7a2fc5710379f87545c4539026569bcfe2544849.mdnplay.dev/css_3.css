@@ -1,0 +1,6 @@
+
+ol { counter-reset: chapter 0; }
+li { counter-increment: chapter 1; list-style-type: none; }
+a::before { }
+
+button.copy {display:none !important}

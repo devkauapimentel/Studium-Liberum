@@ -1,0 +1,18 @@
+
+.animatedElement { background-color: deeppink; animation-duration: 1ms; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: appear; animation-range: initial exit 25%; animation-timeline: view(); }
+@keyframes appear { 
+  0% { background-color: rebeccapurple; opacity: 0; transform: scaleX(0); }
+  100% { background-color: darkturquoise; opacity: 0.75; transform: scaleX(0.75); }
+}
+:has(:checked) .animatedElement { animation-fill-mode: forwards; }
+.animatedElement { width: 300px; height: 200px; margin: 0px auto; background-color: deeppink; }
+:has(:checked) .animatedElement { animation-fill-mode: both; }
+.content { width: 75%; max-width: 800px; margin: 0px auto; }
+p, h1 { font-family: Helvetica, Arial, sans-serif; }
+h1 { font-size: 3rem; }
+p { font-size: 1.5rem; line-height: 1.5; }
+@supports not (animation-range-end: normal) {
+  body::before { content: "Your browser does not support the 'animation-range-end' property."; color: black; background-color: wheat; display: block; text-align: center; padding: 1rem 0px; }
+}
+
+button.copy {display:none !important}

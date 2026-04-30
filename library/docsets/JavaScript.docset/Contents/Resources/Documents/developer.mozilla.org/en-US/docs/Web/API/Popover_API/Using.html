@@ -1,0 +1,1119 @@
+<html><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:02:37 GMT --><head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Using the Popover API</title>
+          
+          <script>try {
+  document.documentElement.dataset.theme =
+    localStorage.getItem("theme") || "light dark";
+} catch (error) {
+  console.warn("Unable to set theme", error);
+}
+
+try {
+  if (localStorage.getItem("nop") === "yes") {
+    document.documentElement.dataset["nop"] = "yes";
+  }
+} catch (error) {
+  console.warn("Unable to set nop", error);
+}
+</script>
+          <link rel="stylesheet" href="../../../../../static/client/styles-global.03146ed4c65bc5ea.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/270.66bae6059a1c23f9.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-layout.632d2f3884f10ca3.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-content-section.2ee991ba88f986cf.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-heading-anchor.0eec5185ab9425b7.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-toc.9b9bd019efd16b86.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-article-footer.81ae18c89fc527dc.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-left-sidebar.6f954e8939555f77.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-page-layout.5a4354f33e894319.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-a11y-menu.5796ee87cb69f93f.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-navigation.3a34ee593a554c40.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-logo.aea5ff6edf1b9cfb.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-menu.3376b3e11656fba0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs-bar.9a51a3c76a6231d0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs.d06ce8d09f42feb8.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-footer.a2850e459e2d290b.css" fetchpriority="high">
+          <link rel="preload" href="../../../../../static/client/jetbrains-mono-latin.119994ed445212c7.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low"><link rel="preload" href="../../../../../static/client/inter-latin.9a3b1bc220d426ef.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+          <script data-cfasync="false" data-report-only="on" data-prompt="0" src="../../../../../../transcend-cdn.com/cm/d556c3a1-e57c-4bdf-a490-390a1aebf6dd/airgap.js"></script>
+          <script src="../../../../../static/client/runtime.c294a6bdc7a42570.js" type="module"></script><script src="../../../../../static/client/1111.53dba753dc3eb961.js" type="module"></script><script src="../../../../../static/client/8903.f870aafb338b203a.js" type="module"></script><script src="../../../../../static/client/index.9a449352d879bbd5.js" type="module"></script>
+          
+    <link rel="icon" sizes="32x32" href="../../../../../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../../../../../favicon.svg">
+   <meta name="description" content="The Popover API provides developers with a standard, consistent, flexible mechanism for displaying popover content on top of other page content. Popover content can be controlled either declaratively using HTML attributes, or via JavaScript. This article provides a detailed guide to using all of its features."><meta name="og:url" content="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using"><meta name="og:title" content="Using the Popover API - Web APIs | MDN"><meta name="og:locale" content="en_US"><meta name="og:description" content="The Popover API provides developers with a standard, consistent, flexible mechanism for displaying popover content on top of other page content. Popover content can be controlled either declaratively using HTML attributes, or via JavaScript. This article provides a detailed guide to using all of its features."><meta name="og:image" content="https://developer.mozilla.org/mdn-social-image.46ac2375.png"><meta name="og:image:type" content="image/png"><meta name="og:image:height" content="1024"><meta name="og:image:width" content="1024"><meta name="og:image:alt" content="The MDN logo"><meta name="og:site_name" content="MDN Web Docs"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="MozDevNet">
+          <link rel="canonical" href="Using.html">
+          <link rel="apple-touch-icon" href="../../../../../apple-touch-icon.png">
+          <link rel="manifest" href="../../../../../manifest.json">
+          <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/opensearch.xml" title="MDN Web Docs">
+          <link rel="alternate" type="application/rss+xml" title="MDN Blog RSS Feed" href="https://developer.mozilla.org/en-US/blog/rss.xml">
+        </head>
+        
+      <body class="page-layout">
+        <ul class="a11y-menu">
+      <li>
+        <a href="#content">Skip to main content</a>
+      </li>
+      <li>
+        <a href="#search">Skip to search</a>
+      </li>
+    </ul>
+        <div class="page-layout__banner" data-scheme="">
+          <mdn-placement-top></mdn-placement-top>
+        </div>
+        <header class="page-layout__header">
+          
+      <nav class="navigation" data-scheme="" data-open="false">
+        <div class="navigation__logo">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">
+        <svg class="logo__image" width="83" height="24" viewBox="0 0 83 24" role="img">
+          <title>MDN</title>
+          <path class="logo__letter" d="M9.4 0 2.81 21.17H.12L6.69 0H9.4Zm2.38 0v21.17H9.4V0h2.4Zm9.27 0-6.56 21.17H11.8L18.36 0h2.69Zm2.39 0v21.17h-2.4V0h2.4Z"></path>
+          <path class="logo__text" d="M45.55 16.83h-3.93v-1.27h.87v-3.63c0-.85-.16-1.45-.48-1.82a1.65 1.65 0 0 0-1.3-.52c-.74 0-1.3.25-1.66.78a2.98 2.98 0 0 0-.58 1.58v3.59h1.38v1.26h-3.93v-1.26h.87v-3.6c0-.88-.16-1.48-.48-1.83a1.7 1.7 0 0 0-1.29-.52 1.93 1.93 0 0 0-1.65.75 2.85 2.85 0 0 0-.58 1.6v3.62h1.59v1.27h-4.64v-1.27h1.37V9.75h-1.4V8.46h3.08v1.47c.28-.48.62-.87 1.08-1.2a3 3 0 0 1 1.68-.45c.67 0 1.22.16 1.73.48.5.32.85.8 1.03 1.47.25-.57.62-1.03 1.13-1.4.5-.37 1.1-.55 1.81-.55.8 0 1.5.25 2.05.75.55.51.85 1.3.85 2.35v4.18h1.4v1.27Zm9.77 0H52.3v-1.66c-.27.51-.66.95-1.13 1.29-.56.4-1.23.59-1.9.55-1.11 0-2-.37-2.67-1.12a4.41 4.41 0 0 1-1-3.06c0-1.15.3-2.2.93-3.15.6-.94 1.58-1.43 2.94-1.43 1.36 0 2.25.5 2.83 1.5V5.22h-2V3.93h3.63v11.63h1.38v1.27Zm-3.06-3.86v-1.02a2.28 2.28 0 0 0-.73-1.67 2.4 2.4 0 0 0-1.66-.65 2.18 2.18 0 0 0-1.88.9 3.63 3.63 0 0 0-.65 2.2c0 .95.23 1.68.7 2.19.45.5 1.03.76 1.7.76.73 0 1.33-.3 1.79-.88.48-.6.71-1.21.73-1.83Zm14.14 3.86h-4.43v-1.27h1.37v-3.63c0-.85-.16-1.45-.5-1.82a1.68 1.68 0 0 0-1.31-.52c-.71 0-1.29.23-1.7.69a2.52 2.52 0 0 0-.67 1.6v3.66h1.38v1.26H56.1v-1.26h1.38v-5.8h-1.42V8.47h3.12V9.9c.6-1.06 1.57-1.6 2.92-1.6.83 0 1.54.26 2.12.77.57.5.85 1.28.85 2.34v4.19h1.38v1.24h-.05Z"></path>
+          <path class="logo__cursor" d="M67.71 21.98H83V24H67.71v-2.02Z"></path>
+        </svg>
+      </a>
+    </div>
+        <div class="navigation__search" data-view="mobile">
+          <mdn-search-button></mdn-search-button>
+        </div>
+        <button class="navigation__button" type="button" aria-expanded="false" aria-controls="navigation__popup" aria-label="Toggle navigation"></button>
+        <div class="navigation__popup" id="navigation__popup">
+          <div class="navigation__menu">
+      <nav class="menu">
+        <div class="menu__tab" data-section="html">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">HTML</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" data-glean-id="menu_click_menu: html -&gt; /en-US/docs/Web/HTML">HTML: Markup language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>HTML reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Elements">Elements</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Global_attributes">Global attributes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Attributes">Attributes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference" aria-label="See all HTML references" title="See all HTML references" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>HTML guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Responsive_images">Responsive images</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Cheatsheet" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Cheatsheet">HTML cheatsheet</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Date_and_time_formats" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Date_and_time_formats">Date &amp; time formats</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides" aria-label="See all HTML guides" title="See all HTML guides" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Markup languages</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/SVG">SVG</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/MathML">MathML</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/XML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/XML">XML</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="css">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">CSS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" data-glean-id="menu_click_menu: css -&gt; /en-US/docs/Web/CSS">CSS: Styling language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>CSS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Properties">Properties</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Selectors">Selectors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/At-rules">At-rules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Values">Values</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" aria-label="See all CSS references" title="See all CSS references" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>CSS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Box_model/Introduction">Box model</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Animations/Using">Animations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Flexbox</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Applying_color" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Colors/Applying_color">Colors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides" aria-label="See all CSS guides" title="See all CSS guides" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Layout cookbook</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts">Column layouts</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element">Centering an element</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Card" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Card">Card component</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="javascript">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label" data-type="long">JavaScript</span><span class="menu__tab-label" data-type="short">JS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" data-glean-id="menu_click_menu: javascript -&gt; /en-US/docs/Web/JavaScript">JavaScript: Scripting language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>JS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../JavaScript/Reference/Global_Objects.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects</a>
+                              </li><li>
+                                <a href="../../JavaScript/Reference/Operators.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a>
+                              </li><li>
+                                <a href="../../JavaScript/Reference/Statements.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Statements">Statements &amp; declarations</a>
+                              </li><li>
+                                <a href="../../JavaScript/Reference/Functions.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Functions">Functions</a>
+                              </li><li>
+                                <a href="../../JavaScript/Reference.html" aria-label="See all JavaScript references" title="See all JavaScript references" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>JS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../JavaScript/Guide/Control_flow_and_error_handling.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow &amp; error handing</a>
+                              </li><li>
+                                <a href="../../JavaScript/Guide/Loops_and_iteration.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops and iteration</a>
+                              </li><li>
+                                <a href="../../JavaScript/Guide/Working_with_objects.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Working_with_objects">Working with objects</a>
+                              </li><li>
+                                <a href="../../JavaScript/Guide/Using_classes.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Using_classes">Using classes</a>
+                              </li><li>
+                                <a href="../../JavaScript/Guide.html" aria-label="See all JavaScript guides" title="See all JavaScript guides" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="webapis">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Web APIs</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="../../API.html" data-glean-id="menu_click_menu: webapis -&gt; /en-US/docs/Web/API">Web APIs: Programming interfaces</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Web API reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../File_System_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/File_System_API">File system API</a>
+                              </li><li>
+                                <a href="../Fetch_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API">Fetch API</a>
+                              </li><li>
+                                <a href="../Geolocation_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Geolocation_API">Geolocation API</a>
+                              </li><li>
+                                <a href="../HTML_DOM_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/HTML_DOM_API">HTML DOM API</a>
+                              </li><li>
+                                <a href="../Push_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Push_API">Push API</a>
+                              </li><li>
+                                <a href="../Service_Worker_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Service_Worker_API">Service worker API</a>
+                              </li><li>
+                                <a href="../../API.html" aria-label="See all Web API guides" title="See all Web API guides" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Web API guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../Web_Animations_API/Using_the_Web_Animations_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API">Using the Web animation API</a>
+                              </li><li>
+                                <a href="../Fetch_API/Using_Fetch.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API/Using_Fetch">Using the Fetch API</a>
+                              </li><li>
+                                <a href="../History_API/Working_with_the_History_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/History_API/Working_with_the_History_API">Working with the History API</a>
+                              </li><li>
+                                <a href="../Web_Speech_API/Using_the_Web_Speech_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Using the Web speech API</a>
+                              </li><li>
+                                <a href="../Web_Workers_API/Using_web_workers.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using web workers</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="all">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">All</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web" data-glean-id="menu_click_menu: all -&gt; /en-US/docs/Web">All web technology</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Technologies</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Accessibility">Accessibility</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/HTTP">HTTP</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/URI" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/URI">URI</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Mozilla/Add-ons/WebExtensions">Web extensions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/WebAssembly">WebAssembly</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/WebDriver">WebDriver</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web" aria-label="See all web technology references" title="See all web technology references" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Topics</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Media" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Media">Media</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Performance">Performance</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Privacy" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Privacy">Privacy</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Security">Security</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Progressive_web_apps">Progressive web apps</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="learn">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Learn</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" data-glean-id="menu_click_menu: learn -&gt; /en-US/docs/Learn_web_development">Learn web development</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Frontend developer course</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Getting_started">Getting started modules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core">Core modules</a>
+                              </li><li>
+                                <a class="" href="https://developer.mozilla.org/en-US/curriculum/" data-glean-id="menu_click_submenu: learn -&gt; /en-US/curriculum/">MDN Curriculum</a>
+                              </li><li>
+                                <a class="external" href="https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar" data-glean-id="menu_click_submenu: learn -&gt; https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar">Check out the video course from Scrimba, our partner</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn HTML</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn CSS</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics module</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn JavaScript</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript module</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="tools">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Tools</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Discover our tools
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="circle-play" href="https://developer.mozilla.org/en-US/play" data-glean-id="menu_click_submenu: tools -&gt; /en-US/play">Playground</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="shield-check" href="https://developer.mozilla.org/en-US/observatory" data-glean-id="menu_click_submenu: tools -&gt; /en-US/observatory">HTTP Observatory</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator">Border-image generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator">Border-radius generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator">Box-shadow generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_format_converter" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_format_converter">Color format converter</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_mixer" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_mixer">Color mixer</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes/Shape_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Shapes/Shape_generator">Shape generator</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="about">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">About</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Get to know MDN better
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="mdn-m" href="https://developer.mozilla.org/en-US/about" data-glean-id="menu_click_submenu: about -&gt; /en-US/about">About MDN</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="chart-no-axes-combined" href="https://developer.mozilla.org/en-US/advertising" data-glean-id="menu_click_submenu: about -&gt; /en-US/advertising">Advertise with us</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="users" href="https://developer.mozilla.org/en-US/community" data-glean-id="menu_click_submenu: about -&gt; /en-US/community">Community</a>
+                              </li><li>
+                                <a class="menu__panel-icon external" data-icon="github" href="https://github.com/mdn" data-glean-id="menu_click_submenu: about -&gt; https://github.com/mdn">MDN on GitHub</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="blog">
+            <a class="menu__tab-link" href="https://developer.mozilla.org/en-US/blog/" data-glean-id="menu_click_link: top-level -&gt; /en-US/blog/">Blog</a>
+          </div>
+      </nav>
+    </div>
+          <div class="navigation__search" data-view="desktop">
+            <mdn-search-button></mdn-search-button>
+          </div>
+          <mdn-user-menu></mdn-user-menu>
+        </div>
+      </nav>
+      <mdn-search-modal id="search"></mdn-search-modal>
+     
+      
+    
+        </header>
+        <div class="page-layout__main">
+      <div class="breadcrumbs-bar" data-scheme="">
+        <mdn-toggle-sidebar></mdn-toggle-sidebar> 
+      <ol class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+        
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web" property="item" typeof="WebPage"><span property="name">Web</span></a>
+              <meta property="position" content="1">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../../API.html" property="item" typeof="WebPage"><span property="name">Web APIs</span></a>
+              <meta property="position" content="2">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../Popover_API.html" property="item" typeof="WebPage"><span property="name">Popover API</span></a>
+              <meta property="position" content="3">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="Using.html" property="item" typeof="WebPage"><span property="name">Using the Popover API</span></a>
+              <meta property="position" content="4">
+            </li>
+          
+      </ol>
+    
+        <mdn-collection-save-button doc-url="/en-US/docs/Web/API/Popover_API/Using" doc-title="Using the Popover API"></mdn-collection-save-button>
+        <mdn-color-theme></mdn-color-theme>
+        <mdn-language-switcher locale="en-US" native="English (US)" translations="[{&quot;locale&quot;:&quot;en-US&quot;,&quot;title&quot;:&quot;Using the Popover API&quot;,&quot;native&quot;:&quot;English (US)&quot;},{&quot;locale&quot;:&quot;de&quot;,&quot;title&quot;:&quot;Verwendung der Popover-API&quot;,&quot;native&quot;:&quot;Deutsch&quot;},{&quot;locale&quot;:&quot;fr&quot;,&quot;title&quot;:&quot;Utilisation de l'API Popover&quot;,&quot;native&quot;:&quot;Français&quot;},{&quot;locale&quot;:&quot;ja&quot;,&quot;title&quot;:&quot;ポップオーバー API の使用&quot;,&quot;native&quot;:&quot;日本語&quot;}]" url="Using.html"></mdn-language-switcher>
+      </div><div class="layout__2-sidebars-inline reference-layout">
+        <main id="content" class="layout__content">
+          <div class="layout__header reference-layout__header">
+            
+            
+            <mdn-survey></mdn-survey>
+            <h1>Using the Popover API</h1>
+             <section class="content-section">
+    
+    <p>The <strong>Popover API</strong> provides developers with a standard, consistent, flexible mechanism for displaying popover content on top of other page content. Popover content can be controlled either declaratively using HTML attributes, or via JavaScript. This article provides a detailed guide to using all of its features.</p>
+  </section>
+          </div>
+          <aside class="layout__right-sidebar reference-layout__toc">
+            <nav class="reference-toc">
+      <h2>In this article</h2>
+      <ul>
+        <li><a href="#creating_declarative_popovers">Creating declarative popovers</a></li><li><a href="#auto_state_and_light_dismiss">auto state, and "light dismiss"</a></li><li><a href="#popover_accessibility_features">Popover accessibility features</a></li><li><a href="#other_ways_to_set_up_a_popover-invoker_relationship">Other ways to set up a popover-invoker relationship</a></li><li><a href="#using_manual_popover_state">Using manual popover state</a></li><li><a href="#the_beforetoggle_and_toggle_events">The <code>beforetoggle</code> and <code>toggle</code> events</a></li><li><a href="#showing_popovers_via_javascript">Showing popovers via JavaScript</a></li><li><a href="#nested_popovers">Nested popovers</a></li><li><a href="#using_hint_popover_state">Using "hint" popover state</a></li><li><a href="#styling_popovers">Styling popovers</a></li><li><a href="#animating_popovers">Animating popovers</a></li><li><a href="#see_also">See also</a></li>
+      </ul>
+    </nav>
+            <mdn-placement-sidebar></mdn-placement-sidebar>
+          </aside>
+          <div class="layout__body reference-layout__body">
+            <section class="content-section" aria-labelledby="creating_declarative_popovers">
+    <!--lit-part S0siO8lWJXY=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Creating%20declarative%20popovers"></a><h2 id="creating_declarative_popovers" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#creating_declarative_popovers">Creating declarative popovers</a></h2><!--/lit-part-->
+    <p>In its simplest form, a popover is created by adding the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover"><code>popover</code></a> attribute to the element that you want to contain your popover content. An <code>id</code> is also needed to associate the popover with its controls.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;div id="mypopover" popover&gt;Popover content&lt;/div&gt;
+</code></pre></div>
+<div class="notecard note">
+<p><strong>Note:</strong>
+Setting the <code>popover</code> attribute with no value is equivalent to setting <code>popover="auto"</code>.</p>
+</div>
+<p>Adding this attribute causes the element to be hidden on page load by having <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display"><code>display: none</code></a> set on it. To show/hide the popover, you need to add at least one control button (also know as the popover <strong>invoker</strong>). You can set a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button"><code>&lt;button&gt;</code></a> (or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"><code>&lt;input&gt;</code></a> of <code>type="button"</code>) as a popover control button by giving it a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget"><code>popovertarget</code></a> attribute, the value of which should be the ID of the popover to control:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;button popovertarget="mypopover"&gt;Toggle the popover&lt;/button&gt;
+&lt;div id="mypopover" popover&gt;Popover content&lt;/div&gt;
+</code></pre></div>
+<p>The default behavior is for the button to be a toggle button — pressing it repeatedly will toggle the popover between showing and hidden.</p>
+<p>If you want to change that behavior, you can use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction"><code>popovertargetaction</code></a> attribute — this takes a value of <code>"hide"</code>, <code>"show"</code>, or <code>"toggle"</code>. For example, to create separate show and hide buttons, you could do this:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;button popovertarget="mypopover" popovertargetaction="show"&gt;
+  Show popover
+&lt;/button&gt;
+&lt;button popovertarget="mypopover" popovertargetaction="hide"&gt;
+  Hide popover
+&lt;/button&gt;
+&lt;div id="mypopover" popover&gt;Popover content&lt;/div&gt;
+</code></pre></div>
+<p>You can see how the previous code snippet renders in our <a href="../../../../../../mdn.github.io/dom-examples/popover-api/basic-declarative/index.html" class="external" target="_blank">Basic declarative popover example</a> (<a href="https://github.com/mdn/dom-examples/tree/main/popover-api/basic-declarative" class="external" target="_blank">source</a>).</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+If the <code>popovertargetaction</code> attribute is omitted, <code>"toggle"</code> is the default action that will be performed by a control button.</p>
+</div>
+<p>When a popover is shown, it has <code>display: none</code> removed from it and it is put into the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Top_layer">top layer</a> so it will sit on top of all other page content.</p>
+  </section><section class="content-section" aria-labelledby="command_and_commandfor">
+    <!--lit-part kKMXUwNNFwA=--><!--lit-node 0--><h3 id="command_and_commandfor" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#command_and_commandfor"><code>command</code> and <code>commandfor</code></a></h3><!--/lit-part-->
+    <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#commandfor"><code>commandfor</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#command"><code>command</code></a> attributes provide very similar functionality to <code>popovertarget</code> and <code>popovertargetaction</code>, but with a more general design aimed at providing other functionality beyond popover commands, including custom commands.</p>
+<p>The previous code snippet could be rewritten like this:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html live-sample___command-commandfor notranslate live-sample---command-commandfor"><code>&lt;button commandfor="mypopover" command="show-popover"&gt;Show popover&lt;/button&gt;
+&lt;button commandfor="mypopover" command="hide-popover"&gt;Hide popover&lt;/button&gt;
+&lt;div id="mypopover" popover&gt;Popover content&lt;/div&gt;
+</code></pre></div>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="command-commandfor sample" id="frame_command-commandfor" width="100%" height="100" src="Using/_sample_.command-commandfor1527031/68fa33823260e2d5666cacc294a9f17b27ad5a8c.mdnplay.dev/en-US/docs/Web/API/Popover_API/Using/runner.html-_-uuid=68fa33823260e2d5666cacc294a9f17b27ad5a8c&amp;state=lY9BC8IwDIX%25252FSslZ2V26nj0KXnvRNdrKmow1Tob43w2siogXT%25252B%25252B9vOSD3CFK7mED9ngVYTId53ygcOKx9ZDngQeecPTwKnRaIt%25252FW78LtNZoabbNgnKc%25252F.html" data-live-path="/en-US/docs/Web/API/Popover_API/Using/" data-live-id="command-commandfor" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+  </section><section class="content-section" aria-labelledby="auto_state_and_light_dismiss">
+    <!--lit-part UkgSQ+peQrs=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/auto%20state%2C%20and%20%22light%20dismiss%22"></a><h2 id="auto_state_and_light_dismiss" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#auto_state_and_light_dismiss">auto state, and "light dismiss"</a></h2><!--/lit-part-->
+    <p>When a popover element is set with <code>popover</code> or <code>popover="auto"</code> as shown above, it is said to have <strong>auto state</strong>. The two important behaviors to note about auto state are:</p>
+<ul>
+<li>The popover can be "light dismissed" — this means that you can hide the popover by clicking outside it.</li>
+<li>The popover can also be closed, using browser-specific mechanisms such as pressing the <kbd>Esc</kbd> key.</li>
+<li>Usually, only one <code>auto</code> popover can be shown at a time — showing a second popover when one is already shown will hide the first one. The exception to this rule is when you have nested auto popovers. See the <a href="#nested_popovers">Nested popovers</a> section for more details.</li>
+</ul>
+<div class="notecard note">
+<p><strong>Note:</strong>
+<code>popover="auto"</code> popovers are also dismissed by successful <a href="../HTMLDialogElement/showModal.html"><code>HTMLDialogElement.showModal()</code></a> and <a href="../Element/requestFullscreen.html"><code>Element.requestFullscreen()</code></a> calls on other elements in the document. Bear in mind however that calling these methods on a shown popover will result in failure because those behaviors don't make sense on an already-shown popover. You can however call them on an element with the <code>popover</code> attribute that isn't currently being shown.</p>
+</div>
+<p>Auto state is useful when you only want to show a single popover at once. Perhaps you have multiple teaching UI messages that you want to show, but don't want the display to start getting cluttered and confusing, or perhaps you are showing status messages where the new status overrides any previous status.</p>
+<p>You can see the behavior described above in action in our <a href="../../../../../../mdn.github.io/dom-examples/popover-api/multiple-auto/index.html" class="external" target="_blank">Multiple auto popovers example</a> (<a href="https://github.com/mdn/dom-examples/tree/main/popover-api/multiple-auto" class="external" target="_blank">source</a>). Try light dismissing the popovers after they are shown, and see what happens when you try to show both at the same time.</p>
+  </section><section class="content-section" aria-labelledby="popover_accessibility_features">
+    <!--lit-part UcSxpHqNU6Q=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Popover%20accessibility%20features"></a><h2 id="popover_accessibility_features" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#popover_accessibility_features">Popover accessibility features</a></h2><!--/lit-part-->
+    <p>When a relationship is established between a popover and its control (invoker) via the <code>popovertarget</code> attribute, the API automatically makes two other changes to the environment to allow keyboard and assistive technology (AT) users to more easily interact with the popover:</p>
+<ul>
+<li>When the popover is shown, the keyboard focus navigation order is updated so that the popover is next in the sequence: for example, when a button is pressed to show a popover, any buttons inside the popover will be next in the tabbing order (will be focused by pressing the <kbd>Tab</kbd> key). Conversely, when closing the popover via the keyboard (usually via the <kbd>Esc</kbd> key), focus is shifted back to the invoker.</li>
+<li>To allow AT such as screen readers to make sense of the relationship between the invoker and the popover, an implicit <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details"><code>aria-details</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded"><code>aria-expanded</code></a> relationship is set up between them.</li>
+</ul>
+<p>Setting up a relationship between a popover and its control in this manner also creates an implicit anchor reference between the two — see <a href="#popover_anchor_positioning">Popover anchor positioning</a> for more details.</p>
+  </section><section class="content-section" aria-labelledby="other_ways_to_set_up_a_popover-invoker_relationship">
+    <!--lit-part 6beBQkV5pPs=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Other%20ways%20to%20set%20up%20a%20popover%2Dinvoker%20relationship"></a><h2 id="other_ways_to_set_up_a_popover-invoker_relationship" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#other_ways_to_set_up_a_popover-invoker_relationship">Other ways to set up a popover-invoker relationship</a></h2><!--/lit-part-->
+    <p>You can set up a popover-invoker relationship in other ways, in addition to using the <code>popovertarget</code> attribute:</p>
+<ul>
+<li>Using the <code>source</code> option of the <a href="../HTMLElement/showPopover.html"><code>HTMLElement.showPopover()</code></a> or <a href="../HTMLElement/togglePopover.html"><code>HTMLElement.togglePopover()</code></a> methods. Bear in mind that in this case, only the focus navigation order changes are made, not the implicit ARIA relationship. This because the <code>source</code> option can be set to any kind of element, not just <code>&lt;button&gt;</code> elements, and it cannot be guaranteed that the relationship would make sense.</li>
+<li>Between a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select"><code>&lt;select&gt;</code></a> element and its dropdown picker, when opting it into <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select">customizable select element</a> functionality via the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/appearance"><code>appearance</code></a> property <code>base-select</code> value. In this case, an implicit popover-invoker relationship is created between the two.</li>
+</ul>
+  </section><section class="content-section" aria-labelledby="using_manual_popover_state">
+    <!--lit-part f6/MBZZ4olI=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Using%20manual%20popover%20state"></a><h2 id="using_manual_popover_state" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#using_manual_popover_state">Using manual popover state</a></h2><!--/lit-part-->
+    <p>One alternative to auto state is <strong>manual state</strong>, achieved by setting <code>popover="manual"</code> on your popover element:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;div id="mypopover" popover="manual"&gt;Popover content&lt;/div&gt;
+</code></pre></div>
+<p>In this state:</p>
+<ul>
+<li>The popover cannot be "light dismissed", although declarative show/hide/toggle buttons (as seen earlier) will still work.</li>
+<li>Multiple independent popovers can be shown simultaneously.</li>
+</ul>
+<p>You can see this behavior in action in our <a href="../../../../../../mdn.github.io/dom-examples/popover-api/multiple-manual/index.html" class="external" target="_blank">Multiple manual popovers example</a> (<a href="https://github.com/mdn/dom-examples/tree/main/popover-api/multiple-manual" class="external" target="_blank">source</a>).</p>
+  </section><section class="content-section" aria-labelledby="the_beforetoggle_and_toggle_events">
+    <!--lit-part lSMcA2Kj7nQ=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/The%20beforetoggle%20and%20toggle%20events"></a><h2 id="the_beforetoggle_and_toggle_events" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#the_beforetoggle_and_toggle_events">The <code>beforetoggle</code> and <code>toggle</code> events</a></h2><!--/lit-part-->
+    <p>You can respond to a popover being shown or hidden using the <a href="../HTMLElement/beforetoggle_event.html"><code>beforetoggle</code></a> and <a href="../HTMLElement/toggle_event.html"><code>toggle</code></a> events:</p>
+<ul>
+<li><code>beforetoggle</code> is fired just before a popover is shown or hidden. This can be used for example to prevent the popover being shown or hidden (using <a href="../Event/preventDefault.html"><code>Event.preventDefault()</code></a>), to add animation classes to a popover to animate it, or to cleanup the state of a popover after it has been used.</li>
+<li><code>toggle</code> is fired just after a popover is shown or hidden. This is generally used to run other code in response to a popover toggle state changing.</li>
+</ul>
+<p>Both of these events have a <a href="../ToggleEvent.html"><code>ToggleEvent</code></a> event object. This event has the following features in addition to those inherited from the default <a href="../Event.html"><code>Event</code></a> object:</p>
+<ul>
+<li>The <a href="../ToggleEvent/oldState.html" title="oldState"><code>oldState</code></a> and <a href="../ToggleEvent/newState.html" title="newState"><code>newState</code></a> properties indicate which state the popover has just transitioned from and to, allowing you to respond specifically to a popover opening or closing.</li>
+<li>The <a href="../ToggleEvent/source.html" title="source"><code>source</code></a> property contains a reference to the HTML popover control element that initiated the toggle, allowing you to run different code in response to the toggle event depending on which control initiated it.</li>
+</ul>
+<p>Typical usage might look something like this:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const popover = document.getElementById("mypopover");
+
+popover.addEventListener("toggle", (e) =&gt; {
+  console.log(e.newState);
+});
+</code></pre></div>
+<p>See the previous reference links for more information and examples.</p>
+  </section><section class="content-section" aria-labelledby="showing_popovers_via_javascript">
+    <!--lit-part +cOR06YZCqk=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Showing%20popovers%20via%20JavaScript"></a><h2 id="showing_popovers_via_javascript" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#showing_popovers_via_javascript">Showing popovers via JavaScript</a></h2><!--/lit-part-->
+    <p>You can also control popovers using a JavaScript API.</p>
+<p>The <a href="../HTMLElement/popover.html"><code>HTMLElement.popover</code></a> property can be used to get or set the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover"><code>popover</code></a> attribute. This can be used to create a popover via JavaScript, and is also useful for feature detection. For example:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>function supportsPopover() {
+  return Object.hasOwn(HTMLElement.prototype, "popover");
+}
+</code></pre></div>
+<p>Similarly:</p>
+<ul>
+<li><a href="../HTMLButtonElement/popoverTargetElement.html"><code>HTMLButtonElement.popoverTargetElement</code></a> and <a href="../HTMLInputElement/popoverTargetElement.html"><code>HTMLInputElement.popoverTargetElement</code></a> provide an equivalent to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget"><code>popovertarget</code></a> attribute, allowing you to set up the control button(s) for a popover, although the property value taken is a reference to the popover DOM element to control.</li>
+<li><a href="../HTMLButtonElement/popoverTargetAction.html"><code>HTMLButtonElement.popoverTargetAction</code></a> and <a href="../HTMLInputElement/popoverTargetAction.html"><code>HTMLInputElement.popoverTargetAction</code></a> provide an equivalent to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction"><code>popovertargetaction</code></a> global HTML attribute, allowing you to specify the action taken by a control button.</li>
+</ul>
+<p>Putting these three together, you can programmatically set up a popover and its control button, like so:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const popover = document.getElementById("mypopover");
+const toggleBtn = document.getElementById("toggleBtn");
+
+const keyboardHelpPara = document.getElementById("keyboard-help-para");
+
+const popoverSupported = supportsPopover();
+
+if (popoverSupported) {
+  popover.popover = "auto";
+  toggleBtn.popoverTargetElement = popover;
+  toggleBtn.popoverTargetAction = "toggle";
+} else {
+  toggleBtn.style.display = "none";
+}
+</code></pre></div>
+<p>You also have several methods to control showing and hiding:</p>
+<ul>
+<li><a href="../HTMLElement/showPopover.html"><code>HTMLElement.showPopover()</code></a> to show a popover.</li>
+<li><a href="../HTMLElement/hidePopover.html"><code>HTMLElement.hidePopover()</code></a> to hide a popover.</li>
+<li><a href="../HTMLElement/togglePopover.html"><code>HTMLElement.togglePopover()</code></a> to toggle a popover.</li>
+</ul>
+<p>For example, you might want to provide the ability to toggle a help popover on and off by clicking a button or pressing a particular key on the keyboard. The first one could be achieved declaratively, or you could do it using JavaScript as shown above.</p>
+<p>For the second one, you could create an event handler that programs two separate keys — one to open the popover and one to close it again:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>document.addEventListener("keydown", (event) =&gt; {
+  if (event.key === "h") {
+    if (popover.matches(":popover-open")) {
+      popover.hidePopover();
+    }
+  }
+
+  if (event.key === "s") {
+    if (!popover.matches(":popover-open")) {
+      popover.showPopover();
+    }
+  }
+});
+</code></pre></div>
+<p>This example uses <a href="../Element/matches.html"><code>Element.matches()</code></a> to programmatically check whether a popover is currently showing. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:popover-open"><code>:popover-open</code></a> pseudo-class matches only popovers that are currently being shown. This is important to avoid the errors that are thrown if you try to show an already-shown popover, or hide an already-hidden popover.</p>
+<p>Alternatively, you could program a single key to show <em>and</em> hide the popover like this:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>document.addEventListener("keydown", (event) =&gt; {
+  if (event.key === "h") {
+    popover.togglePopover();
+  }
+});
+</code></pre></div>
+<p>See our <a href="../../../../../../mdn.github.io/dom-examples/popover-api/toggle-help-ui/index.html" class="external" target="_blank">Toggle help UI example</a> (<a href="https://github.com/mdn/dom-examples/tree/main/popover-api/toggle-help-ui" class="external" target="_blank">source</a>) to see the popover JavaScript properties, feature detection, and <code>togglePopover()</code> method in action.</p>
+  </section><section class="content-section" aria-labelledby="nested_popovers">
+    <!--lit-part lrWn3ip1W6Y=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Nested%20popovers"></a><h2 id="nested_popovers" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#nested_popovers">Nested popovers</a></h2><!--/lit-part-->
+    <p>There is an exception to the rule about not displaying multiple auto popovers at once — when they are nested inside one another. In such cases, multiple popovers are allowed to both be open at the same time, due to their relationship with each other. This pattern is supported to enable use cases such as nested popover menus.</p>
+<p>There are three different ways to create nested popovers:</p>
+<ol>
+<li>
+<p>Direct DOM descendants:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;div popover&gt;
+  Parent
+  &lt;div popover&gt;Child&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Via invoking/control elements:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;div popover&gt;
+  Parent
+  &lt;button popovertarget="foo"&gt;Click me&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div popover id="foo"&gt;Child&lt;/div&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Via the <code>anchor</code> attribute:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;div popover id="foo"&gt;Parent&lt;/div&gt;
+
+&lt;div popover anchor="foo"&gt;Child&lt;/div&gt;
+</code></pre></div>
+</li>
+</ol>
+<p>See our <a href="../../../../../../mdn.github.io/dom-examples/popover-api/nested-popovers/index.html" class="external" target="_blank">Nested popover menu example</a> (<a href="https://github.com/mdn/dom-examples/tree/main/popover-api/nested-popovers" class="external" target="_blank">source</a>) for an example. You'll notice that quite a few event handlers have been used to display and hide the subpopover appropriately during mouse and keyboard access, and also to hide both menus when an option is selected from either. Depending on how you handle loading of new content, either in an SPA or multi-page website, some of all of these may not be necessary, but they have been included in this demo for illustrative purposes.</p>
+  </section><section class="content-section" aria-labelledby="using_hint_popover_state">
+    <!--lit-part giI4X+rwUD0=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Using%20%22hint%22%20popover%20state"></a><h2 id="using_hint_popover_state" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#using_hint_popover_state">Using "hint" popover state</a></h2><!--/lit-part-->
+    <p>There is a third type of popover you can create — <strong>hint popovers</strong>, designated by setting <code>popover="hint"</code> on your popover element. <code>hint</code> popovers do not close <code>auto</code> popovers when they are displayed, but will close other <code>hint</code> popovers. They can be light dismissed and will respond to close requests.</p>
+<p>This is useful for situations where, for example, you have toolbar buttons that can be pressed to show UI popovers, but you also want to reveal tooltips when the buttons are hovered, without closing the UI popovers.</p>
+<p><code>hint</code> popovers tend to be shown and hidden in response to non-click JavaScript events such as <a href="../Element/mouseover_event.html"><code>mouseover</code></a>/<a href="../Element/mouseout_event.html"><code>mouseout</code></a> and <a href="../Element/focus_event.html"><code>focus</code></a>/<a href="../Element/blur_event.html"><code>blur</code></a>. Clicking a button to open a <code>hint</code> popover would cause an open <code>auto</code> popover to light-dismiss.</p>
+<p>See our <a href="../../../../../../mdn.github.io/dom-examples/popover-api/popover-hint/index.html" class="external" target="_blank">popover hint demo</a> (<a href="https://github.com/mdn/dom-examples/tree/main/popover-api/popover-hint" class="external" target="_blank">source</a>) for an example that behaves exactly as described above. The demo features a button bar; when pressed, the buttons show <code>auto</code> popup sub-menus inside which further options can be selected. However, when hovered over or focused, the buttons also show tooltips (<code>hint</code> popovers) to give the user an idea of what each button does, which do not hide a currently-showing sub-menu.</p>
+<p>In the below sections, we'll walk through all the important parts of the code.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+You <em>can</em> use <code>hint</code> popovers alongside <code>manual</code> popovers, although there is not really much of a reason to. They are designed to circumvent some of the limitations of <code>auto</code> popovers, enabling use cases like the one detailed in this section.</p>
+<p>Note also that <code>popover="hint"</code> falls back to <code>popover="manual"</code> in unsupporting browsers.</p>
+</div>
+<div class="notecard note">
+<p><strong>Note:</strong>
+There is a related feature — <strong>interest invokers</strong> — that can be used to create hover/focus popover functionality conveniently and consistently, without requiring JavaScript. Check out <a href="Using_interest_invokers.html">Using interest invokers</a> to learn more.</p>
+</div>
+  </section><section class="content-section" aria-labelledby="creating_the_sub-menus_with_popoverauto">
+    <!--lit-part KpTbXWaBhRo=--><!--lit-node 0--><h3 id="creating_the_sub-menus_with_popoverauto" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#creating_the_sub-menus_with_popoverauto">Creating the sub-menus with <code>popover="auto"</code></a></h3><!--/lit-part-->
+    <p>The popup sub-menus are created declaratively, using <code>auto</code> popovers.</p>
+<p>First, the control buttons:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;section id="button-bar"&gt;
+  &lt;button popovertarget="submenu-1" popovertargetaction="toggle" id="menu-1"&gt;
+    Menu A
+  &lt;/button&gt;
+
+  &lt;button popovertarget="submenu-2" popovertargetaction="toggle" id="menu-2"&gt;
+    Menu B
+  &lt;/button&gt;
+
+  &lt;button popovertarget="submenu-3" popovertargetaction="toggle" id="menu-3"&gt;
+    Menu C
+  &lt;/button&gt;
+&lt;/section&gt;
+</code></pre></div>
+<p>Now, the popovers themselves:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;div id="submenu-1" popover="auto"&gt;
+  &lt;button&gt;Option A&lt;/button&gt;&lt;br /&gt;&lt;button&gt;Option B&lt;/button&gt;
+&lt;/div&gt;
+&lt;div id="submenu-2" popover="auto"&gt;
+  &lt;button&gt;Option A&lt;/button&gt;&lt;br /&gt;&lt;button&gt;Option B&lt;/button&gt;
+&lt;/div&gt;
+&lt;div id="submenu-3" popover="auto"&gt;
+  &lt;button&gt;Option A&lt;/button&gt;&lt;br /&gt;&lt;button&gt;Option B&lt;/button&gt;
+&lt;/div&gt;
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="creating_the_tooltips_with_popoverhint">
+    <!--lit-part bFEISLv++eQ=--><!--lit-node 0--><h3 id="creating_the_tooltips_with_popoverhint" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#creating_the_tooltips_with_popoverhint">Creating the tooltips with <code>popover="hint"</code></a></h3><!--/lit-part-->
+    <p>The sub-menu popovers work fine as they are, opening when the toolbar buttons are pressed, but how do we also show tooltips on button hover/focus? First, we create the tooltips in HTML, using <code>hint</code> popovers:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate"><code>&lt;div id="tooltip-1" class="tooltip" popover="hint"&gt;Tooltip A&lt;/div&gt;
+&lt;div id="tooltip-2" class="tooltip" popover="hint"&gt;Tooltip B&lt;/div&gt;
+&lt;div id="tooltip-3" class="tooltip" popover="hint"&gt;Tooltip C&lt;/div&gt;
+</code></pre></div>
+<div class="notecard note">
+<p><strong>Note:</strong>
+In the demo <a href="https://github.com/mdn/dom-examples/tree/main/popover-api/popover-hint" class="external" target="_blank">source code</a>, the tooltips are nested inside the popover control buttons. This is because it provides a better fallback in browsers that don't support CSS anchor positioning — the <code>hint</code> popovers appear next to their associated control buttons rather than somewhere else entirely.</p>
+</div>
+<p>To control the showing/hiding, we need to use JavaScript. First of all, we grab references to the <code>hint</code> popovers and the control buttons in two separate <a href="../NodeList.html"><code>NodeList</code></a>s using <a href="../Document/querySelectorAll.html"><code>Document.querySelectorAll()</code></a>:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const tooltips = document.querySelectorAll(".tooltip");
+const btns = document.querySelectorAll("#button-bar button");
+</code></pre></div>
+<p>Next, we create a function, <code>addEventListeners()</code>, which sets four event listeners (via <a href="../EventTarget/addEventListener.html"><code>EventTarget.addEventListener()</code></a>) on a given <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button"><code>&lt;button&gt;</code></a>, chosen by grabbing the <code>&lt;button&gt;</code> at a specific index value of the <code>btns</code> <code>NodeList</code>. The functions act on the <code>hint</code> popover at the same index value of the <code>tooltips</code> <code>NodeList</code>, allowing us to keep the buttons and the tooltips in sync — showing/hiding the correct tooltip when a button is interacted with.</p>
+<p>The event listeners <a href="../HTMLElement/showPopover.html">show</a> the popover on <a href="../Element/mouseover_event.html"><code>mouseover</code></a> and <a href="../Element/focus_event.html"><code>focus</code></a>, and <a href="../HTMLElement/hidePopover.html">hide</a> the popover on <a href="../Element/mouseout_event.html"><code>mouseout</code></a> and <a href="../Element/blur_event.html"><code>blur</code></a>, meaning that the tooltips can be accessed via mouse and keyboard.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>function addEventListeners(i) {
+  btns[i].addEventListener("mouseover", () =&gt; {
+    tooltips[i].showPopover({ source: btns[i] });
+  });
+
+  btns[i].addEventListener("mouseout", () =&gt; {
+    tooltips[i].hidePopover();
+  });
+
+  btns[i].addEventListener("focus", () =&gt; {
+    tooltips[i].showPopover({ source: btns[i] });
+  });
+
+  btns[i].addEventListener("blur", () =&gt; {
+    tooltips[i].hidePopover();
+  });
+}
+</code></pre></div>
+<p>Finally, we use a <a href="../../JavaScript/Reference/Statements/for.html"><code>for</code></a> loop to iterate through the <code>&lt;buttons&gt;</code> in the <code>btns</code> <code>NodeList</code>, calling the <code>addEventListeners()</code> function for each one so that all of them have the desired event listeners set.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>for (let i = 0; i &lt; btns.length; i++) {
+  addEventListeners(i);
+}
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="styling_popovers">
+    <!--lit-part YyqU5yDgVDI=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Styling%20popovers"></a><h2 id="styling_popovers" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#styling_popovers">Styling popovers</a></h2><!--/lit-part-->
+    <p>This section covers some CSS selection and positioning techniques relevant to popovers.</p>
+  </section><section class="content-section" aria-labelledby="selecting_popovers">
+    <!--lit-part 9JPir239chA=--><!--lit-node 0--><h3 id="selecting_popovers" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#selecting_popovers">Selecting popovers</a></h3><!--/lit-part-->
+    <p>You can select all popovers with a simple attribute selector:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>[popover] {
+  /* Declarations here */
+}
+</code></pre></div>
+<p>Alternatively, you can select a specific popover type by including a value in the attribute selector:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>[popover="auto"] {
+  /* Declarations here */
+}
+</code></pre></div>
+<p>You can select only popovers that are showing using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:popover-open"><code>:popover-open</code></a> pseudo-class:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>:popover-open {
+  /* Declarations here */
+}
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="styling_the_popover_backdrop">
+    <!--lit-part OeoZWRLKXhA=--><!--lit-node 0--><h3 id="styling_the_popover_backdrop" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#styling_the_popover_backdrop">Styling the popover backdrop</a></h3><!--/lit-part-->
+    <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::backdrop"><code>::backdrop</code></a> pseudo-element is a full-screen element placed directly behind showing popover elements in the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Top_layer">top layer</a>, allowing effects to be added to the page content behind the popover(s) if desired. You might for example want to blur out the content behind the popover to help focus the user's attention on it:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>::backdrop {
+  backdrop-filter: blur(3px);
+}
+</code></pre></div>
+<p>See our <a href="../../../../../../mdn.github.io/dom-examples/popover-api/blur-background/index.html" class="external" target="_blank">Popover blur background example</a> (<a href="https://github.com/mdn/dom-examples/tree/main/popover-api/blur-background" class="external" target="_blank">source</a>) for an idea of how this renders.</p>
+  </section><section class="content-section" aria-labelledby="positioning_popovers">
+    <!--lit-part 8NnNs7gJ5cA=--><!--lit-node 0--><h3 id="positioning_popovers" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#positioning_popovers">Positioning popovers</a></h3><!--/lit-part-->
+    <p>When looking at the first couple of examples linked at the start of the article, you may have noticed that the popovers appear in the middle of the viewport, wrap their content, and have a black border. This is the default styling, achieved using the following rule in the UA stylesheet:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>[popover] {
+  position: fixed;
+  inset: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  border: solid;
+  padding: 0.25em;
+  overflow: auto;
+  color: CanvasText;
+  background-color: Canvas;
+}
+</code></pre></div>
+<p>To apply custom sizing and position the popover somewhere else, you could override the above styles with something like this:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>:popover-open {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  inset: unset;
+  bottom: 5px;
+  right: 5px;
+  margin: 0;
+}
+</code></pre></div>
+<p>You can see an isolated example of this in our <a href="../../../../../../mdn.github.io/dom-examples/popover-api/popover-positioning/index.html" class="external" target="_blank">Popover positioning example</a> (<a href="https://github.com/mdn/dom-examples/tree/main/popover-api/popover-positioning" class="external" target="_blank">source</a>).</p>
+  </section><section class="content-section" aria-labelledby="popover_anchor_positioning">
+    <!--lit-part xFn5kYY3+vU=--><!--lit-node 0--><h3 id="popover_anchor_positioning" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#popover_anchor_positioning">Popover anchor positioning</a></h3><!--/lit-part-->
+    <p>There is another useful positioning option that the Popover API provides. If you want to position a popover relative to its invoker rather than the viewport or a positioned ancestor, you can take advantage of the fact that popovers and their invokers have an <strong>implicit anchor reference</strong>.</p>
+<p><a href="#other_ways_to_set_up_a_popover-invoker_relationship">Associating any kind of popover with its invoker</a> creates an implicit anchor reference between the two. This causes the invoker to become the popover's <strong>anchor element</strong>, meaning that you can position the popover relative to it using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning">CSS anchor positioning</a>.</p>
+<p>Because the association between the popover and the invoker is implicit, an explicit association does not need to be made using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/anchor-name"><code>anchor-name</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position-anchor"><code>position-anchor</code></a> properties. However, you still need to specify the positioning CSS.</p>
+<p>For example, you could use a combination of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/anchor"><code>anchor()</code></a> function values set on <a href="https://developer.mozilla.org/en-US/docs/Glossary/Inset_properties">inset properties</a>, and <code>anchor-center</code> values set on alignment properties:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>.my-popover {
+  margin: 0;
+  inset: auto;
+  bottom: calc(anchor(top) + 20px);
+  justify-self: anchor-center;
+}
+</code></pre></div>
+<p>Or you could use a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position-area"><code>position-area</code></a> property:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate"><code>.my-popover {
+  margin: 0;
+  inset: auto;
+  position-area: top;
+}
+</code></pre></div>
+<p>When using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position-area"><code>position-area</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/anchor"><code>anchor()</code></a> to position popovers, be aware that <a href="https://html.spec.whatwg.org/multipage/rendering.html#flow-content-3:~:text=%5Bpopover%5D%20%7B" class="external" target="_blank">the default styles for popovers</a> may conflict with the position you're trying to achieve. The usual culprits are the default styles for <code>margin</code> and <code>inset</code>, so it's advisable to reset those, as in the examples above. The CSS working group is <a href="https://github.com/w3c/csswg-drafts/issues/10258" class="external" target="_blank">looking at ways to avoid requiring this workaround</a>.</p>
+<p>See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using#positioning_elements_relative_to_their_anchor">Using CSS anchor positioning</a> for more details on associating anchor and positioned elements, and positioning elements relative to their anchor.</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+For an example that uses this implicit association, see our <a href="../../../../../../mdn.github.io/dom-examples/popover-api/popover-hint/index.html" class="external" target="_blank">popover hint demo</a> (<a href="https://github.com/mdn/dom-examples/tree/main/popover-api/popover-hint" class="external" target="_blank">source</a>). If you check out the CSS code, you'll see that no explicit anchor associations are made using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/anchor-name"><code>anchor-name</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position-anchor"><code>position-anchor</code></a> properties.</p>
+</div>
+<div class="notecard note">
+<p><strong>Note:</strong>
+If you want to remove the implicit anchor reference to stop the popover from being anchored to its invoker, you can do so by setting the <code>position-anchor</code> property of the popover to an anchor name that doesn't exist in the current document, such as <code>--not-an-anchor-name</code>. See also <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using#removing_an_anchor_association">removing an anchor association</a>.</p>
+</div>
+  </section><section class="content-section" aria-labelledby="animating_popovers">
+    <!--lit-part YAFyzK9lg4Q=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Animating%20popovers"></a><h2 id="animating_popovers" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#animating_popovers">Animating popovers</a></h2><!--/lit-part-->
+    <p>Popovers are set to <code>display: none;</code> when hidden and <code>display: block;</code> when shown, as well as being removed from / added to the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Top_layer">top layer</a> and the <a href="https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work#building_the_accessibility_tree">accessibility tree</a>. Therefore, for popovers to be animated, the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display"><code>display</code></a> property needs to be animatable. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display#browser_compatibility">Supporting browsers</a> animate <code>display</code> with a variation on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Animatable_properties#discrete">discrete animation type</a>. Specifically, the browser will flip between <code>none</code> and another value of <code>display</code> so that the animated content is shown for the entire animation duration. So, for example:</p>
+<ul>
+<li>When animating <code>display</code> from <code>none</code> to <code>block</code> (or another visible <code>display</code> value), the value will flip to <code>block</code> at <code>0%</code> of the animation duration so it is visible throughout.</li>
+<li>When animating <code>display</code> from <code>block</code> (or another visible <code>display</code> value) to <code>none</code>, the value will flip to <code>none</code> at <code>100%</code> of the animation duration so it is visible throughout.</li>
+</ul>
+<div class="notecard note">
+<p><strong>Note:</strong>
+When animating using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions">CSS transitions</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition-behavior"><code>transition-behavior: allow-discrete</code></a> needs to be set to enable the above behavior. When animating with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations">CSS animations</a>, the above behavior is available by default; an equivalent step is not required.</p>
+</div>
+  </section><section class="content-section" aria-labelledby="transitioning_a_popover">
+    <!--lit-part Th/Cm+LH32k=--><!--lit-node 0--><h3 id="transitioning_a_popover" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#transitioning_a_popover">Transitioning a popover</a></h3><!--/lit-part-->
+    <p>When animating popovers with CSS transitions, the following features are required:</p>
+<dl>
+<dt id="starting-style"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style"><code>@starting-style</code></a> at-rule</dt>
+<dd>
+<p>Provides a set of starting values for properties set on the popover that you want to transition from when it is first shown. This is needed to avoid unexpected behavior. By default, CSS transitions only occur when a property changes from one value to another on a visible element; they are not triggered on an element's first style update, or when the <code>display</code> type changes from <code>none</code> to another type.</p>
+</dd>
+<dt id="display"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display"><code>display</code></a> property</dt>
+<dd>
+<p>Add <code>display</code> to the transitions list so that the popover will remain as <code>display: block</code> (or another visible <code>display</code> value) for the duration of the transition, ensuring the other transitions are visible.</p>
+</dd>
+<dt id="overlay"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overlay"><code>overlay</code></a> property</dt>
+<dd>
+<p>Include <code>overlay</code> in the transitions list to ensure the removal of the popover from the top layer is deferred until the transition completes, again ensuring the transition is visible.</p>
+</dd>
+<dt id="transition-behavior"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition-behavior"><code>transition-behavior</code></a> property</dt>
+<dd>
+<p>Set <code>transition-behavior: allow-discrete</code> on the <code>display</code> and <code>overlay</code> transitions (or on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition"><code>transition</code></a> shorthand) to enable discrete transitions on these two properties that are not by default animatable.</p>
+</dd>
+</dl>
+<p>Let's have a look at an example so you can see what this looks like:</p>
+<h4 id="html">HTML</h4>
+<p>The HTML contains a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div"><code>&lt;div&gt;</code></a> element declared to be a popover via the global <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover"><code>popover</code></a> HTML attribute, and a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button"><code>&lt;button&gt;</code></a> element designated as the popover's display control:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate live-sample---transitioning_a_popover"><code>&lt;button popovertarget="mypopover"&gt;Show the popover&lt;/button&gt;
+&lt;div popover="auto" id="mypopover"&gt;I'm a Popover! I should animate.&lt;/div&gt;
+</code></pre></div>
+<h4 id="css">CSS</h4>
+<p>The two popover properties we want to transition are <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/opacity"><code>opacity</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform"><code>transform</code></a>. We want the popover to fade in or out while growing or shrinking horizontally. To achieve this, we set a starting state for these properties on the hidden state of the popover element (selected with the <code>[popover]</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors">attribute selector</a>) and an end state for the shown state of the popover (selected via the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:popover-open"><code>:popover-open</code></a> pseudo-class). We also use the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition"><code>transition</code></a> property to define the properties to animate and the animation's duration as the popover gets shown or hidden.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate live-sample---transitioning_a_popover"><code>html {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+/* Transition for the popover itself */
+
+[popover]:popover-open {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+[popover] {
+  font-size: 1.2rem;
+  padding: 10px;
+
+  /* Final state of the exit animation */
+  opacity: 0;
+  transform: scaleX(0);
+
+  transition:
+    opacity 0.7s,
+    transform 0.7s,
+    overlay 0.7s allow-discrete,
+    display 0.7s allow-discrete;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+
+/* Needs to be after the previous [popover]:popover-open rule
+to take effect, as the specificity is the same */
+@starting-style {
+  [popover]:popover-open {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+/* Transition for the popover's backdrop */
+
+[popover]::backdrop {
+  background-color: transparent;
+  transition:
+    display 0.7s allow-discrete,
+    overlay 0.7s allow-discrete,
+    background-color 0.7s;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+
+[popover]:popover-open::backdrop {
+  background-color: rgb(0 0 0 / 25%);
+}
+
+/* The nesting selector (&amp;) cannot represent pseudo-elements
+so this starting-style rule cannot be nested */
+
+@starting-style {
+  [popover]:popover-open::backdrop {
+    background-color: transparent;
+  }
+}
+</code></pre></div>
+<p>As discussed earlier, we have also:</p>
+<ul>
+<li>Set a starting state for the <code>transition</code> inside the <code>@starting-style</code> block.</li>
+<li>Added <code>display</code> to the list of transitioned properties so that the animated element is visible (set to <code>display: block</code>) throughout the popover's entry and exit animations. Without this, the exit animation would not be visible; in effect, the popover would just disappear.</li>
+<li>Added <code>overlay</code> to the list of transitioned properties to make sure that the removal of the element from the top layer is deferred until the animation has been completed. The effect of this may not be noticeable for basic animations such as this one, but in more complex cases, omitting this property can result in the element being removed from the overlay before the transition completes.</li>
+<li>Set <code>allow-discrete</code> on both properties in the above transitions to enable <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Animatable_properties#discrete">discrete transitions</a>.</li>
+</ul>
+<p>You'll note that we've also included a transition on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::backdrop"><code>::backdrop</code></a> appearing behind the popover when it opens, providing a nice darkening animation.</p>
+<h4 id="result">Result</h4>
+<p>The code renders as follows:</p>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="Transitioning a popover sample" id="frame_transitioning_a_popover" width="100%" height="200" src="Using/_sample_.transitioning_a_popover29688771/13d27246e809a336c97a1c4f5ed636a06fa2602b.mdnplay.dev/en-US/docs/Web/API/Popover_API/Using/runner.html-_-uuid=13d27246e809a336c97a1c4f5ed636a06fa2602b&amp;state=rVRNb9NAEP0rgyVoUsVJWgkhOaGCA4heEBIckFgOG3scL13vmt1x2lDlvzPrL4W0oUFCOcQzmTfzZt5z7qOCSh0l0XJVE1kDla3sBh1Jt0Z6LaJy22VEdPW5sLdABfZFy1kLuhJm.html" data-live-path="/en-US/docs/Web/API/Popover_API/Using/" data-live-id="transitioning_a_popover" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+<div class="notecard note">
+<p><strong>Note:</strong>
+Because popovers change from <code>display: none</code> to <code>display: block</code> each time they are shown, the popover transitions from its <code>@starting-style</code> styles to its <code>[popover]:popover-open</code> styles every time the entry transition occurs. When the popover closes, it transitions from its <code>[popover]:popover-open</code> state to the default <code>[popover]</code> state.</p>
+<p>It is possible for the style transition on entry and exit to be different in such cases. See our <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style#demonstration_of_when_starting_styles_are_used">Demonstration of when starting styles are used</a> example for a proof of this.</p>
+</div>
+  </section><section class="content-section" aria-labelledby="a_popover_keyframe_animation">
+    <!--lit-part MhStcK06eak=--><!--lit-node 0--><h3 id="a_popover_keyframe_animation" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#a_popover_keyframe_animation">A popover keyframe animation</a></h3><!--/lit-part-->
+    <p>When animating a popover with CSS keyframe animations, there are some differences to note:</p>
+<ul>
+<li>You don't provide a <code>@starting-style</code>; you include your "to" and "from" <code>display</code> values in keyframes.</li>
+<li>You don't explicitly enable discrete animations; there is no equivalent to <code>allow-discrete</code> inside keyframes.</li>
+<li>You don't need to set <code>overlay</code> inside keyframes either; the <code>display</code> animation handles the animation of the popover from shown to hidden.</li>
+</ul>
+<p>Let's look at an example.</p>
+<h4 id="html_2">HTML</h4>
+<p>The HTML contains a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div"><code>&lt;div&gt;</code></a> element declared as a popover, and a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button"><code>&lt;button&gt;</code></a> element designated as the popover's display control:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">html</span></div><pre class="language-html notranslate live-sample---a_popover_keyframe_animation"><code>&lt;button popovertarget="mypopover"&gt;Show the popover&lt;/button&gt;
+&lt;div popover="auto" id="mypopover"&gt;I'm a Popover! I should animate.&lt;/div&gt;
+</code></pre></div>
+<h4 id="css_2">CSS</h4>
+<p>We have defined keyframes that specify the desired entry and exit animations, and an entry animation for the backdrop only. Note that it wasn't possible to animate the backdrop fade out — the backdrop is immediately removed from the DOM when the popover is closed, so there is nothing to animate.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">css</span></div><pre class="language-css notranslate live-sample---a_popover_keyframe_animation"><code>html {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+[popover] {
+  font-size: 1.2rem;
+  padding: 10px;
+  animation: fade-out 0.7s ease-out;
+}
+
+[popover]:popover-open {
+  animation: fade-in 0.7s ease-out;
+}
+
+[popover]:popover-open::backdrop {
+  animation: backdrop-fade-in 0.7s ease-out forwards;
+}
+
+/* Animation keyframes */
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: scaleX(1);
+    /* display needed on the closing animation to keep the popover
+    visible until the animation ends */
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+    /* display: none not required here because it is the default value
+    for a closed popover, but including it so the behavior is clear */
+    display: none;
+  }
+}
+
+@keyframes backdrop-fade-in {
+  0% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: rgb(0 0 0 / 25%);
+  }
+}
+</code></pre></div>
+<h4 id="result_2">Result</h4>
+<p>The code renders as follows:</p>
+<div class="code-example"><div class="example-header"></div><iframe class="sample-code-frame" title="A popover keyframe animation sample" id="frame_a_popover_keyframe_animation" width="100%" height="200" src="Using/_sample_.a_popover_keyframe_animation25579238/bd6e2fd160d8849327cf0b05b5eec849c62ba611.mdnplay.dev/en-US/docs/Web/API/Popover_API/Using/runner.html-_-uuid=bd6e2fd160d8849327cf0b05b5eec849c62ba611&amp;state=lVTfa9swEP5XboayrsSJUxgDJyvr2%25252Fo22Mtg3sPZOsdqZMmTZHdZyf%25252B%25252Bkx0vIT8IxWBJd%25252Fq%25252Bu%25252Ft00mtU%25252BVpFabTMW%25252B%25252BNhsY0piPr.html" data-live-path="/en-US/docs/Web/API/Popover_API/Using/" data-live-id="a_popover_keyframe_animation" sandbox="allow-same-origin allow-scripts" loading="lazy"></iframe></div>
+  </section><section class="content-section" aria-labelledby="see_also">
+    <!--lit-part p88DAUaBJzA=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/See%20also"></a><h2 id="see_also" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#see_also">See also</a></h2><!--/lit-part-->
+    <ul>
+<li>Collection of <a href="../../../../../../mdn.github.io/dom-examples/popover-api/index.html" class="external" target="_blank">Popover API examples</a></li>
+</ul>
+  </section> 
+      <section class="content-section article-footer" aria-labelledby="feedback">
+        <div class="article-footer__inner">
+          <div class="article-footer__svg-container"><!--lit-part OWLzZqRMsCU=--><svg xmlns="http://www.w3.org/2000/svg" width="162" height="162" fill="none" viewBox="0 0 162 162"><mask id="b" fill="#fff"><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z"></path></mask><path stroke="url(#a)" stroke-dasharray="6, 6" stroke-width="2" d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z" mask="url(#b)" style="stroke:url(#a)" transform="translate(-63.992 -25.587)"></path><ellipse cx="8.066" cy="111.597" fill="currentColor" rx="53.677" ry="53.699" transform="matrix(.71707 -.697 .7243 .6895 0 0)"></ellipse><g clip-path="url(#c)" transform="translate(-63.992 -25.587)"><path fill="#9abff5" d="m144.256 137.379 32.906 12.434a4.41 4.41 0 0 1 2.559 5.667l-9.326 24.679a4.41 4.41 0 0 1-5.667 2.559l-8.226-3.108-2.332 6.17c-.466 1.233-.375 1.883-1.609 1.417l-2.253-.527c-.411-.155-.95-.594-1.206-1.161l-4.734-10.484-12.545-4.741a4.41 4.41 0 0 1-2.559-5.667l9.325-24.679a4.41 4.41 0 0 1 5.667-2.559m9.961 29.617 8.227 3.108 3.264-8.638-.498-6.768-4.113-1.555.548 7.258-4.319-1.632zm-12.339-4.663 8.226 3.108 3.264-8.637-.498-6.769-4.113-1.554.548 7.257-4.319-1.632z"></path></g><g clip-path="url(#d)" transform="translate(-63.992 -25.587)"><path fill="#81b0f3" d="M135.35 60.136 86.67 41.654c-3.346-1.27-7.124.428-8.394 3.775L64.414 81.938c-1.27 3.347.428 7.125 3.774 8.395l12.17 4.62-3.465 9.128c-.693 1.826-1.432 2.457.394 3.15l3.014 1.625c.609.231 1.637.274 2.477-.104l15.53-6.983 18.56 7.047c3.346 1.27 7.124-.428 8.395-3.775l13.862-36.51c1.27-3.346-.428-7.124-3.775-8.395M95.261 83.207l-12.17-4.62 4.852-12.779 7.19-7.017 6.085 2.31-7.725 7.51 6.389 2.426zm18.255 6.93-12.17-4.62 4.852-12.778 7.189-7.017 6.085 2.31-7.725 7.51 6.39 2.426z"></path></g><defs><clipPath id="c"><path fill="#fff" d="m198.638 146.586-65.056-24.583-24.583 65.057 65.056 24.582z"></path></clipPath><clipPath id="d"><path fill="#fff" d="m66.438 14.055 96.242 36.54-36.54 96.243-96.243-36.54z"></path></clipPath><linearGradient id="a" x1="97.203" x2="199.995" y1="47.04" y2="152.793" gradientUnits="userSpaceOnUse"><stop stop-color="#086dfc"></stop><stop offset=".246" stop-color="#2c81fa"></stop><stop offset=".516" stop-color="#5497f8"></stop><stop offset=".821" stop-color="#80b0f6"></stop><stop offset="1" stop-color="#9abff5"></stop></linearGradient></defs></svg><!--/lit-part--></div>
+          <h2 id="feedback">
+            Help improve MDN
+          </h2>
+          <mdn-content-feedback locale="en-US"></mdn-content-feedback>
+          <a class="article-footer__contribute" href="https://developer.mozilla.org/en-US/docs/MDN/Community/Getting_started">Learn how to contribute</a> <p class="article-footer__last-modified">
+    This page was last modified on <time datetime="2025-12-17T16:01:14.000Z">Dec 17, 2025</time> by <a href="Using/contributors.txt">MDN contributors</a>.
+  </p> <div class="article-footer__links">
+    <a class="external" href="https://github.com/mdn/content/blob/main/files/en-us/web/api/popover_api/using/index.md?plain=1" title="Folder: en-us/web/api/popover_api/using (Opens in a new tab)" target="_blank" rel="noopener">View this page on GitHub</a> • <a class="external" href="https://github.com/mdn/content/issues/new?template=page-report.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FPopover_API%2FUsing&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Fweb%2Fapi%2Fpopover_api%2Fusing%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FPopover_API%2FUsing%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Fweb%2Fapi%2Fpopover_api%2Fusing%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2F0c13af55e869cbc54830fd1a601fd05f60717375%0A*+Document+last+modified%3A+2025-12-17T16%3A01%3A14.000Z%0A%0A%3C%2Fdetails%3E" title="This will take you to GitHub to file a new issue." target="_blank" rel="noopener">Report a problem with this content</a>
+  </div>
+        </div>
+      </section>
+    
+          </div>
+        </main>
+        <aside class="layout__left-sidebar" id="main-sidebar">
+          <nav class="left-sidebar">
+      <div class="left-sidebar__header">
+        <mdn-sidebar-filter></mdn-sidebar-filter>
+      </div>
+      <div class="left-sidebar__content"><ol><li class="section"><a href="../Popover_API.html">Popover API</a></li><li><details open=""><summary><span>Guides</span></summary><ol><li><em><a href="Using.html" aria-current="page">Using the Popover API</a></em></li><li><a href="Using_interest_invokers.html">Using interest invokers</a></li></ol></details></li><li><details open=""><summary><span>Interfaces</span></summary><ol><li><a href="../InterestEvent.html"><code>InterestEvent</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../ToggleEvent.html"><code>ToggleEvent</code></a></li></ol></details></li><li><details open=""><summary><span>Properties</span></summary><ol><li><a href="../HTMLButtonElement/popoverTargetAction.html"><code>HTMLButtonElement<wbr>.popoverTargetAction</code></a></li><li><a href="../HTMLButtonElement/popoverTargetElement.html"><code>HTMLButtonElement<wbr>.popoverTargetElement</code></a></li><li><a href="../HTMLElement/popover.html"><code>HTMLElement<wbr>.popover</code></a></li><li><a href="../HTMLInputElement/popoverTargetAction.html"><code>HTMLInputElement<wbr>.popoverTargetAction</code></a></li><li><a href="../HTMLInputElement/popoverTargetElement.html"><code>HTMLInputElement<wbr>.popoverTargetElement</code></a></li><li><a href="../HTMLAnchorElement/interestForElement.html"><code>HTMLAnchorElement<wbr>.interestForElement</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../HTMLAreaElement/interestForElement.html"><code>HTMLAreaElement<wbr>.interestForElement</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../HTMLButtonElement/interestForElement.html"><code>HTMLButtonElement<wbr>.interestForElement</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../SVGAElement/interestForElement.html"><code>SVGAElement<wbr>.interestForElement</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li></ol></details></li><li><details open=""><summary><span>Methods</span></summary><ol><li><a href="../HTMLElement/hidePopover.html"><code>HTMLElement<wbr>.hidePopover()</code></a></li><li><a href="../HTMLElement/showPopover.html"><code>HTMLElement<wbr>.showPopover()</code></a></li><li><a href="../HTMLElement/togglePopover.html"><code>HTMLElement<wbr>.togglePopover()</code></a></li></ol></details></li><li><details open=""><summary><span>Events</span></summary><ol><li><a href="../HTMLElement/beforetoggle_event.html"><code>HTMLElement: beforetoggle</code></a></li><li><a href="../HTMLElement/toggle_event.html"><code>HTMLElement: toggle</code></a></li><li><a href="../HTMLElement/interest_event.html"><code>HTMLElement: interest</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../HTMLElement/loseinterest_event.html"><code>HTMLElement: loseinterest</code></a><abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+<span class="visually-hidden">Experimental</span>
+</abbr><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li></ol></details></li></ol></div>
+    </nav>
+        </aside>
+      </div>
+    </div>
+        
+      
+    
+      
+
+
+    <div class="page-layout__footer footer"><div><a href="http://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using">Using the Popover API</a> by <a href="http://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using$history">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC-BY-SA 2.5</a>.</div></div></body><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:02:37 GMT --></html>

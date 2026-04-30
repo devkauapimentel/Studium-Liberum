@@ -1,0 +1,9 @@
+
+body { background-color: white; color: rgb(51, 51, 51); font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1em; line-height: 1.4; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; padding: 1em; margin: 0px; }
+h1 { font-size: 2rem; margin: 0px; }
+h2 { font-size: 1.6rem; margin: 0px; }
+* { box-sizing: border-box; }
+h1, h2 { color: purple; }
+p { color: gray; margin: 0.5em 0px; }
+
+button.copy {display:none !important}

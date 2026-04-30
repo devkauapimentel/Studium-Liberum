@@ -1,0 +1,104 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CSS Demo: animation-duration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../../../../../../../interactive_examples/assets/css/codemirror.css" rel="stylesheet">
+    <link href="../../../../../../../../interactive_examples/assets/css/editor-css.css" rel="stylesheet">
+    <style>#example-element {
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-name: slide;
+  animation-play-state: paused;
+  animation-timing-function: ease-in;
+  background-color: #1766aa;
+  border-radius: 50%;
+  border: 5px solid #333333;
+  color: white;
+  height: 150px;
+  margin: auto;
+  margin-left: 0;
+  width: 150px;
+}
+
+#example-element.running {
+  animation-play-state: running;
+}
+
+#play-pause {
+  font-size: 2rem;
+}
+
+@keyframes slide {
+  from {
+    background-color: orange;
+    color: black;
+    margin-left: 0;
+  }
+  to {
+    background-color: orange;
+    color: black;
+    margin-left: 80%;
+  }
+}
+
+
+ button.copy {display:none !important}</style>  </head>
+
+  <body>
+    <header class="output-header border-rounded-top">
+      <h4 class="output-heading">CSS Demo: animation-duration</h4>
+      <button id="reset" class="reset" type="button">Reset</button>
+    </header>
+    <noscript>
+      <div id="warning-no-script" class="warning-container">
+        <div class="warning">
+          The interactive example cannot be shown because JavaScript is
+          disabled.
+        </div>
+      </div>
+    </noscript>
+    <div id="warning-mathml-not-supported" class="warning-container hidden">
+      <div class="warning">
+        The interactive example cannot be shown because MathML is not supported
+        by your browser.
+      </div>
+    </div>
+    <div id="editor-wrapper" class="editor-wrapper border-rounded-bottom hidden">
+      <section id="example-choice-list" class="example-choice-list">
+          <div class="example-choice">
+<pre><code class="language-css">animation-duration: 750ms;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">animation-duration: 3s;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+<div class="example-choice">
+<pre><code class="language-css">animation-duration: 0s;
+</code></pre><button type="button" class="copy hidden" aria-hidden="true"><span class="visually-hidden">Copy to Clipboard</span></button>
+</div>
+      </section>
+      <div id="output" class="output hidden">
+          <section class="flex-column" id="default-example">
+  <div class="animating" id="example-element"></div>
+  <button id="play-pause">Play</button>
+</section>
+      </div>
+    </div>
+
+    <script src="../../../../../../../../interactive_examples/assets/js/codemirror.js"></script>
+    <script src="../../../../../../../../interactive_examples/assets/js/editor-css.js"></script>
+    <script>const el = document.getElementById("example-element");
+const button = document.getElementById("play-pause");
+
+button.addEventListener("click", () => {
+  if (el.classList.contains("running")) {
+    el.classList.remove("running");
+    button.textContent = "Play";
+  } else {
+    el.classList.add("running");
+    button.textContent = "Pause";
+  }
+});
+</script></body></html>

@@ -1,0 +1,9 @@
+
+.wrapper { display: grid; grid-template-columns: repeat(3, 150px); grid-template-areas: "d b b" "c c a"; }
+.a { grid-row-start: a; grid-column-start: a; grid-row-end: a; grid-column-end: a; }
+.b { grid-row-start: b; grid-column-start: b; grid-row-end: b; grid-column-end: b; }
+.c { grid-row-start: c; grid-column-start: c; grid-row-end: c; grid-column-end: c; }
+.d { grid-row-start: d; grid-column-start: d; grid-row-end: d; grid-column-end: d; }
+a:first-child { order: 1; }
+
+button.copy {display:none !important}

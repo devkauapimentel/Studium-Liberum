@@ -1,0 +1,10 @@
+
+.outer { position: absolute; }
+.target { width: 50px; height: 50px; border-radius: 50%; background-color: green; offset-path: url("./en-US/docs/Web/CSS/Reference/Properties/offset-path/runner.html-_-uuid=8f529db1cf3f5c58532e47c411034d34e5531ef8&state=dVHLbsMgEPwVRBWplepH0%25252BbipFW%25252FoWcuxF4bGgwu4DhR5H%25252FvAnGUHnph2dndmR24UOF7RSu6a%25252BSR1Io7986oGT1YRj%25252BYJuRPwXPbgcfKrkAY67fojh2Z.html-_-uuid=8f529db1cf3f5c58532e47c411034d34e5531ef8&state=dVHLbsMgEPwVRBWplepH0%252BbipFW%252FoWcuxF4bGgwu4DhR5H%252FvAnGUHnph2dndmR24UOF7RSu6a%252BSR1Io7986oGT1YRj%252BYJuRPwXPbgcfKrkAY67fojh2ZZOMFdr2VJaNEgOyEx3Qd01OvdKAQ3g9VUUzTlE%252BvubFdgfWywPlF0ELtiWywF8EvTMI0ZptAc14ui9j6r9hLTIu4Go5jpM%252B0dg4t5tEWuQSRwTjppdEV4XtnFBa2TM9M58lhaooSFdmUw2kb8iRyB%252ByNbcBmljdydAFfJZjXh86aUTdZbZSxFeksgI4107YOfDbwwDxa9cjow83m030L17UIs3z0JuJcy56npXtzBLJxREkN3BKpW6nl4oHphTHZaKVSSKO9%252FBlhEqmPEOetOUBF9grXvUOyq%252B31wvZ5gHNreQ8u6UbScpXibd1GOo8rI%252BH1FeZw4Hf83xiKS%252BscP%252Bo7%252FBNGL6AHvKrw4HT%252BBQ%253D%253D&code=34166890&%23svgRect"); offset-anchor: auto; animation: 5s linear infinite move; }
+#svgRect { fill: antiquewhite; stroke: black; stroke-width: 2; }
+@keyframes move { 
+  0% { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+
+button.copy {display:none !important}

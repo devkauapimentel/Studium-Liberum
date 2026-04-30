@@ -1,0 +1,7 @@
+
+div { margin: 0.25em 0px; padding: 0.25em; }
+span { display: inline-block; }
+.escape { border: dashed; }
+.no-escape { border: solid; }
+
+button.copy {display:none !important}

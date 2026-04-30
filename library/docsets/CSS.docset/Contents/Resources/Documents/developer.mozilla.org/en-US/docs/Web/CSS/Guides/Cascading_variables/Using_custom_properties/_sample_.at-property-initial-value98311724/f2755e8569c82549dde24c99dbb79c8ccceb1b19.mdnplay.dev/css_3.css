@@ -1,0 +1,9 @@
+
+@property --box-color { syntax: "<color>"; inherits: false; initial-value: teal; }
+.one { --box-color: pink; background-color: var(--box-color); }
+.two { --box-color: peenk; background-color: var(--box-color); }
+.three { --box-color: 2rem; background-color: var(--box-color); }
+div { color: white; font-family: sans-serif; width: 100px; height: 100px; margin: 4px; padding: 8px; border: 2px solid black; display: inline-block; }
+.one { color: black; }
+
+button.copy {display:none !important}

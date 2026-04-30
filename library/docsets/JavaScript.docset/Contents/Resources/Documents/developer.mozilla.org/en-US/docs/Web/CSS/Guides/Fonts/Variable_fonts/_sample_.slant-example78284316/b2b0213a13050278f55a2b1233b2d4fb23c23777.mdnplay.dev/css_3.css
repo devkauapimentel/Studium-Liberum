@@ -1,0 +1,9 @@
+
+@font-face { font-family: SlantFont; font-style: oblique -15deg 15deg; src: url("../mdn.github.io/shared-assets/fonts/font_with_slant_axis.woff2") format("woff2"); }
+p { font-family: SlantFont, sans-serif; display: inline-block; margin: 1rem; font-size: 4rem; }
+.adjustable-box { border: 1px dashed; --text-axis: -5; }
+.font-style { font-style: oblique 5deg; }
+.font-variation { font-variation-settings: "slnt" -5; }
+.adjustable { font-variation-settings: "slnt" var(--slant-angle); }
+
+button.copy {display:none !important}

@@ -1,0 +1,10 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/learn_web_development/howto/solve_html_problems/index.md
+
+# Original Wiki contributors
+chrisdavidmills
+RafeyIqbalRahman
+mrmowji
+ishan123456789
+Jeremie
+Andrew_Pfeiffer

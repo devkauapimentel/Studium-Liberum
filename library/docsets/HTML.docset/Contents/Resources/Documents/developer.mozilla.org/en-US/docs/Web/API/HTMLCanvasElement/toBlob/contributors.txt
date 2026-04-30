@@ -1,0 +1,22 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/htmlcanvaselement/tocommits/index.md
+
+# Original Wiki contributors
+mfluehr
+AnandChowdhary
+chrisdavidmills
+germanotm
+DomenO
+Sheppy
+fscholz
+Shepard4711
+ADTJ
+IceCreamYou
+jimmywarting
+nmve
+TimothyGu
+jpmedley
+paul.irish
+Sebastianz
+Nexii
+adria

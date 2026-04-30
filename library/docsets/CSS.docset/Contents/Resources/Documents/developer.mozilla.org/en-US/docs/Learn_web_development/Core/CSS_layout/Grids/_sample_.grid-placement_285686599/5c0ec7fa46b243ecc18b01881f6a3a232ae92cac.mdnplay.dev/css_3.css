@@ -1,0 +1,11 @@
+
+.container { font-family: sans-serif; display: grid; grid-template-columns: 1fr 3fr; gap: 20px; }
+header, footer { border-radius: 5px; padding: 10px; background-color: rebeccapurple; color: whitesmoke; text-align: center; }
+aside { border-right: 1px solid rebeccapurple; }
+.container { display: grid; grid-template-areas: "header header" "sidebar content" "footer footer"; grid-template-columns: 1fr 3fr; gap: 20px; }
+header { grid-row-start: header; grid-column-start: header; grid-row-end: header; grid-column-end: header; }
+main { grid-row-start: content; grid-column-start: content; grid-row-end: content; grid-column-end: content; }
+aside { grid-row-start: sidebar; grid-column-start: sidebar; grid-row-end: sidebar; grid-column-end: sidebar; }
+footer { grid-row-start: footer; grid-column-start: footer; grid-row-end: footer; grid-column-end: footer; }
+
+button.copy {display:none !important}

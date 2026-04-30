@@ -1,0 +1,22 @@
+
+          function draw() {
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  ctx.beginPath();
+
+  // Outer shape clockwise ⟳
+  ctx.moveTo(0, 0);
+  ctx.lineTo(150, 0);
+  ctx.lineTo(75, 129.9);
+
+  // Inner shape anticlockwise ↺
+  ctx.moveTo(75, 20);
+  ctx.lineTo(50, 60);
+  ctx.lineTo(100, 60);
+
+  ctx.fill();
+}
+draw();
+;
+        

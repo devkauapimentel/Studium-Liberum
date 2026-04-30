@@ -1,0 +1,8 @@
+
+body { display: flex; gap: 20px; padding: 15px; background-image: linear-gradient(to right, transparent 50%, rgba(0, 0, 0, 0.05) 50%), linear-gradient(transparent 50%, rgba(0, 0, 0, 0.05) 50%); background-size: 20px 20px; }
+div, svg, img { width: 220px; aspect-ratio: 1 / 1; }
+:has(:checked) .applied-mask { mask-mode: alpha; }
+.applied-mask { mask-image: url("../mdn.github.io/shared-assets/images/examples/moon.jpg"); mask-mode: luminance; mask-size: 220px; }
+.mask-source { background: url("../mdn.github.io/shared-assets/images/examples/moon.jpg") 0% 0% / 220px auto; }
+
+button.copy {display:none !important}

@@ -1,0 +1,17 @@
+
+body, textarea, ::placeholder { font-family: sans-serif; color: white; }
+div, input, textarea { border: 2px solid black; padding: 4px; margin: 4px; }
+.container { display: grid; gap: 10px; }
+.one { background-color: teal; }
+.two { color: black; background-color: pink; }
+.three { color: white; background-color: teal; }
+.four { background-color: teal; }
+.five { background-color: teal; }
+.container { --main-bg-color: teal; }
+.one { background-color: var(--main-bg-color); }
+.two { color: black; background-color: pink; }
+.three { color: white; background-color: var(--main-bg-color); }
+.four { background-color: var(--main-bg-color); }
+.five { background-color: var(--main-bg-color); }
+
+button.copy {display:none !important}

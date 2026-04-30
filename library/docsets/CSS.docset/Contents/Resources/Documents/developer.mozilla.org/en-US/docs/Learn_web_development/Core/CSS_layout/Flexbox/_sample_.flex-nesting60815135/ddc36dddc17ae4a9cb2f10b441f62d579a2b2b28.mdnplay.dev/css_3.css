@@ -1,0 +1,12 @@
+
+body { font-family: sans-serif; margin: 0px; }
+header { background: purple; height: 100px; }
+h1 { text-align: center; color: white; line-height: 100px; margin: 0px; }
+article { padding: 10px; margin: 10px; background: aqua; }
+section { display: flex; zoom: 0.8; }
+article { flex: 1 1 170px; }
+article:nth-of-type(3) { flex: 3 1 170px; display: flex; flex-flow: column; }
+article:nth-of-type(3) div:first-child { flex: 1 1 100px; display: flex; flex-flow: wrap; align-items: center; justify-content: space-around; }
+button { flex: 1 1 auto; margin: 5px; font-size: 18px; line-height: 1.5; }
+
+button.copy {display:none !important}

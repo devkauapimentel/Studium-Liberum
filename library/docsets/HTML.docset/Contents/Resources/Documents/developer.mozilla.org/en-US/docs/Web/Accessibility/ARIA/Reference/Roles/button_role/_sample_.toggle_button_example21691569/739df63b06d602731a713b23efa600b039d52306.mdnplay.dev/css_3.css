@@ -1,0 +1,5 @@
+
+button, [role="button"] { padding: 3px; border: 2px solid transparent; }
+button:active, button:focus, [role="button"][aria-pressed="true"] { border: 2px solid black; }
+
+button.copy {display:none !important}

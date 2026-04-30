@@ -1,0 +1,5104 @@
+WebView #1 navigating to page 1/1: http://127.0.0.1:3000/reference/react
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+Fetching resource 2/2: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fuwu.png&w=128&q=75
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react
+WebView #1 document.body.outerHTML
+WebView #2 navigating to page 3/133: http://127.0.0.1:3000/learn
+WebView #3 navigating to page 4/133: http://127.0.0.1:3000/reference/react/hooks
+WebView #4 navigating to page 5/133: http://127.0.0.1:3000/reference/react/useActionState
+WebView #1 navigating to page 6/133: http://127.0.0.1:3000/reference/react/useCallback
+WebView #4 base_lib
+WebView #3 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #1 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #1 grabJS
+WebView #4 grabJS
+WebView #3 makeAbsolutesRelative
+WebView #1 grabMeta
+WebView #4 grabMeta
+WebView #2 base_lib
+WebView #1 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+WebView #4 makeAbsolutesRelative
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #1 indexCurrentPageOfWebView
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/hooks
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/hooks
+WebView #2 grabJS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useCallback
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useCallback
+WebView #2 grabMeta
+WebView #3 document.body.outerHTML
+WebView #1 document.body.outerHTML
+WebView #2 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useActionState
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useActionState
+Fetching resource 179/179: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_data_child.dark.png&w=828&q=75
+Fetching resource 180/180: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_data_child.png&w=828&q=75
+Fetching resource 181/181: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_data_child_clicked.dark.png&w=828&q=75
+Fetching resource 182/182: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_data_child_clicked.png&w=828&q=75
+Fetching resource 183/183: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_data_parent.dark.png&w=828&q=75
+WebView #2 indexCurrentPageOfWebView
+WebView #4 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn
+- Indexed 0 entries at http://127.0.0.1:3000/learn
+WebView #2 document.body.outerHTML
+Fetching resource 184/186: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_data_parent.png&w=828&q=75
+Fetching resource 185/186: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_data_parent_clicked.dark.png&w=828&q=75
+Fetching resource 186/186: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_data_parent_clicked.png&w=828&q=75
+WebView #3 navigating to page 7/186: http://127.0.0.1:3000/reference/react/useContext
+WebView #1 navigating to page 8/186: http://127.0.0.1:3000/reference/react/useDebugValue
+WebView #4 navigating to page 9/186: http://127.0.0.1:3000/reference/react/useDeferredValue
+WebView #2 navigating to page 10/186: http://127.0.0.1:3000/reference/react/useEffect
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+Fetching resource 187/187: http://127.0.0.1:3000/images/docs/react-devtools-usedebugvalue.png
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #1 indexCurrentPageOfWebView
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useDebugValue
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useDebugValue
+WebView #4 grabCSS
+WebView #2 grabCSS
+WebView #3 grabCSS
+WebView #4 grabJS
+WebView #2 grabJS
+WebView #4 grabMeta
+WebView #2 grabMeta
+WebView #3 grabJS
+WebView #4 makeAbsolutesRelative
+WebView #2 makeAbsolutesRelative
+WebView #3 grabMeta
+WebView #4 indexCurrentPageOfWebView
+WebView #3 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+WebView #1 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useDeferredValue
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useDeferredValue
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useEffect
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useEffect
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useContext
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useContext
+WebView #4 document.body.outerHTML
+WebView #2 document.body.outerHTML
+WebView #3 document.body.outerHTML
+WebView #1 navigating to page 11/187: http://127.0.0.1:3000/reference/react/useEffectEvent
+WebView #4 navigating to page 12/187: http://127.0.0.1:3000/reference/react/useId
+WebView #2 navigating to page 13/187: http://127.0.0.1:3000/reference/react/useImperativeHandle
+WebView #3 navigating to page 14/187: http://127.0.0.1:3000/reference/react/useInsertionEffect
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #2 indexCurrentPageOfWebView
+WebView #1 grabCSS
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #1 grabJS
+WebView #4 grabMeta
+WebView #1 grabMeta
+WebView #4 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useImperativeHandle
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useImperativeHandle
+WebView #1 makeAbsolutesRelative
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #2 document.body.outerHTML
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #1 indexCurrentPageOfWebView
+WebView #4 indexCurrentPageOfWebView
+WebView #3 grabMeta
+WebView #3 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useEffectEvent
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useEffectEvent
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useId
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useId
+WebView #3 indexCurrentPageOfWebView
+WebView #2 navigating to page 15/187: http://127.0.0.1:3000/reference/react/useLayoutEffect
+WebView #1 document.body.outerHTML
+WebView #4 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useInsertionEffect
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useInsertionEffect
+WebView #3 document.body.outerHTML
+WebView #4 navigating to page 16/187: http://127.0.0.1:3000/reference/react/useMemo
+WebView #1 navigating to page 17/187: http://127.0.0.1:3000/reference/react/useOptimistic
+WebView #3 navigating to page 18/187: http://127.0.0.1:3000/reference/react/useReducer
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #4 grabCSS
+WebView #1 makeAbsolutesRelative
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #4 grabJS
+WebView #2 base_lib
+WebView #1 indexCurrentPageOfWebView
+WebView #4 grabMeta
+WebView #2 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #4 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useOptimistic
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useOptimistic
+WebView #3 grabJS
+WebView #2 grabCSS
+WebView #3 grabMeta
+WebView #1 document.body.outerHTML
+WebView #2 grabJS
+WebView #3 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+WebView #2 grabMeta
+WebView #3 indexCurrentPageOfWebView
+WebView #2 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useMemo
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useMemo
+WebView #1 navigating to page 19/187: http://127.0.0.1:3000/reference/react/useRef
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useReducer
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useReducer
+WebView #4 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useLayoutEffect
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useLayoutEffect
+WebView #3 document.body.outerHTML
+WebView #2 document.body.outerHTML
+WebView #4 navigating to page 20/187: http://127.0.0.1:3000/reference/react/useState
+WebView #3 navigating to page 21/187: http://127.0.0.1:3000/reference/react/useSyncExternalStore
+WebView #2 navigating to page 22/187: http://127.0.0.1:3000/reference/react/useTransition
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #1 base_lib
+WebView #4 makeAbsolutesRelative
+WebView #1 makeRelativesAbsolute
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #3 grabCSS
+WebView #1 grabJS
+WebView #4 indexCurrentPageOfWebView
+WebView #1 grabMeta
+WebView #3 grabJS
+WebView #2 base_lib
+WebView #1 makeAbsolutesRelative
+WebView #3 grabMeta
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useState
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useState
+WebView #2 makeRelativesAbsolute
+WebView #3 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+WebView #2 grabCSS
+WebView #4 document.body.outerHTML
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #3 indexCurrentPageOfWebView
+WebView #2 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useRef
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useRef
+WebView #4 navigating to page 23/187: http://127.0.0.1:3000/reference/react/components
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useSyncExternalStore
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useSyncExternalStore
+WebView #2 indexCurrentPageOfWebView
+WebView #1 document.body.outerHTML
+WebView #3 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/useTransition
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/useTransition
+WebView #2 document.body.outerHTML
+WebView #1 navigating to page 24/187: http://127.0.0.1:3000/reference/react/Fragment
+WebView #3 navigating to page 25/187: http://127.0.0.1:3000/reference/react/Profiler
+WebView #2 navigating to page 26/187: http://127.0.0.1:3000/reference/react/StrictMode
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #3 base_lib
+WebView #4 indexCurrentPageOfWebView
+WebView #1 grabCSS
+WebView #3 makeRelativesAbsolute
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/components
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/components
+WebView #3 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #4 document.body.outerHTML
+WebView #3 grabJS
+WebView #1 makeAbsolutesRelative
+WebView #3 grabMeta
+WebView #2 base_lib
+WebView #3 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/Fragment
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/Fragment
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #1 document.body.outerHTML
+WebView #4 navigating to page 27/187: http://127.0.0.1:3000/reference/react/Suspense
+WebView #2 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/Profiler
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/Profiler
+WebView #2 indexCurrentPageOfWebView
+WebView #3 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/StrictMode
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/StrictMode
+WebView #2 document.body.outerHTML
+WebView #1 navigating to page 28/187: http://127.0.0.1:3000/reference/react/Activity
+WebView #3 navigating to page 29/187: http://127.0.0.1:3000/reference/react/ViewTransition
+WebView #2 navigating to page 30/187: http://127.0.0.1:3000/reference/react/apis
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #4 indexCurrentPageOfWebView
+WebView #3 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #3 grabJS
+WebView #2 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/Suspense
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/Suspense
+WebView #3 grabMeta
+WebView #2 indexCurrentPageOfWebView
+WebView #3 makeAbsolutesRelative
+WebView #1 base_lib
+WebView #4 document.body.outerHTML
+WebView #1 makeRelativesAbsolute
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/apis
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/apis
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #3 indexCurrentPageOfWebView
+WebView #1 makeAbsolutesRelative
+WebView #2 document.body.outerHTML
+WebView #4 navigating to page 31/187: http://127.0.0.1:3000/reference/react/act
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/ViewTransition
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/ViewTransition
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/Activity
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/Activity
+WebView #3 document.body.outerHTML
+WebView #1 document.body.outerHTML
+WebView #2 navigating to page 32/187: http://127.0.0.1:3000/reference/react/addTransitionType
+WebView #3 navigating to page 33/187: http://127.0.0.1:3000/reference/react/cache
+WebView #1 navigating to page 34/187: http://127.0.0.1:3000/reference/react/cacheSignal
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #2 base_lib
+WebView #1 makeAbsolutesRelative
+WebView #2 makeRelativesAbsolute
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #1 indexCurrentPageOfWebView
+WebView #2 grabJS
+WebView #4 grabCSS
+WebView #2 grabMeta
+WebView #4 grabJS
+WebView #2 makeAbsolutesRelative
+WebView #4 grabMeta
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/cacheSignal
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/cacheSignal
+WebView #2 indexCurrentPageOfWebView
+WebView #4 makeAbsolutesRelative
+WebView #1 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/addTransitionType
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/addTransitionType
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/act
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/act
+WebView #2 document.body.outerHTML
+WebView #4 document.body.outerHTML
+WebView #1 navigating to page 35/187: http://127.0.0.1:3000/reference/react/captureOwnerStack
+WebView #2 navigating to page 36/187: http://127.0.0.1:3000/reference/react/createContext
+WebView #4 navigating to page 37/187: http://127.0.0.1:3000/reference/react/lazy
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #1 grabJS
+WebView #4 grabCSS
+WebView #1 grabMeta
+WebView #2 base_lib
+WebView #4 grabJS
+WebView #1 makeAbsolutesRelative
+WebView #2 makeRelativesAbsolute
+WebView #4 grabMeta
+WebView #2 grabCSS
+WebView #1 indexCurrentPageOfWebView
+WebView #4 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+WebView #2 grabJS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/captureOwnerStack
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/captureOwnerStack
+WebView #2 grabMeta
+WebView #1 document.body.outerHTML
+WebView #2 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/lazy
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/lazy
+WebView #2 indexCurrentPageOfWebView
+WebView #4 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/createContext
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/createContext
+WebView #2 document.body.outerHTML
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #1 navigating to page 38/187: http://127.0.0.1:3000/reference/react/memo
+WebView #4 navigating to page 39/187: http://127.0.0.1:3000/reference/react/startTransition
+WebView #2 navigating to page 40/187: http://127.0.0.1:3000/reference/react/use
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/cache
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/cache
+WebView #3 document.body.outerHTML
+WebView #3 navigating to page 41/187: http://127.0.0.1:3000/reference/react/experimental_taintObjectReference
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #4 base_lib
+WebView #1 grabCSS
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #4 grabJS
+WebView #1 makeAbsolutesRelative
+WebView #4 grabMeta
+WebView #2 base_lib
+WebView #1 indexCurrentPageOfWebView
+WebView #4 makeAbsolutesRelative
+WebView #2 makeRelativesAbsolute
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/memo
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/memo
+WebView #4 indexCurrentPageOfWebView
+WebView #2 grabCSS
+WebView #1 document.body.outerHTML
+WebView #2 grabJS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/startTransition
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/startTransition
+WebView #2 grabMeta
+WebView #4 document.body.outerHTML
+WebView #1 navigating to page 42/187: http://127.0.0.1:3000/reference/react/experimental_taintUniqueValue
+WebView #2 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/use
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/use
+WebView #2 document.body.outerHTML
+WebView #4 navigating to page 43/187: http://127.0.0.1:3000/reference/react-dom/hooks
+WebView #2 navigating to page 44/187: http://127.0.0.1:3000/reference/react-dom/hooks/useFormStatus
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/experimental_taintObjectReference
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/experimental_taintObjectReference
+WebView #3 document.body.outerHTML
+WebView #3 navigating to page 45/187: http://127.0.0.1:3000/reference/react-dom/components
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/experimental_taintUniqueValue
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/experimental_taintUniqueValue
+WebView #1 document.body.outerHTML
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #1 navigating to page 46/187: http://127.0.0.1:3000/reference/react-dom/components/common
+WebView #2 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/hooks/useFormStatus
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/hooks/useFormStatus
+WebView #2 document.body.outerHTML
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #2 navigating to page 47/187: http://127.0.0.1:3000/reference/react-dom/components/form
+WebView #4 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/hooks
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/hooks
+WebView #4 document.body.outerHTML
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #4 navigating to page 48/187: http://127.0.0.1:3000/reference/react-dom/components/input
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components
+WebView #3 document.body.outerHTML
+WebView #3 navigating to page 49/187: http://127.0.0.1:3000/reference/react-dom/components/option
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+Fetching resource 188/188: https://github.com/facebook/react/blob/81d4ee9ca5c405dce62f64e61506b8e155f38d8d/packages/react-dom-bindings/src/shared/CSSProperty.js
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components/common
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components/common
+WebView #1 document.body.outerHTML
+WebView #1 navigating to page 50/188: http://127.0.0.1:3000/reference/react-dom/components/progress
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #3 makeAbsolutesRelative
+WebView #2 base_lib
+WebView #3 indexCurrentPageOfWebView
+WebView #2 makeRelativesAbsolute
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components/option
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components/option
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #3 document.body.outerHTML
+WebView #2 makeAbsolutesRelative
+WebView #1 base_lib
+WebView #2 indexCurrentPageOfWebView
+WebView #1 makeRelativesAbsolute
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components/form
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components/form
+WebView #2 document.body.outerHTML
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #3 navigating to page 51/188: http://127.0.0.1:3000/reference/react-dom/components/select
+WebView #2 navigating to page 52/188: http://127.0.0.1:3000/reference/react-dom/components/textarea
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components/progress
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components/progress
+WebView #1 document.body.outerHTML
+WebView #1 navigating to page 53/188: http://127.0.0.1:3000/reference/react-dom/components/link
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components/input
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components/input
+WebView #4 document.body.outerHTML
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #3 base_lib
+WebView #2 grabCSS
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #4 navigating to page 54/188: http://127.0.0.1:3000/reference/react-dom/components/meta
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #3 grabJS
+WebView #2 makeAbsolutesRelative
+WebView #3 grabMeta
+WebView #2 indexCurrentPageOfWebView
+WebView #3 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components/textarea
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components/textarea
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components/select
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components/select
+WebView #2 document.body.outerHTML
+WebView #3 document.body.outerHTML
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #2 navigating to page 55/188: http://127.0.0.1:3000/reference/react-dom/components/script
+WebView #3 navigating to page 56/188: http://127.0.0.1:3000/reference/react-dom/components/style
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components/link
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components/link
+WebView #1 document.body.outerHTML
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #1 navigating to page 57/188: http://127.0.0.1:3000/reference/react-dom/components/title
+WebView #4 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components/meta
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components/meta
+WebView #4 document.body.outerHTML
+WebView #4 navigating to page 58/188: http://127.0.0.1:3000/reference/react-dom
+WebView #3 base_lib
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #3 makeRelativesAbsolute
+WebView #2 makeAbsolutesRelative
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #4 grabCSS
+WebView #2 indexCurrentPageOfWebView
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #4 grabJS
+WebView #3 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components/script
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components/script
+WebView #4 grabMeta
+WebView #3 indexCurrentPageOfWebView
+WebView #4 makeAbsolutesRelative
+WebView #1 base_lib
+WebView #2 document.body.outerHTML
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components/style
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components/style
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #3 document.body.outerHTML
+WebView #4 document.body.outerHTML
+WebView #2 navigating to page 59/189: http://127.0.0.1:3000/reference/react-dom/createPortal
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/components/title
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/components/title
+WebView #1 document.body.outerHTML
+WebView #4 navigating to page 60/189: http://127.0.0.1:3000/reference/react-dom/flushSync
+WebView #3 navigating to page 61/189: http://127.0.0.1:3000/reference/react-dom/preconnect
+WebView #1 navigating to page 62/189: http://127.0.0.1:3000/reference/react-dom/prefetchDNS
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #1 base_lib
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/createPortal
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/createPortal
+WebView #2 document.body.outerHTML
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #1 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #1 grabCSS
+WebView #4 grabJS
+WebView #3 grabJS
+WebView #4 grabMeta
+WebView #3 grabMeta
+WebView #1 grabJS
+WebView #4 makeAbsolutesRelative
+WebView #3 makeAbsolutesRelative
+WebView #1 grabMeta
+WebView #4 indexCurrentPageOfWebView
+WebView #1 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+WebView #2 navigating to page 63/189: http://127.0.0.1:3000/reference/react-dom/preinit
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/flushSync
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/flushSync
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/preconnect
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/preconnect
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/prefetchDNS
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/prefetchDNS
+WebView #4 document.body.outerHTML
+WebView #3 document.body.outerHTML
+WebView #1 document.body.outerHTML
+WebView #3 navigating to page 64/189: http://127.0.0.1:3000/reference/react-dom/preinitModule
+WebView #4 navigating to page 65/189: http://127.0.0.1:3000/reference/react-dom/preload
+WebView #1 navigating to page 66/189: http://127.0.0.1:3000/reference/react-dom/preloadModule
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/preinit
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/preinit
+WebView #2 document.body.outerHTML
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #2 navigating to page 67/189: http://127.0.0.1:3000/reference/react-dom/client
+WebView #4 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #4 grabJS
+WebView #3 makeAbsolutesRelative
+WebView #4 grabMeta
+WebView #3 indexCurrentPageOfWebView
+WebView #4 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/preinitModule
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/preinitModule
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/preload
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/preload
+WebView #3 document.body.outerHTML
+WebView #4 document.body.outerHTML
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+WebView #3 navigating to page 68/189: http://127.0.0.1:3000/reference/react-dom/client/createRoot
+WebView #4 navigating to page 69/189: http://127.0.0.1:3000/reference/react-dom/client/hydrateRoot
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/preloadModule
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/preloadModule
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #1 document.body.outerHTML
+WebView #2 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/client
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/client
+WebView #2 document.body.outerHTML
+WebView #1 navigating to page 70/189: http://127.0.0.1:3000/reference/react-dom/server
+WebView #2 navigating to page 71/189: http://127.0.0.1:3000/reference/react-dom/server/renderToPipeableStream
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #3 base_lib
+WebView #4 makeAbsolutesRelative
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/client/hydrateRoot
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/client/hydrateRoot
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #4 document.body.outerHTML
+WebView #3 makeAbsolutesRelative
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #3 indexCurrentPageOfWebView
+WebView #1 grabCSS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/client/createRoot
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/client/createRoot
+WebView #3 document.body.outerHTML
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+WebView #4 navigating to page 72/189: http://127.0.0.1:3000/reference/react-dom/server/renderToReadableStream
+WebView #3 navigating to page 73/189: http://127.0.0.1:3000/reference/react-dom/server/renderToStaticMarkup
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/server
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/server
+WebView #1 document.body.outerHTML
+WebView #1 navigating to page 74/189: http://127.0.0.1:3000/reference/react-dom/server/renderToString
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+Fetching resource 190/190: https://github.com/facebook/react/blob/14c2be8dac2d5482fda8a0906a31d239df8551fc/packages/react-server/src/ReactFizzServer.js
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/server/renderToPipeableStream
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/server/renderToPipeableStream
+WebView #2 document.body.outerHTML
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #2 navigating to page 75/190: http://127.0.0.1:3000/reference/react-dom/server/resume
+WebView #4 makeAbsolutesRelative
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #4 indexCurrentPageOfWebView
+WebView #3 grabCSS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/server/renderToReadableStream
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/server/renderToReadableStream
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #4 document.body.outerHTML
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/server/renderToStaticMarkup
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/server/renderToStaticMarkup
+WebView #3 document.body.outerHTML
+WebView #4 navigating to page 76/190: http://127.0.0.1:3000/reference/react-dom/server/resumeToPipeableStream
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #3 navigating to page 77/190: http://127.0.0.1:3000/reference/react-dom/static
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/server/renderToString
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/server/renderToString
+WebView #1 document.body.outerHTML
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #1 navigating to page 78/190: http://127.0.0.1:3000/reference/react-dom/static/prerender
+WebView #2 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/server/resume
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/server/resume
+WebView #2 document.body.outerHTML
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #2 navigating to page 79/191: http://127.0.0.1:3000/reference/react-dom/static/prerenderToNodeStream
+WebView #4 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/server/resumeToPipeableStream
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/server/resumeToPipeableStream
+WebView #4 document.body.outerHTML
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #4 navigating to page 80/191: http://127.0.0.1:3000/reference/react-dom/static/resumeAndPrerender
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/static
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/static
+WebView #3 document.body.outerHTML
+WebView #3 navigating to page 81/191: http://127.0.0.1:3000/reference/react-dom/static/resumeAndPrerenderToNodeStream
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/static/prerender
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/static/prerender
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #1 document.body.outerHTML
+WebView #2 makeAbsolutesRelative
+WebView #4 base_lib
+WebView #2 indexCurrentPageOfWebView
+WebView #4 makeRelativesAbsolute
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/static/prerenderToNodeStream
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/static/prerenderToNodeStream
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #2 document.body.outerHTML
+WebView #4 makeAbsolutesRelative
+WebView #1 navigating to page 82/191: http://127.0.0.1:3000/reference/react-compiler/configuration
+WebView #4 indexCurrentPageOfWebView
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/static/resumeAndPrerender
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/static/resumeAndPrerender
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #4 document.body.outerHTML
+WebView #2 navigating to page 83/191: http://127.0.0.1:3000/reference/react-compiler/compilationMode
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-dom/static/resumeAndPrerenderToNodeStream
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-dom/static/resumeAndPrerenderToNodeStream
+WebView #3 document.body.outerHTML
+WebView #4 navigating to page 84/191: http://127.0.0.1:3000/reference/react-compiler/gating
+WebView #3 navigating to page 85/191: http://127.0.0.1:3000/reference/react-compiler/logger
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-compiler/configuration
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-compiler/configuration
+WebView #1 document.body.outerHTML
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #2 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #1 navigating to page 86/191: http://127.0.0.1:3000/reference/react-compiler/panicThreshold
+WebView #2 grabJS
+WebView #4 makeAbsolutesRelative
+WebView #2 grabMeta
+WebView #3 base_lib
+WebView #4 indexCurrentPageOfWebView
+WebView #2 makeAbsolutesRelative
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-compiler/gating
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-compiler/gating
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-compiler/compilationMode
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-compiler/compilationMode
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #4 document.body.outerHTML
+WebView #2 document.body.outerHTML
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-compiler/logger
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-compiler/logger
+WebView #3 document.body.outerHTML
+WebView #4 navigating to page 87/191: http://127.0.0.1:3000/reference/react-compiler/target
+WebView #2 navigating to page 88/191: http://127.0.0.1:3000/reference/react-compiler/directives
+WebView #3 navigating to page 89/191: http://127.0.0.1:3000/reference/react-compiler/directives/use-memo
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-compiler/panicThreshold
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-compiler/panicThreshold
+WebView #1 document.body.outerHTML
+WebView #1 navigating to page 90/191: http://127.0.0.1:3000/reference/react-compiler/directives/use-no-memo
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #4 base_lib
+WebView #2 indexCurrentPageOfWebView
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #4 makeRelativesAbsolute
+WebView #3 grabCSS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-compiler/directives
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-compiler/directives
+WebView #4 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #2 document.body.outerHTML
+WebView #4 grabJS
+WebView #3 makeAbsolutesRelative
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+WebView #1 base_lib
+WebView #3 indexCurrentPageOfWebView
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-compiler/directives/use-memo
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-compiler/directives/use-memo
+WebView #4 indexCurrentPageOfWebView
+WebView #1 grabJS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-compiler/target
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-compiler/target
+WebView #1 grabMeta
+WebView #3 document.body.outerHTML
+WebView #4 document.body.outerHTML
+WebView #2 navigating to page 91/191: http://127.0.0.1:3000/reference/react-compiler/compiling-libraries
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-compiler/directives/use-no-memo
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-compiler/directives/use-no-memo
+WebView #1 document.body.outerHTML
+WebView #4 navigating to page 92/191: http://127.0.0.1:3000/reference/dev-tools/react-performance-tracks
+WebView #3 navigating to page 93/191: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks
+WebView #1 navigating to page 94/191: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/exhaustive-deps
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #3 base_lib
+WebView #2 indexCurrentPageOfWebView
+WebView #3 makeRelativesAbsolute
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #3 grabCSS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react-compiler/compiling-libraries
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react-compiler/compiling-libraries
+WebView #1 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #2 document.body.outerHTML
+WebView #3 grabJS
+WebView #1 grabJS
+WebView #4 makeAbsolutesRelative
+WebView #3 grabMeta
+Fetching resource 192/192: http://127.0.0.1:3000/images/docs/performance-tracks/overview.png
+Fetching resource 193/193: http://127.0.0.1:3000/images/docs/performance-tracks/overview.dark.png
+Fetching resource 194/194: http://127.0.0.1:3000/images/docs/performance-tracks/scheduler.png
+Fetching resource 195/195: http://127.0.0.1:3000/images/docs/performance-tracks/scheduler.dark.png
+Fetching resource 196/196: http://127.0.0.1:3000/images/docs/performance-tracks/scheduler-update.png
+Fetching resource 197/198: http://127.0.0.1:3000/images/docs/performance-tracks/scheduler-update.dark.png
+Fetching resource 198/200: http://127.0.0.1:3000/images/docs/performance-tracks/scheduler-cascading-update.png
+Fetching resource 199/200: http://127.0.0.1:3000/images/docs/performance-tracks/scheduler-cascading-update.dark.png
+Fetching resource 200/201: http://127.0.0.1:3000/images/docs/performance-tracks/components-render.png
+Fetching resource 201/201: http://127.0.0.1:3000/images/docs/performance-tracks/components-render.dark.png
+Fetching resource 202/202: http://127.0.0.1:3000/images/docs/performance-tracks/components-effects.png
+Fetching resource 203/204: http://127.0.0.1:3000/images/docs/performance-tracks/components-effects.dark.png
+Fetching resource 204/204: http://127.0.0.1:3000/images/docs/performance-tracks/changed-props.png
+Fetching resource 205/205: http://127.0.0.1:3000/images/docs/performance-tracks/changed-props.dark.png
+Fetching resource 206/206: http://127.0.0.1:3000/images/docs/performance-tracks/server-overview.png
+Fetching resource 207/207: http://127.0.0.1:3000/images/docs/performance-tracks/server-overview.dark.png
+WebView #1 grabMeta
+WebView #3 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/dev-tools/react-performance-tracks
+- Indexed 0 entries at http://127.0.0.1:3000/reference/dev-tools/react-performance-tracks
+WebView #2 navigating to page 95/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/rules-of-hooks
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/exhaustive-deps
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/exhaustive-deps
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks
+WebView #4 document.body.outerHTML
+WebView #1 document.body.outerHTML
+WebView #3 document.body.outerHTML
+WebView #4 navigating to page 96/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/component-hook-factories
+WebView #3 navigating to page 97/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/config
+WebView #1 navigating to page 98/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/error-boundaries
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #2 indexCurrentPageOfWebView
+WebView #3 grabCSS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/rules-of-hooks
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/rules-of-hooks
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #2 document.body.outerHTML
+WebView #3 makeAbsolutesRelative
+WebView #1 base_lib
+WebView #3 indexCurrentPageOfWebView
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/config
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/config
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #3 document.body.outerHTML
+WebView #2 navigating to page 99/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/gating
+WebView #1 makeAbsolutesRelative
+WebView #4 base_lib
+WebView #1 indexCurrentPageOfWebView
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/error-boundaries
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/error-boundaries
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #1 document.body.outerHTML
+WebView #3 navigating to page 100/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/globals
+WebView #4 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/component-hook-factories
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/component-hook-factories
+WebView #4 document.body.outerHTML
+WebView #1 navigating to page 101/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/immutability
+WebView #4 navigating to page 102/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/incompatible-library
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/gating
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/gating
+WebView #2 document.body.outerHTML
+WebView #2 navigating to page 103/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/preserve-manual-memoization
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #4 indexCurrentPageOfWebView
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/incompatible-library
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/incompatible-library
+WebView #1 indexCurrentPageOfWebView
+WebView #4 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/immutability
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/immutability
+WebView #1 document.body.outerHTML
+WebView #4 navigating to page 104/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/purity
+WebView #1 navigating to page 105/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/refs
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/preserve-manual-memoization
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/preserve-manual-memoization
+WebView #2 document.body.outerHTML
+WebView #2 navigating to page 106/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/set-state-in-effect
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #4 base_lib
+WebView #1 makeAbsolutesRelative
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/refs
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/refs
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #1 document.body.outerHTML
+WebView #4 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/purity
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/purity
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #4 document.body.outerHTML
+WebView #1 navigating to page 107/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/set-state-in-render
+WebView #2 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/set-state-in-effect
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/set-state-in-effect
+WebView #2 document.body.outerHTML
+WebView #4 navigating to page 108/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/static-components
+WebView #2 navigating to page 109/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/unsupported-syntax
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #4 base_lib
+WebView #1 grabJS
+WebView #4 makeRelativesAbsolute
+WebView #1 grabMeta
+WebView #4 grabCSS
+WebView #1 makeAbsolutesRelative
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #4 grabJS
+WebView #1 indexCurrentPageOfWebView
+WebView #2 grabCSS
+WebView #4 grabMeta
+WebView #2 grabJS
+WebView #4 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/set-state-in-render
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/set-state-in-render
+WebView #2 grabMeta
+WebView #4 indexCurrentPageOfWebView
+WebView #2 makeAbsolutesRelative
+WebView #1 document.body.outerHTML
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/static-components
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/static-components
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/unsupported-syntax
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/unsupported-syntax
+WebView #4 document.body.outerHTML
+WebView #2 document.body.outerHTML
+WebView #1 navigating to page 110/207: http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/use-memo
+WebView #4 navigating to page 111/207: http://127.0.0.1:3000/reference/rules
+WebView #2 navigating to page 112/207: http://127.0.0.1:3000/reference/rules/components-and-hooks-must-be-pure
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #4 grabJS
+WebView #2 grabMeta
+WebView #4 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #4 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/rules
+- Indexed 0 entries at http://127.0.0.1:3000/reference/rules
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/rules/components-and-hooks-must-be-pure
+- Indexed 0 entries at http://127.0.0.1:3000/reference/rules/components-and-hooks-must-be-pure
+WebView #3 base_lib
+WebView #4 document.body.outerHTML
+WebView #2 document.body.outerHTML
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #4 navigating to page 113/207: http://127.0.0.1:3000/reference/rules/react-calls-components-and-hooks
+WebView #2 navigating to page 114/207: http://127.0.0.1:3000/reference/rules/rules-of-hooks
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/rules/rules-of-hooks
+- Indexed 0 entries at http://127.0.0.1:3000/reference/rules/rules-of-hooks
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #2 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/globals
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/globals
+WebView #4 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+WebView #3 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/rules/react-calls-components-and-hooks
+- Indexed 0 entries at http://127.0.0.1:3000/reference/rules/react-calls-components-and-hooks
+WebView #4 document.body.outerHTML
+WebView #2 navigating to page 115/207: http://127.0.0.1:3000/reference/rsc/server-components
+WebView #4 navigating to page 116/207: http://127.0.0.1:3000/reference/rsc/server-functions
+WebView #3 navigating to page 117/207: http://127.0.0.1:3000/reference/rsc/directives
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/rsc/server-components
+- Indexed 0 entries at http://127.0.0.1:3000/reference/rsc/server-components
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #2 document.body.outerHTML
+WebView #4 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/rsc/server-functions
+- Indexed 0 entries at http://127.0.0.1:3000/reference/rsc/server-functions
+WebView #4 document.body.outerHTML
+WebView #2 navigating to page 118/207: http://127.0.0.1:3000/reference/rsc/use-client
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #4 navigating to page 119/207: http://127.0.0.1:3000/reference/rsc/use-server
+WebView #1 grabCSS
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #1 grabJS
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/rsc/directives
+- Indexed 0 entries at http://127.0.0.1:3000/reference/rsc/directives
+WebView #3 document.body.outerHTML
+WebView #1 grabMeta
+WebView #3 navigating to page 120/207: http://127.0.0.1:3000/reference/react/legacy
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #2 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #2 grabJS
+WebView #4 makeAbsolutesRelative
+WebView #2 grabMeta
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/use-memo
+- Indexed 0 entries at http://127.0.0.1:3000/reference/eslint-plugin-react-hooks/lints/use-memo
+WebView #4 indexCurrentPageOfWebView
+WebView #2 makeAbsolutesRelative
+Fetching resource 208/208: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fuse_client_module_dependency.dark.png&w=1200&q=75
+Fetching resource 209/209: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fuse_client_module_dependency.png&w=1200&q=75
+Fetching resource 210/210: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fuse_client_render_tree.dark.png&w=1080&q=75
+Fetching resource 211/211: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fuse_client_render_tree.png&w=1080&q=75
+Fetching resource 212/212: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fuse_client_module_dependency.dark.png&w=1080&q=75
+WebView #2 indexCurrentPageOfWebView
+WebView #1 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/rsc/use-server
+- Indexed 0 entries at http://127.0.0.1:3000/reference/rsc/use-server
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/rsc/use-client
+- Indexed 0 entries at http://127.0.0.1:3000/reference/rsc/use-client
+WebView #4 document.body.outerHTML
+WebView #2 document.body.outerHTML
+Fetching resource 213/213: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fuse_client_module_dependency.png&w=1080&q=75
+WebView #4 navigating to page 121/213: http://127.0.0.1:3000/reference/react/Children
+WebView #2 navigating to page 122/213: http://127.0.0.1:3000/reference/react/cloneElement
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/legacy
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/legacy
+WebView #3 document.body.outerHTML
+WebView #3 navigating to page 123/213: http://127.0.0.1:3000/reference/react/Component
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #4 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #4 grabJS
+WebView #2 makeAbsolutesRelative
+WebView #4 grabMeta
+WebView #2 indexCurrentPageOfWebView
+WebView #4 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/cloneElement
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/cloneElement
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/Children
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/Children
+WebView #2 document.body.outerHTML
+WebView #4 document.body.outerHTML
+WebView #1 navigating to page 124/213: http://127.0.0.1:3000/reference/react/createElement
+WebView #2 navigating to page 125/213: http://127.0.0.1:3000/reference/react/createRef
+WebView #4 navigating to page 126/213: http://127.0.0.1:3000/reference/react/forwardRef
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/Component
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/Component
+WebView #3 document.body.outerHTML
+WebView #3 navigating to page 127/213: http://127.0.0.1:3000/reference/react/isValidElement
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #4 base_lib
+WebView #2 grabMeta
+WebView #4 makeRelativesAbsolute
+WebView #2 makeAbsolutesRelative
+WebView #4 grabCSS
+WebView #2 indexCurrentPageOfWebView
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/createRef
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/createRef
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #1 base_lib
+WebView #3 grabCSS
+WebView #4 indexCurrentPageOfWebView
+WebView #1 makeRelativesAbsolute
+WebView #2 document.body.outerHTML
+WebView #1 grabCSS
+WebView #3 grabJS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/forwardRef
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/forwardRef
+WebView #3 grabMeta
+WebView #4 document.body.outerHTML
+WebView #2 navigating to page 128/213: http://127.0.0.1:3000/reference/react/PureComponent
+WebView #1 grabJS
+WebView #3 makeAbsolutesRelative
+WebView #1 grabMeta
+WebView #3 indexCurrentPageOfWebView
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/isValidElement
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/isValidElement
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/createElement
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/createElement
+WebView #3 document.body.outerHTML
+WebView #1 document.body.outerHTML
+WebView #4 navigating to page 129/213: http://127.0.0.1:3000/learn/installation
+WebView #3 navigating to page 130/213: http://127.0.0.1:3000/learn/describing-the-ui
+WebView #1 navigating to page 131/213: http://127.0.0.1:3000/learn/adding-interactivity
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #3 base_lib
+WebView #4 indexCurrentPageOfWebView
+WebView #3 makeRelativesAbsolute
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #1 grabCSS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/installation
+- Indexed 0 entries at http://127.0.0.1:3000/learn/installation
+WebView #3 grabCSS
+WebView #2 grabCSS
+WebView #1 grabJS
+WebView #3 grabJS
+WebView #1 grabMeta
+WebView #3 grabMeta
+WebView #2 grabJS
+WebView #1 makeAbsolutesRelative
+WebView #3 makeAbsolutesRelative
+WebView #2 grabMeta
+Fetching resource 214/214: http://127.0.0.1:3000/images/docs/illustrations/i_render-and-commit1.png
+Fetching resource 215/215: http://127.0.0.1:3000/images/docs/illustrations/i_render-and-commit2.png
+Fetching resource 216/216: http://127.0.0.1:3000/images/docs/illustrations/i_render-and-commit3.png
+Fetching resource 217/217: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fgeneric_render_tree.dark.png&w=1080&q=75
+Fetching resource 218/218: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fgeneric_render_tree.png&w=1080&q=75
+Fetching resource 219/219: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fgeneric_dependency_tree.dark.png&w=1080&q=75
+Fetching resource 220/220: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fgeneric_dependency_tree.png&w=1080&q=75
+WebView #1 indexCurrentPageOfWebView
+WebView #2 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+WebView #4 document.body.outerHTML
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/describing-the-ui
+- Indexed 0 entries at http://127.0.0.1:3000/learn/describing-the-ui
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/adding-interactivity
+- Indexed 0 entries at http://127.0.0.1:3000/learn/adding-interactivity
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/reference/react/PureComponent
+- Indexed 0 entries at http://127.0.0.1:3000/reference/react/PureComponent
+WebView #3 document.body.outerHTML
+WebView #1 document.body.outerHTML
+WebView #2 document.body.outerHTML
+WebView #4 navigating to page 132/220: http://127.0.0.1:3000/learn/managing-state
+WebView #3 navigating to page 133/220: http://127.0.0.1:3000/learn/escape-hatches
+WebView #1 navigating to page 134/220: http://127.0.0.1:3000/learn/state-a-components-memory
+WebView #2 navigating to page 135/220: http://127.0.0.1:3000/learn/extracting-state-logic-into-a-reducer
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/managing-state
+- Indexed 0 entries at http://127.0.0.1:3000/learn/managing-state
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #4 document.body.outerHTML
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/escape-hatches
+- Indexed 0 entries at http://127.0.0.1:3000/learn/escape-hatches
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #3 document.body.outerHTML
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #4 navigating to page 136/220: http://127.0.0.1:3000/learn/passing-props-to-a-component
+WebView #3 navigating to page 137/220: http://127.0.0.1:3000/learn/referencing-values-with-refs
+WebView #2 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/extracting-state-logic-into-a-reducer
+- Indexed 0 entries at http://127.0.0.1:3000/learn/extracting-state-logic-into-a-reducer
+WebView #2 document.body.outerHTML
+WebView #2 navigating to page 138/220: http://127.0.0.1:3000/learn/synchronizing-with-effects
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #3 makeAbsolutesRelative
+Fetching resource 221/221: http://127.0.0.1:3000/images/docs/illustrations/i_ref.png
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/referencing-values-with-refs
+- Indexed 0 entries at http://127.0.0.1:3000/learn/referencing-values-with-refs
+WebView #3 document.body.outerHTML
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #4 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #3 navigating to page 139/221: http://127.0.0.1:3000/learn/you-might-not-need-an-effect
+WebView #4 grabJS
+WebView #2 makeAbsolutesRelative
+WebView #4 grabMeta
+WebView #2 indexCurrentPageOfWebView
+WebView #4 makeAbsolutesRelative
+Fetching resource 222/222: http://127.0.0.1:3000/images/docs/illustrations/i_children-prop.png
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/synchronizing-with-effects
+- Indexed 0 entries at http://127.0.0.1:3000/learn/synchronizing-with-effects
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/passing-props-to-a-component
+- Indexed 0 entries at http://127.0.0.1:3000/learn/passing-props-to-a-component
+WebView #2 document.body.outerHTML
+WebView #4 document.body.outerHTML
+WebView #2 navigating to page 140/222: http://127.0.0.1:3000/learn/reusing-logic-with-custom-hooks
+WebView #4 navigating to page 141/222: http://127.0.0.1:3000/learn/react-compiler
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #1 makeAbsolutesRelative
+WebView #3 makeAbsolutesRelative
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #3 indexCurrentPageOfWebView
+WebView #2 grabCSS
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/you-might-not-need-an-effect
+- Indexed 0 entries at http://127.0.0.1:3000/learn/you-might-not-need-an-effect
+WebView #2 grabJS
+WebView #3 document.body.outerHTML
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/state-a-components-memory
+- Indexed 0 entries at http://127.0.0.1:3000/learn/state-a-components-memory
+WebView #3 navigating to page 142/222: http://127.0.0.1:3000/learn/editor-setup
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #2 indexCurrentPageOfWebView
+WebView #1 document.body.outerHTML
+WebView #4 grabCSS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/reusing-logic-with-custom-hooks
+- Indexed 0 entries at http://127.0.0.1:3000/learn/reusing-logic-with-custom-hooks
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #2 document.body.outerHTML
+WebView #4 makeAbsolutesRelative
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/react-compiler
+- Indexed 0 entries at http://127.0.0.1:3000/learn/react-compiler
+WebView #4 document.body.outerHTML
+WebView #2 navigating to page 143/222: http://127.0.0.1:3000/learn/sharing-state-between-components
+WebView #4 navigating to page 144/222: http://127.0.0.1:3000/learn/keeping-components-pure
+WebView #1 navigating to page 145/222: http://127.0.0.1:3000/learn/removing-effect-dependencies
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/editor-setup
+- Indexed 0 entries at http://127.0.0.1:3000/learn/editor-setup
+WebView #3 document.body.outerHTML
+WebView #3 navigating to page 146/222: http://127.0.0.1:3000/learn/lifecycle-of-reactive-effects
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+Fetching resource 223/223: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_state_child.dark.png&w=1080&q=75
+Fetching resource 224/224: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_state_child.png&w=1080&q=75
+Fetching resource 225/225: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_state_child_clicked.dark.png&w=1080&q=75
+Fetching resource 226/226: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_state_child_clicked.png&w=1080&q=75
+Fetching resource 227/227: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_state_parent.dark.png&w=1080&q=75
+WebView #4 grabCSS
+WebView #2 indexCurrentPageOfWebView
+WebView #4 grabJS
+Fetching resource 228/230: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_state_parent.png&w=1080&q=75
+Fetching resource 229/230: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_state_parent_clicked.dark.png&w=1080&q=75
+Fetching resource 230/230: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fsharing_state_parent_clicked.png&w=1080&q=75
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/sharing-state-between-components
+- Indexed 0 entries at http://127.0.0.1:3000/learn/sharing-state-between-components
+Fetching resource 231/231: http://127.0.0.1:3000/images/docs/illustrations/i_puritea-recipe.png
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #4 indexCurrentPageOfWebView
+WebView #2 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/keeping-components-pure
+- Indexed 0 entries at http://127.0.0.1:3000/learn/keeping-components-pure
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #4 document.body.outerHTML
+WebView #1 makeAbsolutesRelative
+WebView #2 navigating to page 147/231: http://127.0.0.1:3000/learn/tutorial-tic-tac-toe
+WebView #3 base_lib
+WebView #1 indexCurrentPageOfWebView
+WebView #3 makeRelativesAbsolute
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/removing-effect-dependencies
+- Indexed 0 entries at http://127.0.0.1:3000/learn/removing-effect-dependencies
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #1 document.body.outerHTML
+WebView #4 navigating to page 148/231: http://127.0.0.1:3000/learn/thinking-in-react
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/lifecycle-of-reactive-effects
+- Indexed 0 entries at http://127.0.0.1:3000/learn/lifecycle-of-reactive-effects
+WebView #3 document.body.outerHTML
+WebView #1 navigating to page 149/231: http://127.0.0.1:3000/learn/creating-a-react-app
+WebView #3 navigating to page 150/231: http://127.0.0.1:3000/learn/build-a-react-app-from-scratch
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+Fetching resource 232/232: http://127.0.0.1:3000/images/tutorial/react-starter-code-codesandbox.png
+Fetching resource 233/233: http://127.0.0.1:3000/images/tutorial/x-filled-square.png
+Fetching resource 234/234: http://127.0.0.1:3000/images/tutorial/two-x-filled-squares.png
+Fetching resource 235/235: http://127.0.0.1:3000/images/tutorial/nine-x-filled-squares.png
+Fetching resource 236/236: http://127.0.0.1:3000/images/tutorial/number-filled-board.png
+Fetching resource 237/237: http://127.0.0.1:3000/images/tutorial/board-filled-with-ones.png
+Fetching resource 238/238: http://127.0.0.1:3000/images/tutorial/board-filled-with-value.png
+Fetching resource 239/239: http://127.0.0.1:3000/images/tutorial/empty-board.png
+Fetching resource 240/240: http://127.0.0.1:3000/images/tutorial/tictac-adding-x-s.gif
+Fetching resource 241/241: http://127.0.0.1:3000/images/tutorial/codesandbox-devtools.png
+Fetching resource 242/243: http://127.0.0.1:3000/images/tutorial/devtools-select.gif
+Fetching resource 243/243: http://127.0.0.1:3000/images/tutorial/o-replaces-x.gif
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/tutorial-tic-tac-toe
+- Indexed 0 entries at http://127.0.0.1:3000/learn/tutorial-tic-tac-toe
+WebView #2 document.body.outerHTML
+WebView #2 navigating to page 151/243: http://127.0.0.1:3000/learn/add-react-to-an-existing-project
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #3 grabJS
+WebView #4 grabMeta
+WebView #3 grabMeta
+WebView #4 makeAbsolutesRelative
+WebView #3 makeAbsolutesRelative
+Fetching resource 244/245: http://127.0.0.1:3000/images/docs/s_thinking-in-react_ui.png
+Fetching resource 245/245: http://127.0.0.1:3000/images/docs/s_thinking-in-react_ui_outline.png
+WebView #1 base_lib
+WebView #3 indexCurrentPageOfWebView
+WebView #4 indexCurrentPageOfWebView
+WebView #1 makeRelativesAbsolute
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/build-a-react-app-from-scratch
+- Indexed 0 entries at http://127.0.0.1:3000/learn/build-a-react-app-from-scratch
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/thinking-in-react
+- Indexed 0 entries at http://127.0.0.1:3000/learn/thinking-in-react
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #3 document.body.outerHTML
+WebView #4 document.body.outerHTML
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/creating-a-react-app
+- Indexed 0 entries at http://127.0.0.1:3000/learn/creating-a-react-app
+WebView #1 document.body.outerHTML
+WebView #3 navigating to page 152/245: http://127.0.0.1:3000/learn/setup
+WebView #4 navigating to page 153/245: http://127.0.0.1:3000/learn/typescript
+WebView #1 navigating to page 154/245: http://127.0.0.1:3000/learn/react-developer-tools
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/add-react-to-an-existing-project
+- Indexed 0 entries at http://127.0.0.1:3000/learn/add-react-to-an-existing-project
+WebView #2 document.body.outerHTML
+WebView #2 navigating to page 155/245: http://127.0.0.1:3000/learn/react-compiler/introduction
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+Fetching resource 246/246: http://127.0.0.1:3000/images/docs/react-devtools-extension.png
+Fetching resource 247/247: http://127.0.0.1:3000/images/docs/react-devtools-standalone.png
+WebView #3 base_lib
+WebView #1 indexCurrentPageOfWebView
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/react-developer-tools
+- Indexed 0 entries at http://127.0.0.1:3000/learn/react-developer-tools
+WebView #3 makeAbsolutesRelative
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #3 indexCurrentPageOfWebView
+WebView #1 document.body.outerHTML
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/setup
+- Indexed 0 entries at http://127.0.0.1:3000/learn/setup
+WebView #1 navigating to page 156/247: http://127.0.0.1:3000/learn/react-compiler/installation
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #4 indexCurrentPageOfWebView
+WebView #3 document.body.outerHTML
+WebView #2 grabCSS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/typescript
+- Indexed 0 entries at http://127.0.0.1:3000/learn/typescript
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #4 document.body.outerHTML
+WebView #3 navigating to page 157/247: http://127.0.0.1:3000/learn/react-compiler/incremental-adoption
+WebView #2 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/react-compiler/introduction
+- Indexed 0 entries at http://127.0.0.1:3000/learn/react-compiler/introduction
+WebView #2 document.body.outerHTML
+WebView #4 navigating to page 158/247: http://127.0.0.1:3000/learn/react-compiler/debugging
+WebView #2 navigating to page 159/247: http://127.0.0.1:3000/learn/your-first-component
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/react-compiler/installation
+- Indexed 0 entries at http://127.0.0.1:3000/learn/react-compiler/installation
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #1 document.body.outerHTML
+WebView #3 base_lib
+WebView #4 makeAbsolutesRelative
+WebView #3 makeRelativesAbsolute
+WebView #2 base_lib
+WebView #3 grabCSS
+WebView #2 makeRelativesAbsolute
+WebView #4 indexCurrentPageOfWebView
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #1 navigating to page 160/247: http://127.0.0.1:3000/learn/importing-and-exporting-components
+WebView #2 grabCSS
+WebView #3 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/react-compiler/debugging
+- Indexed 0 entries at http://127.0.0.1:3000/learn/react-compiler/debugging
+WebView #2 grabJS
+WebView #3 indexCurrentPageOfWebView
+WebView #2 grabMeta
+WebView #4 document.body.outerHTML
+WebView #2 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/react-compiler/incremental-adoption
+- Indexed 0 entries at http://127.0.0.1:3000/learn/react-compiler/incremental-adoption
+WebView #3 document.body.outerHTML
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/your-first-component
+- Indexed 0 entries at http://127.0.0.1:3000/learn/your-first-component
+WebView #2 document.body.outerHTML
+WebView #4 navigating to page 161/247: http://127.0.0.1:3000/learn/writing-markup-with-jsx
+WebView #3 navigating to page 162/247: http://127.0.0.1:3000/learn/javascript-in-jsx-with-curly-braces
+WebView #2 navigating to page 163/247: http://127.0.0.1:3000/learn/conditional-rendering
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+Fetching resource 248/248: http://127.0.0.1:3000/images/docs/illustrations/i_import-export.svg
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/importing-and-exporting-components
+- Indexed 0 entries at http://127.0.0.1:3000/learn/importing-and-exporting-components
+WebView #1 document.body.outerHTML
+WebView #1 navigating to page 164/248: http://127.0.0.1:3000/learn/rendering-lists
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #2 grabCSS
+WebView #4 makeAbsolutesRelative
+Fetching resource 249/249: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fwriting_jsx_html.dark.png&w=750&q=75
+Fetching resource 250/250: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fwriting_jsx_html.png&w=750&q=75
+Fetching resource 251/251: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fwriting_jsx_js.dark.png&w=750&q=75
+Fetching resource 252/252: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fwriting_jsx_js.png&w=750&q=75
+Fetching resource 253/253: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fwriting_jsx_sidebar.dark.png&w=750&q=75
+WebView #2 grabJS
+WebView #4 indexCurrentPageOfWebView
+Fetching resource 255/256: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fwriting_jsx_form.dark.png&w=750&q=75
+Fetching resource 256/256: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fwriting_jsx_form.png&w=750&q=75
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/writing-markup-with-jsx
+- Indexed 0 entries at http://127.0.0.1:3000/learn/writing-markup-with-jsx
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #2 indexCurrentPageOfWebView
+WebView #1 grabCSS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/conditional-rendering
+- Indexed 0 entries at http://127.0.0.1:3000/learn/conditional-rendering
+WebView #4 document.body.outerHTML
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #2 document.body.outerHTML
+WebView #4 navigating to page 165/256: http://127.0.0.1:3000/learn/understanding-your-ui-as-a-tree
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/rendering-lists
+- Indexed 0 entries at http://127.0.0.1:3000/learn/rendering-lists
+WebView #1 document.body.outerHTML
+WebView #2 navigating to page 166/256: http://127.0.0.1:3000/learn/responding-to-events
+WebView #1 navigating to page 167/256: http://127.0.0.1:3000/learn/render-and-commit
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+Fetching resource 257/257: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_dom_tree.dark.png&w=1920&q=75
+Fetching resource 258/258: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_dom_tree.png&w=1920&q=75
+Fetching resource 259/259: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Frender_tree.dark.png&w=1080&q=75
+Fetching resource 260/260: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Frender_tree.png&w=1080&q=75
+Fetching resource 261/261: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fconditional_render_tree.dark.png&w=1200&q=75
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/understanding-your-ui-as-a-tree
+- Indexed 0 entries at http://127.0.0.1:3000/learn/understanding-your-ui-as-a-tree
+WebView #4 document.body.outerHTML
+Fetching resource 262/264: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fconditional_render_tree.png&w=1200&q=75
+Fetching resource 263/264: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fmodule_dependency_tree.dark.png&w=1920&q=75
+Fetching resource 264/264: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fmodule_dependency_tree.png&w=1920&q=75
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #4 navigating to page 168/264: http://127.0.0.1:3000/learn/state-as-a-snapshot
+WebView #1 makeAbsolutesRelative
+Fetching resource 265/265: http://127.0.0.1:3000/images/docs/illustrations/i_rerender1.png
+Fetching resource 266/266: http://127.0.0.1:3000/images/docs/illustrations/i_rerender2.png
+Fetching resource 267/267: http://127.0.0.1:3000/images/docs/illustrations/i_rerender3.png
+Fetching resource 268/268: http://127.0.0.1:3000/images/docs/illustrations/i_browser-paint.png
+WebView #2 base_lib
+WebView #1 indexCurrentPageOfWebView
+WebView #2 makeRelativesAbsolute
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/render-and-commit
+- Indexed 0 entries at http://127.0.0.1:3000/learn/render-and-commit
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #1 document.body.outerHTML
+WebView #2 makeAbsolutesRelative
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/responding-to-events
+- Indexed 0 entries at http://127.0.0.1:3000/learn/responding-to-events
+WebView #2 document.body.outerHTML
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #1 navigating to page 169/268: http://127.0.0.1:3000/learn/queueing-a-series-of-state-updates
+WebView #2 navigating to page 170/268: http://127.0.0.1:3000/learn/updating-objects-in-state
+WebView #3 makeAbsolutesRelative
+WebView #3 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/javascript-in-jsx-with-curly-braces
+- Indexed 0 entries at http://127.0.0.1:3000/learn/javascript-in-jsx-with-curly-braces
+WebView #3 document.body.outerHTML
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+Fetching resource 269/269: http://127.0.0.1:3000/images/docs/illustrations/i_render1.png
+Fetching resource 270/270: http://127.0.0.1:3000/images/docs/illustrations/i_render2.png
+Fetching resource 271/271: http://127.0.0.1:3000/images/docs/illustrations/i_render3.png
+Fetching resource 272/272: http://127.0.0.1:3000/images/docs/illustrations/i_state-snapshot1.png
+Fetching resource 273/273: http://127.0.0.1:3000/images/docs/illustrations/i_state-snapshot2.png
+Fetching resource 274/274: http://127.0.0.1:3000/images/docs/illustrations/i_state-snapshot3.png
+WebView #4 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/state-as-a-snapshot
+- Indexed 0 entries at http://127.0.0.1:3000/learn/state-as-a-snapshot
+WebView #4 document.body.outerHTML
+WebView #3 navigating to page 171/274: http://127.0.0.1:3000/learn/updating-arrays-in-state
+WebView #4 navigating to page 172/274: http://127.0.0.1:3000/learn/reacting-to-input-with-state
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #2 grabCSS
+WebView #1 makeAbsolutesRelative
+Fetching resource 275/275: http://127.0.0.1:3000/images/docs/illustrations/i_react-batching.png
+WebView #2 grabJS
+WebView #1 indexCurrentPageOfWebView
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/queueing-a-series-of-state-updates
+- Indexed 0 entries at http://127.0.0.1:3000/learn/queueing-a-series-of-state-updates
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/updating-objects-in-state
+- Indexed 0 entries at http://127.0.0.1:3000/learn/updating-objects-in-state
+WebView #1 document.body.outerHTML
+WebView #2 document.body.outerHTML
+WebView #1 navigating to page 173/275: http://127.0.0.1:3000/learn/choosing-the-state-structure
+WebView #2 navigating to page 174/275: http://127.0.0.1:3000/learn/preserving-and-resetting-state
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #3 makeAbsolutesRelative
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #4 grabCSS
+WebView #3 indexCurrentPageOfWebView
+WebView #4 grabJS
+WebView #4 grabMeta
+WebView #4 makeAbsolutesRelative
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/updating-arrays-in-state
+- Indexed 0 entries at http://127.0.0.1:3000/learn/updating-arrays-in-state
+Fetching resource 276/276: http://127.0.0.1:3000/images/docs/illustrations/i_imperative-ui-programming.png
+Fetching resource 277/278: http://127.0.0.1:3000/images/docs/illustrations/i_declarative-ui-programming.png
+Fetching resource 278/279: http://127.0.0.1:3000/images/docs/illustrations/i_inputs1.png
+Fetching resource 279/279: http://127.0.0.1:3000/images/docs/illustrations/i_inputs2.png
+Fetching resource 280/280: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fresponding_to_input_flow.dark.png&w=1920&q=75
+Fetching resource 281/281: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fresponding_to_input_flow.png&w=1920&q=75
+WebView #4 indexCurrentPageOfWebView
+WebView #3 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/reacting-to-input-with-state
+- Indexed 0 entries at http://127.0.0.1:3000/learn/reacting-to-input-with-state
+WebView #4 document.body.outerHTML
+WebView #3 navigating to page 175/281: http://127.0.0.1:3000/learn/passing-data-deeply-with-context
+WebView #4 navigating to page 176/281: http://127.0.0.1:3000/learn/scaling-up-with-reducer-and-context
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #2 grabCSS
+WebView #2 grabJS
+WebView #2 grabMeta
+WebView #2 makeAbsolutesRelative
+Fetching resource 282/282: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_tree.dark.png&w=828&q=75
+Fetching resource 283/283: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_tree.png&w=828&q=75
+Fetching resource 284/284: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_increment.dark.png&w=1080&q=75
+Fetching resource 285/285: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_increment.png&w=1080&q=75
+Fetching resource 286/286: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_remove_component.dark.png&w=1080&q=75
+WebView #2 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/preserving-and-resetting-state
+- Indexed 0 entries at http://127.0.0.1:3000/learn/preserving-and-resetting-state
+WebView #2 document.body.outerHTML
+Fetching resource 287/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_remove_component.png&w=1080&q=75
+Fetching resource 288/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_add_component.dark.png&w=1080&q=75
+Fetching resource 289/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_add_component.png&w=1080&q=75
+Fetching resource 290/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_same_component.dark.png&w=1200&q=75
+Fetching resource 291/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_same_component.png&w=1200&q=75
+Fetching resource 292/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_pt1.dark.png&w=1920&q=75
+Fetching resource 293/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_pt1.png&w=1920&q=75
+Fetching resource 294/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_pt2.dark.png&w=1920&q=75
+Fetching resource 295/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_pt2.png&w=1920&q=75
+Fetching resource 296/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_same_pt1.dark.png&w=1920&q=75
+Fetching resource 297/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_same_pt1.png&w=1920&q=75
+Fetching resource 298/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_same_pt2.dark.png&w=1920&q=75
+Fetching resource 299/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_same_pt2.png&w=1920&q=75
+Fetching resource 300/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_position_p1.dark.png&w=1080&q=75
+WebView #2 navigating to page 177/305: http://127.0.0.1:3000/learn/manipulating-the-dom-with-refs
+Fetching resource 301/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_position_p1.png&w=1080&q=75
+Fetching resource 302/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_position_p2.dark.png&w=1080&q=75
+Fetching resource 303/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_position_p2.png&w=1080&q=75
+Fetching resource 304/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_position_p3.dark.png&w=1080&q=75
+Fetching resource 305/305: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_diff_position_p3.png&w=1080&q=75
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/choosing-the-state-structure
+- Indexed 0 entries at http://127.0.0.1:3000/learn/choosing-the-state-structure
+WebView #1 document.body.outerHTML
+WebView #1 navigating to page 178/305: http://127.0.0.1:3000/learn/separating-events-from-effects
+WebView #4 base_lib
+WebView #4 makeRelativesAbsolute
+WebView #3 base_lib
+WebView #3 makeRelativesAbsolute
+WebView #3 grabCSS
+WebView #4 grabCSS
+WebView #3 grabJS
+WebView #3 grabMeta
+WebView #4 grabJS
+WebView #3 makeAbsolutesRelative
+WebView #2 base_lib
+WebView #2 makeRelativesAbsolute
+WebView #4 grabMeta
+Fetching resource 306/306: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_lifting_state.dark.png&w=1920&q=75
+Fetching resource 307/307: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_lifting_state.png&w=1920&q=75
+Fetching resource 308/308: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_prop_drilling.dark.png&w=1920&q=75
+Fetching resource 309/309: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_prop_drilling.png&w=1920&q=75
+Fetching resource 310/310: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_context_close.dark.png&w=1920&q=75
+WebView #2 grabCSS
+WebView #3 indexCurrentPageOfWebView
+WebView #4 makeAbsolutesRelative
+WebView #2 grabJS
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/passing-data-deeply-with-context
+- Indexed 0 entries at http://127.0.0.1:3000/learn/passing-data-deeply-with-context
+Fetching resource 311/313: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_context_close.png&w=1920&q=75
+Fetching resource 312/313: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_context_far.dark.png&w=1920&q=75
+Fetching resource 313/313: http://127.0.0.1:3000/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_context_far.png&w=1920&q=75
+WebView #2 grabMeta
+WebView #4 indexCurrentPageOfWebView
+WebView #2 makeAbsolutesRelative
+WebView #3 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/scaling-up-with-reducer-and-context
+- Indexed 0 entries at http://127.0.0.1:3000/learn/scaling-up-with-reducer-and-context
+WebView #2 indexCurrentPageOfWebView
+WebView #4 document.body.outerHTML
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/manipulating-the-dom-with-refs
+- Indexed 0 entries at http://127.0.0.1:3000/learn/manipulating-the-dom-with-refs
+WebView #2 document.body.outerHTML
+WebView #1 base_lib
+WebView #1 makeRelativesAbsolute
+WebView #1 grabCSS
+WebView #1 grabJS
+WebView #1 grabMeta
+WebView #4 navigating to page 189/313: http://127.0.0.1:3000/reference/react-dom/unmountComponentAtNode
+WebView #3 navigating to page 191/313: http://127.0.0.1:3000/reference/react-dom/static/index
+WebView #1 makeAbsolutesRelative
+WebView #1 indexCurrentPageOfWebView
+JS Error A JavaScript exception occurred {
+    NSLocalizedDescription = "A JavaScript exception occurred";
+    WKJavaScriptExceptionColumnNumber = 0;
+    WKJavaScriptExceptionLineNumber = 0;
+    WKJavaScriptExceptionMessage = "SyntaxError: Left side of assignment is not a reference.";
+} for Script: dashDoc = new Object();
+dashDoc.entries = [];
+
+dashDoc.addEntry = function(entry)
+{
+    dashDoc.entries.push(entry);
+}
+
+
+
+1 = 1;
+
+return dashDoc.entries; at http://127.0.0.1:3000/learn/separating-events-from-effects
+- Indexed 0 entries at http://127.0.0.1:3000/learn/separating-events-from-effects
+WebView #1 document.body.outerHTML
+didFailProvisionalLoadWithError: Error Domain=NSURLErrorDomain Code=-999 "(null)" UserInfo={NSErrorFailingURLKey=http://127.0.0.1:3000/reference/react-dom/static/index, _WKRecoveryAttempterErrorKey=<WKReloadFrameErrorRecoveryAttempter: 0xa73307a60>} at http://127.0.0.1:3000/learn/passing-data-deeply-with-context
+didFailProvisionalLoadWithError: Error Domain=NSURLErrorDomain Code=-999 "(null)" UserInfo={NSErrorFailingURLKey=http://127.0.0.1:3000/reference/react-dom/unmountComponentAtNode, _WKRecoveryAttempterErrorKey=<WKReloadFrameErrorRecoveryAttempter: 0xa73304c40>} at http://127.0.0.1:3000/learn/scaling-up-with-reducer-and-context
+WebView #2 failed to load http://127.0.0.1:3000/reference/react-dom/static/index. Attempt #1
+Recreating WebView #3
+WebView #3 failed to load http://127.0.0.1:3000/reference/react-dom/unmountComponentAtNode. Attempt #1
+Recreating WebView #4
+WebView #3 navigating to page 191/313: http://127.0.0.1:3000/reference/react-dom/static/index
+WebView #4 navigating to page 189/313: http://127.0.0.1:3000/reference/react-dom/unmountComponentAtNode
+didFailProvisionalLoadWithError: Error Domain=WebKitErrorDomain Code=102 "Frame load interrupted" UserInfo={NSErrorFailingURLKey=http://127.0.0.1:3000/reference/react-dom/static/index, NSLocalizedDescription=Frame load interrupted, _WKRecoveryAttempterErrorKey=<WKReloadFrameErrorRecoveryAttempter: 0xa7360c4a0>} at (null)
+WebView #3 saveRedirect
+didFailProvisionalLoadWithError: Error Domain=WebKitErrorDomain Code=102 "Frame load interrupted" UserInfo={NSErrorFailingURLKey=http://127.0.0.1:3000/reference/react-dom/unmountComponentAtNode, NSLocalizedDescription=Frame load interrupted, _WKRecoveryAttempterErrorKey=<WKReloadFrameErrorRecoveryAttempter: 0xa7360c4a0>} at (null)
+WebView #4 saveRedirect
+Finished generating docset.

@@ -1,0 +1,5 @@
+
+& { color: blue; font-weight: bold; }
+&:hover { background-color: wheat; }
+
+button.copy {display:none !important}

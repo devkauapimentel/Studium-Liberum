@@ -1,0 +1,4 @@
+
+input[type="number"]::-webkit-inner-spin-button { cursor: pointer; }
+
+button.copy {display:none !important}

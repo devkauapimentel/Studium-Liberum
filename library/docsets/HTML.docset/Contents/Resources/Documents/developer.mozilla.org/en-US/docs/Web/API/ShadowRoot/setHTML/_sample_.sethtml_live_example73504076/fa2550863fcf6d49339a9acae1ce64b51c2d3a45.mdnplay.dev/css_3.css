@@ -1,0 +1,4 @@
+
+#log { height: 320px; overflow: scroll; padding: 0.5rem; border: 1px solid black; margin: 5px; }
+
+button.copy {display:none !important}

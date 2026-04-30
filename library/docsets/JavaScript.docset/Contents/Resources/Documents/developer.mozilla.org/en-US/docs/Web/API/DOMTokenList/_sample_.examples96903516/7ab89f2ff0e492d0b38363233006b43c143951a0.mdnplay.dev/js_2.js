@@ -1,0 +1,7 @@
+
+          let para = document.querySelector("p");
+let classes = para.classList;
+para.classList.add("d");
+para.textContent = `paragraph classList is "${classes}"`;
+;
+        

@@ -1,0 +1,8 @@
+
+@font-face { font-family: "Fira Sans"; font-weight: normal; src: url("../mdn.github.io/shared-assets/fonts/FiraSans-Regular.woff2"); }
+@font-face { font-family: "Fira Sans"; font-weight: bold; src: url("../mdn.github.io/shared-assets/fonts/FiraSans-Bold.woff2"); }
+body { font-family: "Fira Sans", serif; font-size: 2rem; }
+p.one { font-weight: normal; }
+p.two { font-weight: bold; }
+
+button.copy {display:none !important}

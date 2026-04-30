@@ -1,0 +1,7 @@
+
+@font-feature-values "Font One" { @swash { swishy: 1; } @styleset { odd-style: 10; nice-style: 12; } }
+.nice-look { font-variant-alternates: styleset(nice-style); }
+.swoosh { font-variant-alternates: swash(swishy); }
+#log { height: 100px; overflow: scroll; padding: 0.5rem; border: 1px solid black; }
+
+button.copy {display:none !important}

@@ -1,0 +1,9 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/attributes/minlength/index.md
+
+# Original Wiki contributors
+mattd
+mfuji09
+valtlai
+fredj
+estelle

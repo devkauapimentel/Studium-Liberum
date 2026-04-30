@@ -1,0 +1,5 @@
+
+body { margin: 0px 5px; }
+#output { font-family: Helvetica, Arial; padding: 10px; border: 2px solid rgb(204, 204, 204); border-radius: 5px; }
+
+button.copy {display:none !important}

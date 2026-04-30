@@ -1,0 +1,9 @@
+
+.parent { border: solid; margin: 1rem; display: flex; }
+.child { background: rgba(0, 153, 153, 0.6); margin: 1rem; }
+.stretch { }
+@supports not (width: stretch) {
+  body::after { content: "Your browser doesn't support the stretch value yet."; background-color: wheat; display: block; text-align: center; padding: 1em; }
+}
+
+button.copy {display:none !important}

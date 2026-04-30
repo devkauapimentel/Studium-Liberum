@@ -1,0 +1,28 @@
+
+main { scroll-timeline: --main-timeline; }
+div { animation-duration: auto; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: background-animation; animation-range: initial; animation-timeline: scroll(inline); }
+div::after { animation-duration: auto; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: shape-animation; animation-range: initial; animation-timeline: --main-timeline; }
+@layer animations {
+  @keyframes background-animation { 
+  0% { background-color: palegoldenrod; }
+  100% { background-color: magenta; }
+}
+  @keyframes shape-animation { 
+  0% { left: 0px; top: 0px; background-color: black; }
+  50% { top: calc(100% - var(--elSize)); left: calc(50% - var(--elSize)); background-color: red; }
+  100% { left: calc(100vw - var(--elSize)); top: 0px; rotate: 1800deg; background-color: white; }
+}
+}
+@layer page-setup {
+  :root { --elSize: 50px; }
+  main { height: 90vh; overflow: scroll; border: 1px solid; margin: 5vh auto; }
+  div { height: 400vh; width: 400vw; }
+  div::after { content: ""; border: 1px solid red; height: var(--elSize); width: var(--elSize); position: absolute; border-radius: 20px; }
+}
+@layer no-support {
+  @supports not (scroll-timeline: --main-timeline) {
+  body::before { content: "Your browser doesn't support scroll-driven animations."; background-color: wheat; display: block; text-align: center; }
+}
+}
+
+button.copy {display:none !important}

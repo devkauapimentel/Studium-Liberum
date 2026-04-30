@@ -1,0 +1,4 @@
+
+.exampleText { writing-mode: vertical-rl; background-color: yellow; inline-size: 110px; }
+
+button.copy {display:none !important}

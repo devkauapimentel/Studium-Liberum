@@ -1,0 +1,17 @@
+
+article { display: flex; gap: 10px; text-align: center; }
+section { background-color: beige; padding: 20px; }
+section::after { content: attr(id); display: block; }
+div { height: 100px; width: 100px; background-color: magenta; animation: 2s linear infinite alternate rotate; }
+@keyframes rotate { 
+  100% { rotate: 1turn; }
+}
+#none div { animation-timeline: none; }
+#auto div { animation-timeline: auto; }
+@layer no-support {
+  @supports not (animation-timeline: none) {
+  body::before { content: "Your browser doesn't support the `animation-timeline` property"; background-color: wheat; display: block; text-align: center; padding: 1em; }
+}
+}
+
+button.copy {display:none !important}

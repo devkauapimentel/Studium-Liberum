@@ -1,0 +1,1648 @@
+<html><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 20:57:34 GMT --><head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Expressions and operators</title>
+          
+          <script>try {
+  document.documentElement.dataset.theme =
+    localStorage.getItem("theme") || "light dark";
+} catch (error) {
+  console.warn("Unable to set theme", error);
+}
+
+try {
+  if (localStorage.getItem("nop") === "yes") {
+    document.documentElement.dataset["nop"] = "yes";
+  }
+} catch (error) {
+  console.warn("Unable to set nop", error);
+}
+</script>
+          <link rel="stylesheet" href="../../../../../static/client/styles-global.03146ed4c65bc5ea.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/270.66bae6059a1c23f9.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-layout.632d2f3884f10ca3.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-content-section.2ee991ba88f986cf.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-heading-anchor.0eec5185ab9425b7.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-reference-toc.9b9bd019efd16b86.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-article-footer.81ae18c89fc527dc.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-left-sidebar.6f954e8939555f77.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-page-layout.5a4354f33e894319.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-a11y-menu.5796ee87cb69f93f.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-navigation.3a34ee593a554c40.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-logo.aea5ff6edf1b9cfb.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-menu.3376b3e11656fba0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs-bar.9a51a3c76a6231d0.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-breadcrumbs.d06ce8d09f42feb8.css" fetchpriority="high"><link rel="stylesheet" href="../../../../../static/client/styles-footer.a2850e459e2d290b.css" fetchpriority="high">
+          <link rel="preload" href="../../../../../static/client/jetbrains-mono-latin.119994ed445212c7.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low"><link rel="preload" href="../../../../../static/client/inter-latin.9a3b1bc220d426ef.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+          <script data-cfasync="false" data-report-only="on" data-prompt="0" src="../../../../../../transcend-cdn.com/cm/d556c3a1-e57c-4bdf-a490-390a1aebf6dd/airgap.js"></script>
+          <script src="../../../../../static/client/runtime.c294a6bdc7a42570.js" type="module"></script><script src="../../../../../static/client/1111.53dba753dc3eb961.js" type="module"></script><script src="../../../../../static/client/8903.f870aafb338b203a.js" type="module"></script><script src="../../../../../static/client/index.9a449352d879bbd5.js" type="module"></script>
+          
+    <link rel="icon" sizes="32x32" href="../../../../../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../../../../../favicon.svg">
+   <meta name="description" content="This chapter describes JavaScript's expressions and operators, including assignment, comparison, arithmetic, bitwise, logical, string, ternary and more."><meta name="og:url" content="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators"><meta name="og:title" content="Expressions and operators - JavaScript | MDN"><meta name="og:locale" content="en_US"><meta name="og:description" content="This chapter describes JavaScript's expressions and operators, including assignment, comparison, arithmetic, bitwise, logical, string, ternary and more."><meta name="og:image" content="https://developer.mozilla.org/mdn-social-image.46ac2375.png"><meta name="og:image:type" content="image/png"><meta name="og:image:height" content="1024"><meta name="og:image:width" content="1024"><meta name="og:image:alt" content="The MDN logo"><meta name="og:site_name" content="MDN Web Docs"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="MozDevNet">
+          <link rel="canonical" href="Expressions_and_operators.html">
+          <link rel="apple-touch-icon" href="../../../../../apple-touch-icon.png">
+          <link rel="manifest" href="../../../../../manifest.json">
+          <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/opensearch.xml" title="MDN Web Docs">
+          <link rel="alternate" type="application/rss+xml" title="MDN Blog RSS Feed" href="https://developer.mozilla.org/en-US/blog/rss.xml">
+        </head>
+        
+      <body class="page-layout">
+        <ul class="a11y-menu">
+      <li>
+        <a href="#content">Skip to main content</a>
+      </li>
+      <li>
+        <a href="#search">Skip to search</a>
+      </li>
+    </ul>
+        <div class="page-layout__banner" data-scheme="">
+          <mdn-placement-top></mdn-placement-top>
+        </div>
+        <header class="page-layout__header">
+          
+      <nav class="navigation" data-scheme="" data-open="false">
+        <div class="navigation__logo">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">
+        <svg class="logo__image" width="83" height="24" viewBox="0 0 83 24" role="img">
+          <title>MDN</title>
+          <path class="logo__letter" d="M9.4 0 2.81 21.17H.12L6.69 0H9.4Zm2.38 0v21.17H9.4V0h2.4Zm9.27 0-6.56 21.17H11.8L18.36 0h2.69Zm2.39 0v21.17h-2.4V0h2.4Z"></path>
+          <path class="logo__text" d="M45.55 16.83h-3.93v-1.27h.87v-3.63c0-.85-.16-1.45-.48-1.82a1.65 1.65 0 0 0-1.3-.52c-.74 0-1.3.25-1.66.78a2.98 2.98 0 0 0-.58 1.58v3.59h1.38v1.26h-3.93v-1.26h.87v-3.6c0-.88-.16-1.48-.48-1.83a1.7 1.7 0 0 0-1.29-.52 1.93 1.93 0 0 0-1.65.75 2.85 2.85 0 0 0-.58 1.6v3.62h1.59v1.27h-4.64v-1.27h1.37V9.75h-1.4V8.46h3.08v1.47c.28-.48.62-.87 1.08-1.2a3 3 0 0 1 1.68-.45c.67 0 1.22.16 1.73.48.5.32.85.8 1.03 1.47.25-.57.62-1.03 1.13-1.4.5-.37 1.1-.55 1.81-.55.8 0 1.5.25 2.05.75.55.51.85 1.3.85 2.35v4.18h1.4v1.27Zm9.77 0H52.3v-1.66c-.27.51-.66.95-1.13 1.29-.56.4-1.23.59-1.9.55-1.11 0-2-.37-2.67-1.12a4.41 4.41 0 0 1-1-3.06c0-1.15.3-2.2.93-3.15.6-.94 1.58-1.43 2.94-1.43 1.36 0 2.25.5 2.83 1.5V5.22h-2V3.93h3.63v11.63h1.38v1.27Zm-3.06-3.86v-1.02a2.28 2.28 0 0 0-.73-1.67 2.4 2.4 0 0 0-1.66-.65 2.18 2.18 0 0 0-1.88.9 3.63 3.63 0 0 0-.65 2.2c0 .95.23 1.68.7 2.19.45.5 1.03.76 1.7.76.73 0 1.33-.3 1.79-.88.48-.6.71-1.21.73-1.83Zm14.14 3.86h-4.43v-1.27h1.37v-3.63c0-.85-.16-1.45-.5-1.82a1.68 1.68 0 0 0-1.31-.52c-.71 0-1.29.23-1.7.69a2.52 2.52 0 0 0-.67 1.6v3.66h1.38v1.26H56.1v-1.26h1.38v-5.8h-1.42V8.47h3.12V9.9c.6-1.06 1.57-1.6 2.92-1.6.83 0 1.54.26 2.12.77.57.5.85 1.28.85 2.34v4.19h1.38v1.24h-.05Z"></path>
+          <path class="logo__cursor" d="M67.71 21.98H83V24H67.71v-2.02Z"></path>
+        </svg>
+      </a>
+    </div>
+        <div class="navigation__search" data-view="mobile">
+          <mdn-search-button></mdn-search-button>
+        </div>
+        <button class="navigation__button" type="button" aria-expanded="false" aria-controls="navigation__popup" aria-label="Toggle navigation"></button>
+        <div class="navigation__popup" id="navigation__popup">
+          <div class="navigation__menu">
+      <nav class="menu">
+        <div class="menu__tab" data-section="html">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">HTML</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" data-glean-id="menu_click_menu: html -&gt; /en-US/docs/Web/HTML">HTML: Markup language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>HTML reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Elements">Elements</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Global_attributes">Global attributes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference/Attributes">Attributes</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference" aria-label="See all HTML references" title="See all HTML references" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>HTML guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Responsive_images">Responsive images</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Cheatsheet" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Cheatsheet">HTML cheatsheet</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Date_and_time_formats" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides/Date_and_time_formats">Date &amp; time formats</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides" aria-label="See all HTML guides" title="See all HTML guides" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/HTML/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Markup languages</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/SVG">SVG</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/MathML">MathML</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/XML" data-glean-id="menu_click_submenu: html -&gt; /en-US/docs/Web/XML">XML</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="css">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">CSS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" data-glean-id="menu_click_menu: css -&gt; /en-US/docs/Web/CSS">CSS: Styling language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>CSS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Properties">Properties</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Selectors">Selectors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/At-rules">At-rules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference/Values">Values</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" aria-label="See all CSS references" title="See all CSS references" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>CSS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Box_model/Introduction">Box model</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Animations/Using">Animations</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Flexbox</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Applying_color" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides/Colors/Applying_color">Colors</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides" aria-label="See all CSS guides" title="See all CSS guides" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/Guides">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Layout cookbook</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Column_layouts">Column layouts</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Center_an_element">Centering an element</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook/Card" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook/Card">Card component</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/How_to/Layout_cookbook" data-glean-id="menu_click_submenu: css -&gt; /en-US/docs/Web/CSS/How_to/Layout_cookbook">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="javascript">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label" data-type="long">JavaScript</span><span class="menu__tab-label" data-type="short">JS</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" data-glean-id="menu_click_menu: javascript -&gt; /en-US/docs/Web/JavaScript">JavaScript: Scripting language</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>JS reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../Reference/Global_Objects.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects</a>
+                              </li><li>
+                                <a href="../Reference/Operators.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a>
+                              </li><li>
+                                <a href="../Reference/Statements.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Statements">Statements &amp; declarations</a>
+                              </li><li>
+                                <a href="../Reference/Functions.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference/Functions">Functions</a>
+                              </li><li>
+                                <a href="../Reference.html" aria-label="See all JavaScript references" title="See all JavaScript references" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Reference">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>JS guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="Control_flow_and_error_handling.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Control flow &amp; error handing</a>
+                              </li><li>
+                                <a href="Loops_and_iteration.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Loops and iteration</a>
+                              </li><li>
+                                <a href="Working_with_objects.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Working_with_objects">Working with objects</a>
+                              </li><li>
+                                <a href="Using_classes.html" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide/Using_classes">Using classes</a>
+                              </li><li>
+                                <a href="../Guide.html" aria-label="See all JavaScript guides" title="See all JavaScript guides" data-glean-id="menu_click_submenu: javascript -&gt; /en-US/docs/Web/JavaScript/Guide">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="webapis">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Web APIs</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="../../API.html" data-glean-id="menu_click_menu: webapis -&gt; /en-US/docs/Web/API">Web APIs: Programming interfaces</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Web API reference</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../API/File_System_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/File_System_API">File system API</a>
+                              </li><li>
+                                <a href="../../API/Fetch_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API">Fetch API</a>
+                              </li><li>
+                                <a href="../../API/Geolocation_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Geolocation_API">Geolocation API</a>
+                              </li><li>
+                                <a href="../../API/HTML_DOM_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/HTML_DOM_API">HTML DOM API</a>
+                              </li><li>
+                                <a href="../../API/Push_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Push_API">Push API</a>
+                              </li><li>
+                                <a href="../../API/Service_Worker_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Service_Worker_API">Service worker API</a>
+                              </li><li>
+                                <a href="../../API.html" aria-label="See all Web API guides" title="See all Web API guides" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Web API guides</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="../../API/Web_Animations_API/Using_the_Web_Animations_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API">Using the Web animation API</a>
+                              </li><li>
+                                <a href="../../API/Fetch_API/Using_Fetch.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Fetch_API/Using_Fetch">Using the Fetch API</a>
+                              </li><li>
+                                <a href="../../API/History_API/Working_with_the_History_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/History_API/Working_with_the_History_API">Working with the History API</a>
+                              </li><li>
+                                <a href="../../API/Web_Speech_API/Using_the_Web_Speech_API.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Using the Web speech API</a>
+                              </li><li>
+                                <a href="../../API/Web_Workers_API/Using_web_workers.html" data-glean-id="menu_click_submenu: webapis -&gt; /en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Using web workers</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="all">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">All</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web" data-glean-id="menu_click_menu: all -&gt; /en-US/docs/Web">All web technology</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Technologies</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Accessibility">Accessibility</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/HTTP">HTTP</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/URI" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/URI">URI</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Mozilla/Add-ons/WebExtensions">Web extensions</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/WebAssembly">WebAssembly</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/WebDriver">WebDriver</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web" aria-label="See all web technology references" title="See all web technology references" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web">See all…</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Topics</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Media" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Media">Media</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Performance">Performance</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Privacy" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Privacy">Privacy</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Security">Security</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" data-glean-id="menu_click_submenu: all -&gt; /en-US/docs/Web/Progressive_web_apps">Progressive web apps</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="learn">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Learn</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" data-glean-id="menu_click_menu: learn -&gt; /en-US/docs/Learn_web_development">Learn web development</a>
+                    </p>
+                    <div class="menu__panel-content">
+                      <dl>
+                              <dt>Frontend developer course</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Getting_started">Getting started modules</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core">Core modules</a>
+                              </li><li>
+                                <a class="" href="https://developer.mozilla.org/en-US/curriculum/" data-glean-id="menu_click_submenu: learn -&gt; /en-US/curriculum/">MDN Curriculum</a>
+                              </li><li>
+                                <a class="external" href="https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar" data-glean-id="menu_click_submenu: learn -&gt; https://scrimba.com/frontend-path-c0j?via=mdn-learn-navbar">Check out the video course from Scrimba, our partner</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn HTML</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Structuring_content">Structuring content with HTML module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn CSS</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Styling_basics">CSS styling basics module</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/CSS_layout">CSS layout module</a>
+                              </li>
+                        </ul></dd>
+                            </dl><dl>
+                              <dt>Learn JavaScript</dt>
+                              <dd><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" data-glean-id="menu_click_submenu: learn -&gt; /en-US/docs/Learn_web_development/Core/Scripting">Dynamic scripting with JavaScript module</a>
+                              </li>
+                        </ul></dd>
+                            </dl>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="tools">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">Tools</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Discover our tools
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="circle-play" href="https://developer.mozilla.org/en-US/play" data-glean-id="menu_click_submenu: tools -&gt; /en-US/play">Playground</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="shield-check" href="https://developer.mozilla.org/en-US/observatory" data-glean-id="menu_click_submenu: tools -&gt; /en-US/observatory">HTTP Observatory</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-image_generator">Border-image generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Border-radius_generator">Border-radius generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Box-shadow_generator">Box-shadow generator</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_format_converter" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_format_converter">Color format converter</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Color_mixer" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Colors/Color_mixer">Color mixer</a>
+                              </li><li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Shapes/Shape_generator" data-glean-id="menu_click_submenu: tools -&gt; /en-US/docs/Web/CSS/Guides/Shapes/Shape_generator">Shape generator</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="about">
+            <mdn-dropdown>
+                  <button class="menu__tab-button" type="button" slot="button">
+                    <span class="menu__tab-label">About</span>
+                  </button>
+                  <div class="menu__panel" slot="dropdown">
+                    <p class="menu__panel-title">
+                      Get to know MDN better
+                    </p>
+                    <div class="menu__panel-content">
+                      <ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="mdn-m" href="https://developer.mozilla.org/en-US/about" data-glean-id="menu_click_submenu: about -&gt; /en-US/about">About MDN</a>
+                              </li><li>
+                                <a class="menu__panel-icon" data-icon="chart-no-axes-combined" href="https://developer.mozilla.org/en-US/advertising" data-glean-id="menu_click_submenu: about -&gt; /en-US/advertising">Advertise with us</a>
+                              </li>
+                        </ul><ul>
+                          <li>
+                                <a class="menu__panel-icon" data-icon="users" href="https://developer.mozilla.org/en-US/community" data-glean-id="menu_click_submenu: about -&gt; /en-US/community">Community</a>
+                              </li><li>
+                                <a class="menu__panel-icon external" data-icon="github" href="https://github.com/mdn" data-glean-id="menu_click_submenu: about -&gt; https://github.com/mdn">MDN on GitHub</a>
+                              </li>
+                        </ul>
+                    </div>
+                  </div>
+                </mdn-dropdown>
+          </div><div class="menu__tab" data-section="blog">
+            <a class="menu__tab-link" href="https://developer.mozilla.org/en-US/blog/" data-glean-id="menu_click_link: top-level -&gt; /en-US/blog/">Blog</a>
+          </div>
+      </nav>
+    </div>
+          <div class="navigation__search" data-view="desktop">
+            <mdn-search-button></mdn-search-button>
+          </div>
+          <mdn-user-menu></mdn-user-menu>
+        </div>
+      </nav>
+      <mdn-search-modal id="search"></mdn-search-modal>
+     
+      
+    
+        </header>
+        <div class="page-layout__main">
+      <div class="breadcrumbs-bar" data-scheme="">
+        <mdn-toggle-sidebar></mdn-toggle-sidebar> 
+      <ol class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
+        
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web" property="item" typeof="WebPage"><span property="name">Web</span></a>
+              <meta property="position" content="1">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" property="item" typeof="WebPage"><span property="name">JavaScript</span></a>
+              <meta property="position" content="2">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="../Guide.html" property="item" typeof="WebPage"><span property="name">Guide</span></a>
+              <meta property="position" content="3">
+            </li>
+          
+            <li property="itemListElement" typeof="ListItem">
+              <a href="Expressions_and_operators.html" property="item" typeof="WebPage"><span property="name">Expressions and operators</span></a>
+              <meta property="position" content="4">
+            </li>
+          
+      </ol>
+    
+        <mdn-collection-save-button doc-url="/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators" doc-title="Expressions and operators"></mdn-collection-save-button>
+        <mdn-color-theme></mdn-color-theme>
+        <mdn-language-switcher locale="en-US" native="English (US)" translations="[{&quot;locale&quot;:&quot;en-US&quot;,&quot;title&quot;:&quot;Expressions and operators&quot;,&quot;native&quot;:&quot;English (US)&quot;},{&quot;locale&quot;:&quot;de&quot;,&quot;title&quot;:&quot;Ausdrücke und Operatoren&quot;,&quot;native&quot;:&quot;Deutsch&quot;},{&quot;locale&quot;:&quot;es&quot;,&quot;title&quot;:&quot;Expresiones y operadores&quot;,&quot;native&quot;:&quot;Español&quot;},{&quot;locale&quot;:&quot;fr&quot;,&quot;title&quot;:&quot;Expressions et opérateurs&quot;,&quot;native&quot;:&quot;Français&quot;},{&quot;locale&quot;:&quot;ja&quot;,&quot;title&quot;:&quot;式と演算子&quot;,&quot;native&quot;:&quot;日本語&quot;},{&quot;locale&quot;:&quot;ko&quot;,&quot;title&quot;:&quot;표현식과 연산자&quot;,&quot;native&quot;:&quot;한국어&quot;},{&quot;locale&quot;:&quot;pt-BR&quot;,&quot;title&quot;:&quot;Expressões e operadores&quot;,&quot;native&quot;:&quot;Português (do&nbsp;Brasil)&quot;},{&quot;locale&quot;:&quot;ru&quot;,&quot;title&quot;:&quot;Выражения и операторы&quot;,&quot;native&quot;:&quot;Русский&quot;},{&quot;locale&quot;:&quot;zh-CN&quot;,&quot;title&quot;:&quot;表达式与运算符&quot;,&quot;native&quot;:&quot;中文 (简体)&quot;},{&quot;locale&quot;:&quot;zh-TW&quot;,&quot;title&quot;:&quot;運算式與運算子&quot;,&quot;native&quot;:&quot;正體中文 (繁體)&quot;}]" url="Expressions_and_operators.html"></mdn-language-switcher>
+      </div><div class="layout__2-sidebars-inline reference-layout">
+        <main id="content" class="layout__content">
+          <div class="layout__header reference-layout__header">
+            
+            
+            <mdn-survey></mdn-survey>
+            <h1>Expressions and operators</h1>
+             <section class="content-section">
+    
+    <ul class="prev-next"><li class="prev"><a class="button secondary" href="Functions.html"><span class="button-wrap"> Previous </span></a></li><li class="next"><a class="button secondary" href="Numbers_and_strings.html"><span class="button-wrap"> Next  </span></a></li></ul>
+<p>This chapter describes JavaScript's expressions and operators, including assignment, comparison, arithmetic, bitwise, logical, string, ternary and more.</p>
+<p>At a high level, an <em>expression</em> is a valid unit of code that resolves to a value. There are two types of expressions: those that have side effects (such as assigning values) and those that purely <em>evaluate</em>.</p>
+<p>The expression <code>x = 7</code> is an example of the first type. This expression uses the <code>=</code> <em>operator</em> to assign the value seven to the variable <code>x</code>. The expression itself evaluates to <code>7</code>.</p>
+<p>The expression <code>3 + 4</code> is an example of the second type. This expression uses the <code>+</code> operator to add <code>3</code> and <code>4</code> together and produces a value, <code>7</code>. However, if it's not eventually part of a bigger construct (for example, a <a href="Grammar_and_types.html#declarations">variable declaration</a> like <code>const z = 3 + 4</code>), its result will be immediately discarded — this is usually a programmer mistake because the evaluation doesn't produce any effects.</p>
+<p>As the examples above also illustrate, all complex expressions are joined by <em>operators</em>, such as <code>=</code> and <code>+</code>. In this section, we will introduce the following operators:</p>
+<ul>
+<li><a href="#assignment_operators">Assignment operators</a></li>
+<li><a href="#comparison_operators">Comparison operators</a></li>
+<li><a href="#arithmetic_operators">Arithmetic operators</a></li>
+<li><a href="#bitwise_operators">Bitwise operators</a></li>
+<li><a href="#logical_operators">Logical operators</a></li>
+<li><a href="#bigint_operators">BigInt operators</a></li>
+<li><a href="#string_operators">String operators</a></li>
+<li><a href="#conditional_ternary_operator">Conditional (ternary) operator</a></li>
+<li><a href="#comma_operator">Comma operator</a></li>
+<li><a href="#unary_operators">Unary operators</a></li>
+<li><a href="#relational_operators">Relational operators</a></li>
+</ul>
+<p>These operators join operands either formed by higher-precedence operators or one of the <a href="#basic_expressions">basic expressions</a>. A complete and detailed list of operators and expressions is also available in the <a href="../Reference/Operators.html">reference</a>.</p>
+<p>The <em>precedence</em> of operators determines the order they are applied when evaluating an expression. For example:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const x = 1 + 2 * 3;
+const y = 2 * 3 + 1;
+</code></pre></div>
+<p>Despite <code>*</code> and <code>+</code> coming in different orders, both expressions would result in <code>7</code> because <code>*</code> has precedence over <code>+</code>, so the <code>*</code>-joined expression will always be evaluated first. You can override operator precedence by using parentheses (which creates a <a href="#grouping_operator">grouped expression</a> — the basic expression). To see a complete table of operator precedence as well as various caveats, see the <a href="../Reference/Operators/Operator_precedence.html#table">Operator Precedence Reference</a> page.</p>
+<p>JavaScript has both <em>binary</em> and <em>unary</em> operators, and one special ternary operator, the conditional operator.
+A binary operator requires two operands, one before the operator and one after the operator:</p>
+<pre class="language-plain notranslate">operand1 operator operand2
+</pre>
+<p>For example, <code>3 + 4</code> or <code>x * y</code>. This form is called an <em>infix</em> binary operator, because the operator is placed between two operands. All binary operators in JavaScript are infix.</p>
+<p>A unary operator requires a single operand, either before or after the operator:</p>
+<pre class="language-plain notranslate">operator operand
+operand operator
+</pre>
+<p>For example, <code>x++</code> or <code>++x</code>. The <code>operator operand</code> form is called a <em>prefix</em> unary operator, and the <code>operand operator</code> form is called a <em>postfix</em> unary operator. <code>++</code> and <code>--</code> are the only postfix operators in JavaScript — all other operators, like <code>!</code>, <code>typeof</code>, etc. are prefix.</p>
+  </section>
+          </div>
+          <aside class="layout__right-sidebar reference-layout__toc">
+            <nav class="reference-toc">
+      <h2>In this article</h2>
+      <ul>
+        <li><a href="#assignment_operators">Assignment operators</a></li><li><a href="#comparison_operators">Comparison operators</a></li><li><a href="#arithmetic_operators">Arithmetic operators</a></li><li><a href="#bitwise_operators">Bitwise operators</a></li><li><a href="#logical_operators">Logical operators</a></li><li><a href="#bigint_operators">BigInt operators</a></li><li><a href="#string_operators">String operators</a></li><li><a href="#conditional_ternary_operator">Conditional (ternary) operator</a></li><li><a href="#comma_operator">Comma operator</a></li><li><a href="#unary_operators">Unary operators</a></li><li><a href="#relational_operators">Relational operators</a></li><li><a href="#basic_expressions">Basic expressions</a></li>
+      </ul>
+    </nav>
+            <mdn-placement-sidebar></mdn-placement-sidebar>
+          </aside>
+          <div class="layout__body reference-layout__body">
+            <section class="content-section" aria-labelledby="assignment_operators">
+    <!--lit-part caVQYRIsa3M=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Assignment%20operators"></a><h2 id="assignment_operators" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#assignment_operators">Assignment operators</a></h2><!--/lit-part-->
+    <p>An assignment operator assigns a value to its left operand based on the value of its right operand.
+The simple assignment operator is equal (<code>=</code>), which assigns the value of its right operand to its left operand.
+That is, <code>x = f()</code> is an assignment expression that assigns the value of <code>f()</code> to <code>x</code>.</p>
+<p>There are also compound assignment operators that are shorthand for the operations listed in the following table:</p>
+<figure class="table-container"><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Shorthand operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Reference/Operators/Assignment.html">Assignment</a></td>
+<td><code>x = f()</code></td>
+<td><code>x = f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Addition_assignment.html">Addition assignment</a></td>
+<td><code>x += f()</code></td>
+<td><code>x = x + f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Subtraction_assignment.html">Subtraction assignment</a></td>
+<td><code>x -= f()</code></td>
+<td><code>x = x - f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Multiplication_assignment.html">Multiplication assignment</a></td>
+<td><code>x *= f()</code></td>
+<td><code>x = x * f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Division_assignment.html">Division assignment</a></td>
+<td><code>x /= f()</code></td>
+<td><code>x = x / f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Remainder_assignment.html">Remainder assignment</a></td>
+<td><code>x %= f()</code></td>
+<td><code>x = x % f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Exponentiation_assignment.html">Exponentiation assignment</a></td>
+<td><code>x **= f()</code></td>
+<td><code>x = x ** f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Left_shift_assignment.html">Left shift assignment</a></td>
+<td><code>x &lt;&lt;= f()</code></td>
+<td><code>x = x &lt;&lt; f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Right_shift_assignment.html">Right shift assignment</a></td>
+<td><code>x &gt;&gt;= f()</code></td>
+<td><code>x = x &gt;&gt; f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Unsigned_right_shift_assignment.html">Unsigned right shift assignment</a></td>
+<td><code>x &gt;&gt;&gt;= f()</code></td>
+<td><code>x = x &gt;&gt;&gt; f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Bitwise_AND_assignment.html">Bitwise AND assignment</a></td>
+<td><code>x &amp;= f()</code></td>
+<td><code>x = x &amp; f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Bitwise_XOR_assignment.html">Bitwise XOR assignment</a></td>
+<td><code>x ^= f()</code></td>
+<td><code>x = x ^ f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Bitwise_OR_assignment.html">Bitwise OR assignment</a></td>
+<td><code>x |= f()</code></td>
+<td><code>x = x | f()</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Logical_AND_assignment.html">Logical AND assignment</a></td>
+<td><code>x &amp;&amp;= f()</code></td>
+<td><code>x &amp;&amp; (x = f())</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Logical_OR_assignment.html">Logical OR assignment</a></td>
+<td><code>x ||= f()</code></td>
+<td><code>x || (x = f())</code></td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Nullish_coalescing_assignment.html">Nullish coalescing assignment</a></td>
+<td><code>x ??= f()</code></td>
+<td><code>x ?? (x = f())</code></td>
+</tr>
+</tbody>
+</table></figure>
+  </section><section class="content-section" aria-labelledby="assigning_to_properties">
+    <!--lit-part PYfyruW+HR8=--><!--lit-node 0--><h3 id="assigning_to_properties" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#assigning_to_properties">Assigning to properties</a></h3><!--/lit-part-->
+    <p>If an expression evaluates to an <a href="Working_with_objects.html">object</a>, then the left-hand side of an assignment expression may make assignments to properties of that expression.
+For example:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const obj = {};
+
+obj.x = 3;
+console.log(obj.x); // Prints 3.
+console.log(obj); // Prints { x: 3 }.
+
+const key = "y";
+obj[key] = 5;
+console.log(obj[key]); // Prints 5.
+console.log(obj); // Prints { x: 3, y: 5 }.
+</code></pre></div>
+<p>For more information about objects, read <a href="Working_with_objects.html">Working with Objects</a>.</p>
+<p>If an expression does not evaluate to an object, then assignments to properties of that expression do not assign:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const val = 0;
+val.x = 3;
+
+console.log(val.x); // Prints undefined.
+console.log(val); // Prints 0.
+</code></pre></div>
+<p>In <a href="../Reference/Strict_mode.html#converting_mistakes_into_errors">strict mode</a>, the code above throws, because one cannot assign properties to primitives.</p>
+<p>It is an error to assign values to unmodifiable properties or to properties of an expression without properties (<code>null</code> or <code>undefined</code>).</p>
+  </section><section class="content-section" aria-labelledby="destructuring">
+    <!--lit-part hQ1fVbdytPs=--><!--lit-node 0--><h3 id="destructuring" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#destructuring">Destructuring</a></h3><!--/lit-part-->
+    <p>For more complex assignments, the <a href="../Reference/Operators/Destructuring.html">destructuring</a> syntax is a JavaScript expression that makes it possible to extract data from arrays or objects using a syntax that mirrors the construction of array and
+object literals.</p>
+<p>Without destructuring, it takes multiple statements to extract values from arrays and objects:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const foo = ["one", "two", "three"];
+
+const one = foo[0];
+const two = foo[1];
+const three = foo[2];
+</code></pre></div>
+<p>With destructuring, you can extract multiple values into distinct variables using a single statement:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const [one, two, three] = foo;
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="evaluation_and_nesting">
+    <!--lit-part WS6aeOt6v4I=--><!--lit-node 0--><h3 id="evaluation_and_nesting" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#evaluation_and_nesting">Evaluation and nesting</a></h3><!--/lit-part-->
+    <p>In general, assignments are used within a variable declaration (i.e., with <a href="../Reference/Statements/const.html"><code>const</code></a>, <a href="../Reference/Statements/let.html"><code>let</code></a>, or <a href="../Reference/Statements/var.html"><code>var</code></a>) or as standalone statements.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>// Declares a variable x and initializes it to the result of f().
+// The result of the x = f() assignment expression is discarded.
+let x = f();
+
+x = g(); // Reassigns the variable x to the result of g().
+</code></pre></div>
+<p>However, like other expressions, assignment expressions like <code>x = f()</code> evaluate into a result value.
+Although this result value is usually not used, it can then be used by another expression.</p>
+<p>Chaining assignments or nesting assignments in other expressions can result in surprising behavior.
+For this reason, some JavaScript style guides <a href="https://github.com/airbnb/javascript/blob/master/README.md#variables--no-chain-assignment" class="external" target="_blank">discourage chaining or nesting assignments</a>.
+Nevertheless, assignment chaining and nesting may occur sometimes, so it is important to be able to understand how they work.</p>
+<p>By chaining or nesting an assignment expression, its result can itself be assigned to another variable.
+It can be logged, it can be put inside an array literal or function call, and so on.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>let x;
+const y = (x = f()); // Or equivalently: const y = x = f();
+console.log(y); // Logs the return value of the assignment x = f().
+
+console.log(x = f()); // Logs the return value directly.
+
+// An assignment expression can be nested in any place
+// where expressions are generally allowed,
+// such as array literals' elements or as function calls' arguments.
+console.log([0, x = f(), 0]);
+console.log(f(0, x = f(), 0));
+</code></pre></div>
+<p>The evaluation result matches the expression to the right of the <code>=</code> sign in the
+"Meaning" column of the table above. That means that <code>x = f()</code> evaluates into
+whatever <code>f()</code>'s result is, <code>x += f()</code> evaluates into the resulting sum <code>x + f()</code>,
+<code>x **= f()</code> evaluates into the resulting power <code>x ** f()</code>, and so on.</p>
+<p>In the case of logical assignments, <code>x &amp;&amp;= f()</code>,
+<code>x ||= f()</code>, and <code>x ??= f()</code>, the return value is that of the
+logical operation without the assignment, so <code>x &amp;&amp; f()</code>,
+<code>x || f()</code>, and <code>x ?? f()</code>, respectively.</p>
+<p>When chaining these expressions without parentheses or other grouping operators
+like array literals, the assignment expressions are <strong>grouped right to left</strong>
+(they are <a href="../Reference/Operators/Operator_precedence.html#precedence_and_associativity">right-associative</a>), but they are <strong>evaluated left to right</strong>.</p>
+<p>Note that, for all assignment operators other than <code>=</code> itself,
+the resulting values are always based on the operands' values <em>before</em>
+the operation.</p>
+<p>For example, assume that the following functions <code>f</code> and <code>g</code>
+and the variables <code>x</code> and <code>y</code> have been declared:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>function f() {
+  console.log("F!");
+  return 2;
+}
+function g() {
+  console.log("G!");
+  return 3;
+}
+let x, y;
+</code></pre></div>
+<p>Consider these three examples:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>y = x = f();
+y = [f(), x = g()];
+x[f()] = g();
+</code></pre></div>
+<h4 id="evaluation_example_1">Evaluation example 1</h4>
+<p><code>y = x = f()</code> is equivalent to <code>y = (x = f())</code>,
+because the assignment operator <code>=</code> is <a href="../Reference/Operators/Operator_precedence.html#precedence_and_associativity">right-associative</a>.
+However, it evaluates from left to right:</p>
+<ol>
+<li>The assignment expression <code>y = x = f()</code> starts to evaluate.
+<ol>
+<li>The <code>y</code> on this assignment's left-hand side evaluates
+into a reference to the variable named <code>y</code>.</li>
+<li>The assignment expression <code>x = f()</code> starts to evaluate.
+<ol>
+<li>The <code>x</code> on this assignment's left-hand side evaluates
+into a reference to the variable named <code>x</code>.</li>
+<li>The function call <code>f()</code> prints "F!" to the console and
+then evaluates to the number <code>2</code>.</li>
+<li>That <code>2</code> result from <code>f()</code> is assigned to <code>x</code>.</li>
+</ol>
+</li>
+<li>The assignment expression <code>x = f()</code> has now finished evaluating;
+its result is the new value of <code>x</code>, which is <code>2</code>.</li>
+<li>That <code>2</code> result in turn is also assigned to <code>y</code>.</li>
+</ol>
+</li>
+<li>The assignment expression <code>y = x = f()</code> has now finished evaluating;
+its result is the new value of <code>y</code> – which happens to be <code>2</code>.
+<code>x</code> and <code>y</code> are assigned to <code>2</code>,
+and the console has printed "F!".</li>
+</ol>
+<h4 id="evaluation_example_2">Evaluation example 2</h4>
+<p><code>y = [ f(), x = g() ]</code> also evaluates from left to right:</p>
+<ol>
+<li>The assignment expression <code>y = [ f(), x = g() ]</code> starts to evaluate.
+<ol>
+<li>The <code>y</code> on this assignment's left-hand evaluates
+into a reference to the variable named <code>y</code>.</li>
+<li>The inner array literal <code>[ f(), x = g() ]</code> starts to evaluate.
+<ol>
+<li>The function call <code>f()</code> prints "F!" to the console and
+then evaluates to the number <code>2</code>.</li>
+<li>The assignment expression <code>x = g()</code> starts to evaluate.
+<ol>
+<li>The <code>x</code> on this assignment's left-hand side evaluates
+into a reference to the variable named <code>x</code>.</li>
+<li>The function call <code>g()</code> prints "G!" to the console and
+then evaluates to the number <code>3</code>.</li>
+<li>That <code>3</code> result from <code>g()</code> is assigned to <code>x</code>.</li>
+</ol>
+</li>
+<li>The assignment expression <code>x = g()</code> has now finished evaluating;
+its result is the new value of <code>x</code>, which is <code>3</code>.
+That <code>3</code> result becomes the next element
+in the inner array literal (after the <code>2</code> from the <code>f()</code>).</li>
+</ol>
+</li>
+<li>The inner array literal <code>[ f(), x = g() ]</code>
+has now finished evaluating;
+its result is an array with two values: <code>[ 2, 3 ]</code>.</li>
+<li>That <code>[ 2, 3 ]</code> array is now assigned to <code>y</code>.</li>
+</ol>
+</li>
+<li>The assignment expression <code>y = [ f(), x = g() ]</code> has
+now finished evaluating;
+its result is the new value of <code>y</code> – which happens to be <code>[ 2, 3 ]</code>.
+<code>x</code> is now assigned to <code>3</code>,
+<code>y</code> is now assigned to <code>[ 2, 3 ]</code>,
+and the console has printed "F!" then "G!".</li>
+</ol>
+<h4 id="evaluation_example_3">Evaluation example 3</h4>
+<p><code>x[f()] = g()</code> also evaluates from left to right.
+(This example assumes that <code>x</code> is already assigned to some object.
+For more information about objects, read <a href="Working_with_objects.html">Working with Objects</a>.)</p>
+<ol>
+<li>The assignment expression <code>x[f()] = g()</code> starts to evaluate.
+<ol>
+<li>The <code>x[f()]</code> property access on this assignment's left-hand
+starts to evaluate.
+<ol>
+<li>The <code>x</code> in this property access evaluates
+into a reference to the variable named <code>x</code>.</li>
+<li>Then the function call <code>f()</code> prints "F!" to the console and
+then evaluates to the number <code>2</code>.</li>
+</ol>
+</li>
+<li>The <code>x[f()]</code> property access on this assignment
+has now finished evaluating;
+its result is a variable property reference: <code>x[2]</code>.</li>
+<li>Then the function call <code>g()</code> prints "G!" to the console and
+then evaluates to the number <code>3</code>.</li>
+<li>That <code>3</code> is now assigned to <code>x[2]</code>.
+(This step will succeed only if <code>x</code> is assigned to an <a href="Working_with_objects.html">object</a>.)</li>
+</ol>
+</li>
+<li>The assignment expression <code>x[f()] = g()</code> has now finished evaluating;
+its result is the new value of <code>x[2]</code> – which happens to be <code>3</code>.
+<code>x[2]</code> is now assigned to <code>3</code>,
+and the console has printed "F!" then "G!".</li>
+</ol>
+  </section><section class="content-section" aria-labelledby="avoid_assignment_chains">
+    <!--lit-part tnZQWi3vsb0=--><!--lit-node 0--><h3 id="avoid_assignment_chains" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#avoid_assignment_chains">Avoid assignment chains</a></h3><!--/lit-part-->
+    <p>Chaining assignments or nesting assignments in other expressions can
+result in surprising behavior. For this reason,
+<a href="https://github.com/airbnb/javascript/blob/master/README.md#variables--no-chain-assignment" class="external" target="_blank">chaining assignments in the same statement is discouraged</a>.</p>
+<p>In particular, putting a variable chain in a <a href="../Reference/Statements/const.html"><code>const</code></a>, <a href="../Reference/Statements/let.html"><code>let</code></a>, or <a href="../Reference/Statements/var.html"><code>var</code></a> statement often does <em>not</em> work. Only the outermost/leftmost variable would get declared; other variables within the assignment chain are <em>not</em> declared by the <code>const</code>/<code>let</code>/<code>var</code> statement.
+For example:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const z = y = x = f();
+</code></pre></div>
+<p>This statement seemingly declares the variables <code>x</code>, <code>y</code>, and <code>z</code>.
+However, it only actually declares the variable <code>z</code>.
+<code>y</code> and <code>x</code> are either invalid references to nonexistent variables (in <a href="../Reference/Strict_mode.html">strict mode</a>) or, worse, would implicitly create <a href="https://developer.mozilla.org/en-US/docs/Glossary/Global_variable">global variables</a> for <code>x</code> and <code>y</code> in <a href="https://developer.mozilla.org/en-US/docs/Glossary/Sloppy_mode">sloppy mode</a>.</p>
+  </section><section class="content-section" aria-labelledby="comparison_operators">
+    <!--lit-part bv5jokceNnE=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Comparison%20operators"></a><h2 id="comparison_operators" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#comparison_operators">Comparison operators</a></h2><!--/lit-part-->
+    <p>A comparison operator compares its operands and returns a logical value based on whether the comparison is true.
+The operands can be numerical, string, logical, or <a href="Working_with_objects.html">object</a> values.
+Strings are compared based on standard lexicographical ordering, using Unicode values.
+In most cases, if the two operands are not of the same type, JavaScript attempts to convert them to an appropriate type for the comparison.
+This behavior generally results in comparing the operands numerically.
+The sole exceptions to type conversion within comparisons involve the <code>===</code> and <code>!==</code> operators, which perform strict equality and inequality comparisons.
+These operators do not attempt to convert the operands to compatible types before checking equality.
+The following table describes the comparison operators in terms of this sample code:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const var1 = 3;
+const var2 = 4;
+</code></pre></div>
+<figure class="table-container"><table class="standard-table">
+  <caption>
+    Comparison operators
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Operator</th>
+      <th scope="col">Description</th>
+      <th scope="col">Examples returning true</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Equality.html">Equal</a> (<code>==</code>)
+      </td>
+      <td>Returns <code>true</code> if the operands are equal.</td>
+      <td>
+        <code>3 == var1</code>
+        <p><code>"3" == var1</code></p>
+        <code>3 == '3'</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Inequality.html">Not equal</a> (<code>!=</code>)
+      </td>
+      <td>Returns <code>true</code> if the operands are not equal.</td>
+      <td>
+        <code>var1 != 4<br>var2 != "3"</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Strict_equality.html">Strict equal</a> (<code>===</code>)
+      </td>
+      <td>
+        Returns <code>true</code> if the operands are equal and of the same
+        type. See also <a href="../Reference/Global_Objects/Object/is.html"><code>Object.is</code></a> and
+        <a href="Equality_comparisons_and_sameness.html">sameness in JS</a>.
+      </td>
+      <td><code>3 === var1</code></td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Strict_inequality.html">Strict not equal</a> (<code>!==</code>)
+      </td>
+      <td>
+        Returns <code>true</code> if the operands are of the same type but not equal, or are of different type.
+      </td>
+      <td>
+        <code>var1 !== "3"<br>3 !== '3'</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Greater_than.html">Greater than</a> (<code>&gt;</code>)
+      </td>
+      <td>
+        Returns <code>true</code> if the left operand is greater than the right operand.
+      </td>
+      <td>
+        <code>var2 &gt; var1<br>"12" &gt; 2</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Greater_than_or_equal.html">Greater than or equal</a>
+        (<code>&gt;=</code>)
+      </td>
+      <td>
+        Returns <code>true</code> if the left operand is greater than or equal to the right operand.
+      </td>
+      <td>
+        <code>var2 &gt;= var1<br>var1 &gt;= 3</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Less_than.html">Less than</a>
+        (<code>&lt;</code>)
+      </td>
+      <td>
+        Returns <code>true</code> if the left operand is less than the right operand.
+      </td>
+      <td>
+        <code>var1 &lt; var2<br>"2" &lt; 12</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Less_than_or_equal.html">Less than or equal</a>
+        (<code>&lt;=</code>)
+      </td>
+      <td>
+        Returns <code>true</code> if the left operand is less than or equal to the right operand.
+      </td>
+      <td>
+        <code>var1 &lt;= var2<br>var2 &lt;= 5</code>
+      </td>
+    </tr>
+  </tbody>
+</table></figure>
+<div class="notecard note">
+<p><strong>Note:</strong>
+<code>=&gt;</code> is not a comparison operator but rather is the notation
+for <a href="../Reference/Functions/Arrow_functions.html">Arrow functions</a>.</p>
+</div>
+  </section><section class="content-section" aria-labelledby="arithmetic_operators">
+    <!--lit-part 64tVySuD8Nk=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Arithmetic%20operators"></a><h2 id="arithmetic_operators" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#arithmetic_operators">Arithmetic operators</a></h2><!--/lit-part-->
+    <p>An arithmetic operator takes numerical values (either literals or variables) as their operands and returns a single numerical value.
+The standard arithmetic operators are addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), and division (<code>/</code>).
+These operators work as they do in most other programming languages when used with floating point numbers (in particular, note that division by zero produces <a href="../Reference/Global_Objects/Infinity.html"><code>Infinity</code></a>). For example:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>1 / 2; // 0.5
+1 / 2 === 1.0 / 2.0; // this is true
+</code></pre></div>
+<p>In addition to the standard arithmetic operations (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>), JavaScript provides the arithmetic operators listed in the following table:</p>
+<figure class="table-container"><table class="fullwidth-table">
+  <caption>
+    Arithmetic operators
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Operator</th>
+      <th scope="col">Description</th>
+      <th scope="col">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Remainder.html">Remainder</a> (<code>%</code>)
+      </td>
+      <td>
+        Binary operator. Returns the integer remainder of dividing the two operands.
+      </td>
+      <td>12 % 5 returns 2.</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Increment.html">Increment</a> (<code>++</code>)
+      </td>
+      <td>
+        Unary operator. Adds one to its operand. If used as a prefix operator
+        (<code>++x</code>), returns the value of its operand after adding one;
+        if used as a postfix operator (<code>x++</code>), returns the value of
+        its operand before adding one.
+      </td>
+      <td>
+        If <code>x</code> is 3, then <code>++x</code> sets <code>x</code> to 4
+        and returns 4, whereas <code>x++</code> returns 3 and, only then, sets <code>x</code> to 4.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Decrement.html">Decrement</a> (<code>--</code>)
+      </td>
+      <td>
+        Unary operator. Subtracts one from its operand.
+        The return value is analogous to that for the increment operator.
+      </td>
+      <td>
+        If <code>x</code> is 3, then <code>--x</code> sets <code>x</code> to 2
+        and returns 2, whereas <code>x--</code> returns 3 and, only then, sets <code>x</code> to 2.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Unary_negation.html">Unary negation</a> (<code>-</code>)
+      </td>
+      <td>Unary operator. Returns the negation of its operand.</td>
+      <td>If <code>x</code> is 3, then <code>-x</code> returns -3.</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Unary_plus.html">Unary plus</a> (<code>+</code>)
+      </td>
+      <td>
+        Unary operator. Attempts to <a href="../Reference/Global_Objects/Number.html#number_coercion">convert the operand to a number</a>, if it is not already.
+      </td>
+      <td>
+        <p><code>+"3"</code> returns <code>3</code>.</p>
+        <p><code>+true</code> returns <code>1</code>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Exponentiation.html">Exponentiation operator</a> (<code>**</code>)
+      </td>
+      <td>
+        Calculates the <code>base</code> to the <code>exponent</code> power,
+        that is, <code>base^exponent</code>
+      </td>
+      <td>
+        <code>2 ** 3</code> returns <code>8</code>.<br><code>10 ** -1</code>
+        returns <code>0.1</code>.
+      </td>
+    </tr>
+  </tbody>
+</table></figure>
+  </section><section class="content-section" aria-labelledby="bitwise_operators">
+    <!--lit-part tcbeMNKIyPU=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Bitwise%20operators"></a><h2 id="bitwise_operators" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#bitwise_operators">Bitwise operators</a></h2><!--/lit-part-->
+    <p>A bitwise operator treats their operands as a set of 32 bits (zeros and ones), rather
+than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has
+a binary representation of 1001. Bitwise operators perform their operations on such
+binary representations, but they return standard JavaScript numerical values.</p>
+<p>The following table summarizes JavaScript's bitwise operators.</p>
+<figure class="table-container"><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Usage</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Reference/Operators/Bitwise_AND.html">Bitwise AND</a></td>
+<td><code>a &amp; b</code></td>
+<td>Returns a one in each bit position for which the corresponding bits of both operands are ones.</td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Bitwise_OR.html">Bitwise OR</a></td>
+<td><code>a | b</code></td>
+<td>Returns a zero in each bit position for which the corresponding bits of both operands are zeros.</td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Bitwise_XOR.html">Bitwise XOR</a></td>
+<td><code>a ^ b</code></td>
+<td>Returns a zero in each bit position for which the corresponding bits are the same. [Returns a one in each bit position for which the corresponding bits are different.]</td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Bitwise_NOT.html">Bitwise NOT</a></td>
+<td><code>~ a</code></td>
+<td>Inverts the bits of its operand.</td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Left_shift.html">Left shift</a></td>
+<td><code>a &lt;&lt; b</code></td>
+<td>Shifts <code>a</code> in binary representation <code>b</code> bits to the left, shifting in zeros from the right.</td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Right_shift.html">Sign-propagating right shift</a></td>
+<td><code>a &gt;&gt; b</code></td>
+<td>Shifts <code>a</code> in binary representation <code>b</code> bits to the right, discarding bits shifted off.</td>
+</tr>
+<tr>
+<td><a href="../Reference/Operators/Unsigned_right_shift.html">Zero-fill right shift</a></td>
+<td><code>a &gt;&gt;&gt; b</code></td>
+<td>Shifts <code>a</code> in binary representation <code>b</code> bits to the right, discarding bits shifted off, and shifting in zeros from the left.</td>
+</tr>
+</tbody>
+</table></figure>
+  </section><section class="content-section" aria-labelledby="bitwise_logical_operators">
+    <!--lit-part cTSEzDUFL98=--><!--lit-node 0--><h3 id="bitwise_logical_operators" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#bitwise_logical_operators">Bitwise logical operators</a></h3><!--/lit-part-->
+    <p>Conceptually, the bitwise logical operators work as follows:</p>
+<ul>
+<li>
+<p>The operands are converted to thirty-two-bit integers and expressed by a series of bits (zeros and ones).
+Numbers with more than 32 bits get their most significant bits discarded.
+For example, the following integer with more than 32 bits will be converted to a 32-bit integer:</p>
+<pre class="language-plain notranslate">Before: 1110 0110 1111 1010 0000 0000 0000 0110 0000 0000 0001
+After:                 1010 0000 0000 0000 0110 0000 0000 0001
+</pre>
+</li>
+<li>
+<p>Each bit in the first operand is paired with the corresponding bit in the second operand: first bit to first bit, second bit to second bit, and so on.</p>
+</li>
+<li>
+<p>The operator is applied to each pair of bits, and the result is constructed bitwise.</p>
+</li>
+</ul>
+<p>For example, the binary representation of nine is 1001, and the binary representation of fifteen is 1111.
+So, when the bitwise operators are applied to these values, the results are as follows:</p>
+<figure class="table-container"><table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Result</th>
+<th>Binary Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>15 &amp; 9</code></td>
+<td><code>9</code></td>
+<td><code>1111 &amp; 1001 = 1001</code></td>
+</tr>
+<tr>
+<td><code>15 | 9</code></td>
+<td><code>15</code></td>
+<td><code>1111 | 1001 = 1111</code></td>
+</tr>
+<tr>
+<td><code>15 ^ 9</code></td>
+<td><code>6</code></td>
+<td><code>1111 ^ 1001 = 0110</code></td>
+</tr>
+<tr>
+<td><code>~15</code></td>
+<td><code>-16</code></td>
+<td><code>~ 0000 0000 … 0000 1111 = 1111 1111 … 1111 0000</code></td>
+</tr>
+<tr>
+<td><code>~9</code></td>
+<td><code>-10</code></td>
+<td><code>~ 0000 0000 … 0000 1001 = 1111 1111 … 1111 0110</code></td>
+</tr>
+</tbody>
+</table></figure>
+<p>Note that all 32 bits are inverted using the Bitwise NOT operator, and that values with
+the most significant (left-most) bit set to 1 represent negative numbers
+(two's-complement representation). <code>~x</code> evaluates to the same value that
+<code>-x - 1</code> evaluates to.</p>
+  </section><section class="content-section" aria-labelledby="bitwise_shift_operators">
+    <!--lit-part +6NYW5x1ZTQ=--><!--lit-node 0--><h3 id="bitwise_shift_operators" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#bitwise_shift_operators">Bitwise shift operators</a></h3><!--/lit-part-->
+    <p>The bitwise shift operators take two operands: the first is a quantity to be shifted, and the second specifies the number of bit positions by which the first operand is to be
+shifted.
+The direction of the shift operation is controlled by the operator used.</p>
+<p>Shift operators convert their operands to thirty-two-bit integers and return a result of either type <a href="../Reference/Global_Objects/Number.html"><code>Number</code></a> or <a href="../Reference/Global_Objects/BigInt.html"><code>BigInt</code></a>: specifically, if the type
+of the left operand is <a href="../Reference/Global_Objects/BigInt.html"><code>BigInt</code></a>, they return <a href="../Reference/Global_Objects/BigInt.html"><code>BigInt</code></a>;
+otherwise, they return <a href="../Reference/Global_Objects/Number.html"><code>Number</code></a>.</p>
+<p>The shift operators are listed in the following table.</p>
+<figure class="table-container"><table class="fullwidth-table">
+  <caption>
+    Bitwise shift operators
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Operator</th>
+      <th scope="col">Description</th>
+      <th scope="col">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Left_shift.html">Left shift</a><br>(<code>&lt;&lt;</code>)
+      </td>
+      <td>
+        This operator shifts the first operand the specified number of bits to
+        the left. Excess bits shifted off to the left are discarded. Zero bits
+        are shifted in from the right.
+      </td>
+      <td>
+        <code>9&lt;&lt;2</code> yields 36, because 1001 shifted 2 bits to
+        the left becomes 100100, which is 36.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Right_shift.html">Sign-propagating right shift</a> (<code>&gt;&gt;</code>)
+      </td>
+      <td>
+        This operator shifts the first operand the specified number of bits to
+        the right. Excess bits shifted off to the right are discarded. Copies of
+        the leftmost bit are shifted in from the left.
+      </td>
+      <td>
+        <code>9&gt;&gt;2</code> yields 2, because 1001 shifted 2 bits to the right
+        becomes 10, which is 2. Likewise, <code>-9&gt;&gt;2</code> yields -3, because the sign is preserved.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Unsigned_right_shift.html">Zero-fill right shift</a> (<code>&gt;&gt;&gt;</code>)
+      </td>
+      <td>
+        This operator shifts the first operand the specified number of bits to
+        the right. Excess bits shifted off to the right are discarded. Zero bits
+        are shifted in from the left.
+      </td>
+      <td>
+        <code>19&gt;&gt;&gt;2</code> yields 4, because 10011 shifted 2 bits to the right
+        becomes 100, which is 4. For non-negative numbers, zero-fill right shift
+        and sign-propagating right shift yield the same result.
+      </td>
+    </tr>
+  </tbody>
+</table></figure>
+  </section><section class="content-section" aria-labelledby="logical_operators">
+    <!--lit-part q82L2xg+9k8=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Logical%20operators"></a><h2 id="logical_operators" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#logical_operators">Logical operators</a></h2><!--/lit-part-->
+    <p>Logical operators are typically used with Boolean (logical) values; when they are, they return a Boolean value.
+However, the <code>&amp;&amp;</code>, <code>||</code>, and <code>??</code> operators actually return the value of one of the specified operands, so if these
+operators are used with non-Boolean values, they may return a non-Boolean value. As such, they are more adequately called "value selection operators".
+The logical operators are described in the following table.</p>
+<figure class="table-container"><table class="fullwidth-table">
+  <caption>
+    Logical operators
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Operator</th>
+      <th scope="col">Usage</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Logical_AND.html">Logical AND</a> (<code>&amp;&amp;</code>)
+      </td>
+      <td><code>expr1 &amp;&amp; expr2</code></td>
+      <td>
+        Returns <code>expr1</code> if it can be converted to <code>false</code>;
+        otherwise, returns <code>expr2</code>. Thus, when used with Boolean
+        values, <code>&amp;&amp;</code> returns <code>true</code> if both
+        operands are true; otherwise, returns <code>false</code>.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Logical_OR.html">Logical OR</a> (<code>||</code>)
+      </td>
+      <td><code>expr1 || expr2</code></td>
+      <td>
+        Returns <code>expr1</code> if it can be converted to <code>true</code>;
+        otherwise, returns <code>expr2</code>. Thus, when used with Boolean
+        values, <code>||</code> returns <code>true</code> if either operand is
+        true; if both are false, returns <code>false</code>.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Nullish_coalescing.html">Nullish coalescing operator</a> (<code>??</code>)
+      </td>
+      <td><code>expr1 ?? expr2</code></td>
+      <td>
+        Returns <code>expr1</code> if it is neither <code>null</code> nor
+        <code>undefined</code>; otherwise, returns <code>expr2</code>.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="../Reference/Operators/Logical_NOT.html">Logical NOT</a> (<code>!</code>)
+      </td>
+      <td><code>!expr</code></td>
+      <td>
+        Returns <code>false</code> if its single operand can be converted
+        to <code>true</code>; otherwise, returns <code>true</code>.
+      </td>
+    </tr>
+  </tbody>
+</table></figure>
+<p>Examples of expressions that can be converted to <code>false</code> are those that evaluate to <code>null</code>, <code>0</code>, <code>0n</code>, <code>NaN</code>, the empty string (<code>""</code>), or <code>undefined</code>.</p>
+<p>The following code shows examples of the <code>&amp;&amp;</code> (logical AND) operator.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const a1 = true &amp;&amp; true; // t &amp;&amp; t returns true
+const a2 = true &amp;&amp; false; // t &amp;&amp; f returns false
+const a3 = false &amp;&amp; true; // f &amp;&amp; t returns false
+const a4 = false &amp;&amp; 3 === 4; // f &amp;&amp; f returns false
+const a5 = "Cat" &amp;&amp; "Dog"; // t &amp;&amp; t returns Dog
+const a6 = false &amp;&amp; "Cat"; // f &amp;&amp; t returns false
+const a7 = "Cat" &amp;&amp; false; // t &amp;&amp; f returns false
+</code></pre></div>
+<p>The following code shows examples of the <code>||</code> (logical OR) operator.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const o1 = true || true; // t || t returns true
+const o2 = false || true; // f || t returns true
+const o3 = true || false; // t || f returns true
+const o4 = false || 3 === 4; // f || f returns false
+const o5 = "Cat" || "Dog"; // t || t returns Cat
+const o6 = false || "Cat"; // f || t returns Cat
+const o7 = "Cat" || false; // t || f returns Cat
+</code></pre></div>
+<p>The following code shows examples of the <code>??</code> (nullish coalescing) operator.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const n1 = null ?? 1; // 1
+const n2 = undefined ?? 2; // 2
+const n3 = false ?? 3; // false
+const n4 = 0 ?? 4; // 0
+</code></pre></div>
+<p>Note how <code>??</code> works like <code>||</code>, but it only returns the second expression when the first one is "<a href="https://developer.mozilla.org/en-US/docs/Glossary/Nullish">nullish</a>", i.e., <a href="../Reference/Operators/null.html"><code>null</code></a> or <a href="../Reference/Global_Objects/undefined.html"><code>undefined</code></a>. <code>??</code> is a better alternative than <code>||</code> for setting defaults for values that might be <code>null</code> or <code>undefined</code>, in particular when values like <code>''</code> or <code>0</code> are valid values and the default should not apply.</p>
+<p>The following code shows examples of the <code>!</code> (logical NOT) operator.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const n1 = !true; // !t returns false
+const n2 = !false; // !f returns true
+const n3 = !"Cat"; // !t returns false
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="short-circuit_evaluation">
+    <!--lit-part UIiF2ckDUSk=--><!--lit-node 0--><h3 id="short-circuit_evaluation" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#short-circuit_evaluation">Short-circuit evaluation</a></h3><!--/lit-part-->
+    <p>As logical expressions are evaluated left to right, they are tested for possible
+"short-circuit" evaluation using the following rules:</p>
+<ul>
+<li><code>falsy &amp;&amp; anything</code> is short-circuit evaluated to the falsy value.</li>
+<li><code>truthy || anything</code> is short-circuit evaluated to the truthy value.</li>
+<li><code>nonNullish ?? anything</code> is short-circuit evaluated to the non-nullish value.</li>
+</ul>
+<p>The rules of logic guarantee that these evaluations are always correct. Note that the
+<em>anything</em> part of the above expressions is not evaluated, so any side effects of
+doing so do not take effect.</p>
+  </section><section class="content-section" aria-labelledby="bigint_operators">
+    <!--lit-part TNWWKCNzXpY=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/BigInt%20operators"></a><h2 id="bigint_operators" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#bigint_operators">BigInt operators</a></h2><!--/lit-part-->
+    <p>Most operators that can be used between numbers can be used between <a href="../Reference/Global_Objects/BigInt.html"><code>BigInt</code></a> values as well.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>// BigInt addition
+const a = 1n + 2n; // 3n
+// Division with BigInts round towards zero
+const b = 1n / 2n; // 0n
+// Bitwise operations with BigInts do not truncate either side
+const c = 40000000000000000n &gt;&gt; 2n; // 10000000000000000n
+</code></pre></div>
+<p>One exception is <a href="../Reference/Operators/Unsigned_right_shift.html">unsigned right shift (<code>&gt;&gt;&gt;</code>)</a>, which is not defined for BigInt values. This is because a BigInt does not have a fixed width, so technically it does not have a "highest bit".</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const d = 8n &gt;&gt;&gt; 2n; // TypeError: BigInts have no unsigned right shift, use &gt;&gt; instead
+</code></pre></div>
+<p>BigInts and numbers are not mutually replaceable — you cannot mix them in calculations.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js example-bad notranslate"><code>const a = 1n + 2; // TypeError: Cannot mix BigInt and other types
+</code></pre></div>
+<p>This is because BigInt is neither a subset nor a superset of numbers. BigInts have higher precision than numbers when representing large integers, but cannot represent decimals, so implicit conversion on either side might lose precision. Use explicit conversion to signal whether you wish the operation to be a number operation or a BigInt one.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js example-good notranslate"><code>const a = Number(1n) + 2; // 3
+const b = 1n + BigInt(2); // 3n
+</code></pre></div>
+<p>You can compare BigInts with numbers.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const a = 1n &gt; 2; // false
+const b = 3 &gt; 2n; // true
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="string_operators">
+    <!--lit-part aF31ro2hEXc=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/String%20operators"></a><h2 id="string_operators" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#string_operators">String operators</a></h2><!--/lit-part-->
+    <p>In addition to the comparison operators, which can be used on string values, the concatenation operator (+) concatenates two string values together, returning another string that is the union of the two operand strings.</p>
+<p>For example,</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>console.log("my " + "string"); // console logs the string "my string".
+</code></pre></div>
+<p>The shorthand assignment operator <code>+=</code> can also be used to concatenate strings.</p>
+<p>For example,</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>let myString = "alpha";
+myString += "bet"; // evaluates to "alphabet" and assigns this value to myString.
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="conditional_ternary_operator">
+    <!--lit-part 8CuUSsvuZdU=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Conditional%20%28ternary%29%20operator"></a><h2 id="conditional_ternary_operator" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#conditional_ternary_operator">Conditional (ternary) operator</a></h2><!--/lit-part-->
+    <p>The <a href="../Reference/Operators/Conditional_operator.html">conditional operator</a>
+is the only JavaScript operator that takes three operands.
+The operator can have one of two values based on a condition.
+The syntax is:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>condition ? val1 : val2
+</code></pre></div>
+<p>If <code>condition</code> is true, the operator has the value of <code>val1</code>.
+Otherwise it has the value of <code>val2</code>. You can use the conditional operator anywhere you would use a standard operator.</p>
+<p>For example,</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const status = age &gt;= 18 ? "adult" : "minor";
+</code></pre></div>
+<p>This statement assigns the value "adult" to the variable <code>status</code> if
+<code>age</code> is eighteen or more. Otherwise, it assigns the value "minor" to
+<code>status</code>.</p>
+  </section><section class="content-section" aria-labelledby="comma_operator">
+    <!--lit-part SFpEliaaErs=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Comma%20operator"></a><h2 id="comma_operator" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#comma_operator">Comma operator</a></h2><!--/lit-part-->
+    <p>The <a href="../Reference/Operators/Comma_operator.html">comma operator</a> (<code>,</code>)
+evaluates both of its operands and returns the value of the last operand.
+This operator is primarily used inside a <code>for</code> loop, to allow multiple variables to be updated each time through the loop.
+It is regarded bad style to use it elsewhere, when it is not necessary.
+Often two separate statements can and should be used instead.</p>
+<p>For example, if <code>a</code> is a 2-dimensional array with 10 elements on a side, the following code uses the comma operator to update two variables at once.
+The code prints the values of the diagonal elements in the array:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const a = [x, x, x, x, x];
+
+for (let i = 0, j = 9; i &lt;= j; i++, j--) {
+  //                              ^
+  console.log(`a[${i}][${j}]= ${a[i][j]}`);
+}
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="unary_operators">
+    <!--lit-part IlyeZEM15Is=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Unary%20operators"></a><h2 id="unary_operators" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#unary_operators">Unary operators</a></h2><!--/lit-part-->
+    <p>A unary operation is an operation with only one operand.</p>
+  </section><section class="content-section" aria-labelledby="delete">
+    <!--lit-part volh5mTZF7c=--><!--lit-node 0--><h3 id="delete" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#delete">delete</a></h3><!--/lit-part-->
+    <p>The <a href="../Reference/Operators/delete.html"><code>delete</code></a> operator deletes an object's property.
+The syntax is:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>delete object.property;
+delete object[propertyKey];
+delete objectName[index];
+</code></pre></div>
+<p>where <code>object</code> is the name of an object, <code>property</code> is an existing property, and <code>propertyKey</code> is a string or symbol referring to an existing property.</p>
+<p>If the <code>delete</code> operator succeeds, it removes the property from the object.
+Trying to access it afterwards will yield <code>undefined</code>.
+The <code>delete</code> operator returns <code>true</code> if the operation is possible; it returns <code>false</code> if the operation is not possible.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>delete Math.PI; // returns false (cannot delete non-configurable properties)
+
+const myObj = { h: 4 };
+delete myObj.h; // returns true (can delete user-defined properties)
+</code></pre></div>
+<h4 id="deleting_array_elements">Deleting array elements</h4>
+<p>Since arrays are just objects, it's technically possible to <code>delete</code> elements from them.
+This is, however, regarded as a bad practice — try to avoid it.
+When you delete an array property, the array length is not affected and other elements are not re-indexed.
+To achieve that behavior, it is much better to just overwrite the element with the value <code>undefined</code>.
+To actually manipulate the array, use the various array methods such as <a href="../Reference/Global_Objects/Array/splice.html"><code>splice</code></a>.</p>
+  </section><section class="content-section" aria-labelledby="typeof">
+    <!--lit-part yWnapPvaq0A=--><!--lit-node 0--><h3 id="typeof" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#typeof">typeof</a></h3><!--/lit-part-->
+    <p>The <a href="../Reference/Operators/typeof.html"><code>typeof</code> operator</a> returns a string indicating the type of the unevaluated operand.
+<code>operand</code> is the string, variable, keyword, or object for which the type is to be returned.
+The parentheses are optional.</p>
+<p>Suppose you define the following variables:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const myFun = () =&gt; 5 + 2;
+const shape = "round";
+const size = 1;
+const foo = ["Apple", "Mango", "Orange"];
+const today = new Date();
+</code></pre></div>
+<p>The <code>typeof</code> operator returns the following results for these variables:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>typeof myFun; // returns "function"
+typeof shape; // returns "string"
+typeof size; // returns "number"
+typeof foo; // returns "object"
+typeof today; // returns "object"
+typeof doesntExist; // returns "undefined"
+</code></pre></div>
+<p>For the keywords <code>true</code> and <code>null</code>, the <code>typeof</code>
+operator returns the following results:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>typeof true; // returns "boolean"
+typeof null; // returns "object"
+</code></pre></div>
+<p>For a number or string, the <code>typeof</code> operator returns the following results:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>typeof 62; // returns "number"
+typeof "Hello world"; // returns "string"
+</code></pre></div>
+<p>For property values, the <code>typeof</code> operator returns the type of value the
+property contains:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>typeof document.lastModified; // returns "string"
+typeof window.length; // returns "number"
+typeof Math.LN2; // returns "number"
+</code></pre></div>
+<p>For methods and functions, the <code>typeof</code> operator returns results as follows:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>typeof blur; // returns "function"
+typeof parseInt; // returns "function"
+typeof shape.split; // returns "function"
+</code></pre></div>
+<p>For predefined objects, the <code>typeof</code> operator returns results as follows:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>typeof Date; // returns "function"
+typeof Function; // returns "function"
+typeof Math; // returns "object"
+typeof Option; // returns "function"
+typeof String; // returns "function"
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="void">
+    <!--lit-part Xf0TE8o2Iuk=--><!--lit-node 0--><h3 id="void" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#void">void</a></h3><!--/lit-part-->
+    <p>The <a href="../Reference/Operators/void.html"><code>void</code> operator</a> specifies an expression to be evaluated without returning a value. <code>expression</code> is a JavaScript expression to evaluate.
+The parentheses surrounding the expression are optional, but it is good style to use them to avoid precedence issues.</p>
+  </section><section class="content-section" aria-labelledby="relational_operators">
+    <!--lit-part g1ezTfgTVCI=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Relational%20operators"></a><h2 id="relational_operators" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#relational_operators">Relational operators</a></h2><!--/lit-part-->
+    <p>A relational operator compares its operands and returns a Boolean value based on whether the comparison is true.</p>
+  </section><section class="content-section" aria-labelledby="in">
+    <!--lit-part i47lEs+eve8=--><!--lit-node 0--><h3 id="in" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#in">in</a></h3><!--/lit-part-->
+    <p>The <a href="../Reference/Operators/in.html"><code>in</code> operator</a> returns <code>true</code> if the specified property is in the specified object.
+The syntax is:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>propNameOrNumber in objectName
+</code></pre></div>
+<p>where <code>propNameOrNumber</code> is a string, numeric, or symbol expression representing a property name or array index, and <code>objectName</code> is the name of an object.</p>
+<p>The following examples show some uses of the <code>in</code> operator.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>// Arrays
+const trees = ["redwood", "bay", "cedar", "oak", "maple"];
+0 in trees; // returns true
+3 in trees; // returns true
+6 in trees; // returns false
+"bay" in trees; // returns false
+// (you must specify the index number, not the value at that index)
+"length" in trees; // returns true (length is an Array property)
+
+// built-in objects
+"PI" in Math; // returns true
+const myString = new String("coral");
+"length" in myString; // returns true
+
+// Custom objects
+const myCar = { make: "Honda", model: "Accord", year: 1998 };
+"make" in myCar; // returns true
+"model" in myCar; // returns true
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="instanceof">
+    <!--lit-part FU/rTbZ4EE0=--><!--lit-node 0--><h3 id="instanceof" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#instanceof">instanceof</a></h3><!--/lit-part-->
+    <p>The <a href="../Reference/Operators/instanceof.html"><code>instanceof</code> operator</a> returns <code>true</code>
+if the specified object is of the specified object type. The syntax is:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>object instanceof objectType
+</code></pre></div>
+<p>where <code>object</code> is the object to test against <code>objectType</code>, and <code>objectType</code> is a constructor representing a type, such as <a href="../Reference/Global_Objects/Map.html"><code>Map</code></a> or <a href="../Reference/Global_Objects/Array.html"><code>Array</code></a>.</p>
+<p>Use <code>instanceof</code> when you need to confirm the type of an object at runtime.
+For example, when catching exceptions, you can branch to different exception-handling code depending on the type of exception thrown.</p>
+<p>For example, the following code uses <code>instanceof</code> to determine whether <code>obj</code> is a <code>Map</code> object. Because <code>obj</code> is a <code>Map</code> object, the statements inside the <code>if</code> block execute.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const obj = new Map();
+if (obj instanceof Map) {
+  // statements to execute
+}
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="basic_expressions">
+    <!--lit-part lfTCwi1D/gg=--><!--lit-node 0--><a class="dashAnchor" name="//apple_ref/Section/Basic%20expressions"></a><h2 id="basic_expressions" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#basic_expressions">Basic expressions</a></h2><!--/lit-part-->
+    <p>All operators eventually operate on one or more basic expressions. These basic expressions include <a href="Grammar_and_types.html#declarations">identifiers</a> and <a href="Grammar_and_types.html#literals">literals</a>, but there are a few other kinds as well. They are briefly introduced below, and their semantics are described in detail in their respective reference sections.</p>
+  </section><section class="content-section" aria-labelledby="this">
+    <!--lit-part X7Rtozo3Iug=--><!--lit-node 0--><h3 id="this" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#this">this</a></h3><!--/lit-part-->
+    <p>The <a href="../Reference/Operators/this.html"><code>this</code> keyword</a> is usually used within a function. In general, when the function is attached to an object as a method, <code>this</code> refers to the object that the method is called on. It functions like a hidden parameter that is passed to the function. <code>this</code> is an expression that evaluates to the object, so you can use all the object operations we introduced.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>this["propertyName"];
+this.propertyName;
+doSomething(this);
+</code></pre></div>
+<p>For example, suppose a function is defined as follows:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>function getFullName() {
+  return `${this.firstName} ${this.lastName}`;
+}
+</code></pre></div>
+<p>We can now attach this function to an object, and it will use the properties of that object when called:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const person1 = {
+  firstName: "Chris",
+  lastName: "Martin",
+};
+
+const person2 = {
+  firstName: "Chester",
+  lastName: "Bennington",
+};
+
+// Attach the same function
+person1.getFullName = getFullName;
+person2.getFullName = getFullName;
+
+console.log(person1.getFullName()); // "Chris Martin"
+console.log(person2.getFullName()); // "Chester Bennington"
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="grouping_operator">
+    <!--lit-part Sj0LubY5yN8=--><!--lit-node 0--><h3 id="grouping_operator" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#grouping_operator">Grouping operator</a></h3><!--/lit-part-->
+    <p>The grouping operator <code>( )</code> controls the precedence of evaluation in
+expressions. For example, you can override multiplication and division first, then
+addition and subtraction to evaluate addition first.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const a = 1;
+const b = 2;
+const c = 3;
+
+// default precedence
+a + b * c; // 7
+// evaluated by default like this
+a + (b * c); // 7
+
+// now overriding precedence
+// addition before multiplication
+(a + b) * c; // 9
+
+// which is equivalent to
+a * c + b * c; // 9
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="property_accessor">
+    <!--lit-part kW4+w0znKdU=--><!--lit-node 0--><h3 id="property_accessor" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#property_accessor">Property accessor</a></h3><!--/lit-part-->
+    <p>The <a href="../Reference/Operators/Property_accessors.html">property accessor</a> syntax gets property values on objects, using either dot notation or bracket notation.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>object.property;
+object["property"];
+</code></pre></div>
+<p>The <a href="Working_with_objects.html">working with objects</a> guide goes into more details about object properties.</p>
+  </section><section class="content-section" aria-labelledby="optional_chaining">
+    <!--lit-part otNrt6JtIjQ=--><!--lit-node 0--><h3 id="optional_chaining" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#optional_chaining">Optional chaining</a></h3><!--/lit-part-->
+    <p>The <a href="../Reference/Operators/Optional_chaining.html">optional chaining</a> syntax (<code>?.</code>) performs the chained operation on an object if it is defined and non-<code>null</code>, and otherwise short-circuits the operation and returns <code>undefined</code>.
+This allows you to operate on a value that may be <code>null</code> or <code>undefined</code> without causing a <code>TypeError</code>.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>maybeObject?.property;
+maybeObject?.[property];
+maybeFunction?.();
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="new">
+    <!--lit-part AQBrCP41B/M=--><!--lit-node 0--><h3 id="new" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#new">new</a></h3><!--/lit-part-->
+    <p>You can use the <a href="../Reference/Operators/new.html"><code>new</code> operator</a> to create an instance of a user-defined object type or of one of the built-in object types. Use <code>new</code> as follows:</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>const objectName = new ObjectType(param1, param2, /* …, */ paramN);
+</code></pre></div>
+  </section><section class="content-section" aria-labelledby="super">
+    <!--lit-part CfQkmQtrc4A=--><!--lit-node 0--><h3 id="super" class="heading"><!--lit-node 1--><a class="heading-anchor" href="#super">super</a></h3><!--/lit-part-->
+    <p>The <a href="../Reference/Operators/super.html"><code>super</code> keyword</a> is used to call functions on an object's parent.
+It is useful with <a href="../Reference/Classes.html">classes</a> to call the parent constructor, for example.</p>
+<div class="code-example"><div class="example-header"><span class="language-name">js</span></div><pre class="language-js notranslate"><code>super(args); // calls the parent constructor.
+super.functionOnParent(args);
+</code></pre></div>
+<ul class="prev-next"><li class="prev"><a class="button secondary" href="Functions.html"><span class="button-wrap"> Previous </span></a></li><li class="next"><a class="button secondary" href="Numbers_and_strings.html"><span class="button-wrap"> Next  </span></a></li></ul>
+  </section> 
+      <section class="content-section article-footer" aria-labelledby="feedback">
+        <div class="article-footer__inner">
+          <div class="article-footer__svg-container"><!--lit-part OWLzZqRMsCU=--><svg xmlns="http://www.w3.org/2000/svg" width="162" height="162" fill="none" viewBox="0 0 162 162"><mask id="b" fill="#fff"><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z"></path></mask><path stroke="url(#a)" stroke-dasharray="6, 6" stroke-width="2" d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z" mask="url(#b)" style="stroke:url(#a)" transform="translate(-63.992 -25.587)"></path><ellipse cx="8.066" cy="111.597" fill="currentColor" rx="53.677" ry="53.699" transform="matrix(.71707 -.697 .7243 .6895 0 0)"></ellipse><g clip-path="url(#c)" transform="translate(-63.992 -25.587)"><path fill="#9abff5" d="m144.256 137.379 32.906 12.434a4.41 4.41 0 0 1 2.559 5.667l-9.326 24.679a4.41 4.41 0 0 1-5.667 2.559l-8.226-3.108-2.332 6.17c-.466 1.233-.375 1.883-1.609 1.417l-2.253-.527c-.411-.155-.95-.594-1.206-1.161l-4.734-10.484-12.545-4.741a4.41 4.41 0 0 1-2.559-5.667l9.325-24.679a4.41 4.41 0 0 1 5.667-2.559m9.961 29.617 8.227 3.108 3.264-8.638-.498-6.768-4.113-1.555.548 7.258-4.319-1.632zm-12.339-4.663 8.226 3.108 3.264-8.637-.498-6.769-4.113-1.554.548 7.257-4.319-1.632z"></path></g><g clip-path="url(#d)" transform="translate(-63.992 -25.587)"><path fill="#81b0f3" d="M135.35 60.136 86.67 41.654c-3.346-1.27-7.124.428-8.394 3.775L64.414 81.938c-1.27 3.347.428 7.125 3.774 8.395l12.17 4.62-3.465 9.128c-.693 1.826-1.432 2.457.394 3.15l3.014 1.625c.609.231 1.637.274 2.477-.104l15.53-6.983 18.56 7.047c3.346 1.27 7.124-.428 8.395-3.775l13.862-36.51c1.27-3.346-.428-7.124-3.775-8.395M95.261 83.207l-12.17-4.62 4.852-12.779 7.19-7.017 6.085 2.31-7.725 7.51 6.389 2.426zm18.255 6.93-12.17-4.62 4.852-12.778 7.189-7.017 6.085 2.31-7.725 7.51 6.39 2.426z"></path></g><defs><clipPath id="c"><path fill="#fff" d="m198.638 146.586-65.056-24.583-24.583 65.057 65.056 24.582z"></path></clipPath><clipPath id="d"><path fill="#fff" d="m66.438 14.055 96.242 36.54-36.54 96.243-96.243-36.54z"></path></clipPath><linearGradient id="a" x1="97.203" x2="199.995" y1="47.04" y2="152.793" gradientUnits="userSpaceOnUse"><stop stop-color="#086dfc"></stop><stop offset=".246" stop-color="#2c81fa"></stop><stop offset=".516" stop-color="#5497f8"></stop><stop offset=".821" stop-color="#80b0f6"></stop><stop offset="1" stop-color="#9abff5"></stop></linearGradient></defs></svg><!--/lit-part--></div>
+          <h2 id="feedback">
+            Help improve MDN
+          </h2>
+          <mdn-content-feedback locale="en-US"></mdn-content-feedback>
+          <a class="article-footer__contribute" href="https://developer.mozilla.org/en-US/docs/MDN/Community/Getting_started">Learn how to contribute</a> <p class="article-footer__last-modified">
+    This page was last modified on <time datetime="2025-07-08T13:18:45.000Z">Jul 8, 2025</time> by <a href="Expressions_and_operators/contributors.txt">MDN contributors</a>.
+  </p> <div class="article-footer__links">
+    <a class="external" href="https://github.com/mdn/content/blob/main/files/en-us/web/javascript/guide/expressions_and_operators/index.md?plain=1" title="Folder: en-us/web/javascript/guide/expressions_and_operators (Opens in a new tab)" target="_blank" rel="noopener">View this page on GitHub</a> • <a class="external" href="https://github.com/mdn/content/issues/new?template=page-report.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FGuide%2FExpressions_and_operators&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Fweb%2Fjavascript%2Fguide%2Fexpressions_and_operators%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FGuide%2FExpressions_and_operators%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Fweb%2Fjavascript%2Fguide%2Fexpressions_and_operators%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2Ffad67be4431d8e6c2a89ac880735233aa76c41d4%0A*+Document+last+modified%3A+2025-07-08T13%3A18%3A45.000Z%0A%0A%3C%2Fdetails%3E" title="This will take you to GitHub to file a new issue." target="_blank" rel="noopener">Report a problem with this content</a>
+  </div>
+        </div>
+      </section>
+    
+          </div>
+        </main>
+        <aside class="layout__left-sidebar" id="main-sidebar">
+          <nav class="left-sidebar">
+      <div class="left-sidebar__header">
+        <mdn-sidebar-filter></mdn-sidebar-filter>
+      </div>
+      <div class="left-sidebar__content"><ol><li class="section"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li><li class="section"><span>Tutorials and guides</span></li><li><details open=""><summary><a href="../Guide.html">JavaScript Guide</a></summary><ol><li><a href="Introduction.html">Introduction</a></li><li><a href="Grammar_and_types.html">Grammar and types</a></li><li><a href="Control_flow_and_error_handling.html">Control flow and error handling</a></li><li><a href="Loops_and_iteration.html">Loops and iteration</a></li><li><a href="Functions.html">Functions</a></li><li><em><a href="Expressions_and_operators.html" aria-current="page">Expressions and operators</a></em></li><li><a href="Numbers_and_strings.html">Numbers and strings</a></li><li><a href="Representing_dates_times.html">Representing dates &amp; times</a></li><li><a href="Regular_expressions.html">Regular expressions</a></li><li><a href="Indexed_collections.html">Indexed collections</a></li><li><a href="Keyed_collections.html">Keyed collections</a></li><li><a href="Working_with_objects.html">Working with objects</a></li><li><a href="Using_classes.html">Using classes</a></li><li><a href="Using_promises.html">Using promises</a></li><li><a href="Typed_arrays.html">JavaScript typed arrays</a></li><li><a href="Iterators_and_generators.html">Iterators and generators</a></li><li><a href="Resource_management.html">Resource management</a></li><li><a href="Internationalization.html">Internationalization</a></li><li><a href="Modules.html">JavaScript modules</a></li></ol></details></li><li><details><summary><span>Intermediate</span></summary><ol><li><a href="Language_overview.html">Language overview</a></li><li><a href="Data_structures.html">JavaScript data structures</a></li><li><a href="Equality_comparisons_and_sameness.html">Equality comparisons and sameness</a></li><li><a href="Enumerability_and_ownership_of_properties.html">Enumerability and ownership of properties</a></li><li><a href="Closures.html">Closures</a></li></ol></details></li><li><details><summary><span>Advanced</span></summary><ol><li><a href="Inheritance_and_the_prototype_chain.html">Inheritance and the prototype chain</a></li><li><a href="Meta_programming.html">Meta programming</a></li><li><a href="Memory_management.html">Memory Management</a></li></ol></details></li><li class="section"><a href="../Reference.html">References</a></li><li><details><summary><a href="../Reference/Global_Objects.html">Built-in objects</a></summary><ol><li><a href="../Reference/Global_Objects/AggregateError.html">AggregateError</a></li><li><a href="../Reference/Global_Objects/Array.html">Array</a></li><li><a href="../Reference/Global_Objects/ArrayBuffer.html">ArrayBuffer</a></li><li><a href="../Reference/Global_Objects/AsyncDisposableStack.html">AsyncDisposableStack</a></li><li><a href="../Reference/Global_Objects/AsyncFunction.html">AsyncFunction</a></li><li><a href="../Reference/Global_Objects/AsyncGenerator.html">AsyncGenerator</a></li><li><a href="../Reference/Global_Objects/AsyncGeneratorFunction.html">AsyncGeneratorFunction</a></li><li><a href="../Reference/Global_Objects/AsyncIterator.html">AsyncIterator</a></li><li><a href="../Reference/Global_Objects/Atomics.html">Atomics</a></li><li><a href="../Reference/Global_Objects/BigInt.html">BigInt</a></li><li><a href="../Reference/Global_Objects/BigInt64Array.html">BigInt64Array</a></li><li><a href="../Reference/Global_Objects/BigUint64Array.html">BigUint64Array</a></li><li><a href="../Reference/Global_Objects/Boolean.html">Boolean</a></li><li><a href="../Reference/Global_Objects/DataView.html">DataView</a></li><li><a href="../Reference/Global_Objects/Date.html">Date</a></li><li><a href="../Reference/Global_Objects/decodeURI.html">decodeURI()</a></li><li><a href="../Reference/Global_Objects/decodeURIComponent.html">decodeURIComponent()</a></li><li><a href="../Reference/Global_Objects/DisposableStack.html">DisposableStack</a></li><li><a href="../Reference/Global_Objects/encodeURI.html">encodeURI()</a></li><li><a href="../Reference/Global_Objects/encodeURIComponent.html">encodeURIComponent()</a></li><li><a href="../Reference/Global_Objects/Error.html">Error</a></li><li><a href="../Reference/Global_Objects/escape.html">escape()</a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Global_Objects/eval.html">eval()</a></li><li><a href="../Reference/Global_Objects/EvalError.html">EvalError</a></li><li><a href="../Reference/Global_Objects/FinalizationRegistry.html">FinalizationRegistry</a></li><li><a href="../Reference/Global_Objects/Float16Array.html">Float16Array</a></li><li><a href="../Reference/Global_Objects/Float32Array.html">Float32Array</a></li><li><a href="../Reference/Global_Objects/Float64Array.html">Float64Array</a></li><li><a href="../Reference/Global_Objects/Function.html">Function</a></li><li><a href="../Reference/Global_Objects/Generator.html">Generator</a></li><li><a href="../Reference/Global_Objects/GeneratorFunction.html">GeneratorFunction</a></li><li><a href="../Reference/Global_Objects/globalThis.html">globalThis</a></li><li><a href="../Reference/Global_Objects/Infinity.html">Infinity</a></li><li><a href="../Reference/Global_Objects/Int8Array.html">Int8Array</a></li><li><a href="../Reference/Global_Objects/Int16Array.html">Int16Array</a></li><li><a href="../Reference/Global_Objects/Int32Array.html">Int32Array</a></li><li><a href="../Reference/Global_Objects/InternalError.html">InternalError</a><abbr class="icon icon-nonstandard" title="Non-standard. Check cross-browser support before using.">
+<span class="visually-hidden">Non-standard</span>
+</abbr></li><li><a href="../Reference/Global_Objects/Intl.html">Intl</a></li><li><a href="../Reference/Global_Objects/isFinite.html">isFinite()</a></li><li><a href="../Reference/Global_Objects/isNaN.html">isNaN()</a></li><li><a href="../Reference/Global_Objects/Iterator.html">Iterator</a></li><li><a href="../Reference/Global_Objects/JSON.html">JSON</a></li><li><a href="../Reference/Global_Objects/Map.html">Map</a></li><li><a href="../Reference/Global_Objects/Math.html">Math</a></li><li><a href="../Reference/Global_Objects/NaN.html">NaN</a></li><li><a href="../Reference/Global_Objects/Number.html">Number</a></li><li><a href="../Reference/Global_Objects/Object.html">Object</a></li><li><a href="../Reference/Global_Objects/parseFloat.html">parseFloat()</a></li><li><a href="../Reference/Global_Objects/parseInt.html">parseInt()</a></li><li><a href="../Reference/Global_Objects/Promise.html">Promise</a></li><li><a href="../Reference/Global_Objects/Proxy.html">Proxy</a></li><li><a href="../Reference/Global_Objects/RangeError.html">RangeError</a></li><li><a href="../Reference/Global_Objects/ReferenceError.html">ReferenceError</a></li><li><a href="../Reference/Global_Objects/Reflect.html">Reflect</a></li><li><a href="../Reference/Global_Objects/RegExp.html">RegExp</a></li><li><a href="../Reference/Global_Objects/Set.html">Set</a></li><li><a href="../Reference/Global_Objects/SharedArrayBuffer.html">SharedArrayBuffer</a></li><li><a href="../Reference/Global_Objects/String.html">String</a></li><li><a href="../Reference/Global_Objects/SuppressedError.html">SuppressedError</a></li><li><a href="../Reference/Global_Objects/Symbol.html">Symbol</a></li><li><a href="../Reference/Global_Objects/SyntaxError.html">SyntaxError</a></li><li><a href="../Reference/Global_Objects/Temporal.html">Temporal</a></li><li><a href="../Reference/Global_Objects/TypedArray.html">TypedArray</a></li><li><a href="../Reference/Global_Objects/TypeError.html">TypeError</a></li><li><a href="../Reference/Global_Objects/Uint8Array.html">Uint8Array</a></li><li><a href="../Reference/Global_Objects/Uint8ClampedArray.html">Uint8ClampedArray</a></li><li><a href="../Reference/Global_Objects/Uint16Array.html">Uint16Array</a></li><li><a href="../Reference/Global_Objects/Uint32Array.html">Uint32Array</a></li><li><a href="../Reference/Global_Objects/undefined.html">undefined</a></li><li><a href="../Reference/Global_Objects/unescape.html">unescape()</a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Global_Objects/URIError.html">URIError</a></li><li><a href="../Reference/Global_Objects/WeakMap.html">WeakMap</a></li><li><a href="../Reference/Global_Objects/WeakRef.html">WeakRef</a></li><li><a href="../Reference/Global_Objects/WeakSet.html">WeakSet</a></li></ol></details></li><li><details><summary><a href="../Reference/Operators.html">Expressions &amp; operators</a></summary><ol><li><a href="../Reference/Operators/Addition.html">Addition (+)</a></li><li><a href="../Reference/Operators/Addition_assignment.html">Addition assignment (+=)</a></li><li><a href="../Reference/Operators/Assignment.html">Assignment (=)</a></li><li><a href="../Reference/Operators/async_function.html">async function expression</a></li><li><a href="../Reference/Operators/async_function_.html">async function* expression</a></li><li><a href="../Reference/Operators/await.html">await</a></li><li><a href="../Reference/Operators/Bitwise_AND.html">Bitwise AND (&amp;)</a></li><li><a href="../Reference/Operators/Bitwise_AND_assignment.html">Bitwise AND assignment (&amp;=)</a></li><li><a href="../Reference/Operators/Bitwise_NOT.html">Bitwise NOT (~)</a></li><li><a href="../Reference/Operators/Bitwise_OR.html">Bitwise OR (|)</a></li><li><a href="../Reference/Operators/Bitwise_OR_assignment.html">Bitwise OR assignment (|=)</a></li><li><a href="../Reference/Operators/Bitwise_XOR.html">Bitwise XOR (^)</a></li><li><a href="../Reference/Operators/Bitwise_XOR_assignment.html">Bitwise XOR assignment (^=)</a></li><li><a href="../Reference/Operators/class.html">class expression</a></li><li><a href="../Reference/Operators/Comma_operator.html">Comma operator (,)</a></li><li><a href="../Reference/Operators/Conditional_operator.html">Conditional (ternary) operator</a></li><li><a href="../Reference/Operators/Decrement.html">Decrement (--)</a></li><li><a href="../Reference/Operators/delete.html">delete</a></li><li><a href="../Reference/Operators/Destructuring.html">Destructuring</a></li><li><a href="../Reference/Operators/Division.html">Division (/)</a></li><li><a href="../Reference/Operators/Division_assignment.html">Division assignment (/=)</a></li><li><a href="../Reference/Operators/Equality.html">Equality (==)</a></li><li><a href="../Reference/Operators/Exponentiation.html">Exponentiation (**)</a></li><li><a href="../Reference/Operators/Exponentiation_assignment.html">Exponentiation assignment (**=)</a></li><li><a href="../Reference/Operators/function.html">function expression</a></li><li><a href="../Reference/Operators/function_.html">function* expression</a></li><li><a href="../Reference/Operators/Greater_than.html">Greater than (&gt;)</a></li><li><a href="../Reference/Operators/Greater_than_or_equal.html">Greater than or equal (&gt;=)</a></li><li><a href="../Reference/Operators/Grouping.html">Grouping operator ( )</a></li><li><a href="../Reference/Operators/import.html">import.meta</a><ol><li><a href="../Reference/Operators/import.meta/resolve.html">import.meta.resolve()</a></li></ol></li><li><a href="../Reference/Operators/import-2.html">import()</a></li><li><a href="../Reference/Operators/in.html">in</a></li><li><a href="../Reference/Operators/Increment.html">Increment (++)</a></li><li><a href="../Reference/Operators/Inequality.html">Inequality (!=)</a></li><li><a href="../Reference/Operators/instanceof.html">instanceof</a></li><li><a href="../Reference/Operators/Left_shift.html">Left shift (&lt;&lt;)</a></li><li><a href="../Reference/Operators/Left_shift_assignment.html">Left shift assignment (&lt;&lt;=)</a></li><li><a href="../Reference/Operators/Less_than.html">Less than (&lt;)</a></li><li><a href="../Reference/Operators/Less_than_or_equal.html">Less than or equal (&lt;=)</a></li><li><a href="../Reference/Operators/Logical_AND.html">Logical AND (&amp;&amp;)</a></li><li><a href="../Reference/Operators/Logical_AND_assignment.html">Logical AND assignment (&amp;&amp;=)</a></li><li><a href="../Reference/Operators/Logical_NOT.html">Logical NOT (!)</a></li><li><a href="../Reference/Operators/Logical_OR.html">Logical OR (||)</a></li><li><a href="../Reference/Operators/Logical_OR_assignment.html">Logical OR assignment (||=)</a></li><li><a href="../Reference/Operators/Multiplication.html">Multiplication (*)</a></li><li><a href="../Reference/Operators/Multiplication_assignment.html">Multiplication assignment (*=)</a></li><li><a href="../Reference/Operators/new.html">new</a></li><li><a href="../Reference/Operators/new-2.html">new.target</a></li><li><a href="../Reference/Operators/null.html">null</a></li><li><a href="../Reference/Operators/Nullish_coalescing_assignment.html">Nullish coalescing assignment (??=)</a></li><li><a href="../Reference/Operators/Nullish_coalescing.html">Nullish coalescing operator (??)</a></li><li><a href="../Reference/Operators/Object_initializer.html">Object initializer</a></li><li><a href="../Reference/Operators/Operator_precedence.html">Operator precedence</a></li><li><a href="../Reference/Operators/Optional_chaining.html">Optional chaining (?.)</a></li><li><a href="../Reference/Operators/Property_accessors.html">Property accessors</a></li><li><a href="../Reference/Operators/Remainder.html">Remainder (%)</a></li><li><a href="../Reference/Operators/Remainder_assignment.html">Remainder assignment (%=)</a></li><li><a href="../Reference/Operators/Right_shift.html">Right shift (&gt;&gt;)</a></li><li><a href="../Reference/Operators/Right_shift_assignment.html">Right shift assignment (&gt;&gt;=)</a></li><li><a href="../Reference/Operators/Spread_syntax.html">Spread syntax (...)</a></li><li><a href="../Reference/Operators/Strict_equality.html">Strict equality (===)</a></li><li><a href="../Reference/Operators/Strict_inequality.html">Strict inequality (!==)</a></li><li><a href="../Reference/Operators/Subtraction.html">Subtraction (-)</a></li><li><a href="../Reference/Operators/Subtraction_assignment.html">Subtraction assignment (-=)</a></li><li><a href="../Reference/Operators/super.html">super</a></li><li><a href="../Reference/Operators/this.html">this</a></li><li><a href="../Reference/Operators/typeof.html">typeof</a></li><li><a href="../Reference/Operators/Unary_negation.html">Unary negation (-)</a></li><li><a href="../Reference/Operators/Unary_plus.html">Unary plus (+)</a></li><li><a href="../Reference/Operators/Unsigned_right_shift.html">Unsigned right shift (&gt;&gt;&gt;)</a></li><li><a href="../Reference/Operators/Unsigned_right_shift_assignment.html">Unsigned right shift assignment (&gt;&gt;&gt;=)</a></li><li><a href="../Reference/Operators/void.html">void operator</a></li><li><a href="../Reference/Operators/yield.html">yield</a></li><li><a href="../Reference/Operators/yield_.html">yield*</a></li></ol></details></li><li><details><summary><a href="../Reference/Statements.html">Statements &amp; declarations</a></summary><ol><li><a href="../Reference/Statements/async_function.html">async function</a></li><li><a href="../Reference/Statements/async_function_.html">async function*</a></li><li><a href="../Reference/Statements/await_using.html">await using</a></li><li><a href="../Reference/Statements/block.html">Block statement</a></li><li><a href="../Reference/Statements/break.html">break</a></li><li><a href="../Reference/Statements/class.html">class</a></li><li><a href="../Reference/Statements/const.html">const</a></li><li><a href="../Reference/Statements/continue.html">continue</a></li><li><a href="../Reference/Statements/debugger.html">debugger</a></li><li><a href="../Reference/Statements/do...html">do...while</a></li><li><a href="../Reference/Statements/Empty.html">Empty statement</a></li><li><a href="../Reference/Statements/export.html">export</a></li><li><a href="../Reference/Statements/Expression_statement.html">Expression statement</a></li><li><a href="../Reference/Statements/for.html">for</a></li><li><a href="../Reference/Statements/for-await...html">for await...of</a></li><li><a href="../Reference/Statements/for...html">for...in</a></li><li><a href="../Reference/Statements/for..-2.html">for...of</a></li><li><a href="../Reference/Statements/function.html">function</a></li><li><a href="../Reference/Statements/function_.html">function*</a></li><li><a href="../Reference/Statements/if...html">if...else</a></li><li><a href="../Reference/Statements/import.html">import</a><ol><li><a href="../Reference/Statements/import/with.html">Import attributes</a></li></ol></li><li><a href="../Reference/Statements/label.html">Labeled statement</a></li><li><a href="../Reference/Statements/let.html">let</a></li><li><a href="../Reference/Statements/return.html">return</a></li><li><a href="../Reference/Statements/switch.html">switch</a></li><li><a href="../Reference/Statements/throw.html">throw</a></li><li><a href="../Reference/Statements/try...html">try...catch</a></li><li><a href="../Reference/Statements/using.html">using</a></li><li><a href="../Reference/Statements/var.html">var</a></li><li><a href="../Reference/Statements/while.html">while</a></li><li><a href="../Reference/Statements/with.html">with</a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li></ol></details></li><li><details><summary><a href="../Reference/Functions.html">Functions</a></summary><ol><li><a href="../Reference/Functions/Arrow_functions.html">Arrow function expressions</a></li><li><a href="../Reference/Functions/Default_parameters.html">Default parameters</a></li><li><a href="../Reference/Functions/get.html">get</a></li><li><a href="../Reference/Functions/Method_definitions.html">Method definitions</a></li><li><a href="../Reference/Functions/rest_parameters.html">Rest parameters</a></li><li><a href="../Reference/Functions/set.html">set</a></li><li><a href="../Reference/Functions/arguments.html">The arguments object</a><ol><li><a href="../Reference/Functions/arguments/Symbol.html">[Symbol.iterator]()</a></li><li><a href="../Reference/Functions/arguments/callee.html">callee</a><abbr class="icon icon-deprecated" title="Deprecated. Not for use in new websites.">
+<span class="visually-hidden">Deprecated</span>
+</abbr></li><li><a href="../Reference/Functions/arguments/length.html">length</a></li></ol></li></ol></details></li><li><details><summary><a href="../Reference/Classes.html">Classes</a></summary><ol><li><a href="../Reference/Classes/constructor.html">constructor</a></li><li><a href="../Reference/Classes/extends.html">extends</a></li><li><a href="../Reference/Classes/Private_elements.html">Private elements</a></li><li><a href="../Reference/Classes/Public_class_fields.html">Public class fields</a></li><li><a href="../Reference/Classes/static.html">static</a></li><li><a href="../Reference/Classes/Static_initialization_blocks.html">Static initialization blocks</a></li></ol></details></li><li><details><summary><a href="../Reference/Regular_expressions.html">Regular expressions</a></summary><ol><li><a href="../Reference/Regular_expressions/Backreference.html">Backreference: \1, \2</a></li><li><a href="../Reference/Regular_expressions/Capturing_group.html">Capturing group: (...)</a></li><li><a href="../Reference/Regular_expressions/Character_class_escape.html">Character class escape: \d, \D, \w, \W, \s, \S</a></li><li><a href="../Reference/Regular_expressions/Character_class.html">Character class: [...], [^...]</a></li><li><a href="../Reference/Regular_expressions/Character_escape.html">Character escape: \n, \u{...}</a></li><li><a href="../Reference/Regular_expressions/Disjunction.html">Disjunction: |</a></li><li><a href="../Reference/Regular_expressions/Input_boundary_assertion.html">Input boundary assertion: ^, $</a></li><li><a href="../Reference/Regular_expressions/Literal_character.html">Literal character: a, b</a></li><li><a href="../Reference/Regular_expressions/Lookahead_assertion.html">Lookahead assertion: (?=...), (?!...)</a></li><li><a href="../Reference/Regular_expressions/Lookbehind_assertion.html">Lookbehind assertion: (?&lt;=...), (?&lt;!...)</a></li><li><a href="../Reference/Regular_expressions/Modifier.html">Modifier: (?ims-ims:...)</a></li><li><a href="../Reference/Regular_expressions/Named_backreference.html">Named backreference: \k&lt;name&gt;</a></li><li><a href="../Reference/Regular_expressions/Named_capturing_group.html">Named capturing group: (?&lt;name&gt;...)</a></li><li><a href="../Reference/Regular_expressions/Non-capturing_group.html">Non-capturing group: (?:...)</a></li><li><a href="../Reference/Regular_expressions/Quantifier.html">Quantifier: *, +, ?, {n}, {n,}, {n,m}</a></li><li><a href="../Reference/Regular_expressions/Unicode_character_class_escape.html">Unicode character class escape: \p{...}, \P{...}</a></li><li><a href="../Reference/Regular_expressions/Wildcard.html">Wildcard: .</a></li><li><a href="../Reference/Regular_expressions/Word_boundary_assertion.html">Word boundary assertion: \b, \B</a></li></ol></details></li><li><details><summary><a href="../Reference/Errors.html">Errors</a></summary><ol><li><a href="../Reference/Errors/Promise_any_all_rejected.html">AggregateError: No Promise in Promise.any was resolved</a></li><li><a href="../Reference/Errors/Property_access_denied.html">Error: Permission denied to access property "x"</a></li><li><a href="../Reference/Errors/Too_much_recursion.html">InternalError: too much recursion</a></li><li><a href="../Reference/Errors/Not_a_valid_code_point.html">RangeError: argument is not a valid code point</a></li><li><a href="../Reference/Errors/BigInt_division_by_zero.html">RangeError: BigInt division by zero</a></li><li><a href="../Reference/Errors/BigInt_negative_exponent.html">RangeError: BigInt negative exponent</a></li><li><a href="../Reference/Errors/Form_must_be_one_of.html">RangeError: form must be one of 'NFC', 'NFD', 'NFKC', or 'NFKD'</a></li><li><a href="../Reference/Errors/Invalid_array_length.html">RangeError: invalid array length</a></li><li><a href="../Reference/Errors/Invalid_date.html">RangeError: invalid date</a></li><li><a href="../Reference/Errors/Precision_range.html">RangeError: precision is out of range</a></li><li><a href="../Reference/Errors/Bad_radix.html">RangeError: radix must be an integer</a></li><li><a href="../Reference/Errors/Resulting_string_too_large.html">RangeError: repeat count must be less than infinity</a></li><li><a href="../Reference/Errors/Negative_repetition_count.html">RangeError: repeat count must be non-negative</a></li><li><a href="../Reference/Errors/Cant_be_converted_to_BigInt_because_it_isnt_an_integer.html">RangeError: x can't be converted to BigInt because it isn't an integer</a></li><li><a href="../Reference/Errors/Not_defined.html">ReferenceError: "x" is not defined</a></li><li><a href="../Reference/Errors/Undeclared_var.html">ReferenceError: assignment to undeclared variable "x"</a></li><li><a href="../Reference/Errors/Cant_access_lexical_declaration_before_init.html">ReferenceError: can't access lexical declaration 'X' before initialization</a></li><li><a href="../Reference/Errors/Super_not_called.html">ReferenceError: must call super constructor before using 'this' in derived class constructor</a></li><li><a href="../Reference/Errors/Super_called_twice.html">ReferenceError: super() called twice in derived class constructor</a></li><li><a href="../Reference/Errors/Bad_strict_arguments_eval.html">SyntaxError: 'arguments'/'eval' can't be defined or assigned to in strict mode code</a></li><li><a href="../Reference/Errors/Deprecated_octal_literal.html">SyntaxError: "0"-prefixed octal literals are deprecated</a></li><li><a href="../Reference/Errors/Strict_non_simple_params.html">SyntaxError: "use strict" not allowed in function with non-simple parameters</a></li><li><a href="../Reference/Errors/Reserved_identifier.html">SyntaxError: "x" is a reserved identifier</a></li><li><a href="../Reference/Errors/Regex_backslash_at_end_of_pattern.html">SyntaxError: \ at end of pattern</a></li><li><a href="../Reference/Errors/Invalid_for-of_initializer.html">SyntaxError: a declaration in the head of a for-of loop can't have an initializer</a></li><li><a href="../Reference/Errors/Delete_in_strict_mode.html">SyntaxError: applying the 'delete' operator to an unqualified name is deprecated</a></li><li><a href="../Reference/Errors/Arguments_not_allowed.html">SyntaxError: arguments is not valid in fields</a></li><li><a href="../Reference/Errors/Bad_await.html">SyntaxError: await is only valid in async functions, async generators and modules</a></li><li><a href="../Reference/Errors/await_yield_in_parameter.html">SyntaxError: await/yield expression can't be used in parameter</a></li><li><a href="../Reference/Errors/Cant_use_nullish_coalescing_unparenthesized.html">SyntaxError: cannot use ?? unparenthesized within || and &amp;&amp; expressions</a></li><li><a href="../Reference/Errors/Regex_character_class_escape_in_class_range.html">SyntaxError: character class escape cannot be used in class range in regular expression</a></li><li><a href="../Reference/Errors/Bad_continue.html">SyntaxError: continue must be inside loop</a></li><li><a href="../Reference/Errors/Regex_duplicate_capture_group_name.html">SyntaxError: duplicate capture group name in regular expression</a></li><li><a href="../Reference/Errors/Duplicate_parameter.html">SyntaxError: duplicate formal argument x</a></li><li><a href="../Reference/Errors/Invalid_for-in_initializer.html">SyntaxError: for-in loop head declarations may not have initializers</a></li><li><a href="../Reference/Errors/Unnamed_function_statement.html">SyntaxError: function statement requires a name</a></li><li><a href="../Reference/Errors/Function_label.html">SyntaxError: functions cannot be labelled</a></li><li><a href="../Reference/Errors/Either_be_both_static_or_non-static.html">SyntaxError: getter and setter for private name #x should either be both static or non-static</a></li><li><a href="../Reference/Errors/Getter_no_arguments.html">SyntaxError: getter functions must have no arguments</a></li><li><a href="../Reference/Errors/Identifier_after_number.html">SyntaxError: identifier starts immediately after numeric literal</a></li><li><a href="../Reference/Errors/Illegal_character.html">SyntaxError: illegal character</a></li><li><a href="../Reference/Errors/import_decl_module_top_level.html">SyntaxError: import declarations may only appear at top level of a module</a></li><li><a href="../Reference/Errors/Regex_incomplete_quantifier.html">SyntaxError: incomplete quantifier in regular expression</a></li><li><a href="../Reference/Errors/Invalid_assignment_left-hand_side.html">SyntaxError: invalid assignment left-hand side</a></li><li><a href="../Reference/Errors/Invalid_BigInt_syntax.html">SyntaxError: invalid BigInt syntax</a></li><li><a href="../Reference/Errors/Regex_invalid_capture_group_name.html">SyntaxError: invalid capture group name in regular expression</a></li><li><a href="../Reference/Errors/Regex_invalid_char_in_class.html">SyntaxError: invalid character in class in regular expression</a></li><li><a href="../Reference/Errors/Regex_invalid_class_set_operation.html">SyntaxError: invalid class set operation in regular expression</a></li><li><a href="../Reference/Errors/Regex_invalid_decimal_escape.html">SyntaxError: invalid decimal escape in regular expression</a></li><li><a href="../Reference/Errors/Regex_invalid_identity_escape.html">SyntaxError: invalid identity escape in regular expression</a></li><li><a href="../Reference/Errors/Regex_invalid_named_capture_reference.html">SyntaxError: invalid named capture reference in regular expression</a></li><li><a href="../Reference/Errors/Regex_invalid_property_name.html">SyntaxError: invalid property name in regular expression</a></li><li><a href="../Reference/Errors/Regex_invalid_range_in_character_class.html">SyntaxError: invalid range in character class</a></li><li><a href="../Reference/Errors/Regex_invalid_group.html">SyntaxError: invalid regexp group</a></li><li><a href="../Reference/Errors/Bad_regexp_flag.html">SyntaxError: invalid regular expression flag "x"</a></li><li><a href="../Reference/Errors/Regex_invalid_unicode_escape.html">SyntaxError: invalid unicode escape in regular expression</a></li><li><a href="../Reference/Errors/JSON_bad_parse.html">SyntaxError: JSON.parse: bad parsing</a></li><li><a href="../Reference/Errors/Label_not_found.html">SyntaxError: label not found</a></li><li><a href="../Reference/Errors/Missing_colon_after_property_id.html">SyntaxError: missing : after property id</a></li><li><a href="../Reference/Errors/Missing_parenthesis_after_argument_list.html">SyntaxError: missing ) after argument list</a></li><li><a href="../Reference/Errors/Missing_parenthesis_after_condition.html">SyntaxError: missing ) after condition</a></li><li><a href="../Reference/Errors/Missing_bracket_after_list.html">SyntaxError: missing ] after element list</a></li><li><a href="../Reference/Errors/Missing_curly_after_function_body.html">SyntaxError: missing } after function body</a></li><li><a href="../Reference/Errors/Missing_curly_after_property_list.html">SyntaxError: missing } after property list</a></li><li><a href="../Reference/Errors/Missing_initializer_in_const.html">SyntaxError: missing = in const declaration</a></li><li><a href="../Reference/Errors/Missing_formal_parameter.html">SyntaxError: missing formal parameter</a></li><li><a href="../Reference/Errors/Missing_name_after_dot_operator.html">SyntaxError: missing name after . operator</a></li><li><a href="../Reference/Errors/No_variable_name.html">SyntaxError: missing variable name</a></li><li><a href="../Reference/Errors/Regex_negated_char_class_with_strings.html">SyntaxError: negated character class with strings in regular expression</a></li><li><a href="../Reference/Errors/Bad_new_optional.html">SyntaxError: new keyword cannot be used with an optional chain</a></li><li><a href="../Reference/Errors/Regex_nothing_to_repeat.html">SyntaxError: nothing to repeat</a></li><li><a href="../Reference/Errors/Regex_numbers_out_of_order_in_quantifier.html">SyntaxError: numbers out of order in {} quantifier.</a></li><li><a href="../Reference/Errors/Deprecated_octal_escape_sequence.html">SyntaxError: octal escape sequences can't be used in untagged template literals or in strict mode code</a></li><li><a href="../Reference/Errors/Parameter_after_rest_parameter.html">SyntaxError: parameter after rest parameter</a></li><li><a href="../Reference/Errors/Cant_delete_private_fields.html">SyntaxError: private fields can't be deleted</a></li><li><a href="../Reference/Errors/Duplicate_proto.html">SyntaxError: property name __proto__ appears more than once in object literal</a></li><li><a href="../Reference/Errors/Regex_raw_bracket.html">SyntaxError: raw bracket is not allowed in regular expression with unicode flag</a></li><li><a href="../Reference/Errors/Redeclared_parameter.html">SyntaxError: redeclaration of formal parameter "x"</a></li><li><a href="../Reference/Errors/Undeclared_private_field_or_method.html">SyntaxError: reference to undeclared private field or method #x</a></li><li><a href="../Reference/Errors/Rest_with_default.html">SyntaxError: rest parameter may not have a default</a></li><li><a href="../Reference/Errors/Bad_return.html">SyntaxError: return not in function</a></li><li><a href="../Reference/Errors/Setter_one_argument.html">SyntaxError: setter functions must have one argument</a></li><li><a href="../Reference/Errors/String_literal_EOL.html">SyntaxError: string literal contains an unescaped line break</a></li><li><a href="../Reference/Errors/Bad_super_call.html">SyntaxError: super() is only valid in derived class constructors</a></li><li><a href="../Reference/Errors/Bad_optional_template.html">SyntaxError: tagged template cannot be used with optional chain</a></li><li><a href="../Reference/Errors/Hash_outside_class.html">SyntaxError: Unexpected '#' used outside of class body</a></li><li><a href="../Reference/Errors/Unexpected_token.html">SyntaxError: Unexpected token</a></li><li><a href="../Reference/Errors/Bad_break.html">SyntaxError: unlabeled break must be inside loop or switch</a></li><li><a href="../Reference/Errors/Unparenthesized_unary_expr_lhs_exponentiation.html">SyntaxError: unparenthesized unary expression can't appear on the left-hand side of '**'</a></li><li><a href="../Reference/Errors/Bad_super_prop.html">SyntaxError: use of super property/member accesses only valid within methods or eval code within methods</a></li><li><a href="../Reference/Errors/Deprecated_source_map_pragma.html">SyntaxError: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead</a></li><li><a href="../Reference/Errors/Deprecated_caller_or_arguments_usage.html">TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed</a></li><li><a href="../Reference/Errors/is_not_iterable.html">TypeError: 'x' is not iterable</a></li><li><a href="../Reference/Errors/Unexpected_type.html">TypeError: "x" is (not) "y"</a></li><li><a href="../Reference/Errors/Not_a_constructor.html">TypeError: "x" is not a constructor</a></li><li><a href="../Reference/Errors/Not_a_function.html">TypeError: "x" is not a function</a></li><li><a href="../Reference/Errors/No_non-null_object.html">TypeError: "x" is not a non-null object</a></li><li><a href="../Reference/Errors/Read-only.html">TypeError: "x" is read-only</a></li><li><a href="../Reference/Errors/Already_executing_generator.html">TypeError: already executing generator</a></li><li><a href="../Reference/Errors/BigInt_not_serializable.html">TypeError: BigInt value can't be serialized in JSON</a></li><li><a href="../Reference/Errors/Builtin_ctor_no_new.html">TypeError: calling a builtin X constructor without new is forbidden</a></li><li><a href="../Reference/Errors/Get_set_missing_private.html">TypeError: can't access/set private field or method: object is not the right class</a></li><li><a href="../Reference/Errors/Cant_assign_to_property.html">TypeError: can't assign to property "x" on "y": not an object</a></li><li><a href="../Reference/Errors/Cant_convert_BigInt_to_number.html">TypeError: can't convert BigInt to number</a></li><li><a href="../Reference/Errors/Cant_convert_x_to_BigInt.html">TypeError: can't convert x to BigInt</a></li><li><a href="../Reference/Errors/Cant_define_property_object_not_extensible.html">TypeError: can't define property "x": "obj" is not extensible</a></li><li><a href="../Reference/Errors/Non_configurable_array_element.html">TypeError: can't delete non-configurable array element</a></li><li><a href="../Reference/Errors/Cant_redefine_property.html">TypeError: can't redefine non-configurable property "x"</a></li><li><a href="../Reference/Errors/Cant_set_prototype.html">TypeError: can't set prototype of this object</a></li><li><a href="../Reference/Errors/Cyclic_prototype.html">TypeError: can't set prototype: it would cause a prototype chain cycle</a></li><li><a href="../Reference/Errors/in_operator_no_object.html">TypeError: cannot use 'in' operator to search for 'x' in 'y'</a></li><li><a href="../Reference/Errors/Class_ctor_no_new.html">TypeError: class constructors must be invoked with 'new'</a></li><li><a href="../Reference/Errors/Cyclic_object_value.html">TypeError: cyclic object value</a></li><li><a href="../Reference/Errors/Invalid_derived_return.html">TypeError: derived class constructor returned invalid value x</a></li><li><a href="../Reference/Errors/Private_setter_only.html">TypeError: getting private setter-only property</a></li><li><a href="../Reference/Errors/Private_double_initialization.html">TypeError: Initializing an object twice is an error with private fields/methods</a></li><li><a href="../Reference/Errors/invalid_right_hand_side_instanceof_operand.html">TypeError: invalid 'instanceof' operand 'x'</a></li><li><a href="../Reference/Errors/Array_sort_argument.html">TypeError: invalid Array.prototype.sort argument</a></li><li><a href="../Reference/Errors/Invalid_const_assignment.html">TypeError: invalid assignment to const "x"</a></li><li><a href="../Reference/Errors/Constructor_cant_be_used_directly.html">TypeError: Iterator/AsyncIterator constructor can't be used directly</a></li><li><a href="../Reference/Errors/Requires_global_RegExp.html">TypeError: matchAll/replaceAll must be called with a global RegExp</a></li><li><a href="../Reference/Errors/More_arguments_needed.html">TypeError: More arguments needed</a></li><li><a href="../Reference/Errors/No_properties.html">TypeError: null/undefined has no properties</a></li><li><a href="../Reference/Errors/Cant_delete.html">TypeError: property "x" is non-configurable and can't be deleted</a></li><li><a href="../Reference/Errors/Reduce_of_empty_array_with_no_initial_value.html">TypeError: Reduce of empty array with no initial value</a></li><li><a href="../Reference/Errors/Getter_only.html">TypeError: setting getter-only property "x"</a></li><li><a href="../Reference/Errors/Key_not_weakly_held.html">TypeError: WeakSet key/WeakMap value 'x' must be an object or an unregistered symbol</a></li><li><a href="../Reference/Errors/Called_on_incompatible_type.html">TypeError: X.prototype.y called on incompatible type</a></li><li><a href="../Reference/Errors/Malformed_URI.html">URIError: malformed URI sequence</a></li><li><a href="../Reference/Errors/Already_has_pragma.html">Warning: -file- is being assigned a //# sourceMappingURL, but already has one</a></li><li><a href="../Reference/Errors/Stmt_after_return.html">Warning: unreachable code after return statement</a></li></ol></details></li><li><details><summary><span>Misc</span></summary><ol><li><a href="../Reference/JavaScript_technologies_overview.html">JavaScript technologies overview</a></li><li><a href="../Reference/Execution_model.html">Execution model</a></li><li><a href="../Reference/Lexical_grammar.html">Lexical grammar</a></li><li><a href="../Reference/Iteration_protocols.html">Iteration protocols</a></li><li><a href="../Reference/Strict_mode.html">Strict mode</a></li><li><a href="../Reference/Template_literals.html">Template literals</a></li><li><a href="../Reference/Trailing_commas.html">Trailing commas</a></li><li><a href="../Reference/Deprecated_and_obsolete_features.html">Deprecated features</a></li></ol></details></li></ol></div>
+    </nav>
+        </aside>
+      </div>
+    </div>
+        
+      
+    
+      
+
+
+    <div class="page-layout__footer footer"><div><a href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators">Expressions and operators</a> by <a href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators$history">Mozilla Contributors</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC-BY-SA 2.5</a>.</div></div></body><!-- Mirrored from developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 20:57:34 GMT --></html>

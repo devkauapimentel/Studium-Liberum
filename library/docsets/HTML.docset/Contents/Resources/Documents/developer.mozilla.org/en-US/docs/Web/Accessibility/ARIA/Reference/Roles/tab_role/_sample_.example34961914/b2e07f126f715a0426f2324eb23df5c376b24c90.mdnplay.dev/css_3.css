@@ -1,0 +1,9 @@
+
+.tabs { padding: 1em; }
+[role="tablist"] { margin-bottom: -1px; }
+[role="tab"] { position: relative; z-index: 1; background: white; border-radius: 5px 5px 0px 0px; border-width: 1px 1px 0px; border-style: solid solid none; border-color: grey grey currentcolor; border-image: none; padding: 0.2em; }
+[role="tab"][aria-selected="true"] { z-index: 3; border-top-width: 4px; }
+[role="tabpanel"] { position: relative; padding: 0px 0.5em 0.5em 0.7em; border: 1px solid grey; border-radius: 0px 0px 5px 5px; background: white; z-index: 2; }
+[role="tabpanel"]:focus { border-color: rgb(53, 111, 179); outline: 1px solid rgb(53, 111, 179); }
+
+button.copy {display:none !important}

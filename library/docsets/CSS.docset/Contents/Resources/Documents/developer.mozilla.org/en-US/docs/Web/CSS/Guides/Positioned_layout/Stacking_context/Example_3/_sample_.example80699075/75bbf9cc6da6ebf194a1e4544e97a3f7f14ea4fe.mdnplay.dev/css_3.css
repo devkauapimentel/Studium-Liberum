@@ -1,0 +1,13 @@
+
+div { font-style: normal; font-variant-caps: normal; font-width: normal; font-size: 12px; line-height: normal; font-family: Arial; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; font-weight: bold; padding-left: 5px; }
+.lev1 { border: 2px outset rgb(102, 153, 102); background-color: rgb(204, 255, 204); }
+.lev2 { border: 2px outset rgb(153, 0, 0); background-color: rgb(255, 221, 221); }
+.lev3 { border: 2px outset rgb(0, 0, 153); background-color: rgb(221, 221, 255); }
+div { opacity: 0.9; }
+.lev1 { width: 250px; height: 70px; position: relative; }
+#container1 { z-index: 1; position: absolute; top: 30px; left: 75px; }
+.lev2 { width: 200px; height: 60px; position: relative; }
+#container2 { z-index: 1; position: absolute; top: 20px; left: 110px; }
+.lev3 { z-index: 10; width: 100px; position: relative; }
+
+button.copy {display:none !important}

@@ -1,0 +1,16 @@
+
+#container { display: flex; width: 300px; border: 1px solid; overflow-x: scroll; scroll-timeline: --square-timeline inline; }
+.stretcher { flex: 0 0 200px; }
+#shape { background-color: deeppink; width: 100px; height: 100px; border-radius: 25px; animation-duration: 1ms; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: 2; animation-direction: alternate; animation-fill-mode: none; animation-play-state: running; animation-name: rotateAnimation; animation-range: initial; animation-timeline: --square-timeline; }
+@keyframes rotateAnimation { 
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+#shape { animation-timeline: scroll(inline); }
+@layer no-support {
+  @supports not (animation-timeline: scroll()) {
+  body::before { content: "Your browser doesn't support the scroll() function."; background-color: wheat; display: block; text-align: center; padding: 1em; }
+}
+}
+
+button.copy {display:none !important}

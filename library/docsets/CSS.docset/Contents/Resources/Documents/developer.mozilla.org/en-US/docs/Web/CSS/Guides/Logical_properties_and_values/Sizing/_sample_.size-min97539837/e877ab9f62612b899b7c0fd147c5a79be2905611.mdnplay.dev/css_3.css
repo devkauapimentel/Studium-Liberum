@@ -1,0 +1,9 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: 1.5; font-family: sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+.container { display: flex; }
+.box { border: 2px solid rgb(96, 139, 168); border-radius: 5px; background-color: rgba(96, 139, 168, 0.2); padding: 10px; margin: 10px; }
+.box { writing-mode: horizontal-tb; }
+.physical { width: 200px; min-height: 5em; }
+.logical { inline-size: 200px; min-block-size: 5em; }
+
+button.copy {display:none !important}

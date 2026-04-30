@@ -1,0 +1,6 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/api/document/pictureinpictureelement/index.md
+
+# Original Wiki contributors
+chrisdavidmills
+germain

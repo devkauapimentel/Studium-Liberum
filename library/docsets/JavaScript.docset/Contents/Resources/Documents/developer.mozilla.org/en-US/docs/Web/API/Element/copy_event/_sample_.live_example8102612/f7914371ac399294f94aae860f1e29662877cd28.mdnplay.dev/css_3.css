@@ -1,0 +1,4 @@
+
+div.source, div.target { border: 1px solid gray; margin: 0.5rem; padding: 0.5rem; height: 1rem; background-color: rgb(233, 238, 241); }
+
+button.copy {display:none !important}

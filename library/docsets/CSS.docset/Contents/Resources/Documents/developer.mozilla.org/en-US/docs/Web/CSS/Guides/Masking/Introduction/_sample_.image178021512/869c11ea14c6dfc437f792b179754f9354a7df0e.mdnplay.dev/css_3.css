@@ -1,0 +1,7 @@
+
+body { display: flex; gap: 20px; padding: 15px; background-image: linear-gradient(to right, transparent 50%, rgba(0, 0, 0, 0.05) 50%), linear-gradient(transparent 50%, rgba(0, 0, 0, 0.05) 50%); background-size: 20px 20px; }
+div, svg, img { width: 220px; aspect-ratio: 1 / 1; }
+.applied-mask { mask-image: url("../mdn.github.io/shared-assets/images/examples/colorful-heart.png"); mask-size: 220px 220px; }
+.mask-source { background: url("../mdn.github.io/shared-assets/images/examples/colorful-heart.png") 0% 0% / 220px 220px; }
+
+button.copy {display:none !important}

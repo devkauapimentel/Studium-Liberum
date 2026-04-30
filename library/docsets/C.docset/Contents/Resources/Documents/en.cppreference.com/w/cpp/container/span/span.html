@@ -1,0 +1,749 @@
+<html><!-- Online page at https://en.cppreference.com/w/cpp/container/span/span.html --><head><meta charset="utf-8"><title>std::span&lt;T,Extent&gt;::span</title><link rel="stylesheet" href="../../../css_1.css" type="text/css"><link rel="stylesheet" href="../../../css_2.css" type="text/css"><link rel="stylesheet" href="../../../css_3.css" type="text/css"><link rel="stylesheet" href="../../../css_4.css" type="text/css"><link rel="stylesheet" href="../../../css_7.css" type="text/css"><link rel="stylesheet" href="../../../css_5.css" type="text/css"><script type="text/javascript" src="../../../js_1.js"></script><script type="text/javascript" src="../../../js_2.js"></script><script type="text/javascript" src="../../../js_903.js"></script><script type="text/javascript" src="../../../js_4.js"></script><script type="text/javascript" src="../../../js_5.js"></script><script type="text/javascript" src="../../../js_6.js"></script><script type="text/javascript" src="../../../js_7.js"></script><script type="text/javascript" src="../../../js_8.js"></script><script type="text/javascript" src="../../../js_9.js"></script><script type="text/javascript" src="../../../js_10.js"></script><script type="text/javascript" src="../../../js_11.js"></script><script type="text/javascript" src="../../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_container_span_span skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fcontainer%2Fspan%2Fspan&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fcontainer%2Fspan%2Fspan" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="./span.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk"><span><a href="../../../Talk%25253Acpp/container/span/span.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./span.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./span.html">View</a></span></li>
+					<li id="ca-edit"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./span.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">std::span&lt;T,Extent&gt;::</span>span</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../container.html" title="cpp/container">container</a>‎ | <a href="../span.html" title="cpp/container/span">span</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp">C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tbody><tr class="t-nv"><td colspan="5"><a href="../../compiler_support.html" title="cpp/compiler support">Compiler support</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../freestanding.html" title="cpp/freestanding">Freestanding and hosted</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../language.html" title="cpp/language">Language</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../standard_library.html" title="cpp/standard library">Standard library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../headers.html" title="cpp/header">Standard library headers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../iterator/concepts.html" title="cpp/named req">Named requirements</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../experimental/feature_test.html" title="cpp/feature test">Feature test macros</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../utility.html#Language_support" title="cpp/utility">Language support library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../concepts.html" title="cpp/concepts">Concepts library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../error.html" title="cpp/error">Diagnostics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../memory.html" title="cpp/memory">Memory management library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../meta.html" title="cpp/meta">Metaprogramming library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../utility.html" title="cpp/utility">General utilities library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../container.html" title="cpp/container">Containers library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../iterator.html" title="cpp/iterator">Iterators library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../ranges.html" title="cpp/ranges">Ranges library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../algorithm.html" title="cpp/algorithm">Algorithms library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../string.html" title="cpp/string">Strings library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../text.html" title="cpp/text">Text processing library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../numeric.html" title="cpp/numeric">Numerics library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../chrono.html" title="cpp/chrono">Date and time library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../io.html" title="cpp/io">Input/output library</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../filesystem.html" title="cpp/filesystem">Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../atomic.html" title="cpp/thread">Concurrency support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../experimental/execution.html" title="cpp/execution">Execution control library</a> <span class="t-mark-rev t-since-cxx26">(C++26)</span></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../experimental.html" title="cpp/experimental">Technical specifications</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../symbol_index.html" title="cpp/symbol index">Symbols index</a></td></tr>
+<tr class="t-nv"><td colspan="5"><a href="../../links/libs.html" title="cpp/links/libs">External libraries</a></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container">Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../node_handle.html" title="cpp/container/node handle"><span class="t-lines"><span><i>node-handle</i></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="../../container.html#Sequence_containers" title="cpp/container">Sequence</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector_bool.html" title="cpp/container/vector bool"><span class="t-lines"><span>vector<span class="t-dsc-small">&lt;bool&gt;</span></span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../inplace_vector.html" title="cpp/container/inplace vector"><span class="t-lines"><span>inplace_vector</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/hive&amp;action=edit&amp;redlink=1" class="new" title="cpp/container/hive (page does not exist)"><span class="t-lines"><span>hive</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../deque.html" title="cpp/container/deque"><span class="t-lines"><span>deque</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../forward_list.html" title="cpp/container/forward list"><span class="t-lines"><span>forward_list</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../list.html" title="cpp/container/list"><span class="t-lines"><span>list</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="../../container.html#Associative_containers" title="cpp/container">Associative</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../set.html" title="cpp/container/set"><span class="t-lines"><span>set</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../multiset.html" title="cpp/container/multiset"><span class="t-lines"><span>multiset</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../map.html" title="cpp/container/map"><span class="t-lines"><span>map</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../multimap.html" title="cpp/container/multimap"><span class="t-lines"><span>multimap</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="../../container.html#Unordered_associative_containers" title="cpp/container">Unordered associative</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../unordered_set.html" title="cpp/container/unordered set"><span class="t-lines"><span>unordered_set</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../unordered_multiset.html" title="cpp/container/unordered multiset"><span class="t-lines"><span>unordered_multiset</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../unordered_map.html" title="cpp/container/unordered map"><span class="t-lines"><span>unordered_map</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../unordered_multimap.html" title="cpp/container/unordered multimap"><span class="t-lines"><span>unordered_multimap</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="../../container.html#Container_adaptors" title="cpp/container">Adaptors</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../stack.html" title="cpp/container/stack"><span class="t-lines"><span>stack</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../queue.html" title="cpp/container/queue"><span class="t-lines"><span>queue</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../priority_queue.html" title="cpp/container/priority queue"><span class="t-lines"><span>priority_queue</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../flat_set.html" title="cpp/container/flat set"><span class="t-lines"><span>flat_set</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../flat_multiset.html" title="cpp/container/flat multiset"><span class="t-lines"><span>flat_multiset</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../flat_map.html" title="cpp/container/flat map"><span class="t-lines"><span>flat_map</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../flat_multimap.html" title="cpp/container/flat multimap"><span class="t-lines"><span>flat_multimap</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="../../container.html#Views" title="cpp/container">Views</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../span.html" title="cpp/container/span"><span class="t-lines"><span>span</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../mdspan.html" title="cpp/container/mdspan"><span class="t-lines"><span>mdspan</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Tables</td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../../container.html#Iterator_invalidation" title="cpp/container">Iterator invalidation</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../../container.html#Member_function_table" title="cpp/container">Member function table</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../../container.html#Non-member_function_table" title="cpp/container">Non-member function table</a></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../span.html" title="cpp/container/span"><tt>std::span</tt></a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5"><a href="../span.html#Member_functions" title="cpp/container/span">Member functions</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>span::span</span></span></strong></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./operator=.html" title="cpp/container/span/operator="><span class="t-lines"><span>span::operator=</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../span.html#Element_access" title="cpp/container/span">Element access</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./front.html" title="cpp/container/span/front"><span class="t-lines"><span>span::front</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./back.html" title="cpp/container/span/back"><span class="t-lines"><span>span::back</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./at.html" title="cpp/container/span/at"><span class="t-lines"><span>span::at</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./operator_at.html" title="cpp/container/span/operator at"><span class="t-lines"><span>span::operator[]</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./data.html" title="cpp/container/span/data"><span class="t-lines"><span>span::data</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../span.html#Iterators" title="cpp/container/span">Iterators</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./begin.html" title="cpp/container/span/begin"><span class="t-lines"><span>span::begin</span><span>span::cbegin</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./end.html" title="cpp/container/span/end"><span class="t-lines"><span>span::end</span><span>span::cend</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./rbegin.html" title="cpp/container/span/rbegin"><span class="t-lines"><span>span::rbegin</span><span>span::crbegin</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./rend.html" title="cpp/container/span/rend"><span class="t-lines"><span>span::rend</span><span>span::crend</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../span.html#Observers" title="cpp/container/span">Observers</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./empty.html" title="cpp/container/span/empty"><span class="t-lines"><span>span::empty</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./size.html" title="cpp/container/span/size"><span class="t-lines"><span>span::size</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./size_bytes.html" title="cpp/container/span/size bytes"><span class="t-lines"><span>span::size_bytes</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"><a href="../span.html#Subviews" title="cpp/container/span">Subviews</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./first.html" title="cpp/container/span/first"><span class="t-lines"><span>span::first</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./last.html" title="cpp/container/span/last"><span class="t-lines"><span>span::last</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./subspan.html" title="cpp/container/span/subspan"><span class="t-lines"><span>span::subspan</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="../span.html#Non-member_functions" title="cpp/container/span">Non-member functions</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./as_bytes.html" title="cpp/container/span/as bytes"><span class="t-lines"><span>as_bytes</span><span>as_writable_bytes</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="../span.html#Non-member_constant" title="cpp/container/span">Non-member constant</a></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="./dynamic_extent.html" title="cpp/container/span/dynamic extent"><span class="t-lines"><span>dynamic_extent</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"><a href="./deduction_guides.html" title="cpp/container/span/deduction guides">Deduction guides</a></td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/span/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl t-since-cxx20">
+<td><div><span id="Version_1"></span><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span> span<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td> (1)</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td><div><span id="Version_2"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> It <span class="sy1">&gt;</span><br>
+<p><span class="kw1">explicit</span><span class="br0">(</span>extent <span class="sy3">!</span><span class="sy1">=</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a><span class="br0">)</span><br>
+</p>
+<span class="kw4">constexpr</span> span<span class="br0">(</span> It first, size_type count <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (2)</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td><div><span id="Version_3"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> It, <span class="kw1">class</span> End <span class="sy1">&gt;</span><br>
+<p><span class="kw1">explicit</span><span class="br0">(</span>extent <span class="sy3">!</span><span class="sy1">=</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a><span class="br0">)</span><br>
+</p>
+<span class="kw4">constexpr</span> span<span class="br0">(</span> It first, End last <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (3)</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td><div><span id="Version_4"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../types/size_t.html"><span class="kw108">std::<span class="me2">size_t</span></span></a> N <span class="sy1">&gt;</span><br>
+<span class="kw4">constexpr</span> span<span class="br0">(</span> <a href="../../types/type_identity.html"><span class="kw2737">std::<span class="me2">type_identity_t</span></span></a><span class="sy1">&lt;</span>element_type<span class="sy1">&gt;</span> <span class="br0">(</span><span class="sy3">&amp;</span>arr<span class="br0">)</span><span class="br0">[</span>N<span class="br0">]</span> <span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td> (4)</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td><div><span id="Version_5"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> U, <a href="../../types/size_t.html"><span class="kw108">std::<span class="me2">size_t</span></span></a> N <span class="sy1">&gt;</span><br>
+<span class="kw4">constexpr</span> span<span class="br0">(</span> <a href="../array.html"><span class="kw1277">std::<span class="me2">array</span></span></a><span class="sy1">&lt;</span>U, N<span class="sy1">&gt;</span><span class="sy3">&amp;</span> arr <span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td> (5)</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td><div><span id="Version_6"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> U, <a href="../../types/size_t.html"><span class="kw108">std::<span class="me2">size_t</span></span></a> N <span class="sy1">&gt;</span><br>
+<span class="kw4">constexpr</span> span<span class="br0">(</span> <span class="kw4">const</span> <a href="../array.html"><span class="kw1277">std::<span class="me2">array</span></span></a><span class="sy1">&lt;</span>U, N<span class="sy1">&gt;</span><span class="sy3">&amp;</span> arr <span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td> (6)</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td><div><span id="Version_7"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> R <span class="sy1">&gt;</span><br>
+<p><span class="kw1">explicit</span><span class="br0">(</span>extent <span class="sy3">!</span><span class="sy1">=</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a><span class="br0">)</span><br>
+</p>
+<span class="kw4">constexpr</span> span<span class="br0">(</span> R<span class="sy3">&amp;&amp;</span> r <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (7)</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx26">
+<td><div><span id="Version_8"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span><span class="br0">(</span>extent <span class="sy3">!</span><span class="sy1">=</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a><span class="br0">)</span><br>
+<span class="kw4">constexpr</span> span<span class="br0">(</span> <a href="../../utility/initializer_list.html"><span class="kw965">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>value_type<span class="sy1">&gt;</span> il <span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td> (8)</td>
+<td><span class="t-mark-rev t-since-cxx26">(since C++26)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td><div><span id="Version_9"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> U, <a href="../../types/size_t.html"><span class="kw108">std::<span class="me2">size_t</span></span></a> N <span class="sy1">&gt;</span><br>
+<p><span class="kw1">explicit</span><span class="br0">(</span>extent <span class="sy3">!</span><span class="sy1">=</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a> <span class="sy3">&amp;&amp;</span> N <span class="sy1">==</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a><span class="br0">)</span><br>
+</p>
+<span class="kw4">constexpr</span> span<span class="br0">(</span> <span class="kw4">const</span> <a href="../span.html"><span class="kw2649">std::<span class="me2">span</span></span></a><span class="sy1">&lt;</span>U, N<span class="sy1">&gt;</span><span class="sy3">&amp;</span> source <span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span></span></div></td>
+<td> (9)</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td><div><span id="Version_10"></span><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span> span<span class="br0">(</span> <span class="kw4">const</span> span<span class="sy3">&amp;</span> other <span class="br0">)</span> <span class="kw1">noexcept</span> <span class="sy1">=</span> <span class="kw1">default</span><span class="sy4">;</span></span></div></td>
+<td> (10)</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Constructs a <code>span</code>.
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./span.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./span.html#Effects"><span class="tocnumber">2</span> <span class="toctext">Effects</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./span.html#Constraints_and_supplement_information"><span class="tocnumber">3</span> <span class="toctext">Constraints and supplement information</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="./span.html#Size_requirements"><span class="tocnumber">3.1</span> <span class="toctext">Size requirements</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="./span.html#Conversion_requirements"><span class="tocnumber">3.2</span> <span class="toctext">Conversion requirements</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="./span.html#Concept_requirements"><span class="tocnumber">3.3</span> <span class="toctext">Concept requirements</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="./span.html#Other_constraints"><span class="tocnumber">3.4</span> <span class="toctext">Other constraints</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="./span.html#Exceptions"><span class="tocnumber">4</span> <span class="toctext">Exceptions</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="./span.html#Notes"><span class="tocnumber">5</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="./span.html#Example"><span class="tocnumber">6</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="./span.html#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-par-begin">
+
+
+<tbody><tr class="t-par">
+<td> first
+</td>
+<td> -
+</td>
+<td> iterator to the first element of the sequence
+</td></tr>
+<tr class="t-par">
+<td> count
+</td>
+<td> -
+</td>
+<td> number of elements in the sequence
+</td></tr>
+<tr class="t-par">
+<td> last
+</td>
+<td> -
+</td>
+<td> iterator past the last element of the sequence or another sentinel
+</td></tr>
+<tr class="t-par">
+<td> arr
+</td>
+<td> -
+</td>
+<td> array to construct a view for
+</td></tr>
+<tr class="t-par">
+<td> r
+</td>
+<td> -
+</td>
+<td> range to construct a view for
+</td></tr>
+<tr class="t-par">
+<td> source
+</td>
+<td> -
+</td>
+<td> another <code>span</code> to convert from
+</td></tr>
+<tr class="t-par">
+<td> other
+</td>
+<td> -
+</td>
+<td> another <code>span</code> to copy from
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=edit&amp;section=2" title="Edit section: Effects">edit</a>]</span> <span class="mw-headline" id="Effects">Effects</span></h3>
+<table class="wikitable" style="text-align: center;">
+<tbody><tr>
+<th>&nbsp;Overload&nbsp;
+</th>
+<th>&nbsp;<a href="./data.html" title="cpp/container/span/data"><code>data()</code></a> after construction&nbsp;
+</th>
+<th>&nbsp;<a href="./size.html" title="cpp/container/span/size"><code>size()</code></a> after construction&nbsp;
+</th></tr>
+<tr>
+<td><span class="t-v">(<a href="./span.html#Version_1">1</a>)</span>
+</td>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp">nullptr</span></span>
+</td>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>
+</td></tr>
+<tr>
+<td><span class="t-v">(<a href="./span.html#Version_2">2</a>)</span>
+</td>
+<td rowspan="2"><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../memory/to_address.html"><span class="kw2663">std::<span class="me2">to_address</span></span></a><span class="br0">(</span>first<span class="br0">)</span></span></span>
+</td>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp">count</span></span>
+</td></tr>
+<tr>
+<td><span class="t-v">(<a href="./span.html#Version_3">3</a>)</span>
+</td>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp">last <span class="sy2">-</span> first</span></span>
+</td></tr>
+<tr>
+<td><span class="t-v">(<a href="./span.html#Version_4">4</a>)</span>
+</td>
+<td rowspan="3"><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/data.html"><span class="kw692">std::<span class="me2">data</span></span></a><span class="br0">(</span>arr<span class="br0">)</span></span></span>
+</td>
+<td rowspan="3"><span class="t-c"><span class="mw-geshi cpp source-cpp">N</span></span>
+</td></tr>
+<tr>
+<td><span class="t-v">(<a href="./span.html#Version_5">5</a>)</span>
+</td></tr>
+<tr>
+<td><span class="t-v">(<a href="./span.html#Version_6">6</a>)</span>
+</td></tr>
+<tr>
+<td><span class="t-v">(<a href="./span.html#Version_7">7</a>)</span>
+</td>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/data.html"><span class="kw2907">ranges::<span class="me2">data</span></span></a><span class="br0">(</span>r<span class="br0">)</span></span></span>
+</td>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/size.html"><span class="kw3119">ranges::<span class="me2">size</span></span></a><span class="br0">(</span>r<span class="br0">)</span></span></span>
+</td></tr>
+<tr>
+<td><span class="t-v">(<a href="./span.html#Version_8">8</a>)</span>
+</td>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp">il.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span></span></span>
+</td>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp">il.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span></span></span>
+</td></tr>
+<tr>
+<td><span class="t-v">(<a href="./span.html#Version_9">9</a>)</span>
+</td>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp">source.<span class="me1">data</span><span class="br0">(</span><span class="br0">)</span></span></span>
+</td>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp">source.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span></span></span>
+</td></tr>
+<tr>
+<td><span class="t-v">(<a href="./span.html#Version_10">10</a>)</span>
+</td>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp">other.<span class="me1">data</span><span class="br0">(</span><span class="br0">)</span></span></span>
+</td>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp">other.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span></span></span>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=edit&amp;section=3" title="Edit section: Constraints and supplement information">edit</a>]</span> <span class="mw-headline" id="Constraints_and_supplement_information">Constraints and supplement information</span></h3>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=edit&amp;section=4" title="Edit section: Size requirements">edit</a>]</span> <span class="mw-headline" id="Size_requirements">Size requirements</span></h4>
+<p>If <span class="t-c"><span class="mw-geshi cpp source-cpp">extent</span></span> is not <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a></span></span> and the size of the source range is different from <span class="t-c"><span class="mw-geshi cpp source-cpp">extent</span></span>, the <code>span</code> object cannot be constructed.
+</p><p>These overloads participate in overload resolution only if the result of the following expression is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>:
+</p>
+<div class="t-li1"><span class="t-li">1)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">extent <span class="sy1">==</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a> <span class="sy3">||</span> extent <span class="sy1">==</span> <span class="nu0">0</span></span></span></div>
+<div class="t-li1"><span class="t-li">4-6)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">extent <span class="sy1">==</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a> <span class="sy3">||</span> extent <span class="sy1">==</span> N</span></span></div>
+<div class="t-li1"><span class="t-li">9)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">extent <span class="sy1">==</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a> <span class="sy3">||</span> N <span class="sy1">==</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a> <span class="sy3">||</span> extent <span class="sy1">==</span> N</span></span></div>
+<p><br>
+</p>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-until-cxx26"><td>
+<p>If the result of the following expression is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>, the behavior is undefined.
+</p>
+</td>
+<td><span class="t-mark-rev t-until-cxx26">(until C++26)</span></td></tr>
+<tr class="t-rev t-since-cxx26"><td>
+<p>If the result of the following expression is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>:
+</p>
+<ul><li> If the implementation is <a href="../../standard_library.html#Standard_library_hardening" title="cpp/standard library">hardened</a>, a <a href="../../language/contracts.html" title="cpp/language/contracts">contract violation</a> occurs. Moreover, if the contract-violation handler returns under “observe” evaluation semantic, the behavior is undefined.
+</li><li> If the implementation is not hardened, the behavior is undefined.
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx26">(since C++26)</span></td></tr>
+</tbody></table>
+<div class="t-li1"><span class="t-li">2)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">extent <span class="sy1">==</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a> <span class="sy3">||</span> extent <span class="sy1">==</span> count</span></span></div>
+<div class="t-li1"><span class="t-li">3)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">extent <span class="sy1">==</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a> <span class="sy3">||</span> extent <span class="sy1">==</span> last <span class="sy2">-</span> first</span></span></div>
+<div class="t-li1"><span class="t-li">7)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">extent <span class="sy1">==</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a> <span class="sy3">||</span> extent <span class="sy1">==</span> <a href="../../ranges/size.html"><span class="kw3119">ranges::<span class="me2">size</span></span></a><span class="br0">(</span>r<span class="br0">)</span></span></span></div>
+<div class="t-li1"><span class="t-li">8)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">extent <span class="sy1">==</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a> <span class="sy3">||</span> extent <span class="sy1">==</span> il.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span></span></span></div>
+<div class="t-li1"><span class="t-li">9)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp">extent <span class="sy1">==</span> <a href="./dynamic_extent.html"><span class="kw2648">std::<span class="me2">dynamic_extent</span></span></a> <span class="sy3">||</span> extent <span class="sy1">==</span> source.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span></span></span></div>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=edit&amp;section=5" title="Edit section: Conversion requirements">edit</a>]</span> <span class="mw-headline" id="Conversion_requirements">Conversion requirements</span></h4>
+<p>If <code>element_type</code> is different from the element type of the source range, and the latter cannot be converted to the former by <a href="../../language/implicit_cast.html#Qualification_conversion" title="cpp/language/implicit conversion">qualification conversion</a>, the <code>span</code> object cannot be constructed.
+</p><p>These overloads participate in overload resolution only if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_convertible.html"><span class="kw599">std::<span class="me2">is_convertible_v</span></span></a><span class="sy1">&lt;</span>U<span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">[</span><span class="br0">]</span>, element_type<span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">[</span><span class="br0">]</span><span class="sy1">&gt;</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>, where <code>U</code> is defined as follows:
+</p>
+<div class="t-li1"><span class="t-li">2,3)</span> <span class="mw-geshi cpp source-cpp"><a href="../../types/remove_reference.html"><span class="kw613">std::<span class="me2">remove_reference_t</span></span></a><span class="sy1">&lt;</span><a href="../../iterator/iter_t.html"><span class="kw2892">std::<span class="me2">iter_reference_t</span></span></a><span class="sy1">&lt;</span>It<span class="sy1">&gt;&gt;</span></span></div>
+<div class="t-li1"><span class="t-li">4-6)</span> <span class="mw-geshi cpp source-cpp"><a href="../../types/remove_pointer.html"><span class="kw619">std::<span class="me2">remove_pointer_t</span></span></a><span class="sy1">&lt;</span>decltype<span class="br0">(</span><a href="../../iterator/data.html"><span class="kw692">std::<span class="me2">data</span></span></a><span class="br0">(</span>arr<span class="br0">)</span><span class="br0">)</span><span class="sy1">&gt;</span></span></div>
+<div class="t-li1"><span class="t-li">7)</span> <span class="mw-geshi cpp source-cpp"><a href="../../types/remove_reference.html"><span class="kw613">std::<span class="me2">remove_reference_t</span></span></a><span class="sy1">&lt;</span><a href="../../ranges/range_reference_t.html"><span class="kw2914">ranges::<span class="me2">range_reference_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;&gt;</span></span></div>
+<div class="t-li1"><span class="t-li">9)</span> <code>U</code></div>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=edit&amp;section=6" title="Edit section: Concept requirements">edit</a>]</span> <span class="mw-headline" id="Concept_requirements">Concept requirements</span></h4>
+<p>If any template argument does not model certain concept(s), the <code>span</code> object cannot be constructed.
+</p><p>These overloads participate in overload resolution only if the template argument corresponding to the specified template parameter satisfies the corresponding concept(s). If it does not meet the semantic requirements of any corresponding concept, the behavior is undefined:
+</p>
+<table class="wikitable" style="text-align: center;">
+<tbody><tr>
+<th>&nbsp;Overload&nbsp;
+</th>
+<th>Template<br>&nbsp;parameter&nbsp;
+</th>
+<th>Concept
+</th>
+<th>Remark
+</th></tr>
+<tr>
+<td><span class="t-v">(<a href="./span.html#Version_2">2</a>)</span>
+</td>
+<td><code>It</code>
+</td>
+<td><a href="../../iterator/contiguous_iterator.html" title="cpp/iterator/contiguous iterator"><code>contiguous_iterator</code></a>
+</td>
+<td>
+</td></tr>
+<tr>
+<td rowspan="2"><span class="t-v">(<a href="./span.html#Version_3">3</a>)</span>
+</td>
+<td><code>It</code>
+</td>
+<td><a href="../../iterator/contiguous_iterator.html" title="cpp/iterator/contiguous iterator"><code>contiguous_iterator</code></a>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><code>End</code>
+</td>
+<td>&nbsp;<a href="../../iterator/sized_sentinel_for.html" title="cpp/iterator/sized sentinel for"><code>sized_sentinel_for&lt;It&gt;</code></a>&nbsp;
+</td>
+<td>
+</td></tr>
+<tr>
+<td rowspan="3"><span class="t-v">(<a href="./span.html#Version_7">7</a>)</span>
+</td>
+<td rowspan="3"><code>R</code>
+</td>
+<td><a href="../../ranges/contiguous_range.html" title="cpp/ranges/contiguous range"><code>contiguous_range</code></a>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="../../ranges/sized_range.html" title="cpp/ranges/sized range"><code>sized_range</code></a>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="../../ranges/borrowed_range.html" title="cpp/ranges/borrowed range"><code>borrowed_range</code></a>
+</td>
+<td>only required if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_const.html"><span class="kw503">std::<span class="me2">is_const_v</span></span></a><span class="sy1">&lt;</span>element_type<span class="sy1">&gt;</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>
+</td></tr></tbody></table>
+<h4><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=edit&amp;section=7" title="Edit section: Other constraints">edit</a>]</span> <span class="mw-headline" id="Other_constraints">Other constraints</span></h4>
+<div class="t-li1"><span class="t-li">2)</span> If <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span><code>,&nbsp;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">first <span class="sy2">+</span> count</span></span><code>)</code></span> is not a <a href="../../iterator.html#Ranges" title="cpp/iterator">valid range</a>, the behavior is undefined.</div>
+<div class="t-li1"><span class="t-li">3)</span> This overload participates in overload resolution only if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_convertible.html"><span class="kw599">std::<span class="me2">is_convertible_v</span></span></a><span class="sy1">&lt;</span>End, <a href="../../types/size_t.html"><span class="kw108">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>.</div>
+<div class="t-li1"><span class="t-li"></span> If <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span><code>,&nbsp;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span> is not a valid range, the behavior is undefined.</div>
+<div class="t-li1"><span class="t-li">7)</span> This overload participates in overload resolution only if all following conditions are satisfied:
+<ul><li> <span class="mw-geshi cpp source-cpp"><a href="../../types/remove_cvref.html"><span class="kw2662">std::<span class="me2">remove_cvref_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span></span> is not a specialization of <code>std::span</code> or <span class="t-lc"><a href="../array.html" title="cpp/container/array">std::array</a></span>.
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_array.html"><span class="kw469">std::<span class="me2">is_array_v</span></span></a><span class="sy1">&lt;</span><a href="../../types/remove_cvref.html"><span class="kw2662">std::<span class="me2">remove_cvref_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;&gt;</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>.</li></ul></div>
+
+<div class="t-li1"><span class="t-li">8)</span> This overload participates in overload resolution only if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_const.html"><span class="kw503">std::<span class="me2">is_const_v</span></span></a><span class="sy1">&lt;</span>element_type<span class="sy1">&gt;</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>.</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=edit&amp;section=8" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
+<div class="t-li1"><span class="t-li">2)</span> Throws nothing.</div>
+<div class="t-li1"><span class="t-li">3)</span> Throws what and when <span class="t-c"><span class="mw-geshi cpp source-cpp">last <span class="sy2">-</span> first</span></span> throws.</div>
+<div class="t-li1"><span class="t-li">7)</span> Throws what and when <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><a href="../../ranges/size.html"><span class="kw3119">ranges::<span class="me2">size</span></span></a><span class="br0">(</span>r<span class="br0">)</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><a href="../../ranges/data.html"><span class="kw2907">ranges::<span class="me2">data</span></span></a><span class="br0">(</span>r<span class="br0">)</span></span></span> throw.</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=edit&amp;section=9" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<table class="wikitable ftm-begin">
+
+<tbody><tr>
+<th><a href="../../utility/feature_test.html" title="cpp/utility/feature test">Feature-test</a> macro
+</th>
+<th><abbr title="The year/month in which the feature was adopted. The hyperlink under each value opens a compiler support page with entry for given feature.">Value</abbr>
+</th>
+<th><abbr title="Standard in which the feature is introduced; DR means defect report against that revision">Std</abbr>
+</th>
+<th>Feature
+</th></tr>
+<tr>
+<td><a href="../../experimental/feature_test.html#cpp_lib_span_initializer_list" title="cpp/feature test"><code>__cpp_lib_span_initializer_list</code></a></td>
+<td><a href="../../compiler_support/26.html#cpp_lib_span_initializer_list_202311L" title="cpp/compiler support/26"><code>202311L</code></a></td>
+<td><span class="t-mark">(C++26)</span></td>
+<td>Constructing <code>std::span</code> from a <span class="t-lc"><a href="../../utility/initializer_list.html" title="cpp/utility/initializer list">std::initializer_list</a></span>, <span class="t-v">(<a href="./span.html#Version_8">8</a>)</span>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=edit&amp;section=10" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;array&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;span&gt;</span>
+<span class="co2">#include &lt;vector&gt;</span>
+&nbsp;
+<span class="kw4">void</span> print_span<span class="br0">(</span><a href="../span.html"><span class="kw2649">std::<span class="me2">span</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> <span class="kw4">int</span><span class="sy1">&gt;</span> s<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> n <span class="sy4">:</span> s<span class="br0">)</span>
+        <a href="../../io/cout.html"><span class="kw1776">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1776">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> c<span class="br0">[</span><span class="br0">]</span><span class="br0">{</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">}</span><span class="sy4">;</span>
+    print_span<span class="br0">(</span>c<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// constructs from array</span>
+&nbsp;
+    <a href="../array.html"><span class="kw1277">std::<span class="me2">array</span></span></a> a<span class="br0">{</span><span class="nu0">4</span>, <span class="nu0">5</span>, <span class="nu0">6</span><span class="br0">}</span><span class="sy4">;</span>
+    print_span<span class="br0">(</span>a<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// constructs from std::array</span>
+&nbsp;
+    <a href="../vector.html"><span class="kw1278">std::<span class="me2">vector</span></span></a> v<span class="br0">{</span><span class="nu0">7</span>, <span class="nu0">8</span>, <span class="nu0">9</span><span class="br0">}</span><span class="sy4">;</span>
+    print_span<span class="br0">(</span>v<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// constructs from std::vector</span>
+&nbsp;
+<span class="co2">#if __cpp_lib_span_initializer_list</span>
+    print_span<span class="br0">(</span><span class="br0">{</span><span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">2</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// constructs from initializer_list</span>
+<span class="co2">#else</span>
+    print_span<span class="br0">(</span><span class="br0">{</span><span class="br0">{</span><span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">2</span><span class="br0">}</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// ditto, a workaround</span>
+<span class="co2">#endif</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">1 2 3 
+4 5 6
+7 8 9
+0 1 2</pre></div></div> 
+</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=edit&amp;section=11" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./data.html" title="cpp/container/span/data"> <span class="t-lines"><span>data</span></span></a></div></div>
+</td>
+<td>  direct access to the underlying contiguous storage <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_data&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./size.html" title="cpp/container/span/size"> <span class="t-lines"><span>size</span></span></a></div></div>
+</td>
+<td>  returns the number of elements <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_size&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="./operator=.html" title="cpp/container/span/operator="> <span class="t-lines"><span>operator=</span></span></a></div></div>
+</td>
+<td>  assigns a <code>span</code> <br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/span/dsc_operator%3D&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../iterator/size.html" title="cpp/iterator/size"> <span class="t-lines"><span>size</span><span>ssize</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  returns the size of a container or array <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/iterator/dsc_size&amp;action=edit">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../iterator/data.html" title="cpp/iterator/data"> <span class="t-lines"><span>data</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  obtains the pointer to the underlying array <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/iterator/dsc_data&amp;action=edit">[edit]</a></span>
+</td></tr>
+</tbody></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 9431/1000000
+Preprocessor generated node count: 15233/1000000
+Post‐expand include size: 169770/4194304 bytes
+Template argument size: 36233/4194304 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:16877-0!*!0!!en!*!* and timestamp 20250414013123 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;oldid=182572">https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;oldid=182572</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./span.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/container/span/span" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/container/span/span" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;oldid=182572" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/span/span&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div id="cpp-languagess" hidden="">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/container/span/span" title="cpp/container/span/span" lang="es" hreflang="es">Español</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/container/span/span" title="cpp/container/span/span" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/container/span/span" title="cpp/container/span/span" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/container/span/span" title="cpp/container/span/span" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 9 April 2025, at 04:27.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 5.071 secs. -->
+	
+
+
+</body></html>

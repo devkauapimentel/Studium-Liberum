@@ -1,0 +1,6 @@
+
+body { text-align: center; }
+canvas { width: 280px; height: 210px; margin: auto; padding: 0px; border: medium; background-color: black; }
+button { display: block; font-size: inherit; margin: auto; padding: 0.6em; }
+
+button.copy {display:none !important}

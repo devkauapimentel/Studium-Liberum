@@ -1,0 +1,63 @@
+<html>
+  <!-- Online page at https://01364dc23379be8dbdfdf2092a2d6ad6dd508d9a.mdnplay.dev/en-US/docs/Web/HTML/Reference/Global_attributes/exportparts/runner.html?uuid=01364dc23379be8dbdfdf2092a2d6ad6dd508d9a&state=1VXLbtswEPyVhXqRAdlCc5QVA3XQIAXaHtocDRS0SJtsKFEQ6TpG4H%2Fv8qGHZafOoZcgASIud4Y7w%2BXmJeKmlFEW5YaVtSSGgaC3q6ggDZ0WqqxVxSozbTdX0WJVAeTaHCRznwAZV9rAi18AUKEx9ZDBWqriae7DR4dKe1hOxR8oJNEaD1sTjcxQk8Z0q0Du8sIGZ4SyBrdyLZWBipSsi%2F6yIbuV2g%2F8g7gLFGtFD2MCG3sjfKOUOa%2FAR1%2BlaL%2FytHXRLi7YvW9IXTv6%2F%2BTx6SUCe65VY6yU1vQEvHsJBGOC5KG6B7wZu37N6guQZQ%2B5YO4FwH0PuGimV3Yq58xRfrO4wwwINuYpBlYVbgzN9VR1exqKWzxyoQF%2FDWfBjjytR3nLUZ6VdZ51P8ryWnxeKL8vY1Bxp2lU81Dr8JzTe3hL%2FcNruK7j9A6uKBoWGSVRoTVOE37jm3VNiqdto3aVzZOqyeADZfYHe%2FZohQ5NScKy71jPoRrUlMHH%2Bhko0ZxRbPsdc12%2FF9TwDDbCIKoyiGmJs8w2emwFTjxPKKBh1EE3mD91jyUDYYgUxQjqvZwkXcCLD2wOvmdiyw0%2BQyWpR6MDv60BxU4bVX6WrMSa9IyyjahYbIHj2bqKElednYX4RFED1fDw%2BO1rALevHvVp0%2BwKo5p40o8CvUPn4skc0hQ%2ByT05aCiIlD6OxjQ4N0Q1RLdIF4JuDt0CVcXOnjjbMhMOXx6%2B0Pgf%2Fw0m81M2zQlV%2Bx9oFPIZbJwZMYYU%2FKeLx13VAKWiaPwqUjWrggVuiPWMPdfMtkdF77iQNO6qFKUdZ9%2BRJ24LmoUmSAC1sknL5SbjEc%2Bwgas3043hd3IvXb3v8DLwueBYKRm%2BGGmfUnT8Cw%3D%3D&code=97202876& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <template id="card-component-template">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <div class="base" part="base">
+    <div part="header"><slot name="header_slot"></slot></div>
+    <div part="body"><slot name="body_slot"></slot></div>
+    <div part="footer"><slot name="footer_slot"></slot></div>
+  </div>
+</template>
+<template id="card-wrapper">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <card-component exportparts="base, header, body">
+    <slot name="H" slot="header_slot"></slot>
+    <slot name="B" slot="body_slot"></slot>
+    <slot name="F" slot="footer_slot"></slot>
+  </card-component>
+</template>
+<h2>Card wrapper</h2>
+
+<card-wrapper>
+  <p slot="H">This is the header</p>
+  <p slot="B">This is the body</p>
+  <p slot="F">This is the footer</p>
+</card-wrapper>
+
+<h2>Card component</h2>
+
+<card-component>
+  <p slot="header_slot">This is the header</p>
+  <p slot="body_slot">This is the body</p>
+  <p slot="footer_slot">This is the footer</p>
+</card-component>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../../js_3.js'></script>
+</body>
+</html>

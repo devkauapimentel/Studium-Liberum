@@ -1,0 +1,5 @@
+
+body { background-color: var(--main-bg-color); }
+:root { --main-bg-color: pink; }
+
+button.copy {display:none !important}

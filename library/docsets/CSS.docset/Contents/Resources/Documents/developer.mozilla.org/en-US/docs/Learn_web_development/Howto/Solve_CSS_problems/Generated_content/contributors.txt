@@ -1,0 +1,30 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/learn_web_development/howto/solve_css_problems/generated_content/index.md
+
+# Original Wiki contributors
+chrisdavidmills
+clairealyssa
+wbamberg
+tirein
+yancarq
+mrlagerwey
+kan199041
+mfluehr
+luketeaford
+floEdelmann
+jeansouz4
+veryrandomname
+Jeremie
+kscarfone
+stephen
+trevorh
+teoli
+Sheppy
+jswisher
+Mgjbot
+Leandro Mercês Xavier
+Verruckt
+BenoitL
+Rod Whiteley
+gandalf
+Nickolay

@@ -1,0 +1,72 @@
+<html>
+  <!-- Online page at https://b3e65d67cc3a890b695de2d7fccfd63b9634058a.mdnplay.dev/en-US/docs/Web/API/KeyframeEffect/getKeyframes/runner.html?uuid=b3e65d67cc3a890b695de2d7fccfd63b9634058a&state=hZLNbtQwEMdfZWQJKSslu9mWcsgWpB44II5ckJoe3GSycevYwZ6wG1Yr8SYcQDxYn4BHYOxsl2pbiUOc8Xz8%2FPeMd6KlTotCXNbq67s%2FP379vFwEqzQiFZX3HLm19Qi70gDc2m3mW1nbTQE5XPTb%2BPXK3K9Ksy9Nabh0St2omtoCGkVZZQ2hoVVwd9Ktlck0NlRAJXWVXOSvIIPl%2BVm%2FncWUhtMzr75hAW9e99voGzy6zKPGisuMNfgURrYvYOmwm0Sw7rsgm4%2F1BNjZOwVvobbV0LGK%2BZcB3fgpoqxLSsGKSzFbwWIB7AwpQBakUZ0kDFeaOM5qrcz6I46Nkx16RhrcwOP%2BfdMwMAmq4olpsK7DArADctL4xrqugFLEjWb45ySfMZfYZKsUsE%2BDivsD8n%2FFZ3nOLXsELOfnNDjzMuYmytlNxCcxsD0pvt4UqAcnw7YARufpwakcXyx6SyE1oTOhL%2BIQRum5KyHGFmY8DTvQMao4PSJ9yPhgGmUUjYfwntcw8ZMOX8XOc82hw8d9cjqC9N9QSXXIMQy8U86813JMppP47lfOyRGuYffw%2FTd3Kv7gZhJhNc61XSfPEBjHO18jHU9PZgHJj41afjX83rRatyT2fwE%3D&code=40745335& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+
+  </head>
+<body>
+        <main>
+          <span class="icon">⚠️</span>
+          <a name="//apple_ref/Section/Caution%3A%20This%20is%20a%20demo%20page" class="dashAnchor"></a><h1 id="CautionThisisademopage">Caution: This is a demo page</h1>
+          <p>
+            You’re about to view a live demo generated using the
+            <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>. This demo may include custom code created by another user and is
+            intended for testing and exploration only. If you’re uncertain about
+            its contents or would prefer not to proceed, you can open the
+            example in the MDN Playground. Otherwise, feel free to continue and
+            explore the example provided.
+          </p>
+          <details>
+            <summary>view code</summary>
+
+            <h2>html</h2>
+            <pre><code>&lt;div&gt;🤣&lt;/div&gt;</code></pre>
+
+            <h2>css</h2>
+            <pre><code>body {
+  box-shadow: 0 5px 5px pink;
+}
+
+div {
+  width: fit-content;
+  margin-left: calc(50% - 132px);
+  font-size: 64px;
+  user-select: none;
+  margin-top: 1rem;
+}</code></pre>
+
+            <h2>js</h2>
+            <pre><code>const emoji = document.querySelector("div"); // element to animate
+
+const rollingKeyframes = new KeyframeEffect(
+  emoji,
+  [
+    { transform: "translateX(0) rotate(0)" }, // keyframe
+    { transform: "translateX(200px) rotate(1.3turn)" }, // keyframe
+  ],
+  {
+    // keyframe options
+    duration: 2000,
+    direction: "alternate",
+    easing: "ease-in-out",
+    iterations: "Infinity",
+  },
+);
+
+const rollingAnimation = new Animation(rollingKeyframes, document.timeline);
+rollingAnimation.play();
+
+// Array [ {…}, {…} ]
+console.log(rollingAnimation.effect.getKeyframes());</code></pre>
+          </details>
+          <a href="https://developer.mozilla.org/en-US/play?uuid=b3e65d67cc3a890b695de2d7fccfd63b9634058a&amp;state=hZLNbtQwEMdfZWQJKSslu9mWcsgWpB44II5ckJoe3GSycevYwZ6wG1Yr8SYcQDxYn4BHYOxsl2pbiUOc8Xz8%2FPeMd6KlTotCXNbq67s%2FP379vFwEqzQiFZX3HLm19Qi70gDc2m3mW1nbTQE5XPTb%2BPXK3K9Ksy9Nabh0St2omtoCGkVZZQ2hoVVwd9Ktlck0NlRAJXWVXOSvIIPl%2BVm%2FncWUhtMzr75hAW9e99voGzy6zKPGisuMNfgURrYvYOmwm0Sw7rsgm4%2F1BNjZOwVvobbV0LGK%2BZcB3fgpoqxLSsGKSzFbwWIB7AwpQBakUZ0kDFeaOM5qrcz6I46Nkx16RhrcwOP%2BfdMwMAmq4olpsK7DArADctL4xrqugFLEjWb45ySfMZfYZKsUsE%2BDivsD8n%2FFZ3nOLXsELOfnNDjzMuYmytlNxCcxsD0pvt4UqAcnw7YARufpwakcXyx6SyE1oTOhL%2BIQRum5KyHGFmY8DTvQMao4PSJ9yPhgGmUUjYfwntcw8ZMOX8XOc82hw8d9cjqC9N9QSXXIMQy8U86813JMppP47lfOyRGuYffw%2FTd3Kv7gZhJhNc61XSfPEBjHO18jHU9PZgHJj41afjX83rRatyT2fwE%3D&amp;code=40745335&amp;" class="leave">Open in Playground</a>
+          <a href="https://b3e65d67cc3a890b695de2d7fccfd63b9634058a.mdnplay.dev/en-US/docs/Web/API/KeyframeEffect/getKeyframes/runner.html?state=hZLNbtQwEMdfZWQJKSslu9mWcsgWpB44II5ckJoe3GSycevYwZ6wG1Yr8SYcQDxYn4BHYOxsl2pbiUOc8Xz8%2FPeMd6KlTotCXNbq67s%2FP379vFwEqzQiFZX3HLm19Qi70gDc2m3mW1nbTQE5XPTb%2BPXK3K9Ksy9Nabh0St2omtoCGkVZZQ2hoVVwd9Ktlck0NlRAJXWVXOSvIIPl%2BVm%2FncWUhtMzr75hAW9e99voGzy6zKPGisuMNfgURrYvYOmwm0Sw7rsgm4%2F1BNjZOwVvobbV0LGK%2BZcB3fgpoqxLSsGKSzFbwWIB7AwpQBakUZ0kDFeaOM5qrcz6I46Nkx16RhrcwOP%2BfdMwMAmq4olpsK7DArADctL4xrqugFLEjWb45ySfMZfYZKsUsE%2BDivsD8n%2FFZ3nOLXsELOfnNDjzMuYmytlNxCcxsD0pvt4UqAcnw7YARufpwakcXyx6SyE1oTOhL%2BIQRum5KyHGFmY8DTvQMao4PSJ9yPhgGmUUjYfwntcw8ZMOX8XOc82hw8d9cjqC9N9QSXXIMQy8U86813JMppP47lfOyRGuYffw%2FTd3Kv7gZhJhNc61XSfPEBjHO18jHU9PZgHJj41afjX83rRatyT2fwE%3D&amp;code=aaff8c3d-4f85-4cc4-9339-07b8163af976" class="continue">Continue</a>
+        </main>
+      
+    </body>
+</html>

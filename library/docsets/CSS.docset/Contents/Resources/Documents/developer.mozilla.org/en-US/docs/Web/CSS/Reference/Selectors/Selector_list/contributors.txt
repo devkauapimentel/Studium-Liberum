@@ -1,0 +1,9 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/css/reference/selectors/selector_list/index.md
+
+# Original Wiki contributors
+rachelandrew
+wbamberg
+ExE-Boss
+ramiy
+chrisdavidmills

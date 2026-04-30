@@ -1,0 +1,8 @@
+
+body { font-style: normal; font-variant-caps: normal; font-weight: normal; font-width: normal; font-size: 1.2em; line-height: normal; font-family: sans-serif; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; }
+span { font-size: 200%; vertical-align: top; }
+.example { border: 5px solid black; margin: 20px; inline-size: 400px; }
+.horizontal { writing-mode: horizontal-tb; }
+.vertical { writing-mode: vertical-rl; }
+
+button.copy {display:none !important}

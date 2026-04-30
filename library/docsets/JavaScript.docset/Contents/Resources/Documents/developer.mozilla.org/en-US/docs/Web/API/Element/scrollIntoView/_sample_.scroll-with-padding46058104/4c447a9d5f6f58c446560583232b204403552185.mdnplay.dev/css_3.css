@@ -1,0 +1,7 @@
+
+.navbar { height: 50px; position: sticky; top: 0px; border-bottom: 1.5px solid black; display: flex; justify-content: center; align-items: center; }
+.content { height: 2000px; position: relative; }
+#go-to-bottom { position: absolute; top: 10px; scroll-margin-top: 60px; }
+#go-to-top { position: absolute; bottom: 10px; scroll-margin-bottom: 0px; }
+
+button.copy {display:none !important}

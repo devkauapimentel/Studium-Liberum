@@ -1,0 +1,22 @@
+
+.ps { touch-action: auto; overflow: hidden !important; }
+.ps__rail-x { display: none; opacity: 0; transition: background-color 0.2s linear, opacity 0.2s linear; height: 15px; bottom: 0px; position: absolute; }
+.ps__rail-y { display: none; opacity: 0; transition: background-color 0.2s linear, opacity 0.2s linear; width: 15px; right: 0px; position: absolute; }
+.ps--active-x > .ps__rail-x, .ps--active-y > .ps__rail-y { display: block; background-color: transparent; }
+.ps:hover > .ps__rail-x, .ps:hover > .ps__rail-y, .ps--focus > .ps__rail-x, .ps--focus > .ps__rail-y, .ps--scrolling-x > .ps__rail-x, .ps--scrolling-y > .ps__rail-y { opacity: 0.6; }
+.ps .ps__rail-x:hover, .ps .ps__rail-y:hover, .ps .ps__rail-x:focus, .ps .ps__rail-y:focus, .ps .ps__rail-x.ps--clicking, .ps .ps__rail-y.ps--clicking { background-color: rgb(238, 238, 238); opacity: 0.9; }
+.ps__thumb-x { background-color: rgb(170, 170, 170); border-radius: 6px; transition: background-color 0.2s linear, height 0.2s ease-in-out; height: 6px; bottom: 2px; position: absolute; }
+.ps__thumb-y { background-color: rgb(170, 170, 170); border-radius: 6px; transition: background-color 0.2s linear, width 0.2s ease-in-out; width: 6px; right: 2px; position: absolute; }
+.ps__rail-x:hover > .ps__thumb-x, .ps__rail-x:focus > .ps__thumb-x, .ps__rail-x.ps--clicking .ps__thumb-x { background-color: rgb(153, 153, 153); height: 11px; }
+.ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y { background-color: rgb(153, 153, 153); width: 11px; }
+@supports (-ms-overflow-style: none) {
+  .ps { overflow: auto !important; }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ps { overflow: auto !important; }
+}
+
+footer {
+    display: none !important;
+}
+.main-header, .large-3.columns, .left-off-canvas-menu, .get-started-cta, .main-footer, .left-off-canvas-toggle {display:none !important} .large-9 {width:100% !important} .toggle-mode {display:none !important} .main-header, .anchorLink, .left-off-canvas-menu, .left-off-canvas-toggle, .main_footer .container, .title_section, .docsidebarnav_section {display:none !important} .col-md-10 {width:100% !important} aside.sticky {display:none !important} #docs {margin-bottom:40px !important} header, footer, #pd_rating_holder_8453675, .col-nav, .col-toc {display:none !important} .content {padding:0px 26px 30px !important} section.section {max-width:none !important} @media only screen and (max-width: 1024px) { main.content {padding: 0px 13px 30px !important}} .tableofcontents_section, .docsidebarnav_section {display:none !important} .col-md-8 {width:100% !important} #_hj_feedback_container {display:none !important} .reading-time {display:none !important} .search-form {display:none !important} #onetrust-consent-sdk {display:none !important} .large-6 {width:100% !important} #DocumentationText {padding:0px !important} .advisory {padding:40px 20px 20px 20px !important} blockquote p::before {content:none !important} button.copy {display:none !important} #announcement-bar, #sidebar, body main.flex div.sticky {display:none !important} #docker-announcement-bar {display:none !important} ._hj-widget-container {display:none !important} body main.flex {display:block !important} body main.flex div.flex.lg\:w-full { width:auto !important} main, ._hj_feedback_container {border:none !important} h1 span.invisible, h2 span.invisible, h3 span.invisible, h4 span.invisible {display:none !important} [aria-role=tablist] {display:none !important} [aria-role=tab] {display:block !important} a.relative.-top-16 {top:0 !important} #TableOfContents, nav#sectiontree, #kapa-widget-container {display:none !important} .md-dropdown {display:none !important} #markdownDropdown {display:none !important} main.grid {display:block !important} main > div.sticky {display:none !important} nav.text-sm {display:none !important}

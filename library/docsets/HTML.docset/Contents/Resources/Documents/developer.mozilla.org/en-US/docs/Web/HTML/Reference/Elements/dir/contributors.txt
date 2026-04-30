@@ -1,0 +1,15 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/elements/dir/index.md
+
+# Original Wiki contributors
+mfuji09
+alattalatta
+Sheppy
+teoli
+mfluehr
+charmander
+kscarfone
+tregagnon
+Nickolay
+ethertank
+cers

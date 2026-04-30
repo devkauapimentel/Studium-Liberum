@@ -1,0 +1,11 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/javascript/reference/global_objects/regexp/symbol.match/index.md
+
+# Original Wiki contributors
+fscholz
+Zearin_Galaurum
+wbamberg
+schalkneethling
+Sebastianz
+h4writer
+arai

@@ -1,0 +1,6 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/mozilla/add-ons/webextensions/api/userscripts_legacy/working_with_userscripts/index.md
+
+# Original Wiki contributors
+irenesmith
+hellosct1

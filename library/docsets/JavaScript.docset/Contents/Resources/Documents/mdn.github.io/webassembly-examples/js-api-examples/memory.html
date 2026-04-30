@@ -1,0 +1,29 @@
+<html><!-- Mirrored from mdn.github.io/webassembly-examples/js-api-examples/memory.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 23:10:34 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <title>WASM memory test</title>
+  </head>
+
+  <body>
+    <script>
+      const memory = new WebAssembly.Memory({
+        initial: 10,
+        maximum: 100,
+      });
+      WebAssembly.instantiateStreaming(fetch("memory.wasm"), {
+        js: { mem: memory },
+      }).then((obj) => {
+        const summands = new DataView(memory.buffer);
+        for (let i = 0; i < 10; i++) {
+          summands.setUint32(i * 4, i, true); // WebAssembly is little endian
+        }
+        const sum = obj.instance.exports.accumulate(0, 10);
+        console.log(sum);
+      });
+    </script>
+  
+
+
+
+
+</body><!-- Mirrored from mdn.github.io/webassembly-examples/js-api-examples/memory.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 23:10:34 GMT --></html>

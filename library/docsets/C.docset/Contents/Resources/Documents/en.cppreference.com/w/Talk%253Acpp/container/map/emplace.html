@@ -1,0 +1,454 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/container/map/emplace.html --><head><meta charset="utf-8"><title>Talk:cpp/container/map/emplace</title><link rel="stylesheet" href="../../../css_1.css" type="text/css"><link rel="stylesheet" href="../../../css_2.css" type="text/css"><link rel="stylesheet" href="../../../css_3.css" type="text/css"><link rel="stylesheet" href="../../../css_4.css" type="text/css"><link rel="stylesheet" href="../../../css_7.css" type="text/css"><link rel="stylesheet" href="../../../css_5.css" type="text/css"><script type="text/javascript" src="../../../js_1.js"></script><script type="text/javascript" src="../../../js_2.js"></script><script type="text/javascript" src="../../../js_6019.js"></script><script type="text/javascript" src="../../../js_4.js"></script><script type="text/javascript" src="../../../js_5.js"></script><script type="text/javascript" src="../../../js_6.js"></script><script type="text/javascript" src="../../../js_7.js"></script><script type="text/javascript" src="../../../js_8.js"></script><script type="text/javascript" src="../../../js_9.js"></script><script type="text/javascript" src="../../../js_10.js"></script><script type="text/javascript" src="../../../js_11.js"></script><script type="text/javascript" src="../../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_container_map_emplace skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fcontainer%2Fmap%2Femplace&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fcontainer%2Fmap%2Femplace" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../../cpp/container/map/emplace.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./emplace.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./emplace.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./emplace.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/container/map/emplace&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/container/map/emplace&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/container/map/emplace&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./emplace.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/container/map/emplace</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../../container.html" title="Talk:cpp/container">container</a>‎ | <a href="../map.html" title="Talk:cpp/container/map">map</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>The overloads are missing? <a href="https://en.cppreference.com/w/Special:Contributions/50.202.91.130" title="Special:Contributions/50.202.91.130">50.202.91.130</a> 06:55, 27 August 2014 (PDT)
+</p>
+<dl><dd> Which overloads? --<a href="../../../User%25253ANate.html" title="User:Nate">Nate</a> (<a href="../../../User_talk%25253ANate.html" title="User talk:Nate">talk</a>) 08:47, 5 September 2014 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> I believe they were referring to the pair constructor overloads that were mentioned in the example by number. --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 09:13, 5 September 2014 (PDT)
+</dd></dl>
+</dd></dl>
+<p>"The element may be constructed even if there already is an element with the key in the container, in which case it will be destroyed immediately." The last "it" is a bit misleading, and I had to try it out to discover that this is the first element that is referred to which is really destroyed --<a href="https://en.cppreference.com/mwiki/index.php?title=User:JulienF&amp;action=edit&amp;redlink=1" class="new" title="User:JulienF (page does not exist)">JulienF</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:JulienF&amp;action=edit&amp;redlink=1" class="new" title="User talk:JulienF (page does not exist)">talk</a>) 05:55, 20 August 2016 (PDT)
+</p>
+<dl><dd> changed "it" to "the newly constructed element", does this work? --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:28, 20 August 2016 (PDT)
+<dl><dd> Perfect. Thanks a lot --<a href="https://en.cppreference.com/mwiki/index.php?title=User:JulienF&amp;action=edit&amp;redlink=1" class="new" title="User:JulienF (page does not exist)">JulienF</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:JulienF&amp;action=edit&amp;redlink=1" class="new" title="User talk:JulienF (page does not exist)">talk</a>) 00:10, 23 August 2016 (PDT)
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/container/map/emplace&amp;action=edit&amp;section=1" title="Edit section: Default constructors, and constructors taking more than one element">edit</a>]</span> <span class="mw-headline" id="Default_constructors.2C_and_constructors_taking_more_than_one_element"> Default constructors, and constructors taking more than one element </span></h2>
+<p>Can we give an example such as the following, which is clearer about the issues of default constructor, and constructor with multiple elements:
+</p>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;map&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+&nbsp;
+<span class="kw1">class</span> A <span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    A<span class="br0">(</span><span class="kw4">unsigned</span> ii <span class="sy1">=</span> <span class="nu0">0</span>, <span class="kw4">const</span> <a href="../../../cpp/string/basic_string.html"><span class="kw1233">std::<span class="me2">string</span></span></a> <span class="sy3">&amp;</span>s <span class="sy1">=</span> <span class="st0">""</span><span class="br0">)</span> <span class="sy4">:</span> i<span class="br0">(</span>ii<span class="br0">)</span>, str<span class="br0">(</span>s<span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span>
+&nbsp;
+    <span class="kw4">unsigned</span>    i<span class="sy4">;</span>
+    <a href="../../../cpp/string/basic_string.html"><span class="kw1233">std::<span class="me2">string</span></span></a> str<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<a href="../../../cpp/io/basic_ostream.html"><span class="kw1733">std::<span class="me2">ostream</span></span></a> <span class="sy3">&amp;</span>operator<span class="sy1">&lt;&lt;</span><span class="br0">(</span><a href="../../../cpp/io/basic_ostream.html"><span class="kw1733">std::<span class="me2">ostream</span></span></a> <span class="sy3">&amp;</span>os, <span class="kw4">const</span> A <span class="sy3">&amp;</span>a<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">return</span> os <span class="sy1">&lt;&lt;</span> a.<span class="me1">i</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\t</span>'</span> <span class="sy1">&lt;&lt;</span> a.<span class="me1">str</span><span class="sy4">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../../../cpp/container/map.html"><span class="kw1284">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><span class="kw4">unsigned</span>, A<span class="sy1">&gt;</span> m<span class="sy4">;</span>
+    m.<span class="me1">emplace</span><span class="br0">(</span><span class="nu0">1</span>,    <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>                          <span class="co1">// constructor taking 1 argument</span>
+    m.<span class="me1">emplace</span><span class="br0">(</span><a href="../../../cpp/utility/piecewise_construct.html"><span class="kw1109">std::<span class="me2">piecewise_construct</span></span></a>,
+              <a href="../../../cpp/utility/tuple/forward_as_tuple.html"><span class="kw1117">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>,
+              <a href="../../../cpp/utility/tuple/forward_as_tuple.html"><span class="kw1117">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>          <span class="co1">// default constructor</span>
+    m.<span class="me1">emplace</span><span class="br0">(</span><a href="../../../cpp/utility/piecewise_construct.html"><span class="kw1109">std::<span class="me2">piecewise_construct</span></span></a>,
+              <a href="../../../cpp/utility/tuple/forward_as_tuple.html"><span class="kw1117">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>,
+              <a href="../../../cpp/utility/tuple/forward_as_tuple.html"><span class="kw1117">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">(</span><span class="nu0">2</span>, <span class="st0">"abc"</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// constructor taking 2 arguments</span>
+&nbsp;
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">const</span> <span class="kw4">auto</span> <span class="sy3">&amp;</span>p <span class="sy4">:</span> m<span class="br0">)</span> <span class="br0">{</span>
+        <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> p.<span class="me1">first</span> <span class="sy1">&lt;&lt;</span> <span class="st0">": <span class="es1">\t</span>"</span> <span class="sy1">&lt;&lt;</span> p.<span class="me1">second</span> <span class="sy1">&lt;&lt;</span> <a href="../../../cpp/io/manip/endl.html"><span class="kw1795">std::<span class="me2">endl</span></span></a><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+</div>
+<p>Thanks.
+<a href="https://en.cppreference.com/mwiki/index.php?title=User:Fdklsa&amp;action=edit&amp;redlink=1" class="new" title="User:Fdklsa (page does not exist)">Fdklsa</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Fdklsa&amp;action=edit&amp;redlink=1" class="new" title="User talk:Fdklsa (page does not exist)">talk</a>) 01:25, 17 January 2017 (PST)
+</p>
+<dl><dd> first and third emplaces from this example are already in the current example. You can default-construct in-place just by executing <span class="t-c"><span class="mw-geshi cpp source-cpp">m<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span></span></span>, although I suppose for a multimap you'd have to use the move constructor or this overly-verbose emplace (or try_emplace, which is better in every way). Maybe there could be a usage note on avoiding moves.  --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 03:09, 17 January 2017 (PST)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/container/map/emplace&amp;action=edit&amp;section=2" title="Edit section: Making constructor calls visible? Different key and value type?">edit</a>]</span> <span class="mw-headline" id="Making_constructor_calls_visible.3F_Different_key_and_value_type.3F">Making constructor calls visible? Different key and value type?</span></h2>
+<p>I was wondering whether we should replace the string with two different user-defined types which emit logs of their various constructor calls, something like 
+</p>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;utility&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;map&gt;</span>
+&nbsp;
+<span class="kw1">struct</span> KeyT
+<span class="br0">{</span>
+  <span class="kw4">int</span> mI<span class="sy4">;</span>
+  KeyT<span class="br0">(</span><span class="kw4">int</span> i<span class="br0">)</span> <span class="sy4">:</span> mI<span class="br0">(</span>i<span class="br0">)</span>
+  <span class="br0">{</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> __FUNCTION__ <span class="sy1">&lt;&lt;</span> <span class="st0">"(int)<span class="es1">\n</span>"</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  KeyT<span class="br0">(</span><span class="kw4">int</span> i1, <span class="kw4">int</span> i2, <span class="kw4">int</span> i3<span class="br0">)</span> <span class="sy4">:</span> mI<span class="br0">(</span>i1<span class="sy2">+</span>i2<span class="sy2">+</span>i3<span class="br0">)</span>
+  <span class="br0">{</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> __FUNCTION__ <span class="sy1">&lt;&lt;</span> <span class="st0">"(int, int, int)<span class="es1">\n</span>"</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  KeyT<span class="br0">(</span><span class="kw4">const</span> KeyT<span class="sy3">&amp;</span> rhs<span class="br0">)</span><span class="sy4">:</span> mI<span class="br0">(</span>rhs.<span class="me1">mI</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> __FUNCTION__ <span class="sy1">&lt;&lt;</span> <span class="st0">"(const KeyT&amp;)<span class="es1">\n</span>"</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  KeyT<span class="br0">(</span>KeyT<span class="sy3">&amp;&amp;</span> rhs<span class="br0">)</span> <span class="kw1">noexcept</span> <span class="sy4">:</span> mI<span class="br0">(</span>rhs.<span class="me1">mI</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> __FUNCTION__ <span class="sy1">&lt;&lt;</span> <span class="st0">"(KeyT &amp;&amp;)<span class="es1">\n</span>"</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+&nbsp;
+  <span class="kw4">auto</span> operator<span class="sy1">&lt;=&gt;</span><span class="br0">(</span><span class="kw4">const</span> KeyT<span class="sy3">&amp;</span><span class="br0">)</span> <span class="kw4">const</span> <span class="sy1">=</span> <span class="kw1">default</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<span class="kw4">auto</span><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">(</span><a href="../../../cpp/io/basic_ostream.html"><span class="kw1733">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> os, <span class="kw4">const</span> KeyT<span class="sy3">&amp;</span> k<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw1">return</span> os <span class="sy1">&lt;&lt;</span> k.<span class="me1">mI</span><span class="sy4">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw1">struct</span> ValueT
+<span class="br0">{</span>
+  <span class="kw4">const</span> <span class="kw4">char</span> <span class="sy2">*</span>mS<span class="sy4">;</span>
+  ValueT<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="sy2">*</span>s<span class="br0">)</span><span class="sy4">:</span> mS<span class="br0">(</span>s<span class="br0">)</span>
+  <span class="br0">{</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> __FUNCTION__ <span class="sy1">&lt;&lt;</span> <span class="st0">"(const char *s)<span class="es1">\n</span>"</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  ValueT<span class="br0">(</span><span class="kw4">const</span> ValueT<span class="sy3">&amp;</span> rhs<span class="br0">)</span><span class="sy4">:</span> mS<span class="br0">(</span>rhs.<span class="me1">mS</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> __FUNCTION__ <span class="sy1">&lt;&lt;</span> <span class="st0">"(const ValueT &amp;)<span class="es1">\n</span>"</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  ValueT<span class="br0">(</span>ValueT<span class="sy3">&amp;&amp;</span> rhs<span class="br0">)</span> <span class="kw1">noexcept</span> <span class="sy4">:</span> mS<span class="br0">(</span>rhs.<span class="me1">mS</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> __FUNCTION__ <span class="sy1">&lt;&lt;</span> <span class="st0">"(ValueT &amp;&amp;)<span class="es1">\n</span>"</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<span class="kw4">auto</span><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">(</span><a href="../../../cpp/io/basic_ostream.html"><span class="kw1733">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> os, <span class="kw4">const</span> ValueT<span class="sy3">&amp;</span> v<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw1">return</span> os <span class="sy1">&lt;&lt;</span> <span class="br0">(</span>v.<span class="me1">mS</span> <span class="sy4">?</span> v.<span class="me1">mS</span> <span class="sy4">:</span> <span class="st0">"nullptr"</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../../../cpp/container/map.html"><span class="kw1284">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span>KeyT, ValueT<span class="sy1">&gt;</span> kvMap<span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// uses pair's move constructor</span>
+    kvMap.<span class="me1">emplace</span><span class="br0">(</span><a href="../../../cpp/utility/pair/make_pair.html"><span class="kw1100">std::<span class="me2">make_pair</span></span></a><span class="br0">(</span>KeyT<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>, ValueT<span class="br0">(</span><span class="st0">"zero"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"<span class="es1">\n</span>"</span><span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// uses pair's converting move constructor</span>
+    kvMap.<span class="me1">emplace</span><span class="br0">(</span><a href="../../../cpp/utility/pair/make_pair.html"><span class="kw1100">std::<span class="me2">make_pair</span></span></a><span class="br0">(</span><span class="nu0">1</span>, <span class="st0">"one"</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"<span class="es1">\n</span>"</span><span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// uses pair's template constructor</span>
+    kvMap.<span class="me1">emplace</span><span class="br0">(</span><span class="nu0">2</span>, <span class="st0">"two"</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"<span class="es1">\n</span>"</span><span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// uses pair's piecewise constructor</span>
+    kvMap.<span class="me1">emplace</span><span class="br0">(</span><a href="../../../cpp/utility/piecewise_construct.html"><span class="kw1109">std::<span class="me2">piecewise_construct</span></span></a>,
+      <a href="../../../cpp/utility/tuple/forward_as_tuple.html"><span class="kw1117">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">(</span><span class="nu0">10</span>,<span class="nu0">11</span>,<span class="nu0">12</span><span class="br0">)</span>,
+      <a href="../../../cpp/utility/tuple/forward_as_tuple.html"><span class="kw1117">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">(</span><span class="st0">"three"</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"<span class="es1">\n</span>"</span><span class="sy4">;</span>
+&nbsp;
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">const</span> <span class="kw4">auto</span><span class="sy3">&amp;</span> p <span class="sy4">:</span> kvMap<span class="br0">)</span> <span class="br0">{</span>
+      <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> p.<span class="me1">first</span> <span class="sy1">&lt;&lt;</span> <span class="st0">" =&gt; "</span> <span class="sy1">&lt;&lt;</span> p.<span class="me1">second</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+</div>
+<p>The output is
+</p>
+<pre>ValueT::ValueT(const char *s)
+KeyT::KeyT(int)
+KeyT::KeyT(KeyT &amp;&amp;)
+ValueT::ValueT(ValueT &amp;&amp;)
+KeyT::KeyT(KeyT &amp;&amp;)
+ValueT::ValueT(ValueT &amp;&amp;)
+
+KeyT::KeyT(int)
+ValueT::ValueT(const char *s)
+
+KeyT::KeyT(int)
+ValueT::ValueT(const char *s)
+
+KeyT::KeyT(int, int, int)
+ValueT::ValueT(const char *s)
+
+0 =&gt; zero
+1 =&gt; one
+2 =&gt; two
+33 =&gt; three
+</pre>
+<p><a href="https://en.cppreference.com/mwiki/index.php?title=User:Peter_A._Schneider&amp;action=edit&amp;redlink=1" class="new" title="User:Peter A. Schneider (page does not exist)">Peter A. Schneider</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Peter_A._Schneider&amp;action=edit&amp;redlink=1" class="new" title="User talk:Peter A. Schneider (page does not exist)">talk</a>) 06:19, 3 August 2023 (PDT)
+</p>
+<dl><dd> Think it's a bit verbose tbh. How about
+</dd></dl>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;utility&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;map&gt;</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../../../cpp/container/map.html"><span class="kw1284">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../../cpp/string/basic_string.html"><span class="kw1233">std::<span class="me2">string</span></span></a>, <a href="../../../cpp/string/basic_string.html"><span class="kw1233">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m<span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// uses pair's move constructor</span>
+    <span class="co1">// the two strings are moved into a pair temporary, which is then moved into map storage</span>
+    m.<span class="me1">emplace</span><span class="br0">(</span><a href="../../../cpp/utility/pair/make_pair.html"><span class="kw1100">std::<span class="me2">make_pair</span></span></a><span class="br0">(</span><a href="../../../cpp/string/basic_string.html"><span class="kw1233">std::<span class="me2">string</span></span></a><span class="br0">(</span><span class="st0">"a"</span><span class="br0">)</span>, <a href="../../../cpp/string/basic_string.html"><span class="kw1233">std::<span class="me2">string</span></span></a><span class="br0">(</span><span class="st0">"a"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// uses pair's converting move constructor</span>
+    <span class="co1">// a pair temporary is made from these arguments, which is then used to construct a string pair in map storage</span>
+    m.<span class="me1">emplace</span><span class="br0">(</span><a href="../../../cpp/utility/pair/make_pair.html"><span class="kw1100">std::<span class="me2">make_pair</span></span></a><span class="br0">(</span><span class="st0">"b"</span>, <span class="st0">"abcd"</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// uses pair's template constructor</span>
+    <span class="co1">// these arguments are used to construct a string pair in map storage</span>
+    m.<span class="me1">emplace</span><span class="br0">(</span><span class="st0">"d"</span>, <span class="st0">"ddd"</span><span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// uses pair's piecewise constructor</span>
+    <span class="co1">// these tuples of arguments are used to construct a string pair in map storage</span>
+    m.<span class="me1">emplace</span><span class="br0">(</span><a href="../../../cpp/utility/piecewise_construct.html"><span class="kw1109">std::<span class="me2">piecewise_construct</span></span></a>,
+              <a href="../../../cpp/utility/tuple/forward_as_tuple.html"><span class="kw1117">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">(</span><span class="st0">"c"</span><span class="br0">)</span>,
+              <a href="../../../cpp/utility/tuple/forward_as_tuple.html"><span class="kw1117">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">(</span><span class="nu0">10</span>, <span class="st0">'c'</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// as of C++17, m.try_emplace("c", 10, 'c'); can be used</span>
+&nbsp;
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">const</span> <span class="kw4">auto</span> <span class="sy3">&amp;</span>p <span class="sy4">:</span> m<span class="br0">)</span> <span class="br0">{</span>
+        <a href="../../../cpp/io/cout.html"><span class="kw1762">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> p.<span class="me1">first</span> <span class="sy1">&lt;&lt;</span> <span class="st0">" =&gt; "</span> <span class="sy1">&lt;&lt;</span> p.<span class="me1">second</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">a =&gt; a
+b =&gt; abcd
+c =&gt; cccccccccc
+d =&gt; ddd</pre></div></div> 
+</div>
+<dl><dd> Although even this feels like we're just explaining how forwarding works. --<a href="../../../User%25253AYbab321.html" title="User:Ybab321">Ybab321</a> (<a href="../../../User_talk%25253AYbab321.html" title="User talk:Ybab321">talk</a>) 08:25, 3 August 2023 (PDT)
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 162/1000000
+Preprocessor generated node count: 537/1000000
+Post‐expand include size: 1740/4194304 bytes
+Template argument size: 11037/4194304 bytes
+Highest expansion depth: 9/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13735-0!*!0!!*!*!* and timestamp 20240518070325 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/container/map/emplace&amp;oldid=156215">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/container/map/emplace&amp;oldid=156215</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./emplace.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/container/map/emplace" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/container/map/emplace" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/container/map/emplace&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/container/map/emplace&amp;oldid=156215" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/container/map/emplace&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 3 August 2023, at 08:25.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,513 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 1.120 secs. -->
+	
+
+
+</body></html>

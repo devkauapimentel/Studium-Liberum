@@ -1,0 +1,291 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/language/copy_constructor.html --><head><meta charset="utf-8"><title>Talk:cpp/language/copy constructor</title><link rel="stylesheet" href="../../css_1.css" type="text/css"><link rel="stylesheet" href="../../css_2.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_1.js"></script><script type="text/javascript" src="../../js_2.js"></script><script type="text/javascript" src="../../js_5453.js"></script><script type="text/javascript" src="../../js_4.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_10.js"></script><script type="text/javascript" src="../../js_11.js"></script><script type="text/javascript" src="../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_language_copy_constructor skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Fcopy+constructor&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Flanguage%2Fcopy+constructor" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../cpp/language/copy_constructor.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./copy_constructor.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./copy_constructor.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./copy_constructor.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./copy_constructor.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/language/copy constructor</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../language.html" title="Talk:cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./copy_constructor.html#Implicitly-generated_copy_constructor_vs_member_without_destructor"><span class="tocnumber">1</span> <span class="toctext">Implicitly-generated copy constructor vs member without destructor</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./copy_constructor.html#Adding_explicit"><span class="tocnumber">2</span> <span class="toctext">Adding explicit</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./copy_constructor.html#Is_the_generation_of_implicitly-defined_copy_constructor_true.3F"><span class="tocnumber">3</span> <span class="toctext">Is the generation of implicitly-defined copy constructor true?</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./copy_constructor.html#When_can_copy_object_with_std::memmove"><span class="tocnumber">4</span> <span class="toctext">When can copy object with std::memmove</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="./copy_constructor.html#Syntax_section_is_misleading"><span class="tocnumber">5</span> <span class="toctext">Syntax section is misleading</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;action=edit&amp;section=1" title="Edit section: Implicitly-generated copy constructor vs member without destructor">edit</a>]</span> <span class="mw-headline" id="Implicitly-generated_copy_constructor_vs_member_without_destructor"> Implicitly-generated copy constructor vs member without destructor </span></h2>
+<p>I think the implicitly-generated copy constructor is deleted if any members of the type have inaccessible or deleted destructors. I haven't looked it up in the standard, but empirically it looks like they do: <a rel="nofollow" class="external free" href="https://godbolt.org/z/9KEvjn3re">https://godbolt.org/z/9KEvjn3re</a>. Is the convention here to verify in the standard before editing, or just go for it, or? <a href="https://en.cppreference.com/mwiki/index.php?title=User:Bsilver8192&amp;action=edit&amp;redlink=1" class="new" title="User:Bsilver8192 (page does not exist)">Bsilver8192</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Bsilver8192&amp;action=edit&amp;redlink=1" class="new" title="User talk:Bsilver8192 (page does not exist)">talk</a>) 02:16, 23 February 2022 (PST)
+</p>
+<dl><dd> indeed, the spec has it in <a rel="nofollow" class="external free" href="https://eel.is/c++draft/class.copy.ctor#10.3">https://eel.is/c++draft/class.copy.ctor#10.3</a>  "defaulted copy/​move constructor for a class X is defined as deleted if X has ... any potentially constructed subobject of a type with a destructor that is deleted or inaccessible from the defaulted constructor". Even going back to C++11, when it was first spelled out, it was "any direct or virtual base class or non-static data member of a type with a destructor that is deleted or inaccessible from the defaulted constructor". I added the missing words. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 07:31, 23 February 2022 (PST)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;action=edit&amp;section=2" title="Edit section: Adding explicit">edit</a>]</span> <span class="mw-headline" id="Adding_explicit"> Adding explicit </span></h2>
+<p>I word should be added about "explicit" copy/move constructor.  The "explicit" keyword acts a little differently on copy/move constructor as on conversion constructor.
+</p><p><br>
+<a href="https://en.cppreference.com/w/Special:Contributions/69.70.111.166" title="Special:Contributions/69.70.111.166">69.70.111.166</a> 13:40, 7 January 2016 (PST)
+</p>
+<dl><dd> <a href="../../cpp/language/explicit.html" title="cpp/language/explicit">cpp/language/explicit</a> may be the better location (it already describes the special case of explicit default constructor). What is the difference, though? The semantics are the same as for any other constructor: copy-initialization ignores it, direct-initialization finds it. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 14:35, 7 January 2016 (PST)
+</dd></dl>
+<p>The generation of the implicitly-defined copy constructor is deprecated if T has a user-defined destructor or user-defined copy assignment operator.
+(since C++11)
+</p>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;action=edit&amp;section=3" title="Edit section: Is the generation of implicitly-defined copy constructor true?">edit</a>]</span> <span class="mw-headline" id="Is_the_generation_of_implicitly-defined_copy_constructor_true.3F"> Is the generation of implicitly-defined copy constructor true? </span></h2>
+<p>The generation of the implicitly-defined copy constructor is deprecated if T has a user-defined destructor or user-defined copy assignment operator.
+(since C++11)
+</p><p>If it is true, there will be more code to add into interface class to enable derived class generate copy code..
+</p>
+<dl><dd> could you give an example of what you're describing? When this deprecated feature is removed from the language (after popular compilers issue warnings, <a rel="nofollow" class="external text" href="http://coliru.stacked-crooked.com/a/20413c0c534e0e7e">such as this one</a> for a while), code that follows <a href="../../cpp/language/rule_of_three.html" title="cpp/language/rule of three">rule of 3 (or zero)</a> will not have to change. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 07:44, 16 March 2016 (PDT)
+</dd></dl>
+<p><br>
+The section about trivial copy constructors seems mutually exclusive.   It says that the copy constructor cannot be user defined, but later it says "A trivial copy constructor is a constructor that creates a bytewise copy of the object representation of the argument, and performs no other action."   Could a user-provided copy constructor not create a bytewise copy of the object?
+</p>
+<dl><dd> a user-defined copy constructor can behave the same way as a trivial copy constructor, but it wouldn't be classified as "trivial" for <span class="t-lc"><a href="../../cpp/types/is_copy_constructible.html" title="cpp/types/is copy constructible">std::is_trivially_copy_constructible</a></span> and other parts of the language where that matters. Perhaps it could be improved to say that why "trivial" is an important word of power. --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 08:09, 21 September 2016 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;action=edit&amp;section=4" title="Edit section: When can copy object with std::memmove">edit</a>]</span> <span class="mw-headline" id="When_can_copy_object_with_std::memmove"> When can copy object with std::memmove </span></h2>
+<p>The standard 3.9/3 requires the class to be TriviallyCopyable in order to allow copying by std::memmove/memcpy. TriviallyCopyable in the standard at 9/6, requires all copy and move ctors, and assignments and dtor must be trivial (and more requirements).<br>
+The article currently says: "Objects with trivial copy constructors can be copied by copying their object representations manually, e.g. with std::memmove".<br>
+I think this is incorrect. This seems to require only a trivial copy ctor, or some trivial copy ctors, without regard to move ctors and other requirements of TriviallyCopyable. Note that the corresponding paragraph in the 'move constructor' article is different, and does not claim that.<br>
+Now it does seem intuitive that if a class has one such trivial copy operation then memcpy should work, but it's not what the standard says (at least in 3.9/3).--<a href="https://en.cppreference.com/mwiki/index.php?title=User:Itaj&amp;action=edit&amp;redlink=1" class="new" title="User:Itaj (page does not exist)">Itaj</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Itaj&amp;action=edit&amp;redlink=1" class="new" title="User talk:Itaj (page does not exist)">talk</a>) 18:49, 5 November 2016 (PDT)
+</p>
+<dl><dd> I think the intent of the note was that trivial copy ctor is required (but not necessarily sufficient). Replaced with a link to <a href="../../cpp/named_req/TriviallyCopyable.html" title="cpp/named req/TriviallyCopyable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">TriviallyCopyable</span></a> --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 11:23, 7 November 2016 (PST)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;action=edit&amp;section=5" title="Edit section: Syntax section is misleading">edit</a>]</span> <span class="mw-headline" id="Syntax_section_is_misleading"> Syntax section is misleading </span></h2>
+<p>The <b>Syntax</b> section suggests there are 3 ways to declare a copy constructor, all of which require an argument of type "<b>const T&amp;</b>". The intro just above explains there are many more possibilities, but reads as a fineprint in comparison to the fancy formatting. Thus to me the <b>Syntax</b> section seems misleadingly incomplete. --<a href="https://en.cppreference.com/mwiki/index.php?title=User:Rustyx&amp;action=edit&amp;redlink=1" class="new" title="User:Rustyx (page does not exist)">Rustyx</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Rustyx&amp;action=edit&amp;redlink=1" class="new" title="User talk:Rustyx (page does not exist)">talk</a>) 14:17, 8 August 2020 (PDT)
+</p>
+<dl><dd> much like "syntax" in <a href="../../cpp/language/aggregate_initialization.html" title="cpp/language/aggregate initialization">cpp/language/aggregate_initialization</a> and some other cpp/language pages, these are some of the possible syntax examples. I think we haven't made up our collective minds on how to better describe such sections. "Common syntax"? --<a href="../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 10:10, 9 August 2020 (PDT)
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 82/1000000
+Preprocessor generated node count: 377/1000000
+Post‐expand include size: 769/4194304 bytes
+Template argument size: 155/4194304 bytes
+Highest expansion depth: 10/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:14678-0!*!0!!en!*!* and timestamp 20241022153123 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;oldid=138360">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;oldid=138360</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./copy_constructor.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/language/copy_constructor" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/language/copy_constructor" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;oldid=138360" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/copy_constructor&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 23 February 2022, at 08:31.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.102 secs. -->
+	
+
+
+</body></html>

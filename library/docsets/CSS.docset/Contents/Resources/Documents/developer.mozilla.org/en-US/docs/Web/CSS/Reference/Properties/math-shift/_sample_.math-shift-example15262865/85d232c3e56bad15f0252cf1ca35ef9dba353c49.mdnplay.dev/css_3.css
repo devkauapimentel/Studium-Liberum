@@ -1,0 +1,5 @@
+
+math { font-size: 64pt; math-shift: normal; }
+.compact-shift { math-shift: compact; }
+
+button.copy {display:none !important}

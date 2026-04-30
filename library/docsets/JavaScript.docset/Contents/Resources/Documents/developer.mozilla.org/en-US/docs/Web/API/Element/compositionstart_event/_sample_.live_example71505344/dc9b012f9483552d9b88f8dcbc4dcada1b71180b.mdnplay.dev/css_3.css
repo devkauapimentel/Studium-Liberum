@@ -1,0 +1,10 @@
+
+body { padding: 0.2rem; display: grid; grid-template-areas: "control log"; }
+.control { grid-row-start: control; grid-column-start: control; grid-row-end: control; grid-column-end: control; }
+.event-log { grid-row-start: log; grid-column-start: log; grid-row-end: log; grid-column-end: log; }
+.event-log-contents { resize: none; }
+label, button { display: block; }
+input[type="text"] { margin: 0.5rem 0px; }
+kbd { border-radius: 3px; padding: 1px 2px 0px; border: 1px solid black; }
+
+button.copy {display:none !important}

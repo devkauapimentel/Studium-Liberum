@@ -1,0 +1,11 @@
+
+html { font-family: sans-serif; }
+div:first-of-type { display: flex; align-items: flex-start; margin-bottom: 5px; }
+label { margin-right: 15px; line-height: 32px; }
+input { appearance: none; border-radius: 50%; width: 16px; height: 16px; border: 2px solid rgb(153, 153, 153); transition: 0.2s linear; margin-right: 5px; position: relative; top: 4px; }
+input:checked { border: 6px solid black; }
+button, legend { color: white; background-color: black; padding: 5px 10px; border-radius: 0px; border: 0px; font-size: 14px; }
+button:hover, button:focus { color: rgb(153, 153, 153); }
+button:active { background-color: white; color: black; outline: 1px solid black; }
+
+button.copy {display:none !important}

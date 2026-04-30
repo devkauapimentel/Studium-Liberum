@@ -1,0 +1,5 @@
+
+img { height: 100px; width: 100px; margin: 0px 1rem; border: 1px solid black; }
+#reload { display: block; margin: 0px 1rem; }
+
+button.copy {display:none !important}

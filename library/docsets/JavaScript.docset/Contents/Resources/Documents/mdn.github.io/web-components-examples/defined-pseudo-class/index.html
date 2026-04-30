@@ -1,0 +1,78 @@
+<html><!-- Mirrored from mdn.github.io/web-components-examples/defined-pseudo-class/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 23:12:13 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <title>:defined demo</title>
+    <style>
+      custom-element {
+        display: block;
+        border: 5px dashed grey;
+        border-radius: 1rem;
+        height: 100px;
+        width: 400px;
+        padding: 1rem;
+        position: relative;
+        user-select: none;
+      }
+
+      code {
+        background: #ccc;
+      }
+
+      #btn {
+        margin-top: 1rem;
+        cursor: pointer;
+      }
+
+      custom-element:not(:defined) {
+        border-color: grey;
+        color: grey;
+      }
+
+      custom-element:defined {
+        background-color: wheat;
+        border-color: black;
+        color: black;
+      }
+
+      /* show loading message */
+      custom-element:not(:defined)::before {
+        content: "Loading...";
+        position: absolute;
+        inset: 0 0 0 0;
+        align-content: center;
+        text-align: center;
+        font-size: 2rem;
+        background-color: white;
+        border-radius: 1rem;
+      }
+
+      /* remove the loading message */
+      custom-element:defined::before {
+        content: "";
+      }
+    </style>
+  </head>
+  <body>
+
+    <custom-element>
+      <p>
+        Loaded content: Lorem ipsum tel sed tellus eiusmod tellus. Aenean.
+        Semper dolor sit nisi. Elit porttitor nisi sit vivamus.
+      </p>
+    </custom-element>
+    <button id="btn">define the <code>&lt;custom-element&gt;</code></button>
+
+    <script>
+      const btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", () => {
+        customElements.define("custom-element", class extends HTMLElement {});
+        btn.remove();
+      });
+    </script>
+
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/web-components-examples/defined-pseudo-class/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 23:12:13 GMT --></html>

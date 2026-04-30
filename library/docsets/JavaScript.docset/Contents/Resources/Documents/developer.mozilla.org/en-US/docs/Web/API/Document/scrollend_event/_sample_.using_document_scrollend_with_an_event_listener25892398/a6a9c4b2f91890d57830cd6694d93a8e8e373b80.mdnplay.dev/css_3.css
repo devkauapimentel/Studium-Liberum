@@ -1,0 +1,7 @@
+
+* { margin: 10px; }
+.box-wrapper { width: 900px; border: 4px dotted; }
+.box { height: 100px; width: 100px; display: block; border: 4px dotted; border-radius: 10px; }
+#output { text-align: center; font-size: 1.2em; position: sticky; bottom: 0px; }
+
+button.copy {display:none !important}

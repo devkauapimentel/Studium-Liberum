@@ -1,0 +1,47 @@
+<html>
+  <!-- Online page at https://6a2b60db0fd330cfd96d5ca7fcc0584277a8a004.mdnplay.dev/en-US/docs/Web/API/Node/isDefaultNamespace/runner.html?uuid=6a2b60db0fd330cfd96d5ca7fcc0584277a8a004&state=pVTLbtswEPwVggUCGVBFt73Ez0sa9AE7Aeo0CFD1oIi0xJYiXYqObAT%2B9y5JyVZQWw7QkxbcGY52dpfPODeFwEM8pvwJpSIpy0mMc04pkzGexhIhm5nesdKgz3fzGWKCFUyaMbHHLl8%2BZS6A0LCN8djF%2FacD1B07LGnAloU2hZDlcCO4%2FG1VjVkNCamqKqo%2BREpn5N1gMCAuHWPEKWAqbvK39UmnKLJI5JDH9YvE5J41h6hdmMvEsqkQIpM8CuZpJmcJ3SvrOnKJ6ThVlE1lUrBylaTs%2B7cvY%2BKO4A%2FyI8gLYUagcZGZ0Xkg%2FPirgW1jX0eyNR9HQqhr7w61j82jolsLc19rVuMRDnFaljBRkZ8i9GwJlJcrkWyHSCrJRrHcOeAvi0uVhCbYMbwWBk0QVenaNiL6s2Z6u4C2pEbpIMZgVYx7QPYMqPMMARD%2FEh5mYEoX6017xg5s69AZPQvxlIbk7OmiOEDDWSqNAk9ca47UEv2w3h3bjPf9fp%2B4LpMYh6dQD%2FOZ3aFLsp%2FJDrBfNtuHDpDTdb6eucfb1wW6JHbxiN%2B%2BPbQO5FoICH72%2FPh4U7Sq2l6mmiWGXfu1tV5qbyTytkfJasUkvcq5oAFQfQqCF4nTt1G4rRfZp%2BNKSWOflInfiK%2BL25uoNJrLjC%2B3AbTKX91qHxOue%2FVQh%2FXohe0RDJuJamr0VSrBIqGygInQDkEIV0W8%2FMiWyVqYm6aNTtSr%2FmdJaOEKCZpn4bRc6CFeddesMLwJBYMtFjzLDd79BQ%3D%3D&code=48344388& -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <link rel="stylesheet" href="../../../../../../css_1.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_2.css" type="text/css">
+    <link rel="stylesheet" href="../../../../../../css_3.css" type="text/css">
+
+  </head>
+<body>
+        <div class="hidden">
+  <div>Test HTML element</div>
+  <svg>
+    <text>Test SVG element</text>
+  </svg>
+  <svg xmlns:xlink="http://www.w3.org/1999/xlink" id="with-xlink">
+    <text>Test SVG element with xlink</text>
+  </svg>
+  <math>Test MathML element</math>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th><code>namespaceURI</code></th>
+      <th><code>&lt;div&gt;</code></th>
+      <th><code>&lt;svg&gt;</code></th>
+      <th><code>&lt;svg xmlns:xlink&gt;</code></th>
+      <th><code>&lt;math&gt;</code></th>
+    </tr>
+  </thead>
+  <tbody><tr><td>"http://www.w3.org/2000/xmlns/"</td><td>false</td><td>false</td><td>false</td><td>false</td></tr><tr><td>"http://www.w3.org/XML/1998/namespace"</td><td>false</td><td>false</td><td>false</td><td>false</td></tr><tr><td>"http://www.w3.org/1999/xhtml"</td><td>true</td><td>false</td><td>false</td><td>false</td></tr><tr><td>"http://www.w3.org/2000/svg"</td><td>false</td><td>true</td><td>true</td><td>false</td></tr><tr><td>"http://www.w3.org/1999/xlink"</td><td>false</td><td>false</td><td>false</td><td>false</td></tr><tr><td>"http://www.w3.org/1998/Math/MathML"</td><td>false</td><td>false</td><td>false</td><td>true</td></tr><tr><td>""</td><td>false</td><td>false</td><td>false</td><td>false</td></tr><tr><td>null</td><td>false</td><td>false</td><td>false</td><td>false</td></tr></tbody>
+</table>
+
+        
+        
+      
+    
+      <script type='text/javascript' src='../../../../../../js_1.js'></script>
+    <script type='text/javascript' src='../../../../../../js_2.js'></script>
+    <script type='text/javascript' src='../../../../../../js_3.js'></script>
+</body>
+</html>

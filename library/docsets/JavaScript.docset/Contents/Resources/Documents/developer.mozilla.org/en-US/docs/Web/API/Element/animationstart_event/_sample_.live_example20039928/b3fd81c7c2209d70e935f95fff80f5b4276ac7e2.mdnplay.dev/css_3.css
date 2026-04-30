@@ -1,0 +1,10 @@
+
+.container { height: 3rem; }
+.event-log { width: 25rem; height: 2rem; border: 1px solid black; margin: 0.2rem; padding: 0.2rem; }
+.animation.active { animation-duration: 2s; animation-name: slide-in; animation-iteration-count: 2; }
+@keyframes slide-in { 
+  0% { transform: translateX(100%) scaleX(3); }
+  100% { transform: translateX(0px) scaleX(1); }
+}
+
+button.copy {display:none !important}

@@ -1,0 +1,4 @@
+
+.new-entry::after { content: " New!"; color: red; }
+
+button.copy {display:none !important}

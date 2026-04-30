@@ -1,0 +1,603 @@
+<html><!-- Online page at https://en.cppreference.com/w/ko%253A/cpp/language.html --><head><meta charset="utf-8"><title>C++ 언어</title><link rel="stylesheet" href="../../css_19.css" type="text/css"><link rel="stylesheet" href="../../css_20.css" type="text/css"><link rel="stylesheet" href="../../css_3.css" type="text/css"><link rel="stylesheet" href="../../css_5.css" type="text/css"><script type="text/javascript" src="../../js_7460.js"></script><script type="text/javascript" src="../../js_7467.js"></script><script type="text/javascript" src="../../js_7462.js"></script><script type="text/javascript" src="../../js_5.js"></script><script type="text/javascript" src="../../js_6.js"></script><script type="text/javascript" src="../../js_7.js"></script><script type="text/javascript" src="../../js_8.js"></script><script type="text/javascript" src="../../js_9.js"></script><script type="text/javascript" src="../../js_7463.js"></script><script type="text/javascript" src="../../js_7464.js"></script><script type="text/javascript" src="../../js_7465.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://ko.cppreference.com/">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://ko.cppreference.com/mwiki/index.php?title=%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%EB%A1%9C%EA%B7%B8%EC%9D%B8&amp;returnto=cpp%2Flanguage&amp;type=signup">계정 만들기</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://ko.cppreference.com/mwiki/index.php?title=%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%EB%A1%9C%EA%B7%B8%EC%9D%B8&amp;returnto=cpp%2Flanguage" title="꼭 로그인해야 하는 것은 아니지만, 로그인을 권장합니다. [o]" accesskey="o">로그인</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>이름공간</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="./language.html" title="문서 내용을 봅니다. [c]" accesskey="c">문서</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="https://ko.cppreference.com/mwiki/index.php?title=%ED%86%A0%EB%A1%A0:cpp/language&amp;action=edit&amp;redlink=1" title="문서의 내용에 대한 토론 문서 [t]" accesskey="t">토론</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>변수</span><a href="./language.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>보기</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./language.html">보기</a></span></li>
+					<li id="ca-edit"><span><a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language&amp;action=edit" title="문서를 편집할 수 있습니다. 저장하기 전에 미리 보기를 해 주세요. [e]" accesskey="e">편집</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language&amp;action=history" title="문서의 과거 판 [h]" accesskey="h">역사</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>행위</span><a href="./language.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">C++ 언어</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="ko" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/compiler_support" title="cpp/compiler support"> 컴파일러 지원
+</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/freestanding" title="cpp/freestanding"> Freestanding and hosted</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> 언어</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/header" title="cpp/header"> 표준 라이브러리 헤더</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/named_req" title="cpp/named req"> 명명된 요구사항 </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/feature_test" title="cpp/feature test"> Feature test macros </a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/utility#Language_support" title="cpp/utility"> 언어 지원 라이브러리</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/concept" title="cpp/concept"> 개념</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/error" title="cpp/error"> Diagnostics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/utility" title="cpp/utility"> 유틸리티 라이브러리</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/string" title="cpp/string"> 문자열 라이브러리</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/container" title="cpp/container"> 컨테이너 라이브러리</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/iterator" title="cpp/iterator"> 반복자 라이브러리</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/ranges" title="cpp/ranges"> 범위 라이브러리</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/algorithm" title="cpp/algorithm"> 알고리즘 라이브러리</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/numeric" title="cpp/numeric"> 수치 라이브러리</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/locale" title="cpp/locale"> 지역화 라이브러리</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/io" title="cpp/io"> 입/출력 라이브러리</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/filesystem" title="cpp/filesystem"> 파일시스템 라이브러리</a> <span class="t-mark">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/regex" title="cpp/regex"> 정규 표현식 라이브러리</a> <span class="t-mark">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/atomic" title="cpp/atomic"> 아토믹 연산 라이브러리</a> <span class="t-mark">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/thread" title="cpp/thread"> 쓰레드 지원 라이브러리</a> <span class="t-mark">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/experimental" title="cpp/experimental"> Technical specifications</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/symbol_index&amp;action=edit&amp;redlink=1" class="new" title="cpp/symbol index (없는 문서)"> Symbols index</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/links/libs" title="cpp/links/libs"> 외부 라이브러리들</a> </td></tr>
+</tbody></table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://ko.cppreference.com/mwiki/index.php?title=%ED%8B%80:cpp/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div><div class="t-navbar-head"><strong class="selflink"> C++ 언어</strong><div class="t-navbar-menu"><div><div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h1"><td colspan="5"> General topics</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/preprocessor" title="cpp/preprocessor"> Preprocessor</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/comment" title="cpp/comment"> Comments</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/keyword" title="cpp/keyword"> Keywords</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/ascii" title="cpp/language/ascii"> ASCII chart</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/escape" title="cpp/language/escape"> Escape sequences</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/history&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/history (없는 문서)"> History of C++</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Flow control</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Conditional execution statements</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/if" title="cpp/language/if"> <code>if</code> statement</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/switch" title="cpp/language/switch"> <code>switch</code> statement</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Iteration statements</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/for&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/for (없는 문서)"> <code>for</code> loop</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/range-for&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/range-for (없는 문서)"> range-<code>for</code> loop</a> <span class="t-mark">(C++11)</span></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/while&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/while (없는 문서)"> <code>while</code> loop</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/do&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/do (없는 문서)"> <code>do-while</code> loop</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Jump statements </td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/continue&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/continue (없는 문서)"> <code>continue</code> statement</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/break&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/break (없는 문서)"> <code>break</code> statement</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/goto&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/goto (없는 문서)"> <code>goto</code> statement</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/return&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/return (없는 문서)"> <code>return</code> statement</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/function&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/function (없는 문서)"> function declaration</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/lambda&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/lambda (없는 문서)"> lambda function declaration</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/function_template&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/function template (없는 문서)"> function template </a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/inline&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/inline (없는 문서)"> inline specifier</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/except_spec&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/except spec (없는 문서)"> exception specifications</a> <span class="t-mark">(deprecated)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/noexcept_spec" title="cpp/language/noexcept spec"> noexcept specifier</a> <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Exceptions</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/throw&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/throw (없는 문서)"> throw expression</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/try_catch&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/try catch (없는 문서)"> try-catch block</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Namespaces</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/namespace&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/namespace (없는 문서)"> namespace declaration</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/namespace_alias&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/namespace alias (없는 문서)"> namespace aliases</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Types</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/types" title="cpp/language/types"> fundamental types</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/class" title="cpp/language/class"> compound types</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/enum&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/enum (없는 문서)"> enumeration types</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/union&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/union (없는 문서)"> union types</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/function&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/function (없는 문서)"> function types</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/decltype&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/decltype (없는 문서)"> <code>decltype</code> specifier</a> <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Specifiers</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/cv&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/cv (없는 문서)"> cv specifiers</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/storage_duration&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/storage duration (없는 문서)"> storage duration specifiers</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/constexpr (없는 문서)"> constexpr specifier</a> <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/auto&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/auto (없는 문서)"> auto specifier</a> <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/alignas&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/alignas (없는 문서)"> alignas specifier</a> <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Initialization</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/default_initialization" title="cpp/language/default initialization"> default initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/value_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/value initialization (없는 문서)"> value initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/zero_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/zero initialization (없는 문서)"> zero initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/copy_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/copy initialization (없는 문서)"> copy initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/direct_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/direct initialization (없는 문서)"> direct initialization</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/aggregate_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/aggregate initialization (없는 문서)"> aggregate initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/list_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/list initialization (없는 문서)"> list initialization</a> <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/constant_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/constant initialization (없는 문서)">constant initialization</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/reference_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/reference initialization (없는 문서)">reference initialization</a></td></tr>
+</tbody></table></div></td></tr>
+</tbody></table></div>
+</div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv-h2"><td colspan="5"> Literals</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/integer_literal&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/integer literal (없는 문서)"> integer literals</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/character_literal&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/character literal (없는 문서)"> character literals</a></td></tr> 
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/floating_literal&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/floating literal (없는 문서)"> floating-point literals</a></td></tr>  
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/string_literal&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/string literal (없는 문서)"> string literals</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/bool_literal" title="cpp/language/bool literal"> boolean literals</a></td></tr>   
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/nullptr" title="cpp/language/nullptr"> nullptr</a> <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/user_literal&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/user literal (없는 문서)"> user-defined</a> <span class="t-mark">(C++11)</span></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Expressions</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/value_category&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/value category (없는 문서)"> value categories</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/eval_order&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/eval order (없는 문서)"> order of evaluation</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/operators" title="cpp/language/operators"> operators</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/operator_precedence" title="cpp/language/operator precedence"> operator precedence</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/operator_alternative&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/operator alternative (없는 문서)"> alternative representations</a></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Utilities</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Types</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/typedef&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/typedef (없는 문서)"> <code>typedef</code> declaration</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/type_alias&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/type alias (없는 문서)"> type alias declaration</a> <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/attributes&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/attributes (없는 문서)"> attributes</a> <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Casts</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/implicit_cast&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/implicit cast (없는 문서)"> implicit conversions</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/const_cast&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/const cast (없는 문서)"> <code>const_cast</code> conversion</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/static_cast&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/static cast (없는 문서)"> <code>static_cast</code> conversion</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/dynamic_cast&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/dynamic cast (없는 문서)"> <code>dynamic_cast</code> conversion</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/reinterpret_cast&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/reinterpret cast (없는 문서)"> <code>reinterpret_cast</code> conversion</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/explicit_cast&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/explicit cast (없는 문서)"> C-style and functional cast</a></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Memory allocation</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/new&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/new (없는 문서)"> <code>new</code> expression</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/delete&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/delete (없는 문서)"> <code>delete</code> expression</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/class" title="cpp/language/class"> class declaration</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/this&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/this (없는 문서)"> <code>this</code> pointer</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/access&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/access (없는 문서)"> access specifiers</a></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/friend&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/friend (없는 문서)"> friend specifier</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/initializer_list&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/initializer list (없는 문서)"> initializer lists</a> </td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Class-specific function properties</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/virtual&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/virtual (없는 문서)"> virtual function</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/override&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/override (없는 문서)"> override specifier</a>  <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/final&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/final (없는 문서)"> final specifier</a>  <span class="t-mark">(C++11)</span></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/explicit&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/explicit (없는 문서)"> explicit</a>  <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/static" title="cpp/language/static"> static</a> </td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Special member functions</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/default_constructor&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/default constructor (없는 문서)"> default constructor</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/copy_constructor&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/copy constructor (없는 문서)"> copy constructor</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/move_constructor&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/move constructor (없는 문서)"> move constructor</a> <span class="t-mark">(C++11)</span></td></tr>
+</tbody></table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tbody><tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/as_operator&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/as operator (없는 문서)"> copy assignment</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/move_operator&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/move operator (없는 문서)"> move assignment</a> <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/destructor&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/destructor (없는 문서)"> destructor</a></td></tr>
+</tbody></table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5">Templates </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/class_template&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/class template (없는 문서)"> class template </a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/function_template&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/function template (없는 문서)"> function template </a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/template_specialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/template specialization (없는 문서)"> template specialization</a></td></tr>   
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/w/cpp/language/parameter_pack" title="cpp/language/parameter pack"> parameter packs</a> <span class="t-mark">(C++11)</span></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Miscellaneous </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/asm&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/asm (없는 문서)"> Inline assembly</a></td></tr>
+</tbody></table></div>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://ko.cppreference.com/mwiki/index.php?title=%ED%8B%80:cpp/language/navbar_content&amp;action=edit">[edit]</a></span></div></div></div></div><div class="t-navbar-sep">&nbsp;</div></div>
+<p>C++ 언어의 구문에 대한 간단한 설명입니다.
+</p>
+<table cellpadding="5">
+
+<tbody><tr>
+<td>
+<p><b><a href="https://ko.cppreference.com/w/cpp/language/basic_concepts" title="cpp/language/basic concepts"> 기본 개념</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="https://ko.cppreference.com/w/cpp/comment" title="cpp/comment"> 주석</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/ascii" title="cpp/language/ascii"> ASCII 문자표</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/identifiers" title="cpp/language/identifiers"> 이름 및 식별자</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/type" title="cpp/language/type"> 타입</a> - 
+<a href="https://ko.cppreference.com/w/cpp/language/types" title="cpp/language/types"> 기본 타입</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/object&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/object (없는 문서)"> 개체</a> - 
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/scope&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/scope (없는 문서)"> 범위</a> - 
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/lifetime&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/lifetime (없는 문서)"> 수명</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/definition" title="cpp/language/definition"> 정의 및 ODR</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/lookup" title="cpp/language/lookup"> 이름 검색</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/qualified_lookup" title="cpp/language/qualified lookup"> 한정된 이름 검색</a> - <a href="https://ko.cppreference.com/w/cpp/language/unqualified_lookup" title="cpp/language/unqualified lookup"> 한정되지 않은 이름 검색</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/memory_model&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/memory model (없는 문서)"> 메모리 모형과 데이터 경쟁</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/translation_phases" title="cpp/language/translation phases"> 변환의 단계</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/main_function" title="cpp/language/main function"> 메인 함수</a><br>
+</p>
+</div>
+<p><b><a href="https://ko.cppreference.com/w/cpp/keyword" title="cpp/keyword"> C++ 키워드</a></b><br>
+<br>
+<b><a href="https://ko.cppreference.com/w/cpp/preprocessor" title="cpp/preprocessor"> 전처리기</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="https://ko.cppreference.com/w/cpp/preprocessor/conditional" title="cpp/preprocessor/conditional"> #if - #ifdef - #ifndef</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/preprocessor/replace&amp;action=edit&amp;redlink=1" class="new" title="cpp/preprocessor/replace (없는 문서)"> #define</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/preprocessor/include&amp;action=edit&amp;redlink=1" class="new" title="cpp/preprocessor/include (없는 문서)"> #include</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/preprocessor/warning&amp;action=edit&amp;redlink=1" class="new" title="cpp/preprocessor/warning (없는 문서)"> #warning</a> - 
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/preprocessor/error&amp;action=edit&amp;redlink=1" class="new" title="cpp/preprocessor/error (없는 문서)"> #error</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/preprocessor/impl&amp;action=edit&amp;redlink=1" class="new" title="cpp/preprocessor/impl (없는 문서)"> #pragma</a> -
+<a href="https://ko.cppreference.com/w/cpp/preprocessor/line" title="cpp/preprocessor/line"> #line</a><br>
+</p>
+</div>
+<p><b><a href="https://ko.cppreference.com/w/cpp/language/expressions" title="cpp/language/expressions"> 식</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="https://ko.cppreference.com/w/cpp/language/expressions#Operators" title="cpp/language/expressions">연산자</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/expressions#Conversions" title="cpp/language/expressions">변환</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/expressions#Literals" title="cpp/language/expressions">리터럴</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/identifiers" title="cpp/language/identifiers">식별자</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/operator_precedence" title="cpp/language/operator precedence">연산자 우선순위</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/value_category&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/value category (없는 문서)"> 값 종류</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/eval_order&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/eval order (없는 문서)"> 연산 순서와 시퀀싱</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/sizeof" title="cpp/language/sizeof"> sizeof</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/alignof&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/alignof (없는 문서)"> alignof</a> 
+- <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/typeid&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/typeid (없는 문서)"> typeid</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/new&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/new (없는 문서)">new</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/delete&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/delete (없는 문서)">delete</a><br>
+</p>
+</div>
+<p><b><a href="https://ko.cppreference.com/w/cpp/language/statements" title="cpp/language/statements"> 명령문</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="https://ko.cppreference.com/w/cpp/language/if" title="cpp/language/if"> if</a> - <a href="https://ko.cppreference.com/w/cpp/language/switch" title="cpp/language/switch"> switch</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/for&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/for (없는 문서)"> for</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/range-for&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/range-for (없는 문서)"> range-for</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/while&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/while (없는 문서)"> while</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/do&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/do (없는 문서)"> do-while</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/continue&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/continue (없는 문서)"> continue</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/break&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/break (없는 문서)"> break</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/goto&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/goto (없는 문서)"> goto</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/return&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/return (없는 문서)"> return</a><br>
+</p>
+</div>
+</td>
+<td>
+<p><b><a href="https://ko.cppreference.com/w/cpp/language/declarations" title="cpp/language/declarations"> 선언</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/namespace&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/namespace (없는 문서)"> 네임스페이스 정의</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/namespace_alias&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/namespace alias (없는 문서)"> 네임스페이스 이름</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/reference&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/reference (없는 문서)"> lvalue 와rvalue 참조</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/pointer (없는 문서)"> 포인터</a> -
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/array&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/array (없는 문서)"> 배열</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/enum&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/enum (없는 문서)"> 열거형과 열거자</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/storage_duration&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/storage duration (없는 문서)"> 저장소  기간과 연결</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/cv&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/cv (없는 문서)"> cv-specifiers</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/constexpr (없는 문서)"> constexpr</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/decltype&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/decltype (없는 문서)"> decltype</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/auto&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/auto (없는 문서)"> auto</a> <br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/alignas&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/alignas (없는 문서)"> alignas</a> <br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/typedef&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/typedef (없는 문서)"> typedef</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/type_alias&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/type alias (없는 문서)"> 타입 이름</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/attributes&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/attributes (없는 문서)"> attributes</a> <br>
+</p>
+</div>
+<p><b><a href="https://ko.cppreference.com/w/cpp/language/initialization" title="cpp/language/initialization"> 초기화</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="https://ko.cppreference.com/w/cpp/language/default_initialization" title="cpp/language/default initialization"> 기본 초기화</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/value_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/value initialization (없는 문서)"> 값 초기화</a><br> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/copy_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/copy initialization (없는 문서)"> 복사 초기화</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/direct_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/direct initialization (없는 문서)"> direct 초기화</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/aggregate_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/aggregate initialization (없는 문서)"> 집합 초기화</a><br><a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/list_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/list initialization (없는 문서)"> 리스트 초기화</a><br> <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/reference_initialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/reference initialization (없는 문서)"> 참조 초기화</a><br>
+</p>
+</div>
+<p><b><a href="https://ko.cppreference.com/w/cpp/language/functions" title="cpp/language/functions"> 함수</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/function&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/function (없는 문서)"> 함수 정의</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/default_arguments&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/default arguments (없는 문서)"> 기본 인자</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/variadic arguments (없는 문서)"> 가변 인자</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/lambda&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/lambda (없는 문서)"> 람다식</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/inline&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/inline (없는 문서)"> inline 식별자</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/adl&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/adl (없는 문서)"> 인자 기반 검색</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/overload_resolution&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/overload resolution (없는 문서)"> 오버로드 결정</a><br>
+</p>
+</div>
+<p><b><a href="https://ko.cppreference.com/w/cpp/language/exceptions" title="cpp/language/exceptions"> 예외</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/throw&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/throw (없는 문서)"> throw</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/try_catch&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/try catch (없는 문서)"> try-catch</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/noexcept_spec" title="cpp/language/noexcept spec"> noexcept 식별자</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/noexcept&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/noexcept (없는 문서)"> noexcept 연산자</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/except_spec&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/except spec (없는 문서)"> 예외 명세</a><br>
+</p>
+</div>
+</td>
+<td>
+<p><b><a href="https://ko.cppreference.com/w/cpp/language/classes" title="cpp/language/classes"> 클래스</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="https://ko.cppreference.com/w/cpp/language/class" title="cpp/language/class"> class 타입</a> -
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/union&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/union (없는 문서)"> union 타입</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/data_members" title="cpp/language/data members">데이터 멤버</a> -
+<a href="https://ko.cppreference.com/w/cpp/language/member_functions" title="cpp/language/member functions">멤버 함수</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/static" title="cpp/language/static">정적 멤버</a> -
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/nested_types&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/nested types (없는 문서)">nested types</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/derived_class&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/derived class (없는 문서)">derived class</a> -
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/using_declaration&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/using declaration (없는 문서)">using-declaration</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/virtual&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/virtual (없는 문서)">virtual function</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/abstract_class&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/abstract class (없는 문서)">abstract class</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/bit_field&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/bit field (없는 문서)">bit fields</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/this&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/this (없는 문서)"> this</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/access&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/access (없는 문서)"> 접근 식별자</a> <br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/friend&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/friend (없는 문서)"> friend 식별자</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/default_constructor&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/default constructor (없는 문서)">기본 생성자</a> -
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/copy_constructor&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/copy constructor (없는 문서)">복사 생성자</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/as_operator&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/as operator (없는 문서)">복사 할당</a> -
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/destructor&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/destructor (없는 문서)">소멸자</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/move_constructor&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/move constructor (없는 문서)">이동 생성자</a> -
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/move_operator&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/move operator (없는 문서)">이동 할당</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/initializer_list&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/initializer list (없는 문서)"> 멤버 초기화 리스트</a><br>
+</p>
+</div>
+<p><br>
+<b><a href="https://ko.cppreference.com/w/cpp/language/templates" title="cpp/language/templates"> 템플릿</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/class_template&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/class template (없는 문서)"> 클래스 템플릿</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/function_template&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/function template (없는 문서)"> 함수 템플릿</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/variable_template&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/variable template (없는 문서)"> 변수 템플릿</a><span class="t-mark">(C++14)</span><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/template_specialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/template specialization (없는 문서)"> 명시적 특수화</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/partial specialization (없는 문서)"> 부분 특수화</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/dependent_name&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/dependent name (없는 문서)"> dependent names</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/parameter_pack" title="cpp/language/parameter pack"> parameter packs</a> -
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/sizeof...&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/sizeof... (없는 문서)"> sizeof...</a><br>
+</p>
+</div>
+<p><b><a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/misc&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/misc (없는 문서)"> 기타</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/history&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/history (없는 문서)"> C++의 역사</a><br>
+<a href="https://ko.cppreference.com/w/cpp/language/main_function" title="cpp/language/main function"> 프로그램 시작</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/termination&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/termination (없는 문서)"> 프로그램 종결</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/asm&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/asm (없는 문서)"> 인라인 어셈플리</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/raii&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/raii (없는 문서)"> RAII</a> - <a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/rule_of_three&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/rule of three (없는 문서)"> Rule of three</a><br>
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/as_if&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/as if (없는 문서)"> as-if 규칙</a> -
+<a href="https://ko.cppreference.com/w/cpp/language/copy_elision" title="cpp/language/copy elision"> copy elision</a> -
+<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language/ebo&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/ebo (없는 문서)"> 공백 기반 최적화</a><br>
+</p>
+</div>
+</td></tr></tbody></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1219/1000000
+Preprocessor generated node count: 3501/1000000
+Post‐expand include size: 101651/4194304 bytes
+Template argument size: 7543/4194304 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_ko_:pcache:idhash:20-0!*!0!*!*!*!* and timestamp 20240516060953 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    원본 주소 "<a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language&amp;oldid=5061">https://ko.cppreference.com/mwiki/index.php?title=cpp/language&amp;oldid=5061</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>둘러보기</h5>
+            <ul>
+<li id="n-mainpage-description"><a href="../../ko%25253AMain_Page.html" title="대문으로 [z]" accesskey="z">대문</a></li><li id="n-portal"><a href="https://ko.cppreference.com/w/Cppreference:%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84" title="프로젝트 소개, 여러분이 할 수 있는 것, 무언가를 찾는 곳">사용자 모임</a></li><li id="n-currentevents"><a href="https://ko.cppreference.com/w/Cppreference:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C" title="최근의 소식을 봅니다">요즘 화제</a></li><li id="n-recentchanges"><a href="https://ko.cppreference.com/w/%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C" title="이 위키에서 최근 바뀐 내용의 목록 [r]" accesskey="r">최근 바뀜</a></li><li id="n-randompage"><a href="https://ko.cppreference.com/w/%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C" title="임의 문서로 갑니다 [x]" accesskey="x">임의 문서로</a></li><li id="n-help"><a href="https://ko.cppreference.com/w/%EB%8F%84%EC%9B%80%EB%A7%90:%EB%AA%A9%EC%B0%A8" title="도움말">도움말</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>도구모음</span><a href="./language.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://ko.cppreference.com/w/%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94%EB%AC%B8%EC%84%9C/cpp/language" title="여기로 연결된 모든 문서의 목록 [j]" accesskey="j">여기를 가리키는 문서</a></li><li id="t-recentchangeslinked"><a href="https://ko.cppreference.com/w/%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/cpp/language" title="여기로 연결된 모든 문서의 바뀜 내역 [k]" accesskey="k">가리키는 글의 바뀜</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="파일을 올립니다. [u]" accesskey="u">파일 올리기</a></li><li id="t-specialpages"><a href="https://ko.cppreference.com/w/%ED%8A%B9%EC%88%98%EA%B8%B0%EB%8A%A5:%ED%8A%B9%EC%88%98%EB%AC%B8%EC%84%9C" title="모든 특수 문서의 목록 [q]" accesskey="q">특수 문서 목록</a></li><li id="t-print"><a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language&amp;printable=yes" rel="alternate" title="이 문서의 인쇄용 버전 [p]" accesskey="p">인쇄용 문서</a></li><li id="t-permalink"><a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language&amp;oldid=5061" title="이 판에 대한 고유링크">고유링크</a></li><li id="t-info"><a href="https://ko.cppreference.com/mwiki/index.php?title=cpp/language&amp;action=info">문서 정보</a></li>            </ul>
+        </div>
+                        <div id="cpp-languagess" hidden="">
+            <div><ul><li>다른 언어</li></ul></div>
+            <div><ul>
+<li class="interwiki-ar"><a href="http://ar.cppreference.com/w/cpp/language" title="cpp/language" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/language" title="cpp/language" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-en"><a href="../../cpp/language.html" title="cpp/language" lang="en" hreflang="en">English</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/language" title="cpp/language" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/language" title="cpp/language" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/language" title="cpp/language" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/language" title="cpp/language" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/language" title="cpp/language" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/language" title="cpp/language" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/cpp/language" title="cpp/language" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/language" title="cpp/language" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> 이 문서는 2022년 10월 31일 (월) 05:00에 마지막으로 바뀌었습니다.</li>
+                                    <li id="footer-info-viewcount">이 문서는 11,078번 읽혔습니다.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="https://ko.cppreference.com/w/Cppreference:%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4_%EC%A0%95%EC%B1%85" title="Cppreference:개인정보 정책">개인정보 정책</a></li>
+                                    <li id="footer-places-about"><a href="https://ko.cppreference.com/w/Cppreference:%EC%86%8C%EA%B0%9C" title="Cppreference:소개">cppreference.com 소개</a></li>
+                                    <li id="footer-places-disclaimer"><a href="https://ko.cppreference.com/w/Cppreference:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD" title="Cppreference:면책 조항">면책 조항</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../../ko.cppreference.com/mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.040 secs. -->
+	
+
+
+</body></html>

@@ -1,0 +1,36 @@
+# Contributors by commit history
+https://github.com/mdn/content/commits/main/files/en-us/web/html/reference/elements/marquee/index.md
+
+# Original Wiki contributors
+Koavf
+jswisher
+joedf
+jabcreations
+ExE-Boss
+mxschumacher
+Sheppy
+teoli
+jensbroecher
+SphinxKnight
+MrLamex
+erikadoyle
+zd9027
+slimsag
+Spetnik
+Jeremie
+kscarfone
+ethertank
+lmorchard
+cers
+fscholz
+osdm
+Jürgen Jeka
+BenoitL
+Tokwandaud
+Ptak82
+Nb3Bx1
+PablO
+alecananian
+Deltab
+Mw22
+Judodudo

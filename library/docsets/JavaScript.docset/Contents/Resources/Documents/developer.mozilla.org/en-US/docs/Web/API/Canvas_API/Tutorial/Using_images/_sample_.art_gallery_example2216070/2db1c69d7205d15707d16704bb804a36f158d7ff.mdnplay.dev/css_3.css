@@ -1,0 +1,7 @@
+
+body { background: url("./en-US/docs/Web/API/Canvas_API/Tutorial/Using_images/bg_gallery.png") 0px -100px repeat-x rgb(79, 25, 26); margin: 10px; }
+img { display: none; }
+table { margin: 0px auto; }
+td { padding: 15px; }
+
+button.copy {display:none !important}

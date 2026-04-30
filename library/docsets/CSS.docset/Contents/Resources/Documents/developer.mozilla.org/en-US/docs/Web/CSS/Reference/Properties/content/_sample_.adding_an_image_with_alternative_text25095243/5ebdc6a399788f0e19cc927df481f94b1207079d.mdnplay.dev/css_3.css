@@ -1,0 +1,4 @@
+
+a::before { content: url("../mozorg.cdn.mozilla.net/media/img/favicon.ico") / " MOZILLA: "; }
+
+button.copy {display:none !important}

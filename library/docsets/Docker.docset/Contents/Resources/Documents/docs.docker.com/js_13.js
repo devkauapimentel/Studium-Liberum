@@ -1,0 +1,1 @@
+window.GORDON_BASE_URL="https://ai-backend-service.docker.com"

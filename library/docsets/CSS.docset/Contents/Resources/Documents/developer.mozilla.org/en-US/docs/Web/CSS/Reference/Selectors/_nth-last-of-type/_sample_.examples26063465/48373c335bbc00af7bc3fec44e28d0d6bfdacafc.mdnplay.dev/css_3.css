@@ -1,0 +1,4 @@
+
+span:nth-last-of-type(2) { background-color: lime; }
+
+button.copy {display:none !important}

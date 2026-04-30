@@ -1,0 +1,5 @@
+
+labeled-checkbox { border: dashed red; }
+labeled-checkbox:state(checked) { border: solid; }
+
+button.copy {display:none !important}

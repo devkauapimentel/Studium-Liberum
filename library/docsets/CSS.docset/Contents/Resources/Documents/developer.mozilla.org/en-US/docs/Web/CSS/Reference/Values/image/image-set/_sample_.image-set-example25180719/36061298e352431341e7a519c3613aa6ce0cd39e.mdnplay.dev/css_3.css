@@ -1,0 +1,4 @@
+
+.box { width: 400px; height: 200px; background-repeat: no-repeat; background-size: cover; background-image: image-set(url("../mdn.github.io/shared-assets/images/examples/balloons-small.jpg") 1x, url("../mdn.github.io/shared-assets/images/examples/balloons-landscape.jpg") 2x); }
+
+button.copy {display:none !important}

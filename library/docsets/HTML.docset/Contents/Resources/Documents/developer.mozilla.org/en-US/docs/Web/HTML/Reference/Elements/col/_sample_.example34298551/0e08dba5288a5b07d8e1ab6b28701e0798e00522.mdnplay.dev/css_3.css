@@ -1,0 +1,9 @@
+
+table { border-collapse: collapse; border: 2px solid rgb(140, 140, 140); }
+caption { caption-side: bottom; padding: 10px; }
+th, td { border: 1px solid rgb(160, 160, 160); padding: 8px 6px; text-align: center; }
+.weekdays { background-color: rgb(215, 217, 242); }
+.weekend { background-color: rgb(255, 232, 212); }
+table { font-family: sans-serif; font-size: 0.8rem; letter-spacing: 1px; }
+
+button.copy {display:none !important}

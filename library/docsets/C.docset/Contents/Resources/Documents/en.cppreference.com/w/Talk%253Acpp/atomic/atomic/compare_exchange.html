@@ -1,0 +1,414 @@
+<html><!-- Online page at https://en.cppreference.com/w/Talk%253Acpp/atomic/atomic/compare_exchange.html --><head><meta charset="utf-8"><title>Talk:cpp/atomic/atomic/compare exchange</title><link rel="stylesheet" href="../../../css_1.css" type="text/css"><link rel="stylesheet" href="../../../css_2.css" type="text/css"><link rel="stylesheet" href="../../../css_3.css" type="text/css"><link rel="stylesheet" href="../../../css_4.css" type="text/css"><link rel="stylesheet" href="../../../css_5.css" type="text/css"><script type="text/javascript" src="../../../js_1.js"></script><script type="text/javascript" src="../../../js_2.js"></script><script type="text/javascript" src="../../../js_5229.js"></script><script type="text/javascript" src="../../../js_4.js"></script><script type="text/javascript" src="../../../js_5.js"></script><script type="text/javascript" src="../../../js_6.js"></script><script type="text/javascript" src="../../../js_7.js"></script><script type="text/javascript" src="../../../js_8.js"></script><script type="text/javascript" src="../../../js_9.js"></script><script type="text/javascript" src="../../../js_10.js"></script><script type="text/javascript" src="../../../js_11.js"></script><script type="text/javascript" src="../../../js_12.js"></script><style>.t-example-live-link {display:none !important} .t-sidebar-body {display:none}\nbody{min-width:0}\ndiv.mw-geshi{width:95%}\ndiv#content {width:auto !important} div#content{background-image:none; margin-left:0px;} .t-lines {background:inherit !important} pre, div.mw-geshi {width: 100% !important} body {background:white !important} div#content {width:100% !important} html body div#content {width:auto !important} pre, div.mw-geshi {width:auto !important} .t-example-live-link, #mw-head, #cpp-footer-base {display:none !important} .t-navbar-menu > div {position:relative !important}</style></head><body class="mediawiki ltr sitedir-ltr ns-1 ns-talk page-Talk_cpp_atomic_atomic_compare_exchange skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="https://en.cppreference.com/index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+<form action="https://duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="cppreference.com">
+  <input type="search" name="q">
+  <input type="submit" value="Search">
+</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal" hidden="">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fatomic%2Fatomic%2Fcompare+exchange&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=Talk%3Acpp%2Fatomic%2Fatomic%2Fcompare+exchange" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main"><span><a href="../../../cpp/atomic/atomic/compare_exchange.html" title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="selected"><span><a href="./compare_exchange.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="./compare_exchange.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" hidden="" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./compare_exchange.html">View</a></span></li>
+					<li id="ca-edit" class=" istalk"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic/compare_exchange&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-addsection" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic/compare_exchange&amp;action=edit&amp;section=new" title="Start a new section [+]" accesskey="+">+</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic/compare_exchange&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="./compare_exchange.html"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" type="text/javascript" src="../../../../../cdn.carbonads.com/carbon.js" id="_carbonads_js"></script>
+
+<script async="" src="../../../../../www.googletagmanager.com/gtag/js.js"></script>
+
+                <h1 id="firstHeading" class="firstHeading">Talk:cpp/atomic/atomic/compare exchange</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../Talk%25253Acpp.html" title="Talk:cpp">Talk:cpp</a>‎ | <a href="../atomic.html" title="Talk:cpp/atomic/atomic">atomic/atomic</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./compare_exchange.html#atomic_stack_push_discussion"><span class="tocnumber">1</span> <span class="toctext">atomic stack push discussion</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./compare_exchange.html#confusing_.2F_incorrect_wording_in_the_return_value_section"><span class="tocnumber">2</span> <span class="toctext">confusing / incorrect wording in the return value section</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="./compare_exchange.html#.27expected.27_is_updated_if_changed"><span class="tocnumber">3</span> <span class="toctext">'expected' is updated if changed</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="./compare_exchange.html#Explanation_is_way_too_complicated_to_understand"><span class="tocnumber">4</span> <span class="toctext">Explanation is way too complicated to understand</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic/compare_exchange&amp;action=edit&amp;section=1" title="Edit section: atomic stack push discussion">edit</a>]</span> <span class="mw-headline" id="atomic_stack_push_discussion">atomic stack push discussion</span></h3>
+<p>Original example (based on chapter 7 of C++ Concurrency in Action and common knowledge):
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">node<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy2">*</span> new_node <span class="sy1">=</span> new node<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">(</span>data<span class="br0">)</span><span class="sy4">;</span>
+new_node<span class="sy2">-</span><span class="sy1">&gt;</span>next <span class="sy1">=</span> head.<span class="me1">load</span><span class="br0">(</span><a href="../../../cpp/atomic/memory_order.html"><span class="kw2097">std::<span class="me2">memory_order_relaxed</span></span></a><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw1">while</span><span class="br0">(</span><span class="sy3">!</span>head.<span class="me1">compare_exchange_weak</span><span class="br0">(</span>new_node<span class="sy2">-</span><span class="sy1">&gt;</span>next,
+                                  new_node,
+                                  <a href="../../../cpp/atomic/memory_order.html"><span class="kw2100">std::<span class="me2">memory_order_release</span></span></a>,
+                                  <a href="../../../cpp/atomic/memory_order.html"><span class="kw2097">std::<span class="me2">memory_order_relaxed</span></span></a><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>Per <a href="https://en.cppreference.com/mwiki/index.php?title=User:Duncan.forster&amp;action=edit&amp;redlink=1" class="new" title="User:Duncan.forster (page does not exist)">User:Duncan.forster</a>, "Using newNode-&gt;next is bad because if another thread is removing items then newNode is now being shared between threads."
+Proposed example:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">node<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy2">*</span> new_node <span class="sy1">=</span> new node<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">(</span>data<span class="br0">)</span><span class="sy4">;</span>
+node<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy2">*</span> old_head <span class="sy1">=</span> <span class="br0">(</span>new_node<span class="sy2">-</span><span class="sy1">&gt;</span>next <span class="sy1">=</span> head.<span class="me1">load</span><span class="br0">(</span><a href="../../../cpp/atomic/memory_order.html"><span class="kw2097">std::<span class="me2">memory_order_relaxed</span></span></a><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw1">while</span><span class="br0">(</span><span class="sy3">!</span>head.<span class="me1">compare_exchange_weak</span><span class="br0">(</span> old_head
+                                 , new_node
+                                 , <a href="../../../cpp/atomic/memory_order.html"><span class="kw2100">std::<span class="me2">memory_order_release</span></span></a>
+                                 , <a href="../../../cpp/atomic/memory_order.html"><span class="kw2097">std::<span class="me2">memory_order_relaxed</span></span></a><span class="br0">)</span><span class="br0">)</span>
+<span class="br0">{</span>
+      new_node<span class="sy2">-</span><span class="sy1">&gt;</span>next <span class="sy1">=</span> old_head<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Leaving this discussion open for analysis, I don't see how the canonical push() fails regardless of how badly pop() is written (incidentally, we should post a pop() since that's a good use case for compare_exchange_strong) --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 08:20, 15 February 2014 (PST)
+</p><p><br>
+</p><p>The important thing to remember is that the hardware implementation of CAS only returns 1 value (the old value) not two (old plus boolean). The boolean result that C++ returns is calculated after the CAS has occurred and is outside the atomic zone (which is where races live). IMHO the C++ interface is broken by design. Here's some code to try and explain:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;stdio.h&gt;</span>
+<span class="co2">#include &lt;thread&gt;</span>
+&nbsp;
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> _T<span class="sy1">&gt;</span>
+<span class="kw4">bool</span> atomic_bool_compare_and_swap<span class="br0">(</span>_T <span class="sy2">*</span>value, _T<span class="sy3">&amp;</span> expected, _T new_value<span class="br0">)</span>
+<span class="br0">{</span>
+    _T old_value<span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// Here be atomic</span>
+    <span class="br0">{</span>
+        old_value <span class="sy1">=</span> <span class="sy2">*</span>value<span class="sy4">;</span>
+        <span class="kw1">if</span><span class="br0">(</span>old_value <span class="sy1">==</span> expected<span class="br0">)</span>
+            <span class="sy2">*</span>value <span class="sy1">=</span> new_value<span class="sy4">;</span>
+    <span class="br0">}</span>
+&nbsp;
+    <span class="co1">// Here be race conditions</span>
+    <span class="kw1">return</span> <span class="br0">(</span>old_value <span class="sy1">==</span> expected<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="co1">// Implementation not important (completely atomic)</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> _T<span class="sy1">&gt;</span>
+_T atomic_exchange<span class="br0">(</span>_T <span class="sy2">*</span>value, _T new_value<span class="br0">)</span> 
+<span class="br0">{</span> 
+    _T old_value<span class="sy4">;</span> 
+&nbsp;
+    <span class="co1">// Here be atomic</span>
+    <span class="br0">{</span>
+        old_value <span class="sy1">=</span> <span class="sy2">*</span>value<span class="sy4">;</span>
+        <span class="sy2">*</span>value <span class="sy1">=</span> new_value<span class="sy4">;</span>
+    <span class="br0">}</span>
+&nbsp;
+    <span class="kw1">return</span> old_value<span class="sy4">;</span>
+<span class="br0">}</span> 
+&nbsp;
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> _T<span class="sy1">&gt;</span>
+<span class="kw1">struct</span> Node
+<span class="br0">{</span>
+    _T data<span class="sy4">;</span>
+    Node<span class="sy2">*</span> next<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+&nbsp;
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> _T<span class="sy1">&gt;</span>
+<span class="kw1">class</span> Queue
+<span class="br0">{</span>
+    Node<span class="sy1">&lt;</span>_T<span class="sy1">&gt;</span><span class="sy2">*</span> head <span class="sy1">=</span> nullptr<span class="sy4">;</span>
+&nbsp;
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="kw4">void</span> push<span class="br0">(</span><span class="kw4">const</span> _T<span class="sy3">&amp;</span> data<span class="br0">)</span>
+    <span class="br0">{</span>
+        Node<span class="sy1">&lt;</span>_T<span class="sy1">&gt;</span><span class="sy2">*</span> new_node <span class="sy1">=</span> new Node<span class="sy1">&lt;</span>_T<span class="sy1">&gt;</span><span class="sy4">;</span>
+        new_node<span class="sy2">-</span><span class="sy1">&gt;</span>data <span class="sy1">=</span> data<span class="sy4">;</span>
+        new_node<span class="sy2">-</span><span class="sy1">&gt;</span>next <span class="sy1">=</span> head<span class="sy4">;</span>
+        <span class="kw1">while</span><span class="br0">(</span><span class="sy3">!</span>atomic_bool_compare_and_swap<span class="br0">(</span><span class="sy3">&amp;</span>head, new_node<span class="sy2">-</span><span class="sy1">&gt;</span>next, new_node<span class="br0">)</span><span class="br0">)</span>
+                <span class="sy4">;</span>
+        printf<span class="br0">(</span><span class="st0">"Push[%d]<span class="es1">\n</span>"</span>, data<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    Node<span class="sy1">&lt;</span>_T<span class="sy1">&gt;</span><span class="sy2">*</span> pop_all_reversed<span class="br0">(</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        Node<span class="sy1">&lt;</span>_T<span class="sy1">&gt;</span><span class="sy2">*</span> old_head <span class="sy1">=</span> atomic_exchange<span class="br0">(</span><span class="sy3">&amp;</span>head, <span class="br0">(</span>Node<span class="sy1">&lt;</span>_T<span class="sy1">&gt;</span><span class="sy2">*</span><span class="br0">)</span><span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">return</span> old_head<span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="kw4">int</span> argc, <span class="kw4">char</span><span class="sy2">**</span> argv<span class="br0">)</span>
+<span class="br0">{</span>
+    Queue<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> queue<span class="sy4">;</span>
+&nbsp;
+    <span class="kw4">auto</span> push <span class="sy1">=</span> <span class="br0">[</span><span class="sy3">&amp;</span>queue<span class="br0">]</span><span class="br0">(</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        queue.<span class="me1">push</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+        queue.<span class="me1">push</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy4">;</span>
+        queue.<span class="me1">push</span><span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>
+        queue.<span class="me1">push</span><span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span><span class="sy4">;</span>
+    <span class="kw4">auto</span> pop <span class="sy1">=</span> <span class="br0">[</span><span class="sy3">&amp;</span>queue<span class="br0">]</span><span class="br0">(</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        Node<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy2">*</span> next <span class="sy1">=</span> queue.<span class="me1">pop_all_reversed</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">while</span><span class="br0">(</span>next<span class="br0">)</span>
+        <span class="br0">{</span>
+            Node<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy2">*</span> current <span class="sy1">=</span> next<span class="sy4">;</span>
+            printf<span class="br0">(</span><span class="st0">"Pop[%d]<span class="es1">\n</span>"</span>, current<span class="sy2">-</span><span class="sy1">&gt;</span>data<span class="br0">)</span><span class="sy4">;</span>
+            next <span class="sy1">=</span> current<span class="sy2">-</span><span class="sy1">&gt;</span>next<span class="sy4">;</span>
+&nbsp;
+            <span class="co1">// Here be race conditions </span>
+            current<span class="sy2">-</span><span class="sy1">&gt;</span>next <span class="sy1">=</span> nullptr<span class="sy4">;</span>
+            delete current<span class="sy4">;</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+&nbsp;
+    <span class="co1">//Note: If these threads run concurrently bad things may happen</span>
+    <a href="../../../cpp/thread/thread.html"><span class="kw2150">std::<span class="me2">thread</span></span></a> push_thread<span class="br0">(</span>push<span class="br0">)</span><span class="sy4">;</span>     
+    push_thread.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+    <a href="../../../cpp/thread/thread.html"><span class="kw2150">std::<span class="me2">thread</span></span></a> pop_thread<span class="br0">(</span>pop<span class="br0">)</span><span class="sy4">;</span> 
+    pop_thread.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>--<a href="https://en.cppreference.com/mwiki/index.php?title=User:Duncan.forster&amp;action=edit&amp;redlink=1" class="new" title="User:Duncan.forster (page does not exist)">Duncan.Forster</a> (<a href="../../../User_talk%25253ADuncan.forster.html" title="User talk:Duncan.forster">talk</a>) 21:15, 15 February 2014 (PST)
+</p>
+<dl><dd> I see what you mean now. Looks like an implementation bug to me.  Brought up at <a rel="nofollow" class="external text" href="http://stackoverflow.com/questions/21879331">Stackoverflow</a> for exposure --<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 03:38, 19 February 2014 (PST)
+</dd></dl>
+<dl><dd><dl><dd> I believe a good exposition would be to post the classic example (which shows how it is intended to work), but commented out, and accompanied by a comment saying that due to implementation bugs such as <a rel="nofollow" class="external text" href="http://llvm.org/bugs/show_bug.cgi?id=18899">clang bug 18899</a> and <a rel="nofollow" class="external text" href="http://gcc.gnu.org/bugzilla/show_bug.cgi?id=60272">GCC bug 60272</a>, workaround is needed. And when those are fixed, perhaps switch the example.--<a href="../../../User%25253ACubbi.html" title="User:Cubbi">Cubbi</a> (<a href="../../../User_talk%25253ACubbi.html" title="User talk:Cubbi">talk</a>) 06:39, 20 February 2014 (PST)
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> Seems reasonable to me. --<a href="../../../User%25253ANate.html" title="User:Nate">Nate</a> (<a href="../../../User_talk%25253ANate.html" title="User talk:Nate">talk</a>) 16:14, 20 February 2014 (PST)
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic/compare_exchange&amp;action=edit&amp;section=2" title="Edit section: confusing / incorrect wording in the return value section">edit</a>]</span> <span class="mw-headline" id="confusing_.2F_incorrect_wording_in_the_return_value_section"> confusing / incorrect wording in the return value section </span></h2>
+<p>This:
+</p><p>"true if the underlying atomic value was changed, false otherwise."
+</p><p>if false for the return value. It returns true if the expected value is equal to the underlying atomic value - i.e. the return value is:
+</p><p>"false if the underlying atomic value was changed, true otherwise."
+</p><p>...or I misinterpret what is meant by "the underlying atomic value was changed"
+</p><p>Either way this is either wrong or confusing.
+</p><p><a href="https://en.cppreference.com/w/Special:Contributions/92.231.33.37" title="Special:Contributions/92.231.33.37">92.231.33.37</a> 14:06, 10 November 2015 (PST)
+Thomas Gahr
+</p>
+<dl><dd> See the second example. The underlying atomic variable is ai. It gets changed only when tst_val == ai, and that's when true is returned. --<a href="../../../User%25253ABear.html" title="User:Bear">Bear</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:Bear&amp;action=edit&amp;redlink=1" class="new" title="User talk:Bear (page does not exist)">talk</a>) 14:30, 10 November 2015 (PST)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic/compare_exchange&amp;action=edit&amp;section=3" title="Edit section: 'expected' is updated if changed">edit</a>]</span> <span class="mw-headline" id=".27expected.27_is_updated_if_changed"> 'expected' is updated if changed </span></h2>
+<p>In the documentation of 'expected', please add a note saying that it will be updated in case the value did not match.
+<a href="https://en.cppreference.com/w/Special:Contributions/95.35.214.34" title="Special:Contributions/95.35.214.34">95.35.214.34</a> 22:22, 23 April 2020 (PDT)
+</p>
+<dl><dd> <a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;diff=118358&amp;oldid=117180">Done.</a> — <a href="https://en.cppreference.com/mwiki/index.php?title=User:Radix&amp;action=edit&amp;redlink=1" class="new" title="User:Radix (page does not exist)">Radix</a> (<a href="../../../User_talk%25253ARadix.html" title="User talk:Radix">talk</a>) 15:12, 24 April 2020 (PDT)
+</dd></dl>
+<h2><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic/compare_exchange&amp;action=edit&amp;section=4" title="Edit section: Explanation is way too complicated to understand">edit</a>]</span> <span class="mw-headline" id="Explanation_is_way_too_complicated_to_understand"> Explanation is way too complicated to understand </span></h2>
+<p>Thank goodness for Cplusplus.com's easy explanation (<a rel="nofollow" class="external free" href="https://cplusplus.com/reference/atomic/atomic/compare_exchange_strong/">https://cplusplus.com/reference/atomic/atomic/compare_exchange_strong/</a>):
+</p><p>&gt; Compares the contents of the contained value with expected:  
+</p><p>&gt; - if true, it replaces the contained value with val (like store).  
+</p><p>&gt; - if false, it replaces expected with the contained value .  
+</p><p>Or I would never understand what this means: 
+</p><p>&gt; Atomically compares the object representation (until C++20)value representation (since C++20) of *this with that of expected, and if those are bitwise-equal, replaces the former with desired (performs read-modify-write operation). Otherwise, loads the actual value stored in *this into expected (performs load operation).
+</p><p>Please consider de-obfuscating overly-complex explanations so cppreference.com can be more-understandable, like cplusplus.com is.
+</p><p><a href="../../../User%25253AERCaGuy.html" title="User:ERCaGuy">ERCaGuy (Gabriel Staples)</a> (<a href="https://en.cppreference.com/mwiki/index.php?title=User_talk:ERCaGuy&amp;action=edit&amp;redlink=1" class="new" title="User talk:ERCaGuy (page does not exist)">talk</a>) 16:36, 30 August 2022 (PDT)
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 68/1000000
+Preprocessor generated node count: 180/1000000
+Post‐expand include size: 326/4194304 bytes
+Template argument size: 2651/4194304 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13152-0!*!0!!en!*!* and timestamp 20240518061711 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic/compare_exchange&amp;oldid=142625">https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic/compare_exchange&amp;oldid=142625</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer" hidden="">
+                        <div id="cpp-navigationn" hidden="">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%25253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%25253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox" hidden="">
+            <h5><span>Toolbox</span><a href="./compare_exchange.html"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/Talk:cpp/atomic/atomic/compare_exchange" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/Talk:cpp/atomic/atomic/compare_exchange" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic/compare_exchange&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic/compare_exchange&amp;oldid=142625" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/atomic/atomic/compare_exchange&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 30 August 2022, at 16:36.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,331 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%25253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%25253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%25253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        
+
+
+
+<!-- Served in 0.443 secs. -->
+	
+
+
+</body></html>

@@ -1,0 +1,52 @@
+<html><!-- Mirrored from mdn.github.io/dom-examples/fetch/fetch-request-with-init/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:46:12 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Fetch Request example with init</title>
+
+    <link rel="stylesheet" href="#">
+  </head>
+
+  <body>
+    <h1>Fetch Request with init example</h1>
+    <img src="#">
+
+    <script>
+      const myImage = document.querySelector("img");
+
+      const reqHeaders = new Headers();
+
+      // a cached response is okay unless it's more than a week old
+      reqHeaders.set("Cache-Control", "max-age=604800");
+
+      const options = {
+        headers: reqHeaders,
+      };
+
+      // pass init as an "options" object with our headers
+      const req = new Request("flowers.jpg", options);
+
+      fetch(req)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error, status = ${response.status}`);
+          }
+          return response.blob();
+        })
+        .then((blob) => {
+          const objectURL = URL.createObjectURL(blob);
+          myImage.src = objectURL;
+        })
+        .catch((error) => {
+          const p = document.createElement("p");
+          p.appendChild(document.createTextNode(`Error: ${error.message}`));
+          document.body.insertBefore(p, myImage);
+        });
+    </script>
+  
+
+
+
+</body><!-- Mirrored from mdn.github.io/dom-examples/fetch/fetch-request-with-init/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Apr 2026 21:46:12 GMT --></html>
