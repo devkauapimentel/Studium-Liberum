@@ -33,13 +33,16 @@ export async function GET(request: NextRequest) {
       const stmt = db.prepare(`SELECT name, type, path FROM searchIndex WHERE name LIKE ? LIMIT 30`);
       const results = stmt.all(`${q}%`);
       
-      const formatted = results.map((r: any) => ({
-        docset: docset.replace(".docset", ""),
-        name: r.name,
-        type: r.type,
-        path: r.path,
-        docsetFolder: docset
-      }));
+      const formatted = results.map((r: any) => {
+        const cleanPath = r.path.replace(/<[^>]+>/g, "");
+        return {
+          docset: docset.replace(".docset", ""),
+          name: r.name,
+          type: r.type,
+          path: cleanPath,
+          docsetFolder: docset
+        };
+      });
 
       allResults = allResults.concat(formatted);
       db.close();

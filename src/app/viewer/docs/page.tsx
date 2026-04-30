@@ -16,8 +16,11 @@ export default async function DocsetViewerPage({ searchParams }: PageProps) {
     );
   }
 
+  // Separar o hash/ancora do nome do arquivo real, caso exista
+  const [cleanPath, anchor] = path.split("#");
+  
   // A URL real do iframe será nossa rota de serve estático
-  const iframeSrc = `/api/docs/serve/${doc}/${path}`;
+  const iframeSrc = `/api/docs/serve/${doc}/${cleanPath}${anchor ? "#" + anchor : ""}`;
 
   return (
     <div className="flex-1 flex flex-col bg-[var(--color-bg-primary)] h-screen overflow-hidden">
