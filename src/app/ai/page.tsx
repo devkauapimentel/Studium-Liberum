@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowLeft, Bot, Send, Cpu, User, Loader2, Database, Shield, Plus } from "lucide-react";
+import { ArrowLeft, Bot, Send, Cpu, User, Loader2, Database, Shield, Square } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
@@ -20,6 +20,14 @@ export default function AIPage() {
   const [socraticMode, setSocraticMode] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const abortControllerRef = useRef<AbortController | null>(null);
+
+  const stopResponse = () => {
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+      abortControllerRef.current = null;
+    }
+  };
 
   // Auto-resize textarea to match Grok behavior
   useEffect(() => {
@@ -59,10 +67,13 @@ export default function AIPage() {
     setMessage("");
     setIsLoading(true);
 
+    abortControllerRef.current = new AbortController();
+
     try {
       const res = await fetch("/api/ai/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        signal: abortControllerRef.current.signal,
         body: JSON.stringify({
           messages: [...messages, userMsg],
           model: selectedModel,
@@ -112,12 +123,23 @@ export default function AIPage() {
         }
       }
     } catch (err: any) {
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: `❌ Erro: ${err.message}` },
-      ]);
+      if (err.name === 'AbortError') {
+        setMessages((prev) => {
+          const newMessages = [...prev];
+          if (newMessages.length > 0 && newMessages[newMessages.length - 1].role === "assistant") {
+            newMessages[newMessages.length - 1].content += "\n\n*[Resposta interrompida]*";
+          }
+          return newMessages;
+        });
+      } else {
+        setMessages((prev) => [
+          ...prev,
+          { role: "assistant", content: `❌ Erro: ${err.message}` },
+        ]);
+      }
     } finally {
       setIsLoading(false);
+      abortControllerRef.current = null;
     }
   }
 
@@ -262,19 +284,20 @@ export default function AIPage() {
                     <Shield size={18} strokeWidth={socraticMode ? 2.5 : 2} />
                   </button>
 
-                  {/* Send Button (White Circle) */}
+                  {/* Send/Stop Button (White Circle) */}
                   <button 
-                    type="submit" 
-                    disabled={!message.trim() || isLoading}
+                    type={isLoading ? "button" : "submit"} 
+                    onClick={isLoading ? stopResponse : undefined}
+                    disabled={!message.trim() && !isLoading}
                     className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] disabled:opacity-50 disabled:bg-[#27272A] disabled:text-[#71717A] ml-1"
                     style={{ 
-                      background: message.trim() ? "#FFFFFF" : "#27272A", 
-                      color: message.trim() ? "#09090B" : "#71717A",
-                      boxShadow: message.trim() ? "0 0 20px rgba(255,255,255,0.4)" : "none",
-                      transform: message.trim() && !isLoading ? "scale(1.05)" : "scale(1)"
+                      background: message.trim() || isLoading ? "#FFFFFF" : "#27272A", 
+                      color: message.trim() || isLoading ? "#09090B" : "#71717A",
+                      boxShadow: message.trim() || isLoading ? "0 0 20px rgba(255,255,255,0.4)" : "none",
+                      transform: (message.trim() || isLoading) ? "scale(1.05)" : "scale(1)"
                     }}
                   >
-                    {isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} strokeWidth={2.5} className="mr-[2px] mt-[2px]" />}
+                    {isLoading ? <Square size={16} fill="currentColor" strokeWidth={2.5} className="mt-[1px]" /> : <Send size={18} strokeWidth={2.5} className="mr-[2px] mt-[2px]" />}
                   </button>
                 </div>
               </div>

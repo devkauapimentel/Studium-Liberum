@@ -397,3 +397,4 @@ Quando um novo agente assume o trabalho:
 | 2026-04-29 | Semantic Stopwords FTS5 | O SQLite Search parou de apagar palavras com `< 3` caracteres (quebrando buscas em 'C'). Adicionado um Array de `Stop Words` PT-BR exato. |
 | 2026-04-29 | Strict LLM Aesthetics | RAG System Prompt reescrito para obrigar esteticismo `Grok/ChatGPT` usando `\n\n` obrigatório para parágrafos + Emojis de tópicos. |
 | 2026-04-29 | Chat UI Grok Clone | Refatoração completa da barra de input para comportar "100dvh" com âncora inferior absoluta e expansão de texto auto-calculada via scrollHeight. Scrollbars default escondidos/customizados para maxilar UX minimalista. |
+| 2026-04-30 | AbortController no Chat | Botão de parar adicionado à UI do Chat. Envia signal de abort na requisição NDJSON do Ollama para economizar VRAM/CPU caso a IA divague. |

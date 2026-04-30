@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Stop Response (IA)**: Implementado botão de "Interromper Resposta" (ícone Square) no Chat da IA. Usando `AbortController`, o usuário agora pode cancelar o streaming NDJSON em tempo real se a IA estiver divagando, economizando tempo e processamento local.
 - **Visualizador Nativo de Documentações (`/docs`)**: Absorção total dos Docsets do Zeal para dentro do Studium Liberum. Agora o sistema varre os bancos SQLite (`docSet.dsidx`) de todos os manuais baixados e os disponibiliza em uma busca nativa unificada (`/docs`). Os manuais HTML são lidos diretamente do disco local e limpos esteticamente antes de renderizar em um Iframe protegido, eliminando 100% a necessidade de sair da plataforma ou abrir a janela legada do Zeal.
 - **Modo 42 / Socrático (IA)**: Implementado botão "Modo 42" no Chat (`/ai`), ativando um bloqueio estrito no System Prompt. A IA agora é proibida de gerar código-fonte e passa a responder exclusivamente via Método Socrático para forçar o aluno a pensar, adequando-se à metodologia da 42 Network.
 - **Central Offline Refinada**: A página `/offline` foi atualizada. O bloco do Kiwix agora foca no `ArchWiki` e `Wikibooks CS` em vez do Stack Overflow (90GB de peso inútil/sabotagem). Os links nativos `zeal://` foram mapeados perfeitamente para os pacotes instalados (`C`, `Docker`, `JavaScript`, `React`, etc).
