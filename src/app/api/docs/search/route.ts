@@ -29,9 +29,9 @@ export async function GET(request: NextRequest) {
 
     try {
       const db = new Database(dbPath, { readonly: true });
-      // searchIndex (id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT)
-      const stmt = db.prepare(`SELECT name, type, path FROM searchIndex WHERE name LIKE ? LIMIT 20`);
-      const results = stmt.all(`%${q}%`);
+      // Usar q% em vez de %q% faz o SQLite usar o B-Tree Index (se existir) na coluna name, eliminando Full Table Scan
+      const stmt = db.prepare(`SELECT name, type, path FROM searchIndex WHERE name LIKE ? LIMIT 30`);
+      const results = stmt.all(`${q}%`);
       
       const formatted = results.map((r: any) => ({
         docset: docset.replace(".docset", ""),

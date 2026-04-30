@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import pdfParse from 'pdf-parse';
+const pdfParse = require('pdf-parse');
 import Database from 'better-sqlite3';
 
 const dbPath = path.join(process.cwd(), ".studium.db");
@@ -43,6 +43,10 @@ async function processDirectory(dir: string, trackId: string = "") {
     const fullPath = path.join(dir, entry.name);
     
     if (entry.isDirectory()) {
+      if (entry.name === 'docsets' || entry.name.endsWith('.docset')) {
+        console.log(`[SKIP] Ignorando diretório de docsets para evitar loop infinito de indexação.`);
+        continue;
+      }
       // O primeiro nível dentro de library/ é o trackId
       const currentTrackId = trackId === "" ? entry.name : trackId;
       await processDirectory(fullPath, currentTrackId);
