@@ -55,43 +55,26 @@ export default function OfflineToolsPage() {
               </a>
             </section>
 
-            {/* Zeal Card */}
+            {/* Docsets Internos Card (Antigo Zeal) */}
             <section className="glass-card p-6 flex flex-col">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[var(--color-accent-blue)]/20 text-[var(--color-accent-blue)]">
-                  <Zap size={20} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[var(--color-accent-amber)]/20 text-[var(--color-accent-amber)]">
+                  <BookOpen size={20} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">Zeal Deep Links</h3>
-                  <p className="text-xs text-[var(--color-text-muted)] uppercase tracking-wider">Documentação Offline Nativa</p>
+                  <h3 className="text-xl font-bold">Documentação Nativa</h3>
+                  <p className="text-xs text-[var(--color-text-muted)] uppercase tracking-wider">Antigo Zeal</p>
                 </div>
               </div>
               <p className="text-sm text-[var(--color-text-muted)] mb-6 flex-1">
-                Integração via protocolo <code>dash://</code>. Clique nos botões abaixo para abrir a documentação oficial direto no seu client nativo do Linux, sem lag.
+                <strong>O Zeal foi absorvido!</strong> Nós roubamos os manuais do Zeal e os trouxemos para dentro do Studium Liberum. Agora o C, React, Docker, SQL e tudo mais têm buscas nativas super rápidas e modo cinema sem abrir janelas feias.
               </p>
-              <div className="grid grid-cols-2 gap-3">
-                <a href="dash://c:" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
-                  <BookOpen size={14} /> C / C++
-                </a>
-                <a href="dash://docker:" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
-                  <BookOpen size={14} /> Docker
-                </a>
-                <a href="dash://postgresql:" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
-                  <BookOpen size={14} /> PostgreSQL
-                </a>
-                <a href="dash://react:" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
-                  <BookOpen size={14} /> React
-                </a>
-                <a href="dash://javascript:" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
-                  <BookOpen size={14} /> JavaScript
-                </a>
-                <a href="dash://html:" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
-                  <BookOpen size={14} /> HTML
-                </a>
-                <a href="dash://css:" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
-                  <BookOpen size={14} /> CSS
-                </a>
-              </div>
+              <Link 
+                href="/docs" 
+                className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-[var(--color-accent-amber)] hover:bg-[var(--color-accent-amber)]/90 text-[var(--color-bg-primary)] font-bold transition-colors shadow-lg"
+              >
+                Abrir Busca de Documentação
+              </Link>
             </section>
           </div>
         </div>
