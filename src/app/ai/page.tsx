@@ -113,7 +113,7 @@ export default function AIPage() {
   }
 
   return (
-    <div className="h-screen flex flex-col" style={{ background: "var(--color-bg-primary)" }}>
+    <div className="h-[100dvh] flex flex-col relative" style={{ background: "var(--color-bg-primary)" }}>
       <header className="flex items-center justify-between px-8 border-b border-[var(--color-border)] shrink-0"
         style={{ height: "var(--header-height)", background: "var(--color-bg-secondary)" }}>
         <div className="flex items-center gap-4">
@@ -154,7 +154,7 @@ export default function AIPage() {
         </div>
       ) : (
         <>
-          <div className="flex-1 overflow-y-auto p-8 scroll-smooth">
+          <div className="flex-1 overflow-y-auto p-8 scroll-smooth pb-48">
             <div className="max-w-4xl mx-auto flex flex-col gap-6">
               {messages.length === 0 ? (
                 <div className="flex flex-col items-center justify-center text-center mt-20 opacity-60">
@@ -184,18 +184,15 @@ export default function AIPage() {
               )}
               <div ref={messagesEndRef} />
             </div>
-              <div className="p-6 bg-transparent pb-8">
-            <form onSubmit={sendMessage} className="max-w-3xl mx-auto relative group">
+          </div>
+
+          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[var(--color-bg-primary)] via-[var(--color-bg-primary)] to-transparent pt-12 pb-8 pointer-events-none">
+            <form onSubmit={sendMessage} className="max-w-3xl mx-auto relative group pointer-events-auto">
               {/* Outer Glow on Focus */}
               <div className="absolute -inset-[2px] rounded-[34px] bg-white/5 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-700 pointer-events-none -z-10"></div>
               
-              <div className="relative flex flex-row items-end bg-[#18181A] border border-[#27272A] rounded-[32px] pl-5 pr-3 py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.6)] transition-all duration-500 group-focus-within:border-[#3F3F46] group-focus-within:bg-[#1A1A1D] group-focus-within:shadow-[0_12px_40px_rgb(0,0,0,0.8)]">
+              <div className="relative flex flex-row items-end bg-[#18181A] border border-[#27272A] rounded-[32px] pl-6 pr-3 py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.6)] transition-all duration-500 group-focus-within:border-[#3F3F46] group-focus-within:bg-[#1A1A1D] group-focus-within:shadow-[0_12px_40px_rgb(0,0,0,0.8)]">
                 
-                {/* Plus Icon (Left) */}
-                <button type="button" className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[#71717A] hover:text-white hover:bg-white/10 transition-all duration-300 ease-out mb-0.5" title="Anexar arquivo">
-                  <Plus size={22} strokeWidth={2.5} />
-                </button>
-
                 {/* Text Area (Center) */}
                 <textarea
                   value={message}

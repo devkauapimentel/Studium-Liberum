@@ -53,10 +53,6 @@ REGRA 3: OBRIGATORIAMENTE RESPONDA COM PERGUNTAS que forcem o aluno a pensar (M�
           contextText += `[Documento ${index + 1}: ${res.title} | Trilha: ${res.trackId}]\n${cleanSnippet}\n\n`;
         });
         systemPrompt += `\n\n${contextText}\n\nSUA TAREFA: Responda o usuário com base nos documentos acima. MANTENHA A FORMATAÇÃO MARKDOWN IMPECÁVEL (use listas e negrito). Cite os documentos se os usar. Se o contexto não ajudar, use seu próprio conhecimento.`;
-      } else {
-        systemPrompt += `\n\nAVISO INTERNO (RAG FALHOU): A busca no banco de dados local (FTS5) não encontrou NENHUM trecho de PDF ou Markdown que corresponda à última mensagem do usuário. 
-Sua ação obrigatória: Informe ao usuário, de forma direta e brutalista, que as palavras-chave dele não retornaram nada nos arquivos locais. Peça para ele fornecer palavras-chave mais específicas do conteúdo da aula que ele quer buscar.
-NUNCA invente que você não tem capacidade de ler PDFs. Apenas diga que a busca local retornou vazia.`;
       }
     } catch (e) {
       console.error("RAG Context Error:", e);
