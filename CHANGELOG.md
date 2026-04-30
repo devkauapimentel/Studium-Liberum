@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - **Ollama RAG Engine (Fase 5)**: Integração com LLMs locais (ex: `qwen2.5-coder`). O backend `/api/ai/chat` intercepta mensagens e busca no FTS5 (`studium.db`) arquivos relevantes antes de responder, injetando os snippets direto no System Prompt.
 - **Chat UI (NDJSON Streaming)**: Criada a interface completa em `/ai` com suporte a streaming de texto em tempo real (máquina de escrever) parseando as respostas NDJSON do Ollama sem quebrar a UI.
+- **Central Offline (Fase 7)**: Nova página (`/offline`) dedicada ao "MIT Stack". Centraliza links profundos via protocolo nativo do Linux `zeal://` para chamadas de documentação instantâneas (Docker, React, C), e fornece botão de acesso direto ao Kiwix Engine local (`localhost:8080`) isolando-o de frames com falhas.
 - **Renderização Markdown Dinâmica**: O Chat utiliza `react-markdown` e `remark-gfm` + `remark-breaks` para estruturar códigos, listas e tabelas. Adicionada forte diretriz estética Grok/ChatGPT ao System Prompt.
 - **Modal de Busca Híbrido (Fase 5.1)**: Criada a fundação do `<SearchModal>` ativado via `Ctrl+K` em qualquer lugar do app, prevenindo comportamento nativo do Chrome.
 - **Seletor de Modelos Dinâmico**: O Chat agora exibe um dropdown em tempo real buscando na API do Ollama (`/api/tags`) os modelos disponíveis na máquina para switch instantâneo.
