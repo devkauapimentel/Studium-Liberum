@@ -19,6 +19,15 @@ export default function AIPage() {
   const [useRag, setUseRag] = useState(true);
   const [socraticMode, setSocraticMode] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Auto-resize textarea to match Grok behavior
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 250)}px`;
+    }
+  }, [message]);
 
   // Check Ollama on mount and load models
   useEffect(() => {
@@ -191,17 +200,23 @@ export default function AIPage() {
               {/* Outer Glow on Focus */}
               <div className="absolute -inset-[2px] rounded-[34px] bg-white/5 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-700 pointer-events-none -z-10"></div>
               
-              <div className="relative flex flex-row items-end bg-[#18181A] border border-[#27272A] rounded-[32px] pl-6 pr-3 py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.6)] transition-all duration-500 group-focus-within:border-[#3F3F46] group-focus-within:bg-[#1A1A1D] group-focus-within:shadow-[0_12px_40px_rgb(0,0,0,0.8)]">
+              <div className="relative flex flex-row items-end bg-[#18181A] border border-[#27272A] rounded-[32px] pl-2 pr-3 py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.6)] transition-all duration-500 group-focus-within:border-[#3F3F46] group-focus-within:bg-[#1A1A1D] group-focus-within:shadow-[0_12px_40px_rgb(0,0,0,0.8)]">
                 
-                {/* Text Area (Center) */}
+                {/* Plus Icon (Bottom Left) */}
+                <button type="button" className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-[#71717A] hover:text-[#F4F4F5] hover:bg-white/10 transition-all duration-300 ease-out mb-[1px]" title="Anexar arquivo">
+                  <Plus size={22} strokeWidth={2.5} />
+                </button>
+
+                {/* Text Area (Center, auto-resizing) */}
                 <textarea
+                  ref={textareaRef}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="What do you want to know?"
                   disabled={isLoading}
                   rows={1}
-                  className="flex-1 bg-transparent px-4 py-2 text-[16px] font-medium focus:outline-none resize-none min-h-[40px] max-h-[200px] overflow-y-auto disabled:opacity-50 placeholder-[#71717A]"
-                  style={{ color: "#F4F4F5", lineHeight: "1.5" }}
+                  className="flex-1 bg-transparent px-3 py-2.5 text-[16px] font-medium focus:outline-none resize-none overflow-y-auto disabled:opacity-50 placeholder-[#71717A] mb-[1px]"
+                  style={{ color: "#F4F4F5", lineHeight: "1.5", maxHeight: "250px", minHeight: "42px" }}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
                       e.preventDefault();
