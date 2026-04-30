@@ -211,11 +211,17 @@ export default function AIPage() {
                 <textarea
                   ref={textareaRef}
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                    if (textareaRef.current) {
+                      textareaRef.current.style.height = "auto";
+                      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 250)}px`;
+                    }
+                  }}
                   placeholder="What do you want to know?"
                   disabled={isLoading}
                   rows={1}
-                  className="flex-1 bg-transparent px-3 py-2.5 text-[16px] font-medium focus:outline-none resize-none overflow-y-auto disabled:opacity-50 placeholder-[#71717A] mb-[1px]"
+                  className="flex-1 bg-transparent px-3 py-2.5 text-[16px] font-medium focus:outline-none resize-none overflow-hidden disabled:opacity-50 placeholder-[#71717A] mb-[1px]"
                   style={{ color: "#F4F4F5", lineHeight: "1.5", maxHeight: "250px", minHeight: "42px" }}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
@@ -273,7 +279,7 @@ export default function AIPage() {
                       transform: message.trim() && !isLoading ? "scale(1.05)" : "scale(1)"
                     }}
                   >
-                    {isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} strokeWidth={2.5} className={message.trim() ? "translate-x-[1px]" : ""} />}
+                    {isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} strokeWidth={2.5} className="mr-[2px] mt-[2px]" />}
                   </button>
                 </div>
               </div>
