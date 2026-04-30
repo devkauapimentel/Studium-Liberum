@@ -62,8 +62,8 @@ export default async function MarkdownViewerPage({ searchParams }: PageProps) {
       </header>
 
       {/* Content Area */}
-      <main className="flex-1 overflow-y-auto p-8 flex justify-center custom-scrollbar">
-        <article className="prose prose-invert prose-blue max-w-4xl w-full bg-[var(--color-bg-card)] p-8 md:p-12 rounded-xl border border-[var(--color-border)] shadow-2xl backdrop-blur-md">
+      <main className="flex-1 overflow-y-auto p-8 custom-scrollbar">
+        <article className="prose prose-invert prose-blue max-w-4xl w-full mx-auto bg-[var(--color-bg-card)] p-8 md:p-12 rounded-xl border border-[var(--color-border)] shadow-2xl backdrop-blur-md">
           <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
             {content}
           </ReactMarkdown>
