@@ -266,7 +266,7 @@ export default function AIPage() {
             <p className="text-center text-[11px] text-[#71717A] mt-5 font-medium tracking-wide opacity-50 hover:opacity-100 transition-opacity duration-500 cursor-default">
               By messaging Studium Liberum, you agree to process offline without leaving your machine.
             </p>
-          </div>         </div>
+          </div>
         </>
       )}
     </div>
