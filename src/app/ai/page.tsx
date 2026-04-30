@@ -125,34 +125,6 @@ export default function AIPage() {
         </div>
         
         <div className="flex items-center gap-4">
-          {ollamaAvailable && availableModels.length > 0 && (
-            <select
-              value={selectedModel}
-              onChange={(e) => setSelectedModel(e.target.value)}
-              className="bg-[var(--color-bg-primary)] border border-[var(--color-border)] text-xs font-mono rounded-md px-2 py-1 text-[var(--color-text-secondary)] focus:outline-none cursor-pointer"
-            >
-              {availableModels.map(m => <option key={m} value={m}>{m}</option>)}
-            </select>
-          )}
-
-          <button 
-            onClick={() => setUseRag(!useRag)}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors border ${useRag ? 'bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)] border-[var(--color-accent-blue)]/30' : 'bg-transparent text-[var(--color-text-muted)] border-[var(--color-border)]'}`}
-            title="Retrieval-Augmented Generation (Busca em Documentos)"
-          >
-            <Database size={14} />
-            {useRag ? 'RAG Ativo' : 'RAG Desativado'}
-          </button>
-          
-          <button 
-            onClick={() => setSocraticMode(!socraticMode)}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors border ${socraticMode ? 'bg-[var(--color-accent-amber)]/10 text-[var(--color-accent-amber)] border-[var(--color-accent-amber)]/30' : 'bg-transparent text-[var(--color-text-muted)] border-[var(--color-border)]'}`}
-            title="Modo 42: Sem código, apenas método Socrático"
-          >
-            <Shield size={14} />
-            {socraticMode ? 'Modo 42' : 'Modo 42'}
-          </button>
-          
           <div className="flex items-center gap-2">
             <Cpu size={14} className={ollamaAvailable ? "text-[var(--color-accent-green)]" : "text-red-500"} />
             <span className="text-xs font-mono font-medium text-[var(--color-text-muted)]">
@@ -215,23 +187,73 @@ export default function AIPage() {
           </div>
 
           <div className="p-6 bg-[var(--color-bg-secondary)] border-t border-[var(--color-border)]">
-            <form onSubmit={sendMessage} className="max-w-4xl mx-auto flex gap-3">
-              <input
-                type="text"
+            <form onSubmit={sendMessage} className="max-w-3xl mx-auto flex flex-col gap-2 relative bg-[var(--color-bg-primary)] border border-[var(--color-border)] rounded-[24px] p-2 shadow-lg focus-within:border-[var(--color-border-focus)] focus-within:ring-1 focus-within:ring-[var(--color-border-focus)] transition-all">
+              <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Ex: Como funciona o box-model no CSS segundo o curso da Rocketseat?"
+                placeholder="Message Studium Liberum..."
                 disabled={isLoading}
-                className="flex-1 px-5 py-3.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] text-sm focus:border-[var(--color-accent-purple)] focus:outline-none transition-colors disabled:opacity-50"
+                rows={1}
+                className="w-full px-4 pt-3 pb-2 bg-transparent text-[15px] focus:outline-none resize-none min-h-[44px] max-h-[200px] overflow-y-auto disabled:opacity-50"
+                style={{ color: "var(--color-text-primary)" }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                  }
+                }}
               />
-              <button 
-                type="submit" 
-                disabled={!message.trim() || isLoading}
-                className="px-6 py-3.5 rounded-xl font-bold flex items-center gap-2 transition-all disabled:opacity-50 disabled:hover:scale-100 hover:scale-105 active:scale-95 text-white"
-                style={{ background: "var(--color-accent-purple)" }}
-              >
-                {isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
-              </button>
+              
+              <div className="flex items-center justify-between px-2 pb-1">
+                <div className="flex items-center gap-2">
+                  {/* Select Model Pill */}
+                  {ollamaAvailable && availableModels.length > 0 && (
+                    <div className="relative flex items-center">
+                      <select
+                        value={selectedModel}
+                        onChange={(e) => setSelectedModel(e.target.value)}
+                        className="appearance-none bg-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-hover)] border border-transparent rounded-full px-4 py-1.5 text-xs font-semibold text-[var(--color-text-secondary)] focus:outline-none cursor-pointer transition-colors"
+                      >
+                        {availableModels.map(m => <option key={m} value={m}>{m}</option>)}
+                      </select>
+                    </div>
+                  )}
+
+                  {/* RAG Toggle Pill */}
+                  <button 
+                    type="button"
+                    onClick={() => setUseRag(!useRag)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${useRag ? 'bg-[var(--color-accent-blue)]/15 text-[var(--color-accent-blue)]' : 'bg-transparent text-[var(--color-text-muted)] hover:bg-[var(--color-bg-tertiary)]'}`}
+                    title="Retrieval-Augmented Generation (Busca na Library)"
+                  >
+                    <Database size={14} />
+                    {useRag ? 'RAG On' : 'RAG Off'}
+                  </button>
+                  
+                  {/* Modo 42 Pill */}
+                  <button 
+                    type="button"
+                    onClick={() => setSocraticMode(!socraticMode)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${socraticMode ? 'bg-[var(--color-accent-amber)]/15 text-[var(--color-accent-amber)]' : 'bg-transparent text-[var(--color-text-muted)] hover:bg-[var(--color-bg-tertiary)]'}`}
+                    title="Modo 42: Apenas método Socrático (sem código pronto)"
+                  >
+                    <Shield size={14} />
+                    Modo 42
+                  </button>
+                </div>
+
+                <button 
+                  type="submit" 
+                  disabled={!message.trim() || isLoading}
+                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all disabled:opacity-40 disabled:hover:scale-100 hover:scale-105"
+                  style={{ 
+                    background: message.trim() ? "var(--color-text-primary)" : "var(--color-bg-tertiary)", 
+                    color: message.trim() ? "var(--color-bg-primary)" : "var(--color-text-muted)" 
+                  }}
+                >
+                  {isLoading ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} className={message.trim() ? "translate-x-[-1px]" : ""} />}
+                </button>
+              </div>
             </form>
             <p className="text-center text-[10px] text-[var(--color-text-muted)] mt-3 font-mono">
               Os dados nunca saem da sua máquina. Motor de IA rodando estritamente offline em localhost.
