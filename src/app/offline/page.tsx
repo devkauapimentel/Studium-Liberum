@@ -38,11 +38,11 @@ export default function OfflineToolsPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold">Kiwix Engine</h3>
-                  <p className="text-xs text-[var(--color-text-muted)] uppercase tracking-wider">Stack Overflow & DevDocs</p>
+                  <p className="text-xs text-[var(--color-text-muted)] uppercase tracking-wider">ArchWiki & Wikibooks CS</p>
                 </div>
               </div>
               <p className="text-sm text-[var(--color-text-muted)] mb-6 flex-1">
-                Servidor local de ZIM files. Contém milhões de perguntas do Stack Overflow e documentações oficiais (MDN, Python, C++) compactadas para busca ultrarrápida.
+                Servidor local de ZIM files. Focado em conhecimento profundo teórico e manuais de sistemas operacionais, sem dar respostas prontas de código.
               </p>
               <a 
                 href="http://localhost:8080" 
@@ -70,17 +70,26 @@ export default function OfflineToolsPage() {
                 Integração via protocolo <code>zeal://</code>. Clique nos botões abaixo para abrir a documentação oficial direto no seu client nativo do Linux, sem lag.
               </p>
               <div className="grid grid-cols-2 gap-3">
+                <a href="zeal://c" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
+                  <BookOpen size={14} /> C / C++
+                </a>
                 <a href="zeal://docker" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
                   <BookOpen size={14} /> Docker
                 </a>
                 <a href="zeal://postgresql" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
                   <BookOpen size={14} /> PostgreSQL
                 </a>
-                <a href="zeal://c" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
-                  <BookOpen size={14} /> C / C++
-                </a>
                 <a href="zeal://react" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
                   <BookOpen size={14} /> React
+                </a>
+                <a href="zeal://javascript" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
+                  <BookOpen size={14} /> JavaScript
+                </a>
+                <a href="zeal://html" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
+                  <BookOpen size={14} /> HTML
+                </a>
+                <a href="zeal://css" className="flex items-center justify-center gap-2 py-2 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-blue)] text-xs font-semibold transition-colors">
+                  <BookOpen size={14} /> CSS
                 </a>
               </div>
             </section>

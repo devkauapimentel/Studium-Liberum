@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowLeft, Bot, Send, Cpu, User, Loader2, Database } from "lucide-react";
+import { ArrowLeft, Bot, Send, Cpu, User, Loader2, Database, Shield } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
@@ -17,6 +17,7 @@ export default function AIPage() {
   const [availableModels, setAvailableModels] = useState<string[]>([]);
   const [selectedModel, setSelectedModel] = useState<string>("qwen2.5-coder:7b");
   const [useRag, setUseRag] = useState(true);
+  const [socraticMode, setSocraticMode] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Check Ollama on mount and load models
@@ -57,6 +58,7 @@ export default function AIPage() {
           messages: [...messages, userMsg],
           model: selectedModel,
           useRag,
+          socraticMode,
         }),
       });
 
@@ -140,6 +142,15 @@ export default function AIPage() {
           >
             <Database size={14} />
             {useRag ? 'RAG Ativo' : 'RAG Desativado'}
+          </button>
+          
+          <button 
+            onClick={() => setSocraticMode(!socraticMode)}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors border ${socraticMode ? 'bg-[var(--color-accent-amber)]/10 text-[var(--color-accent-amber)] border-[var(--color-accent-amber)]/30' : 'bg-transparent text-[var(--color-text-muted)] border-[var(--color-border)]'}`}
+            title="Modo 42: Sem código, apenas método Socrático"
+          >
+            <Shield size={14} />
+            {socraticMode ? 'Modo 42' : 'Modo 42'}
           </button>
           
           <div className="flex items-center gap-2">

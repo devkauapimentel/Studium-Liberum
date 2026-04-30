@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
     return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400 });
   }
 
-  const { messages, model, useRag = true } = body;
+  const { messages, model, useRag = true, socraticMode = false } = body;
 
   if (!messages || !Array.isArray(messages) || messages.length === 0) {
     return new Response(JSON.stringify({ error: "Messages array is required" }), {
@@ -34,6 +34,13 @@ REGRA DE FORMATAÇÃO (ESTÉTICA GROK/CHATGPT): Você deve OBRIGATORIAMENTE form
 4. Pule linhas DUPLAS (use \\n\\n obrigatoriamente) entre CADA parágrafo ou tópico para o texto respirar. NUNCA responda com um bloco maciço de texto contínuo.
 REGRA ABSOLUTA: Você **CONSEGUE LER PDFs E MARKDOWNS**. O nosso sistema extrai o texto dos PDFs em background e injeta para você ler de forma invisível. Nunca diga "Não posso ler PDFs". Se você receber contexto extraído abaixo, use-o para responder detalhadamente. Caso não haja contexto, responda com o seu conhecimento técnico base.
 Responda sempre considerando que o usuário não usa plataformas online, tudo está no disco rígido dele.`;
+
+  if (socraticMode) {
+    systemPrompt += `\n\n🚨 MODO 42 (SOCRÁTICO) ATIVADO 🚨
+REGRA 1: VOCÊ ESTÁ ESTRITAMENTE PROIBIDO DE GERAR CÓDIGO FONTE (C, Shell, JavaScript, etc). A resposta pronta sabota o aprendizado do aluno da 42.
+REGRA 2: NUNCA DE A RESPOSTA DIRETA PARA UM PROBLEMA TÉCNICO OU DE LÓGICA.
+REGRA 3: OBRIGATORIAMENTE RESPONDA COM PERGUNTAS que forcem o aluno a pensar (Método Socrático). Se ele tem um erro, aponte para onde ele deve olhar, mas faça ele descobrir o porquê.`;
+  }
 
   if (useRag) {
     try {
