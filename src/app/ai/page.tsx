@@ -186,77 +186,83 @@ export default function AIPage() {
             </div>
           </div>
 
-          <div className="p-6 bg-[var(--color-bg-secondary)] border-t border-[var(--color-border)]">
-            <form onSubmit={sendMessage} className="max-w-3xl mx-auto flex flex-col gap-2 relative bg-[var(--color-bg-primary)] border border-[var(--color-border)] rounded-[24px] p-2 shadow-lg focus-within:border-[var(--color-border-focus)] focus-within:ring-1 focus-within:ring-[var(--color-border-focus)] transition-all">
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Message Studium Liberum..."
-                disabled={isLoading}
-                rows={1}
-                className="w-full px-4 pt-3 pb-2 bg-transparent text-[15px] focus:outline-none resize-none min-h-[44px] max-h-[200px] overflow-y-auto disabled:opacity-50"
-                style={{ color: "var(--color-text-primary)" }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault();
-                    sendMessage();
-                  }
-                }}
-              />
+          <div className="p-6 bg-transparent pb-8">
+            <form onSubmit={sendMessage} className="max-w-3xl mx-auto relative group">
+              {/* Subtle background glow effect when focused */}
+              <div className="absolute -inset-[1px] rounded-[28px] bg-gradient-to-r from-transparent via-transparent to-transparent group-focus-within:from-[var(--color-accent-purple)]/50 group-focus-within:via-[var(--color-accent-blue)]/50 group-focus-within:to-[var(--color-accent-cyan)]/50 transition-all duration-700 opacity-0 blur-md group-focus-within:opacity-100 -z-10"></div>
               
-              <div className="flex items-center justify-between px-2 pb-1">
-                <div className="flex items-center gap-2">
-                  {/* Select Model Pill */}
-                  {ollamaAvailable && availableModels.length > 0 && (
-                    <div className="relative flex items-center">
-                      <select
-                        value={selectedModel}
-                        onChange={(e) => setSelectedModel(e.target.value)}
-                        className="appearance-none bg-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-hover)] border border-transparent rounded-full px-4 py-1.5 text-xs font-semibold text-[var(--color-text-secondary)] focus:outline-none cursor-pointer transition-colors"
-                      >
-                        {availableModels.map(m => <option key={m} value={m}>{m}</option>)}
-                      </select>
-                    </div>
-                  )}
+              <div className="relative flex flex-col bg-[#111113]/90 backdrop-blur-2xl border border-[var(--color-border)]/50 rounded-[28px] p-2 shadow-[0_8px_30px_rgb(0,0,0,0.5)] transition-all duration-300 group-focus-within:border-[var(--color-border)] group-focus-within:bg-[#151518]/95">
+                <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Mensagem para Studium Liberum..."
+                  disabled={isLoading}
+                  rows={1}
+                  className="w-full px-5 pt-4 pb-2 bg-transparent text-[16px] focus:outline-none resize-none min-h-[56px] max-h-[250px] overflow-y-auto disabled:opacity-50 placeholder-[var(--color-text-muted)]/70"
+                  style={{ color: "var(--color-text-primary)", lineHeight: "1.5" }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                      e.preventDefault();
+                      sendMessage();
+                    }
+                  }}
+                />
+                
+                <div className="flex items-center justify-between px-3 pb-2 mt-1">
+                  <div className="flex items-center gap-1.5">
+                    {/* Select Model Dropdown */}
+                    {ollamaAvailable && availableModels.length > 0 && (
+                      <div className="relative flex items-center">
+                        <select
+                          value={selectedModel}
+                          onChange={(e) => setSelectedModel(e.target.value)}
+                          className="appearance-none bg-transparent hover:bg-[var(--color-bg-tertiary)]/70 border border-transparent rounded-2xl px-4 py-2 text-[13px] font-semibold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] focus:outline-none cursor-pointer transition-all"
+                        >
+                          {availableModels.map(m => <option key={m} value={m} className="bg-[var(--color-bg-secondary)]">{m}</option>)}
+                        </select>
+                      </div>
+                    )}
 
-                  {/* RAG Toggle Pill */}
+                    {/* RAG Toggle */}
+                    <button 
+                      type="button"
+                      onClick={() => setUseRag(!useRag)}
+                      className={`flex items-center gap-2 px-4 py-2 rounded-2xl text-[13px] font-semibold transition-all duration-300 ${useRag ? 'bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)]' : 'bg-transparent text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)]/70'}`}
+                      title="RAG: Conectar aos seus arquivos e Manuais"
+                    >
+                      <Database size={15} />
+                      {useRag ? 'RAG' : 'RAG'}
+                    </button>
+                    
+                    {/* Modo 42 */}
+                    <button 
+                      type="button"
+                      onClick={() => setSocraticMode(!socraticMode)}
+                      className={`flex items-center gap-2 px-4 py-2 rounded-2xl text-[13px] font-semibold transition-all duration-300 ${socraticMode ? 'bg-[var(--color-accent-amber)]/10 text-[var(--color-accent-amber)]' : 'bg-transparent text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)]/70'}`}
+                      title="Modo 42: Apenas método Socrático (sem dar o código pronto)"
+                    >
+                      <Shield size={15} />
+                      Modo 42
+                    </button>
+                  </div>
+
                   <button 
-                    type="button"
-                    onClick={() => setUseRag(!useRag)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${useRag ? 'bg-[var(--color-accent-blue)]/15 text-[var(--color-accent-blue)]' : 'bg-transparent text-[var(--color-text-muted)] hover:bg-[var(--color-bg-tertiary)]'}`}
-                    title="Retrieval-Augmented Generation (Busca na Library)"
+                    type="submit" 
+                    disabled={!message.trim() || isLoading}
+                    className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 disabled:opacity-30 disabled:hover:scale-100 hover:scale-[1.08] active:scale-95"
+                    style={{ 
+                      background: message.trim() ? "var(--color-text-primary)" : "var(--color-bg-tertiary)", 
+                      color: message.trim() ? "var(--color-bg-primary)" : "var(--color-text-muted)",
+                      boxShadow: message.trim() ? "0 4px 14px rgba(255,255,255,0.15)" : "none"
+                    }}
                   >
-                    <Database size={14} />
-                    {useRag ? 'RAG On' : 'RAG Off'}
-                  </button>
-                  
-                  {/* Modo 42 Pill */}
-                  <button 
-                    type="button"
-                    onClick={() => setSocraticMode(!socraticMode)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${socraticMode ? 'bg-[var(--color-accent-amber)]/15 text-[var(--color-accent-amber)]' : 'bg-transparent text-[var(--color-text-muted)] hover:bg-[var(--color-bg-tertiary)]'}`}
-                    title="Modo 42: Apenas método Socrático (sem código pronto)"
-                  >
-                    <Shield size={14} />
-                    Modo 42
+                    {isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} className={message.trim() ? "translate-x-[-1px] translate-y-[1px]" : "translate-x-[-1px]"} />}
                   </button>
                 </div>
-
-                <button 
-                  type="submit" 
-                  disabled={!message.trim() || isLoading}
-                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all disabled:opacity-40 disabled:hover:scale-100 hover:scale-105"
-                  style={{ 
-                    background: message.trim() ? "var(--color-text-primary)" : "var(--color-bg-tertiary)", 
-                    color: message.trim() ? "var(--color-bg-primary)" : "var(--color-text-muted)" 
-                  }}
-                >
-                  {isLoading ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} className={message.trim() ? "translate-x-[-1px]" : ""} />}
-                </button>
               </div>
             </form>
-            <p className="text-center text-[10px] text-[var(--color-text-muted)] mt-3 font-mono">
-              Os dados nunca saem da sua máquina. Motor de IA rodando estritamente offline em localhost.
+            <p className="text-center text-[11px] text-[var(--color-text-muted)] mt-5 font-medium tracking-wide opacity-60">
+              Processamento offline seguro. Nenhum dado deixa sua máquina.
             </p>
           </div>
         </>
