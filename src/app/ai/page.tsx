@@ -179,13 +179,13 @@ export default function AIPage() {
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${msg.role === "assistant" ? "bg-[var(--color-accent-purple)]/20 text-[var(--color-accent-purple)]" : "bg-[var(--color-bg-tertiary)] text-[var(--color-text-secondary)]"}`}>
                       {msg.role === "assistant" ? <Bot size={18} /> : <User size={18} />}
                     </div>
-                    <div className={`max-w-[80%] rounded-2xl p-4 ${msg.role === "assistant" ? "bg-transparent border border-[var(--color-border)]" : "bg-[var(--color-bg-tertiary)]"}`}>
+                    <div className={`min-w-0 max-w-[80%] rounded-2xl p-4 ${msg.role === "assistant" ? "bg-transparent border border-[var(--color-border)]" : "bg-[var(--color-bg-tertiary)]"}`}>
                       {msg.role === "assistant" ? (
                         <div className="prose prose-invert prose-sm max-w-none prose-pre:bg-black/50 prose-pre:border prose-pre:border-[var(--color-border)] prose-p:leading-relaxed prose-li:my-1">
                           {msg.content === "" ? <span className="animate-pulse">● ● ●</span> : <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>{msg.content}</ReactMarkdown>}
                         </div>
                       ) : (
-                        <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
+                        <p className="text-sm whitespace-pre-wrap break-words break-all">{msg.content}</p>
                       )}
                     </div>
                   </div>

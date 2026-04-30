@@ -396,3 +396,4 @@ Quando um novo agente assume o trabalho:
 | 2026-04-29 | SearchModal (Ctrl+K) Shield | Interceptação global do atalho `Ctrl+K` na raiz (`layout.tsx`) usando `e.preventDefault()`, substituindo a barra nativa do Chrome. |
 | 2026-04-29 | Semantic Stopwords FTS5 | O SQLite Search parou de apagar palavras com `< 3` caracteres (quebrando buscas em 'C'). Adicionado um Array de `Stop Words` PT-BR exato. |
 | 2026-04-29 | Strict LLM Aesthetics | RAG System Prompt reescrito para obrigar esteticismo `Grok/ChatGPT` usando `\n\n` obrigatório para parágrafos + Emojis de tópicos. |
+| 2026-04-29 | Chat UI Grok Clone | Refatoração completa da barra de input para comportar "100dvh" com âncora inferior absoluta e expansão de texto auto-calculada via scrollHeight. Scrollbars default escondidos/customizados para maxilar UX minimalista. |

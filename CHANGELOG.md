@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Central Offline Refinada**: A página `/offline` foi atualizada. O bloco do Kiwix agora foca no `ArchWiki` e `Wikibooks CS` em vez do Stack Overflow (90GB de peso inútil/sabotagem). Os links nativos `zeal://` foram mapeados perfeitamente para os pacotes instalados (`C`, `Docker`, `JavaScript`, `React`, etc).
 - **Ollama RAG Engine (Fase 5)**: Integração com LLMs locais (ex: `qwen2.5-coder`). O backend `/api/ai/chat` intercepta mensagens e busca no FTS5 (`studium.db`) arquivos relevantes antes de responder, injetando os snippets direto no System Prompt.
 - **Chat UI (NDJSON Streaming)**: Criada a interface completa em `/ai` com suporte a streaming de texto em tempo real (máquina de escrever) parseando as respostas NDJSON do Ollama sem quebrar a UI.
+- **Auto-Resize Chatbar (Grok Style)**: Refatorada a lógica de input do chat para igualar o design *Grok*: scrollbar nativa ultrafina customizada via CSS Webkit, expansão dinâmica do container via manipulação direta do DOM, botão enviar reposicionado óticamente, e fixação absoluta com fading visual.
 - **Central Offline (Fase 7)**: Nova página (`/offline`) dedicada ao "MIT Stack". Centraliza links profundos via protocolo nativo do Linux `zeal://` para chamadas de documentação instantâneas (Docker, React, C), e fornece botão de acesso direto ao Kiwix Engine local (`localhost:8080`) isolando-o de frames com falhas.
 - **Renderização Markdown Dinâmica**: O Chat utiliza `react-markdown` e `remark-gfm` + `remark-breaks` para estruturar códigos, listas e tabelas. Adicionada forte diretriz estética Grok/ChatGPT ao System Prompt.
 - **Modal de Busca Híbrido (Fase 5.1)**: Criada a fundação do `<SearchModal>` ativado via `Ctrl+K` em qualquer lugar do app, prevenindo comportamento nativo do Chrome.
@@ -34,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Monobloco Markdown (Tailwind Typography)**: Adicionado `@plugin "@tailwindcss/typography"` ausente no Tailwind v4. Isso ativou a renderização visual perfeita de fontes, quebras, listas e margens (`.prose`).
 - **FTS5 Stopwords Search**: Motor de busca refatorado. Substituído o corte bruto por tamanho de caractere (`> 2`) por uma lista cirúrgica de *Stop Words*, permitindo busca exata por módulos pequenos ("C", "Go", "UI").
 - **ESM pdf-parse Crash**: Corrigido crash fatal do servidor de dev Next.js convertendo o import da biblioteca `pdf-parse` para `require()` CJS nativo.
+- **Chat Bubble Overflow**: Adicionado `min-w-0` e `break-all` aos balões do chat para evitar que strings monolíticas do usuário esticassem o container ou gerassem scroll horizontal indesejado quebrando o design.
 
 ### Changed
 - **Video Player → Cinema Mode**: Fullscreen immersive player with glassmorphism floating controls
